@@ -16,6 +16,37 @@
       </tags>
   </entry>
   <entry>
+    <title>Alpha Camp 學期一結業心得</title>
+    <url>/posts/491e0585/</url>
+    <content><![CDATA[<p>Alpha Camp的三週學習進度終於結束了，中間除了充斥著被成就感激起的學習熱情，也飽含怎麼都寫不出來的挫敗感。趁著現在給自己留下一篇熱騰騰的記錄，好好回顧這段學習歷程!  </p>
+<span id="more"></span>
+<br/>
+
+<h2 id="為什麼會報名Alpha-Camp"><a href="#為什麼會報名Alpha-Camp" class="headerlink" title="為什麼會報名Alpha Camp?"></a>為什麼會報名Alpha Camp?</h2><p>在傳產當了幾年的會計，雖然喜歡這種嚴謹又規整的工作，但是又不甘於這種毫無變化的生活。工作中充斥著各種財務報表的編撰和解讀，與人的交流變得少之又少……又由於公司軟體不給力，很多報表都是Excel刻出來的，為了減少人工輸入造成的錯誤，那段時間研究了函數、VBA，力求做到自動極大化。在查資料過程中發現，把一些固定的語法拼在一起，讓他自動提供結果給我，其實這些東西跟寫程式很像，這也成了我接觸程式語言的契機。  </p>
+<p>同時，我也和幾位不同產業的同學&#x2F;前輩聊了聊，發現只要繼續做會計，未來的工作模式也不會有太大的改變。我問了自己:「我能忍受未來20年都過這樣的生活嗎?」 然後我就有了轉職的想法XD  </p>
+<p>在嘗試自學後發現，因為完全沒概念，很難為自己規劃一個明確的方向。做了幾天的功課後，毅然決然的刷了卡，趁著沒有太大的經濟負擔時，試著走一條不一樣的路，希望給自己一個不一樣的未來。</p>
+<h2 id="三週課程感受"><a href="#三週課程感受" class="headerlink" title="三週課程感受"></a>三週課程感受</h2><p>說實話，比我預期的還要好! 其中對我最有幫助的應該是課程制度的設計，有效的把我在自學時發生的問題都解決了! 其中最有感覺的是以下幾點:</p>
+<ol>
+<li><p>進度制<br>  非常有效的解決了拖延症的問題。每週有固定進度，但又可以依照自己的時間安排每天學習時間。給了少許進度壓力的同時，又保持了一定的自由度。另外，因為有一批跟自己一樣進度的同學在，討論、互相激勵也很有幫助!</p>
+</li>
+<li><p>實作練習<br>  學了之後馬上思考要怎麼用，可以檢視自己是不是真的理解了課堂說明。這也是我最喜歡的一部分! 在糾結又糾結之後順利完成，那種成就感真的會讓我很有學習的衝勁!</p>
+</li>
+<li><p>作業觀摩&#x2F;助教回覆<br>  當自己的作業是「成功了」，但同學的作業是「有效率的成功了」，或是助教有任何的點評，看到這些時我都會特別高興，因為又找到了另一種解決問題的方法。跟著別人的思路走一遍，將它內化成自己能理解的知識，這也是對我來說明顯有幫助的學習方式。</p>
+</li>
+</ol>
+<p>跟著AC進度學習的同時，因為有了大方向，所以可以比較清楚的知道還有哪些欠缺的東西可以補足。學習期間<a href="https://www.w3schools.com/">W3school</a>、<a href="https://www.freecodecamp.org/">FreeCodeCamp</a>、<a href="https://developer.mozilla.org/zh-TW/">MDN</a>也作為補充資料給了我很多幫助。藉由閱讀不同的說明方式不斷作複習，不但加強記憶，偶爾看到一些新用法也很有趣。  </p>
+<h2 id="後續規劃"><a href="#後續規劃" class="headerlink" title="後續規劃"></a>後續規劃</h2><p>整體來說，這三週的學習是很愉快的，我也決定繼續進入下學期課程。  </p>
+<p>在下學期開課前，除了先進行課程預習外，希望能把這三週以來的筆記整理一下也放進部落格裡。相信隨著部落格的成長，除了可以檢視自己的曾經犯過的錯誤，也能更直觀的知道自己曾經學過什麼? 有沒有進步? 另外，目前進行到一半的 Ubuntu 及 Command Line 學習也很有趣!  </p>
+<p>終於擺脫了那種工作上原地踏步的無力感，喜歡目前每天都在學習、每時每刻都在進步的自己!</p>
+]]></content>
+      <categories>
+        <category>學習紀錄</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HTML 簡介與筆記目錄</title>
     <url>/posts/927bd0cf/</url>
     <content><![CDATA[<blockquote>
@@ -83,37 +114,6 @@
       </categories>
       <tags>
         <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Alpha Camp 學期一結業心得</title>
-    <url>/posts/491e0585/</url>
-    <content><![CDATA[<p>Alpha Camp的三週學習進度終於結束了，中間除了充斥著被成就感激起的學習熱情，也飽含怎麼都寫不出來的挫敗感。趁著現在給自己留下一篇熱騰騰的記錄，好好回顧這段學習歷程!  </p>
-<span id="more"></span>
-<br/>
-
-<h2 id="為什麼會報名Alpha-Camp"><a href="#為什麼會報名Alpha-Camp" class="headerlink" title="為什麼會報名Alpha Camp?"></a>為什麼會報名Alpha Camp?</h2><p>在傳產當了幾年的會計，雖然喜歡這種嚴謹又規整的工作，但是又不甘於這種毫無變化的生活。工作中充斥著各種財務報表的編撰和解讀，與人的交流變得少之又少……又由於公司軟體不給力，很多報表都是Excel刻出來的，為了減少人工輸入造成的錯誤，那段時間研究了函數、VBA，力求做到自動極大化。在查資料過程中發現，把一些固定的語法拼在一起，讓他自動提供結果給我，其實這些東西跟寫程式很像，這也成了我接觸程式語言的契機。  </p>
-<p>同時，我也和幾位不同產業的同學&#x2F;前輩聊了聊，發現只要繼續做會計，未來的工作模式也不會有太大的改變。我問了自己:「我能忍受未來20年都過這樣的生活嗎?」 然後我就有了轉職的想法XD  </p>
-<p>在嘗試自學後發現，因為完全沒概念，很難為自己規劃一個明確的方向。做了幾天的功課後，毅然決然的刷了卡，趁著沒有太大的經濟負擔時，試著走一條不一樣的路，希望給自己一個不一樣的未來。</p>
-<h2 id="三週課程感受"><a href="#三週課程感受" class="headerlink" title="三週課程感受"></a>三週課程感受</h2><p>說實話，比我預期的還要好! 其中對我最有幫助的應該是課程制度的設計，有效的把我在自學時發生的問題都解決了! 其中最有感覺的是以下幾點:</p>
-<ol>
-<li><p>進度制<br>  非常有效的解決了拖延症的問題。每週有固定進度，但又可以依照自己的時間安排每天學習時間。給了少許進度壓力的同時，又保持了一定的自由度。另外，因為有一批跟自己一樣進度的同學在，討論、互相激勵也很有幫助!</p>
-</li>
-<li><p>實作練習<br>  學了之後馬上思考要怎麼用，可以檢視自己是不是真的理解了課堂說明。這也是我最喜歡的一部分! 在糾結又糾結之後順利完成，那種成就感真的會讓我很有學習的衝勁!</p>
-</li>
-<li><p>作業觀摩&#x2F;助教回覆<br>  當自己的作業是「成功了」，但同學的作業是「有效率的成功了」，或是助教有任何的點評，看到這些時我都會特別高興，因為又找到了另一種解決問題的方法。跟著別人的思路走一遍，將它內化成自己能理解的知識，這也是對我來說明顯有幫助的學習方式。</p>
-</li>
-</ol>
-<p>跟著AC進度學習的同時，因為有了大方向，所以可以比較清楚的知道還有哪些欠缺的東西可以補足。學習期間<a href="https://www.w3schools.com/">W3school</a>、<a href="https://www.freecodecamp.org/">FreeCodeCamp</a>、<a href="https://developer.mozilla.org/zh-TW/">MDN</a>也作為補充資料給了我很多幫助。藉由閱讀不同的說明方式不斷作複習，不但加強記憶，偶爾看到一些新用法也很有趣。  </p>
-<h2 id="後續規劃"><a href="#後續規劃" class="headerlink" title="後續規劃"></a>後續規劃</h2><p>整體來說，這三週的學習是很愉快的，我也決定繼續進入下學期課程。  </p>
-<p>在下學期開課前，除了先進行課程預習外，希望能把這三週以來的筆記整理一下也放進部落格裡。相信隨著部落格的成長，除了可以檢視自己的曾經犯過的錯誤，也能更直觀的知道自己曾經學過什麼? 有沒有進步? 另外，目前進行到一半的 Ubuntu 及 Command Line 學習也很有趣!  </p>
-<p>終於擺脫了那種工作上原地踏步的無力感，喜歡目前每天都在學習、每時每刻都在進步的自己!</p>
-]]></content>
-      <categories>
-        <category>學習紀錄</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -366,6 +366,49 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo 基本設定</title>
+    <url>/posts/a970120e/</url>
+    <content><![CDATA[<p>基本上經過上一篇的操作，在 <code>hexo s</code> 後應該已經可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 看到預設的 Hello World 畫面了，但要讓 Blog 正式啟動前，我們還要先做一些個人化設定。  </p>
+<span id="more"></span>
+
+<blockquote>
+<p>本文撰寫時的版本如下(可用 <code>hexo version</code> 確認)，不同版本的預設配置檔可能會有差異:<br>hexo: 6.0.0<br>hexo-cli: 4.3.0  </p>
+</blockquote>
+<ul>
+<li>基本配置文件位置在 <code>root\_config.yml</code>，<font color=#FF6600>冒號後面都必需保留半型空格一格</font>。  </li>
+<li>僅列出通常會修改或我已經修改的部分，其他請參考<a href="https://hexo.io/zh-tw/docs/configuration">官方網站</a>說明。</li>
+</ul>
+<h2 id="網站設定"><a href="#網站設定" class="headerlink" title="網站設定"></a>網站設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span>           <span class="comment"># 網站標題</span></span><br><span class="line"><span class="attr">subtitle:</span>             <span class="comment"># 網站副標題</span></span><br><span class="line"><span class="attr">description:</span>          <span class="comment"># 網站描述</span></span><br><span class="line"><span class="attr">keywords:</span>             <span class="comment"># 網站關鍵字(支援多個關鍵詞，用半型逗號隔開)</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span>      <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span>          <span class="comment"># 網站語言 (台灣:zh-tw)</span></span><br><span class="line"><span class="attr">timezone:</span>             <span class="comment"># 時區(可留空以使用您電腦的時區)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="網址設定"><a href="#網址設定" class="headerlink" title="網址設定"></a>網址設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here.</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://UserName.github.io/</span>           <span class="comment"># UserName更改為自己的帳戶名</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>      <span class="comment"># 文章網址的格式(預設使用 年月日/文章名稱)/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                       <span class="comment"># permalink 中各區段的預設值</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>permalink 會依照設定值，在每次 generate 時重新產生網址，設定參數可參考<a href="https://hexo.io/zh-tw/docs/permalinks">官方文件</a>。我在命名檔名時，習慣使用日期 + 英文檔名(日期方便排序，不含空格的英文檔名較不會產生亂碼網址)，所以 permalink: 僅用 <code>:title</code> 參數 (最後的 <code>/</code> 要記得保留)。</li>
+<li><strong><font color=red>2021&#x2F;12&#x2F;27 更新: <a href="/posts/d8dab675/">使用 Hexo-abbrlink 產生永久連結</a></font></strong></li>
+</ul>
+<h2 id="目錄設定"><a href="#目錄設定" class="headerlink" title="目錄設定"></a>目錄設定</h2><p>原則上都保留不變，除非有自訂路徑的需求。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span>            <span class="comment"># 原始檔案資料夾，存放編輯的所有內容</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span>            <span class="comment"># 存放靜態檔案的資料夾(hexo g 後產生)</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span>                 <span class="comment"># 標籤資料夾</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span>         <span class="comment"># 彙整資料夾(deploy後產生)</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span>      <span class="comment"># 分類資料夾</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>tags</code> 和 <code>categories</code> 資料夾預設是不存在的，有需要要另外新增資料夾。</li>
+</ul>
+<h2 id="擴充套件設定"><a href="#擴充套件設定" class="headerlink" title="擴充套件設定"></a>擴充套件設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/       # 提供各種套件，可以依自己需求安裝</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/         # 提供各種主題，可以依自己需求安裝</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span>                           <span class="comment"># 填寫主題名稱</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>本部落格選用 Next 主題(要把 landscape 改為 Next)，後續會另開一篇變更主題說明文。</li>
+</ul>
+<h2 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Hexo 可同時部署到不同地方，相關設定參考<a href="https://hexo.io/zh-tw/docs/one-command-deployment">官方部署說明</a>。  </li>
+<li>部署到 Github 方式已在用前篇 Hexo + Github Pages 建立部落格 中說明，這邊不另外贅述。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用 Hexo + Github Pages 建立部落格</title>
     <url>/posts/4b9ba027/</url>
     <content><![CDATA[<p>在建置部落格前猶豫了很久，最終還是決定用 Hexo + Github Pages 當作平台。歷時兩天，終於解決各種莫名其妙的問題，讓它變成心目中的樣子!</p>
@@ -453,54 +496,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo 編輯文章</title>
-    <url>/posts/978c1db/</url>
-    <content><![CDATA[<p>基本設定都完成後就可以來寫部落格了! 在正式開始前，如果能對 Hexo 的資料夾架構及 Front-matter 有點基本的認識，會對後續的操作很有幫助。</p>
-<span id="more"></span>
-
-<h2 id="Hexo-資料夾架構"><a href="#Hexo-資料夾架構" class="headerlink" title="Hexo 資料夾架構"></a>Hexo 資料夾架構</h2><p>之前在 <code>hexo init</code> 之後，根目錄資料夾會多了一些預設檔案，接下來會對其中比較重要的做簡單說明。  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── .deploy_git             # 內含已部署到 Github Repository 的所有檔案</span><br><span class="line">├── public                  # hexo g 生成靜態網站檔</span><br><span class="line">├── scaffolds               # 樣板資料夾(hexo new 會從這裡抓樣板，也可以自己新建樣板)</span><br><span class="line">|   ├── draft.md            # 草稿樣板</span><br><span class="line">|   ├── page.md             # 頁面樣板</span><br><span class="line">|   └── post.md             # 文章樣板(預設)</span><br><span class="line">├── source                  # 存放原始檔案的地方</span><br><span class="line">|   ├── _data               # 存放自定義設定原始碼的地方</span><br><span class="line">|   ├── _drafts             # 草稿資料夾</span><br><span class="line">|   └── _posts              # 文章資料夾</span><br><span class="line">├── themes                  # 各種主題資料夾</span><br><span class="line">|   └── landscape           # 預設主題</span><br><span class="line">|       └── _config.yml     # 主題樣式設定檔</span><br><span class="line">├── .gitignore              # 設定不想被加入版本控制或是上傳到 GitHub 的資料夾或檔案</span><br><span class="line">└── _config.yml             # Hexo 基本設定</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>_drafts</code> 草稿資料夾預設會被 generate 、server 和 deploy 指令略過(<code>_post</code> 以外以”_”開頭的資料夾都是)。如果想在 localhost 先預覽的話，可以在 <code>root\_config.yml</code> 裡把 <code>render_drafts: false(預設)</code> 改為 true。</li>
-</ul>
-<h2 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h2><p>Front-matter 是檔案最上方以 — 分隔的區域，用於指定個別檔案的變數。可以每篇文章個別設定，也可以預先在樣板中建立套用內容。常用的變數如下:</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">title</span>        <span class="comment"># 標題(預設為檔案名稱)</span></span><br><span class="line"><span class="string">date</span>         <span class="comment"># 建立日期(預設為檔案建立日期)</span></span><br><span class="line"><span class="string">updated</span>      <span class="comment"># 更新日期(預設為檔案更新日期)</span></span><br><span class="line"><span class="string">comments</span>     <span class="comment"># 留言功能(預設 true :開啟)</span></span><br><span class="line"><span class="string">tags</span>         <span class="comment"># 標籤</span></span><br><span class="line"><span class="string">categories</span>   <span class="comment"># 分類</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>當因為重新部署或其他原因，導致在沒有修改文章情況下顯示文章更新，可以手動修改 <code>updated</code> 值，讓他跟建立日期相同即可。  </li>
-<li>多個標籤&#x2F;多個分類寫法不同，可參考<a href="https://hexo.io/zh-tw/docs/front-matter#%E5%88%86%E9%A1%9E%E5%92%8C%E6%A8%99%E7%B1%A4">官方說明</a>。</li>
-</ul>
-<h2 id="草稿編輯"><a href="#草稿編輯" class="headerlink" title="草稿編輯"></a>草稿編輯</h2><h3 id="新增草稿"><a href="#新增草稿" class="headerlink" title="新增草稿"></a>新增草稿</h3><p>草稿會建立在 <code>root\source\_drafts</code> 資料夾內。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new draft 文章名稱</span><br></pre></td></tr></table></figure>
-<h3 id="草稿轉文章"><a href="#草稿轉文章" class="headerlink" title="草稿轉文章"></a>草稿轉文章</h3><p>指令會把檔案從 <code>_drafts</code> 移至 <code>_posts</code> 資料夾內，也可以自己手動移動。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish draft 文章名稱</span><br></pre></td></tr></table></figure>
-
-<h2 id="文章編輯"><a href="#文章編輯" class="headerlink" title="文章編輯"></a>文章編輯</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>會建立在 <code>root\source\_posts</code> 資料夾內。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new 文章名稱         <span class="comment"># 預設抓取 post 樣板</span></span><br></pre></td></tr></table></figure>
-<h3 id="刪除貼文"><a href="#刪除貼文" class="headerlink" title="刪除貼文"></a>刪除貼文</h3><p>直接從 <code>root\source</code> 資料夾刪除本地檔案，清除靜態檔再重新上傳即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<h2 id="頁面編輯"><a href="#頁面編輯" class="headerlink" title="頁面編輯"></a>頁面編輯</h2><p>頁面和文章不同，是指每個主題 menu 項目的頁面。如果有開啟 menu 項目卻沒有預設頁面的情況下，會被導向 404 畫面。常用的幾個頁面如下:</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">about</span>         <span class="comment"># 關於我(通常會寫網站介紹或作者介紹)</span></span><br><span class="line"><span class="string">archives</span>      <span class="comment"># 歸檔(依發布日期把所有文章排序)</span></span><br><span class="line"><span class="string">categories</span>    <span class="comment"># 分類(會依每篇文章 Front-matter 裡的分類建立分類目錄-有層級)</span></span><br><span class="line"><span class="string">tags</span>          <span class="comment"># 標籤(會依每篇文章 Front-matter 裡的分類建立標籤目錄-無層級)</span></span><br><span class="line"><span class="string">link</span>          <span class="comment"># 對外連結(通常是推薦部落格或網站的連結)</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="新建頁面"><a href="#新建頁面" class="headerlink" title="新建頁面"></a>新建頁面</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page 頁面名稱</span><br></pre></td></tr></table></figure>
-<ul>
-<li>頁面通常不需要開啟留言功能，所以在新建時要記得將 Front-matter 的 <code>comments</code> 值改為 false。</li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2021-12-14 18:33:37</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2021-12-14 18:34:46</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>新建頁面會新建一個 <code>index</code> 檔案，放在”頁面名稱”資料夾裡。</li>
-</ul>
-<h2 id="文章發布"><a href="#文章發布" class="headerlink" title="文章發布"></a>文章發布</h2><p>同之前的部署指令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>有效率地猜中數字</title>
     <url>/posts/5959db4f/</url>
     <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期一作業<br>這是第一個讓我覺得”卡卡”的題目，也是一個讓我在寫出來後深刻認知到: “<strong>想不到解決問題的方法，會寫程式也沒用</strong>“的題目。</p>
@@ -571,6 +566,54 @@
       <tags>
         <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 編輯文章</title>
+    <url>/posts/978c1db/</url>
+    <content><![CDATA[<p>基本設定都完成後就可以來寫部落格了! 在正式開始前，如果能對 Hexo 的資料夾架構及 Front-matter 有點基本的認識，會對後續的操作很有幫助。</p>
+<span id="more"></span>
+
+<h2 id="Hexo-資料夾架構"><a href="#Hexo-資料夾架構" class="headerlink" title="Hexo 資料夾架構"></a>Hexo 資料夾架構</h2><p>之前在 <code>hexo init</code> 之後，根目錄資料夾會多了一些預設檔案，接下來會對其中比較重要的做簡單說明。  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── .deploy_git             # 內含已部署到 Github Repository 的所有檔案</span><br><span class="line">├── public                  # hexo g 生成靜態網站檔</span><br><span class="line">├── scaffolds               # 樣板資料夾(hexo new 會從這裡抓樣板，也可以自己新建樣板)</span><br><span class="line">|   ├── draft.md            # 草稿樣板</span><br><span class="line">|   ├── page.md             # 頁面樣板</span><br><span class="line">|   └── post.md             # 文章樣板(預設)</span><br><span class="line">├── source                  # 存放原始檔案的地方</span><br><span class="line">|   ├── _data               # 存放自定義設定原始碼的地方</span><br><span class="line">|   ├── _drafts             # 草稿資料夾</span><br><span class="line">|   └── _posts              # 文章資料夾</span><br><span class="line">├── themes                  # 各種主題資料夾</span><br><span class="line">|   └── landscape           # 預設主題</span><br><span class="line">|       └── _config.yml     # 主題樣式設定檔</span><br><span class="line">├── .gitignore              # 設定不想被加入版本控制或是上傳到 GitHub 的資料夾或檔案</span><br><span class="line">└── _config.yml             # Hexo 基本設定</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>_drafts</code> 草稿資料夾預設會被 generate 、server 和 deploy 指令略過(<code>_post</code> 以外以”_”開頭的資料夾都是)。如果想在 localhost 先預覽的話，可以在 <code>root\_config.yml</code> 裡把 <code>render_drafts: false(預設)</code> 改為 true。</li>
+</ul>
+<h2 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h2><p>Front-matter 是檔案最上方以 — 分隔的區域，用於指定個別檔案的變數。可以每篇文章個別設定，也可以預先在樣板中建立套用內容。常用的變數如下:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">title</span>        <span class="comment"># 標題(預設為檔案名稱)</span></span><br><span class="line"><span class="string">date</span>         <span class="comment"># 建立日期(預設為檔案建立日期)</span></span><br><span class="line"><span class="string">updated</span>      <span class="comment"># 更新日期(預設為檔案更新日期)</span></span><br><span class="line"><span class="string">comments</span>     <span class="comment"># 留言功能(預設 true :開啟)</span></span><br><span class="line"><span class="string">tags</span>         <span class="comment"># 標籤</span></span><br><span class="line"><span class="string">categories</span>   <span class="comment"># 分類</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>當因為重新部署或其他原因，導致在沒有修改文章情況下顯示文章更新，可以手動修改 <code>updated</code> 值，讓他跟建立日期相同即可。  </li>
+<li>多個標籤&#x2F;多個分類寫法不同，可參考<a href="https://hexo.io/zh-tw/docs/front-matter#%E5%88%86%E9%A1%9E%E5%92%8C%E6%A8%99%E7%B1%A4">官方說明</a>。</li>
+</ul>
+<h2 id="草稿編輯"><a href="#草稿編輯" class="headerlink" title="草稿編輯"></a>草稿編輯</h2><h3 id="新增草稿"><a href="#新增草稿" class="headerlink" title="新增草稿"></a>新增草稿</h3><p>草稿會建立在 <code>root\source\_drafts</code> 資料夾內。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new draft 文章名稱</span><br></pre></td></tr></table></figure>
+<h3 id="草稿轉文章"><a href="#草稿轉文章" class="headerlink" title="草稿轉文章"></a>草稿轉文章</h3><p>指令會把檔案從 <code>_drafts</code> 移至 <code>_posts</code> 資料夾內，也可以自己手動移動。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish draft 文章名稱</span><br></pre></td></tr></table></figure>
+
+<h2 id="文章編輯"><a href="#文章編輯" class="headerlink" title="文章編輯"></a>文章編輯</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>會建立在 <code>root\source\_posts</code> 資料夾內。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new 文章名稱         <span class="comment"># 預設抓取 post 樣板</span></span><br></pre></td></tr></table></figure>
+<h3 id="刪除貼文"><a href="#刪除貼文" class="headerlink" title="刪除貼文"></a>刪除貼文</h3><p>直接從 <code>root\source</code> 資料夾刪除本地檔案，清除靜態檔再重新上傳即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="頁面編輯"><a href="#頁面編輯" class="headerlink" title="頁面編輯"></a>頁面編輯</h2><p>頁面和文章不同，是指每個主題 menu 項目的頁面。如果有開啟 menu 項目卻沒有預設頁面的情況下，會被導向 404 畫面。常用的幾個頁面如下:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">about</span>         <span class="comment"># 關於我(通常會寫網站介紹或作者介紹)</span></span><br><span class="line"><span class="string">archives</span>      <span class="comment"># 歸檔(依發布日期把所有文章排序)</span></span><br><span class="line"><span class="string">categories</span>    <span class="comment"># 分類(會依每篇文章 Front-matter 裡的分類建立分類目錄-有層級)</span></span><br><span class="line"><span class="string">tags</span>          <span class="comment"># 標籤(會依每篇文章 Front-matter 裡的分類建立標籤目錄-無層級)</span></span><br><span class="line"><span class="string">link</span>          <span class="comment"># 對外連結(通常是推薦部落格或網站的連結)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="新建頁面"><a href="#新建頁面" class="headerlink" title="新建頁面"></a>新建頁面</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page 頁面名稱</span><br></pre></td></tr></table></figure>
+<ul>
+<li>頁面通常不需要開啟留言功能，所以在新建時要記得將 Front-matter 的 <code>comments</code> 值改為 false。</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2021-12-14 18:33:37</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2021-12-14 18:34:46</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>新建頁面會新建一個 <code>index</code> 檔案，放在”頁面名稱”資料夾裡。</li>
+</ul>
+<h2 id="文章發布"><a href="#文章發布" class="headerlink" title="文章發布"></a>文章發布</h2><p>同之前的部署指令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -841,49 +884,6 @@
       <tags>
         <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 基本設定</title>
-    <url>/posts/a970120e/</url>
-    <content><![CDATA[<p>基本上經過上一篇的操作，在 <code>hexo s</code> 後應該已經可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 看到預設的 Hello World 畫面了，但要讓 Blog 正式啟動前，我們還要先做一些個人化設定。  </p>
-<span id="more"></span>
-
-<blockquote>
-<p>本文撰寫時的版本如下(可用 <code>hexo version</code> 確認)，不同版本的預設配置檔可能會有差異:<br>hexo: 6.0.0<br>hexo-cli: 4.3.0  </p>
-</blockquote>
-<ul>
-<li>基本配置文件位置在 <code>root\_config.yml</code>，<font color=#FF6600>冒號後面都必需保留半型空格一格</font>。  </li>
-<li>僅列出通常會修改或我已經修改的部分，其他請參考<a href="https://hexo.io/zh-tw/docs/configuration">官方網站</a>說明。</li>
-</ul>
-<h2 id="網站設定"><a href="#網站設定" class="headerlink" title="網站設定"></a>網站設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span>           <span class="comment"># 網站標題</span></span><br><span class="line"><span class="attr">subtitle:</span>             <span class="comment"># 網站副標題</span></span><br><span class="line"><span class="attr">description:</span>          <span class="comment"># 網站描述</span></span><br><span class="line"><span class="attr">keywords:</span>             <span class="comment"># 網站關鍵字(支援多個關鍵詞，用半型逗號隔開)</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span>      <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span>          <span class="comment"># 網站語言 (台灣:zh-tw)</span></span><br><span class="line"><span class="attr">timezone:</span>             <span class="comment"># 時區(可留空以使用您電腦的時區)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="網址設定"><a href="#網址設定" class="headerlink" title="網址設定"></a>網址設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here.</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://UserName.github.io/</span>           <span class="comment"># UserName更改為自己的帳戶名</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>      <span class="comment"># 文章網址的格式(預設使用 年月日/文章名稱)/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                       <span class="comment"># permalink 中各區段的預設值</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>permalink 會依照設定值，在每次 generate 時重新產生網址，設定參數可參考<a href="https://hexo.io/zh-tw/docs/permalinks">官方文件</a>。我在命名檔名時，習慣使用日期 + 英文檔名(日期方便排序，不含空格的英文檔名較不會產生亂碼網址)，所以 permalink: 僅用 <code>:title</code> 參數 (最後的 <code>/</code> 要記得保留)。</li>
-<li><strong><font color=red>2021&#x2F;12&#x2F;27 更新: <a href="/posts/d8dab675/">使用 Hexo-abbrlink 產生永久連結</a></font></strong></li>
-</ul>
-<h2 id="目錄設定"><a href="#目錄設定" class="headerlink" title="目錄設定"></a>目錄設定</h2><p>原則上都保留不變，除非有自訂路徑的需求。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span>            <span class="comment"># 原始檔案資料夾，存放編輯的所有內容</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span>            <span class="comment"># 存放靜態檔案的資料夾(hexo g 後產生)</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span>                 <span class="comment"># 標籤資料夾</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span>         <span class="comment"># 彙整資料夾(deploy後產生)</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span>      <span class="comment"># 分類資料夾</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>tags</code> 和 <code>categories</code> 資料夾預設是不存在的，有需要要另外新增資料夾。</li>
-</ul>
-<h2 id="擴充套件設定"><a href="#擴充套件設定" class="headerlink" title="擴充套件設定"></a>擴充套件設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/       # 提供各種套件，可以依自己需求安裝</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/         # 提供各種主題，可以依自己需求安裝</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span>                           <span class="comment"># 填寫主題名稱</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>本部落格選用 Next 主題(要把 landscape 改為 Next)，後續會另開一篇變更主題說明文。</li>
-</ul>
-<h2 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Hexo 可同時部署到不同地方，相關設定參考<a href="https://hexo.io/zh-tw/docs/one-command-deployment">官方部署說明</a>。  </li>
-<li>部署到 Github 方式已在用前篇 Hexo + Github Pages 建立部落格 中說明，這邊不另外贅述。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1393,13 +1393,13 @@ count();
 ]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
+    <title>tags</title>
+    <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
+    <title>categories</title>
+    <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
