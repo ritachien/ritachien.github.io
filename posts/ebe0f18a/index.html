@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+<link rel="preconnect" href="https://use.typekit.net/" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/../Blog-image/config/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/../Blog-image/config/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/../Blog-image/config/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="MQEI18ZGBGydbCHVgbIo8AfV--tcXWLhmp2U4pqHCTg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://use.typekit.net//css?family=Lato:300,300italic,400,400italic,700,700italic%7Csource-han-sans-hong-kong:300,300italic,400,400italic,700,700italic%7Csans-serif;:300,300italic,400,400italic,700,700italic%7Csource-code-pro:300,300italic,400,400italic,700,700italic%7Cmonospace;:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="基本設定都做好了，文章也成功發佈了，接下來該找個美美的主題幫部落格換個新衣服。我最後找了看起來簡約大方的 NexT 主題，持續都有在作版本更新，開源資源也很多，看到各種大神把基本款改成高級訂製款，除了框架根本看不出原樣，覺得超厲害!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo NexT 主題變更 &amp; 設定">
+<meta property="og:url" content="https://ritachien.github.io/posts/ebe0f18a/">
+<meta property="og:site_name" content="Rita 的學習筆記">
+<meta property="og:description" content="基本設定都做好了，文章也成功發佈了，接下來該找個美美的主題幫部落格換個新衣服。我最後找了看起來簡約大方的 NexT 主題，持續都有在作版本更新，開源資源也很多，看到各種大神把基本款改成高級訂製款，除了框架根本看不出原樣，覺得超厲害!">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2021-12-26_001.webp">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2021-12-26_002.webp">
+<meta property="article:published_time" content="2021-12-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-25T16:00:00.000Z">
+<meta property="article:author" content="Rita Chien">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="NexT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ritachien.github.io/Blog-image/posts/2021-12-26_001.webp">
+
+
+<link rel="canonical" href="https://ritachien.github.io/posts/ebe0f18a/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/ebe0f18a/","path":"posts/ebe0f18a/","title":"Hexo NexT 主題變更 & 設定"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hexo NexT 主題變更 & 設定 | Rita 的學習筆記</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-215689852-1","only_pageview":true}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+<!-- 加入 Sitemap 檔案位置到 <head> 中 -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://ritachien.github.io/sitemap.xml">
+</head>
+
+<!-- 加入 Adobe Fonts -->
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'pjb5oue',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Rita 的學習筆記</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">一步一腳印，留下成長的足跡</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>網站地圖</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NexT-%E4%B8%BB%E9%A1%8C%E9%81%B8%E6%93%87"><span class="nav-number">1.</span> <span class="nav-text">NexT 主題選擇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A1%8C%E5%AE%89%E8%A3%9D"><span class="nav-number">2.</span> <span class="nav-text">主題安裝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-%E5%AE%89%E8%A3%9D-%E6%8E%A8%E8%96%A6"><span class="nav-number">2.1.</span> <span class="nav-text">npm 安裝(推薦)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-%E5%AE%89%E8%A3%9D"><span class="nav-number">2.2.</span> <span class="nav-text">git 安裝</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A1%8C%E5%A5%97%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">主題套用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%8B%E4%BA%BA%E5%8C%96%E8%AA%BF%E6%95%B4"><span class="nav-number">4.</span> <span class="nav-text">個人化調整</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#config-next-yml-%E8%A8%AD%E5%AE%9A"><span class="nav-number">4.1.</span> <span class="nav-text">_config.next.yml 設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A3%E5%BC%8F%E9%81%B8%E6%93%87"><span class="nav-number">4.2.</span> <span class="nav-text">樣式選擇</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B6%B2%E7%AB%99%E5%9C%96%E7%A4%BA%E8%AE%8A%E6%9B%B4"><span class="nav-number">4.3.</span> <span class="nav-text">網站圖示變更</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%AC%8A%E8%81%B2%E6%98%8E"><span class="nav-number">4.4.</span> <span class="nav-text">版權聲明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#menu-%E9%81%B8%E5%96%AE%E8%A8%AD%E5%AE%9A"><span class="nav-number">4.5.</span> <span class="nav-text">menu 選單設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%B4%E6%AC%84%E8%A8%AD%E5%AE%9A"><span class="nav-number">4.6.</span> <span class="nav-text">側欄設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A0%AD%E5%83%8F%E8%A8%AD%E5%AE%9A"><span class="nav-number">4.7.</span> <span class="nav-text">頭像設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BE%E7%BE%A4%E8%A8%AD%E5%AE%9A"><span class="nav-number">4.8.</span> <span class="nav-text">社群設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%B4%E6%AC%84%E7%9B%AE%E9%8C%84%E8%A8%AD%E5%AE%9A-%E9%96%B1%E8%AE%80%E6%96%87%E7%AB%A0%E6%99%82"><span class="nav-number">4.9.</span> <span class="nav-text">側欄目錄設定(閱讀文章時)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A0%81%E8%85%B3%E8%A8%AD%E5%AE%9A"><span class="nav-number">4.10.</span> <span class="nav-text">頁腳設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%91%98%E8%A6%81%E5%8F%8A-Read-More-%E5%8A%9F%E8%83%BD"><span class="nav-number">4.11.</span> <span class="nav-text">摘要及 Read More 功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E7%9A%84-Front-matter-%E5%9C%A8%E9%A6%96%E9%A0%81%E7%9A%84%E9%A1%AF%E7%A4%BA%E8%A8%AD%E5%AE%9A"><span class="nav-number">4.12.</span> <span class="nav-text">文章的 Front-matter 在首頁的顯示設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E5%AD%97%E6%95%B8%E8%88%87%E6%89%80%E9%9C%80%E9%96%B1%E8%AE%80%E6%99%82%E9%96%93"><span class="nav-number">4.13.</span> <span class="nav-text">添加文章字數與所需閱讀時間</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E5%BA%95%E9%83%A8%E6%A8%99%E7%B1%A4%E5%9C%96%E7%A4%BA%E8%A8%AD%E5%AE%9A"><span class="nav-number">4.14.</span> <span class="nav-text">文章底部標籤圖示設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E5%BA%95%E9%83%A8%E4%B8%8A%E4%B8%80%E7%AF%87-x2F-%E4%B8%8B%E4%B8%80%E7%AF%87%E9%80%A3%E7%B5%90"><span class="nav-number">4.15.</span> <span class="nav-text">文章底部上一篇&#x2F;下一篇連結</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E5%88%B0%E9%A0%82%E9%83%A8%E5%8A%9F%E8%83%BD"><span class="nav-number">4.16.</span> <span class="nav-text">回到頂部功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%96%B1%E8%AE%80%E9%80%B2%E5%BA%A6%E6%A2%9D"><span class="nav-number">4.17.</span> <span class="nav-text">閱讀進度條</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-%E5%8F%B3%E4%B8%8A%E8%A7%92%E6%A8%99"><span class="nav-number">4.18.</span> <span class="nav-text">Github 右上角標</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%99%E5%85%A7%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD"><span class="nav-number">4.19.</span> <span class="nav-text">站內搜索功能</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Rita Chien"
+      src="/../Blog-image/config/avatar.webp">
+  <p class="site-author-name" itemprop="name">Rita Chien</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ritachien" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ritachien" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ritachien929@gmail.com" title="E-Mail → mailto:ritachien929@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="回到頂端">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+  <a href="https://github.com/ritachien" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener external nofollow noreferrer" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/ebe0f18a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
+      <meta itemprop="name" content="Rita Chien">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rita 的學習筆記">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo NexT 主題變更 & 設定
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2021-12-26 00:00:00" itemprop="dateCreated datePublished" datetime="2021-12-26T00:00:00+08:00">2021-12-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/posts/ebe0f18a/" class="post-meta-item leancloud_visitors" data-flag-title="Hexo NexT 主題變更 & 設定" title="閱讀次數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>5.1k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>5 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>基本設定都做好了，文章也成功發佈了，接下來該找個美美的主題幫部落格換個新衣服。我最後找了看起來簡約大方的 NexT 主題，持續都有在作版本更新，開源資源也很多，看到各種大神把基本款改成高級訂製款，除了框架根本看不出原樣，覺得超厲害!  </p>
+<span id="more"></span>
+<p>這篇只是把當初的建置過程記錄下來，萬一忘記或發生什麼問題，至少還知道原本是怎麼作出來的。如果有從頭開始的人，參考這篇照著做應該可以略過不少我踩過的坑。  </p>
+<p>項目有點多(原則上是照著 NexT 的 <code>_config.yml</code> 檔順序寫的)，如果只是想找特定功能設定的，可以直接從左側目錄欄或 <code>Ctrl+F</code> 跳到需要的位置就好。如果在這篇裡沒有找到，那就要等我陸續整理出來再更新新文章了(前提是我有用到的功能才有辦法!)  </p>
+<h2 id="NexT-主題選擇"><a href="#NexT-主題選擇" class="headerlink" title="NexT 主題選擇"></a>NexT 主題選擇</h2><p>現在網路上可以找到兩種版本的 NexT 主題，分別是 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/next-theme/hexo-theme-next">next-theme</a> 和 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/theme-next/hexo-theme-next">theme-next</a> 提供的。爬了討論串後發現，因為 theme-next 團隊的 owner 始终拒绝向其它團隊成員提供足夠的權限，且 owner 本人自 2019 年 10 月起已長期不在線，導致其他團隊成員無法管理倉庫，所以其中一個主要貢獻者只好搬家，並用 next-theme 繼續提供更新版本。</p>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://theme-next.js.org/">next-theme 官方網站</a></li>
+</ul>
+<blockquote>
+<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
+</blockquote>
+<h2 id="主題安裝"><a href="#主題安裝" class="headerlink" title="主題安裝"></a>主題安裝</h2><h3 id="npm-安裝-推薦"><a href="#npm-安裝-推薦" class="headerlink" title="npm 安裝(推薦)"></a>npm 安裝(推薦)</h3><p><strong>主題資料夾位置: <code>root\node_modules\hexo-theme-next</code></strong>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line">npm install hexo-theme-next    <span class="comment"># 默認最新版本</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="git-安裝"><a href="#git-安裝" class="headerlink" title="git 安裝"></a>git 安裝</h3><p><strong>主題資料夾位置: <code>root\themes\next</code></strong>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 進入根目錄</span></span><br><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line"></span><br><span class="line"><span class="comment"># 從網址複製檔案到 themes 裡的 next 資料夾裡(沒有的話會自動新建)</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
+<p><img src="/../../Blog-image/posts/2021-12-26_001.webp" alt="複製倉庫網址20211226-001">  </p>
+<h2 id="主題套用"><a href="#主題套用" class="headerlink" title="主題套用"></a>主題套用</h2><p>修改 <code>root\_config.yml</code> 裡的主題設定。  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span>     <span class="comment"># 預設值為 landscape</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="個人化調整"><a href="#個人化調整" class="headerlink" title="個人化調整"></a>個人化調整</h2><h3 id="config-next-yml-設定"><a href="#config-next-yml-設定" class="headerlink" title="_config.next.yml 設定"></a>_config.next.yml 設定</h3><p>根據 next-theme 官方說明(<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/next-theme/hexo-theme-next/issues/4">【必讀】更新說明及常見問題</a>)建議:<br>為了避免更新出現衝突，使用 Hexo 官方支持的 <code>root\_config.next.yml</code> 方式做主題個人化設定。</p>
+<ol>
+<li>確保使用 Hexo 5.0 以上的版本。</li>
+<li>複製 <code>主題資料夾\_config.yml</code> 檔案重新命名並移到根目錄 <code>root\_config.next.yml</code> 。<br/></li>
+</ol>
+<h3 id="樣式選擇"><a href="#樣式選擇" class="headerlink" title="樣式選擇"></a>樣式選擇</h3><p>四選一，把想要的樣式註解取消，可以存檔後用 <code>hexo s</code> 看看差別再決定。我的 Blog 是用 Gemini 。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="網站圖示變更"><a href="#網站圖示變更" class="headerlink" title="網站圖示變更"></a>網站圖示變更</h3><p>圖片路徑: <code>主題資料夾\source\images</code> ，變更檔名即可。  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16-next.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32-next.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/logo.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /manifest.json</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="版權聲明"><a href="#版權聲明" class="headerlink" title="版權聲明"></a>版權聲明</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Creative Commons 4.0 International License.</span></span><br><span class="line"><span class="comment"># See: https://creativecommons.org/about/cclicenses/</span></span><br><span class="line"><span class="attr">creative_commons:</span></span><br><span class="line">  <span class="comment"># Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero</span></span><br><span class="line">  <span class="attr">license:</span> <span class="string">by-nc-sa</span></span><br><span class="line">  <span class="comment"># Available values: big | small</span></span><br><span class="line">  <span class="attr">size:</span> <span class="string">small</span>          <span class="comment"># 圖示大小</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">false</span>       <span class="comment"># 在 sidebar 顯示</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">true</span>           <span class="comment"># 在文章最下方顯示</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="menu-選單設定"><a href="#menu-選單設定" class="headerlink" title="menu 選單設定"></a>menu 選單設定</h3><p>把想要的樣式註解取消。<br>NexT 有支援 font awesome ，所以可以找喜歡的 icon 直接做替換。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">menu</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span>                        <span class="comment"># 首頁</span></span><br><span class="line">  <span class="comment">#about: /about/ || fa fa-user                # 關於</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span>                   <span class="comment"># 標籤</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span>         <span class="comment"># 分類</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span>        <span class="comment"># 歸檔</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar      # 時間表</span></span><br><span class="line">  <span class="attr">sitemap:</span> <span class="string">/sitemap.xml</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-sitemap</span>       <span class="comment"># 網站地圖(SEO)</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat        # 公益404</span></span><br><span class="line"></span><br><span class="line"><span class="attr">menu_settings:</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">true</span>             <span class="comment"># 顯示 menu 圖示</span></span><br><span class="line">  <span class="attr">badges:</span> <span class="literal">false</span>           <span class="comment"># 顯示項目內數量</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="側欄設定"><a href="#側欄設定" class="headerlink" title="側欄設定"></a>側欄設定</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sidebar:</span></span><br><span class="line">  <span class="comment"># Sidebar Position.</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">left</span>       <span class="comment"># 設定左邊或右邊顯示</span></span><br><span class="line">  <span class="comment">#position: right</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="頭像設定"><a href="#頭像設定" class="headerlink" title="頭像設定"></a>頭像設定</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">avatar:</span>                             <span class="comment"># sidebar 內頭像設定</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/avatar.jpg</span>           <span class="comment"># 預設路徑: `主題資料夾\source\images` (可改貼圖片連結)</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span>                     <span class="comment"># true (圓形)/ false(方形)</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">false</span>                    <span class="comment"># 滑鼠點擊旋轉動畫</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="社群設定"><a href="#社群設定" class="headerlink" title="社群設定"></a>社群設定</h3><ol>
+<li>把想要顯示的項目註解取消。  </li>
+<li>NexT 有支援 font awesome ，所以可以找喜歡的 icon 直接做替換。  </li>
+<li>連結記得改成自己的連結網址。  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/yourname</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-github</span></span><br><span class="line">  <span class="attr">E-Mail:</span> <span class="string">mailto:yourname@gmail.com</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-envelope</span></span><br><span class="line">  <span class="comment">#Weibo: https://weibo.com/yourname || fab fa-weibo</span></span><br><span class="line">  <span class="comment"># 以下省略......</span></span><br><span class="line"></span><br><span class="line"><span class="attr">social_icons:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>              <span class="comment"># 社群連結圖示</span></span><br><span class="line">  <span class="attr">icons_only:</span> <span class="literal">true</span>          <span class="comment"># 只顯示圖示不顯示名稱</span></span><br><span class="line">  <span class="attr">transition:</span> <span class="literal">false</span>         <span class="comment"># 滑動到社群鏈結時的有轉場效果</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="側欄目錄設定-閱讀文章時"><a href="#側欄目錄設定-閱讀文章時" class="headerlink" title="側欄目錄設定(閱讀文章時)"></a>側欄目錄設定(閱讀文章時)</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">toc:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>         <span class="comment"># 在側欄自動生成並顯示文章目錄(依標題層級)</span></span><br><span class="line">  <span class="attr">number:</span> <span class="literal">true</span>         <span class="comment"># 幫文章目錄自動編號</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">false</span>          <span class="comment"># 標題超出欄寬整行換行</span></span><br><span class="line">  <span class="attr">expand_all:</span> <span class="literal">True</span>     <span class="comment"># 展開所有目錄層級 (false 僅展開當前位置目錄)</span></span><br><span class="line">  <span class="attr">max_depth:</span> <span class="number">6</span>         <span class="comment"># 最大目錄層級數</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="頁腳設定"><a href="#頁腳設定" class="headerlink" title="頁腳設定"></a>頁腳設定</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">footer:</span></span><br><span class="line">  <span class="attr">since:</span> <span class="number">2021</span>              <span class="comment"># 指定網站開始年，若沒指定則顯示當下年度</span></span><br><span class="line">  <span class="attr">icon:</span>                    <span class="comment"># 年度和版權資訊中間的 icon</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">fa</span> <span class="string">fa-heart</span>      <span class="comment"># Font Awesome 的 icon 代號</span></span><br><span class="line">    <span class="attr">animated:</span> <span class="literal">false</span>        <span class="comment"># 開啟圖示動畫</span></span><br><span class="line">    <span class="attr">color:</span> <span class="string">&quot;#ff0000&quot;</span>       <span class="comment"># 用16進位色碼改變 icon 顏色</span></span><br><span class="line">  <span class="attr">copyright:</span>               <span class="comment"># 若沒指定則套用 Hexo `_config.yml` 的作者名</span></span><br><span class="line">  <span class="attr">powered:</span> <span class="literal">False</span>           <span class="comment"># 顯示 Powered by Hexo &amp; NexT</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="摘要及-Read-More-功能"><a href="#摘要及-Read-More-功能" class="headerlink" title="摘要及 Read More 功能"></a>摘要及 Read More 功能</h3><p>首頁預設顯示文章全文，如果希望每篇文章像瀏覽卡片一樣僅提供部分摘要，點擊文章標題再打開全文，官方提供兩種方式( <code>&lt;!-- more --&gt;</code> 或 <code>excerpt_description</code>)，這裡僅說明官方推薦的方式:  </p>
+<ul>
+<li>在文章中使用 <code>&lt;!-- more --&gt;</code> 手動進行截斷，首頁預覽只會顯示到 <code>&lt;!-- more --&gt;</code> 前的文字。<br><img src="/../../Blog-image/posts/2021-12-26_002.webp" alt="read more20211226-002">  </li>
+<li>完成以上設定後，首頁只看得到摘要，點擊文章標題進入內文。如果希望新增”閱讀全文”按鈕，則修改 <code>root\_config.next.yml</code> 設定值  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">read_more_btn:</span> <span class="literal">true</span>             <span class="comment"># 開啟&quot;閱讀全文&quot;按鈕</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>點擊”文章標題”和點擊”閱讀全文”的差異:<br>文章標題: 從頁首標題開始顯示文章頁面。<br>點擊閱讀全文: 跳至 <code>&lt;!-- more --&gt;</code> 後段落顯示文章頁面。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="文章的-Front-matter-在首頁的顯示設定"><a href="#文章的-Front-matter-在首頁的顯示設定" class="headerlink" title="文章的 Front-matter 在首頁的顯示設定"></a>文章的 Front-matter 在首頁的顯示設定</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_meta:</span></span><br><span class="line">  <span class="attr">item_text:</span> <span class="literal">false</span>        <span class="comment"># 顯示項目文字</span></span><br><span class="line">  <span class="attr">created_at:</span> <span class="literal">true</span>        <span class="comment"># 顯示發佈日期</span></span><br><span class="line">  <span class="attr">updated_at:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span>          <span class="comment"># 開啟顯示更新日期功能</span></span><br><span class="line">    <span class="attr">another_day:</span> <span class="literal">true</span>     <span class="comment"># 僅在發佈日和更新日不同時顯示更新日期</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="literal">true</span>        <span class="comment"># 顯示文章分類</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加文章字數與所需閱讀時間"><a href="#添加文章字數與所需閱讀時間" class="headerlink" title="添加文章字數與所需閱讀時間"></a>添加文章字數與所需閱讀時間</h3><p>試過 <code>hexo-symbols-count-time</code> 和 <code>hexo-wordcount</code> 兩樣插件，但是有幾篇文章不明原因沒辦法計算字數。原本打算放棄這個功能了，幸好在 next-theme 的 Repository 裡找到他們提供的插件 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/next-theme/hexo-word-counter">hexo-word-counter</a> ，測試過後確定沒有問題。  </p>
+<p>安裝套件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-word-counter</span><br><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<p>修改 <code>root\_config.yml</code> 設定值</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span>                 <span class="comment"># 文章字數統計顯示</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span>                    <span class="comment"># 文章閱讀時間顯示</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span>           <span class="comment"># 網頁底部網站總字數統計顯示</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span>              <span class="comment"># 網頁底部網站總閱讀時間顯示</span></span><br><span class="line">  <span class="attr">exclude_codeblock:</span> <span class="literal">false</span>      <span class="comment"># 字數統計是否排除程式碼</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">4</span>                        <span class="comment"># 平均文字長度，中文為 2, 英文為 5, 預設為 4</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">275</span>                      <span class="comment"># 一分鐘閱讀字數</span></span><br><span class="line">  <span class="attr">suffix:</span> <span class="string">&quot;mins.&quot;</span></span><br></pre></td></tr></table></figure>
+<p>修改 <code>root\_config.next.yml</code> 設定值</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">false</span>         <span class="comment"># true 在發布日期下一行/ false 和發布日期同一行</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">false</span>        <span class="comment"># 網頁底部顯示項目文字</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文章底部標籤圖示設定"><a href="#文章底部標籤圖示設定" class="headerlink" title="文章底部標籤圖示設定"></a>文章底部標籤圖示設定</h3><p>預設文章底部顯示的標籤前綴會用 <code>#</code> ，若要改用圖示 <i class="fa fa-tags"></i> 取代:  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tag_icon:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文章底部上一篇-x2F-下一篇連結"><a href="#文章底部上一篇-x2F-下一篇連結" class="headerlink" title="文章底部上一篇&#x2F;下一篇連結"></a>文章底部上一篇&#x2F;下一篇連結</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Available values: left(上一篇在左邊) | right(上一篇在右邊) | false(關閉功能)</span></span><br><span class="line"><span class="attr">post_navigation:</span> <span class="string">left</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="回到頂部功能"><a href="#回到頂部功能" class="headerlink" title="回到頂部功能"></a>回到頂部功能</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">back2top:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>            <span class="comment"># 功能開啟</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">true</span>           <span class="comment"># true 在側欄底部顯示 / false 在頁面右下角顯示</span></span><br><span class="line">  <span class="attr">scrollpercent:</span> <span class="literal">true</span>     <span class="comment"># 顯示閱讀進度百分比</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="閱讀進度條"><a href="#閱讀進度條" class="headerlink" title="閱讀進度條"></a>閱讀進度條</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">reading_progress:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span>              <span class="comment"># 開啟功能</span></span><br><span class="line">  <span class="attr">start_at:</span> <span class="string">left</span>             <span class="comment"># left 由左往右 / right 由右往左</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">top</span>              <span class="comment"># 進度條在瀏覽器頁面的位置: top / bottom</span></span><br><span class="line">  <span class="attr">reversed:</span> <span class="literal">false</span>            <span class="comment"># true 顯示剩餘進度 / false 顯示已閱讀進度</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&quot;#37c6c0&quot;</span>           <span class="comment"># 進度條顏色</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">3px</span>                <span class="comment"># 進度條粗細</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Github-右上角標"><a href="#Github-右上角標" class="headerlink" title="Github 右上角標"></a>Github 右上角標</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">github_banner:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>                                <span class="comment"># 開啟功能</span></span><br><span class="line">  <span class="attr">permalink:</span> <span class="string">https://github.com/UserName</span>      <span class="comment"># Github 網址</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">Follow</span> <span class="string">me</span> <span class="string">on</span> <span class="string">GitHub</span>                  <span class="comment"># 滑鼠顯示文字</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="站內搜索功能"><a href="#站內搜索功能" class="headerlink" title="站內搜索功能"></a>站內搜索功能</h3><p>安裝套件  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+<p>修改 <code>root\_config.next.yml</code> 設定值  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p>新增 <code>root\_config.yml</code> 設定值  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># https://github.com/next-theme/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">all</span>         <span class="comment"># 搜尋範圍。可選 post (Default) / page / all</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span>      <span class="comment"># true 全文搜索 / false 在標題及 meta info 裡搜索</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br></pre></td></tr></table></figure>
+<br/>
+
+
+<p>NexT 主題的基本設定就到這裡啦~ 可以自定義設定的地方太多了，這一篇筆記寫了三天才結束!! 還有一些功能還沒寫到，像是評論功能、閱讀字數&#x2F;時間、閱讀人數…等，預計要另外再開幾篇才能寫完。<br>雖然初期建置摸索真的花了很多時間，但是看到功能一個一個增加，實在是很有成就感啊!!</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><!-- 在文章底部添加感謝閱讀 -->
+<div>
+  
+    <div style="text-align:center; color:#ccc; font-size:14px; letter-spacing:5px">
+      ------------  本文結束，感謝您的閱讀&nbsp;<i class="fa fa-paw"></i>&nbsp;如有錯漏，歡迎留言討論  -------------
+    </div>
+  
+</div>
+
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Rita Chien
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://ritachien.github.io/posts/ebe0f18a/" title="Hexo NexT 主題變更 &amp; 設定">https://ritachien.github.io/posts/ebe0f18a/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+              <a href="/tags/NexT/" rel="tag"><i class="fa fa-tag"></i> NexT</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/5959db4f/" rel="prev" title="有效率地猜中數字">
+                  <i class="fa fa-chevron-left"></i> 有效率地猜中數字
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/d8dab675/" rel="next" title="使用 Hexo-abbrlink 產生永久連結">
+                  使用 Hexo-abbrlink 產生永久連結 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a href='https://ritachien.github.io/'>Rita Chien</a></span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">46k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">42 分鐘</span>
+  </span>
+</div><!-- 在網頁底部添加網站運行時間 -->
+<span id="blogTime">載入天數時分秒...</span>
+<script>
+    let now = new Date();
+    function createtime() {
+        let grt = new Date("12/13/2021 00:00:00");  // 此處修改你的建站時間或者網站上線時間
+        now.setTime(now.getTime() + 250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if(String(hnum).length === 1 ){hnum = "0" + hnum;}
+        minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if(String(mnum).length === 1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if(String(snum).length === 1 ){snum = "0" + snum;}
+        document.getElementById("blogTime").innerHTML = "Rita 的學習筆記 已出生 "+ dnum +" 天 "+ hnum + " 小時 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"u75nsi7q8y3V4iOf8nkgmKy5-MdYXbMMI","app_key":"4s4g1aKFMyJagEjr79YudraA","server_url":null,"security":false}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"ritachien/ritachien.github.io","issue_term":"url","theme":"github-light","label":"gh-pages comments","crossorigin":"anonymous"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

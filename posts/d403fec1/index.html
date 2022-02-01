@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+<link rel="preconnect" href="https://use.typekit.net/" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/../Blog-image/config/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/../Blog-image/config/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/../Blog-image/config/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="MQEI18ZGBGydbCHVgbIo8AfV--tcXWLhmp2U4pqHCTg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://use.typekit.net//css?family=Lato:300,300italic,400,400italic,700,700italic%7Csource-han-sans-hong-kong:300,300italic,400,400italic,700,700italic%7Csans-serif;:300,300italic,400,400italic,700,700italic%7Csource-code-pro:300,300italic,400,400italic,700,700italic%7Cmonospace;:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="在使用運算子 (Operators) 時，隨著練習題逐漸提高的複雜度，開始發現一些與自己認知不同的地方。這些不明顯的小錯誤，常常是導致程式跑不出來或出現預期外結果的原因。所以在之前筆記的基礎上，把犯過的錯誤一起整理進來，降低下次再犯的可能性。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 運算子">
+<meta property="og:url" content="https://ritachien.github.io/posts/d403fec1/">
+<meta property="og:site_name" content="Rita 的學習筆記">
+<meta property="og:description" content="在使用運算子 (Operators) 時，隨著練習題逐漸提高的複雜度，開始發現一些與自己認知不同的地方。這些不明顯的小錯誤，常常是導致程式跑不出來或出現預期外結果的原因。所以在之前筆記的基礎上，把犯過的錯誤一起整理進來，降低下次再犯的可能性。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-01-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-11T16:00:00.000Z">
+<meta property="article:author" content="Rita Chien">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://ritachien.github.io/posts/d403fec1/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/d403fec1/","path":"posts/d403fec1/","title":"JavaScript 運算子"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JavaScript 運算子 | Rita 的學習筆記</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-215689852-1","only_pageview":true}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+<!-- 加入 Sitemap 檔案位置到 <head> 中 -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://ritachien.github.io/sitemap.xml">
+</head>
+
+<!-- 加入 Adobe Fonts -->
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'pjb5oue',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Rita 的學習筆記</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">一步一腳印，留下成長的足跡</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>網站地圖</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E8%A1%93%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">1.</span> <span class="nav-text">算術運算子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9"><span class="nav-number">1.1.</span> <span class="nav-text">基本介紹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%AB%E5%9C%A8%E5%89%8D%E9%9D%A2%E7%9A%84-%E5%92%8C"><span class="nav-number">1.2.</span> <span class="nav-text">寫在前面的 ++ 和 --</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8B%E9%8C%AF%E8%AA%A4-%E5%9E%8B%E5%88%A5%E9%8C%AF%E8%AA%A4"><span class="nav-number">1.3.</span> <span class="nav-text">常見錯誤: 型別錯誤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%A6%E5%80%BC%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">2.</span> <span class="nav-text">賦值運算子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9-1"><span class="nav-number">2.1.</span> <span class="nav-text">基本介紹</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E8%BC%83%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">3.</span> <span class="nav-text">比較運算子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9-2"><span class="nav-number">3.1.</span> <span class="nav-text">基本介紹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8B%E9%8C%AF%E8%AA%A41-%E5%9E%8B%E5%88%A5%E9%8C%AF%E8%AA%A4"><span class="nav-number">3.2.</span> <span class="nav-text">常見錯誤1: 型別錯誤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8B%E9%8C%AF%E8%AA%A42-%E7%94%A8%E9%8C%AF%E7%AD%89%E6%96%BC"><span class="nav-number">3.3.</span> <span class="nav-text">常見錯誤2: 用錯等於</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8B%E9%8C%AF%E8%AA%A43-%E6%AF%94%E8%BC%83%E8%AE%8A%E6%95%B8%E5%8D%80%E9%96%93"><span class="nav-number">3.4.</span> <span class="nav-text">常見錯誤3: 比較變數區間</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">4.</span> <span class="nav-text">邏輯運算子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9-3"><span class="nav-number">4.1.</span> <span class="nav-text">基本介紹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8B%E9%8C%AF%E8%AA%A4-%E9%81%8B%E7%AE%97%E5%AD%90%E9%A0%86%E5%BA%8F"><span class="nav-number">4.2.</span> <span class="nav-text">常見錯誤: 運算子順序</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Rita Chien"
+      src="/../Blog-image/config/avatar.webp">
+  <p class="site-author-name" itemprop="name">Rita Chien</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ritachien" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ritachien" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ritachien929@gmail.com" title="E-Mail → mailto:ritachien929@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="回到頂端">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+  <a href="https://github.com/ritachien" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener external nofollow noreferrer" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/d403fec1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
+      <meta itemprop="name" content="Rita Chien">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rita 的學習筆記">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript 運算子
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-01-12 00:00:00" itemprop="dateCreated datePublished" datetime="2022-01-12T00:00:00+08:00">2022-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2021-01-12 00:00:00" itemprop="dateModified" datetime="2021-01-12T00:00:00+08:00">2021-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript-%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">JavaScript 筆記</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/posts/d403fec1/" class="post-meta-item leancloud_visitors" data-flag-title="JavaScript 運算子" title="閱讀次數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>3.1k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>在使用運算子 (Operators) 時，隨著練習題逐漸提高的複雜度，開始發現一些與自己認知不同的地方。這些不明顯的小錯誤，常常是導致程式跑不出來或出現預期外結果的原因。所以在之前筆記的基礎上，把犯過的錯誤一起整理進來，降低下次再犯的可能性。</p>
+<span id="more"></span>
+<blockquote>
+<p>筆記內容為學習過程中的紀錄，內容可能未臻完善，內文可能也會隨著學習過程作增減或修改。<br>如有錯漏，歡迎留言，謝謝!  </p>
+</blockquote>
+<h2 id="算術運算子"><a href="#算術運算子" class="headerlink" title="算術運算子"></a>算術運算子</h2><h3 id="基本介紹"><a href="#基本介紹" class="headerlink" title="基本介紹"></a>基本介紹</h3><p>算術運算子（arithmetic operators）: 四則運算會用到的運算子，負責將變數進行加、減、乘、除。  </p>
+<table>
+<thead>
+<tr>
+<th align="center">運算子</th>
+<th align="center">功能</th>
+<th>範例</th>
+<th align="center">結果</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">加</td>
+<td>1 + 2</td>
+<td align="center">3</td>
+<td>也可以用來連接字串</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">減</td>
+<td>4 - 3</td>
+<td align="center">1</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">乘</td>
+<td>2 * 4</td>
+<td align="center">8</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">&#x2F;</td>
+<td align="center">除</td>
+<td>9 &#x2F; 3</td>
+<td align="center">3</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">**</td>
+<td align="center">指數</td>
+<td>3 ** 2<br>9 ** (1&#x2F;2)</td>
+<td align="center">9<br>3</td>
+<td>計算 a 的 b 次方</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">取餘數</td>
+<td>7 &#x2F; 2</td>
+<td align="center">1</td>
+<td>7 除以 2 結果：商等於 3，餘數等於 1</td>
+</tr>
+<tr>
+<td align="center">++</td>
+<td align="center">將值增加 1</td>
+<td>x &#x3D; 2<br>x++</td>
+<td align="center">3</td>
+<td>同 x &#x3D; x + 1，將 x 原本的值 2 再加 1。</td>
+</tr>
+<tr>
+<td align="center">–</td>
+<td align="center">將值減少 1</td>
+<td>x &#x3D; 5<br>x–</td>
+<td align="center">4</td>
+<td>同 x &#x3D; x - 1，將 x 原本的值 5 再減 1。</td>
+</tr>
+</tbody></table>
+<h3 id="寫在前面的-和"><a href="#寫在前面的-和" class="headerlink" title="寫在前面的 ++ 和 --"></a>寫在前面的 <code>++</code> 和 <code>--</code></h3><p><code>++</code> 和 <code>--</code> 寫在變數的前面或後面作用都是不變的，即「將變數的值再加 1 或再減 1」。但是如果放進 console.log() 裡，執行的順序會不一樣。  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">2</span>            <span class="comment">// 宣告並指派 2 的值給 x</span></span><br><span class="line"><span class="built_in">console</span>.log(x)       <span class="comment">// 會印出 2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(x++)     <span class="comment">// 會印出 2 (先印出 x ，然後才加 1)</span></span><br><span class="line"><span class="built_in">console</span>.log(x)       <span class="comment">// 會印出 3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(++x)     <span class="comment">// 會印出 4 (先加 1 ，然後才印出 x)</span></span><br></pre></td></tr></table></figure>
+<h3 id="常見錯誤-型別錯誤"><a href="#常見錯誤-型別錯誤" class="headerlink" title="常見錯誤: 型別錯誤"></a>常見錯誤: 型別錯誤</h3><p>JavaScript 是一個弱型別的語言，意思是說在 JavaScript 裡，型別特別容易自動轉換。進行運算時，如果變數型別不同，有時候 JavaScript 不會報錯，而是直接自動轉換型別，這也很容易造成「出現預期外結果卻很難找出原因」。  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">&#x27;2&#x27;</span>           <span class="comment">// 型別: string</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">3</span>             <span class="comment">// 型別: number</span></span><br><span class="line"><span class="built_in">console</span>.log(a + b)    <span class="comment">// 會印出 23 (自動將 b 型別轉換為 string )</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="賦值運算子"><a href="#賦值運算子" class="headerlink" title="賦值運算子"></a>賦值運算子</h2><h3 id="基本介紹-1"><a href="#基本介紹-1" class="headerlink" title="基本介紹"></a>基本介紹</h3><p>賦值運算子（assignment operators）中最常使用的賦值運算子就是 <code>=</code> ，除了 <code>=</code> 外還有搭配算數運算的其他賦值運算子。  </p>
+<table>
+<thead>
+<tr>
+<th align="center">運算子</th>
+<th>範例</th>
+<th align="center">結果</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&#x3D;</td>
+<td>x &#x3D; 5<br>y &#x3D; 2</td>
+<td align="center">x &#x3D; 5<br>y &#x3D; 2</td>
+<td>將值 5 賦值給 x<br>將值 2 賦值給 y</td>
+</tr>
+<tr>
+<td align="center">+&#x3D;</td>
+<td>x +&#x3D; y</td>
+<td align="center">x &#x3D; 7</td>
+<td>等同 x &#x3D; x + y 的意思</td>
+</tr>
+<tr>
+<td align="center">-&#x3D;</td>
+<td>x -&#x3D; y</td>
+<td align="center">x &#x3D; 3</td>
+<td>等同 x &#x3D; x - y 的意思</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x3D;</td>
+<td>x &#x2F;&#x3D; y</td>
+<td align="center">x &#x3D; 2.5</td>
+<td>等同 x &#x3D; x &#x2F; y 的意思</td>
+</tr>
+<tr>
+<td align="center">%&#x3D;</td>
+<td>x %&#x3D; y</td>
+<td align="center">x &#x3D; 1</td>
+<td>等同 x &#x3D; x % y 的意思</td>
+</tr>
+</tbody></table>
+<h2 id="比較運算子"><a href="#比較運算子" class="headerlink" title="比較運算子"></a>比較運算子</h2><h3 id="基本介紹-2"><a href="#基本介紹-2" class="headerlink" title="基本介紹"></a>基本介紹</h3><p>比較運算子（comparison operators）: 在進行條件設定時，很常用到比較運算子，也是容易出現「粗心的錯誤」的地方。  </p>
+<table>
+<thead>
+<tr>
+<th align="center">運算子</th>
+<th>說明</th>
+<th>範例</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&#x3D;&#x3D;</td>
+<td>等於 (<strong>不</strong>檢查型別)</td>
+<td>1 &#x3D;&#x3D; ‘1’<br>0 &#x3D;&#x3D; ‘’</td>
+<td>true<br>true</td>
+</tr>
+<tr>
+<td align="center">&#x3D;&#x3D;&#x3D;</td>
+<td>等於 (檢查型別)</td>
+<td>1 &#x3D;&#x3D; ‘1’<br>0 &#x3D;&#x3D; ‘’</td>
+<td>false<br>false</td>
+</tr>
+<tr>
+<td align="center">!&#x3D;</td>
+<td>不等於 (<strong>不</strong>檢查型別)</td>
+<td>1 !&#x3D; ‘1’<br>0 !&#x3D; ‘’</td>
+<td>false<br>false</td>
+</tr>
+<tr>
+<td align="center">!&#x3D;&#x3D;</td>
+<td>不等於 (檢查型別)</td>
+<td>1 !&#x3D;&#x3D; ‘1’<br>0 !&#x3D;&#x3D; ‘’</td>
+<td>true<br>true</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td>大於(<strong>不</strong>檢查型別)</td>
+<td>3 &gt; 1<br>3 &gt; 3<br>1 &gt; 3</td>
+<td>true<br>false<br>false</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td>小於(<strong>不</strong>檢查型別)</td>
+<td>3 &lt; 1<br>3 &lt; 3<br>1 &lt; 3</td>
+<td>false<br>false<br>true</td>
+</tr>
+<tr>
+<td align="center">&gt;&#x3D;</td>
+<td>大於等於(<strong>不</strong>檢查型別)</td>
+<td>3 &gt;&#x3D; 1<br>3 &gt;&#x3D; 3<br>1 &gt;&#x3D; 3</td>
+<td>true<br>true<br>false</td>
+</tr>
+<tr>
+<td align="center">&lt;&#x3D;</td>
+<td>小於等於(<strong>不</strong>檢查型別)</td>
+<td>3 &lt;&#x3D; 1<br>3 &lt;&#x3D; 3<br>1 &lt;&#x3D; 3</td>
+<td>false<br>true<br>true</td>
+</tr>
+</tbody></table>
+<h3 id="常見錯誤1-型別錯誤"><a href="#常見錯誤1-型別錯誤" class="headerlink" title="常見錯誤1: 型別錯誤"></a>常見錯誤1: 型別錯誤</h3><p>除了<strong>等於</strong>和<strong>不等於</strong>可以強制檢查型別，其他的比較運算子都要特別注意<strong>型別轉換</strong>問題。可以用 <code>typeof</code> 來檢查變數的型別。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">&#x27;2&#x27;</span>             <span class="comment">// 型別: string</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">3</span>               <span class="comment">// 型別: number</span></span><br><span class="line"><span class="built_in">console</span>.log(a &lt; b)      <span class="comment">// 結果為 true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a)   <span class="comment">// 結果為 string</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b)   <span class="comment">// 結果為 number</span></span><br></pre></td></tr></table></figure>
+<h3 id="常見錯誤2-用錯等於"><a href="#常見錯誤2-用錯等於" class="headerlink" title="常見錯誤2: 用錯等於"></a>常見錯誤2: 用錯等於</h3><p>依照以前學數學的習慣，在做變數比較時，會不小心把 <code>=</code> 當作比較運算子使用。原本要拿來比較的變數不小心被重新賦值了，所以會跑出奇怪的結果。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">3</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 正確 </span></span><br><span class="line"><span class="keyword">if</span>(a === b) &#123;       <span class="comment">// 如果 a 和 b 相等，則進行 (a - b)</span></span><br><span class="line">  a - b             <span class="comment">// 因為 a 和 b 不相等，所以不會執行</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a - b)  <span class="comment">// 會印出 1。此時 a 等於3；b 等於2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 錯誤</span></span><br><span class="line"><span class="keyword">if</span>(a = b) &#123;         <span class="comment">// b 的值被指派給 a ，此時 a 等於2</span></span><br><span class="line">  a - b             <span class="comment">// 進行 a - b 運算(2-2)</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a - b)  <span class="comment">// 會印出 0。此時 a 和 b 都等於2</span></span><br></pre></td></tr></table></figure>
+<h3 id="常見錯誤3-比較變數區間"><a href="#常見錯誤3-比較變數區間" class="headerlink" title="常見錯誤3: 比較變數區間"></a>常見錯誤3: 比較變數區間</h3><p>按照數學邏輯，如果我想知道一個變數的值是否在特定區間裡，可能會把條件這樣寫 <code>3 &lt; x &lt; 10</code> ，然後再丟一個 x 值進行驗證，但是在 JavaScript 裡，這樣做結果會出現異常。  </p>
+<p>這樣寫的效果類似 <code>||</code> 的使用， <code>3 &lt; x &lt; 10</code> 會被拆成兩段 (<code>3 &lt; x</code> 和 <code>x &lt; 10</code>) 進行驗證，只要其中一項符合則傳回 true。  </p>
+<p>正確方式應該要將條件拆開，並用 <code>&amp;&amp;</code> 要求同時符合。  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span> &lt; x &lt; <span class="number">10</span>)       <span class="comment">// 輸出結果為 true (符合 x &lt; 10)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">11</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span> &lt; x &lt; <span class="number">10</span>)       <span class="comment">// 輸出結果為 true (符合 3 &lt; x)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">11</span></span><br><span class="line"><span class="built_in">console</span>.log(x &gt; <span class="number">3</span> &amp;&amp; x &lt; <span class="number">10</span>)  <span class="comment">// 輸出結果為 false</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="邏輯運算子"><a href="#邏輯運算子" class="headerlink" title="邏輯運算子"></a>邏輯運算子</h2><h3 id="基本介紹-3"><a href="#基本介紹-3" class="headerlink" title="基本介紹"></a>基本介紹</h3><p>邏輯運算子（logical operators）: 通常用於條件判斷 <code>true</code> or <code>false</code> 。    </p>
+<table>
+<thead>
+<tr>
+<th align="center">運算子</th>
+<th>說明</th>
+<th>範例</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&amp;&amp;</td>
+<td>「而且」；前後條件皆相符，則回傳 true</td>
+<td>true &amp;&amp; true<br>true &amp;&amp; false<br>false &amp;&amp; false</td>
+<td>true<br>false<br>false</td>
+</tr>
+<tr>
+<td align="center">||</td>
+<td>「或」；前後條件只要有一邊為 true，則為 true</td>
+<td>true || true<br>true || false<br>false || false</td>
+<td>true<br>true<br>false</td>
+</tr>
+<tr>
+<td align="center">!</td>
+<td>「非」，將後面接的 boolean 轉成相反的值</td>
+<td>!true<br>!false</td>
+<td>false<br>true</td>
+</tr>
+</tbody></table>
+<h3 id="常見錯誤-運算子順序"><a href="#常見錯誤-運算子順序" class="headerlink" title="常見錯誤: 運算子順序"></a>常見錯誤: 運算子順序</h3><p>就像四則運算有「先乘除後加減」的運算順序一樣，邏輯運算子的運算順序是: <code>&amp;&amp;</code> &gt; <code>||</code> ，且由左至右運行。如果要打破原有順序，加上 <code>()</code> 是很好用的方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> || <span class="literal">false</span> &amp;&amp; <span class="literal">true</span> &amp;&amp; <span class="literal">false</span>)      <span class="comment">// 結果為 true</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="literal">true</span> || <span class="literal">false</span>) &amp;&amp; (<span class="literal">true</span> &amp;&amp; <span class="literal">false</span>))  <span class="comment">// 結果為 false</span></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><!-- 在文章底部添加感謝閱讀 -->
+<div>
+  
+    <div style="text-align:center; color:#ccc; font-size:14px; letter-spacing:5px">
+      ------------  本文結束，感謝您的閱讀&nbsp;<i class="fa fa-paw"></i>&nbsp;如有錯漏，歡迎留言討論  -------------
+    </div>
+  
+</div>
+
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Rita Chien
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://ritachien.github.io/posts/d403fec1/" title="JavaScript 運算子">https://ritachien.github.io/posts/d403fec1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/2fe737b2/" rel="prev" title="星座計算機">
+                  <i class="fa fa-chevron-left"></i> 星座計算機
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/23e46325/" rel="next" title="簡易 RPG 戰鬥：攻擊與補血">
+                  簡易 RPG 戰鬥：攻擊與補血 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a href='https://ritachien.github.io/'>Rita Chien</a></span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">46k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">42 分鐘</span>
+  </span>
+</div><!-- 在網頁底部添加網站運行時間 -->
+<span id="blogTime">載入天數時分秒...</span>
+<script>
+    let now = new Date();
+    function createtime() {
+        let grt = new Date("12/13/2021 00:00:00");  // 此處修改你的建站時間或者網站上線時間
+        now.setTime(now.getTime() + 250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if(String(hnum).length === 1 ){hnum = "0" + hnum;}
+        minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if(String(mnum).length === 1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if(String(snum).length === 1 ){snum = "0" + snum;}
+        document.getElementById("blogTime").innerHTML = "Rita 的學習筆記 已出生 "+ dnum +" 天 "+ hnum + " 小時 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"u75nsi7q8y3V4iOf8nkgmKy5-MdYXbMMI","app_key":"4s4g1aKFMyJagEjr79YudraA","server_url":null,"security":false}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"ritachien/ritachien.github.io","issue_term":"url","theme":"github-light","label":"gh-pages comments","crossorigin":"anonymous"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

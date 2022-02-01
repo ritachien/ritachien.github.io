@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+
+<link rel="preconnect" href="https://use.typekit.net/" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/../Blog-image/config/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/../Blog-image/config/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/../Blog-image/config/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="MQEI18ZGBGydbCHVgbIo8AfV--tcXWLhmp2U4pqHCTg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://use.typekit.net//css?family=Lato:300,300italic,400,400italic,700,700italic%7Csource-han-sans-hong-kong:300,300italic,400,400italic,700,700italic%7Csans-serif;:300,300italic,400,400italic,700,700italic%7Csource-code-pro:300,300italic,400,400italic,700,700italic%7Cmonospace;:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="題目來源: Alpha Camp 學期 2-1 工作坊在學習 function 的過程中，對於如何設計和應用只有模糊的概念。星座計算機是個規模較小的應用題，可以在不長的流程中清楚看出 fuction 的運作時機和傳回值的流向。透過 function 的使用，可以讓主程式碼盡可能地保持較乾淨的狀態。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="星座計算機">
+<meta property="og:url" content="https://ritachien.github.io/posts/2fe737b2/">
+<meta property="og:site_name" content="Rita 的學習筆記">
+<meta property="og:description" content="題目來源: Alpha Camp 學期 2-1 工作坊在學習 function 的過程中，對於如何設計和應用只有模糊的概念。星座計算機是個規模較小的應用題，可以在不長的流程中清楚看出 fuction 的運作時機和傳回值的流向。透過 function 的使用，可以讓主程式碼盡可能地保持較乾淨的狀態。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-01-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-08T16:00:00.000Z">
+<meta property="article:author" content="Rita Chien">
+<meta property="article:tag" content="AlphaCamp">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://ritachien.github.io/posts/2fe737b2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/2fe737b2/","path":"posts/2fe737b2/","title":"星座計算機"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>星座計算機 | Rita 的學習筆記</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-215689852-1","only_pageview":true}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+<!-- 加入 Sitemap 檔案位置到 <head> 中 -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://ritachien.github.io/sitemap.xml">
+</head>
+
+<!-- 加入 Adobe Fonts -->
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'pjb5oue',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Rita 的學習筆記</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">一步一腳印，留下成長的足跡</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>網站地圖</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E5%B7%A5%E5%85%B7"><span class="nav-number">1.</span> <span class="nav-text">解題工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E8%A6%81%E6%B1%82"><span class="nav-number">2.</span> <span class="nav-text">題目要求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="nav-number">2.1.</span> <span class="nav-text">基本功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AA%B2%E5%BE%8C%E6%8C%91%E6%88%B0%E2%80%93%E4%BE%8B%E5%A4%96%E8%99%95%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text">課後挑戰–例外處理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E9%81%8E%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">解題過程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%86%E8%A7%A3%E6%B5%81%E7%A8%8B"><span class="nav-number">3.1.</span> <span class="nav-text">拆解流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E9%96%8B%E5%A7%8B"><span class="nav-number">3.2.</span> <span class="nav-text">解題開始</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#function-%E8%A8%AD%E8%A8%88"><span class="nav-number">3.2.1.</span> <span class="nav-text">function 設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E7%A8%AE%E6%96%B9%E5%BC%8F%E5%85%B1%E5%90%8C%E6%B5%81%E7%A8%8B"><span class="nav-number">3.2.2.</span> <span class="nav-text">三種方式共同流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80"><span class="nav-number">3.2.3.</span> <span class="nav-text">方式一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C"><span class="nav-number">3.2.4.</span> <span class="nav-text">方式二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%89"><span class="nav-number">3.2.5.</span> <span class="nav-text">方式三</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%B5%90"><span class="nav-number">4.</span> <span class="nav-text">小結</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Rita Chien"
+      src="/../Blog-image/config/avatar.webp">
+  <p class="site-author-name" itemprop="name">Rita Chien</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ritachien" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ritachien" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ritachien929@gmail.com" title="E-Mail → mailto:ritachien929@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="回到頂端">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+  <a href="https://github.com/ritachien" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener external nofollow noreferrer" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/2fe737b2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
+      <meta itemprop="name" content="Rita Chien">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rita 的學習筆記">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          星座計算機
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-01-09 00:00:00" itemprop="dateCreated datePublished" datetime="2022-01-09T00:00:00+08:00">2022-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript-%E8%A7%A3%E9%A1%8C/" itemprop="url" rel="index"><span itemprop="name">JavaScript 解題</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/posts/2fe737b2/" class="post-meta-item leancloud_visitors" data-flag-title="星座計算機" title="閱讀次數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>4.6k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>4 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><strong>題目來源:</strong> Alpha Camp 學期 2-1 工作坊<br>在學習 function 的過程中，對於如何設計和應用只有模糊的概念。星座計算機是個規模較小的應用題，可以在不長的流程中清楚看出 fuction 的運作時機和傳回值的流向。透過 function 的使用，可以讓主程式碼盡可能地保持較乾淨的狀態。  </p>
+<span id="more"></span>
+
+<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
+<li>if statement  </li>
+<li>function  </li>
+<li>for 迭代</li>
+<li>String.prototype.split(): 用特定字符將字串切割，並回傳切割後陣列。</li>
+<li>Number(): 將 () 中參數型別轉換為數字。</li>
+</ol>
+<h2 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h2><h3 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h3><ul>
+<li>給定一個日期(格式為 4&#x2F;1)，算出此日期對應星座。  </li>
+<li>用 function 來創建資料。  </li>
+<li>用 function 來簡化。  </li>
+<li>(自己新增) 判斷輸入日期是否有誤(ex. 4&#x2F;35)。</li>
+</ul>
+<h3 id="課後挑戰–例外處理"><a href="#課後挑戰–例外處理" class="headerlink" title="課後挑戰–例外處理"></a>課後挑戰–例外處理</h3><p>摩羯座(12&#x2F;21 - 1&#x2F;19) 因為跨年度，和其他星座不同。試著分別用以下三種方式解決例外狀況。  </p>
+<ol>
+<li>專用判斷式 (大於1221 或 小於 119)  </li>
+<li>排除法 (如果都沒找到，就是魔羯)  </li>
+<li>改物件 (12&#x2F;21-12&#x2F;31 、 1&#x2F;1-1&#x2F;19)</li>
+</ol>
+<h2 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h2><p>原本看到題目的直覺反應是:  </p>
+<ol>
+<li>把使用者輸入的生日拆解成 “月” 和 “日” 兩個變數。  </li>
+<li>把星座區間分成前後兩半(前月中到月底 + 後月初到月中)。  </li>
+<li>用雙層 for 迴圈迭代 “月” 和 “日” ，將星座前、後兩半分別檢查一次，找出生日符合的區間。</li>
+</ol>
+<p>整體流程感覺很繁瑣……這時，助教提出一個建議: <strong>將所有日期(月+日)整個數值化，讓星座區間的前後半合併為一個數值的區間</strong> (如天秤 9&#x2F;23-10&#x2F;22 轉換為 923-1022的數字區間)。這樣就方便很多了，也解決了跨月份造成的雙層迴圈問題。  </p>
+<h3 id="拆解流程"><a href="#拆解流程" class="headerlink" title="拆解流程"></a>拆解流程</h3><blockquote>
+<ul>
+<li>先思考整體大方向，寫出流程 1 ~ 5 大項。  </li>
+<li>防呆措施: 加入 “判斷日期是否存在?” 功能。(加入流程3-1)  </li>
+<li>如果比較 “月” 再比較 “日” ，判斷流程較繁複，所以轉換日期方便比較。 (加入流程3-2)  </li>
+<li>依照題意用 function 簡化，預計分別為 1 、 3-1 、 3-2 設計 function 。</li>
+</ul>
+</blockquote>
+<ol>
+<li>建立星座資料  </li>
+<li>使用者輸入生日  </li>
+<li>拆解日期<br>3-1. 判斷日期是否存在?<br>3-2. 轉換日期以簡化判斷星座過程  </li>
+<li>判斷星座  </li>
+<li>輸出星座</li>
+</ol>
+<h3 id="解題開始"><a href="#解題開始" class="headerlink" title="解題開始"></a>解題開始</h3><blockquote>
+<p>在進行解題時，寫出上述運作流程後，我會先進行一次反向思考。  </p>
+<ol>
+<li>星座判斷流程需要用到數值化後的日期 ➜ 從 function 日期數值化取得。  </li>
+<li>判斷日期是否存在 及 function 日期數值化需要用「月」、「日」來轉換 ➜ 建立星座資料、使用者輸入資料都要將「月」、「日」拆開。</li>
+<li>依照以上所需來設計變數代入 function 及其他解題流程裡。</li>
+</ol>
+</blockquote>
+<h4 id="function-設計"><a href="#function-設計" class="headerlink" title="function 設計"></a>function 設計</h4><p>經過前面的流程拆解，可以開始設計 function 了。<br><strong>1. 日期數值化(將 9&#x2F;23 轉換為 923)</strong><br>   回傳值為: 將傳入的參數 m(月) 乘 100 再加 d(日)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// convert dateValue = month * 100 + date</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dateValue</span>(<span class="params">m, d</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> m * <span class="number">100</span> + d</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>2. 建立星座資料</strong><br>   日期數值化需要分別用到月和日，因此在設計 function 時，需要的參數有: 星座名、起始月、起始日、結束月、結束日。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// create Object for zodiac</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createZodiac</span>(<span class="params">name, startMonth, startDay, endMonth, endDay</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">startDate</span>: dateValue(startMonth, startDay),</span><br><span class="line">    <span class="attr">endDate</span>: dateValue(endMonth, endDay)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3. 判斷日期是否存在?</strong><br>   判斷標準為: 2月最多29天，2月外小月最多30天，大月最多31天。<br>   功能: 日期存在則回傳日期，日期不存在則印出日期不存在。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dateExist</span>(<span class="params">m, d</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// set date exist range</span></span><br><span class="line">  <span class="keyword">const</span> Feb = (d &lt;= <span class="number">29</span>)</span><br><span class="line">  <span class="keyword">const</span> bigMonth = ((m &lt;= <span class="number">7</span>) &amp;&amp; (m % <span class="number">2</span> !== <span class="number">0</span>) || (m &gt; <span class="number">7</span>) &amp;&amp; (m % <span class="number">2</span> === <span class="number">0</span>)) &amp;&amp; (d &lt;= <span class="number">31</span>)</span><br><span class="line">  <span class="keyword">const</span> smallMonth = (m !== <span class="number">2</span>) &amp;&amp; ((m &lt;= <span class="number">7</span>) &amp;&amp; (m % <span class="number">2</span> === <span class="number">0</span>) || (m &gt; <span class="number">7</span>) &amp;&amp; (m % <span class="number">2</span> !== <span class="number">0</span>)) &amp;&amp; (d &lt;= <span class="number">30</span>)</span><br><span class="line">  <span class="comment">// start</span></span><br><span class="line">  <span class="keyword">if</span> ((d &gt;= <span class="number">1</span>) &amp;&amp; (Feb || bigMonth || smallMonth)) &#123;</span><br><span class="line">    <span class="keyword">return</span> dateValue(m, d)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;生日不存在&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="三種方式共同流程"><a href="#三種方式共同流程" class="headerlink" title="三種方式共同流程"></a>三種方式共同流程</h4><p><strong>1. 建立星座資料</strong><br>方式一、方式二都是將摩羯座當例外處理，因此這邊先不建立摩羯座資料。  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// place to store info from function &#x27;createZodiac&#x27;</span></span><br><span class="line"><span class="keyword">const</span> zodiac = []</span><br><span class="line"><span class="comment">// use &#x27;createZodiac&#x27; push into zodiac</span></span><br><span class="line">zodiac.push(createZodiac(<span class="string">&#x27;牡羊&#x27;</span>, <span class="number">3</span>, <span class="number">21</span>, <span class="number">4</span>, <span class="number">19</span>))</span><br><span class="line">zodiac.push(createZodiac(<span class="string">&#x27;金牛&#x27;</span>, <span class="number">4</span>, <span class="number">20</span>, <span class="number">5</span>, <span class="number">20</span>))</span><br><span class="line">zodiac.push(createZodiac(<span class="string">&#x27;雙子&#x27;</span>, <span class="number">5</span>, <span class="number">21</span>, <span class="number">6</span>, <span class="number">20</span>))</span><br><span class="line">zodiac.push(createZodiac(<span class="string">&#x27;巨蟹&#x27;</span>, <span class="number">6</span>, <span class="number">21</span>, <span class="number">7</span>, <span class="number">22</span>))</span><br><span class="line">zodiac.push(createZodiac(<span class="string">&#x27;獅子&#x27;</span>, <span class="number">7</span>, <span class="number">23</span>, <span class="number">8</span>, <span class="number">22</span>))</span><br><span class="line">zodiac.push(createZodiac(<span class="string">&#x27;處女&#x27;</span>, <span class="number">8</span>, <span class="number">23</span>, <span class="number">9</span>, <span class="number">22</span>))</span><br><span class="line">zodiac.push(createZodiac(<span class="string">&#x27;天秤&#x27;</span>, <span class="number">9</span>, <span class="number">23</span>, <span class="number">10</span>, <span class="number">22</span>))</span><br><span class="line">zodiac.push(createZodiac(<span class="string">&#x27;天蠍&#x27;</span>, <span class="number">10</span>, <span class="number">23</span>, <span class="number">11</span>, <span class="number">21</span>))</span><br><span class="line">zodiac.push(createZodiac(<span class="string">&#x27;射手&#x27;</span>, <span class="number">11</span>, <span class="number">22</span>, <span class="number">12</span>, <span class="number">21</span>))</span><br><span class="line">zodiac.push(createZodiac(<span class="string">&#x27;水瓶&#x27;</span>, <span class="number">1</span>, <span class="number">20</span>, <span class="number">2</span>, <span class="number">18</span>))</span><br><span class="line">zodiac.push(createZodiac(<span class="string">&#x27;雙魚&#x27;</span>, <span class="number">2</span>, <span class="number">19</span>, <span class="number">3</span>, <span class="number">20</span>))</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 使用者輸入生日</strong>  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// user input</span></span><br><span class="line"><span class="keyword">const</span> birthday = prompt(<span class="string">&#x27;請輸入生日(格式:4/1): &#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 拆解日期</strong>  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> birthdayArray = birthday.split(<span class="string">&#x27;/&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> birthdayMonth = <span class="built_in">Number</span>(birthdayArray[<span class="number">0</span>])</span><br><span class="line"><span class="keyword">const</span> birthdayDay = <span class="built_in">Number</span>(birthdayArray[<span class="number">1</span>])</span><br><span class="line"><span class="keyword">const</span> birthdayValue = dateExist(birthdayMonth, birthdayDay)</span><br></pre></td></tr></table></figure>
+
+<p>以上部分完成後，就可以依照三種方式分別進行判斷星座 &amp; 輸出結果了(<a href="#%E6%96%B9%E5%BC%8F%E4%B8%80">方式一</a>、<a href="#%E6%96%B9%E5%BC%8F%E4%BA%8C">方式二</a>、<a href="#%E6%96%B9%E5%BC%8F%E4%B8%89">方式三</a>)。</p>
+<h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p><strong>說明: 幫摩羯座設專用判斷式 (大於1221 或 小於 119)</strong><br>先用專用判斷式把摩羯座篩選出來，其他的則丟進迴圈裡迭代，找出符合的結果。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ((birthdayValue &lt;= <span class="number">119</span>) || (birthdayValue &gt;= <span class="number">1221</span>)) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;你是魔羯座&#x27;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; zodiac.length; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> startValue = zodiac[i].startDate</span><br><span class="line">    <span class="keyword">const</span> endValue = zodiac[i].endDate</span><br><span class="line">    <span class="keyword">if</span> ((birthdayValue &gt;= startValue) &amp;&amp;(birthdayValue &lt;= endValue)) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">`你是<span class="subst">$&#123;zodiac[i].name&#125;</span>座`</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="#%E4%B8%89%E7%A8%AE%E6%96%B9%E5%BC%8F%E5%85%B1%E5%90%8C%E6%B5%81%E7%A8%8B">(回到共同流程)</a>  </p>
+<h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><p><strong>說明: 排除法 (如果都沒找到，就是魔羯)</strong><br>這個方法讓我卡最久……我的邏輯是: 如果迴圈有找到符合的結果，則印出結果； 如果沒有，則印出 ‘你是摩羯座’。<br>這種方法忽略了生日不存在的狀況，導致如果生日不存在，會同時印出 ‘生日不存在’ 及 ‘你是摩羯座’。<br>最後才想到加個 “如果 birthdayValue 有值” 的前提，成功跑出我要的結果。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> answer = []</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; zodiac.length; i++) &#123;</span><br><span class="line">  <span class="keyword">if</span> ((birthdayValue &gt;= zodiac[i].startDate) &amp;&amp; (birthdayValue &lt;= zodiac[i].endDate)) &#123;  </span><br><span class="line">    answer.push(zodiac[i].name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (birthdayValue) &#123;  <span class="comment">// 如果 birthdayValue 有值</span></span><br><span class="line">  <span class="keyword">if</span> (answer.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`你是<span class="subst">$&#123;answer[<span class="number">0</span>]&#125;</span>座`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;你是摩羯座&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="#%E4%B8%89%E7%A8%AE%E6%96%B9%E5%BC%8F%E5%85%B1%E5%90%8C%E6%B5%81%E7%A8%8B">(回到共同流程)</a>  </p>
+<h4 id="方式三"><a href="#方式三" class="headerlink" title="方式三"></a>方式三</h4><p><strong>方式說明:改物件 (12&#x2F;21-12&#x2F;31 、 1&#x2F;1-1&#x2F;19)</strong><br>須把摩羯座範圍拆開，並另外放進 zodiac 裡。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 把摩羯座拆開放進 zodiac 裡</span></span><br><span class="line">zodiac.push(createZodiac(<span class="string">&#x27;魔羯&#x27;</span>, <span class="number">12</span>, <span class="number">22</span>, <span class="number">12</span>, <span class="number">31</span>))</span><br><span class="line">zodiac.push(createZodiac(<span class="string">&#x27;魔羯&#x27;</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">19</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; zodiac.length; i++) &#123;</span><br><span class="line">  <span class="keyword">const</span> startValue = zodiac[i].startDate</span><br><span class="line">  <span class="keyword">const</span> endValue = zodiac[i].endDate</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (birthdayValue &gt;= startValue &amp;&amp; birthdayValue &lt;= endValue) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`你是<span class="subst">$&#123;zodiac[i].name&#125;</span>座`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="#%E4%B8%89%E7%A8%AE%E6%96%B9%E5%BC%8F%E5%85%B1%E5%90%8C%E6%B5%81%E7%A8%8B">(回到共同流程)</a></p>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>能成功用三種方法解出來實在很有成就感! 每次看到輸出結果跑出紅字就很頭大，還好他會提醒你到底是哪裡出錯，所以做後還是成功 debug 了!  </p>
+<p>隨著作業規模變大，開始有感覺到難度。但是比起挫折感，更多的反而是 “我在確實進步” 的興奮!! 讓我在寫部落格的路上越來越有動力!</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><!-- 在文章底部添加感謝閱讀 -->
+<div>
+  
+    <div style="text-align:center; color:#ccc; font-size:14px; letter-spacing:5px">
+      ------------  本文結束，感謝您的閱讀&nbsp;<i class="fa fa-paw"></i>&nbsp;如有錯漏，歡迎留言討論  -------------
+    </div>
+  
+</div>
+
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Rita Chien
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://ritachien.github.io/posts/2fe737b2/" title="星座計算機">https://ritachien.github.io/posts/2fe737b2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/AlphaCamp/" rel="tag"><i class="fa fa-tag"></i> AlphaCamp</a>
+              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/d81b71f/" rel="prev" title="Hexo 插件更新">
+                  <i class="fa fa-chevron-left"></i> Hexo 插件更新
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/d403fec1/" rel="next" title="JavaScript 運算子">
+                  JavaScript 運算子 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a href='https://ritachien.github.io/'>Rita Chien</a></span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">46k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">42 分鐘</span>
+  </span>
+</div><!-- 在網頁底部添加網站運行時間 -->
+<span id="blogTime">載入天數時分秒...</span>
+<script>
+    let now = new Date();
+    function createtime() {
+        let grt = new Date("12/13/2021 00:00:00");  // 此處修改你的建站時間或者網站上線時間
+        now.setTime(now.getTime() + 250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if(String(hnum).length === 1 ){hnum = "0" + hnum;}
+        minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if(String(mnum).length === 1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if(String(snum).length === 1 ){snum = "0" + snum;}
+        document.getElementById("blogTime").innerHTML = "Rita 的學習筆記 已出生 "+ dnum +" 天 "+ hnum + " 小時 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"u75nsi7q8y3V4iOf8nkgmKy5-MdYXbMMI","app_key":"4s4g1aKFMyJagEjr79YudraA","server_url":null,"security":false}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"ritachien/ritachien.github.io","issue_term":"url","theme":"github-light","label":"gh-pages comments","crossorigin":"anonymous"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>
