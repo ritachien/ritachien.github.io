@@ -117,6 +117,27 @@
       </tags>
   </entry>
   <entry>
+    <title>JavaScript 筆記目錄</title>
+    <url>/posts/ab4053d7/</url>
+    <content><![CDATA[<blockquote>
+<p>這是我 JavaScript 筆記的目錄，除了筆記外也會一併放上曾經犯過的錯誤或相關題目。<br><strong>這篇目錄會隨著我的學習歷程逐漸更新。</strong><br>如有錯漏，歡迎留言，謝謝!</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="JavaScript-基礎介紹"><a href="#JavaScript-基礎介紹" class="headerlink" title="JavaScript 基礎介紹"></a>JavaScript 基礎介紹</h2><ul>
+<li><strong>運算子</strong><br><a href="/posts/d403fec1/">基本介紹</a></li>
+</ul>
+<h2 id="DOM-相關"><a href="#DOM-相關" class="headerlink" title="DOM 相關"></a>DOM 相關</h2><ul>
+<li>.addEventListener()<br>基本介紹 、 Event Type</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JavaScript 筆記</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用 Hexo + Github Pages 建立部落格</title>
     <url>/posts/4b9ba027/</url>
     <content><![CDATA[<p>在建置部落格前猶豫了很久，最終還是決定用 Hexo + Github Pages 當作平台。歷時兩天，終於解決各種莫名其妙的問題，讓它變成心目中的樣子!</p>
@@ -201,70 +222,6 @@
         <tag>Blog</tag>
         <tag>Hexo</tag>
         <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 基本設定</title>
-    <url>/posts/a970120e/</url>
-    <content><![CDATA[<p>基本上經過上一篇的操作，在 <code>hexo s</code> 後應該已經可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 看到預設的 Hello World 畫面了，但要讓 Blog 正式啟動前，我們還要先做一些個人化設定。  </p>
-<span id="more"></span>
-
-<blockquote>
-<p>本文撰寫時的版本如下(可用 <code>hexo version</code> 確認)，不同版本的預設配置檔可能會有差異:<br>hexo: 6.0.0<br>hexo-cli: 4.3.0  </p>
-</blockquote>
-<ul>
-<li>基本配置文件位置在 <code>root\_config.yml</code>，<font color=#FF6600>冒號後面都必需保留半型空格一格</font>。  </li>
-<li>僅列出通常會修改或我已經修改的部分，其他請參考<a href="https://hexo.io/zh-tw/docs/configuration">官方網站</a>說明。</li>
-</ul>
-<h2 id="網站設定"><a href="#網站設定" class="headerlink" title="網站設定"></a>網站設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span>           <span class="comment"># 網站標題</span></span><br><span class="line"><span class="attr">subtitle:</span>             <span class="comment"># 網站副標題</span></span><br><span class="line"><span class="attr">description:</span>          <span class="comment"># 網站描述</span></span><br><span class="line"><span class="attr">keywords:</span>             <span class="comment"># 網站關鍵字(支援多個關鍵詞，用半型逗號隔開)</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span>      <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span>          <span class="comment"># 網站語言 (台灣:zh-tw)</span></span><br><span class="line"><span class="attr">timezone:</span>             <span class="comment"># 時區(可留空以使用您電腦的時區)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="網址設定"><a href="#網址設定" class="headerlink" title="網址設定"></a>網址設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here.</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://UserName.github.io/</span>           <span class="comment"># UserName更改為自己的帳戶名</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>      <span class="comment"># 文章網址的格式(預設使用 年月日/文章名稱)/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                       <span class="comment"># permalink 中各區段的預設值</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>permalink 會依照設定值，在每次 generate 時重新產生網址，設定參數可參考<a href="https://hexo.io/zh-tw/docs/permalinks">官方文件</a>。我在命名檔名時，習慣使用日期 + 英文檔名(日期方便排序，不含空格的英文檔名較不會產生亂碼網址)，所以 permalink: 僅用 <code>:title</code> 參數 (最後的 <code>/</code> 要記得保留)。</li>
-<li><strong><font color=red>2021&#x2F;12&#x2F;27 更新: <a href="/posts/d8dab675/">使用 Hexo-abbrlink 產生永久連結</a></font></strong></li>
-</ul>
-<h2 id="目錄設定"><a href="#目錄設定" class="headerlink" title="目錄設定"></a>目錄設定</h2><p>原則上都保留不變，除非有自訂路徑的需求。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span>            <span class="comment"># 原始檔案資料夾，存放編輯的所有內容</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span>            <span class="comment"># 存放靜態檔案的資料夾(hexo g 後產生)</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span>                 <span class="comment"># 標籤資料夾</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span>         <span class="comment"># 彙整資料夾(deploy後產生)</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span>      <span class="comment"># 分類資料夾</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>tags</code> 和 <code>categories</code> 資料夾預設是不存在的，有需要要另外新增資料夾。</li>
-</ul>
-<h2 id="擴充套件設定"><a href="#擴充套件設定" class="headerlink" title="擴充套件設定"></a>擴充套件設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/       # 提供各種套件，可以依自己需求安裝</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/         # 提供各種主題，可以依自己需求安裝</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span>                           <span class="comment"># 填寫主題名稱</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>本部落格選用 Next 主題(要把 landscape 改為 Next)，後續會另開一篇變更主題說明文。</li>
-</ul>
-<h2 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Hexo 可同時部署到不同地方，相關設定參考<a href="https://hexo.io/zh-tw/docs/one-command-deployment">官方部署說明</a>。  </li>
-<li>部署到 Github 方式已在用前篇 Hexo + Github Pages 建立部落格 中說明，這邊不另外贅述。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaScript 筆記目錄</title>
-    <url>/posts/ab4053d7/</url>
-    <content><![CDATA[<blockquote>
-<p>這是我 JavaScript 筆記的目錄，除了筆記外也會一併放上曾經犯過的錯誤或相關題目。<br><strong>這篇目錄會隨著我的學習歷程逐漸更新。</strong><br>如有錯漏，歡迎留言，謝謝!</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="JavaScript-基礎介紹"><a href="#JavaScript-基礎介紹" class="headerlink" title="JavaScript 基礎介紹"></a>JavaScript 基礎介紹</h2><ul>
-<li><strong>運算子</strong><br><a href="/posts/d403fec1/">基本介紹</a></li>
-</ul>
-<h2 id="DOM-相關"><a href="#DOM-相關" class="headerlink" title="DOM 相關"></a>DOM 相關</h2><ul>
-<li>.addEventListener()<br>基本介紹 、 Event Type</li>
-</ul>
-]]></content>
-      <categories>
-        <category>JavaScript 筆記</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -493,6 +450,49 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 基本設定</title>
+    <url>/posts/a970120e/</url>
+    <content><![CDATA[<p>基本上經過上一篇的操作，在 <code>hexo s</code> 後應該已經可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 看到預設的 Hello World 畫面了，但要讓 Blog 正式啟動前，我們還要先做一些個人化設定。  </p>
+<span id="more"></span>
+
+<blockquote>
+<p>本文撰寫時的版本如下(可用 <code>hexo version</code> 確認)，不同版本的預設配置檔可能會有差異:<br>hexo: 6.0.0<br>hexo-cli: 4.3.0  </p>
+</blockquote>
+<ul>
+<li>基本配置文件位置在 <code>root\_config.yml</code>，<font color=#FF6600>冒號後面都必需保留半型空格一格</font>。  </li>
+<li>僅列出通常會修改或我已經修改的部分，其他請參考<a href="https://hexo.io/zh-tw/docs/configuration">官方網站</a>說明。</li>
+</ul>
+<h2 id="網站設定"><a href="#網站設定" class="headerlink" title="網站設定"></a>網站設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span>           <span class="comment"># 網站標題</span></span><br><span class="line"><span class="attr">subtitle:</span>             <span class="comment"># 網站副標題</span></span><br><span class="line"><span class="attr">description:</span>          <span class="comment"># 網站描述</span></span><br><span class="line"><span class="attr">keywords:</span>             <span class="comment"># 網站關鍵字(支援多個關鍵詞，用半型逗號隔開)</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span>      <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span>          <span class="comment"># 網站語言 (台灣:zh-tw)</span></span><br><span class="line"><span class="attr">timezone:</span>             <span class="comment"># 時區(可留空以使用您電腦的時區)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="網址設定"><a href="#網址設定" class="headerlink" title="網址設定"></a>網址設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here.</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://UserName.github.io/</span>           <span class="comment"># UserName更改為自己的帳戶名</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>      <span class="comment"># 文章網址的格式(預設使用 年月日/文章名稱)/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                       <span class="comment"># permalink 中各區段的預設值</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>permalink 會依照設定值，在每次 generate 時重新產生網址，設定參數可參考<a href="https://hexo.io/zh-tw/docs/permalinks">官方文件</a>。我在命名檔名時，習慣使用日期 + 英文檔名(日期方便排序，不含空格的英文檔名較不會產生亂碼網址)，所以 permalink: 僅用 <code>:title</code> 參數 (最後的 <code>/</code> 要記得保留)。</li>
+<li><strong><font color=red>2021&#x2F;12&#x2F;27 更新: <a href="/posts/d8dab675/">使用 Hexo-abbrlink 產生永久連結</a></font></strong></li>
+</ul>
+<h2 id="目錄設定"><a href="#目錄設定" class="headerlink" title="目錄設定"></a>目錄設定</h2><p>原則上都保留不變，除非有自訂路徑的需求。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span>            <span class="comment"># 原始檔案資料夾，存放編輯的所有內容</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span>            <span class="comment"># 存放靜態檔案的資料夾(hexo g 後產生)</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span>                 <span class="comment"># 標籤資料夾</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span>         <span class="comment"># 彙整資料夾(deploy後產生)</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span>      <span class="comment"># 分類資料夾</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>tags</code> 和 <code>categories</code> 資料夾預設是不存在的，有需要要另外新增資料夾。</li>
+</ul>
+<h2 id="擴充套件設定"><a href="#擴充套件設定" class="headerlink" title="擴充套件設定"></a>擴充套件設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/       # 提供各種套件，可以依自己需求安裝</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/         # 提供各種主題，可以依自己需求安裝</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span>                           <span class="comment"># 填寫主題名稱</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>本部落格選用 Next 主題(要把 landscape 改為 Next)，後續會另開一篇變更主題說明文。</li>
+</ul>
+<h2 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Hexo 可同時部署到不同地方，相關設定參考<a href="https://hexo.io/zh-tw/docs/one-command-deployment">官方部署說明</a>。  </li>
+<li>部署到 Github 方式已在用前篇 Hexo + Github Pages 建立部落格 中說明，這邊不另外贅述。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -758,6 +758,69 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo NexT 文末感謝閱讀提示</title>
+    <url>/posts/670011ce/</url>
+    <content><![CDATA[<p>又犯了”看到別人的部落格有，我也想試試看的”毛病 😅 找了很多網路教學，發現基本都會修改到 NexT 的原始檔案，這對後面的版本更新很不利，所以決定自己改改看!  </p>
+<span id="more"></span>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在看了網路教學把部落格增加了很多功能後，有一次不小心覆蓋了原始檔案，然後就部落格”主題初始化”了。因為之前都是照著別人的教學直接去修改主題檔案的原始碼，根本記不得是改了哪個路徑的哪個檔案，也不記得改了那一大堆原始碼裡的哪一段。所以我連想重做一次都很難，要重新找一次教學，想哭……  </p>
+<p>仔細看了 NexT 團隊提供的說明，他們有提出: 為了避免發生我這種狀況，建議大家在做功能修改時，盡可能不要改動原始檔案，而是利用 <code>custom_file_path</code> 新建設定檔案套用，會讓 NexT 主題在版本更新時可以更無痛升級。  </p>
+<p>研究一下網路教學的程式碼結構，發現就是把基本的 HTML 、 CSS 套進 Nunjucks 的模板裡而已。成功試出來後，趕快把修改步驟記錄下來，讓自己以後魔改時參考。</p>
+<h2 id="Custom-Files-用法"><a href="#Custom-Files-用法" class="headerlink" title="Custom Files 用法"></a>Custom Files 用法</h2><blockquote>
+<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
+</blockquote>
+<p>在不改變 NexT 原始檔的情況下，只要在 <code>root\source\_data</code> 中新建並編輯相關檔案，即可直接覆蓋 NexT 原始設定。使用 Custom Files 的好處:</p>
+<ol>
+<li>後續如果 NexT 有版本升級可直接完全覆蓋，已做好的個人化設定不受影響。</li>
+<li>可以直接在 Custom Files 管理所有的個人化修改。</li>
+</ol>
+<h2 id="修改步驟"><a href="#修改步驟" class="headerlink" title="修改步驟"></a>修改步驟</h2><blockquote>
+<p>本文的 NexT 主題 config 一律採用 <code>root\_config.next.yml</code> 方式設定，請參考<a href="https://ritachien.github.io/posts/ebe0f18a/#config-next-yml-%E8%A8%AD%E5%AE%9A" title=" config.next.yml 設定 " target="_blank" > config.next.yml 設定 </a>說明。</p>
+</blockquote>
+<h3 id="新建-Custom-File"><a href="#新建-Custom-File" class="headerlink" title="新建 Custom File"></a>新建 Custom File</h3><ol>
+<li>修改 <code>root\_config.next.yml</code> 設定，把 <code>postBodyEnd</code> 取消註解。  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="attr">postBodyEnd:</span> <span class="string">source/_data/post-body-end.njk</span></span><br></pre></td></tr></table></figure></li>
+<li>在 <code>root\source\_data</code> 新增 <code>post-body-end.njk</code> 檔案。post-body-end 指的就是每篇文章最後的位置。</li>
+</ol>
+<h3 id="簡單版-直接寫入要顯示的文字"><a href="#簡單版-直接寫入要顯示的文字" class="headerlink" title="簡單版(直接寫入要顯示的文字)"></a>簡單版(直接寫入要顯示的文字)</h3><ol>
+<li>將文字、樣式、模板寫進 <code>post-body-end.njk</code> 檔案。  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 在文章底部添加感謝閱讀 --&gt;        # 說明修改目的，方便後續維護</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &#123;% if not is_index and theme.end_info.enable %&#125;</span><br><span class="line">    &lt;div style=&quot;text-align:center;color: #ccc;font-size:14px;letter-spacing: 5px&quot;&gt;</span><br><span class="line">      ----------------  本文結束  &lt;i class=&quot;fa fa-paw&quot;&gt;&lt;/i&gt;  感謝您的閱讀  -----------------</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></li>
+<li>新增 <code>root\_config.next.yml</code> 設定，開啟 <code>end_info</code> 功能。<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">end_info:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="進階版-要顯示文字在-root-config-next-yml-中修改"><a href="#進階版-要顯示文字在-root-config-next-yml-中修改" class="headerlink" title="進階版(要顯示文字在 root\_config.next.yml 中修改)"></a>進階版(要顯示文字在 <code>root\_config.next.yml</code> 中修改)</h3><ol>
+<li>將文字、樣式、模板寫進 <code>post-body-end.njk</code> 檔案。  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 在文章底部添加感謝閱讀 --&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &#123;% if not is_index and theme.end_info.enable %&#125;</span><br><span class="line">    &lt;div style=&quot;text-align:center; color:#ccc; font-size:14px; letter-spacing:5px&quot;&gt;</span><br><span class="line">      &#123;&#123;theme.end_info.start_info&#125;&#125;&amp;nbsp;&lt;i class=&quot;&#123;&#123;theme.end_info.icon&#125;&#125;&quot;&gt;&lt;/i&gt;&amp;nbsp;&#123;&#123;theme.end_info.end_info&#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></li>
+<li>新增 <code>root\_config.next.yml</code> 設定，開啟 <code>end_info</code> 功能。  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">end_info:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>                                 <span class="comment"># 開啟功能</span></span><br><span class="line">  <span class="attr">start_info:</span> <span class="string">&#x27;----------------  本文結束&#x27;</span>      <span class="comment"># 起始文字</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">fa</span> <span class="string">fa-paw</span>                              <span class="comment"># icon 編碼</span></span><br><span class="line">  <span class="attr">end_info:</span> <span class="string">&#x27;感謝您的閱讀  -----------------&#x27;</span>   <span class="comment"># 結束文字</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="修改程式碼說明"><a href="#修改程式碼說明" class="headerlink" title="修改程式碼說明"></a>修改程式碼說明</h2><p>這次的進階版是自己琢磨出來的，將撰寫規則筆記下來，方便後續修改並維護。  </p>
+<h3 id="Nunjucks-模板啟用"><a href="#Nunjucks-模板啟用" class="headerlink" title="Nunjucks 模板啟用"></a>Nunjucks 模板啟用</h3><p>不同條件使用 <code>and</code> 連接即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% if not is_index and theme.end_info.enable %&#125;</span><br><span class="line">  # 中間填入符合條件後要執行的東西</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><code>if not is_index</code><br>觀察 Hexo 結構可以發現，除了 <code>_posts</code> 是由各個不同標題的 <code>.md</code> 檔組成，其他如: 標籤、分類、404、歸檔…等資料夾都只有 <code>index.md</code>。所以如果只要在非 index 頁面啟用，可加上此條件。</p>
+</li>
+<li><p><code>theme.end_info.enable</code><br>上面這段的意思是: 如果 theme 的 config 檔中， end_info 設定裡的 enable 值為 True 時啟用。<br>其中， theme 在 <code>root\config.yml</code> 中已設定為 next ，所以他會直接到 <code>root\_config.next.yml</code> 尋找 end_info 的設定值。</p>
+</li>
+</ol>
+<h3 id="從-theme-config-中抓取資料"><a href="#從-theme-config-中抓取資料" class="headerlink" title="從 theme config 中抓取資料"></a>從 theme config 中抓取資料</h3><p>從 theme config 裡 end_info 設定中抓取不同項目的值。參考進階版第二步驟的設定項目。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#123;theme.end_info.start_info&#125;&#125;</span><br><span class="line">&#123;&#123;theme.end_info.icon &#125;&#125;</span><br><span class="line">&#123;&#123;theme.end_info.end_info&#125;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="CSS-樣式設定"><a href="#CSS-樣式設定" class="headerlink" title="CSS 樣式設定"></a>CSS 樣式設定</h3><p>在 style&#x3D;”” 中填入 CSS 樣式，可自行搜尋可填入的值或其他樣式。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div style=&quot;text-align:center; color:#ccc; font-size:14px; letter-spacing:5px&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>對齊方式(text-align)  </li>
+<li>字體顏色(color)  </li>
+<li>字體大小(font-size)  </li>
+<li>字元間距(letter-spacing)</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+        <tag>Nunjucks</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>驗證三角形</title>
     <url>/posts/dca3ad45/</url>
     <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期一作業<br>學期一終於結束了，完成了課程決定挑戰選修的期末考來驗收學習成效， JavaScript 題目一如既往地燒腦有挑戰性，從前老愛跟數讀死槓的我超開心呀!! 寫出來爆有成就感啊!!</p>
@@ -821,69 +884,6 @@
       <tags>
         <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo NexT 文末感謝閱讀提示</title>
-    <url>/posts/670011ce/</url>
-    <content><![CDATA[<p>又犯了”看到別人的部落格有，我也想試試看的”毛病 😅 找了很多網路教學，發現基本都會修改到 NexT 的原始檔案，這對後面的版本更新很不利，所以決定自己改改看!  </p>
-<span id="more"></span>
-
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在看了網路教學把部落格增加了很多功能後，有一次不小心覆蓋了原始檔案，然後就部落格”主題初始化”了。因為之前都是照著別人的教學直接去修改主題檔案的原始碼，根本記不得是改了哪個路徑的哪個檔案，也不記得改了那一大堆原始碼裡的哪一段。所以我連想重做一次都很難，要重新找一次教學，想哭……  </p>
-<p>仔細看了 NexT 團隊提供的說明，他們有提出: 為了避免發生我這種狀況，建議大家在做功能修改時，盡可能不要改動原始檔案，而是利用 <code>custom_file_path</code> 新建設定檔案套用，會讓 NexT 主題在版本更新時可以更無痛升級。  </p>
-<p>研究一下網路教學的程式碼結構，發現就是把基本的 HTML 、 CSS 套進 Nunjucks 的模板裡而已。成功試出來後，趕快把修改步驟記錄下來，讓自己以後魔改時參考。</p>
-<h2 id="Custom-Files-用法"><a href="#Custom-Files-用法" class="headerlink" title="Custom Files 用法"></a>Custom Files 用法</h2><blockquote>
-<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
-</blockquote>
-<p>在不改變 NexT 原始檔的情況下，只要在 <code>root\source\_data</code> 中新建並編輯相關檔案，即可直接覆蓋 NexT 原始設定。使用 Custom Files 的好處:</p>
-<ol>
-<li>後續如果 NexT 有版本升級可直接完全覆蓋，已做好的個人化設定不受影響。</li>
-<li>可以直接在 Custom Files 管理所有的個人化修改。</li>
-</ol>
-<h2 id="修改步驟"><a href="#修改步驟" class="headerlink" title="修改步驟"></a>修改步驟</h2><blockquote>
-<p>本文的 NexT 主題 config 一律採用 <code>root\_config.next.yml</code> 方式設定，請參考<a href="https://ritachien.github.io/posts/ebe0f18a/#config-next-yml-%E8%A8%AD%E5%AE%9A" title=" config.next.yml 設定 " target="_blank" > config.next.yml 設定 </a>說明。</p>
-</blockquote>
-<h3 id="新建-Custom-File"><a href="#新建-Custom-File" class="headerlink" title="新建 Custom File"></a>新建 Custom File</h3><ol>
-<li>修改 <code>root\_config.next.yml</code> 設定，把 <code>postBodyEnd</code> 取消註解。  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="attr">postBodyEnd:</span> <span class="string">source/_data/post-body-end.njk</span></span><br></pre></td></tr></table></figure></li>
-<li>在 <code>root\source\_data</code> 新增 <code>post-body-end.njk</code> 檔案。post-body-end 指的就是每篇文章最後的位置。</li>
-</ol>
-<h3 id="簡單版-直接寫入要顯示的文字"><a href="#簡單版-直接寫入要顯示的文字" class="headerlink" title="簡單版(直接寫入要顯示的文字)"></a>簡單版(直接寫入要顯示的文字)</h3><ol>
-<li>將文字、樣式、模板寫進 <code>post-body-end.njk</code> 檔案。  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 在文章底部添加感謝閱讀 --&gt;        # 說明修改目的，方便後續維護</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &#123;% if not is_index and theme.end_info.enable %&#125;</span><br><span class="line">    &lt;div style=&quot;text-align:center;color: #ccc;font-size:14px;letter-spacing: 5px&quot;&gt;</span><br><span class="line">      ----------------  本文結束  &lt;i class=&quot;fa fa-paw&quot;&gt;&lt;/i&gt;  感謝您的閱讀  -----------------</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></li>
-<li>新增 <code>root\_config.next.yml</code> 設定，開啟 <code>end_info</code> 功能。<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">end_info:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="進階版-要顯示文字在-root-config-next-yml-中修改"><a href="#進階版-要顯示文字在-root-config-next-yml-中修改" class="headerlink" title="進階版(要顯示文字在 root\_config.next.yml 中修改)"></a>進階版(要顯示文字在 <code>root\_config.next.yml</code> 中修改)</h3><ol>
-<li>將文字、樣式、模板寫進 <code>post-body-end.njk</code> 檔案。  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 在文章底部添加感謝閱讀 --&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &#123;% if not is_index and theme.end_info.enable %&#125;</span><br><span class="line">    &lt;div style=&quot;text-align:center; color:#ccc; font-size:14px; letter-spacing:5px&quot;&gt;</span><br><span class="line">      &#123;&#123;theme.end_info.start_info&#125;&#125;&amp;nbsp;&lt;i class=&quot;&#123;&#123;theme.end_info.icon&#125;&#125;&quot;&gt;&lt;/i&gt;&amp;nbsp;&#123;&#123;theme.end_info.end_info&#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></li>
-<li>新增 <code>root\_config.next.yml</code> 設定，開啟 <code>end_info</code> 功能。  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">end_info:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>                                 <span class="comment"># 開啟功能</span></span><br><span class="line">  <span class="attr">start_info:</span> <span class="string">&#x27;----------------  本文結束&#x27;</span>      <span class="comment"># 起始文字</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">fa</span> <span class="string">fa-paw</span>                              <span class="comment"># icon 編碼</span></span><br><span class="line">  <span class="attr">end_info:</span> <span class="string">&#x27;感謝您的閱讀  -----------------&#x27;</span>   <span class="comment"># 結束文字</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="修改程式碼說明"><a href="#修改程式碼說明" class="headerlink" title="修改程式碼說明"></a>修改程式碼說明</h2><p>這次的進階版是自己琢磨出來的，將撰寫規則筆記下來，方便後續修改並維護。  </p>
-<h3 id="Nunjucks-模板啟用"><a href="#Nunjucks-模板啟用" class="headerlink" title="Nunjucks 模板啟用"></a>Nunjucks 模板啟用</h3><p>不同條件使用 <code>and</code> 連接即可。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% if not is_index and theme.end_info.enable %&#125;</span><br><span class="line">  # 中間填入符合條件後要執行的東西</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li><p><code>if not is_index</code><br>觀察 Hexo 結構可以發現，除了 <code>_posts</code> 是由各個不同標題的 <code>.md</code> 檔組成，其他如: 標籤、分類、404、歸檔…等資料夾都只有 <code>index.md</code>。所以如果只要在非 index 頁面啟用，可加上此條件。</p>
-</li>
-<li><p><code>theme.end_info.enable</code><br>上面這段的意思是: 如果 theme 的 config 檔中， end_info 設定裡的 enable 值為 True 時啟用。<br>其中， theme 在 <code>root\config.yml</code> 中已設定為 next ，所以他會直接到 <code>root\_config.next.yml</code> 尋找 end_info 的設定值。</p>
-</li>
-</ol>
-<h3 id="從-theme-config-中抓取資料"><a href="#從-theme-config-中抓取資料" class="headerlink" title="從 theme config 中抓取資料"></a>從 theme config 中抓取資料</h3><p>從 theme config 裡 end_info 設定中抓取不同項目的值。參考進階版第二步驟的設定項目。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;&#123;theme.end_info.start_info&#125;&#125;</span><br><span class="line">&#123;&#123;theme.end_info.icon &#125;&#125;</span><br><span class="line">&#123;&#123;theme.end_info.end_info&#125;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="CSS-樣式設定"><a href="#CSS-樣式設定" class="headerlink" title="CSS 樣式設定"></a>CSS 樣式設定</h3><p>在 style&#x3D;”” 中填入 CSS 樣式，可自行搜尋可填入的值或其他樣式。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div style=&quot;text-align:center; color:#ccc; font-size:14px; letter-spacing:5px&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>對齊方式(text-align)  </li>
-<li>字體顏色(color)  </li>
-<li>字體大小(font-size)  </li>
-<li>字元間距(letter-spacing)</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-        <tag>Nunjucks</tag>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1116,6 +1116,27 @@
       </tags>
   </entry>
   <entry>
+    <title>Alpha Camp 學期 2-1 結業心得</title>
+    <url>/posts/73279419/</url>
+    <content><![CDATA[<p><em><strong>學習的過程充滿挑戰，成功闖過之後就想做更多的挑戰!</strong></em><br>這大概就是我在這階段完課後，最明顯的感受。  </p>
+<span id="more"></span>
+
+<p>有轉職意願後，我報名了學期一課程，想確認是否真的對程式語言有興趣。在將近一個月的課程接觸下，燃起了久違的學習熱情，隨後決定繼續向學期二邁進，將學期一碰到的 HTML&#x2F;CSS&#x2F;JavaScript 更精進。  </p>
+<p>相較於學期一類似「興趣班」的節奏，學期 2-1 第一週開始接觸了陣列、物件及函式，不管是單週課程量或難度對我來說都有明顯變高的感覺，作業也變得更加「靈活」。學習過程需要花更多的時間理解、作業要花更多的時間思考，本來以為難度提高會帶來挫折感，進而降低學習熱情，結果相反，我最直觀的感受是「我能做到的事變多了」。課程作業藉著把摸彩活動分成小步驟完成，最後組合再一起，這種「把大任務變小」的方式，我覺得有效降低了學習期間的挫折感。  </p>
+<p>再後來的 DOM 和事件驅動，就更多的提高我對 JavaScript 的學習興趣，藉由 DOM 就可以用 JavaScript 來操作寫好的 HTML，學到了讓使用者跟網頁互動的方法，。每一個章節作業做完的同時，開始會主動思考「可以加上什麼功能?」，有的成功、有的失敗，不知不覺坐在電腦前的時間越來越長😄  </p>
+<p>說到這裡可能有人發現了…… CSS 呢?<br>是的，我對 CSS 一直還沒燃起足夠的熱情，花著同樣的時間進行學習，但 CSS 就是很難記住，寫起來很不順手。這種期況一直持續到學到 DOM 和事件驅動才有改善。在加上新功能後，我新加的東西在網頁上動起來<del>覺得自己有點厲害</del>但長得醜醜的，這時候才開始想各種辦法改善它，積極地回去複習排版…等語法。  </p>
+<p>因為 JavaScript 想新加功能，所以積極複習、查資料、使用還沒學到的東西。因為覺得畫面醜醜的，所以重新面對興致不高的 CSS 。難怪人家都說，想進步最快的辦法就是去做各種 side project 。原本的期末作業「RGB 色碼轉 HEX」，看是要輸入 RGB 色碼或用 slider 調色只要二選一，最後輸出 HEX 結果即可。為了想讓三者同步，查了 <code>addEventListener</code> 的各種 event ，寫了整整一天，寫出來的當下很有成就感! <a href="https://ritachien.github.io/Convert-Between-RGB-HEX/">(動手試試看)</a>  </p>
+<p><img src="https://raw.githubusercontent.com/ritachien/Convert-Between-RGB-HEX/main/demo.webp"></p>
+<p>學習過程記錄大致就這樣了。<br>學期 2-1 找到了提高我學習動力的方法—-<strong>實作、實作、再實作</strong>。準備在春節期間開始挑戰 JS30，然後開始學期 2-2 的預讀。最後的最後，許個新年新希望: 我不要再當米蟲了阿~~~~~~ 今年一定要轉職成功阿~~~~~</p>
+]]></content>
+      <categories>
+        <category>學習紀錄</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【JS30 挑戰】 Day1 - JavaScript Drum Kit</title>
     <url>/posts/470f6710/</url>
     <content><![CDATA[<p>這個專案對 JavaScript 只要有 function 跟 DOM 基礎就沒問題。另外需要有一點 HTML&#x2F;CSS 的概念才有辦法順利使用 <code>querySelector</code> 。</p>
@@ -1170,27 +1191,6 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>JS30</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Alpha Camp 學期 2-1 結業心得</title>
-    <url>/posts/73279419/</url>
-    <content><![CDATA[<p><em><strong>學習的過程充滿挑戰，成功闖過之後就想做更多的挑戰!</strong></em><br>這大概就是我在這階段完課後，最明顯的感受。  </p>
-<span id="more"></span>
-
-<p>有轉職意願後，我報名了學期一課程，想確認是否真的對程式語言有興趣。在將近一個月的課程接觸下，燃起了久違的學習熱情，隨後決定繼續向學期二邁進，將學期一碰到的 HTML&#x2F;CSS&#x2F;JavaScript 更精進。  </p>
-<p>相較於學期一類似「興趣班」的節奏，學期 2-1 第一週開始接觸了陣列、物件及函式，不管是單週課程量或難度對我來說都有明顯變高的感覺，作業也變得更加「靈活」。學習過程需要花更多的時間理解、作業要花更多的時間思考，本來以為難度提高會帶來挫折感，進而降低學習熱情，結果相反，我最直觀的感受是「我能做到的事變多了」。課程作業藉著把摸彩活動分成小步驟完成，最後組合再一起，這種「把大任務變小」的方式，我覺得有效降低了學習期間的挫折感。  </p>
-<p>再後來的 DOM 和事件驅動，就更多的提高我對 JavaScript 的學習興趣，藉由 DOM 就可以用 JavaScript 來操作寫好的 HTML，學到了讓使用者跟網頁互動的方法，。每一個章節作業做完的同時，開始會主動思考「可以加上什麼功能?」，有的成功、有的失敗，不知不覺坐在電腦前的時間越來越長😄  </p>
-<p>說到這裡可能有人發現了…… CSS 呢?<br>是的，我對 CSS 一直還沒燃起足夠的熱情，花著同樣的時間進行學習，但 CSS 就是很難記住，寫起來很不順手。這種期況一直持續到學到 DOM 和事件驅動才有改善。在加上新功能後，我新加的東西在網頁上動起來<del>覺得自己有點厲害</del>但長得醜醜的，這時候才開始想各種辦法改善它，積極地回去複習排版…等語法。  </p>
-<p>因為 JavaScript 想新加功能，所以積極複習、查資料、使用還沒學到的東西。因為覺得畫面醜醜的，所以重新面對興致不高的 CSS 。難怪人家都說，想進步最快的辦法就是去做各種 side project 。原本的期末作業「RGB 色碼轉 HEX」，看是要輸入 RGB 色碼或用 slider 調色只要二選一，最後輸出 HEX 結果即可。為了想讓三者同步，查了 <code>addEventListener</code> 的各種 event ，寫了整整一天，寫出來的當下很有成就感! <a href="https://ritachien.github.io/Convert-Between-RGB-HEX/">(動手試試看)</a>  </p>
-<p><img src="https://raw.githubusercontent.com/ritachien/Convert-Between-RGB-HEX/main/demo.webp"></p>
-<p>學習過程記錄大致就這樣了。<br>學期 2-1 找到了提高我學習動力的方法—-<strong>實作、實作、再實作</strong>。準備在春節期間開始挑戰 JS30，然後開始學期 2-2 的預讀。最後的最後，許個新年新希望: 我不要再當米蟲了阿~~~~~~ 今年一定要轉職成功阿~~~~~</p>
-]]></content>
-      <categories>
-        <category>學習紀錄</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -1311,19 +1311,13 @@
 <h2 id="開始前的準備"><a href="#開始前的準備" class="headerlink" title="開始前的準備"></a>開始前的準備</h2><blockquote>
 <p>這部分已由教學計畫提供。</p>
 </blockquote>
-<p><strong>做好 HTML&#x2F;CSS 設定:</strong><br>做出時鐘長相並為指針做好相關設置。為了練習 <code>transform-origin</code> ，指針預設往9點鐘方向。</p>
+<p><strong>做好 HTML&#x2F;CSS 設定:</strong><br>做出時鐘長相並為指針做好相關設置。<br>為了練習 <code>transform-origin</code> ，指針預設往9點鐘方向。但我為了方便，已自行調整成12點鐘方向。</p>
 <h2 id="練習開始"><a href="#練習開始" class="headerlink" title="練習開始"></a>練習開始</h2><p><strong>1. 調整指針起點至12點鐘方向</strong>  </p>
 <ul>
-<li><p>在 CSS <code>.hand</code> 中加上下列程式碼後，發現指針確實變為垂直向上，但旋轉的圓心為指針中心點。這和我們想要的不一樣，所以需要再做額外調整。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">90deg</span>)</span><br></pre></td></tr></table></figure>
-
-</li>
-<li><p><code>transform-origin</code> 預設為 50% ，為被旋轉物體的中心。在物體為水平情況下，最右邊為 100% ，最左邊為 0% 。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">transform-origin</span>: <span class="number">100%</span></span><br></pre></td></tr></table></figure>
-
-</li>
-<li><p>所有對象都執行變化，每次用0.05秒完成變化。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">transition</span>: all <span class="number">0.05s</span>;</span><br></pre></td></tr></table></figure></li>
+<li>原本教學是用 <code>transform: rotate(90deg)</code> 處理，但為了方便，我直接調整 CSS。  </li>
+<li><code>transform-origin</code> 跟著調整成 bottom。  </li>
+<li><code>transition</code> 讓所有對象都執行變化，每次用0.05秒完成變化。</li>
+<li>各別設定指針外觀，以便觀察後續變化。<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.hand</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: bottom;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.05s</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hour-hand</span> &#123;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">15%</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">6px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">35%</span>;</span><br><span class="line">  <span class="attribute">background</span>: tomato;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.min-hand</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.second-hand</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <br>
 
@@ -1337,12 +1331,14 @@
 <li>分別找出 3 支指針。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> hourHand = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.hour-hand&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> minuteHand = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.min-hand&#x27;</span>)  </span><br><span class="line"><span class="keyword">const</span> secondHand = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.second-hand&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
 <li>建立一個 setTime() function ，並把要執行的動作放入函式。  </li>
 <li>取得當下時間，並分別取出時&#x2F;分&#x2F;秒。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> hours = now.getHours()</span><br><span class="line">  <span class="keyword">const</span> mins = now.getMinutes()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.getSeconds()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>依照時間比例算出旋轉角度，並帶入 CSS 的 <code>rotate()</code> 設置。這時發現原本調整的右轉 90度 被覆蓋掉了。所以 JavaScript 計算出來的角度要再加 90。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> hours = now.getHours()</span><br><span class="line">  <span class="keyword">const</span> hoursDegrees = ((hours / <span class="number">24</span>) * <span class="number">360</span>) + <span class="number">90</span></span><br><span class="line">  hourHand.style.transform = <span class="string">`rotate(hoursDegrees)`</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> mins = now.getMinutes()</span><br><span class="line">  <span class="keyword">const</span> minutesDegrees = ((mins / <span class="number">60</span>) * <span class="number">360</span>) + <span class="number">90</span></span><br><span class="line">  minuteHand.style.transform = <span class="string">`rotate(minutesDegrees)`</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> seconds = now.getSeconds()</span><br><span class="line">  <span class="keyword">const</span> secondsDegrees = ((seconds / <span class="number">60</span>) * <span class="number">360</span>) + <span class="number">90</span></span><br><span class="line">  secondHand.style.transform = <span class="string">`rotate(secondsDegrees)`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>依照時間比例算出旋轉角度，並帶入 CSS 的 <code>rotate()</code> 設置。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 取得時間</span></span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.getSeconds();</span><br><span class="line">  <span class="keyword">const</span> mins = now.getMinutes();</span><br><span class="line">  <span class="keyword">const</span> hour = now.getHours();</span><br><span class="line">  <span class="comment">// 計算角度</span></span><br><span class="line">  <span class="keyword">const</span> secondsDegree = (seconds / <span class="number">60</span>) * <span class="number">360</span>;</span><br><span class="line">  <span class="keyword">const</span> minsDegree = ((mins / <span class="number">60</span>) * <span class="number">360</span>) + ((seconds / <span class="number">60</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="keyword">const</span> hourDegree = ((hour / <span class="number">12</span>) * <span class="number">360</span>) + ((mins / <span class="number">12</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="comment">// 角度代入 CSS</span></span><br><span class="line">  secondHand.style.transform = <span class="string">`rotate(<span class="subst">$&#123;secondsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  minuteHand.style.transform = <span class="string">`rotate(<span class="subst">$&#123;minsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  hourHand.style.transform = <span class="string">`rotate(<span class="subst">$&#123;hourDegree&#125;</span>deg)`</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 到這裡就是一個會動的正確時鐘了。  <br></li>
 </ul>
 <p><strong>4. 旋轉優化</strong></p>
 <ul>
-<li>觀察秒針活動軌跡發現，當它要從 59 秒跳回 0 秒時會逆時針旋轉。因為對電腦來說 59 –&gt; 0 是”後退”不是”前進”。最簡單的方法就是，當指針要回到 0 秒時，花費 0 秒直接變化，肉眼就看不出回退過程了。  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 設置一個分辨角度的 function</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">zeroDegreeRotate</span>(<span class="params">degree</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (degree === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.hand&#x27;</span>).style.transition = <span class="string">&#x27;all 0s&#x27;</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.hand&#x27;</span>).style.transition = <span class="string">&#x27;all 0.05s&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`rotate(<span class="subst">$&#123;degree&#125;</span>deg)`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 將 return 值引入 function setTime() 裡</span></span><br><span class="line">hourHand.style.transform = zeroDegreeRotate(hoursDegrees)</span><br><span class="line">minuteHand.style.transform = zeroDegreeRotate(minutesDegrees)</span><br><span class="line">secondHand.style.transform = zeroDegreeRotate(secondsDegrees)</span><br></pre></td></tr></table></figure></li>
+<li>觀察秒針活動軌跡發現，當它要從 59 秒跳回 0 秒時會逆時針旋轉。因為對電腦來說 59 –&gt; 0 是”後退”不是”前進”。最簡單的方法就是，當指針要回到 0 秒時，花費 0 秒直接變化，肉眼就看不出回退過程了。  </li>
+<li>設置一個檢查：如果任一指針角度為0，<code>transition</code> 改為 ‘all 0s’。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 設置一個分辨角度的 function</span></span><br><span class="line"><span class="keyword">if</span> (secondsDegree + minsDegree + hourDegree === <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.hand&#x27;</span>).style.transition = <span class="string">&#x27;all 0s&#x27;</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.hand&#x27;</span>).style.transition = <span class="string">&#x27;all 5ms&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>因為 JavaScript 有<strong>由上而下</strong>的執行順序，所以要把這段插到 “角度代入 CSS” 之前。</li>
 </ul>
 <br>
 <br>
@@ -1356,6 +1352,12 @@
         <tag>JavaScript</tag>
         <tag>JS30</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>post</title>
+    <url>/posts/5a8a6c8d/</url>
+    <content><![CDATA[<span id="more"></span>
+]]></content>
   </entry>
   <entry>
     <title>404 - 真巧，竟然在這裡遇到你！</title>
