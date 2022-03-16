@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
 <link rel="preconnect" href="https://use.typekit.net/" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -17,20 +17,20 @@
 
 <link rel="stylesheet" href="https://use.typekit.net//css?family=Lato:300,300italic,400,400italic,700,700italic%7Csource-han-sans-hong-kong:300,300italic,400,400italic,700,700italic%7Csans-serif:300,300italic,400,400italic,700,700italic%7Csource-code-pro:300,300italic,400,400italic,700,700italic%7Cmonospace;:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-  <meta name="description" content="這個專案練習了 CSS 轉場效果( transition &amp; transform )，並利用 JavaScript function 來帶動 transform 的變化。">
+    <meta name="description" content="這個專案練習了 CSS 轉場效果( transition &amp; transform )，並利用 JavaScript function 來帶動 transform 的變化。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【JS30 挑戰】 Day2 - JS and CSS Clock">
 <meta property="og:url" content="https://ritachien.github.io/posts/74544bca/">
 <meta property="og:site_name" content="Rita 的學習筆記">
 <meta property="og:description" content="這個專案練習了 CSS 轉場效果( transition &amp; transform )，並利用 JavaScript function 來帶動 transform 的變化。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-01-30T15:56:00.000Z">
-<meta property="article:modified_time" content="2022-02-11T16:52:51.195Z">
+<meta property="article:published_time" content="2022-02-07T15:56:00.000Z">
+<meta property="article:modified_time" content="2022-02-06T16:00:00.000Z">
 <meta property="article:author" content="Rita Chien">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="JS30">
@@ -106,7 +106,6 @@
 <nav class="site-nav">
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li>
         <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
@@ -182,13 +181,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -247,11 +246,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
       <meta itemprop="name" content="Rita Chien">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Rita 的學習筆記">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【JS30 挑戰】 Day2 - JS and CSS Clock | Rita 的學習筆記">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -265,15 +269,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2022-01-30 23:56:00" itemprop="dateCreated datePublished" datetime="2022-01-30T23:56:00+08:00">2022-01-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-02-12 00:52:51" itemprop="dateModified" datetime="2022-02-12T00:52:51+08:00">2022-02-12</time>
+      <time title="創建時間：2022-02-07 23:56:00 / 修改時間：00:00:00" itemprop="dateCreated datePublished" datetime="2022-02-07T23:56:00+08:00">2022-02-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -349,16 +347,16 @@
 </ul>
 <p><strong>3. 取得時間資訊</strong></p>
 <ul>
-<li>分別找出 3 支指針。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> hourHand = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.hour-hand&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> minuteHand = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.min-hand&#x27;</span>)  </span><br><span class="line"><span class="keyword">const</span> secondHand = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.second-hand&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>分別找出 3 支指針。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> hourHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hour-hand&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> minuteHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.min-hand&#x27;</span>)  </span><br><span class="line"><span class="keyword">const</span> secondHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.second-hand&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
 <li>建立一個 setTime() function ，並把要執行的動作放入函式。  </li>
-<li>取得當下時間，並分別取出時&#x2F;分&#x2F;秒。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> hours = now.getHours()</span><br><span class="line">  <span class="keyword">const</span> mins = now.getMinutes()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.getSeconds()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>依照時間比例算出旋轉角度，並帶入 CSS 的 <code>rotate()</code> 設置。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 取得時間</span></span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.getSeconds();</span><br><span class="line">  <span class="keyword">const</span> mins = now.getMinutes();</span><br><span class="line">  <span class="keyword">const</span> hour = now.getHours();</span><br><span class="line">  <span class="comment">// 計算角度</span></span><br><span class="line">  <span class="keyword">const</span> secondsDegree = (seconds / <span class="number">60</span>) * <span class="number">360</span>;</span><br><span class="line">  <span class="keyword">const</span> minsDegree = ((mins / <span class="number">60</span>) * <span class="number">360</span>) + ((seconds / <span class="number">60</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="keyword">const</span> hourDegree = ((hour / <span class="number">12</span>) * <span class="number">360</span>) + ((mins / <span class="number">12</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="comment">// 角度代入 CSS</span></span><br><span class="line">  secondHand.style.transform = <span class="string">`rotate(<span class="subst">$&#123;secondsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  minuteHand.style.transform = <span class="string">`rotate(<span class="subst">$&#123;minsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  hourHand.style.transform = <span class="string">`rotate(<span class="subst">$&#123;hourDegree&#125;</span>deg)`</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>取得當下時間，並分別取出時&#x2F;分&#x2F;秒。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setTime</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> hours = now.<span class="title function_">getHours</span>()</span><br><span class="line">  <span class="keyword">const</span> mins = now.<span class="title function_">getMinutes</span>()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.<span class="title function_">getSeconds</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>依照時間比例算出旋轉角度，並帶入 CSS 的 <code>rotate()</code> 設置。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setTime</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 取得時間</span></span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.<span class="title function_">getSeconds</span>();</span><br><span class="line">  <span class="keyword">const</span> mins = now.<span class="title function_">getMinutes</span>();</span><br><span class="line">  <span class="keyword">const</span> hour = now.<span class="title function_">getHours</span>();</span><br><span class="line">  <span class="comment">// 計算角度</span></span><br><span class="line">  <span class="keyword">const</span> secondsDegree = (seconds / <span class="number">60</span>) * <span class="number">360</span>;</span><br><span class="line">  <span class="keyword">const</span> minsDegree = ((mins / <span class="number">60</span>) * <span class="number">360</span>) + ((seconds / <span class="number">60</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="keyword">const</span> hourDegree = ((hour / <span class="number">12</span>) * <span class="number">360</span>) + ((mins / <span class="number">12</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="comment">// 角度代入 CSS</span></span><br><span class="line">  secondHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;secondsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  minuteHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;minsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  hourHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;hourDegree&#125;</span>deg)`</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 到這裡就是一個會動的正確時鐘了。  <br></li>
 </ul>
 <p><strong>4. 旋轉優化</strong></p>
 <ul>
 <li>觀察秒針活動軌跡發現，當它要從 59 秒跳回 0 秒時會逆時針旋轉。因為對電腦來說 59 –&gt; 0 是”後退”不是”前進”。最簡單的方法就是，當指針要回到 0 秒時，花費 0 秒直接變化，肉眼就看不出回退過程了。  </li>
-<li>設置一個檢查：如果任一指針角度為0，<code>transition</code> 改為 ‘all 0s’。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 設置一個分辨角度的 function</span></span><br><span class="line"><span class="keyword">if</span> (secondsDegree === <span class="number">0</span></span><br><span class="line">  || minsDegree === <span class="number">0</span></span><br><span class="line">  || hourDegree === <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.hand&#x27;</span>).style.transition = <span class="string">&#x27;all 0s&#x27;</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.hand&#x27;</span>).style.transition = <span class="string">&#x27;all 5ms&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>設置一個檢查：如果任一指針角度為0，<code>transition</code> 改為 ‘all 0s’。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 設置一個分辨角度的 function</span></span><br><span class="line"><span class="keyword">if</span> (secondsDegree === <span class="number">0</span></span><br><span class="line">  || minsDegree === <span class="number">0</span></span><br><span class="line">  || hourDegree === <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hand&#x27;</span>).<span class="property">style</span>.<span class="property">transition</span> = <span class="string">&#x27;all 0s&#x27;</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hand&#x27;</span>).<span class="property">style</span>.<span class="property">transition</span> = <span class="string">&#x27;all 5ms&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>因為 JavaScript 有<strong>由上而下</strong>的執行順序，所以要把這段插到 “角度代入 CSS” 之前。</li>
 </ul>
 <br>
@@ -413,6 +411,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/posts/b8b00b13/" rel="next" title="data-* HTML 自定義屬性及 dataset">
+                  data-* HTML 自定義屬性及 dataset <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -445,13 +446,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">46k</span>
+    <span title="總字數">47k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">42 分鐘</span>
+    <span title="所需總閱讀時間">43 分鐘</span>
   </span>
 </div><!-- 在網頁底部添加網站運行時間 -->
 <span id="blogTime">載入天數時分秒...</span>

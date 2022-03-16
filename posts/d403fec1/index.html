@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
 <link rel="preconnect" href="https://use.typekit.net/" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -17,12 +17,12 @@
 
 <link rel="stylesheet" href="https://use.typekit.net//css?family=Lato:300,300italic,400,400italic,700,700italic%7Csource-han-sans-hong-kong:300,300italic,400,400italic,700,700italic%7Csans-serif:300,300italic,400,400italic,700,700italic%7Csource-code-pro:300,300italic,400,400italic,700,700italic%7Cmonospace;:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-  <meta name="description" content="在使用運算子 (Operators) 時，隨著練習題逐漸提高的複雜度，開始發現一些與自己認知不同的地方。這些不明顯的小錯誤，常常是導致程式跑不出來或出現預期外結果的原因。所以在之前筆記的基礎上，把犯過的錯誤一起整理進來，降低下次再犯的可能性。">
+    <meta name="description" content="在使用運算子 (Operators) 時，隨著練習題逐漸提高的複雜度，開始發現一些與自己認知不同的地方。這些不明顯的小錯誤，常常是導致程式跑不出來或出現預期外結果的原因。所以在之前筆記的基礎上，把犯過的錯誤一起整理進來，降低下次再犯的可能性。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 運算子">
 <meta property="og:url" content="https://ritachien.github.io/posts/d403fec1/">
@@ -105,7 +105,6 @@
 <nav class="site-nav">
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li>
         <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
@@ -181,13 +180,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -246,11 +245,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
       <meta itemprop="name" content="Rita Chien">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Rita 的學習筆記">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="JavaScript 運算子 | Rita 的學習筆記">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -389,9 +393,9 @@
 </tr>
 </tbody></table>
 <h3 id="寫在前面的-和"><a href="#寫在前面的-和" class="headerlink" title="寫在前面的 ++ 和 --"></a>寫在前面的 <code>++</code> 和 <code>--</code></h3><p><code>++</code> 和 <code>--</code> 寫在變數的前面或後面作用都是不變的，即「將變數的值再加 1 或再減 1」。但是如果放進 console.log() 裡，執行的順序會不一樣。  </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">2</span>            <span class="comment">// 宣告並指派 2 的值給 x</span></span><br><span class="line"><span class="built_in">console</span>.log(x)       <span class="comment">// 會印出 2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(x++)     <span class="comment">// 會印出 2 (先印出 x ，然後才加 1)</span></span><br><span class="line"><span class="built_in">console</span>.log(x)       <span class="comment">// 會印出 3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(++x)     <span class="comment">// 會印出 4 (先加 1 ，然後才印出 x)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">2</span>            <span class="comment">// 宣告並指派 2 的值給 x</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x)       <span class="comment">// 會印出 2</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x++)     <span class="comment">// 會印出 2 (先印出 x ，然後才加 1)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x)       <span class="comment">// 會印出 3</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(++x)     <span class="comment">// 會印出 4 (先加 1 ，然後才印出 x)</span></span><br></pre></td></tr></table></figure>
 <h3 id="常見錯誤-型別錯誤"><a href="#常見錯誤-型別錯誤" class="headerlink" title="常見錯誤: 型別錯誤"></a>常見錯誤: 型別錯誤</h3><p>JavaScript 是一個弱型別的語言，意思是說在 JavaScript 裡，型別特別容易自動轉換。進行運算時，如果變數型別不同，有時候 JavaScript 不會報錯，而是直接自動轉換型別，這也很容易造成「出現預期外結果卻很難找出原因」。  </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">&#x27;2&#x27;</span>           <span class="comment">// 型別: string</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">3</span>             <span class="comment">// 型別: number</span></span><br><span class="line"><span class="built_in">console</span>.log(a + b)    <span class="comment">// 會印出 23 (自動將 b 型別轉換為 string )</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">&#x27;2&#x27;</span>           <span class="comment">// 型別: string</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">3</span>             <span class="comment">// 型別: number</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a + b)    <span class="comment">// 會印出 23 (自動將 b 型別轉換為 string )</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="賦值運算子"><a href="#賦值運算子" class="headerlink" title="賦值運算子"></a>賦值運算子</h2><h3 id="基本介紹-1"><a href="#基本介紹-1" class="headerlink" title="基本介紹"></a>基本介紹</h3><p>賦值運算子（assignment operators）中最常使用的賦值運算子就是 <code>=</code> ，除了 <code>=</code> 外還有搭配算數運算的其他賦值運算子。  </p>
 <table>
@@ -494,13 +498,13 @@
 </tr>
 </tbody></table>
 <h3 id="常見錯誤1-型別錯誤"><a href="#常見錯誤1-型別錯誤" class="headerlink" title="常見錯誤1: 型別錯誤"></a>常見錯誤1: 型別錯誤</h3><p>除了<strong>等於</strong>和<strong>不等於</strong>可以強制檢查型別，其他的比較運算子都要特別注意<strong>型別轉換</strong>問題。可以用 <code>typeof</code> 來檢查變數的型別。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">&#x27;2&#x27;</span>             <span class="comment">// 型別: string</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">3</span>               <span class="comment">// 型別: number</span></span><br><span class="line"><span class="built_in">console</span>.log(a &lt; b)      <span class="comment">// 結果為 true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a)   <span class="comment">// 結果為 string</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b)   <span class="comment">// 結果為 number</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">&#x27;2&#x27;</span>             <span class="comment">// 型別: string</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">3</span>               <span class="comment">// 型別: number</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a &lt; b)      <span class="comment">// 結果為 true</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> a)   <span class="comment">// 結果為 string</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> b)   <span class="comment">// 結果為 number</span></span><br></pre></td></tr></table></figure>
 <h3 id="常見錯誤2-用錯等於"><a href="#常見錯誤2-用錯等於" class="headerlink" title="常見錯誤2: 用錯等於"></a>常見錯誤2: 用錯等於</h3><p>依照以前學數學的習慣，在做變數比較時，會不小心把 <code>=</code> 當作比較運算子使用。原本要拿來比較的變數不小心被重新賦值了，所以會跑出奇怪的結果。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">3</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 正確 </span></span><br><span class="line"><span class="keyword">if</span>(a === b) &#123;       <span class="comment">// 如果 a 和 b 相等，則進行 (a - b)</span></span><br><span class="line">  a - b             <span class="comment">// 因為 a 和 b 不相等，所以不會執行</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a - b)  <span class="comment">// 會印出 1。此時 a 等於3；b 等於2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 錯誤</span></span><br><span class="line"><span class="keyword">if</span>(a = b) &#123;         <span class="comment">// b 的值被指派給 a ，此時 a 等於2</span></span><br><span class="line">  a - b             <span class="comment">// 進行 a - b 運算(2-2)</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a - b)  <span class="comment">// 會印出 0。此時 a 和 b 都等於2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">3</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 正確 </span></span><br><span class="line"><span class="keyword">if</span>(a === b) &#123;       <span class="comment">// 如果 a 和 b 相等，則進行 (a - b)</span></span><br><span class="line">  a - b             <span class="comment">// 因為 a 和 b 不相等，所以不會執行</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a - b)  <span class="comment">// 會印出 1。此時 a 等於3；b 等於2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 錯誤</span></span><br><span class="line"><span class="keyword">if</span>(a = b) &#123;         <span class="comment">// b 的值被指派給 a ，此時 a 等於2</span></span><br><span class="line">  a - b             <span class="comment">// 進行 a - b 運算(2-2)</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a - b)  <span class="comment">// 會印出 0。此時 a 和 b 都等於2</span></span><br></pre></td></tr></table></figure>
 <h3 id="常見錯誤3-比較變數區間"><a href="#常見錯誤3-比較變數區間" class="headerlink" title="常見錯誤3: 比較變數區間"></a>常見錯誤3: 比較變數區間</h3><p>按照數學邏輯，如果我想知道一個變數的值是否在特定區間裡，可能會把條件這樣寫 <code>3 &lt; x &lt; 10</code> ，然後再丟一個 x 值進行驗證，但是在 JavaScript 裡，這樣做結果會出現異常。  </p>
 <p>這樣寫的效果類似 <code>||</code> 的使用， <code>3 &lt; x &lt; 10</code> 會被拆成兩段 (<code>3 &lt; x</code> 和 <code>x &lt; 10</code>) 進行驗證，只要其中一項符合則傳回 true。  </p>
 <p>正確方式應該要將條件拆開，並用 <code>&amp;&amp;</code> 要求同時符合。  </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span> &lt; x &lt; <span class="number">10</span>)       <span class="comment">// 輸出結果為 true (符合 x &lt; 10)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">11</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span> &lt; x &lt; <span class="number">10</span>)       <span class="comment">// 輸出結果為 true (符合 3 &lt; x)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">11</span></span><br><span class="line"><span class="built_in">console</span>.log(x &gt; <span class="number">3</span> &amp;&amp; x &lt; <span class="number">10</span>)  <span class="comment">// 輸出結果為 false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span> &lt; x &lt; <span class="number">10</span>)       <span class="comment">// 輸出結果為 true (符合 x &lt; 10)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">11</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span> &lt; x &lt; <span class="number">10</span>)       <span class="comment">// 輸出結果為 true (符合 3 &lt; x)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> x = <span class="number">11</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x &gt; <span class="number">3</span> &amp;&amp; x &lt; <span class="number">10</span>)  <span class="comment">// 輸出結果為 false</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="邏輯運算子"><a href="#邏輯運算子" class="headerlink" title="邏輯運算子"></a>邏輯運算子</h2><h3 id="基本介紹-3"><a href="#基本介紹-3" class="headerlink" title="基本介紹"></a>基本介紹</h3><p>邏輯運算子（logical operators）: 通常用於條件判斷 <code>true</code> or <code>false</code> 。    </p>
 <table>
@@ -532,7 +536,7 @@
 </tr>
 </tbody></table>
 <h3 id="常見錯誤-運算子順序"><a href="#常見錯誤-運算子順序" class="headerlink" title="常見錯誤: 運算子順序"></a>常見錯誤: 運算子順序</h3><p>就像四則運算有「先乘除後加減」的運算順序一樣，邏輯運算子的運算順序是: <code>&amp;&amp;</code> &gt; <code>||</code> ，且由左至右運行。如果要打破原有順序，加上 <code>()</code> 是很好用的方法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> || <span class="literal">false</span> &amp;&amp; <span class="literal">true</span> &amp;&amp; <span class="literal">false</span>)      <span class="comment">// 結果為 true</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="literal">true</span> || <span class="literal">false</span>) &amp;&amp; (<span class="literal">true</span> &amp;&amp; <span class="literal">false</span>))  <span class="comment">// 結果為 false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="literal">true</span> || <span class="literal">false</span> &amp;&amp; <span class="literal">true</span> &amp;&amp; <span class="literal">false</span>)      <span class="comment">// 結果為 true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>((<span class="literal">true</span> || <span class="literal">false</span>) &amp;&amp; (<span class="literal">true</span> &amp;&amp; <span class="literal">false</span>))  <span class="comment">// 結果為 false</span></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -614,13 +618,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">46k</span>
+    <span title="總字數">47k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">42 分鐘</span>
+    <span title="所需總閱讀時間">43 分鐘</span>
   </span>
 </div><!-- 在網頁底部添加網站運行時間 -->
 <span id="blogTime">載入天數時分秒...</span>
