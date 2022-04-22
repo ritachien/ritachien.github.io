@@ -453,6 +453,79 @@
       </tags>
   </entry>
   <entry>
+    <title>有效率地猜中數字</title>
+    <url>/posts/5959db4f/</url>
+    <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期一作業<br>這是第一個讓我覺得”卡卡”的題目，也是一個讓我在寫出來後深刻認知到: “<strong>想不到解決問題的方法，會寫程式也沒用</strong>“的題目。</p>
+<span id="more"></span>
+<p>藉著記錄解題的過程，把當初解決問題的方法和思考方式寫下來，達成再次深入複習的目的。</p>
+<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
+<li>Math.random() 會回傳一個偽隨機小數介於0到1之間(包含0，不包含1)  </li>
+<li>Math.floor() 會回傳小於等於所給數字的最大整數(無條件捨去)。  </li>
+<li>while 迴圈  </li>
+<li>if statement</li>
+</ol>
+<h2 id="基本題"><a href="#基本題" class="headerlink" title="基本題"></a>基本題</h2><h3 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h3><ol>
+<li>指定介於 1-100 之間的數字，存在 <code>answer</code> 變數裡  </li>
+<li>設定一個 <code>guess</code> 變數，代表挑戰者 (電腦) 猜的數字  </li>
+<li>電腦可重覆「猜數字」，比對 <code>guess</code> 和 <code>answer</code>，判斷太大或太小  </li>
+<li>若兩者相等（猜對）則結束遊戲，且結束時須計算電腦猜了幾次</li>
+</ol>
+<h3 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h3><p>使用 Math.random() 和 Math.floor() 指定一個介於 1-100 之間的數字，存在 <code>answer</code> 變數裡。</p>
+<blockquote>
+<p>原本想要直接用 Math.ceil() 無條件進位，但後來發現 Math.random() 有可能產生 “0”。所以如果直接用 Math.ceil() 可能會發生 <code>guess === 0</code> 的問題(不符合猜數範圍)。  </p>
+</blockquote>
+<p>先用 Math.random() * 100 取得一個介於0到100之間(包含0，不包含100)的隨機小數。把這個小數套進 Math.floor() 裡面進行無條件捨去再加1，就能取得一個介於1到100之間(包含1，包含100)的隨機整數了。  </p>
+<blockquote>
+<p>這裡還犯過一個非常不應該的錯誤，我把 Math 寫成 math ，然後就又跳錯誤了……</p>
+</blockquote>
+<br/>
+
+<p>到目前為止，條件一和條件二都可以達成了。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 指定介於 1-100 之間的數字，存在 `answer` 變數裡</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 設定一個 `guess` 變數，代表挑戰者 (電腦) 猜的數字</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<br/>
+
+<p>for &#x2F; while 的選擇—-因為這次的比大小是條件判斷，所以選擇 while 迴圈。<br>先把邏輯寫出來:  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 生成並印出答案</span></span><br><span class="line">宣告 anwer</span><br><span class="line"><span class="comment">// 進入迴圈的條件(重複執行的原因)</span></span><br><span class="line"><span class="keyword">while</span> (猜數 不等於 答案) ，則進入迴圈</span><br><span class="line"></span><br><span class="line"><span class="comment">// 每一回合會重複的動作(放進迴圈裡)</span></span><br><span class="line">猜一次數字，並且回合數 + <span class="number">1</span> (接著進入結果判斷)</span><br><span class="line"><span class="variable constant_">IF</span> 猜數 &gt; 答案</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:太大了</span><br><span class="line"><span class="variable constant_">ELSE</span> <span class="variable constant_">IF</span> 猜數 &lt; 答案</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:太小了</span><br><span class="line"><span class="variable constant_">ELSE</span> (猜數 = 答案)</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:恭喜答對!</span><br><span class="line">  結束迴圈</span><br></pre></td></tr></table></figure>
+<br/>
+
+<p>好像差不多了，條件三和條件四也都可以達成了。但跟著邏輯再想一遍以後又發現了問題:  </p>
+<ol>
+<li>迴圈裡回合數每次 + 1，但不知道是從多少開始加，所以要先宣告回合數 &#x3D; 0  </li>
+<li>一開始只生成答案無法達成進入迴圈條件，為了達成條件，先宣告猜數 &#x3D; 0</li>
+</ol>
+<p>以上問題都解決了，可以組合起來寫出程式碼了!  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ========= 宣告變數 ==========</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span> <span class="comment">//正確答案</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="number">0</span> <span class="comment">//挑戰者猜的數字</span></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span> <span class="comment">//回合數</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ========= 從這裡開始 ==========</span></span><br><span class="line"><span class="comment">// 先印出正確數字</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`正確答案為 <span class="subst">$&#123;answer&#125;</span>`</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 設計判斷式和迴圈解決問題</span></span><br><span class="line"><span class="keyword">while</span> (guess !== answer) &#123;</span><br><span class="line">  </span><br><span class="line">  guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span> <span class="comment">// 挑戰者猜一個本回合的數字    </span></span><br><span class="line">  count += <span class="number">1</span>                                     </span><br><span class="line"></span><br><span class="line"> <span class="comment">// 條件判斷</span></span><br><span class="line">  <span class="keyword">if</span> (guess &gt; answer) &#123; </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:太大了，再猜一次`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (guess &lt; answer) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:太小了，再猜一次`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:恭喜答對!`</span>)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;===============遊戲結束===============&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br/>
+<br/>
+
+<h2 id="進階題"><a href="#進階題" class="headerlink" title="進階題"></a>進階題</h2><h3 id="題目要求-1"><a href="#題目要求-1" class="headerlink" title="題目要求"></a>題目要求</h3><ul>
+<li>讓電腦在 10 次以內猜對</li>
+</ul>
+<h3 id="解題過程-1"><a href="#解題過程-1" class="headerlink" title="解題過程"></a>解題過程</h3><p>花了三個小時都沒想出來，最後決定上網找找靈感，幸運發現一個前輩的解題思路。認真看完一遍，發現就跟以前玩終極密碼一樣，最快的方式就是縮小範圍，砍半再砍半。如果用對半切的方式，已知 2 的 10 次方為 1024，即範圍 1~1024 內的數字用砍半方式一定可以在 10 次內猜到，符合題目要求。  </p>
+<p>知道方法後要做的事只有2件:  </p>
+<ol>
+<li>設定猜數的上限和下限  </li>
+<li>讓猜數取上限和下限的中位數</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 設定猜數的起始上限和下限(放起始宣告位置)</span></span><br><span class="line"><span class="keyword">let</span> rangeMax = <span class="number">100</span> </span><br><span class="line"><span class="keyword">let</span> rangeMin = <span class="number">1</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">// 設定迴圈裡猜數的上限和下限重新賦值的方式(放入迴圈)</span></span><br><span class="line"><span class="comment">// 猜過的數字不能包含在範圍內</span></span><br><span class="line">rangeMax = guess - <span class="number">1</span></span><br><span class="line">rangeMin = guess + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 以猜數範圍的中位數再猜一次(放入迴圈)</span></span><br><span class="line">guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>((rangeMin + rangeMax) / <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<br/>
+
+<p>該作的變數調整都完成了，接下來就是把它們塞進該放的位置。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 宣告並產生答案</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span>  </span><br><span class="line"></span><br><span class="line"><span class="comment">// ========= start coding ==========</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="number">0</span>         <span class="comment">// 宣告挑戰者猜的數字為0</span></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span>         <span class="comment">// 宣告起始回合數為0</span></span><br><span class="line"><span class="keyword">let</span> rangeMax = <span class="number">100</span>    <span class="comment">// 宣告猜測最大值為100</span></span><br><span class="line"><span class="keyword">let</span> rangeMin = <span class="number">1</span>      <span class="comment">// 宣告猜測最小值為1</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`莊家數字是 <span class="subst">$&#123;answer&#125;</span>`</span>)  <span class="comment">//印出正確答案</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (guess !== answer) &#123;</span><br><span class="line">  guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>((rangeMin + rangeMax) / <span class="number">2</span>)</span><br><span class="line">  count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (guess &gt; answer) &#123;  </span><br><span class="line">    rangeMax = guess - <span class="number">1</span>  </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，太大，再猜一次! 範圍 <span class="subst">$&#123;rangeMin&#125;</span> ~ <span class="subst">$&#123;rangeMax&#125;</span> 。`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (guess &lt; answer) &#123;</span><br><span class="line">    rangeMin = guess + <span class="number">1</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，太小，再猜一次! 範圍 <span class="subst">$&#123;rangeMin&#125;</span> ~ <span class="subst">$&#123;rangeMax&#125;</span> 。`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，恭喜答對!`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br/>
+
+<p>終於成功了!! 這也是文章開頭說的: 如果知道解決問題的方法，只要能正確地把程式碼寫出來就好；如果不知道解決問題的方法，就算程式語言再精深都沒用，因為連怎麼開始都不知道。  </p>
+<p>其他小題目還好，就不特別寫解題筆記了。預計下一篇會寫更卡一點的期末考 😅</p>
+]]></content>
+      <categories>
+        <category>JavaScript 解題</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo NexT 主題變更 &amp; 設定</title>
     <url>/posts/ebe0f18a/</url>
     <content><![CDATA[<p>基本設定都做好了，文章也成功發佈了，接下來該找個美美的主題幫部落格換個新衣服。我最後找了看起來簡約大方的 NexT 主題，持續都有在作版本更新，開源資源也很多，看到各種大神把基本款改成高級訂製款，除了框架根本看不出原樣，覺得超厲害!  </p>
@@ -550,79 +623,6 @@
       <tags>
         <tag>Hexo</tag>
         <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有效率地猜中數字</title>
-    <url>/posts/5959db4f/</url>
-    <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期一作業<br>這是第一個讓我覺得”卡卡”的題目，也是一個讓我在寫出來後深刻認知到: “<strong>想不到解決問題的方法，會寫程式也沒用</strong>“的題目。</p>
-<span id="more"></span>
-<p>藉著記錄解題的過程，把當初解決問題的方法和思考方式寫下來，達成再次深入複習的目的。</p>
-<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
-<li>Math.random() 會回傳一個偽隨機小數介於0到1之間(包含0，不包含1)  </li>
-<li>Math.floor() 會回傳小於等於所給數字的最大整數(無條件捨去)。  </li>
-<li>while 迴圈  </li>
-<li>if statement</li>
-</ol>
-<h2 id="基本題"><a href="#基本題" class="headerlink" title="基本題"></a>基本題</h2><h3 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h3><ol>
-<li>指定介於 1-100 之間的數字，存在 <code>answer</code> 變數裡  </li>
-<li>設定一個 <code>guess</code> 變數，代表挑戰者 (電腦) 猜的數字  </li>
-<li>電腦可重覆「猜數字」，比對 <code>guess</code> 和 <code>answer</code>，判斷太大或太小  </li>
-<li>若兩者相等（猜對）則結束遊戲，且結束時須計算電腦猜了幾次</li>
-</ol>
-<h3 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h3><p>使用 Math.random() 和 Math.floor() 指定一個介於 1-100 之間的數字，存在 <code>answer</code> 變數裡。</p>
-<blockquote>
-<p>原本想要直接用 Math.ceil() 無條件進位，但後來發現 Math.random() 有可能產生 “0”。所以如果直接用 Math.ceil() 可能會發生 <code>guess === 0</code> 的問題(不符合猜數範圍)。  </p>
-</blockquote>
-<p>先用 Math.random() * 100 取得一個介於0到100之間(包含0，不包含100)的隨機小數。把這個小數套進 Math.floor() 裡面進行無條件捨去再加1，就能取得一個介於1到100之間(包含1，包含100)的隨機整數了。  </p>
-<blockquote>
-<p>這裡還犯過一個非常不應該的錯誤，我把 Math 寫成 math ，然後就又跳錯誤了……</p>
-</blockquote>
-<br/>
-
-<p>到目前為止，條件一和條件二都可以達成了。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 指定介於 1-100 之間的數字，存在 `answer` 變數裡</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 設定一個 `guess` 變數，代表挑戰者 (電腦) 猜的數字</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<br/>
-
-<p>for &#x2F; while 的選擇—-因為這次的比大小是條件判斷，所以選擇 while 迴圈。<br>先把邏輯寫出來:  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 生成並印出答案</span></span><br><span class="line">宣告 anwer</span><br><span class="line"><span class="comment">// 進入迴圈的條件(重複執行的原因)</span></span><br><span class="line"><span class="keyword">while</span> (猜數 不等於 答案) ，則進入迴圈</span><br><span class="line"></span><br><span class="line"><span class="comment">// 每一回合會重複的動作(放進迴圈裡)</span></span><br><span class="line">猜一次數字，並且回合數 + <span class="number">1</span> (接著進入結果判斷)</span><br><span class="line"><span class="variable constant_">IF</span> 猜數 &gt; 答案</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:太大了</span><br><span class="line"><span class="variable constant_">ELSE</span> <span class="variable constant_">IF</span> 猜數 &lt; 答案</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:太小了</span><br><span class="line"><span class="variable constant_">ELSE</span> (猜數 = 答案)</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:恭喜答對!</span><br><span class="line">  結束迴圈</span><br></pre></td></tr></table></figure>
-<br/>
-
-<p>好像差不多了，條件三和條件四也都可以達成了。但跟著邏輯再想一遍以後又發現了問題:  </p>
-<ol>
-<li>迴圈裡回合數每次 + 1，但不知道是從多少開始加，所以要先宣告回合數 &#x3D; 0  </li>
-<li>一開始只生成答案無法達成進入迴圈條件，為了達成條件，先宣告猜數 &#x3D; 0</li>
-</ol>
-<p>以上問題都解決了，可以組合起來寫出程式碼了!  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ========= 宣告變數 ==========</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span> <span class="comment">//正確答案</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="number">0</span> <span class="comment">//挑戰者猜的數字</span></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span> <span class="comment">//回合數</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ========= 從這裡開始 ==========</span></span><br><span class="line"><span class="comment">// 先印出正確數字</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`正確答案為 <span class="subst">$&#123;answer&#125;</span>`</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 設計判斷式和迴圈解決問題</span></span><br><span class="line"><span class="keyword">while</span> (guess !== answer) &#123;</span><br><span class="line">  </span><br><span class="line">  guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span> <span class="comment">// 挑戰者猜一個本回合的數字    </span></span><br><span class="line">  count += <span class="number">1</span>                                     </span><br><span class="line"></span><br><span class="line"> <span class="comment">// 條件判斷</span></span><br><span class="line">  <span class="keyword">if</span> (guess &gt; answer) &#123; </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:太大了，再猜一次`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (guess &lt; answer) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:太小了，再猜一次`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:恭喜答對!`</span>)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;===============遊戲結束===============&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<br/>
-<br/>
-
-<h2 id="進階題"><a href="#進階題" class="headerlink" title="進階題"></a>進階題</h2><h3 id="題目要求-1"><a href="#題目要求-1" class="headerlink" title="題目要求"></a>題目要求</h3><ul>
-<li>讓電腦在 10 次以內猜對</li>
-</ul>
-<h3 id="解題過程-1"><a href="#解題過程-1" class="headerlink" title="解題過程"></a>解題過程</h3><p>花了三個小時都沒想出來，最後決定上網找找靈感，幸運發現一個前輩的解題思路。認真看完一遍，發現就跟以前玩終極密碼一樣，最快的方式就是縮小範圍，砍半再砍半。如果用對半切的方式，已知 2 的 10 次方為 1024，即範圍 1~1024 內的數字用砍半方式一定可以在 10 次內猜到，符合題目要求。  </p>
-<p>知道方法後要做的事只有2件:  </p>
-<ol>
-<li>設定猜數的上限和下限  </li>
-<li>讓猜數取上限和下限的中位數</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 設定猜數的起始上限和下限(放起始宣告位置)</span></span><br><span class="line"><span class="keyword">let</span> rangeMax = <span class="number">100</span> </span><br><span class="line"><span class="keyword">let</span> rangeMin = <span class="number">1</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">// 設定迴圈裡猜數的上限和下限重新賦值的方式(放入迴圈)</span></span><br><span class="line"><span class="comment">// 猜過的數字不能包含在範圍內</span></span><br><span class="line">rangeMax = guess - <span class="number">1</span></span><br><span class="line">rangeMin = guess + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 以猜數範圍的中位數再猜一次(放入迴圈)</span></span><br><span class="line">guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>((rangeMin + rangeMax) / <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<br/>
-
-<p>該作的變數調整都完成了，接下來就是把它們塞進該放的位置。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 宣告並產生答案</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span>  </span><br><span class="line"></span><br><span class="line"><span class="comment">// ========= start coding ==========</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="number">0</span>         <span class="comment">// 宣告挑戰者猜的數字為0</span></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span>         <span class="comment">// 宣告起始回合數為0</span></span><br><span class="line"><span class="keyword">let</span> rangeMax = <span class="number">100</span>    <span class="comment">// 宣告猜測最大值為100</span></span><br><span class="line"><span class="keyword">let</span> rangeMin = <span class="number">1</span>      <span class="comment">// 宣告猜測最小值為1</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`莊家數字是 <span class="subst">$&#123;answer&#125;</span>`</span>)  <span class="comment">//印出正確答案</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (guess !== answer) &#123;</span><br><span class="line">  guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>((rangeMin + rangeMax) / <span class="number">2</span>)</span><br><span class="line">  count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (guess &gt; answer) &#123;  </span><br><span class="line">    rangeMax = guess - <span class="number">1</span>  </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，太大，再猜一次! 範圍 <span class="subst">$&#123;rangeMin&#125;</span> ~ <span class="subst">$&#123;rangeMax&#125;</span> 。`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (guess &lt; answer) &#123;</span><br><span class="line">    rangeMin = guess + <span class="number">1</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，太小，再猜一次! 範圍 <span class="subst">$&#123;rangeMin&#125;</span> ~ <span class="subst">$&#123;rangeMax&#125;</span> 。`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，恭喜答對!`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<br/>
-
-<p>終於成功了!! 這也是文章開頭說的: 如果知道解決問題的方法，只要能正確地把程式碼寫出來就好；如果不知道解決問題的方法，就算程式語言再精深都沒用，因為連怎麼開始都不知道。  </p>
-<p>其他小題目還好，就不特別寫解題筆記了。預計下一篇會寫更卡一點的期末考 😅</p>
-]]></content>
-      <categories>
-        <category>JavaScript 解題</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -730,41 +730,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo NexT 主題更新</title>
-    <url>/posts/dbd33422/</url>
-    <content><![CDATA[<blockquote>
-<p>本篇撰寫時 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-<strong>8.8.2</strong> 升級到 <strong>8.9.0</strong></p>
-</blockquote>
-<span id="more"></span>
-<p>NexT 官方團隊在收集一定數量 Bugfix &#x2F; Feature Request 的情況下，原則上會每月更新一次，可以先參考官方公布的版本更新內容再決定要不要更新。  </p>
-<p>不過，更新通常是為了優化(<code>custom_file_path</code> 真的讓主題更新方便很多)、排除障礙或提高安全性，理論上可以有更好的使用體驗，所以如果有更新提醒我應該還是會盡快處理。  </p>
-<p>另外，隨著技術的進步，舊有的方式可能會被淘汰(像是以前的 <code>.swig</code> 已被 <code>.njk</code> 替代)，為了避免跨大版本更新造成需要大幅度調整的麻煩，建議更新頻率不要太低。  </p>
-<h2 id="近年-NexT-主題大改革"><a href="#近年-NexT-主題大改革" class="headerlink" title="近年 NexT 主題大改革"></a>近年 NexT 主題大改革</h2><p>如果查詢網路上較久以前的教學文章，會發現很多東西都跟新版本搭不起來了。以我自己建置部落格的過程和踩過的坑，感覺最大的變化如下:  </p>
-<p><strong>1. Custom Files 用法(v7.3.0 啟用)</strong><br>以前要把 NexT 主題改得更有個人風格(ex.改背景、在文章底部加文字、增減頁腳文字…等)，都需要改動 <code>layout</code> 資料夾裡相對應的檔案原始碼。一旦進行版本更新，原本作好的設定被直接覆蓋，造成很多困擾。  </p>
-<p>自啟用 Custom Files 用法後，所有的程式碼修改一律放在 <code>root\source\_data</code> 資料夾裡，只要到 <code>root\_config.next.yml</code> 設定讀取路徑就可以直接套用。因為設定檔不是放在主題資料夾內，就算版本更新也不造成影響。   </p>
-<p><strong>2. Nunjucks 引擎(v7.4.2 啟用)</strong><br>網路上較久以前的教學文章，都會說要修改 <code>.swig</code> 檔，但我找半天都找不到，後來看官方文件才發現，因為 swig 缺乏维護，NexT 自 v7.4.2 開始，改用 Nunjucks 代替 swig 作为模版引擎，檔案類型變成 <code>.njk</code> ，網路上的教學文章已不適用。</p>
-<h2 id="npm-安裝-官方推薦"><a href="#npm-安裝-官方推薦" class="headerlink" title="npm 安裝(官方推薦)"></a>npm 安裝(官方推薦)</h2><p><strong>主題資料夾位置: <code>root\node_modules\hexo-theme-next</code></strong><br>打開 <code>root\node_modules</code> 資料夾會發現，之前用 npm 安裝的各種插件都在這裡面。原則上這個資料夾的東西都不會手動修改，只用 npm 指令處理，後續用 npm 更新或解除安裝基本都是改動這裡。  </p>
-<p>NexT 主題更新只要進到 Blog 的根目錄擇一執行以下指令即可。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next           <span class="comment"># 默認最新版本</span></span><br><span class="line">npm install hexo-theme-next@latest    <span class="comment"># 安裝最新版本</span></span><br><span class="line">npm install hexo-theme-next@8.9.0     <span class="comment"># 安裝指定版本</span></span><br></pre></td></tr></table></figure>
-
-<p>更新完成後，參考更新說明。如果有想用的新功能，直接在 <code>root\_config.next.yml</code> 修改設定即可。</p>
-<blockquote>
-<p>如果沒有這個檔案，請參考<a href="/posts/ebe0f18a/">Hexo NexT 主題變更 &amp; 設定 </a> 章節 4.1 說明。</p>
-</blockquote>
-<h2 id="git-安裝-太久沒更新推薦"><a href="#git-安裝-太久沒更新推薦" class="headerlink" title="git 安裝(太久沒更新推薦)"></a>git 安裝(太久沒更新推薦)</h2><p><strong>主題資料夾位置: <code>root\themes\主題名稱資料夾</code></strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
-<p>我剛開始使用 NexT 主題時是使用這種方式(<del>因為搞不懂 npm 指令到底在背後執行什麼</del>)。看了各種網路教學作個人化設定，改動了不少 NexT 主題原始碼，然後因為跟 git 不熟，不小心整個覆蓋掉，整個重來得很崩潰(跑題了)。後來使用 npm 安裝各種插件習慣，且啟用 <code>custom_file_path</code> 後，覺得 npm 方式比較方便。  </p>
-<p><strong>git 安裝推薦使用對象:</strong><br><strong>1. 有改動 NexT 主題原始碼，不想直接覆蓋的人。</strong><br>使用 <code>git pull</code> 等方式更新合併，主題必須加入版本控制。鑒於目前我跟 Git 還是很不熟，這裡就不多作說明。<br><strong>2. 太久沒更新，直接覆蓋可能會出現很多問題，需要大量調整的人。</strong><br>使用這種方法的人，可以在資料夾後加版本編號作新舊版區隔，等調整完成後，在 <code>root\_config.yml</code> 設定要套用哪個版本就可以了。  </p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>驗證三角形</title>
     <url>/posts/dca3ad45/</url>
     <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期一作業<br>學期一終於結束了，完成了課程決定挑戰選修的期末考來驗收學習成效， JavaScript 題目一如既往地燒腦有挑戰性，從前老愛跟數讀死槓的我超開心呀!! 寫出來爆有成就感啊!!</p>
@@ -828,6 +793,41 @@
       <tags>
         <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo NexT 主題更新</title>
+    <url>/posts/dbd33422/</url>
+    <content><![CDATA[<blockquote>
+<p>本篇撰寫時 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-<strong>8.8.2</strong> 升級到 <strong>8.9.0</strong></p>
+</blockquote>
+<span id="more"></span>
+<p>NexT 官方團隊在收集一定數量 Bugfix &#x2F; Feature Request 的情況下，原則上會每月更新一次，可以先參考官方公布的版本更新內容再決定要不要更新。  </p>
+<p>不過，更新通常是為了優化(<code>custom_file_path</code> 真的讓主題更新方便很多)、排除障礙或提高安全性，理論上可以有更好的使用體驗，所以如果有更新提醒我應該還是會盡快處理。  </p>
+<p>另外，隨著技術的進步，舊有的方式可能會被淘汰(像是以前的 <code>.swig</code> 已被 <code>.njk</code> 替代)，為了避免跨大版本更新造成需要大幅度調整的麻煩，建議更新頻率不要太低。  </p>
+<h2 id="近年-NexT-主題大改革"><a href="#近年-NexT-主題大改革" class="headerlink" title="近年 NexT 主題大改革"></a>近年 NexT 主題大改革</h2><p>如果查詢網路上較久以前的教學文章，會發現很多東西都跟新版本搭不起來了。以我自己建置部落格的過程和踩過的坑，感覺最大的變化如下:  </p>
+<p><strong>1. Custom Files 用法(v7.3.0 啟用)</strong><br>以前要把 NexT 主題改得更有個人風格(ex.改背景、在文章底部加文字、增減頁腳文字…等)，都需要改動 <code>layout</code> 資料夾裡相對應的檔案原始碼。一旦進行版本更新，原本作好的設定被直接覆蓋，造成很多困擾。  </p>
+<p>自啟用 Custom Files 用法後，所有的程式碼修改一律放在 <code>root\source\_data</code> 資料夾裡，只要到 <code>root\_config.next.yml</code> 設定讀取路徑就可以直接套用。因為設定檔不是放在主題資料夾內，就算版本更新也不造成影響。   </p>
+<p><strong>2. Nunjucks 引擎(v7.4.2 啟用)</strong><br>網路上較久以前的教學文章，都會說要修改 <code>.swig</code> 檔，但我找半天都找不到，後來看官方文件才發現，因為 swig 缺乏维護，NexT 自 v7.4.2 開始，改用 Nunjucks 代替 swig 作为模版引擎，檔案類型變成 <code>.njk</code> ，網路上的教學文章已不適用。</p>
+<h2 id="npm-安裝-官方推薦"><a href="#npm-安裝-官方推薦" class="headerlink" title="npm 安裝(官方推薦)"></a>npm 安裝(官方推薦)</h2><p><strong>主題資料夾位置: <code>root\node_modules\hexo-theme-next</code></strong><br>打開 <code>root\node_modules</code> 資料夾會發現，之前用 npm 安裝的各種插件都在這裡面。原則上這個資料夾的東西都不會手動修改，只用 npm 指令處理，後續用 npm 更新或解除安裝基本都是改動這裡。  </p>
+<p>NexT 主題更新只要進到 Blog 的根目錄擇一執行以下指令即可。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next           <span class="comment"># 默認最新版本</span></span><br><span class="line">npm install hexo-theme-next@latest    <span class="comment"># 安裝最新版本</span></span><br><span class="line">npm install hexo-theme-next@8.9.0     <span class="comment"># 安裝指定版本</span></span><br></pre></td></tr></table></figure>
+
+<p>更新完成後，參考更新說明。如果有想用的新功能，直接在 <code>root\_config.next.yml</code> 修改設定即可。</p>
+<blockquote>
+<p>如果沒有這個檔案，請參考<a href="/posts/ebe0f18a/">Hexo NexT 主題變更 &amp; 設定 </a> 章節 4.1 說明。</p>
+</blockquote>
+<h2 id="git-安裝-太久沒更新推薦"><a href="#git-安裝-太久沒更新推薦" class="headerlink" title="git 安裝(太久沒更新推薦)"></a>git 安裝(太久沒更新推薦)</h2><p><strong>主題資料夾位置: <code>root\themes\主題名稱資料夾</code></strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
+<p>我剛開始使用 NexT 主題時是使用這種方式(<del>因為搞不懂 npm 指令到底在背後執行什麼</del>)。看了各種網路教學作個人化設定，改動了不少 NexT 主題原始碼，然後因為跟 git 不熟，不小心整個覆蓋掉，整個重來得很崩潰(跑題了)。後來使用 npm 安裝各種插件習慣，且啟用 <code>custom_file_path</code> 後，覺得 npm 方式比較方便。  </p>
+<p><strong>git 安裝推薦使用對象:</strong><br><strong>1. 有改動 NexT 主題原始碼，不想直接覆蓋的人。</strong><br>使用 <code>git pull</code> 等方式更新合併，主題必須加入版本控制。鑒於目前我跟 Git 還是很不熟，這裡就不多作說明。<br><strong>2. 太久沒更新，直接覆蓋可能會出現很多問題，需要大量調整的人。</strong><br>使用這種方法的人，可以在資料夾後加版本編號作新舊版區隔，等調整完成後，在 <code>root\_config.yml</code> 設定要套用哪個版本就可以了。  </p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
@@ -955,151 +955,6 @@
       <tags>
         <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>簡易 RPG 戰鬥：攻擊與補血</title>
-    <url>/posts/23e46325/</url>
-    <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期 2-1<br>題目的主要目的是 Javascript function 的練習。設計 function 的運作方式，利用 <code>if</code> + <code>return</code> 來控制需要提早跳出函式的情況，及使用 <code>this</code> 取到物件自身。  </p>
-<span id="more"></span>
-<p>題目原本僅要求專注在 <strong>攻擊(attack)</strong> 和 <strong>治療(cure)</strong> function 的撰寫，其餘流程已由原題目提供。但基於再次練習的目的，且題目其餘部分也是由學過的 while 迴圈組成，所以這次練習會從頭把整個流程寫出來。  </p>
-<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
-<li>function 函式  </li>
-<li>while 迴圈  </li>
-<li>if statement</li>
-</ol>
-<h2 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h2><ol>
-<li>預設戰士 <code>hp</code> 為 100、 <code>mp</code> 為 30；魔法師 <code>hp</code> 為 30、 <code>mp</code> 為 100。</li>
-<li>由魔法師先攻，若有任一方死掉，則遊戲結束，不能再有補血或攻擊動作；反之，若兩個角色都活著，則遊戲可一直正常執行，直到一方死掉。  </li>
-<li>攻擊者會呼叫 <code>attack()</code> 攻擊敵方，產生 1~100 點之間隨機點數的傷害。  </li>
-<li>若被攻擊方沒有死，則會呼叫 <code>cure()</code> 為自己補血，補血規格為：每次補血固定為 15 點 <code>hp</code> 、每補充 1 點 <code>hp</code> 需要 2 點 <code>mp</code>。補血結束後攻守交換。  </li>
-<li><code>cure()</code> 會傳入一個參數為 <code>hp</code> ，指的是想要補充的 <code>hp</code> 。  </li>
-<li>補血可以補超過原有的 <code>hp</code>，沒有 <code>hp</code> 最大值上限，只要有 <code>mp</code> 都可以補血。  <blockquote>
-<p>原題目是由戰士先攻，但為了方便觀察輸出結果，改由魔法師先攻。</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h2><h3 id="拆解流程"><a href="#拆解流程" class="headerlink" title="拆解流程"></a>拆解流程</h3><ol>
-<li>創建角色(含 <code>name</code> 、 <code>hp</code> 、 <code>mp</code> 、<code>attack()</code> 及 <code>cure()</code> )  </li>
-<li>戰鬥流程  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 戰士及魔法師都活著</span><br><span class="line">  則魔法師先攻、戰士師補血(補血是否執行由函式決定)</span><br><span class="line">  <span class="keyword">if</span> 戰士還活著</span><br><span class="line">    則戰士攻擊、魔法師補血(補血是否執行由函式決定)</span><br><span class="line">任一方死掉，則遊戲結束。</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="解題開始"><a href="#解題開始" class="headerlink" title="解題開始"></a>解題開始</h3><h4 id="function-設計"><a href="#function-設計" class="headerlink" title="function 設計"></a>function 設計</h4><ol>
-<li><p>攻擊動作 attack()  </p>
-<ul>
-<li>產生攻擊點數、輸出攻擊資訊  </li>
-<li>結果1(打死): 輸出”對手死亡”  </li>
-<li>結果2(沒打死): 輸出”對手活著”，且對手啟動cure()  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">attack</span> (enemy) &#123;</span><br><span class="line">  hpLose = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> hit <span class="subst">$&#123;enemy.name&#125;</span>, <span class="subst">$&#123;enemy.name&#125;</span> lose <span class="subst">$&#123;hpLose&#125;</span> HP.`</span>)</span><br><span class="line">  enemy.<span class="property">hp</span> -= hpLose</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (enemy.<span class="property">hp</span> &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is dead.\n`</span>)</span><br><span class="line">    <span class="keyword">return</span> enemy.<span class="property">hp</span> = <span class="number">0</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is still alive. (HP = <span class="subst">$&#123;enemy.hp&#125;</span>)`</span>)</span><br><span class="line">    enemy.<span class="title function_">cure</span>(<span class="number">15</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>治療動作 cure()  </p>
-<ul>
-<li>結果1(mp夠): 啟動治療並輸出治療結果  </li>
-<li>結果2(mp不夠): 不治療繼續  </li>
-<li>攻守互換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">cure</span> (hp) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">mp</span> &gt;= (hp * <span class="number">2</span>)) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">hp</span> += hp</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">mp</span> -= hp * <span class="number">2</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> recovered. (HP = <span class="subst">$&#123;<span class="variable language_">this</span>.hp&#125;</span>；MP = <span class="subst">$&#123;<span class="variable language_">this</span>.mp&#125;</span>)`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`MP isn&#x27;t enough! <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> cannot use cure.`</span>)</span><br><span class="line">  &#125;  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`\n-------------- Change Side ---------------`</span>)    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>角色建立 player()  </p>
-<ul>
-<li>需含名稱、HP、MP、攻擊動作、治療動作  </li>
-<li>練習不同的 function 使用方式(把 function 放進 function 裡)  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">player</span> (name, hp, mp) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">hp</span>: hp,</span><br><span class="line">    <span class="attr">mp</span>: mp,</span><br><span class="line">    <span class="attr">cure</span>: <span class="keyword">function</span> (<span class="params">hp</span>) &#123;......&#125;,</span><br><span class="line">    <span class="attr">attack</span>: <span class="keyword">function</span> (<span class="params">enemy</span>) &#123;......&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h4 id="解題流程"><a href="#解題流程" class="headerlink" title="解題流程"></a>解題流程</h4><ol>
-<li>創建並輸出角色資料  </li>
-<li>戰鬥開始(迴圈內容)  <ul>
-<li>如果兩人都活著，則戰鬥開始，魔術師先攻，回合結束  </li>
-<li>如果上回合戰士還活著，則攻守交換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// create players</span></span><br><span class="line"><span class="keyword">const</span> warrior = <span class="title function_">player</span>(<span class="string">&#x27;Warrior&#x27;</span>, <span class="number">100</span>, <span class="number">30</span>)</span><br><span class="line"><span class="keyword">const</span> magician = <span class="title function_">player</span>(<span class="string">&#x27;Magician&#x27;</span>, <span class="number">30</span> ,<span class="number">100</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(warrior)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(magician)</span><br><span class="line"></span><br><span class="line"><span class="comment">// start fight</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;-------------- Start Fight ---------------&#x27;</span>)</span><br><span class="line"><span class="keyword">while</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span> &amp;&amp; magician.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  magician.<span class="title function_">attack</span>(warrior)</span><br><span class="line">  <span class="keyword">if</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;    </span><br><span class="line">    warrior.<span class="title function_">attack</span>(magician)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;--------------- Game Over ----------------&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>在重寫的過程中又發現了一些自己不熟的地方……寫物件的時候，居然把 key 跟 value 中間的 <code>:</code> 寫成 <code>=</code> 了!  </p>
-<p>這題練習對我其實滿有效的，包含 <code>this</code> 跟 <code>return</code> 的使用時機，還有在函式裡呼叫函式的寫法(這部分讓我把 while 迴圈大改，在被攻擊的對象還活著的時候直接呼叫治療函式)。以自己覺得順暢的方式改完後，發現還是可以順利跑出相同結果，表示 function 目前的課程應該有一定程度的熟悉了!</p>
-]]></content>
-      <categories>
-        <category>JavaScript 解題</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Alpha Camp 學期 2-1 結業心得</title>
-    <url>/posts/73279419/</url>
-    <content><![CDATA[<p><em><strong>學習的過程充滿挑戰，成功闖過之後就想做更多的挑戰!</strong></em><br>這大概就是我在這階段完課後，最明顯的感受。  </p>
-<span id="more"></span>
-
-<p>有轉職意願後，我報名了學期一課程，想確認是否真的對程式語言有興趣。在將近一個月的課程接觸下，燃起了久違的學習熱情，隨後決定繼續向學期二邁進，將學期一碰到的 HTML&#x2F;CSS&#x2F;JavaScript 更精進。  </p>
-<p>相較於學期一類似「興趣班」的節奏，學期 2-1 第一週開始接觸了陣列、物件及函式，不管是單週課程量或難度對我來說都有明顯變高的感覺，作業也變得更加「靈活」。學習過程需要花更多的時間理解、作業要花更多的時間思考，本來以為難度提高會帶來挫折感，進而降低學習熱情，結果相反，我最直觀的感受是「我能做到的事變多了」。課程作業藉著把摸彩活動分成小步驟完成，最後組合再一起，這種「把大任務變小」的方式，我覺得有效降低了學習期間的挫折感。  </p>
-<p>再後來的 DOM 和事件驅動，就更多的提高我對 JavaScript 的學習興趣，藉由 DOM 就可以用 JavaScript 來操作寫好的 HTML，學到了讓使用者跟網頁互動的方法，。每一個章節作業做完的同時，開始會主動思考「可以加上什麼功能?」，有的成功、有的失敗，不知不覺坐在電腦前的時間越來越長😄  </p>
-<p>說到這裡可能有人發現了…… CSS 呢?<br>是的，我對 CSS 一直還沒燃起足夠的熱情，花著同樣的時間進行學習，但 CSS 就是很難記住，寫起來很不順手。這種期況一直持續到學到 DOM 和事件驅動才有改善。在加上新功能後，我新加的東西在網頁上動起來<del>覺得自己有點厲害</del>但長得醜醜的，這時候才開始想各種辦法改善它，積極地回去複習排版…等語法。  </p>
-<p>因為 JavaScript 想新加功能，所以積極複習、查資料、使用還沒學到的東西。因為覺得畫面醜醜的，所以重新面對興致不高的 CSS 。難怪人家都說，想進步最快的辦法就是去做各種 side project 。原本的期末作業「RGB 色碼轉 HEX」，看是要輸入 RGB 色碼或用 slider 調色只要二選一，最後輸出 HEX 結果即可。為了想讓三者同步，查了 <code>addEventListener</code> 的各種 event ，寫了整整一天，寫出來的當下很有成就感! <a href="https://ritachien.github.io/Convert-Between-RGB-HEX/">(動手試試看)</a>  </p>
-<p><img src="https://github.com/ritachien/Convert-Between-RGB-HEX/blob/main/demo.gif?raw=true"></p>
-<p>學習過程記錄大致就這樣了。<br>學期 2-1 找到了提高我學習動力的方法—-<strong>實作、實作、再實作</strong>。準備在春節期間開始挑戰 JS30，然後開始學期 2-2 的預讀。最後的最後，許個新年新希望: 我不要再當米蟲了阿~~~~~~ 今年一定要轉職成功阿~~~~~</p>
-]]></content>
-      <categories>
-        <category>學習紀錄</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【JS30 挑戰】 Day1 - JavaScript Drum Kit</title>
-    <url>/posts/470f6710/</url>
-    <content><![CDATA[<p>這個專案對 JavaScript 只要有 function 跟 DOM 基礎就沒問題。另外需要有一點 HTML&#x2F;CSS 的概念才有辦法順利使用 <code>querySelector</code> 。</p>
-<span id="more"></span>
-<blockquote>
-<p><a href="https://javascript30.com/">JavaScript30</a> 是一個由 <strong>Wes Bos</strong> 提出的免費教學計畫。藉由每天完成一個小專案，練習基礎 JavaScript 。整個計畫為期30天。除了會提供教學影片外，也會先做好前期準備(例如: HTML&#x2F;CSS 等相關建置)，練習時只需專注於撰寫 JavaScript 部分的程式碼即可。</p>
-</blockquote>
-<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ol>
-<li>當按下鍵盤按鍵時，撥放特定音效。  </li>
-<li>當按下鍵盤按鍵時，讓畫面上的按鍵圖示呈現變化，並在變化結束後恢復原狀。</li>
-</ol>
-<h2 id="練習內容"><a href="#練習內容" class="headerlink" title="練習內容"></a>練習內容</h2><ul>
-<li>DOM querySelector  </li>
-<li>.addEventLinstener()  </li>
-<li>function  </li>
-<li>.forEach()</li>
-</ul>
-<h2 id="開始前的準備"><a href="#開始前的準備" class="headerlink" title="開始前的準備"></a>開始前的準備</h2><blockquote>
-<p>雖然這部分已由教學計畫提供，但有些東西對我來說還是新知識，所以還是做個筆記，萬一以後自己想做類似功能也不用再另外找資料。</p>
-</blockquote>
-<p><strong>1. 幫網頁加上音效:</strong><br>僅需要在 HTML 檔案中加入 <strong>&lt;audio&gt;標籤</strong>，並做好相關屬性設定。  </p>
-<p><strong>2. 設定好鍵盤按鍵:</strong><br>因為我們要在按下鍵盤按鍵時，讓網頁做出指定回應，所以要先建立相關標籤屬性，讓電腦辨識不同的按鍵，以便為按鍵設定不同回應。可以看到教學計畫提供的 HTML 檔案已經為聲音跟按鍵都設好 <code>data-key</code> 這個屬性(attribute)並給予一個數值。鍵盤上的每個按鍵在按下時會有一個對應的 <code>keycode</code> ，只要知道 <code>keycode</code> 就可以對指定按鍵進行動作設定。  </p>
-<p>如果不知道 <code>keycode</code> 可以到 <a href="keycode.info">keycode.info</a> 查詢。或是隨便開啟一個網頁，打開開發人員工具，在 console 區寫下下列程式碼後，回到網頁內容範圍(滑鼠點一下)在按下鍵盤按鍵，console 就會印出 <code>keycode</code> 了。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(e.<span class="property">keyCode</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><strong>3. 做好 CSS 設定:</strong><br>專案目標是讓螢幕上的按鍵圖示在按下時產生變化，並在變化結束後恢復原狀。所以要設定好兩種 CSS 樣式:  </p>
-<ul>
-<li>原本的按鍵樣式: 在 <code>&#123;&#125;</code> 裡加上 <code>transition: all .07s;</code> ，決定 <code>要改變的屬性(property)</code> 、 <code>變化要花費的時間</code> 。  </li>
-<li>變化後的按鍵樣式: 在 <code>&#123;&#125;</code> 裡加上 <code>transform: scale(縮放倍數);</code></li>
-</ul>
-<h2 id="練習開始"><a href="#練習開始" class="headerlink" title="練習開始"></a>練習開始</h2><p><strong>1. 定好 Event Linstener 的範圍和要執行的動作。</strong>  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, playAudio)</span><br><span class="line"><span class="comment">// window 為 document 再往上一層的物件，指監聽整個瀏覽器分頁。</span></span><br><span class="line"><span class="comment">// &#x27;keydown&#x27; 指鍵盤按鍵被按下時。</span></span><br><span class="line"><span class="comment">// playAudio 指執行名稱叫 playAudio 的fuction。</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>2. 設定 playAudio() 要做的事。(撥放音效及畫面改變)</strong>  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">playAudio</span>(<span class="params">e</span>) &#123;</span><br><span class="line"><span class="comment">// e 指 .addEventListener() 在 &#x27;keydown&#x27; 發生時自動產生的 event 物件。</span></span><br><span class="line">  <span class="keyword">const</span> audio = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`audio[data-key=&quot;<span class="subst">$&#123;e.keyCode&#125;</span>&quot;]`</span>)</span><br><span class="line">  <span class="comment">// 把 audio 變數指向 keyCode 相符的 &lt;audio&gt; 標籤。</span></span><br><span class="line">  <span class="keyword">const</span> key = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`.key[data-key=&quot;<span class="subst">$&#123;e.keyCode&#125;</span>&quot;]`</span>)</span><br><span class="line">  <span class="comment">// 把 key 變數指向 keyCode 相符的 &lt;div&gt; 標籤。</span></span><br><span class="line">  <span class="keyword">if</span> (!audio) <span class="keyword">return</span></span><br><span class="line">  <span class="comment">// 如果找不到相符標籤，則中斷 function。</span></span><br><span class="line">  audio.<span class="property">currentTime</span> = <span class="number">0</span></span><br><span class="line">  <span class="comment">// 如果找到相符標籤，按下按鍵時，音樂撥放進度回到第 0 秒。如果沒設定，在音訊完整前，按鍵不會重新撥放。</span></span><br><span class="line">  <span class="comment">// 因為 function 要求按鍵時撥放音訊，還沒放完 = 已經/正在放</span></span><br><span class="line">  audio.<span class="title function_">play</span>()</span><br><span class="line">  <span class="comment">// 撥放 keyCode 指向的 &lt;audio&gt; 標籤。</span></span><br><span class="line">  key.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;playing&#x27;</span>)</span><br><span class="line">  <span class="comment">// 指定的 &lt;div&gt; 標籤 class 屬性加上 &#x27;playing&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>3. 先來看看目前為止發生了什麼事?</strong><br>指定的 &lt;div&gt; 標籤 class 屬性加上 ‘playing’ 後，當 CSS ‘.key’ 中的 <code>transition</code> 完成。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> keys = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;.key&quot;</span>)</span><br><span class="line"><span class="comment">// 找出所有 class 含 &quot;.key&quot; 的 &lt;div&gt; 標籤，總共9個。</span></span><br><span class="line">keys.<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> key.<span class="title function_">addEventListener</span>(<span class="string">&#x27;transitionend&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(e)</span><br><span class="line">&#125;))</span><br><span class="line"><span class="comment">// 檢查找出的所有 &lt;div&gt; 標籤，在 &#x27;transitionend&#x27; 時，輸出 Event 內容。</span></span><br></pre></td></tr></table></figure>
-<p><img src="/../../Blog-image/posts/2022-01-29_TransitionEvent.webp" alt="TransitionEvent-image"><br>可以看到，在我們按了一下按鍵”A”後，總共出現了6個 <code>transitionend</code> ，只有 <code>propertyName</code> 不同。那是因為我們的 CSS 設定。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.key</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: all .<span class="number">07s</span> ease;</span><br><span class="line">  <span class="comment">/* 所有 property 都要執行 transition */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.playing</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">  <span class="comment">/* propertyName: &#x27;transform&#x27; */</span></span><br><span class="line">  <span class="attribute">border-color</span>: <span class="number">#ffc600</span>;</span><br><span class="line">  <span class="comment">/* border 分上下左右，所以有4個 &#x27;transitionend&#x27; */</span></span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1rem</span> <span class="number">#ffc600</span>;</span><br><span class="line">  <span class="comment">/* propertyName: &#x27;box-shadow&#x27; */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>4. 畫面在變化結束後恢復原狀。</strong>  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> keys = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;.key&quot;</span>)</span><br><span class="line"><span class="comment">// 共找出9個 class 含 &quot;.key&quot; 的 &lt;div&gt; 標籤。</span></span><br><span class="line">keys.<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> key.<span class="title function_">addEventListener</span>(<span class="string">&#x27;transitionend&#x27;</span>, removeTransition))</span><br><span class="line"><span class="comment">// &#x27;transitionend&#x27; 時，執行名為 removeTransition 的function。</span></span><br></pre></td></tr></table></figure>
-<p>這時，我總共找出9個 class 含 “.key” 的 &lt;div&gt; 標籤，但是想要刪除 class ‘.playing’ 的只有我們按的那一個。所以我們找出 這個 &lt;div&gt; 標籤所有 CSS 樣式裡最具代表性的 <code>transform</code> (不用寫一長串 property ，最具代表性的就好)，來繼續執行。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">removeTransition</span>(<span class="params">e</span>) &#123;</span><br><span class="line"><span class="comment">// 查找 TransitionEvent 裡動作(type)為 &#x27;transitionend&#x27; 的項目。</span></span><br><span class="line">  <span class="keyword">if</span> (e.<span class="property">propertyName</span> !== <span class="string">&#x27;transform&#x27;</span>) <span class="keyword">return</span></span><br><span class="line">  <span class="comment">// 如果 TransitionEvent 的 propertyName 不等於 &#x27;transform&#x27; ，則停止 function。</span></span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;playing&#x27;</span>)</span><br><span class="line">  <span class="comment">// 如果符合，則將 class 裡的 &#x27;.playing&#x27; 刪除。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<br>
-<br>
-到這裡就全部完成了! 
-]]></content>
-      <categories>
-        <category>JavaScript30 挑戰</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>JS30</tag>
       </tags>
   </entry>
   <entry>
@@ -1263,6 +1118,172 @@
       </tags>
   </entry>
   <entry>
+    <title>簡易 RPG 戰鬥：攻擊與補血</title>
+    <url>/posts/23e46325/</url>
+    <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期 2-1<br>題目的主要目的是 Javascript function 的練習。設計 function 的運作方式，利用 <code>if</code> + <code>return</code> 來控制需要提早跳出函式的情況，及使用 <code>this</code> 取到物件自身。  </p>
+<span id="more"></span>
+<p>題目原本僅要求專注在 <strong>攻擊(attack)</strong> 和 <strong>治療(cure)</strong> function 的撰寫，其餘流程已由原題目提供。但基於再次練習的目的，且題目其餘部分也是由學過的 while 迴圈組成，所以這次練習會從頭把整個流程寫出來。  </p>
+<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
+<li>function 函式  </li>
+<li>while 迴圈  </li>
+<li>if statement</li>
+</ol>
+<h2 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h2><ol>
+<li>預設戰士 <code>hp</code> 為 100、 <code>mp</code> 為 30；魔法師 <code>hp</code> 為 30、 <code>mp</code> 為 100。</li>
+<li>由魔法師先攻，若有任一方死掉，則遊戲結束，不能再有補血或攻擊動作；反之，若兩個角色都活著，則遊戲可一直正常執行，直到一方死掉。  </li>
+<li>攻擊者會呼叫 <code>attack()</code> 攻擊敵方，產生 1~100 點之間隨機點數的傷害。  </li>
+<li>若被攻擊方沒有死，則會呼叫 <code>cure()</code> 為自己補血，補血規格為：每次補血固定為 15 點 <code>hp</code> 、每補充 1 點 <code>hp</code> 需要 2 點 <code>mp</code>。補血結束後攻守交換。  </li>
+<li><code>cure()</code> 會傳入一個參數為 <code>hp</code> ，指的是想要補充的 <code>hp</code> 。  </li>
+<li>補血可以補超過原有的 <code>hp</code>，沒有 <code>hp</code> 最大值上限，只要有 <code>mp</code> 都可以補血。  <blockquote>
+<p>原題目是由戰士先攻，但為了方便觀察輸出結果，改由魔法師先攻。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h2><h3 id="拆解流程"><a href="#拆解流程" class="headerlink" title="拆解流程"></a>拆解流程</h3><ol>
+<li>創建角色(含 <code>name</code> 、 <code>hp</code> 、 <code>mp</code> 、<code>attack()</code> 及 <code>cure()</code> )  </li>
+<li>戰鬥流程  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 戰士及魔法師都活著</span><br><span class="line">  則魔法師先攻、戰士師補血(補血是否執行由函式決定)</span><br><span class="line">  <span class="keyword">if</span> 戰士還活著</span><br><span class="line">    則戰士攻擊、魔法師補血(補血是否執行由函式決定)</span><br><span class="line">任一方死掉，則遊戲結束。</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="解題開始"><a href="#解題開始" class="headerlink" title="解題開始"></a>解題開始</h3><h4 id="function-設計"><a href="#function-設計" class="headerlink" title="function 設計"></a>function 設計</h4><ol>
+<li><p>攻擊動作 attack()  </p>
+<ul>
+<li>產生攻擊點數、輸出攻擊資訊  </li>
+<li>結果1(打死): 輸出”對手死亡”  </li>
+<li>結果2(沒打死): 輸出”對手活著”，且對手啟動cure()  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">attack</span> (enemy) &#123;</span><br><span class="line">  hpLose = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> hit <span class="subst">$&#123;enemy.name&#125;</span>, <span class="subst">$&#123;enemy.name&#125;</span> lose <span class="subst">$&#123;hpLose&#125;</span> HP.`</span>)</span><br><span class="line">  enemy.<span class="property">hp</span> -= hpLose</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (enemy.<span class="property">hp</span> &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is dead.\n`</span>)</span><br><span class="line">    <span class="keyword">return</span> enemy.<span class="property">hp</span> = <span class="number">0</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is still alive. (HP = <span class="subst">$&#123;enemy.hp&#125;</span>)`</span>)</span><br><span class="line">    enemy.<span class="title function_">cure</span>(<span class="number">15</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>治療動作 cure()  </p>
+<ul>
+<li>結果1(mp夠): 啟動治療並輸出治療結果  </li>
+<li>結果2(mp不夠): 不治療繼續  </li>
+<li>攻守互換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">cure</span> (hp) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">mp</span> &gt;= (hp * <span class="number">2</span>)) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">hp</span> += hp</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">mp</span> -= hp * <span class="number">2</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> recovered. (HP = <span class="subst">$&#123;<span class="variable language_">this</span>.hp&#125;</span>；MP = <span class="subst">$&#123;<span class="variable language_">this</span>.mp&#125;</span>)`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`MP isn&#x27;t enough! <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> cannot use cure.`</span>)</span><br><span class="line">  &#125;  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`\n-------------- Change Side ---------------`</span>)    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>角色建立 player()  </p>
+<ul>
+<li>需含名稱、HP、MP、攻擊動作、治療動作  </li>
+<li>練習不同的 function 使用方式(把 function 放進 function 裡)  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">player</span> (name, hp, mp) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">hp</span>: hp,</span><br><span class="line">    <span class="attr">mp</span>: mp,</span><br><span class="line">    <span class="attr">cure</span>: <span class="keyword">function</span> (<span class="params">hp</span>) &#123;......&#125;,</span><br><span class="line">    <span class="attr">attack</span>: <span class="keyword">function</span> (<span class="params">enemy</span>) &#123;......&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h4 id="解題流程"><a href="#解題流程" class="headerlink" title="解題流程"></a>解題流程</h4><ol>
+<li>創建並輸出角色資料  </li>
+<li>戰鬥開始(迴圈內容)  <ul>
+<li>如果兩人都活著，則戰鬥開始，魔術師先攻，回合結束  </li>
+<li>如果上回合戰士還活著，則攻守交換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// create players</span></span><br><span class="line"><span class="keyword">const</span> warrior = <span class="title function_">player</span>(<span class="string">&#x27;Warrior&#x27;</span>, <span class="number">100</span>, <span class="number">30</span>)</span><br><span class="line"><span class="keyword">const</span> magician = <span class="title function_">player</span>(<span class="string">&#x27;Magician&#x27;</span>, <span class="number">30</span> ,<span class="number">100</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(warrior)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(magician)</span><br><span class="line"></span><br><span class="line"><span class="comment">// start fight</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;-------------- Start Fight ---------------&#x27;</span>)</span><br><span class="line"><span class="keyword">while</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span> &amp;&amp; magician.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  magician.<span class="title function_">attack</span>(warrior)</span><br><span class="line">  <span class="keyword">if</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;    </span><br><span class="line">    warrior.<span class="title function_">attack</span>(magician)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;--------------- Game Over ----------------&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>在重寫的過程中又發現了一些自己不熟的地方……寫物件的時候，居然把 key 跟 value 中間的 <code>:</code> 寫成 <code>=</code> 了!  </p>
+<p>這題練習對我其實滿有效的，包含 <code>this</code> 跟 <code>return</code> 的使用時機，還有在函式裡呼叫函式的寫法(這部分讓我把 while 迴圈大改，在被攻擊的對象還活著的時候直接呼叫治療函式)。以自己覺得順暢的方式改完後，發現還是可以順利跑出相同結果，表示 function 目前的課程應該有一定程度的熟悉了!</p>
+]]></content>
+      <categories>
+        <category>JavaScript 解題</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Alpha Camp 學期 2-2 結業心得</title>
+    <url>/posts/f46b1c2/</url>
+    <content><![CDATA[<blockquote>
+<p>在寫 code 之前先分拆邏輯與流程、用函式封裝程式碼、用心命名變數，這些基本動作原來是這麼地重要。  </p>
+</blockquote>
+<span id="more"></span>
+<h3 id="OBJECTIVE"><a href="#OBJECTIVE" class="headerlink" title="OBJECTIVE"></a>OBJECTIVE</h3><p>經過學期2–2的學習，除了一邊複習之前學過的東西外，也對於程式流程的優化有更進一步的了解。尤其是使用 MVC 架構，讓整個程式不管是邏輯、流程或者是管理維護上都有了很大的提升。因為越學越有興趣的關係，和之前的幾個學期相比，現在的我對於主動優化作業有了很大的熱情。另外就是對於學期開頭的介紹有了更深刻的體會與認同!在寫 code 之前先分拆邏輯與流程、用函式封裝程式碼、用心命名變數，這些基本動作原來是這麼地重要。  </p>
+<h3 id="REFLECTIVE"><a href="#REFLECTIVE" class="headerlink" title="REFLECTIVE"></a>REFLECTIVE</h3><p>大量的實作學習讓我從「跟著助教做」轉為「思考另一種做法的利弊是什麼」。因為多了各種思考過程，我開始了大量的資料閱讀和撰寫嘗試。在嘗試的過程中發現不同的寫法各有利弊，結果的選擇很大程度上取決於使用者體驗(目前就是我自己啦😆)  </p>
+<p>就是因為想加的功能越變越多，導致我需要不斷往前修改之前考慮的不夠完善的地方，這個時候就想到:如果在最一開始，我對於那些撰寫基礎能更重視和用心，後面這些時間也許都可以節省下來。  </p>
+<h3 id="INTERPRETIVE"><a href="#INTERPRETIVE" class="headerlink" title="INTERPRETIVE"></a>INTERPRETIVE</h3><p>這個學期下來也讓我對於「複習」這件事有了態度上的轉變。從原本的「之前不夠熟悉、必須找時間再多多複習」變成「主動在作業中融入以前學過的東西」。每個學期、甚至每個教案的著重點本來就不一樣，「複習」這件事就要找到適合自己的方法，不能依賴虛無飄渺的「找個時間來複習」。  </p>
+<p>觀摩同學作業時，發現在一個作業中同時融入了很多以前學過的東西( media queries 、 flex、position…等)，可以看出他在開始編寫程式碼前，已經對設計成品有具體的想法，可能也針對不同螢幕大小畫出了多張 wireframe ，考慮了很多面向的東西。 他的練習實踐方式讓我發現我可以在完成當下目標同時複習以前學過的東西，學習的輸入可以從各自為政變成融會貫通 。  </p>
+<h3 id="DECISIONAL"><a href="#DECISIONAL" class="headerlink" title="DECISIONAL"></a>DECISIONAL</h3><p>接下來進行課程時，希望自己能保持主動優化的動力。也許不是每一次嘗試都能得到好的結果，但在嘗試的過程中需要查資料、方法的選擇、功能的取捨，利用這個過程慢慢積累自己的知識庫，期望未來能不愧對付出的時間和努力!  </p>
+]]></content>
+      <categories>
+        <category>學習紀錄</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Alpha Camp 學期 2-1 結業心得</title>
+    <url>/posts/73279419/</url>
+    <content><![CDATA[<p><em><strong>學習的過程充滿挑戰，成功闖過之後就想做更多的挑戰!</strong></em><br>這大概就是我在這階段完課後，最明顯的感受。  </p>
+<span id="more"></span>
+
+<p>有轉職意願後，我報名了學期一課程，想確認是否真的對程式語言有興趣。在將近一個月的課程接觸下，燃起了久違的學習熱情，隨後決定繼續向學期二邁進，將學期一碰到的 HTML&#x2F;CSS&#x2F;JavaScript 更精進。  </p>
+<p>相較於學期一類似「興趣班」的節奏，學期 2-1 第一週開始接觸了陣列、物件及函式，不管是單週課程量或難度對我來說都有明顯變高的感覺，作業也變得更加「靈活」。學習過程需要花更多的時間理解、作業要花更多的時間思考，本來以為難度提高會帶來挫折感，進而降低學習熱情，結果相反，我最直觀的感受是「我能做到的事變多了」。課程作業藉著把摸彩活動分成小步驟完成，最後組合再一起，這種「把大任務變小」的方式，我覺得有效降低了學習期間的挫折感。  </p>
+<p>再後來的 DOM 和事件驅動，就更多的提高我對 JavaScript 的學習興趣，藉由 DOM 就可以用 JavaScript 來操作寫好的 HTML，學到了讓使用者跟網頁互動的方法，。每一個章節作業做完的同時，開始會主動思考「可以加上什麼功能?」，有的成功、有的失敗，不知不覺坐在電腦前的時間越來越長😄  </p>
+<p>說到這裡可能有人發現了…… CSS 呢?<br>是的，我對 CSS 一直還沒燃起足夠的熱情，花著同樣的時間進行學習，但 CSS 就是很難記住，寫起來很不順手。這種期況一直持續到學到 DOM 和事件驅動才有改善。在加上新功能後，我新加的東西在網頁上動起來<del>覺得自己有點厲害</del>但長得醜醜的，這時候才開始想各種辦法改善它，積極地回去複習排版…等語法。  </p>
+<p>因為 JavaScript 想新加功能，所以積極複習、查資料、使用還沒學到的東西。因為覺得畫面醜醜的，所以重新面對興致不高的 CSS 。難怪人家都說，想進步最快的辦法就是去做各種 side project 。原本的期末作業「RGB 色碼轉 HEX」，看是要輸入 RGB 色碼或用 slider 調色只要二選一，最後輸出 HEX 結果即可。為了想讓三者同步，查了 <code>addEventListener</code> 的各種 event ，寫了整整一天，寫出來的當下很有成就感! <a href="https://ritachien.github.io/Convert-Between-RGB-HEX/">(動手試試看)</a>  </p>
+<p><img src="https://github.com/ritachien/Convert-Between-RGB-HEX/blob/main/demo.gif?raw=true"></p>
+<p>學習過程記錄大致就這樣了。<br>學期 2-1 找到了提高我學習動力的方法—-<strong>實作、實作、再實作</strong>。準備在春節期間開始挑戰 JS30，然後開始學期 2-2 的預讀。最後的最後，許個新年新希望: 我不要再當米蟲了阿~~~~~~ 今年一定要轉職成功阿~~~~~</p>
+]]></content>
+      <categories>
+        <category>學習紀錄</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【JS30 挑戰】 Day1 - JavaScript Drum Kit</title>
+    <url>/posts/470f6710/</url>
+    <content><![CDATA[<p>這個專案對 JavaScript 只要有 function 跟 DOM 基礎就沒問題。另外需要有一點 HTML&#x2F;CSS 的概念才有辦法順利使用 <code>querySelector</code> 。</p>
+<span id="more"></span>
+<blockquote>
+<p><a href="https://javascript30.com/">JavaScript30</a> 是一個由 <strong>Wes Bos</strong> 提出的免費教學計畫。藉由每天完成一個小專案，練習基礎 JavaScript 。整個計畫為期30天。除了會提供教學影片外，也會先做好前期準備(例如: HTML&#x2F;CSS 等相關建置)，練習時只需專注於撰寫 JavaScript 部分的程式碼即可。</p>
+</blockquote>
+<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ol>
+<li>當按下鍵盤按鍵時，撥放特定音效。  </li>
+<li>當按下鍵盤按鍵時，讓畫面上的按鍵圖示呈現變化，並在變化結束後恢復原狀。</li>
+</ol>
+<h2 id="練習內容"><a href="#練習內容" class="headerlink" title="練習內容"></a>練習內容</h2><ul>
+<li>DOM querySelector  </li>
+<li>.addEventLinstener()  </li>
+<li>function  </li>
+<li>.forEach()</li>
+</ul>
+<h2 id="開始前的準備"><a href="#開始前的準備" class="headerlink" title="開始前的準備"></a>開始前的準備</h2><blockquote>
+<p>雖然這部分已由教學計畫提供，但有些東西對我來說還是新知識，所以還是做個筆記，萬一以後自己想做類似功能也不用再另外找資料。</p>
+</blockquote>
+<p><strong>1. 幫網頁加上音效:</strong><br>僅需要在 HTML 檔案中加入 <strong>&lt;audio&gt;標籤</strong>，並做好相關屬性設定。  </p>
+<p><strong>2. 設定好鍵盤按鍵:</strong><br>因為我們要在按下鍵盤按鍵時，讓網頁做出指定回應，所以要先建立相關標籤屬性，讓電腦辨識不同的按鍵，以便為按鍵設定不同回應。可以看到教學計畫提供的 HTML 檔案已經為聲音跟按鍵都設好 <code>data-key</code> 這個屬性(attribute)並給予一個數值。鍵盤上的每個按鍵在按下時會有一個對應的 <code>keycode</code> ，只要知道 <code>keycode</code> 就可以對指定按鍵進行動作設定。  </p>
+<p>如果不知道 <code>keycode</code> 可以到 <a href="keycode.info">keycode.info</a> 查詢。或是隨便開啟一個網頁，打開開發人員工具，在 console 區寫下下列程式碼後，回到網頁內容範圍(滑鼠點一下)在按下鍵盤按鍵，console 就會印出 <code>keycode</code> 了。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(e.<span class="property">keyCode</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 做好 CSS 設定:</strong><br>專案目標是讓螢幕上的按鍵圖示在按下時產生變化，並在變化結束後恢復原狀。所以要設定好兩種 CSS 樣式:  </p>
+<ul>
+<li>原本的按鍵樣式: 在 <code>&#123;&#125;</code> 裡加上 <code>transition: all .07s;</code> ，決定 <code>要改變的屬性(property)</code> 、 <code>變化要花費的時間</code> 。  </li>
+<li>變化後的按鍵樣式: 在 <code>&#123;&#125;</code> 裡加上 <code>transform: scale(縮放倍數);</code></li>
+</ul>
+<h2 id="練習開始"><a href="#練習開始" class="headerlink" title="練習開始"></a>練習開始</h2><p><strong>1. 定好 Event Linstener 的範圍和要執行的動作。</strong>  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, playAudio)</span><br><span class="line"><span class="comment">// window 為 document 再往上一層的物件，指監聽整個瀏覽器分頁。</span></span><br><span class="line"><span class="comment">// &#x27;keydown&#x27; 指鍵盤按鍵被按下時。</span></span><br><span class="line"><span class="comment">// playAudio 指執行名稱叫 playAudio 的fuction。</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 設定 playAudio() 要做的事。(撥放音效及畫面改變)</strong>  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">playAudio</span>(<span class="params">e</span>) &#123;</span><br><span class="line"><span class="comment">// e 指 .addEventListener() 在 &#x27;keydown&#x27; 發生時自動產生的 event 物件。</span></span><br><span class="line">  <span class="keyword">const</span> audio = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`audio[data-key=&quot;<span class="subst">$&#123;e.keyCode&#125;</span>&quot;]`</span>)</span><br><span class="line">  <span class="comment">// 把 audio 變數指向 keyCode 相符的 &lt;audio&gt; 標籤。</span></span><br><span class="line">  <span class="keyword">const</span> key = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`.key[data-key=&quot;<span class="subst">$&#123;e.keyCode&#125;</span>&quot;]`</span>)</span><br><span class="line">  <span class="comment">// 把 key 變數指向 keyCode 相符的 &lt;div&gt; 標籤。</span></span><br><span class="line">  <span class="keyword">if</span> (!audio) <span class="keyword">return</span></span><br><span class="line">  <span class="comment">// 如果找不到相符標籤，則中斷 function。</span></span><br><span class="line">  audio.<span class="property">currentTime</span> = <span class="number">0</span></span><br><span class="line">  <span class="comment">// 如果找到相符標籤，按下按鍵時，音樂撥放進度回到第 0 秒。如果沒設定，在音訊完整前，按鍵不會重新撥放。</span></span><br><span class="line">  <span class="comment">// 因為 function 要求按鍵時撥放音訊，還沒放完 = 已經/正在放</span></span><br><span class="line">  audio.<span class="title function_">play</span>()</span><br><span class="line">  <span class="comment">// 撥放 keyCode 指向的 &lt;audio&gt; 標籤。</span></span><br><span class="line">  key.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;playing&#x27;</span>)</span><br><span class="line">  <span class="comment">// 指定的 &lt;div&gt; 標籤 class 屬性加上 &#x27;playing&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3. 先來看看目前為止發生了什麼事?</strong><br>指定的 &lt;div&gt; 標籤 class 屬性加上 ‘playing’ 後，當 CSS ‘.key’ 中的 <code>transition</code> 完成。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> keys = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;.key&quot;</span>)</span><br><span class="line"><span class="comment">// 找出所有 class 含 &quot;.key&quot; 的 &lt;div&gt; 標籤，總共9個。</span></span><br><span class="line">keys.<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> key.<span class="title function_">addEventListener</span>(<span class="string">&#x27;transitionend&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(e)</span><br><span class="line">&#125;))</span><br><span class="line"><span class="comment">// 檢查找出的所有 &lt;div&gt; 標籤，在 &#x27;transitionend&#x27; 時，輸出 Event 內容。</span></span><br></pre></td></tr></table></figure>
+<p><img src="/../../Blog-image/posts/2022-01-29_TransitionEvent.webp" alt="TransitionEvent-image"><br>可以看到，在我們按了一下按鍵”A”後，總共出現了6個 <code>transitionend</code> ，只有 <code>propertyName</code> 不同。那是因為我們的 CSS 設定。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.key</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: all .<span class="number">07s</span> ease;</span><br><span class="line">  <span class="comment">/* 所有 property 都要執行 transition */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.playing</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">  <span class="comment">/* propertyName: &#x27;transform&#x27; */</span></span><br><span class="line">  <span class="attribute">border-color</span>: <span class="number">#ffc600</span>;</span><br><span class="line">  <span class="comment">/* border 分上下左右，所以有4個 &#x27;transitionend&#x27; */</span></span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1rem</span> <span class="number">#ffc600</span>;</span><br><span class="line">  <span class="comment">/* propertyName: &#x27;box-shadow&#x27; */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>4. 畫面在變化結束後恢復原狀。</strong>  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> keys = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;.key&quot;</span>)</span><br><span class="line"><span class="comment">// 共找出9個 class 含 &quot;.key&quot; 的 &lt;div&gt; 標籤。</span></span><br><span class="line">keys.<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> key.<span class="title function_">addEventListener</span>(<span class="string">&#x27;transitionend&#x27;</span>, removeTransition))</span><br><span class="line"><span class="comment">// &#x27;transitionend&#x27; 時，執行名為 removeTransition 的function。</span></span><br></pre></td></tr></table></figure>
+<p>這時，我總共找出9個 class 含 “.key” 的 &lt;div&gt; 標籤，但是想要刪除 class ‘.playing’ 的只有我們按的那一個。所以我們找出 這個 &lt;div&gt; 標籤所有 CSS 樣式裡最具代表性的 <code>transform</code> (不用寫一長串 property ，最具代表性的就好)，來繼續執行。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">removeTransition</span>(<span class="params">e</span>) &#123;</span><br><span class="line"><span class="comment">// 查找 TransitionEvent 裡動作(type)為 &#x27;transitionend&#x27; 的項目。</span></span><br><span class="line">  <span class="keyword">if</span> (e.<span class="property">propertyName</span> !== <span class="string">&#x27;transform&#x27;</span>) <span class="keyword">return</span></span><br><span class="line">  <span class="comment">// 如果 TransitionEvent 的 propertyName 不等於 &#x27;transform&#x27; ，則停止 function。</span></span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;playing&#x27;</span>)</span><br><span class="line">  <span class="comment">// 如果符合，則將 class 裡的 &#x27;.playing&#x27; 刪除。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
+<br>
+到這裡就全部完成了! 
+]]></content>
+      <categories>
+        <category>JavaScript30 挑戰</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>JS30</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>data-* HTML 自定義屬性及 dataset</title>
     <url>/posts/b8b00b13/</url>
     <content><![CDATA[<p>在 <a href="/posts/470f6710/">JS30 Day1</a> 第一次看到 data-* 屬性，學習 DOM 之後發現真是太好用了阿!</p>
@@ -1359,17 +1380,17 @@ count();
 ]]></content>
   </entry>
   <entry>
+    <title>categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>關於我......</title>
     <url>/about/index.html</url>
     <content><![CDATA[<p>最近接觸到了「程式語言」，也因此升起了學習的興趣。為了把自己的學習歷程記錄下來，打算開始寫自己的第一個部落格。</p>
 <h2 id="學習筆記"><a href="#學習筆記" class="headerlink" title="學習筆記"></a>學習筆記</h2><p>在學習的過程中，發現自己有時候會因為不夠熟悉，需要重新查詢課程內容或延伸的補充資料，容易東翻翻西找找的浪費時間。所以打算做我的「學習字典」，以後直接依照主題查詢即可。  </p>
 <p><i class="fab fa-html5 fa-2x" style="color: tomato; margin-right: 10px;"></i> <span><a href="/posts/927bd0cf/">HTML 筆記目錄</a></sapn><br><i class="fab fa-css3-alt fa-2x" style="color: #3C99DC; margin-right: 16px;"></i><span>CSS 筆記目錄</sapn><br><i class="fab fa-js-square fa-2x" style="color: #FFCF36; margin-right: 12px;"></i><span ><a href="/posts/ab4053d7/">JavaScript 筆記目錄</a></sapn>  </p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>tags</title>
