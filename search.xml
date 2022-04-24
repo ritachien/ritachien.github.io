@@ -275,136 +275,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo 基本設定</title>
-    <url>/posts/a970120e/</url>
-    <content><![CDATA[<p>基本上經過上一篇的操作，在 <code>hexo s</code> 後應該已經可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 看到預設的 Hello World 畫面了，但要讓 Blog 正式啟動前，我們還要先做一些個人化設定。  </p>
-<span id="more"></span>
-
-<blockquote>
-<p>本文撰寫時的版本如下(可用 <code>hexo version</code> 確認)，不同版本的預設配置檔可能會有差異:<br>hexo: 6.0.0<br>hexo-cli: 4.3.0  </p>
-</blockquote>
-<ul>
-<li>基本配置文件位置在 <code>root\_config.yml</code>，<font color=#FF6600>冒號後面都必需保留半型空格一格</font>。  </li>
-<li>僅列出通常會修改或我已經修改的部分，其他請參考<a href="https://hexo.io/zh-tw/docs/configuration">官方網站</a>說明。</li>
-</ul>
-<h2 id="網站設定"><a href="#網站設定" class="headerlink" title="網站設定"></a>網站設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span>           <span class="comment"># 網站標題</span></span><br><span class="line"><span class="attr">subtitle:</span>             <span class="comment"># 網站副標題</span></span><br><span class="line"><span class="attr">description:</span>          <span class="comment"># 網站描述</span></span><br><span class="line"><span class="attr">keywords:</span>             <span class="comment"># 網站關鍵字(支援多個關鍵詞，用半型逗號隔開)</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span>      <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span>          <span class="comment"># 網站語言 (台灣:zh-tw)</span></span><br><span class="line"><span class="attr">timezone:</span>             <span class="comment"># 時區(可留空以使用您電腦的時區)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="網址設定"><a href="#網址設定" class="headerlink" title="網址設定"></a>網址設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here.</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://UserName.github.io/</span>           <span class="comment"># UserName更改為自己的帳戶名</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>      <span class="comment"># 文章網址的格式(預設使用 年月日/文章名稱)/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                       <span class="comment"># permalink 中各區段的預設值</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>permalink 會依照設定值，在每次 generate 時重新產生網址，設定參數可參考<a href="https://hexo.io/zh-tw/docs/permalinks">官方文件</a>。我在命名檔名時，習慣使用日期 + 英文檔名(日期方便排序，不含空格的英文檔名較不會產生亂碼網址)，所以 permalink: 僅用 <code>:title</code> 參數 (最後的 <code>/</code> 要記得保留)。</li>
-<li><strong><font color=red>2021&#x2F;12&#x2F;27 更新: <a href="/posts/d8dab675/">使用 Hexo-abbrlink 產生永久連結</a></font></strong></li>
-</ul>
-<h2 id="目錄設定"><a href="#目錄設定" class="headerlink" title="目錄設定"></a>目錄設定</h2><p>原則上都保留不變，除非有自訂路徑的需求。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span>            <span class="comment"># 原始檔案資料夾，存放編輯的所有內容</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span>            <span class="comment"># 存放靜態檔案的資料夾(hexo g 後產生)</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span>                 <span class="comment"># 標籤資料夾</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span>         <span class="comment"># 彙整資料夾(deploy後產生)</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span>      <span class="comment"># 分類資料夾</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>tags</code> 和 <code>categories</code> 資料夾預設是不存在的，有需要要另外新增資料夾。</li>
-</ul>
-<h2 id="擴充套件設定"><a href="#擴充套件設定" class="headerlink" title="擴充套件設定"></a>擴充套件設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/       # 提供各種套件，可以依自己需求安裝</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/         # 提供各種主題，可以依自己需求安裝</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span>                           <span class="comment"># 填寫主題名稱</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>本部落格選用 Next 主題(要把 landscape 改為 Next)，後續會另開一篇變更主題說明文。</li>
-</ul>
-<h2 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Hexo 可同時部署到不同地方，相關設定參考<a href="https://hexo.io/zh-tw/docs/one-command-deployment">官方部署說明</a>。  </li>
-<li>部署到 Github 方式已在用前篇 Hexo + Github Pages 建立部落格 中說明，這邊不另外贅述。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用 Hexo + Github Pages 建立部落格</title>
-    <url>/posts/4b9ba027/</url>
-    <content><![CDATA[<p>在建置部落格前猶豫了很久，最終還是決定用 Hexo + Github Pages 當作平台。歷時兩天，終於解決各種莫名其妙的問題，讓它變成心目中的樣子!</p>
-<span id="more"></span>
-
-
-<h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="為什麼選擇-Github-Pages"><a href="#為什麼選擇-Github-Pages" class="headerlink" title="為什麼選擇 Github Pages ?"></a>為什麼選擇 Github Pages ?</h3><p><strong>1. 免費</strong><br>  Github Pages 是 Github 提供的免費靜態網頁空間，提供一組 Github帳號 <code>.github.io</code> 子網域。雖然有容量跟流量上的限制，但以一個剛起步的部落格來說，現階段不會有超出的問題。既然有免費的平台那就用吧!  </p>
-<p><strong>2. 能夠使用 Git 部署並進行版本控制</strong><br>  看了各個學習寫程式分享，得知「如何使用 Git 進行版本控制」是很重要的。雖然現階段身為程式小白的我沒有太多的概念，也完全沒有接觸過，但在查詢 Hexo 資訊時得知，Hexo 可以藉由 Git 部署到 Github 上。希望能在日常使用中學習並熟悉 Git 。  </p>
-<p><strong>3. Github 會記錄每日 commit 次數</strong><br>  Github 的個人首頁會呈現一整年的 commit 紀錄畫面。每天一格，每 commit 一次，當天的格子就會從灰色漸漸往深綠色變化。希望利用自己的收集強迫症，為了盡可能填滿格子，督促自己多多更新部落格。  </p>
-<h3 id="Github-Pages-有什麼限制"><a href="#Github-Pages-有什麼限制" class="headerlink" title="Github Pages 有什麼限制?"></a>Github Pages 有什麼限制?</h3><ol>
-<li>只能存放靜態網頁。</li>
-<li>1GB 空間容量。</li>
-<li>100GB 月流量。</li>
-<li>1 小時內只能提交 10 次更新版本。<blockquote>
-<p>參考資料: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages">Github 說明文件</a></p>
-</blockquote>
-</li>
-</ol>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="為什麼選擇-Hexo"><a href="#為什麼選擇-Hexo" class="headerlink" title="為什麼選擇 Hexo ?"></a>為什麼選擇 Hexo ?</h3><p><strong>1. Hexo 支援強大:</strong><br>  Hexo 是台灣人做的(<a href="https://zespia.tw/blog/2012/10/11/hexo-debut/">起源在這裡</a>)，官方中文支援蠻完整的。另外，可能也是因為中文支援較完整，有很多中文圈的前輩做了很多主題可以套用，當遇到相關問題時，Google 到的解決方案也很多。  </p>
-<p><strong>2. 使用 Node.js(JavaScript) 開發:</strong><br>  在正式開始前，找了幾個熱門靜態檔案產生器比較，最後在 Hexo 跟 Hugo 之間做選擇。雖然 Hugo 比較快，Github上的星星數也比較多，但基於 Hugo 是用 Go 語言寫的，初學的我還是應該先專心一門語言較好，因此捨棄 Hugo 選擇使用 JavaScript 的 Hexo。既然我現在在學JavaScript，現階段可以研究一下它的寫法，之後說不定哪天我可以自己把它改得更符合自己需求。目前在做一些個人化設定時也發現，因為可以看得懂一點點結構，修改時很有幫助。  </p>
-<p><strong>3. 支援 Markdown :</strong><br>Markdown 用來撰寫文章很方便，因為語法簡單，可以更專心在文字內容的編輯上，不用過分關注排版問題。在加上之前跟鳥友一起在HackMD建了個鳥寶寶成長紀錄(<a href="https://hackmd.io/p5O2bt2QQrC1HH46cVfs0A">有興趣可以看看</a>)，對 Markdown 也算比較熟悉了。</p>
-<p><strong>4. 個人化設定自由度高 :</strong><br>主題非常多元，版面也可依自己需求做CSS修改。(剛學到的 <code>padding</code> 、 <code>letter-spacing</code> 、 <code>border-radius</code> 等也都依自己喜歡的樣子用上了!) 另外，也可以找到很多其他插件資源，讓自己的部落格更有個人特色。<br>  <br/></p>
-<h2 id="開始建置部落格"><a href="#開始建置部落格" class="headerlink" title="開始建置部落格"></a>開始建置部落格</h2><blockquote>
-<p>本文撰寫時在 Windows 10 環境下安裝。  </p>
-</blockquote>
-<h3 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h3><p><strong>1. 安裝 Node.js</strong>  </p>
-<ul>
-<li>建置過程中需要用 NPM 安裝套件，所以要先下載 Node.js (<a href="https://nodejs.org/en/">官網下載</a>)。</li>
-</ul>
-<p><strong>2. 安裝 Git</strong>  </p>
-<ul>
-<li><p>之後會使用 Git 作版本控制並將 Hexo 部署或備份到 Github 上，所以要先安裝 Git (<a href="https://git-scm.com/downloads">官網下載</a>)。  </p>
-</li>
-<li><p>開始初次設定 Git : 設定使用者名稱及電子郵件， Git 的提交會使用這些資訊。  </p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引號內填入使用者名稱</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line"><span class="comment"># 引號內填入使用者email</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>完成後可用 <code>git config --global --list</code> 檢查是否有誤，或是到 <code>C:\Users\yourUserName\.gitconfig</code> 確認並修正。</p>
-</li>
-</ul>
-<p><strong>3. 新建Github Repository</strong>  </p>
-<ul>
-<li>開啟 Github 並點選 New Repository</li>
-<li>Repository 名稱為 <code>用戶名.github.io</code><br>  <img src="/../../Blog-image/posts/2021-12-21_001.webp" alt="20211221-001">    <br/></li>
-</ul>
-<h3 id="本地端安裝"><a href="#本地端安裝" class="headerlink" title="本地端安裝"></a>本地端安裝</h3><p><strong>1. 安裝 Hexo</strong>  </p>
-<ul>
-<li>使用 <code>npm install -g hexo-cli</code> 安裝 Hexo 。  </li>
-<li>安裝成功後，輸入 <code>hexo version</code> 指令可查看安裝版本。</li>
-</ul>
-<p><strong>2. Blog 存放資料夾初始化</strong></p>
-<ul>
-<li>開啟命令提示元(CMD) &gt; 前往想存放 Blog 檔案的本地端資料夾。 (ex. 我要在 D 槽新建 Blog 資料夾存放，所以先輸入 <code>D:</code> 讓當前位置移到 D 槽)  </li>
-<li>初始化資料夾(必須是空資料夾，以下方法二選一)  <ul>
-<li>方法一(當前位置 D 槽) –在 D 槽新建 Blog 資料夾並初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init Blog</span><br></pre></td></tr></table></figure></li>
-<li>方法二(已自行新建資料夾，當前位置 D:\Blog) –將 Blog 資料夾初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>安裝相關套件  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>3. 部署設定</strong></p>
-<ul>
-<li>安裝部署用套件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
-<li>修改部署設定 (檔案 <code>根目錄\_config.yml</code> 最下方 # Deployment)  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/用戶名/用戶名.github.io.git</span>  <span class="comment"># Repository 網址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">分支名稱(可用預設</span> <span class="string">main</span> <span class="string">，或自訂如</span> <span class="string">gh-pages)</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">&quot;填入commit訊息&quot;</span>  <span class="comment"># 本行不用可刪</span></span><br></pre></td></tr></table></figure>
-<br/></li>
-</ul>
-<h3 id="部署到Github-常用指令"><a href="#部署到Github-常用指令" class="headerlink" title="部署到Github (常用指令)"></a>部署到Github (常用指令)</h3><p><strong>1. 本地端預覽</strong><br>使用時機: 當在本地端做完修改後，如果希望看到及時修改結果。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server                <span class="comment"># 開啟本地端預覽(標準用法)</span></span><br><span class="line">hexo s                     <span class="comment"># 開啟本地端預覽(簡短用法)</span></span><br><span class="line">http://localhost:4000      <span class="comment"># 貼入網址列即可預覽</span></span><br><span class="line">Ctrl + C                   <span class="comment"># 結束本地端預覽</span></span><br></pre></td></tr></table></figure>
-<p><strong>2. 產生靜態檔案</strong><br>使用時機: 編寫完成後，產生要部署的靜態檔案(會產生 <code>根目錄\public</code> 資料夾放入要部署的檔案)。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate             <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo g                    <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
-<p><strong>3. 部署</strong><br>使用時機: 編寫完成後，部署到 Github ( <code>根目錄\public</code> 裡的檔案會被上傳到設定好的 Repository)。部署完成就可以在 <code>github.io</code> 看到自己的 Blog 了!  </p>
-<blockquote>
-<p><font color=#FF6600>Github有時候部署後要等10~20分鐘畫面才會更新</font></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy                  <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo d                       <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br><span class="line">https://帳戶名.github.io/     <span class="comment"># 個人部落格網址</span></span><br></pre></td></tr></table></figure>
-<p><strong>4. 清除快取 &amp; 靜態檔案</strong><br>使用時機: 為了避免出錯，建議在每次 deploy 前，都先清除先前的資料再重新產生靜態檔案(清除快取檔案 <code>db.json</code> 和已產生的靜態檔案 <code>根目錄\public</code>)。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean     <span class="comment"># 清除快取 &amp; 靜態檔案(標準用法)</span></span><br><span class="line">hexo cl        <span class="comment"># 清除快取 &amp; 靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-        <tag>Hexo</tag>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo 編輯文章</title>
     <url>/posts/978c1db/</url>
     <content><![CDATA[<p>基本設定都完成後就可以來寫部落格了! 在正式開始前，如果能對 Hexo 的資料夾架構及 Front-matter 有點基本的認識，會對後續的操作很有幫助。</p>
@@ -450,79 +320,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有效率地猜中數字</title>
-    <url>/posts/5959db4f/</url>
-    <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期一作業<br>這是第一個讓我覺得”卡卡”的題目，也是一個讓我在寫出來後深刻認知到: “<strong>想不到解決問題的方法，會寫程式也沒用</strong>“的題目。</p>
-<span id="more"></span>
-<p>藉著記錄解題的過程，把當初解決問題的方法和思考方式寫下來，達成再次深入複習的目的。</p>
-<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
-<li>Math.random() 會回傳一個偽隨機小數介於0到1之間(包含0，不包含1)  </li>
-<li>Math.floor() 會回傳小於等於所給數字的最大整數(無條件捨去)。  </li>
-<li>while 迴圈  </li>
-<li>if statement</li>
-</ol>
-<h2 id="基本題"><a href="#基本題" class="headerlink" title="基本題"></a>基本題</h2><h3 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h3><ol>
-<li>指定介於 1-100 之間的數字，存在 <code>answer</code> 變數裡  </li>
-<li>設定一個 <code>guess</code> 變數，代表挑戰者 (電腦) 猜的數字  </li>
-<li>電腦可重覆「猜數字」，比對 <code>guess</code> 和 <code>answer</code>，判斷太大或太小  </li>
-<li>若兩者相等（猜對）則結束遊戲，且結束時須計算電腦猜了幾次</li>
-</ol>
-<h3 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h3><p>使用 Math.random() 和 Math.floor() 指定一個介於 1-100 之間的數字，存在 <code>answer</code> 變數裡。</p>
-<blockquote>
-<p>原本想要直接用 Math.ceil() 無條件進位，但後來發現 Math.random() 有可能產生 “0”。所以如果直接用 Math.ceil() 可能會發生 <code>guess === 0</code> 的問題(不符合猜數範圍)。  </p>
-</blockquote>
-<p>先用 Math.random() * 100 取得一個介於0到100之間(包含0，不包含100)的隨機小數。把這個小數套進 Math.floor() 裡面進行無條件捨去再加1，就能取得一個介於1到100之間(包含1，包含100)的隨機整數了。  </p>
-<blockquote>
-<p>這裡還犯過一個非常不應該的錯誤，我把 Math 寫成 math ，然後就又跳錯誤了……</p>
-</blockquote>
-<br/>
-
-<p>到目前為止，條件一和條件二都可以達成了。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 指定介於 1-100 之間的數字，存在 `answer` 變數裡</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 設定一個 `guess` 變數，代表挑戰者 (電腦) 猜的數字</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<br/>
-
-<p>for &#x2F; while 的選擇—-因為這次的比大小是條件判斷，所以選擇 while 迴圈。<br>先把邏輯寫出來:  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 生成並印出答案</span></span><br><span class="line">宣告 anwer</span><br><span class="line"><span class="comment">// 進入迴圈的條件(重複執行的原因)</span></span><br><span class="line"><span class="keyword">while</span> (猜數 不等於 答案) ，則進入迴圈</span><br><span class="line"></span><br><span class="line"><span class="comment">// 每一回合會重複的動作(放進迴圈裡)</span></span><br><span class="line">猜一次數字，並且回合數 + <span class="number">1</span> (接著進入結果判斷)</span><br><span class="line"><span class="variable constant_">IF</span> 猜數 &gt; 答案</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:太大了</span><br><span class="line"><span class="variable constant_">ELSE</span> <span class="variable constant_">IF</span> 猜數 &lt; 答案</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:太小了</span><br><span class="line"><span class="variable constant_">ELSE</span> (猜數 = 答案)</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:恭喜答對!</span><br><span class="line">  結束迴圈</span><br></pre></td></tr></table></figure>
-<br/>
-
-<p>好像差不多了，條件三和條件四也都可以達成了。但跟著邏輯再想一遍以後又發現了問題:  </p>
-<ol>
-<li>迴圈裡回合數每次 + 1，但不知道是從多少開始加，所以要先宣告回合數 &#x3D; 0  </li>
-<li>一開始只生成答案無法達成進入迴圈條件，為了達成條件，先宣告猜數 &#x3D; 0</li>
-</ol>
-<p>以上問題都解決了，可以組合起來寫出程式碼了!  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ========= 宣告變數 ==========</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span> <span class="comment">//正確答案</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="number">0</span> <span class="comment">//挑戰者猜的數字</span></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span> <span class="comment">//回合數</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ========= 從這裡開始 ==========</span></span><br><span class="line"><span class="comment">// 先印出正確數字</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`正確答案為 <span class="subst">$&#123;answer&#125;</span>`</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 設計判斷式和迴圈解決問題</span></span><br><span class="line"><span class="keyword">while</span> (guess !== answer) &#123;</span><br><span class="line">  </span><br><span class="line">  guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span> <span class="comment">// 挑戰者猜一個本回合的數字    </span></span><br><span class="line">  count += <span class="number">1</span>                                     </span><br><span class="line"></span><br><span class="line"> <span class="comment">// 條件判斷</span></span><br><span class="line">  <span class="keyword">if</span> (guess &gt; answer) &#123; </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:太大了，再猜一次`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (guess &lt; answer) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:太小了，再猜一次`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:恭喜答對!`</span>)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;===============遊戲結束===============&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<br/>
-<br/>
-
-<h2 id="進階題"><a href="#進階題" class="headerlink" title="進階題"></a>進階題</h2><h3 id="題目要求-1"><a href="#題目要求-1" class="headerlink" title="題目要求"></a>題目要求</h3><ul>
-<li>讓電腦在 10 次以內猜對</li>
-</ul>
-<h3 id="解題過程-1"><a href="#解題過程-1" class="headerlink" title="解題過程"></a>解題過程</h3><p>花了三個小時都沒想出來，最後決定上網找找靈感，幸運發現一個前輩的解題思路。認真看完一遍，發現就跟以前玩終極密碼一樣，最快的方式就是縮小範圍，砍半再砍半。如果用對半切的方式，已知 2 的 10 次方為 1024，即範圍 1~1024 內的數字用砍半方式一定可以在 10 次內猜到，符合題目要求。  </p>
-<p>知道方法後要做的事只有2件:  </p>
-<ol>
-<li>設定猜數的上限和下限  </li>
-<li>讓猜數取上限和下限的中位數</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 設定猜數的起始上限和下限(放起始宣告位置)</span></span><br><span class="line"><span class="keyword">let</span> rangeMax = <span class="number">100</span> </span><br><span class="line"><span class="keyword">let</span> rangeMin = <span class="number">1</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">// 設定迴圈裡猜數的上限和下限重新賦值的方式(放入迴圈)</span></span><br><span class="line"><span class="comment">// 猜過的數字不能包含在範圍內</span></span><br><span class="line">rangeMax = guess - <span class="number">1</span></span><br><span class="line">rangeMin = guess + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 以猜數範圍的中位數再猜一次(放入迴圈)</span></span><br><span class="line">guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>((rangeMin + rangeMax) / <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<br/>
-
-<p>該作的變數調整都完成了，接下來就是把它們塞進該放的位置。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 宣告並產生答案</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span>  </span><br><span class="line"></span><br><span class="line"><span class="comment">// ========= start coding ==========</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="number">0</span>         <span class="comment">// 宣告挑戰者猜的數字為0</span></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span>         <span class="comment">// 宣告起始回合數為0</span></span><br><span class="line"><span class="keyword">let</span> rangeMax = <span class="number">100</span>    <span class="comment">// 宣告猜測最大值為100</span></span><br><span class="line"><span class="keyword">let</span> rangeMin = <span class="number">1</span>      <span class="comment">// 宣告猜測最小值為1</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`莊家數字是 <span class="subst">$&#123;answer&#125;</span>`</span>)  <span class="comment">//印出正確答案</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (guess !== answer) &#123;</span><br><span class="line">  guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>((rangeMin + rangeMax) / <span class="number">2</span>)</span><br><span class="line">  count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (guess &gt; answer) &#123;  </span><br><span class="line">    rangeMax = guess - <span class="number">1</span>  </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，太大，再猜一次! 範圍 <span class="subst">$&#123;rangeMin&#125;</span> ~ <span class="subst">$&#123;rangeMax&#125;</span> 。`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (guess &lt; answer) &#123;</span><br><span class="line">    rangeMin = guess + <span class="number">1</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，太小，再猜一次! 範圍 <span class="subst">$&#123;rangeMin&#125;</span> ~ <span class="subst">$&#123;rangeMax&#125;</span> 。`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，恭喜答對!`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<br/>
-
-<p>終於成功了!! 這也是文章開頭說的: 如果知道解決問題的方法，只要能正確地把程式碼寫出來就好；如果不知道解決問題的方法，就算程式語言再精深都沒用，因為連怎麼開始都不知道。  </p>
-<p>其他小題目還好，就不特別寫解題筆記了。預計下一篇會寫更卡一點的期末考 😅</p>
-]]></content>
-      <categories>
-        <category>JavaScript 解題</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -626,6 +423,93 @@
       </tags>
   </entry>
   <entry>
+    <title>用 Hexo + Github Pages 建立部落格</title>
+    <url>/posts/4b9ba027/</url>
+    <content><![CDATA[<p>在建置部落格前猶豫了很久，最終還是決定用 Hexo + Github Pages 當作平台。歷時兩天，終於解決各種莫名其妙的問題，讓它變成心目中的樣子!</p>
+<span id="more"></span>
+
+
+<h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="為什麼選擇-Github-Pages"><a href="#為什麼選擇-Github-Pages" class="headerlink" title="為什麼選擇 Github Pages ?"></a>為什麼選擇 Github Pages ?</h3><p><strong>1. 免費</strong><br>  Github Pages 是 Github 提供的免費靜態網頁空間，提供一組 Github帳號 <code>.github.io</code> 子網域。雖然有容量跟流量上的限制，但以一個剛起步的部落格來說，現階段不會有超出的問題。既然有免費的平台那就用吧!  </p>
+<p><strong>2. 能夠使用 Git 部署並進行版本控制</strong><br>  看了各個學習寫程式分享，得知「如何使用 Git 進行版本控制」是很重要的。雖然現階段身為程式小白的我沒有太多的概念，也完全沒有接觸過，但在查詢 Hexo 資訊時得知，Hexo 可以藉由 Git 部署到 Github 上。希望能在日常使用中學習並熟悉 Git 。  </p>
+<p><strong>3. Github 會記錄每日 commit 次數</strong><br>  Github 的個人首頁會呈現一整年的 commit 紀錄畫面。每天一格，每 commit 一次，當天的格子就會從灰色漸漸往深綠色變化。希望利用自己的收集強迫症，為了盡可能填滿格子，督促自己多多更新部落格。  </p>
+<h3 id="Github-Pages-有什麼限制"><a href="#Github-Pages-有什麼限制" class="headerlink" title="Github Pages 有什麼限制?"></a>Github Pages 有什麼限制?</h3><ol>
+<li>只能存放靜態網頁。</li>
+<li>1GB 空間容量。</li>
+<li>100GB 月流量。</li>
+<li>1 小時內只能提交 10 次更新版本。<blockquote>
+<p>參考資料: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages">Github 說明文件</a></p>
+</blockquote>
+</li>
+</ol>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="為什麼選擇-Hexo"><a href="#為什麼選擇-Hexo" class="headerlink" title="為什麼選擇 Hexo ?"></a>為什麼選擇 Hexo ?</h3><p><strong>1. Hexo 支援強大:</strong><br>  Hexo 是台灣人做的(<a href="https://zespia.tw/blog/2012/10/11/hexo-debut/">起源在這裡</a>)，官方中文支援蠻完整的。另外，可能也是因為中文支援較完整，有很多中文圈的前輩做了很多主題可以套用，當遇到相關問題時，Google 到的解決方案也很多。  </p>
+<p><strong>2. 使用 Node.js(JavaScript) 開發:</strong><br>  在正式開始前，找了幾個熱門靜態檔案產生器比較，最後在 Hexo 跟 Hugo 之間做選擇。雖然 Hugo 比較快，Github上的星星數也比較多，但基於 Hugo 是用 Go 語言寫的，初學的我還是應該先專心一門語言較好，因此捨棄 Hugo 選擇使用 JavaScript 的 Hexo。既然我現在在學JavaScript，現階段可以研究一下它的寫法，之後說不定哪天我可以自己把它改得更符合自己需求。目前在做一些個人化設定時也發現，因為可以看得懂一點點結構，修改時很有幫助。  </p>
+<p><strong>3. 支援 Markdown :</strong><br>Markdown 用來撰寫文章很方便，因為語法簡單，可以更專心在文字內容的編輯上，不用過分關注排版問題。在加上之前跟鳥友一起在HackMD建了個鳥寶寶成長紀錄(<a href="https://hackmd.io/p5O2bt2QQrC1HH46cVfs0A">有興趣可以看看</a>)，對 Markdown 也算比較熟悉了。</p>
+<p><strong>4. 個人化設定自由度高 :</strong><br>主題非常多元，版面也可依自己需求做CSS修改。(剛學到的 <code>padding</code> 、 <code>letter-spacing</code> 、 <code>border-radius</code> 等也都依自己喜歡的樣子用上了!) 另外，也可以找到很多其他插件資源，讓自己的部落格更有個人特色。<br>  <br/></p>
+<h2 id="開始建置部落格"><a href="#開始建置部落格" class="headerlink" title="開始建置部落格"></a>開始建置部落格</h2><blockquote>
+<p>本文撰寫時在 Windows 10 環境下安裝。  </p>
+</blockquote>
+<h3 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h3><p><strong>1. 安裝 Node.js</strong>  </p>
+<ul>
+<li>建置過程中需要用 NPM 安裝套件，所以要先下載 Node.js (<a href="https://nodejs.org/en/">官網下載</a>)。</li>
+</ul>
+<p><strong>2. 安裝 Git</strong>  </p>
+<ul>
+<li><p>之後會使用 Git 作版本控制並將 Hexo 部署或備份到 Github 上，所以要先安裝 Git (<a href="https://git-scm.com/downloads">官網下載</a>)。  </p>
+</li>
+<li><p>開始初次設定 Git : 設定使用者名稱及電子郵件， Git 的提交會使用這些資訊。  </p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引號內填入使用者名稱</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line"><span class="comment"># 引號內填入使用者email</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完成後可用 <code>git config --global --list</code> 檢查是否有誤，或是到 <code>C:\Users\yourUserName\.gitconfig</code> 確認並修正。</p>
+</li>
+</ul>
+<p><strong>3. 新建Github Repository</strong>  </p>
+<ul>
+<li>開啟 Github 並點選 New Repository</li>
+<li>Repository 名稱為 <code>用戶名.github.io</code><br>  <img src="/../../Blog-image/posts/2021-12-21_001.webp" alt="20211221-001">    <br/></li>
+</ul>
+<h3 id="本地端安裝"><a href="#本地端安裝" class="headerlink" title="本地端安裝"></a>本地端安裝</h3><p><strong>1. 安裝 Hexo</strong>  </p>
+<ul>
+<li>使用 <code>npm install -g hexo-cli</code> 安裝 Hexo 。  </li>
+<li>安裝成功後，輸入 <code>hexo version</code> 指令可查看安裝版本。</li>
+</ul>
+<p><strong>2. Blog 存放資料夾初始化</strong></p>
+<ul>
+<li>開啟命令提示元(CMD) &gt; 前往想存放 Blog 檔案的本地端資料夾。 (ex. 我要在 D 槽新建 Blog 資料夾存放，所以先輸入 <code>D:</code> 讓當前位置移到 D 槽)  </li>
+<li>初始化資料夾(必須是空資料夾，以下方法二選一)  <ul>
+<li>方法一(當前位置 D 槽) –在 D 槽新建 Blog 資料夾並初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init Blog</span><br></pre></td></tr></table></figure></li>
+<li>方法二(已自行新建資料夾，當前位置 D:\Blog) –將 Blog 資料夾初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>安裝相關套件  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>3. 部署設定</strong></p>
+<ul>
+<li>安裝部署用套件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li>修改部署設定 (檔案 <code>根目錄\_config.yml</code> 最下方 # Deployment)  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/用戶名/用戶名.github.io.git</span>  <span class="comment"># Repository 網址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">分支名稱(可用預設</span> <span class="string">main</span> <span class="string">，或自訂如</span> <span class="string">gh-pages)</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">&quot;填入commit訊息&quot;</span>  <span class="comment"># 本行不用可刪</span></span><br></pre></td></tr></table></figure>
+<br/></li>
+</ul>
+<h3 id="部署到Github-常用指令"><a href="#部署到Github-常用指令" class="headerlink" title="部署到Github (常用指令)"></a>部署到Github (常用指令)</h3><p><strong>1. 本地端預覽</strong><br>使用時機: 當在本地端做完修改後，如果希望看到及時修改結果。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server                <span class="comment"># 開啟本地端預覽(標準用法)</span></span><br><span class="line">hexo s                     <span class="comment"># 開啟本地端預覽(簡短用法)</span></span><br><span class="line">http://localhost:4000      <span class="comment"># 貼入網址列即可預覽</span></span><br><span class="line">Ctrl + C                   <span class="comment"># 結束本地端預覽</span></span><br></pre></td></tr></table></figure>
+<p><strong>2. 產生靜態檔案</strong><br>使用時機: 編寫完成後，產生要部署的靜態檔案(會產生 <code>根目錄\public</code> 資料夾放入要部署的檔案)。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate             <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo g                    <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
+<p><strong>3. 部署</strong><br>使用時機: 編寫完成後，部署到 Github ( <code>根目錄\public</code> 裡的檔案會被上傳到設定好的 Repository)。部署完成就可以在 <code>github.io</code> 看到自己的 Blog 了!  </p>
+<blockquote>
+<p><font color=#FF6600>Github有時候部署後要等10~20分鐘畫面才會更新</font></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy                  <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo d                       <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br><span class="line">https://帳戶名.github.io/     <span class="comment"># 個人部落格網址</span></span><br></pre></td></tr></table></figure>
+<p><strong>4. 清除快取 &amp; 靜態檔案</strong><br>使用時機: 為了避免出錯，建議在每次 deploy 前，都先清除先前的資料再重新產生靜態檔案(清除快取檔案 <code>db.json</code> 和已產生的靜態檔案 <code>根目錄\public</code>)。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean     <span class="comment"># 清除快取 &amp; 靜態檔案(標準用法)</span></span><br><span class="line">hexo cl        <span class="comment"># 清除快取 &amp; 靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>Hexo</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用 Hexo-abbrlink 產生永久連結</title>
     <url>/posts/d8dab675/</url>
     <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因為是在建置部落格的同時整理並撰寫 Hexo 筆記，內容的更動導致常常需要修改多篇文章的檔名，permalink 自動產生網址的設定也連帶造成了我一些困擾，所以想用 Hexo-abbrlink 來一勞永逸。  </p>
@@ -664,6 +548,79 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有效率地猜中數字</title>
+    <url>/posts/5959db4f/</url>
+    <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期一作業<br>這是第一個讓我覺得”卡卡”的題目，也是一個讓我在寫出來後深刻認知到: “<strong>想不到解決問題的方法，會寫程式也沒用</strong>“的題目。</p>
+<span id="more"></span>
+<p>藉著記錄解題的過程，把當初解決問題的方法和思考方式寫下來，達成再次深入複習的目的。</p>
+<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
+<li>Math.random() 會回傳一個偽隨機小數介於0到1之間(包含0，不包含1)  </li>
+<li>Math.floor() 會回傳小於等於所給數字的最大整數(無條件捨去)。  </li>
+<li>while 迴圈  </li>
+<li>if statement</li>
+</ol>
+<h2 id="基本題"><a href="#基本題" class="headerlink" title="基本題"></a>基本題</h2><h3 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h3><ol>
+<li>指定介於 1-100 之間的數字，存在 <code>answer</code> 變數裡  </li>
+<li>設定一個 <code>guess</code> 變數，代表挑戰者 (電腦) 猜的數字  </li>
+<li>電腦可重覆「猜數字」，比對 <code>guess</code> 和 <code>answer</code>，判斷太大或太小  </li>
+<li>若兩者相等（猜對）則結束遊戲，且結束時須計算電腦猜了幾次</li>
+</ol>
+<h3 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h3><p>使用 Math.random() 和 Math.floor() 指定一個介於 1-100 之間的數字，存在 <code>answer</code> 變數裡。</p>
+<blockquote>
+<p>原本想要直接用 Math.ceil() 無條件進位，但後來發現 Math.random() 有可能產生 “0”。所以如果直接用 Math.ceil() 可能會發生 <code>guess === 0</code> 的問題(不符合猜數範圍)。  </p>
+</blockquote>
+<p>先用 Math.random() * 100 取得一個介於0到100之間(包含0，不包含100)的隨機小數。把這個小數套進 Math.floor() 裡面進行無條件捨去再加1，就能取得一個介於1到100之間(包含1，包含100)的隨機整數了。  </p>
+<blockquote>
+<p>這裡還犯過一個非常不應該的錯誤，我把 Math 寫成 math ，然後就又跳錯誤了……</p>
+</blockquote>
+<br/>
+
+<p>到目前為止，條件一和條件二都可以達成了。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 指定介於 1-100 之間的數字，存在 `answer` 變數裡</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 設定一個 `guess` 變數，代表挑戰者 (電腦) 猜的數字</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<br/>
+
+<p>for &#x2F; while 的選擇—-因為這次的比大小是條件判斷，所以選擇 while 迴圈。<br>先把邏輯寫出來:  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 生成並印出答案</span></span><br><span class="line">宣告 anwer</span><br><span class="line"><span class="comment">// 進入迴圈的條件(重複執行的原因)</span></span><br><span class="line"><span class="keyword">while</span> (猜數 不等於 答案) ，則進入迴圈</span><br><span class="line"></span><br><span class="line"><span class="comment">// 每一回合會重複的動作(放進迴圈裡)</span></span><br><span class="line">猜一次數字，並且回合數 + <span class="number">1</span> (接著進入結果判斷)</span><br><span class="line"><span class="variable constant_">IF</span> 猜數 &gt; 答案</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:太大了</span><br><span class="line"><span class="variable constant_">ELSE</span> <span class="variable constant_">IF</span> 猜數 &lt; 答案</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:太小了</span><br><span class="line"><span class="variable constant_">ELSE</span> (猜數 = 答案)</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:恭喜答對!</span><br><span class="line">  結束迴圈</span><br></pre></td></tr></table></figure>
+<br/>
+
+<p>好像差不多了，條件三和條件四也都可以達成了。但跟著邏輯再想一遍以後又發現了問題:  </p>
+<ol>
+<li>迴圈裡回合數每次 + 1，但不知道是從多少開始加，所以要先宣告回合數 &#x3D; 0  </li>
+<li>一開始只生成答案無法達成進入迴圈條件，為了達成條件，先宣告猜數 &#x3D; 0</li>
+</ol>
+<p>以上問題都解決了，可以組合起來寫出程式碼了!  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ========= 宣告變數 ==========</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span> <span class="comment">//正確答案</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="number">0</span> <span class="comment">//挑戰者猜的數字</span></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span> <span class="comment">//回合數</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ========= 從這裡開始 ==========</span></span><br><span class="line"><span class="comment">// 先印出正確數字</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`正確答案為 <span class="subst">$&#123;answer&#125;</span>`</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 設計判斷式和迴圈解決問題</span></span><br><span class="line"><span class="keyword">while</span> (guess !== answer) &#123;</span><br><span class="line">  </span><br><span class="line">  guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span> <span class="comment">// 挑戰者猜一個本回合的數字    </span></span><br><span class="line">  count += <span class="number">1</span>                                     </span><br><span class="line"></span><br><span class="line"> <span class="comment">// 條件判斷</span></span><br><span class="line">  <span class="keyword">if</span> (guess &gt; answer) &#123; </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:太大了，再猜一次`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (guess &lt; answer) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:太小了，再猜一次`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:恭喜答對!`</span>)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;===============遊戲結束===============&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br/>
+<br/>
+
+<h2 id="進階題"><a href="#進階題" class="headerlink" title="進階題"></a>進階題</h2><h3 id="題目要求-1"><a href="#題目要求-1" class="headerlink" title="題目要求"></a>題目要求</h3><ul>
+<li>讓電腦在 10 次以內猜對</li>
+</ul>
+<h3 id="解題過程-1"><a href="#解題過程-1" class="headerlink" title="解題過程"></a>解題過程</h3><p>花了三個小時都沒想出來，最後決定上網找找靈感，幸運發現一個前輩的解題思路。認真看完一遍，發現就跟以前玩終極密碼一樣，最快的方式就是縮小範圍，砍半再砍半。如果用對半切的方式，已知 2 的 10 次方為 1024，即範圍 1~1024 內的數字用砍半方式一定可以在 10 次內猜到，符合題目要求。  </p>
+<p>知道方法後要做的事只有2件:  </p>
+<ol>
+<li>設定猜數的上限和下限  </li>
+<li>讓猜數取上限和下限的中位數</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 設定猜數的起始上限和下限(放起始宣告位置)</span></span><br><span class="line"><span class="keyword">let</span> rangeMax = <span class="number">100</span> </span><br><span class="line"><span class="keyword">let</span> rangeMin = <span class="number">1</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">// 設定迴圈裡猜數的上限和下限重新賦值的方式(放入迴圈)</span></span><br><span class="line"><span class="comment">// 猜過的數字不能包含在範圍內</span></span><br><span class="line">rangeMax = guess - <span class="number">1</span></span><br><span class="line">rangeMin = guess + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 以猜數範圍的中位數再猜一次(放入迴圈)</span></span><br><span class="line">guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>((rangeMin + rangeMax) / <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<br/>
+
+<p>該作的變數調整都完成了，接下來就是把它們塞進該放的位置。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 宣告並產生答案</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span>  </span><br><span class="line"></span><br><span class="line"><span class="comment">// ========= start coding ==========</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="number">0</span>         <span class="comment">// 宣告挑戰者猜的數字為0</span></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span>         <span class="comment">// 宣告起始回合數為0</span></span><br><span class="line"><span class="keyword">let</span> rangeMax = <span class="number">100</span>    <span class="comment">// 宣告猜測最大值為100</span></span><br><span class="line"><span class="keyword">let</span> rangeMin = <span class="number">1</span>      <span class="comment">// 宣告猜測最小值為1</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`莊家數字是 <span class="subst">$&#123;answer&#125;</span>`</span>)  <span class="comment">//印出正確答案</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (guess !== answer) &#123;</span><br><span class="line">  guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>((rangeMin + rangeMax) / <span class="number">2</span>)</span><br><span class="line">  count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (guess &gt; answer) &#123;  </span><br><span class="line">    rangeMax = guess - <span class="number">1</span>  </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，太大，再猜一次! 範圍 <span class="subst">$&#123;rangeMin&#125;</span> ~ <span class="subst">$&#123;rangeMax&#125;</span> 。`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (guess &lt; answer) &#123;</span><br><span class="line">    rangeMin = guess + <span class="number">1</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，太小，再猜一次! 範圍 <span class="subst">$&#123;rangeMin&#125;</span> ~ <span class="subst">$&#123;rangeMax&#125;</span> 。`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，恭喜答對!`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br/>
+
+<p>終於成功了!! 這也是文章開頭說的: 如果知道解決問題的方法，只要能正確地把程式碼寫出來就好；如果不知道解決問題的方法，就算程式語言再精深都沒用，因為連怎麼開始都不知道。  </p>
+<p>其他小題目還好，就不特別寫解題筆記了。預計下一篇會寫更卡一點的期末考 😅</p>
+]]></content>
+      <categories>
+        <category>JavaScript 解題</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -727,6 +684,84 @@
         <tag>Nunjucks</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 基本設定</title>
+    <url>/posts/a970120e/</url>
+    <content><![CDATA[<p>基本上經過上一篇的操作，在 <code>hexo s</code> 後應該已經可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 看到預設的 Hello World 畫面了，但要讓 Blog 正式啟動前，我們還要先做一些個人化設定。  </p>
+<span id="more"></span>
+
+<blockquote>
+<p>本文撰寫時的版本如下(可用 <code>hexo version</code> 確認)，不同版本的預設配置檔可能會有差異:<br>hexo: 6.0.0<br>hexo-cli: 4.3.0  </p>
+</blockquote>
+<ul>
+<li>基本配置文件位置在 <code>root\_config.yml</code>，<font color=#FF6600>冒號後面都必需保留半型空格一格</font>。  </li>
+<li>僅列出通常會修改或我已經修改的部分，其他請參考<a href="https://hexo.io/zh-tw/docs/configuration">官方網站</a>說明。</li>
+</ul>
+<h2 id="網站設定"><a href="#網站設定" class="headerlink" title="網站設定"></a>網站設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span>           <span class="comment"># 網站標題</span></span><br><span class="line"><span class="attr">subtitle:</span>             <span class="comment"># 網站副標題</span></span><br><span class="line"><span class="attr">description:</span>          <span class="comment"># 網站描述</span></span><br><span class="line"><span class="attr">keywords:</span>             <span class="comment"># 網站關鍵字(支援多個關鍵詞，用半型逗號隔開)</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span>      <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span>          <span class="comment"># 網站語言 (台灣:zh-tw)</span></span><br><span class="line"><span class="attr">timezone:</span>             <span class="comment"># 時區(可留空以使用您電腦的時區)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="網址設定"><a href="#網址設定" class="headerlink" title="網址設定"></a>網址設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here.</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://UserName.github.io/</span>           <span class="comment"># UserName更改為自己的帳戶名</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>      <span class="comment"># 文章網址的格式(預設使用 年月日/文章名稱)/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                       <span class="comment"># permalink 中各區段的預設值</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>permalink 會依照設定值，在每次 generate 時重新產生網址，設定參數可參考<a href="https://hexo.io/zh-tw/docs/permalinks">官方文件</a>。我在命名檔名時，習慣使用日期 + 英文檔名(日期方便排序，不含空格的英文檔名較不會產生亂碼網址)，所以 permalink: 僅用 <code>:title</code> 參數 (最後的 <code>/</code> 要記得保留)。</li>
+<li><strong><font color=red>2021&#x2F;12&#x2F;27 更新: <a href="/posts/d8dab675/">使用 Hexo-abbrlink 產生永久連結</a></font></strong></li>
+</ul>
+<h2 id="目錄設定"><a href="#目錄設定" class="headerlink" title="目錄設定"></a>目錄設定</h2><p>原則上都保留不變，除非有自訂路徑的需求。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span>            <span class="comment"># 原始檔案資料夾，存放編輯的所有內容</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span>            <span class="comment"># 存放靜態檔案的資料夾(hexo g 後產生)</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span>                 <span class="comment"># 標籤資料夾</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span>         <span class="comment"># 彙整資料夾(deploy後產生)</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span>      <span class="comment"># 分類資料夾</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>tags</code> 和 <code>categories</code> 資料夾預設是不存在的，有需要要另外新增資料夾。</li>
+</ul>
+<h2 id="擴充套件設定"><a href="#擴充套件設定" class="headerlink" title="擴充套件設定"></a>擴充套件設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/       # 提供各種套件，可以依自己需求安裝</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/         # 提供各種主題，可以依自己需求安裝</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span>                           <span class="comment"># 填寫主題名稱</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>本部落格選用 Next 主題(要把 landscape 改為 Next)，後續會另開一篇變更主題說明文。</li>
+</ul>
+<h2 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Hexo 可同時部署到不同地方，相關設定參考<a href="https://hexo.io/zh-tw/docs/one-command-deployment">官方部署說明</a>。  </li>
+<li>部署到 Github 方式已在用前篇 Hexo + Github Pages 建立部落格 中說明，這邊不另外贅述。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 插件更新</title>
+    <url>/posts/d81b71f/</url>
+    <content><![CDATA[<p>會寫這篇文章主要是因為收到了 hexo-server 插件的更新通知。隨著部落格功能的擴充，我安裝的 Hexo 插件越來越多，每個插件都會做各自的版本更新(還不同時間點)。一個一個分別更新好麻煩，然後懶人如我找到了個 npm 包可以直接幫我確認最新版本，再全部一起更新，多棒啊~~  </p>
+<span id="more"></span>
+
+<blockquote>
+<p>本篇撰寫時 Hexo 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Hexo-server 版本: <strong>^2.0.0</strong> 升級到 <strong>^3.0.0</strong>  </p>
+</blockquote>
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>package.json 檔案， 定義專案所需要的各種模組，以及專案的配置資訊。<code>npm install</code> 命令根據這個配置檔案，自動下載所需的模組。打開 Hexo 專案根目錄的 package.json 檔案，就可以看到自己已經做了那些配置。  </p>
+<p>關於 package.json 的詳細介紹，可參考 <a href="https://iter01.com/467432.html">草履蟲的思考 發表在 IT 人的文章</a>。裡面對 npm 及 package.json 有比較詳細的介紹，這裡就不贅述。</p>
+<h2 id="用-npm-check-updates-更新插件"><a href="#用-npm-check-updates-更新插件" class="headerlink" title="用 npm-check-updates 更新插件"></a>用 npm-check-updates 更新插件</h2><p>在網路教學看到推薦用 <code>npm-check</code> 和 <code>npm-upgrade</code> 更新，但我實際安裝後都會報錯誤。後來我找到另外 npm 包，也是我這次更新 hexo-server 用的方式。  </p>
+<blockquote>
+<p><a href="https://github.com/raineorshine/npm-check-updates">npm-check-updates 官網</a><br><strong>npm-check-updates</strong> upgrades your package.json dependencies to the latest versions, ignoring specified versions.<br>看看這描述，多方便阿~</p>
+</blockquote>
+<p><strong>1. 使用方法非常簡單，只要先安裝 npm-check-updates</strong> </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g npm-check-updates    <span class="comment"># 安裝 npm-check-updates</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 執行版本檢查&#x2F;更新指令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ncu           <span class="comment"># 檢查是否需要更新(npm-check-updates 第一個字母縮寫，很好記!)</span></span><br><span class="line">ncu -u        <span class="comment"># 更新 package.json 資訊(upgrade縮寫)</span></span><br><span class="line">npm install   <span class="comment"># 安裝新版本</span></span><br></pre></td></tr></table></figure>
+<p>他會輸出一個版本檢查的畫面，並在最後一行指示下一步怎麼做。以我自己的畫面為例:  </p>
+<ul>
+<li>執行 <code>ncu</code> 會提供現有版本和最新版本的比較，並在最後一行用藍字提醒下一步要 更新 package.json。  </li>
+<li>執行 <code>ncu -u</code> 更新 package.json 資訊，並在最後一行用藍字提醒下一步要安裝新版本。  </li>
+<li>執行 <code>npm install</code> 後 再用 <code>ncu</code> 檢查一次，發現全部都是最新版本了。</li>
+</ul>
+<p><img src="/../../Blog-image/posts/2022-01-06_001.webp" alt="npm-check-updates20220106-001"></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -828,41 +863,6 @@
       <tags>
         <tag>Hexo</tag>
         <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 插件更新</title>
-    <url>/posts/d81b71f/</url>
-    <content><![CDATA[<p>會寫這篇文章主要是因為收到了 hexo-server 插件的更新通知。隨著部落格功能的擴充，我安裝的 Hexo 插件越來越多，每個插件都會做各自的版本更新(還不同時間點)。一個一個分別更新好麻煩，然後懶人如我找到了個 npm 包可以直接幫我確認最新版本，再全部一起更新，多棒啊~~  </p>
-<span id="more"></span>
-
-<blockquote>
-<p>本篇撰寫時 Hexo 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Hexo-server 版本: <strong>^2.0.0</strong> 升級到 <strong>^3.0.0</strong>  </p>
-</blockquote>
-<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>package.json 檔案， 定義專案所需要的各種模組，以及專案的配置資訊。<code>npm install</code> 命令根據這個配置檔案，自動下載所需的模組。打開 Hexo 專案根目錄的 package.json 檔案，就可以看到自己已經做了那些配置。  </p>
-<p>關於 package.json 的詳細介紹，可參考 <a href="https://iter01.com/467432.html">草履蟲的思考 發表在 IT 人的文章</a>。裡面對 npm 及 package.json 有比較詳細的介紹，這裡就不贅述。</p>
-<h2 id="用-npm-check-updates-更新插件"><a href="#用-npm-check-updates-更新插件" class="headerlink" title="用 npm-check-updates 更新插件"></a>用 npm-check-updates 更新插件</h2><p>在網路教學看到推薦用 <code>npm-check</code> 和 <code>npm-upgrade</code> 更新，但我實際安裝後都會報錯誤。後來我找到另外 npm 包，也是我這次更新 hexo-server 用的方式。  </p>
-<blockquote>
-<p><a href="https://github.com/raineorshine/npm-check-updates">npm-check-updates 官網</a><br><strong>npm-check-updates</strong> upgrades your package.json dependencies to the latest versions, ignoring specified versions.<br>看看這描述，多方便阿~</p>
-</blockquote>
-<p><strong>1. 使用方法非常簡單，只要先安裝 npm-check-updates</strong> </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g npm-check-updates    <span class="comment"># 安裝 npm-check-updates</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>2. 執行版本檢查&#x2F;更新指令</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ncu           <span class="comment"># 檢查是否需要更新(npm-check-updates 第一個字母縮寫，很好記!)</span></span><br><span class="line">ncu -u        <span class="comment"># 更新 package.json 資訊(upgrade縮寫)</span></span><br><span class="line">npm install   <span class="comment"># 安裝新版本</span></span><br></pre></td></tr></table></figure>
-<p>他會輸出一個版本檢查的畫面，並在最後一行指示下一步怎麼做。以我自己的畫面為例:  </p>
-<ul>
-<li>執行 <code>ncu</code> 會提供現有版本和最新版本的比較，並在最後一行用藍字提醒下一步要 更新 package.json。  </li>
-<li>執行 <code>ncu -u</code> 更新 package.json 資訊，並在最後一行用藍字提醒下一步要安裝新版本。  </li>
-<li>執行 <code>npm install</code> 後 再用 <code>ncu</code> 檢查一次，發現全部都是最新版本了。</li>
-</ul>
-<p><img src="/../../Blog-image/posts/2022-01-06_001.webp" alt="npm-check-updates20220106-001"></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1206,6 +1206,52 @@
       </tags>
   </entry>
   <entry>
+    <title>Alpha Camp 學期 2-3 結業心得</title>
+    <url>/posts/924950b4/</url>
+    <content><![CDATA[<p>隨著時間的推移，在學期上總是會碰到各種不同的狀況，而這些狀況也提供我不同的學習感受。這篇著重於紀錄自己遇到、找出並排除問題的過程。  </p>
+<blockquote>
+<p>要解決問題，必須先正確的找出問題發生原因。  </p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="緣起：「為短網址產生器加上重複檢查機制」"><a href="#緣起：「為短網址產生器加上重複檢查機制」" class="headerlink" title="緣起：「為短網址產生器加上重複檢查機制」"></a>緣起：「為短網址產生器加上重複檢查機制」</h2><p>一如上學期結束時對自己許的願，這學期在寫作業的同時會盡可能地做些優化挑戰，然後不可避免的進入無窮卡關迴圈……  </p>
+<p>近期卡了最久的就是短網址產生器了!! 作業的要求其實很簡單，只要可以產生英文字母或數字的隨機亂碼來當短網址即可。但是! 我突然想到:「萬一真的產生了相同的亂碼怎麼辦?」。依照我當下的執行邏輯，產生亂碼之後就馬上把它和原始網址加入互相對照的 index ，在沒有檢查的情況下，兩組原始網址導向同一個短網址也不是不可能發生。  </p>
+<p>於是，我決定了優化方向：「在亂數產生器 return 結果之前加上檢查機制」，只要發現相同亂碼就重新執行一次亂碼產生流程。然後……在這個優化過程被卡了整整 2 天 🤣  </p>
+<h2 id="嘗試失敗1：同步與非同步"><a href="#嘗試失敗1：同步與非同步" class="headerlink" title="嘗試失敗1：同步與非同步"></a>嘗試失敗1：同步與非同步</h2><blockquote>
+<p>先來備註一下：這次用來存放 UrlIndex 資料的是 MongoDB。  </p>
+</blockquote>
+<p>原本的寫法如下(只放有問題部分):  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 產生亂碼短網址 &lt;file:root/utils/shortGenerator.js&gt;</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generator</span> (length) &#123;</span><br><span class="line">  <span class="comment">// 1. generate random code</span></span><br><span class="line">  <span class="comment">// 2. Check if random url already exist</span></span><br><span class="line">  <span class="comment">// =&gt; if exist, run &quot;generator (length)&quot;</span></span><br><span class="line">  <span class="comment">// =&gt; if not yet exist, return result</span></span><br><span class="line">  <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">shortenUrl</span>: result &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> data ? <span class="title function_">generator</span>(length) : result</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把短網址存入對照 index &lt;file:root/app.js&gt;</span></span><br><span class="line"><span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="attr">shortenUrl</span>: <span class="title function_">generator</span>(<span class="number">5</span>),</span><br><span class="line">  <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">在我的預想中， `</span><span class="title function_">generator</span>()<span class="string">` 負責產生獨一無二的短網址，而 `</span><span class="title class_">UrlIndex</span>.<span class="title function_">create</span>()<span class="string">` 把取得的短網址拿去建立 index 。但是，看似沒問題的邏輯跳錯誤了! 好在目前遇到的大部分錯誤訊息都能正確敘述出問題的原因，它告訴我 shortenUrl 的值 `</span><span class="literal">undefined</span><span class="string">` 。於是我去查查賦值 `</span><span class="literal">undefined</span><span class="string">` 的原因，發現在我寫的流程裡最有可能的原因是：「若變數沒有提供初始值，則預設為 `</span><span class="literal">undefined</span><span class="string">` 」。但不對啊~我不是有告訴 `</span><span class="title class_">UrlIndex</span>.<span class="title function_">create</span>()<span class="string">` shortenUrl 的值從 `</span><span class="title function_">generator</span>()<span class="string">` 取得嗎? 為什麼會 `</span><span class="literal">undefined</span><span class="string">` 呢?  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">前幾天因緣際會接觸到「非同步」相關知識的我想起了前輩對非同步的評語：  </span></span><br><span class="line"><span class="string">&gt; 實戰常常遇到問題，一研究發現，怎麼又是你！  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">檢查了一下目前進度，確實啊~ `</span><span class="title class_">UrlIndex</span>.<span class="title function_">create</span>()<span class="string">` 和 `</span><span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>()<span class="string">` 都是非同步語法，如果沒有處理好，根本無法控制完成的先後順序。於是，再度開始了 google 旅程，發現目前對於非同步執行順序最常使用兩種方式:  </span></span><br><span class="line"><span class="string">- async/await  </span></span><br><span class="line"><span class="string">- Promise.then()  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">因為對 `</span><span class="keyword">async</span>/<span class="keyword">await</span><span class="string">` 值的傳遞方式還不太熟悉，因此決定先用 `</span><span class="title class_">Promise</span>.<span class="title function_">then</span>()<span class="string">` 的方式。 `</span>.<span class="property">then</span><span class="string">` 的前面必須是個 Promise 物件，但我目前 return 的是亂碼「值」。幸好查到的資料告訴我， mongoose 5.0 開始就內建 Promise 語法，所以我可以把整個 `</span><span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>()<span class="string">` 包成 Promise 物件。最後，我把整個檢驗是否重複的過程直接 return ，順利解決了執行順序問題。  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="comment">// 產生亂碼短網址</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generator</span> (length) &#123;</span><br><span class="line">  <span class="comment">// (前略)</span></span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">shortenUrl</span>: result &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> data ? <span class="title function_">generator</span>(length) : result</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ShortGenerator</span>(randomLength)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> urlData ? urlData : <span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">      <span class="attr">shortenUrl</span>: url,</span><br><span class="line">      <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="嘗試失敗2：mongoose-語法-return-值"><a href="#嘗試失敗2：mongoose-語法-return-值" class="headerlink" title="嘗試失敗2：mongoose 語法 return 值"></a>嘗試失敗2：mongoose 語法 return 值</h2><p>接著，我想把產生的短網址結果呈現給使用者:  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span> &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="title class_">ShortGenerator</span>(randomLength)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> urlData ? urlData : <span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">            <span class="attr">shortenUrl</span>: url,</span><br><span class="line">            <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">          &#125;)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;))  <span class="comment">// 執行到這行出問題!!</span></span><br><span class="line">        .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>這時候又跳錯誤了! 根據錯誤訊息查詢，發現是 handlebars 因為安全性問題，只接受乾淨的物件資料，通常可以用 <code>.lean()</code> 解決。把 <code>urlData</code> 印出來，看看到底取到什麼值? 嗯?? <code>_id</code> 裡面那個 new 是什麼? 看起來確定是回傳值的問題。<br><img src="/../Blog-image/posts/2022-04-24_returnValueOfMongoose.webp" alt="error_returnValueOfMongoose">  </p>
+<p>於是我加上了 <code>.lean()</code> ，但它又報錯了!  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">  urlData = urlData.<span class="title function_">lean</span>()</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><img src="/../Blog-image/posts/2022-04-24_mongoose.lean.webp" alt="error_mongoose.lean">  </p>
+<p>測試後發現：如果是已建立 index 的網址就沒問題；反之，如果是新建的就會報錯。那就表示兩者拿到的資料不一樣。仔細查閱了 mongoose 官方文件， <code>UrlIndex.findOne()</code> 回傳 Query、 <code>UrlIndex.create()</code> 回傳 Promise 物件……好吧! 接下來的問題就是如何取 <code>UrlIndex.create()</code> 的「值」?  </p>
+<p>在各種變換關鍵字後，終於在  stack overflow 找到救世主，可以用 <code>toObject()</code> 進行資料轉換。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">  urlData = urlData.<span class="title function_">toObject</span>()</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<br>
+大功告成! 一切終於都如我預期的運作了!!  
+
+<h2 id="心得分享"><a href="#心得分享" class="headerlink" title="心得分享"></a>心得分享</h2><p>寫出來真的很有成就感啊!! 除了這個作業優化外，其實前面的作業也有經過類似的優化煎熬過程。總結起來解決問題的方法分幾個部分:  </p>
+<ul>
+<li>預防 – 仔細閱讀使用工具的官方文件、了解它的使用方法，正確的使用工具可以排除很多可能發生的問題。  </li>
+<li>找出問題 – 知道問題發生原因才是解決的最快方法。就像前面分享的問題二，看起來是 handlebars 接受的資料類型問題，實際上是 mongoose 回傳值的原因。  </li>
+<li>查找資料 – 在找出正確問題的前提下，盡可能下對關鍵字可以找到更接近需求的內容。</li>
+</ul>
+<p>不過沒有一次找到目標資料也沒關係，多多閱讀的過程中也能吸收各種知識，也許會在未來的某一天成為解決其他問題的關鍵!  </p>
+]]></content>
+      <categories>
+        <category>學習紀錄</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Alpha Camp 學期 2-1 結業心得</title>
     <url>/posts/73279419/</url>
     <content><![CDATA[<p><em><strong>學習的過程充滿挑戰，成功闖過之後就想做更多的挑戰!</strong></em><br>這大概就是我在這階段完課後，最明顯的感受。  </p>
@@ -1353,6 +1399,19 @@
       </tags>
   </entry>
   <entry>
+    <title>關於我......</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<p>最近接觸到了「程式語言」，也因此升起了學習的興趣。為了把自己的學習歷程記錄下來，打算開始寫自己的第一個部落格。</p>
+<h2 id="學習筆記"><a href="#學習筆記" class="headerlink" title="學習筆記"></a>學習筆記</h2><p>在學習的過程中，發現自己有時候會因為不夠熟悉，需要重新查詢課程內容或延伸的補充資料，容易東翻翻西找找的浪費時間。所以打算做我的「學習字典」，以後直接依照主題查詢即可。  </p>
+<p><i class="fab fa-html5 fa-2x" style="color: tomato; margin-right: 10px;"></i> <span><a href="/posts/927bd0cf/">HTML 筆記目錄</a></sapn><br><i class="fab fa-css3-alt fa-2x" style="color: #3C99DC; margin-right: 16px;"></i><span>CSS 筆記目錄</sapn><br><i class="fab fa-js-square fa-2x" style="color: #FFCF36; margin-right: 12px;"></i><span ><a href="/posts/ab4053d7/">JavaScript 筆記目錄</a></sapn>  </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>404 - 真巧，竟然在這裡遇到你！</title>
     <url>//404.html</url>
     <content><![CDATA[<!-- markdownlint-disable MD039 MD033 -->
@@ -1377,19 +1436,6 @@ function count() {
 
 count();
 </script>
-]]></content>
-  </entry>
-  <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>關於我......</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<p>最近接觸到了「程式語言」，也因此升起了學習的興趣。為了把自己的學習歷程記錄下來，打算開始寫自己的第一個部落格。</p>
-<h2 id="學習筆記"><a href="#學習筆記" class="headerlink" title="學習筆記"></a>學習筆記</h2><p>在學習的過程中，發現自己有時候會因為不夠熟悉，需要重新查詢課程內容或延伸的補充資料，容易東翻翻西找找的浪費時間。所以打算做我的「學習字典」，以後直接依照主題查詢即可。  </p>
-<p><i class="fab fa-html5 fa-2x" style="color: tomato; margin-right: 10px;"></i> <span><a href="/posts/927bd0cf/">HTML 筆記目錄</a></sapn><br><i class="fab fa-css3-alt fa-2x" style="color: #3C99DC; margin-right: 16px;"></i><span>CSS 筆記目錄</sapn><br><i class="fab fa-js-square fa-2x" style="color: #FFCF36; margin-right: 12px;"></i><span ><a href="/posts/ab4053d7/">JavaScript 筆記目錄</a></sapn>  </p>
 ]]></content>
   </entry>
   <entry>
