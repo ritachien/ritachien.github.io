@@ -16,6 +16,124 @@
       </tags>
   </entry>
   <entry>
+    <title>Alpha Camp 學期一結業心得</title>
+    <url>/posts/491e0585/</url>
+    <content><![CDATA[<p>Alpha Camp的三週學習進度終於結束了，中間除了充斥著被成就感激起的學習熱情，也飽含怎麼都寫不出來的挫敗感。趁著現在給自己留下一篇熱騰騰的記錄，好好回顧這段學習歷程!  </p>
+<span id="more"></span>
+<br/>
+
+<h2 id="為什麼會報名Alpha-Camp"><a href="#為什麼會報名Alpha-Camp" class="headerlink" title="為什麼會報名Alpha Camp?"></a>為什麼會報名Alpha Camp?</h2><p>在傳產當了幾年的會計，雖然喜歡這種嚴謹又規整的工作，但是又不甘於這種毫無變化的生活。工作中充斥著各種財務報表的編撰和解讀，與人的交流變得少之又少……又由於公司軟體不給力，很多報表都是Excel刻出來的，為了減少人工輸入造成的錯誤，那段時間研究了函數、VBA，力求做到自動極大化。在查資料過程中發現，把一些固定的語法拼在一起，讓他自動提供結果給我，其實這些東西跟寫程式很像，這也成了我接觸程式語言的契機。  </p>
+<p>同時，我也和幾位不同產業的同學&#x2F;前輩聊了聊，發現只要繼續做會計，未來的工作模式也不會有太大的改變。我問了自己:「我能忍受未來20年都過這樣的生活嗎?」 然後我就有了轉職的想法XD  </p>
+<p>在嘗試自學後發現，因為完全沒概念，很難為自己規劃一個明確的方向。做了幾天的功課後，毅然決然的刷了卡，趁著沒有太大的經濟負擔時，試著走一條不一樣的路，希望給自己一個不一樣的未來。</p>
+<h2 id="三週課程感受"><a href="#三週課程感受" class="headerlink" title="三週課程感受"></a>三週課程感受</h2><p>說實話，比我預期的還要好! 其中對我最有幫助的應該是課程制度的設計，有效的把我在自學時發生的問題都解決了! 其中最有感覺的是以下幾點:</p>
+<ol>
+<li><p>進度制<br>  非常有效的解決了拖延症的問題。每週有固定進度，但又可以依照自己的時間安排每天學習時間。給了少許進度壓力的同時，又保持了一定的自由度。另外，因為有一批跟自己一樣進度的同學在，討論、互相激勵也很有幫助!</p>
+</li>
+<li><p>實作練習<br>  學了之後馬上思考要怎麼用，可以檢視自己是不是真的理解了課堂說明。這也是我最喜歡的一部分! 在糾結又糾結之後順利完成，那種成就感真的會讓我很有學習的衝勁!</p>
+</li>
+<li><p>作業觀摩&#x2F;助教回覆<br>  當自己的作業是「成功了」，但同學的作業是「有效率的成功了」，或是助教有任何的點評，看到這些時我都會特別高興，因為又找到了另一種解決問題的方法。跟著別人的思路走一遍，將它內化成自己能理解的知識，這也是對我來說明顯有幫助的學習方式。</p>
+</li>
+</ol>
+<p>跟著AC進度學習的同時，因為有了大方向，所以可以比較清楚的知道還有哪些欠缺的東西可以補足。學習期間<a href="https://www.w3schools.com/">W3school</a>、<a href="https://www.freecodecamp.org/">FreeCodeCamp</a>、<a href="https://developer.mozilla.org/zh-TW/">MDN</a>也作為補充資料給了我很多幫助。藉由閱讀不同的說明方式不斷作複習，不但加強記憶，偶爾看到一些新用法也很有趣。  </p>
+<h2 id="後續規劃"><a href="#後續規劃" class="headerlink" title="後續規劃"></a>後續規劃</h2><p>整體來說，這三週的學習是很愉快的，我也決定繼續進入下學期課程。  </p>
+<p>在下學期開課前，除了先進行課程預習外，希望能把這三週以來的筆記整理一下也放進部落格裡。相信隨著部落格的成長，除了可以檢視自己的曾經犯過的錯誤，也能更直觀的知道自己曾經學過什麼? 有沒有進步? 另外，目前進行到一半的 Ubuntu 及 Command Line 學習也很有趣!  </p>
+<p>終於擺脫了那種工作上原地踏步的無力感，喜歡目前每天都在學習、每時每刻都在進步的自己!</p>
+]]></content>
+      <categories>
+        <category>學習紀錄 - AlphaCamp</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用 Hexo + Github Pages 建立部落格</title>
+    <url>/posts/4b9ba027/</url>
+    <content><![CDATA[<p>在建置部落格前猶豫了很久，最終還是決定用 Hexo + Github Pages 當作平台。歷時兩天，終於解決各種莫名其妙的問題，讓它變成心目中的樣子!</p>
+<span id="more"></span>
+
+
+<h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="為什麼選擇-Github-Pages"><a href="#為什麼選擇-Github-Pages" class="headerlink" title="為什麼選擇 Github Pages ?"></a>為什麼選擇 Github Pages ?</h3><p><strong>1. 免費</strong><br>  Github Pages 是 Github 提供的免費靜態網頁空間，提供一組 Github帳號 <code>.github.io</code> 子網域。雖然有容量跟流量上的限制，但以一個剛起步的部落格來說，現階段不會有超出的問題。既然有免費的平台那就用吧!  </p>
+<p><strong>2. 能夠使用 Git 部署並進行版本控制</strong><br>  看了各個學習寫程式分享，得知「如何使用 Git 進行版本控制」是很重要的。雖然現階段身為程式小白的我沒有太多的概念，也完全沒有接觸過，但在查詢 Hexo 資訊時得知，Hexo 可以藉由 Git 部署到 Github 上。希望能在日常使用中學習並熟悉 Git 。  </p>
+<p><strong>3. Github 會記錄每日 commit 次數</strong><br>  Github 的個人首頁會呈現一整年的 commit 紀錄畫面。每天一格，每 commit 一次，當天的格子就會從灰色漸漸往深綠色變化。希望利用自己的收集強迫症，為了盡可能填滿格子，督促自己多多更新部落格。  </p>
+<h3 id="Github-Pages-有什麼限制"><a href="#Github-Pages-有什麼限制" class="headerlink" title="Github Pages 有什麼限制?"></a>Github Pages 有什麼限制?</h3><ol>
+<li>只能存放靜態網頁。</li>
+<li>1GB 空間容量。</li>
+<li>100GB 月流量。</li>
+<li>1 小時內只能提交 10 次更新版本。<blockquote>
+<p>參考資料: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages">Github 說明文件</a></p>
+</blockquote>
+</li>
+</ol>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="為什麼選擇-Hexo"><a href="#為什麼選擇-Hexo" class="headerlink" title="為什麼選擇 Hexo ?"></a>為什麼選擇 Hexo ?</h3><p><strong>1. Hexo 支援強大:</strong><br>  Hexo 是台灣人做的(<a href="https://zespia.tw/blog/2012/10/11/hexo-debut/">起源在這裡</a>)，官方中文支援蠻完整的。另外，可能也是因為中文支援較完整，有很多中文圈的前輩做了很多主題可以套用，當遇到相關問題時，Google 到的解決方案也很多。  </p>
+<p><strong>2. 使用 Node.js(JavaScript) 開發:</strong><br>  在正式開始前，找了幾個熱門靜態檔案產生器比較，最後在 Hexo 跟 Hugo 之間做選擇。雖然 Hugo 比較快，Github上的星星數也比較多，但基於 Hugo 是用 Go 語言寫的，初學的我還是應該先專心一門語言較好，因此捨棄 Hugo 選擇使用 JavaScript 的 Hexo。既然我現在在學JavaScript，現階段可以研究一下它的寫法，之後說不定哪天我可以自己把它改得更符合自己需求。目前在做一些個人化設定時也發現，因為可以看得懂一點點結構，修改時很有幫助。  </p>
+<p><strong>3. 支援 Markdown :</strong><br>Markdown 用來撰寫文章很方便，因為語法簡單，可以更專心在文字內容的編輯上，不用過分關注排版問題。在加上之前跟鳥友一起在HackMD建了個鳥寶寶成長紀錄(<a href="https://hackmd.io/p5O2bt2QQrC1HH46cVfs0A">有興趣可以看看</a>)，對 Markdown 也算比較熟悉了。</p>
+<p><strong>4. 個人化設定自由度高 :</strong><br>主題非常多元，版面也可依自己需求做CSS修改。(剛學到的 <code>padding</code> 、 <code>letter-spacing</code> 、 <code>border-radius</code> 等也都依自己喜歡的樣子用上了!) 另外，也可以找到很多其他插件資源，讓自己的部落格更有個人特色。<br>  <br/></p>
+<h2 id="開始建置部落格"><a href="#開始建置部落格" class="headerlink" title="開始建置部落格"></a>開始建置部落格</h2><blockquote>
+<p>本文撰寫時在 Windows 10 環境下安裝。  </p>
+</blockquote>
+<h3 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h3><p><strong>1. 安裝 Node.js</strong>  </p>
+<ul>
+<li>建置過程中需要用 NPM 安裝套件，所以要先下載 Node.js (<a href="https://nodejs.org/en/">官網下載</a>)。</li>
+</ul>
+<p><strong>2. 安裝 Git</strong>  </p>
+<ul>
+<li><p>之後會使用 Git 作版本控制並將 Hexo 部署或備份到 Github 上，所以要先安裝 Git (<a href="https://git-scm.com/downloads">官網下載</a>)。  </p>
+</li>
+<li><p>開始初次設定 Git : 設定使用者名稱及電子郵件， Git 的提交會使用這些資訊。  </p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引號內填入使用者名稱</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line"><span class="comment"># 引號內填入使用者email</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完成後可用 <code>git config --global --list</code> 檢查是否有誤，或是到 <code>C:\Users\yourUserName\.gitconfig</code> 確認並修正。</p>
+</li>
+</ul>
+<p><strong>3. 新建Github Repository</strong>  </p>
+<ul>
+<li>開啟 Github 並點選 New Repository</li>
+<li>Repository 名稱為 <code>用戶名.github.io</code><br>  <img src="/../../Blog-image/posts/2021-12-21_001.webp" alt="20211221-001">    <br/></li>
+</ul>
+<h3 id="本地端安裝"><a href="#本地端安裝" class="headerlink" title="本地端安裝"></a>本地端安裝</h3><p><strong>1. 安裝 Hexo</strong>  </p>
+<ul>
+<li>使用 <code>npm install -g hexo-cli</code> 安裝 Hexo 。  </li>
+<li>安裝成功後，輸入 <code>hexo version</code> 指令可查看安裝版本。</li>
+</ul>
+<p><strong>2. Blog 存放資料夾初始化</strong></p>
+<ul>
+<li>開啟命令提示元(CMD) &gt; 前往想存放 Blog 檔案的本地端資料夾。 (ex. 我要在 D 槽新建 Blog 資料夾存放，所以先輸入 <code>D:</code> 讓當前位置移到 D 槽)  </li>
+<li>初始化資料夾(必須是空資料夾，以下方法二選一)  <ul>
+<li>方法一(當前位置 D 槽) –在 D 槽新建 Blog 資料夾並初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init Blog</span><br></pre></td></tr></table></figure></li>
+<li>方法二(已自行新建資料夾，當前位置 D:\Blog) –將 Blog 資料夾初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>安裝相關套件  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>3. 部署設定</strong></p>
+<ul>
+<li>安裝部署用套件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li>修改部署設定 (檔案 <code>根目錄\_config.yml</code> 最下方 # Deployment)  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/用戶名/用戶名.github.io.git</span>  <span class="comment"># Repository 網址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">分支名稱(可用預設</span> <span class="string">main</span> <span class="string">，或自訂如</span> <span class="string">gh-pages)</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">&quot;填入commit訊息&quot;</span>  <span class="comment"># 本行不用可刪</span></span><br></pre></td></tr></table></figure>
+<br/></li>
+</ul>
+<h3 id="部署到Github-常用指令"><a href="#部署到Github-常用指令" class="headerlink" title="部署到Github (常用指令)"></a>部署到Github (常用指令)</h3><p><strong>1. 本地端預覽</strong><br>使用時機: 當在本地端做完修改後，如果希望看到及時修改結果。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server                <span class="comment"># 開啟本地端預覽(標準用法)</span></span><br><span class="line">hexo s                     <span class="comment"># 開啟本地端預覽(簡短用法)</span></span><br><span class="line">http://localhost:4000      <span class="comment"># 貼入網址列即可預覽</span></span><br><span class="line">Ctrl + C                   <span class="comment"># 結束本地端預覽</span></span><br></pre></td></tr></table></figure>
+<p><strong>2. 產生靜態檔案</strong><br>使用時機: 編寫完成後，產生要部署的靜態檔案(會產生 <code>根目錄\public</code> 資料夾放入要部署的檔案)。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate             <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo g                    <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
+<p><strong>3. 部署</strong><br>使用時機: 編寫完成後，部署到 Github ( <code>根目錄\public</code> 裡的檔案會被上傳到設定好的 Repository)。部署完成就可以在 <code>github.io</code> 看到自己的 Blog 了!  </p>
+<blockquote>
+<p><font color=#FF6600>Github有時候部署後要等10~20分鐘畫面才會更新</font></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy                  <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo d                       <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br><span class="line">https://帳戶名.github.io/     <span class="comment"># 個人部落格網址</span></span><br></pre></td></tr></table></figure>
+<p><strong>4. 清除快取 &amp; 靜態檔案</strong><br>使用時機: 為了避免出錯，建議在每次 deploy 前，都先清除先前的資料再重新產生靜態檔案(清除快取檔案 <code>db.json</code> 和已產生的靜態檔案 <code>根目錄\public</code>)。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean     <span class="comment"># 清除快取 &amp; 靜態檔案(標準用法)</span></span><br><span class="line">hexo cl        <span class="comment"># 清除快取 &amp; 靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>Hexo</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript 運算子</title>
     <url>/posts/d403fec1/</url>
     <content><![CDATA[<p>在使用運算子 (Operators) 時，隨著練習題逐漸提高的複雜度，開始發現一些與自己認知不同的地方。這些不明顯的小錯誤，常常是導致程式跑不出來或出現預期外結果的原因。所以在之前筆記的基礎上，把犯過的錯誤一起整理進來，降低下次再犯的可能性。</p>
@@ -235,130 +353,13 @@
 </tr>
 </tbody></table>
 <h3 id="常見錯誤-運算子順序"><a href="#常見錯誤-運算子順序" class="headerlink" title="常見錯誤: 運算子順序"></a>常見錯誤: 運算子順序</h3><p>就像四則運算有「先乘除後加減」的運算順序一樣，邏輯運算子的運算順序是: <code>&amp;&amp;</code> &gt; <code>||</code> ，且由左至右運行。如果要打破原有順序，加上 <code>()</code> 是很好用的方法。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="literal">true</span> || <span class="literal">false</span> &amp;&amp; <span class="literal">true</span> &amp;&amp; <span class="literal">false</span>)      <span class="comment">// 結果為 true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>((<span class="literal">true</span> || <span class="literal">false</span>) &amp;&amp; (<span class="literal">true</span> &amp;&amp; <span class="literal">false</span>))  <span class="comment">// 結果為 false</span></span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="literal">true</span> || <span class="literal">false</span> &amp;&amp; <span class="literal">true</span> &amp;&amp; <span class="literal">false</span>)      <span class="comment">// 結果為 true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>((<span class="literal">true</span> || <span class="literal">false</span>) &amp;&amp; (<span class="literal">true</span> &amp;&amp; <span class="literal">false</span>))  <span class="comment">// 結果為 false</span></span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
         <category>JavaScript 筆記</category>
       </categories>
       <tags>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Alpha Camp 學期一結業心得</title>
-    <url>/posts/491e0585/</url>
-    <content><![CDATA[<p>Alpha Camp的三週學習進度終於結束了，中間除了充斥著被成就感激起的學習熱情，也飽含怎麼都寫不出來的挫敗感。趁著現在給自己留下一篇熱騰騰的記錄，好好回顧這段學習歷程!  </p>
-<span id="more"></span>
-<br/>
-
-<h2 id="為什麼會報名Alpha-Camp"><a href="#為什麼會報名Alpha-Camp" class="headerlink" title="為什麼會報名Alpha Camp?"></a>為什麼會報名Alpha Camp?</h2><p>在傳產當了幾年的會計，雖然喜歡這種嚴謹又規整的工作，但是又不甘於這種毫無變化的生活。工作中充斥著各種財務報表的編撰和解讀，與人的交流變得少之又少……又由於公司軟體不給力，很多報表都是Excel刻出來的，為了減少人工輸入造成的錯誤，那段時間研究了函數、VBA，力求做到自動極大化。在查資料過程中發現，把一些固定的語法拼在一起，讓他自動提供結果給我，其實這些東西跟寫程式很像，這也成了我接觸程式語言的契機。  </p>
-<p>同時，我也和幾位不同產業的同學&#x2F;前輩聊了聊，發現只要繼續做會計，未來的工作模式也不會有太大的改變。我問了自己:「我能忍受未來20年都過這樣的生活嗎?」 然後我就有了轉職的想法XD  </p>
-<p>在嘗試自學後發現，因為完全沒概念，很難為自己規劃一個明確的方向。做了幾天的功課後，毅然決然的刷了卡，趁著沒有太大的經濟負擔時，試著走一條不一樣的路，希望給自己一個不一樣的未來。</p>
-<h2 id="三週課程感受"><a href="#三週課程感受" class="headerlink" title="三週課程感受"></a>三週課程感受</h2><p>說實話，比我預期的還要好! 其中對我最有幫助的應該是課程制度的設計，有效的把我在自學時發生的問題都解決了! 其中最有感覺的是以下幾點:</p>
-<ol>
-<li><p>進度制<br>  非常有效的解決了拖延症的問題。每週有固定進度，但又可以依照自己的時間安排每天學習時間。給了少許進度壓力的同時，又保持了一定的自由度。另外，因為有一批跟自己一樣進度的同學在，討論、互相激勵也很有幫助!</p>
-</li>
-<li><p>實作練習<br>  學了之後馬上思考要怎麼用，可以檢視自己是不是真的理解了課堂說明。這也是我最喜歡的一部分! 在糾結又糾結之後順利完成，那種成就感真的會讓我很有學習的衝勁!</p>
-</li>
-<li><p>作業觀摩&#x2F;助教回覆<br>  當自己的作業是「成功了」，但同學的作業是「有效率的成功了」，或是助教有任何的點評，看到這些時我都會特別高興，因為又找到了另一種解決問題的方法。跟著別人的思路走一遍，將它內化成自己能理解的知識，這也是對我來說明顯有幫助的學習方式。</p>
-</li>
-</ol>
-<p>跟著AC進度學習的同時，因為有了大方向，所以可以比較清楚的知道還有哪些欠缺的東西可以補足。學習期間<a href="https://www.w3schools.com/">W3school</a>、<a href="https://www.freecodecamp.org/">FreeCodeCamp</a>、<a href="https://developer.mozilla.org/zh-TW/">MDN</a>也作為補充資料給了我很多幫助。藉由閱讀不同的說明方式不斷作複習，不但加強記憶，偶爾看到一些新用法也很有趣。  </p>
-<h2 id="後續規劃"><a href="#後續規劃" class="headerlink" title="後續規劃"></a>後續規劃</h2><p>整體來說，這三週的學習是很愉快的，我也決定繼續進入下學期課程。  </p>
-<p>在下學期開課前，除了先進行課程預習外，希望能把這三週以來的筆記整理一下也放進部落格裡。相信隨著部落格的成長，除了可以檢視自己的曾經犯過的錯誤，也能更直觀的知道自己曾經學過什麼? 有沒有進步? 另外，目前進行到一半的 Ubuntu 及 Command Line 學習也很有趣!  </p>
-<p>終於擺脫了那種工作上原地踏步的無力感，喜歡目前每天都在學習、每時每刻都在進步的自己!</p>
-]]></content>
-      <categories>
-        <category>學習紀錄 - AlphaCamp</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用 Hexo + Github Pages 建立部落格</title>
-    <url>/posts/4b9ba027/</url>
-    <content><![CDATA[<p>在建置部落格前猶豫了很久，最終還是決定用 Hexo + Github Pages 當作平台。歷時兩天，終於解決各種莫名其妙的問題，讓它變成心目中的樣子!</p>
-<span id="more"></span>
-
-
-<h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="為什麼選擇-Github-Pages"><a href="#為什麼選擇-Github-Pages" class="headerlink" title="為什麼選擇 Github Pages ?"></a>為什麼選擇 Github Pages ?</h3><p><strong>1. 免費</strong><br>  Github Pages 是 Github 提供的免費靜態網頁空間，提供一組 Github帳號 <code>.github.io</code> 子網域。雖然有容量跟流量上的限制，但以一個剛起步的部落格來說，現階段不會有超出的問題。既然有免費的平台那就用吧!  </p>
-<p><strong>2. 能夠使用 Git 部署並進行版本控制</strong><br>  看了各個學習寫程式分享，得知「如何使用 Git 進行版本控制」是很重要的。雖然現階段身為程式小白的我沒有太多的概念，也完全沒有接觸過，但在查詢 Hexo 資訊時得知，Hexo 可以藉由 Git 部署到 Github 上。希望能在日常使用中學習並熟悉 Git 。  </p>
-<p><strong>3. Github 會記錄每日 commit 次數</strong><br>  Github 的個人首頁會呈現一整年的 commit 紀錄畫面。每天一格，每 commit 一次，當天的格子就會從灰色漸漸往深綠色變化。希望利用自己的收集強迫症，為了盡可能填滿格子，督促自己多多更新部落格。  </p>
-<h3 id="Github-Pages-有什麼限制"><a href="#Github-Pages-有什麼限制" class="headerlink" title="Github Pages 有什麼限制?"></a>Github Pages 有什麼限制?</h3><ol>
-<li>只能存放靜態網頁。</li>
-<li>1GB 空間容量。</li>
-<li>100GB 月流量。</li>
-<li>1 小時內只能提交 10 次更新版本。<blockquote>
-<p>參考資料: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages">Github 說明文件</a></p>
-</blockquote>
-</li>
-</ol>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="為什麼選擇-Hexo"><a href="#為什麼選擇-Hexo" class="headerlink" title="為什麼選擇 Hexo ?"></a>為什麼選擇 Hexo ?</h3><p><strong>1. Hexo 支援強大:</strong><br>  Hexo 是台灣人做的(<a href="https://zespia.tw/blog/2012/10/11/hexo-debut/">起源在這裡</a>)，官方中文支援蠻完整的。另外，可能也是因為中文支援較完整，有很多中文圈的前輩做了很多主題可以套用，當遇到相關問題時，Google 到的解決方案也很多。  </p>
-<p><strong>2. 使用 Node.js(JavaScript) 開發:</strong><br>  在正式開始前，找了幾個熱門靜態檔案產生器比較，最後在 Hexo 跟 Hugo 之間做選擇。雖然 Hugo 比較快，Github上的星星數也比較多，但基於 Hugo 是用 Go 語言寫的，初學的我還是應該先專心一門語言較好，因此捨棄 Hugo 選擇使用 JavaScript 的 Hexo。既然我現在在學JavaScript，現階段可以研究一下它的寫法，之後說不定哪天我可以自己把它改得更符合自己需求。目前在做一些個人化設定時也發現，因為可以看得懂一點點結構，修改時很有幫助。  </p>
-<p><strong>3. 支援 Markdown :</strong><br>Markdown 用來撰寫文章很方便，因為語法簡單，可以更專心在文字內容的編輯上，不用過分關注排版問題。在加上之前跟鳥友一起在HackMD建了個鳥寶寶成長紀錄(<a href="https://hackmd.io/p5O2bt2QQrC1HH46cVfs0A">有興趣可以看看</a>)，對 Markdown 也算比較熟悉了。</p>
-<p><strong>4. 個人化設定自由度高 :</strong><br>主題非常多元，版面也可依自己需求做CSS修改。(剛學到的 <code>padding</code> 、 <code>letter-spacing</code> 、 <code>border-radius</code> 等也都依自己喜歡的樣子用上了!) 另外，也可以找到很多其他插件資源，讓自己的部落格更有個人特色。<br>  <br/></p>
-<h2 id="開始建置部落格"><a href="#開始建置部落格" class="headerlink" title="開始建置部落格"></a>開始建置部落格</h2><blockquote>
-<p>本文撰寫時在 Windows 10 環境下安裝。  </p>
-</blockquote>
-<h3 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h3><p><strong>1. 安裝 Node.js</strong>  </p>
-<ul>
-<li>建置過程中需要用 NPM 安裝套件，所以要先下載 Node.js (<a href="https://nodejs.org/en/">官網下載</a>)。</li>
-</ul>
-<p><strong>2. 安裝 Git</strong>  </p>
-<ul>
-<li><p>之後會使用 Git 作版本控制並將 Hexo 部署或備份到 Github 上，所以要先安裝 Git (<a href="https://git-scm.com/downloads">官網下載</a>)。  </p>
-</li>
-<li><p>開始初次設定 Git : 設定使用者名稱及電子郵件， Git 的提交會使用這些資訊。  </p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引號內填入使用者名稱</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line"><span class="comment"># 引號內填入使用者email</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>完成後可用 <code>git config --global --list</code> 檢查是否有誤，或是到 <code>C:\Users\yourUserName\.gitconfig</code> 確認並修正。</p>
-</li>
-</ul>
-<p><strong>3. 新建Github Repository</strong>  </p>
-<ul>
-<li>開啟 Github 並點選 New Repository</li>
-<li>Repository 名稱為 <code>用戶名.github.io</code><br>  <img src="/../../Blog-image/posts/2021-12-21_001.webp" alt="20211221-001">    <br/></li>
-</ul>
-<h3 id="本地端安裝"><a href="#本地端安裝" class="headerlink" title="本地端安裝"></a>本地端安裝</h3><p><strong>1. 安裝 Hexo</strong>  </p>
-<ul>
-<li>使用 <code>npm install -g hexo-cli</code> 安裝 Hexo 。  </li>
-<li>安裝成功後，輸入 <code>hexo version</code> 指令可查看安裝版本。</li>
-</ul>
-<p><strong>2. Blog 存放資料夾初始化</strong></p>
-<ul>
-<li>開啟命令提示元(CMD) &gt; 前往想存放 Blog 檔案的本地端資料夾。 (ex. 我要在 D 槽新建 Blog 資料夾存放，所以先輸入 <code>D:</code> 讓當前位置移到 D 槽)  </li>
-<li>初始化資料夾(必須是空資料夾，以下方法二選一)  <ul>
-<li>方法一(當前位置 D 槽) –在 D 槽新建 Blog 資料夾並初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init Blog</span><br></pre></td></tr></table></figure></li>
-<li>方法二(已自行新建資料夾，當前位置 D:\Blog) –將 Blog 資料夾初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>安裝相關套件  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>3. 部署設定</strong></p>
-<ul>
-<li>安裝部署用套件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
-<li>修改部署設定 (檔案 <code>根目錄\_config.yml</code> 最下方 # Deployment)  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/用戶名/用戶名.github.io.git</span>  <span class="comment"># Repository 網址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">分支名稱(可用預設</span> <span class="string">main</span> <span class="string">，或自訂如</span> <span class="string">gh-pages)</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">&quot;填入commit訊息&quot;</span>  <span class="comment"># 本行不用可刪</span></span><br></pre></td></tr></table></figure>
-<br/></li>
-</ul>
-<h3 id="部署到Github-常用指令"><a href="#部署到Github-常用指令" class="headerlink" title="部署到Github (常用指令)"></a>部署到Github (常用指令)</h3><p><strong>1. 本地端預覽</strong><br>使用時機: 當在本地端做完修改後，如果希望看到及時修改結果。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server                <span class="comment"># 開啟本地端預覽(標準用法)</span></span><br><span class="line">hexo s                     <span class="comment"># 開啟本地端預覽(簡短用法)</span></span><br><span class="line">http://localhost:4000      <span class="comment"># 貼入網址列即可預覽</span></span><br><span class="line">Ctrl + C                   <span class="comment"># 結束本地端預覽</span></span><br></pre></td></tr></table></figure>
-<p><strong>2. 產生靜態檔案</strong><br>使用時機: 編寫完成後，產生要部署的靜態檔案(會產生 <code>根目錄\public</code> 資料夾放入要部署的檔案)。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate             <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo g                    <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
-<p><strong>3. 部署</strong><br>使用時機: 編寫完成後，部署到 Github ( <code>根目錄\public</code> 裡的檔案會被上傳到設定好的 Repository)。部署完成就可以在 <code>github.io</code> 看到自己的 Blog 了!  </p>
-<blockquote>
-<p><font color=#FF6600>Github有時候部署後要等10~20分鐘畫面才會更新</font></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy                  <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo d                       <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br><span class="line">https://帳戶名.github.io/     <span class="comment"># 個人部落格網址</span></span><br></pre></td></tr></table></figure>
-<p><strong>4. 清除快取 &amp; 靜態檔案</strong><br>使用時機: 為了避免出錯，建議在每次 deploy 前，都先清除先前的資料再重新產生靜態檔案(清除快取檔案 <code>db.json</code> 和已產生的靜態檔案 <code>根目錄\public</code>)。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean     <span class="comment"># 清除快取 &amp; 靜態檔案(標準用法)</span></span><br><span class="line">hexo cl        <span class="comment"># 清除快取 &amp; 靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-        <tag>Hexo</tag>
-        <tag>Github</tag>
       </tags>
   </entry>
   <entry>
@@ -473,8 +474,8 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
         <tag>AlphaCamp</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -730,41 +731,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo NexT 主題更新</title>
-    <url>/posts/dbd33422/</url>
-    <content><![CDATA[<blockquote>
-<p>本篇撰寫時 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-<strong>8.8.2</strong> 升級到 <strong>8.9.0</strong></p>
-</blockquote>
-<span id="more"></span>
-<p>NexT 官方團隊在收集一定數量 Bugfix &#x2F; Feature Request 的情況下，原則上會每月更新一次，可以先參考官方公布的版本更新內容再決定要不要更新。  </p>
-<p>不過，更新通常是為了優化(<code>custom_file_path</code> 真的讓主題更新方便很多)、排除障礙或提高安全性，理論上可以有更好的使用體驗，所以如果有更新提醒我應該還是會盡快處理。  </p>
-<p>另外，隨著技術的進步，舊有的方式可能會被淘汰(像是以前的 <code>.swig</code> 已被 <code>.njk</code> 替代)，為了避免跨大版本更新造成需要大幅度調整的麻煩，建議更新頻率不要太低。  </p>
-<h2 id="近年-NexT-主題大改革"><a href="#近年-NexT-主題大改革" class="headerlink" title="近年 NexT 主題大改革"></a>近年 NexT 主題大改革</h2><p>如果查詢網路上較久以前的教學文章，會發現很多東西都跟新版本搭不起來了。以我自己建置部落格的過程和踩過的坑，感覺最大的變化如下:  </p>
-<p><strong>1. Custom Files 用法(v7.3.0 啟用)</strong><br>以前要把 NexT 主題改得更有個人風格(ex.改背景、在文章底部加文字、增減頁腳文字…等)，都需要改動 <code>layout</code> 資料夾裡相對應的檔案原始碼。一旦進行版本更新，原本作好的設定被直接覆蓋，造成很多困擾。  </p>
-<p>自啟用 Custom Files 用法後，所有的程式碼修改一律放在 <code>root\source\_data</code> 資料夾裡，只要到 <code>root\_config.next.yml</code> 設定讀取路徑就可以直接套用。因為設定檔不是放在主題資料夾內，就算版本更新也不造成影響。   </p>
-<p><strong>2. Nunjucks 引擎(v7.4.2 啟用)</strong><br>網路上較久以前的教學文章，都會說要修改 <code>.swig</code> 檔，但我找半天都找不到，後來看官方文件才發現，因為 swig 缺乏维護，NexT 自 v7.4.2 開始，改用 Nunjucks 代替 swig 作为模版引擎，檔案類型變成 <code>.njk</code> ，網路上的教學文章已不適用。</p>
-<h2 id="npm-安裝-官方推薦"><a href="#npm-安裝-官方推薦" class="headerlink" title="npm 安裝(官方推薦)"></a>npm 安裝(官方推薦)</h2><p><strong>主題資料夾位置: <code>root\node_modules\hexo-theme-next</code></strong><br>打開 <code>root\node_modules</code> 資料夾會發現，之前用 npm 安裝的各種插件都在這裡面。原則上這個資料夾的東西都不會手動修改，只用 npm 指令處理，後續用 npm 更新或解除安裝基本都是改動這裡。  </p>
-<p>NexT 主題更新只要進到 Blog 的根目錄擇一執行以下指令即可。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next           <span class="comment"># 默認最新版本</span></span><br><span class="line">npm install hexo-theme-next@latest    <span class="comment"># 安裝最新版本</span></span><br><span class="line">npm install hexo-theme-next@8.9.0     <span class="comment"># 安裝指定版本</span></span><br></pre></td></tr></table></figure>
-
-<p>更新完成後，參考更新說明。如果有想用的新功能，直接在 <code>root\_config.next.yml</code> 修改設定即可。</p>
-<blockquote>
-<p>如果沒有這個檔案，請參考<a href="/posts/ebe0f18a/">Hexo NexT 主題變更 &amp; 設定 </a> 章節 4.1 說明。</p>
-</blockquote>
-<h2 id="git-安裝-太久沒更新推薦"><a href="#git-安裝-太久沒更新推薦" class="headerlink" title="git 安裝(太久沒更新推薦)"></a>git 安裝(太久沒更新推薦)</h2><p><strong>主題資料夾位置: <code>root\themes\主題名稱資料夾</code></strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
-<p>我剛開始使用 NexT 主題時是使用這種方式(<del>因為搞不懂 npm 指令到底在背後執行什麼</del>)。看了各種網路教學作個人化設定，改動了不少 NexT 主題原始碼，然後因為跟 git 不熟，不小心整個覆蓋掉，整個重來得很崩潰(跑題了)。後來使用 npm 安裝各種插件習慣，且啟用 <code>custom_file_path</code> 後，覺得 npm 方式比較方便。  </p>
-<p><strong>git 安裝推薦使用對象:</strong><br><strong>1. 有改動 NexT 主題原始碼，不想直接覆蓋的人。</strong><br>使用 <code>git pull</code> 等方式更新合併，主題必須加入版本控制。鑒於目前我跟 Git 還是很不熟，這裡就不多作說明。<br><strong>2. 太久沒更新，直接覆蓋可能會出現很多問題，需要大量調整的人。</strong><br>使用這種方法的人，可以在資料夾後加版本編號作新舊版區隔，等調整完成後，在 <code>root\_config.yml</code> 設定要套用哪個版本就可以了。  </p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>驗證三角形</title>
     <url>/posts/dca3ad45/</url>
     <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期一作業<br>學期一終於結束了，完成了課程決定挑戰選修的期末考來驗收學習成效， JavaScript 題目一如既往地燒腦有挑戰性，從前老愛跟數讀死槓的我超開心呀!! 寫出來爆有成就感啊!!</p>
@@ -826,8 +792,43 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
         <tag>AlphaCamp</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo NexT 主題更新</title>
+    <url>/posts/dbd33422/</url>
+    <content><![CDATA[<blockquote>
+<p>本篇撰寫時 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-<strong>8.8.2</strong> 升級到 <strong>8.9.0</strong></p>
+</blockquote>
+<span id="more"></span>
+<p>NexT 官方團隊在收集一定數量 Bugfix &#x2F; Feature Request 的情況下，原則上會每月更新一次，可以先參考官方公布的版本更新內容再決定要不要更新。  </p>
+<p>不過，更新通常是為了優化(<code>custom_file_path</code> 真的讓主題更新方便很多)、排除障礙或提高安全性，理論上可以有更好的使用體驗，所以如果有更新提醒我應該還是會盡快處理。  </p>
+<p>另外，隨著技術的進步，舊有的方式可能會被淘汰(像是以前的 <code>.swig</code> 已被 <code>.njk</code> 替代)，為了避免跨大版本更新造成需要大幅度調整的麻煩，建議更新頻率不要太低。  </p>
+<h2 id="近年-NexT-主題大改革"><a href="#近年-NexT-主題大改革" class="headerlink" title="近年 NexT 主題大改革"></a>近年 NexT 主題大改革</h2><p>如果查詢網路上較久以前的教學文章，會發現很多東西都跟新版本搭不起來了。以我自己建置部落格的過程和踩過的坑，感覺最大的變化如下:  </p>
+<p><strong>1. Custom Files 用法(v7.3.0 啟用)</strong><br>以前要把 NexT 主題改得更有個人風格(ex.改背景、在文章底部加文字、增減頁腳文字…等)，都需要改動 <code>layout</code> 資料夾裡相對應的檔案原始碼。一旦進行版本更新，原本作好的設定被直接覆蓋，造成很多困擾。  </p>
+<p>自啟用 Custom Files 用法後，所有的程式碼修改一律放在 <code>root\source\_data</code> 資料夾裡，只要到 <code>root\_config.next.yml</code> 設定讀取路徑就可以直接套用。因為設定檔不是放在主題資料夾內，就算版本更新也不造成影響。   </p>
+<p><strong>2. Nunjucks 引擎(v7.4.2 啟用)</strong><br>網路上較久以前的教學文章，都會說要修改 <code>.swig</code> 檔，但我找半天都找不到，後來看官方文件才發現，因為 swig 缺乏维護，NexT 自 v7.4.2 開始，改用 Nunjucks 代替 swig 作为模版引擎，檔案類型變成 <code>.njk</code> ，網路上的教學文章已不適用。</p>
+<h2 id="npm-安裝-官方推薦"><a href="#npm-安裝-官方推薦" class="headerlink" title="npm 安裝(官方推薦)"></a>npm 安裝(官方推薦)</h2><p><strong>主題資料夾位置: <code>root\node_modules\hexo-theme-next</code></strong><br>打開 <code>root\node_modules</code> 資料夾會發現，之前用 npm 安裝的各種插件都在這裡面。原則上這個資料夾的東西都不會手動修改，只用 npm 指令處理，後續用 npm 更新或解除安裝基本都是改動這裡。  </p>
+<p>NexT 主題更新只要進到 Blog 的根目錄擇一執行以下指令即可。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next           <span class="comment"># 默認最新版本</span></span><br><span class="line">npm install hexo-theme-next@latest    <span class="comment"># 安裝最新版本</span></span><br><span class="line">npm install hexo-theme-next@8.9.0     <span class="comment"># 安裝指定版本</span></span><br></pre></td></tr></table></figure>
+
+<p>更新完成後，參考更新說明。如果有想用的新功能，直接在 <code>root\_config.next.yml</code> 修改設定即可。</p>
+<blockquote>
+<p>如果沒有這個檔案，請參考<a href="/posts/ebe0f18a/">Hexo NexT 主題變更 &amp; 設定 </a> 章節 4.1 說明。</p>
+</blockquote>
+<h2 id="git-安裝-太久沒更新推薦"><a href="#git-安裝-太久沒更新推薦" class="headerlink" title="git 安裝(太久沒更新推薦)"></a>git 安裝(太久沒更新推薦)</h2><p><strong>主題資料夾位置: <code>root\themes\主題名稱資料夾</code></strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
+<p>我剛開始使用 NexT 主題時是使用這種方式(<del>因為搞不懂 npm 指令到底在背後執行什麼</del>)。看了各種網路教學作個人化設定，改動了不少 NexT 主題原始碼，然後因為跟 git 不熟，不小心整個覆蓋掉，整個重來得很崩潰(跑題了)。後來使用 npm 安裝各種插件習慣，且啟用 <code>custom_file_path</code> 後，覺得 npm 方式比較方便。  </p>
+<p><strong>git 安裝推薦使用對象:</strong><br><strong>1. 有改動 NexT 主題原始碼，不想直接覆蓋的人。</strong><br>使用 <code>git pull</code> 等方式更新合併，主題必須加入版本控制。鑒於目前我跟 Git 還是很不熟，這裡就不多作說明。<br><strong>2. 太久沒更新，直接覆蓋可能會出現很多問題，需要大量調整的人。</strong><br>使用這種方法的人，可以在資料夾後加版本編號作新舊版區隔，等調整完成後，在 <code>root\_config.yml</code> 設定要套用哪個版本就可以了。  </p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
@@ -953,29 +954,8 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
+        <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
-        <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Alpha Camp 學期 2-1 結業心得</title>
-    <url>/posts/73279419/</url>
-    <content><![CDATA[<p><em><strong>學習的過程充滿挑戰，成功闖過之後就想做更多的挑戰!</strong></em><br>這大概就是我在這階段完課後，最明顯的感受。  </p>
-<span id="more"></span>
-
-<p>有轉職意願後，我報名了學期一課程，想確認是否真的對程式語言有興趣。在將近一個月的課程接觸下，燃起了久違的學習熱情，隨後決定繼續向學期二邁進，將學期一碰到的 HTML&#x2F;CSS&#x2F;JavaScript 更精進。  </p>
-<p>相較於學期一類似「興趣班」的節奏，學期 2-1 第一週開始接觸了陣列、物件及函式，不管是單週課程量或難度對我來說都有明顯變高的感覺，作業也變得更加「靈活」。學習過程需要花更多的時間理解、作業要花更多的時間思考，本來以為難度提高會帶來挫折感，進而降低學習熱情，結果相反，我最直觀的感受是「我能做到的事變多了」。課程作業藉著把摸彩活動分成小步驟完成，最後組合再一起，這種「把大任務變小」的方式，我覺得有效降低了學習期間的挫折感。  </p>
-<p>再後來的 DOM 和事件驅動，就更多的提高我對 JavaScript 的學習興趣，藉由 DOM 就可以用 JavaScript 來操作寫好的 HTML，學到了讓使用者跟網頁互動的方法，。每一個章節作業做完的同時，開始會主動思考「可以加上什麼功能?」，有的成功、有的失敗，不知不覺坐在電腦前的時間越來越長😄  </p>
-<p>說到這裡可能有人發現了…… CSS 呢?<br>是的，我對 CSS 一直還沒燃起足夠的熱情，花著同樣的時間進行學習，但 CSS 就是很難記住，寫起來很不順手。這種期況一直持續到學到 DOM 和事件驅動才有改善。在加上新功能後，我新加的東西在網頁上動起來<del>覺得自己有點厲害</del>但長得醜醜的，這時候才開始想各種辦法改善它，積極地回去複習排版…等語法。  </p>
-<p>因為 JavaScript 想新加功能，所以積極複習、查資料、使用還沒學到的東西。因為覺得畫面醜醜的，所以重新面對興致不高的 CSS 。難怪人家都說，想進步最快的辦法就是去做各種 side project 。原本的期末作業「RGB 色碼轉 HEX」，看是要輸入 RGB 色碼或用 slider 調色只要二選一，最後輸出 HEX 結果即可。為了想讓三者同步，查了 <code>addEventListener</code> 的各種 event ，寫了整整一天，寫出來的當下很有成就感! <a href="https://ritachien.github.io/Convert-Between-RGB-HEX/">(動手試試看)</a>  </p>
-<p><img src="https://github.com/ritachien/Convert-Between-RGB-HEX/blob/main/demo.gif?raw=true"></p>
-<p>學習過程記錄大致就這樣了。<br>學期 2-1 找到了提高我學習動力的方法—-<strong>實作、實作、再實作</strong>。準備在春節期間開始挑戰 JS30，然後開始學期 2-2 的預讀。最後的最後，許個新年新希望: 我不要再當米蟲了阿~~~~~~ 今年一定要轉職成功阿~~~~~</p>
-]]></content>
-      <categories>
-        <category>學習紀錄 - AlphaCamp</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -1041,7 +1021,28 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
+        <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Alpha Camp 學期 2-1 結業心得</title>
+    <url>/posts/73279419/</url>
+    <content><![CDATA[<p><em><strong>學習的過程充滿挑戰，成功闖過之後就想做更多的挑戰!</strong></em><br>這大概就是我在這階段完課後，最明顯的感受。  </p>
+<span id="more"></span>
+
+<p>有轉職意願後，我報名了學期一課程，想確認是否真的對程式語言有興趣。在將近一個月的課程接觸下，燃起了久違的學習熱情，隨後決定繼續向學期二邁進，將學期一碰到的 HTML&#x2F;CSS&#x2F;JavaScript 更精進。  </p>
+<p>相較於學期一類似「興趣班」的節奏，學期 2-1 第一週開始接觸了陣列、物件及函式，不管是單週課程量或難度對我來說都有明顯變高的感覺，作業也變得更加「靈活」。學習過程需要花更多的時間理解、作業要花更多的時間思考，本來以為難度提高會帶來挫折感，進而降低學習熱情，結果相反，我最直觀的感受是「我能做到的事變多了」。課程作業藉著把摸彩活動分成小步驟完成，最後組合再一起，這種「把大任務變小」的方式，我覺得有效降低了學習期間的挫折感。  </p>
+<p>再後來的 DOM 和事件驅動，就更多的提高我對 JavaScript 的學習興趣，藉由 DOM 就可以用 JavaScript 來操作寫好的 HTML，學到了讓使用者跟網頁互動的方法，。每一個章節作業做完的同時，開始會主動思考「可以加上什麼功能?」，有的成功、有的失敗，不知不覺坐在電腦前的時間越來越長😄  </p>
+<p>說到這裡可能有人發現了…… CSS 呢?<br>是的，我對 CSS 一直還沒燃起足夠的熱情，花著同樣的時間進行學習，但 CSS 就是很難記住，寫起來很不順手。這種期況一直持續到學到 DOM 和事件驅動才有改善。在加上新功能後，我新加的東西在網頁上動起來<del>覺得自己有點厲害</del>但長得醜醜的，這時候才開始想各種辦法改善它，積極地回去複習排版…等語法。  </p>
+<p>因為 JavaScript 想新加功能，所以積極複習、查資料、使用還沒學到的東西。因為覺得畫面醜醜的，所以重新面對興致不高的 CSS 。難怪人家都說，想進步最快的辦法就是去做各種 side project 。原本的期末作業「RGB 色碼轉 HEX」，看是要輸入 RGB 色碼或用 slider 調色只要二選一，最後輸出 HEX 結果即可。為了想讓三者同步，查了 <code>addEventListener</code> 的各種 event ，寫了整整一天，寫出來的當下很有成就感! <a href="https://ritachien.github.io/Convert-Between-RGB-HEX/">(動手試試看)</a>  </p>
+<p><img src="https://github.com/ritachien/Convert-Between-RGB-HEX/blob/main/demo.gif?raw=true"></p>
+<p>學習過程記錄大致就這樣了。<br>學期 2-1 找到了提高我學習動力的方法—-<strong>實作、實作、再實作</strong>。準備在春節期間開始挑戰 JS30，然後開始學期 2-2 的預讀。最後的最後，許個新年新希望: 我不要再當米蟲了阿~~~~~~ 今年一定要轉職成功阿~~~~~</p>
+]]></content>
+      <categories>
+        <category>學習紀錄 - AlphaCamp</category>
+      </categories>
+      <tags>
         <tag>AlphaCamp</tag>
       </tags>
   </entry>
@@ -1413,14 +1414,14 @@
       </tags>
   </entry>
   <entry>
-    <title>CS50x 2022 Week0 筆記</title>
+    <title>CS50 x 2022 Week0 筆記</title>
     <url>/posts/b357a5fe/</url>
-    <content><![CDATA[<p>開始挑戰 CS50x(Introduction to Computer Science)了! </p>
+    <content><![CDATA[<p>開始挑戰 CS50(Introduction to Computer Science)了! </p>
 <blockquote>
 <p>What ultimately matters in this course is not so much where you end up relative to your classmates but where you end up relative to yourself when you began.<br>—- CS50x</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>第一次接觸到 Harvard 有名的 CS50x 課程是在 Youtube 上看到這部影片:  </p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>第一次接觸到 Harvard 有名的 CS50 課程是在 Youtube 上看到這部影片:  </p>
 <div class="youtube-video">
   <div class="video-container"><iframe src="https://www.youtube.com/embed/XWe4iohhmIw" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
 </div>
@@ -1448,10 +1449,10 @@
 <p>從開始學習程式到現在已經大約半年了，由於 CS50 是全英文課程，如果沒有一點點的程式基礎，聽起來真的會比較辛苦。半年前第一次聽的我和現在的重新撿回課程的我比起來，終於能比較順暢的聽懂了!接下來就是好好地堅持下去，認真的走完這個課程。  </p>
 ]]></content>
       <categories>
-        <category>學習紀錄 - CS50x</category>
+        <category>學習紀錄 - CS50</category>
       </categories>
       <tags>
-        <tag>CS50x 2022</tag>
+        <tag>CS50(2022)</tag>
       </tags>
   </entry>
   <entry>
