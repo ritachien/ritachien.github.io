@@ -16,37 +16,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Alpha Camp 學期一結業心得</title>
-    <url>/posts/491e0585/</url>
-    <content><![CDATA[<p>Alpha Camp的三週學習進度終於結束了，中間除了充斥著被成就感激起的學習熱情，也飽含怎麼都寫不出來的挫敗感。趁著現在給自己留下一篇熱騰騰的記錄，好好回顧這段學習歷程!  </p>
-<span id="more"></span>
-<br/>
-
-<h2 id="為什麼會報名Alpha-Camp"><a href="#為什麼會報名Alpha-Camp" class="headerlink" title="為什麼會報名Alpha Camp?"></a>為什麼會報名Alpha Camp?</h2><p>在傳產當了幾年的會計，雖然喜歡這種嚴謹又規整的工作，但是又不甘於這種毫無變化的生活。工作中充斥著各種財務報表的編撰和解讀，與人的交流變得少之又少……又由於公司軟體不給力，很多報表都是Excel刻出來的，為了減少人工輸入造成的錯誤，那段時間研究了函數、VBA，力求做到自動極大化。在查資料過程中發現，把一些固定的語法拼在一起，讓他自動提供結果給我，其實這些東西跟寫程式很像，這也成了我接觸程式語言的契機。  </p>
-<p>同時，我也和幾位不同產業的同學&#x2F;前輩聊了聊，發現只要繼續做會計，未來的工作模式也不會有太大的改變。我問了自己:「我能忍受未來20年都過這樣的生活嗎?」 然後我就有了轉職的想法XD  </p>
-<p>在嘗試自學後發現，因為完全沒概念，很難為自己規劃一個明確的方向。做了幾天的功課後，毅然決然的刷了卡，趁著沒有太大的經濟負擔時，試著走一條不一樣的路，希望給自己一個不一樣的未來。</p>
-<h2 id="三週課程感受"><a href="#三週課程感受" class="headerlink" title="三週課程感受"></a>三週課程感受</h2><p>說實話，比我預期的還要好! 其中對我最有幫助的應該是課程制度的設計，有效的把我在自學時發生的問題都解決了! 其中最有感覺的是以下幾點:</p>
-<ol>
-<li><p>進度制<br>  非常有效的解決了拖延症的問題。每週有固定進度，但又可以依照自己的時間安排每天學習時間。給了少許進度壓力的同時，又保持了一定的自由度。另外，因為有一批跟自己一樣進度的同學在，討論、互相激勵也很有幫助!</p>
-</li>
-<li><p>實作練習<br>  學了之後馬上思考要怎麼用，可以檢視自己是不是真的理解了課堂說明。這也是我最喜歡的一部分! 在糾結又糾結之後順利完成，那種成就感真的會讓我很有學習的衝勁!</p>
-</li>
-<li><p>作業觀摩&#x2F;助教回覆<br>  當自己的作業是「成功了」，但同學的作業是「有效率的成功了」，或是助教有任何的點評，看到這些時我都會特別高興，因為又找到了另一種解決問題的方法。跟著別人的思路走一遍，將它內化成自己能理解的知識，這也是對我來說明顯有幫助的學習方式。</p>
-</li>
-</ol>
-<p>跟著AC進度學習的同時，因為有了大方向，所以可以比較清楚的知道還有哪些欠缺的東西可以補足。學習期間<a href="https://www.w3schools.com/">W3school</a>、<a href="https://www.freecodecamp.org/">FreeCodeCamp</a>、<a href="https://developer.mozilla.org/zh-TW/">MDN</a>也作為補充資料給了我很多幫助。藉由閱讀不同的說明方式不斷作複習，不但加強記憶，偶爾看到一些新用法也很有趣。  </p>
-<h2 id="後續規劃"><a href="#後續規劃" class="headerlink" title="後續規劃"></a>後續規劃</h2><p>整體來說，這三週的學習是很愉快的，我也決定繼續進入下學期課程。  </p>
-<p>在下學期開課前，除了先進行課程預習外，希望能把這三週以來的筆記整理一下也放進部落格裡。相信隨著部落格的成長，除了可以檢視自己的曾經犯過的錯誤，也能更直觀的知道自己曾經學過什麼? 有沒有進步? 另外，目前進行到一半的 Ubuntu 及 Command Line 學習也很有趣!  </p>
-<p>終於擺脫了那種工作上原地踏步的無力感，喜歡目前每天都在學習、每時每刻都在進步的自己!</p>
-]]></content>
-      <categories>
-        <category>學習紀錄 - AlphaCamp</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript 運算子</title>
     <url>/posts/d403fec1/</url>
     <content><![CDATA[<p>在使用運算子 (Operators) 時，隨著練習題逐漸提高的複雜度，開始發現一些與自己認知不同的地方。這些不明顯的小錯誤，常常是導致程式跑不出來或出現預期外結果的原因。所以在之前筆記的基礎上，把犯過的錯誤一起整理進來，降低下次再犯的可能性。</p>
@@ -272,6 +241,37 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Alpha Camp 學期一結業心得</title>
+    <url>/posts/491e0585/</url>
+    <content><![CDATA[<p>Alpha Camp的三週學習進度終於結束了，中間除了充斥著被成就感激起的學習熱情，也飽含怎麼都寫不出來的挫敗感。趁著現在給自己留下一篇熱騰騰的記錄，好好回顧這段學習歷程!  </p>
+<span id="more"></span>
+<br/>
+
+<h2 id="為什麼會報名Alpha-Camp"><a href="#為什麼會報名Alpha-Camp" class="headerlink" title="為什麼會報名Alpha Camp?"></a>為什麼會報名Alpha Camp?</h2><p>在傳產當了幾年的會計，雖然喜歡這種嚴謹又規整的工作，但是又不甘於這種毫無變化的生活。工作中充斥著各種財務報表的編撰和解讀，與人的交流變得少之又少……又由於公司軟體不給力，很多報表都是Excel刻出來的，為了減少人工輸入造成的錯誤，那段時間研究了函數、VBA，力求做到自動極大化。在查資料過程中發現，把一些固定的語法拼在一起，讓他自動提供結果給我，其實這些東西跟寫程式很像，這也成了我接觸程式語言的契機。  </p>
+<p>同時，我也和幾位不同產業的同學&#x2F;前輩聊了聊，發現只要繼續做會計，未來的工作模式也不會有太大的改變。我問了自己:「我能忍受未來20年都過這樣的生活嗎?」 然後我就有了轉職的想法XD  </p>
+<p>在嘗試自學後發現，因為完全沒概念，很難為自己規劃一個明確的方向。做了幾天的功課後，毅然決然的刷了卡，趁著沒有太大的經濟負擔時，試著走一條不一樣的路，希望給自己一個不一樣的未來。</p>
+<h2 id="三週課程感受"><a href="#三週課程感受" class="headerlink" title="三週課程感受"></a>三週課程感受</h2><p>說實話，比我預期的還要好! 其中對我最有幫助的應該是課程制度的設計，有效的把我在自學時發生的問題都解決了! 其中最有感覺的是以下幾點:</p>
+<ol>
+<li><p>進度制<br>  非常有效的解決了拖延症的問題。每週有固定進度，但又可以依照自己的時間安排每天學習時間。給了少許進度壓力的同時，又保持了一定的自由度。另外，因為有一批跟自己一樣進度的同學在，討論、互相激勵也很有幫助!</p>
+</li>
+<li><p>實作練習<br>  學了之後馬上思考要怎麼用，可以檢視自己是不是真的理解了課堂說明。這也是我最喜歡的一部分! 在糾結又糾結之後順利完成，那種成就感真的會讓我很有學習的衝勁!</p>
+</li>
+<li><p>作業觀摩&#x2F;助教回覆<br>  當自己的作業是「成功了」，但同學的作業是「有效率的成功了」，或是助教有任何的點評，看到這些時我都會特別高興，因為又找到了另一種解決問題的方法。跟著別人的思路走一遍，將它內化成自己能理解的知識，這也是對我來說明顯有幫助的學習方式。</p>
+</li>
+</ol>
+<p>跟著AC進度學習的同時，因為有了大方向，所以可以比較清楚的知道還有哪些欠缺的東西可以補足。學習期間<a href="https://www.w3schools.com/">W3school</a>、<a href="https://www.freecodecamp.org/">FreeCodeCamp</a>、<a href="https://developer.mozilla.org/zh-TW/">MDN</a>也作為補充資料給了我很多幫助。藉由閱讀不同的說明方式不斷作複習，不但加強記憶，偶爾看到一些新用法也很有趣。  </p>
+<h2 id="後續規劃"><a href="#後續規劃" class="headerlink" title="後續規劃"></a>後續規劃</h2><p>整體來說，這三週的學習是很愉快的，我也決定繼續進入下學期課程。  </p>
+<p>在下學期開課前，除了先進行課程預習外，希望能把這三週以來的筆記整理一下也放進部落格裡。相信隨著部落格的成長，除了可以檢視自己的曾經犯過的錯誤，也能更直觀的知道自己曾經學過什麼? 有沒有進步? 另外，目前進行到一半的 Ubuntu 及 Command Line 學習也很有趣!  </p>
+<p>終於擺脫了那種工作上原地踏步的無力感，喜歡目前每天都在學習、每時每刻都在進步的自己!</p>
+]]></content>
+      <categories>
+        <category>學習紀錄 - AlphaCamp</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -521,8 +521,8 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
-        <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
+        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -626,6 +626,47 @@
       </tags>
   </entry>
   <entry>
+    <title>使用 Hexo-abbrlink 產生永久連結</title>
+    <url>/posts/d8dab675/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因為是在建置部落格的同時整理並撰寫 Hexo 筆記，內容的更動導致常常需要修改多篇文章的檔名，permalink 自動產生網址的設定也連帶造成了我一些困擾，所以想用 Hexo-abbrlink 來一勞永逸。  </p>
+<span id="more"></span>
+<p>我原本 permalink 的設定是直接從檔名產生網址。網路上的教學建議檔案用日期 + 英文標題命名，所以修改的同時也讓同一篇文章的網址不斷改動。  </p>
+<blockquote>
+<p>備註: 建議檔案用日期 + 英文標題命名原因  </p>
+<ol>
+<li>日期方便作檔案排序。  </li>
+<li>中文網址在台灣及大陸外的地區必須以編碼方式來呈現， URL 被轉碼後會變得很長(長得像亂碼)，這對 SEO 來說也較為不利。</li>
+</ol>
+</blockquote>
+<h2 id="使用-Hexo-abbrlink-的好處"><a href="#使用-Hexo-abbrlink-的好處" class="headerlink" title="使用 Hexo-abbrlink 的好處"></a>使用 Hexo-abbrlink 的好處</h2><p><strong>1. 網址固定，不再因修改檔名或日期變動</strong><br>Hexo-abbrlink 會依照文章標題產生永久連結，並保存在 Front-matter (檔案最上方以 — 分隔的區域)，之後即使更改檔名也不會再變動。<br><img src="/../../Blog-image/posts/2021-12-27_001.webp" alt="abbrlink存入Front-matter20211227-001"></p>
+<blockquote>
+<p>舊文章(已經部署)會在下一次 <code>hexo g</code> 時產生 abbrlink 。<br>新文章(還沒部署)會在 <code>hexo s</code> 時就產生 abbrlink 。  </p>
+</blockquote>
+<p><strong>2. 檔名可依自己方便取了</strong><br><del>再也不用想英文標題了!!</del>  </p>
+<p><strong>3. 降低因網址變動產生的404問題</strong><br>據說404錯誤會影響網站在SEO上的排名，讓其他人較不容易搜尋到自己的頁面。  </p>
+<h2 id="安裝-hexo-abbrlink"><a href="#安裝-hexo-abbrlink" class="headerlink" title="安裝 hexo-abbrlink"></a>安裝 hexo-abbrlink</h2><blockquote>
+<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
+</blockquote>
+<p><strong>1. 安裝套件</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<p><strong>2. 修改 <code>root\_config.yml</code> 文件</strong>  </p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>  <span class="comment"># support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>    <span class="comment"># support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>也可以自己修改 permalink 參數(把 post 刪掉或增減其他參數)</li>
+<li><code>alg</code> 是雜湊編碼產生方式， <code>rep</code> 是雜湊編碼表示方式(預設十進位)，兩種參數的搭配結果如下:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex    https://XXXX.com/posts/66c8/</span><br><span class="line">crc16 &amp; dec    https://XXXX.com/posts/65535/</span><br><span class="line">crc32 &amp; hex    https://XXXX.com/posts/8ddf18fb/</span><br><span class="line">crc32 &amp; dec    https://XXXX.com/posts/1690090958/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://github.com/rozbo/hexo-abbrlink">rozbo&#x2F;hexo-abbrlink README.md 文件</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo NexT 文末感謝閱讀提示</title>
     <url>/posts/670011ce/</url>
     <content><![CDATA[<p>又犯了”看到別人的部落格有，我也想試試看的”毛病 😅 找了很多網路教學，發現基本都會修改到 NexT 的原始檔案，這對後面的版本更新很不利，所以決定自己改改看!  </p>
@@ -686,47 +727,6 @@
         <tag>Nunjucks</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用 Hexo-abbrlink 產生永久連結</title>
-    <url>/posts/d8dab675/</url>
-    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因為是在建置部落格的同時整理並撰寫 Hexo 筆記，內容的更動導致常常需要修改多篇文章的檔名，permalink 自動產生網址的設定也連帶造成了我一些困擾，所以想用 Hexo-abbrlink 來一勞永逸。  </p>
-<span id="more"></span>
-<p>我原本 permalink 的設定是直接從檔名產生網址。網路上的教學建議檔案用日期 + 英文標題命名，所以修改的同時也讓同一篇文章的網址不斷改動。  </p>
-<blockquote>
-<p>備註: 建議檔案用日期 + 英文標題命名原因  </p>
-<ol>
-<li>日期方便作檔案排序。  </li>
-<li>中文網址在台灣及大陸外的地區必須以編碼方式來呈現， URL 被轉碼後會變得很長(長得像亂碼)，這對 SEO 來說也較為不利。</li>
-</ol>
-</blockquote>
-<h2 id="使用-Hexo-abbrlink-的好處"><a href="#使用-Hexo-abbrlink-的好處" class="headerlink" title="使用 Hexo-abbrlink 的好處"></a>使用 Hexo-abbrlink 的好處</h2><p><strong>1. 網址固定，不再因修改檔名或日期變動</strong><br>Hexo-abbrlink 會依照文章標題產生永久連結，並保存在 Front-matter (檔案最上方以 — 分隔的區域)，之後即使更改檔名也不會再變動。<br><img src="/../../Blog-image/posts/2021-12-27_001.webp" alt="abbrlink存入Front-matter20211227-001"></p>
-<blockquote>
-<p>舊文章(已經部署)會在下一次 <code>hexo g</code> 時產生 abbrlink 。<br>新文章(還沒部署)會在 <code>hexo s</code> 時就產生 abbrlink 。  </p>
-</blockquote>
-<p><strong>2. 檔名可依自己方便取了</strong><br><del>再也不用想英文標題了!!</del>  </p>
-<p><strong>3. 降低因網址變動產生的404問題</strong><br>據說404錯誤會影響網站在SEO上的排名，讓其他人較不容易搜尋到自己的頁面。  </p>
-<h2 id="安裝-hexo-abbrlink"><a href="#安裝-hexo-abbrlink" class="headerlink" title="安裝 hexo-abbrlink"></a>安裝 hexo-abbrlink</h2><blockquote>
-<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
-</blockquote>
-<p><strong>1. 安裝套件</strong>  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<p><strong>2. 修改 <code>root\_config.yml</code> 文件</strong>  </p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>  <span class="comment"># support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>    <span class="comment"># support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>也可以自己修改 permalink 參數(把 post 刪掉或增減其他參數)</li>
-<li><code>alg</code> 是雜湊編碼產生方式， <code>rep</code> 是雜湊編碼表示方式(預設十進位)，兩種參數的搭配結果如下:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex    https://XXXX.com/posts/66c8/</span><br><span class="line">crc16 &amp; dec    https://XXXX.com/posts/65535/</span><br><span class="line">crc32 &amp; hex    https://XXXX.com/posts/8ddf18fb/</span><br><span class="line">crc32 &amp; dec    https://XXXX.com/posts/1690090958/</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
-<li><a href="https://github.com/rozbo/hexo-abbrlink">rozbo&#x2F;hexo-abbrlink README.md 文件</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -791,8 +791,8 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
-        <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
+        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -953,8 +953,8 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
-        <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
+        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -1020,8 +1020,8 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
-        <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
+        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -1202,6 +1202,67 @@
       </tags>
   </entry>
   <entry>
+    <title>【JS30 挑戰】 Day2 - JS and CSS Clock</title>
+    <url>/posts/74544bca/</url>
+    <content><![CDATA[<p>這個專案練習了 CSS 轉場效果( <code>transition</code> &amp; <code>transform</code> )，並利用 JavaScript function 來帶動 <code>transform</code> 的變化。</p>
+<span id="more"></span>
+<blockquote>
+<p><a href="https://javascript30.com/">JavaScript30</a> 是一個由 <strong>Wes Bos</strong> 提出的免費教學計畫。藉由每天完成一個小專案，練習基礎 JavaScript 。整個計畫為期30天。除了會提供教學影片外，也會先做好前期準備(例如: HTML&#x2F;CSS 等相關建置)，練習時只需專注於撰寫 JavaScript 部分的程式碼即可。</p>
+</blockquote>
+<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ol>
+<li>取得當地時間當下的時&#x2F;分&#x2F;秒資訊。  </li>
+<li>利用取得的時間資訊，套入 CSS 設定來讓時鐘的指針移動。</li>
+</ol>
+<h2 id="練習內容"><a href="#練習內容" class="headerlink" title="練習內容"></a>練習內容</h2><ul>
+<li><strong>JavaScript</strong><br>DOM querySelector 、 function 、Date() 、setInterval()</li>
+<li><strong>CSS</strong><br>transform 、 transform-origin 、transition</li>
+</ul>
+<h2 id="開始前的準備"><a href="#開始前的準備" class="headerlink" title="開始前的準備"></a>開始前的準備</h2><blockquote>
+<p>這部分已由教學計畫提供。</p>
+</blockquote>
+<p><strong>做好 HTML&#x2F;CSS 設定:</strong><br>做出時鐘長相並為指針做好相關設置。<br>為了練習 <code>transform-origin</code> ，指針預設往9點鐘方向。但我為了方便，已自行調整成12點鐘方向。</p>
+<h2 id="練習開始"><a href="#練習開始" class="headerlink" title="練習開始"></a>練習開始</h2><p><strong>1. 調整指針起點至12點鐘方向</strong>  </p>
+<ul>
+<li>原本教學是用 <code>transform: rotate(90deg)</code> 處理，但為了方便，我直接調整 CSS。  </li>
+<li><code>transform-origin</code> 跟著調整成 bottom。  </li>
+<li><code>transition</code> 讓所有對象都執行變化，每次用0.05秒完成變化。</li>
+<li>各別設定指針外觀，以便觀察後續變化。<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.hand</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: bottom;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.05s</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hour-hand</span> &#123;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">15%</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">6px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">35%</span>;</span><br><span class="line">  <span class="attribute">background</span>: tomato;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.min-hand</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.second-hand</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<br>
+
+<p><strong>2. 用 setInterval() 設定 function 執行週期。</strong>  </p>
+<ul>
+<li>以每1000毫秒執行一次 setTime() function(秒針跳動頻率)。<br>註: 1秒 &#x3D; 1000毫秒<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setInterval</span>(setTime, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+<br></li>
+</ul>
+<p><strong>3. 取得時間資訊</strong></p>
+<ul>
+<li>分別找出 3 支指針。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> hourHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hour-hand&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> minuteHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.min-hand&#x27;</span>)  </span><br><span class="line"><span class="keyword">const</span> secondHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.second-hand&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>建立一個 setTime() function ，並把要執行的動作放入函式。  </li>
+<li>取得當下時間，並分別取出時&#x2F;分&#x2F;秒。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setTime</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> hours = now.<span class="title function_">getHours</span>()</span><br><span class="line">  <span class="keyword">const</span> mins = now.<span class="title function_">getMinutes</span>()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.<span class="title function_">getSeconds</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>依照時間比例算出旋轉角度，並帶入 CSS 的 <code>rotate()</code> 設置。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setTime</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 取得時間</span></span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.<span class="title function_">getSeconds</span>();</span><br><span class="line">  <span class="keyword">const</span> mins = now.<span class="title function_">getMinutes</span>();</span><br><span class="line">  <span class="keyword">const</span> hour = now.<span class="title function_">getHours</span>();</span><br><span class="line">  <span class="comment">// 計算角度</span></span><br><span class="line">  <span class="keyword">const</span> secondsDegree = (seconds / <span class="number">60</span>) * <span class="number">360</span>;</span><br><span class="line">  <span class="keyword">const</span> minsDegree = ((mins / <span class="number">60</span>) * <span class="number">360</span>) + ((seconds / <span class="number">60</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="keyword">const</span> hourDegree = ((hour / <span class="number">12</span>) * <span class="number">360</span>) + ((mins / <span class="number">12</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="comment">// 角度代入 CSS</span></span><br><span class="line">  secondHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;secondsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  minuteHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;minsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  hourHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;hourDegree&#125;</span>deg)`</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+到這裡就是一個會動的正確時鐘了。  <br></li>
+</ul>
+<p><strong>4. 旋轉優化</strong></p>
+<ul>
+<li>觀察秒針活動軌跡發現，當它要從 59 秒跳回 0 秒時會逆時針旋轉。因為對電腦來說 59 –&gt; 0 是”後退”不是”前進”。最簡單的方法就是，當指針要回到 0 秒時，花費 0 秒直接變化，肉眼就看不出回退過程了。  </li>
+<li>設置一個檢查：如果任一指針角度為0，<code>transition</code> 改為 ‘all 0s’。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 設置一個分辨角度的 function</span></span><br><span class="line"><span class="keyword">if</span> (secondsDegree === <span class="number">0</span></span><br><span class="line">  || minsDegree === <span class="number">0</span></span><br><span class="line">  || hourDegree === <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hand&#x27;</span>).<span class="property">style</span>.<span class="property">transition</span> = <span class="string">&#x27;all 0s&#x27;</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hand&#x27;</span>).<span class="property">style</span>.<span class="property">transition</span> = <span class="string">&#x27;all 5ms&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>因為 JavaScript 有<strong>由上而下</strong>的執行順序，所以要把這段插到 “角度代入 CSS” 之前。</li>
+</ul>
+<br>
+<br>
+
+<p>到這裡就全部完成了!<br>學習到方便的時間取得辦法後，我就要把部落格 footer 從網路上照抄的程式碼改掉了。學到的東西能確實應用真的會很有動力!</p>
+]]></content>
+      <categories>
+        <category>JavaScript30 挑戰</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>JS30</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>data-* HTML 自定義屬性及 dataset</title>
     <url>/posts/b8b00b13/</url>
     <content><![CDATA[<p>在 <a href="/posts/470f6710/">JS30 Day1</a> 第一次看到 data-* 屬性，學習 DOM 之後發現真是太好用了阿!</p>
@@ -1268,67 +1329,6 @@
         <tag>JavaScript</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【JS30 挑戰】 Day2 - JS and CSS Clock</title>
-    <url>/posts/74544bca/</url>
-    <content><![CDATA[<p>這個專案練習了 CSS 轉場效果( <code>transition</code> &amp; <code>transform</code> )，並利用 JavaScript function 來帶動 <code>transform</code> 的變化。</p>
-<span id="more"></span>
-<blockquote>
-<p><a href="https://javascript30.com/">JavaScript30</a> 是一個由 <strong>Wes Bos</strong> 提出的免費教學計畫。藉由每天完成一個小專案，練習基礎 JavaScript 。整個計畫為期30天。除了會提供教學影片外，也會先做好前期準備(例如: HTML&#x2F;CSS 等相關建置)，練習時只需專注於撰寫 JavaScript 部分的程式碼即可。</p>
-</blockquote>
-<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ol>
-<li>取得當地時間當下的時&#x2F;分&#x2F;秒資訊。  </li>
-<li>利用取得的時間資訊，套入 CSS 設定來讓時鐘的指針移動。</li>
-</ol>
-<h2 id="練習內容"><a href="#練習內容" class="headerlink" title="練習內容"></a>練習內容</h2><ul>
-<li><strong>JavaScript</strong><br>DOM querySelector 、 function 、Date() 、setInterval()</li>
-<li><strong>CSS</strong><br>transform 、 transform-origin 、transition</li>
-</ul>
-<h2 id="開始前的準備"><a href="#開始前的準備" class="headerlink" title="開始前的準備"></a>開始前的準備</h2><blockquote>
-<p>這部分已由教學計畫提供。</p>
-</blockquote>
-<p><strong>做好 HTML&#x2F;CSS 設定:</strong><br>做出時鐘長相並為指針做好相關設置。<br>為了練習 <code>transform-origin</code> ，指針預設往9點鐘方向。但我為了方便，已自行調整成12點鐘方向。</p>
-<h2 id="練習開始"><a href="#練習開始" class="headerlink" title="練習開始"></a>練習開始</h2><p><strong>1. 調整指針起點至12點鐘方向</strong>  </p>
-<ul>
-<li>原本教學是用 <code>transform: rotate(90deg)</code> 處理，但為了方便，我直接調整 CSS。  </li>
-<li><code>transform-origin</code> 跟著調整成 bottom。  </li>
-<li><code>transition</code> 讓所有對象都執行變化，每次用0.05秒完成變化。</li>
-<li>各別設定指針外觀，以便觀察後續變化。<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.hand</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: bottom;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.05s</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hour-hand</span> &#123;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">15%</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">6px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">35%</span>;</span><br><span class="line">  <span class="attribute">background</span>: tomato;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.min-hand</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.second-hand</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<br>
-
-<p><strong>2. 用 setInterval() 設定 function 執行週期。</strong>  </p>
-<ul>
-<li>以每1000毫秒執行一次 setTime() function(秒針跳動頻率)。<br>註: 1秒 &#x3D; 1000毫秒<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setInterval</span>(setTime, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
-<br></li>
-</ul>
-<p><strong>3. 取得時間資訊</strong></p>
-<ul>
-<li>分別找出 3 支指針。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> hourHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hour-hand&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> minuteHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.min-hand&#x27;</span>)  </span><br><span class="line"><span class="keyword">const</span> secondHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.second-hand&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
-<li>建立一個 setTime() function ，並把要執行的動作放入函式。  </li>
-<li>取得當下時間，並分別取出時&#x2F;分&#x2F;秒。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setTime</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> hours = now.<span class="title function_">getHours</span>()</span><br><span class="line">  <span class="keyword">const</span> mins = now.<span class="title function_">getMinutes</span>()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.<span class="title function_">getSeconds</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>依照時間比例算出旋轉角度，並帶入 CSS 的 <code>rotate()</code> 設置。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setTime</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 取得時間</span></span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.<span class="title function_">getSeconds</span>();</span><br><span class="line">  <span class="keyword">const</span> mins = now.<span class="title function_">getMinutes</span>();</span><br><span class="line">  <span class="keyword">const</span> hour = now.<span class="title function_">getHours</span>();</span><br><span class="line">  <span class="comment">// 計算角度</span></span><br><span class="line">  <span class="keyword">const</span> secondsDegree = (seconds / <span class="number">60</span>) * <span class="number">360</span>;</span><br><span class="line">  <span class="keyword">const</span> minsDegree = ((mins / <span class="number">60</span>) * <span class="number">360</span>) + ((seconds / <span class="number">60</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="keyword">const</span> hourDegree = ((hour / <span class="number">12</span>) * <span class="number">360</span>) + ((mins / <span class="number">12</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="comment">// 角度代入 CSS</span></span><br><span class="line">  secondHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;secondsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  minuteHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;minsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  hourHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;hourDegree&#125;</span>deg)`</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-到這裡就是一個會動的正確時鐘了。  <br></li>
-</ul>
-<p><strong>4. 旋轉優化</strong></p>
-<ul>
-<li>觀察秒針活動軌跡發現，當它要從 59 秒跳回 0 秒時會逆時針旋轉。因為對電腦來說 59 –&gt; 0 是”後退”不是”前進”。最簡單的方法就是，當指針要回到 0 秒時，花費 0 秒直接變化，肉眼就看不出回退過程了。  </li>
-<li>設置一個檢查：如果任一指針角度為0，<code>transition</code> 改為 ‘all 0s’。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 設置一個分辨角度的 function</span></span><br><span class="line"><span class="keyword">if</span> (secondsDegree === <span class="number">0</span></span><br><span class="line">  || minsDegree === <span class="number">0</span></span><br><span class="line">  || hourDegree === <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hand&#x27;</span>).<span class="property">style</span>.<span class="property">transition</span> = <span class="string">&#x27;all 0s&#x27;</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hand&#x27;</span>).<span class="property">style</span>.<span class="property">transition</span> = <span class="string">&#x27;all 5ms&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>因為 JavaScript 有<strong>由上而下</strong>的執行順序，所以要把這段插到 “角度代入 CSS” 之前。</li>
-</ul>
-<br>
-<br>
-
-<p>到這裡就全部完成了!<br>學習到方便的時間取得辦法後，我就要把部落格 footer 從網路上照抄的程式碼改掉了。學到的東西能確實應用真的會很有動力!</p>
-]]></content>
-      <categories>
-        <category>JavaScript30 挑戰</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>JS30</tag>
       </tags>
   </entry>
   <entry>
@@ -1421,7 +1421,7 @@
 </blockquote>
 <span id="more"></span>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>第一次接觸到 Harvard 有名的 CS50x 課程是在 Youtube 上看到這部影片:  </p>
-<div class=youtube-video>
+<div class="youtube-video">
   <div class="video-container"><iframe src="https://www.youtube.com/embed/XWe4iohhmIw" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
 </div>
 
