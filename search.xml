@@ -405,54 +405,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo 編輯文章</title>
-    <url>/posts/978c1db/</url>
-    <content><![CDATA[<p>基本設定都完成後就可以來寫部落格了! 在正式開始前，如果能對 Hexo 的資料夾架構及 Front-matter 有點基本的認識，會對後續的操作很有幫助。</p>
-<span id="more"></span>
-
-<h2 id="Hexo-資料夾架構"><a href="#Hexo-資料夾架構" class="headerlink" title="Hexo 資料夾架構"></a>Hexo 資料夾架構</h2><p>之前在 <code>hexo init</code> 之後，根目錄資料夾會多了一些預設檔案，接下來會對其中比較重要的做簡單說明。  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── .deploy_git             # 內含已部署到 Github Repository 的所有檔案</span><br><span class="line">├── public                  # hexo g 生成靜態網站檔</span><br><span class="line">├── scaffolds               # 樣板資料夾(hexo new 會從這裡抓樣板，也可以自己新建樣板)</span><br><span class="line">|   ├── draft.md            # 草稿樣板</span><br><span class="line">|   ├── page.md             # 頁面樣板</span><br><span class="line">|   └── post.md             # 文章樣板(預設)</span><br><span class="line">├── source                  # 存放原始檔案的地方</span><br><span class="line">|   ├── _data               # 存放自定義設定原始碼的地方</span><br><span class="line">|   ├── _drafts             # 草稿資料夾</span><br><span class="line">|   └── _posts              # 文章資料夾</span><br><span class="line">├── themes                  # 各種主題資料夾</span><br><span class="line">|   └── landscape           # 預設主題</span><br><span class="line">|       └── _config.yml     # 主題樣式設定檔</span><br><span class="line">├── .gitignore              # 設定不想被加入版本控制或是上傳到 GitHub 的資料夾或檔案</span><br><span class="line">└── _config.yml             # Hexo 基本設定</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>_drafts</code> 草稿資料夾預設會被 generate 、server 和 deploy 指令略過(<code>_post</code> 以外以”_”開頭的資料夾都是)。如果想在 localhost 先預覽的話，可以在 <code>root\_config.yml</code> 裡把 <code>render_drafts: false(預設)</code> 改為 true。</li>
-</ul>
-<h2 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h2><p>Front-matter 是檔案最上方以 — 分隔的區域，用於指定個別檔案的變數。可以每篇文章個別設定，也可以預先在樣板中建立套用內容。常用的變數如下:</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">title</span>        <span class="comment"># 標題(預設為檔案名稱)</span></span><br><span class="line"><span class="string">date</span>         <span class="comment"># 建立日期(預設為檔案建立日期)</span></span><br><span class="line"><span class="string">updated</span>      <span class="comment"># 更新日期(預設為檔案更新日期)</span></span><br><span class="line"><span class="string">comments</span>     <span class="comment"># 留言功能(預設 true :開啟)</span></span><br><span class="line"><span class="string">tags</span>         <span class="comment"># 標籤</span></span><br><span class="line"><span class="string">categories</span>   <span class="comment"># 分類</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>當因為重新部署或其他原因，導致在沒有修改文章情況下顯示文章更新，可以手動修改 <code>updated</code> 值，讓他跟建立日期相同即可。  </li>
-<li>多個標籤&#x2F;多個分類寫法不同，可參考<a href="https://hexo.io/zh-tw/docs/front-matter#%E5%88%86%E9%A1%9E%E5%92%8C%E6%A8%99%E7%B1%A4">官方說明</a>。</li>
-</ul>
-<h2 id="草稿編輯"><a href="#草稿編輯" class="headerlink" title="草稿編輯"></a>草稿編輯</h2><h3 id="新增草稿"><a href="#新增草稿" class="headerlink" title="新增草稿"></a>新增草稿</h3><p>草稿會建立在 <code>root\source\_drafts</code> 資料夾內。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new draft 文章名稱</span><br></pre></td></tr></table></figure>
-<h3 id="草稿轉文章"><a href="#草稿轉文章" class="headerlink" title="草稿轉文章"></a>草稿轉文章</h3><p>指令會把檔案從 <code>_drafts</code> 移至 <code>_posts</code> 資料夾內，也可以自己手動移動。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish draft 文章名稱</span><br></pre></td></tr></table></figure>
-
-<h2 id="文章編輯"><a href="#文章編輯" class="headerlink" title="文章編輯"></a>文章編輯</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>會建立在 <code>root\source\_posts</code> 資料夾內。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new 文章名稱         <span class="comment"># 預設抓取 post 樣板</span></span><br></pre></td></tr></table></figure>
-<h3 id="刪除貼文"><a href="#刪除貼文" class="headerlink" title="刪除貼文"></a>刪除貼文</h3><p>直接從 <code>root\source</code> 資料夾刪除本地檔案，清除靜態檔再重新上傳即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<h2 id="頁面編輯"><a href="#頁面編輯" class="headerlink" title="頁面編輯"></a>頁面編輯</h2><p>頁面和文章不同，是指每個主題 menu 項目的頁面。如果有開啟 menu 項目卻沒有預設頁面的情況下，會被導向 404 畫面。常用的幾個頁面如下:</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">about</span>         <span class="comment"># 關於我(通常會寫網站介紹或作者介紹)</span></span><br><span class="line"><span class="string">archives</span>      <span class="comment"># 歸檔(依發布日期把所有文章排序)</span></span><br><span class="line"><span class="string">categories</span>    <span class="comment"># 分類(會依每篇文章 Front-matter 裡的分類建立分類目錄-有層級)</span></span><br><span class="line"><span class="string">tags</span>          <span class="comment"># 標籤(會依每篇文章 Front-matter 裡的分類建立標籤目錄-無層級)</span></span><br><span class="line"><span class="string">link</span>          <span class="comment"># 對外連結(通常是推薦部落格或網站的連結)</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="新建頁面"><a href="#新建頁面" class="headerlink" title="新建頁面"></a>新建頁面</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page 頁面名稱</span><br></pre></td></tr></table></figure>
-<ul>
-<li>頁面通常不需要開啟留言功能，所以在新建時要記得將 Front-matter 的 <code>comments</code> 值改為 false。</li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2021-12-14 18:33:37</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2021-12-14 18:34:46</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>新建頁面會新建一個 <code>index</code> 檔案，放在”頁面名稱”資料夾裡。</li>
-</ul>
-<h2 id="文章發布"><a href="#文章發布" class="headerlink" title="文章發布"></a>文章發布</h2><p>同之前的部署指令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>有效率地猜中數字</title>
     <url>/posts/5959db4f/</url>
     <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期一作業<br>這是第一個讓我覺得”卡卡”的題目，也是一個讓我在寫出來後深刻認知到: “<strong>想不到解決問題的方法，會寫程式也沒用</strong>“的題目。</p>
@@ -523,6 +475,54 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 編輯文章</title>
+    <url>/posts/978c1db/</url>
+    <content><![CDATA[<p>基本設定都完成後就可以來寫部落格了! 在正式開始前，如果能對 Hexo 的資料夾架構及 Front-matter 有點基本的認識，會對後續的操作很有幫助。</p>
+<span id="more"></span>
+
+<h2 id="Hexo-資料夾架構"><a href="#Hexo-資料夾架構" class="headerlink" title="Hexo 資料夾架構"></a>Hexo 資料夾架構</h2><p>之前在 <code>hexo init</code> 之後，根目錄資料夾會多了一些預設檔案，接下來會對其中比較重要的做簡單說明。  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── .deploy_git             # 內含已部署到 Github Repository 的所有檔案</span><br><span class="line">├── public                  # hexo g 生成靜態網站檔</span><br><span class="line">├── scaffolds               # 樣板資料夾(hexo new 會從這裡抓樣板，也可以自己新建樣板)</span><br><span class="line">|   ├── draft.md            # 草稿樣板</span><br><span class="line">|   ├── page.md             # 頁面樣板</span><br><span class="line">|   └── post.md             # 文章樣板(預設)</span><br><span class="line">├── source                  # 存放原始檔案的地方</span><br><span class="line">|   ├── _data               # 存放自定義設定原始碼的地方</span><br><span class="line">|   ├── _drafts             # 草稿資料夾</span><br><span class="line">|   └── _posts              # 文章資料夾</span><br><span class="line">├── themes                  # 各種主題資料夾</span><br><span class="line">|   └── landscape           # 預設主題</span><br><span class="line">|       └── _config.yml     # 主題樣式設定檔</span><br><span class="line">├── .gitignore              # 設定不想被加入版本控制或是上傳到 GitHub 的資料夾或檔案</span><br><span class="line">└── _config.yml             # Hexo 基本設定</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>_drafts</code> 草稿資料夾預設會被 generate 、server 和 deploy 指令略過(<code>_post</code> 以外以”_”開頭的資料夾都是)。如果想在 localhost 先預覽的話，可以在 <code>root\_config.yml</code> 裡把 <code>render_drafts: false(預設)</code> 改為 true。</li>
+</ul>
+<h2 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h2><p>Front-matter 是檔案最上方以 — 分隔的區域，用於指定個別檔案的變數。可以每篇文章個別設定，也可以預先在樣板中建立套用內容。常用的變數如下:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">title</span>        <span class="comment"># 標題(預設為檔案名稱)</span></span><br><span class="line"><span class="string">date</span>         <span class="comment"># 建立日期(預設為檔案建立日期)</span></span><br><span class="line"><span class="string">updated</span>      <span class="comment"># 更新日期(預設為檔案更新日期)</span></span><br><span class="line"><span class="string">comments</span>     <span class="comment"># 留言功能(預設 true :開啟)</span></span><br><span class="line"><span class="string">tags</span>         <span class="comment"># 標籤</span></span><br><span class="line"><span class="string">categories</span>   <span class="comment"># 分類</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>當因為重新部署或其他原因，導致在沒有修改文章情況下顯示文章更新，可以手動修改 <code>updated</code> 值，讓他跟建立日期相同即可。  </li>
+<li>多個標籤&#x2F;多個分類寫法不同，可參考<a href="https://hexo.io/zh-tw/docs/front-matter#%E5%88%86%E9%A1%9E%E5%92%8C%E6%A8%99%E7%B1%A4">官方說明</a>。</li>
+</ul>
+<h2 id="草稿編輯"><a href="#草稿編輯" class="headerlink" title="草稿編輯"></a>草稿編輯</h2><h3 id="新增草稿"><a href="#新增草稿" class="headerlink" title="新增草稿"></a>新增草稿</h3><p>草稿會建立在 <code>root\source\_drafts</code> 資料夾內。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new draft 文章名稱</span><br></pre></td></tr></table></figure>
+<h3 id="草稿轉文章"><a href="#草稿轉文章" class="headerlink" title="草稿轉文章"></a>草稿轉文章</h3><p>指令會把檔案從 <code>_drafts</code> 移至 <code>_posts</code> 資料夾內，也可以自己手動移動。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish draft 文章名稱</span><br></pre></td></tr></table></figure>
+
+<h2 id="文章編輯"><a href="#文章編輯" class="headerlink" title="文章編輯"></a>文章編輯</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>會建立在 <code>root\source\_posts</code> 資料夾內。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new 文章名稱         <span class="comment"># 預設抓取 post 樣板</span></span><br></pre></td></tr></table></figure>
+<h3 id="刪除貼文"><a href="#刪除貼文" class="headerlink" title="刪除貼文"></a>刪除貼文</h3><p>直接從 <code>root\source</code> 資料夾刪除本地檔案，清除靜態檔再重新上傳即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="頁面編輯"><a href="#頁面編輯" class="headerlink" title="頁面編輯"></a>頁面編輯</h2><p>頁面和文章不同，是指每個主題 menu 項目的頁面。如果有開啟 menu 項目卻沒有預設頁面的情況下，會被導向 404 畫面。常用的幾個頁面如下:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">about</span>         <span class="comment"># 關於我(通常會寫網站介紹或作者介紹)</span></span><br><span class="line"><span class="string">archives</span>      <span class="comment"># 歸檔(依發布日期把所有文章排序)</span></span><br><span class="line"><span class="string">categories</span>    <span class="comment"># 分類(會依每篇文章 Front-matter 裡的分類建立分類目錄-有層級)</span></span><br><span class="line"><span class="string">tags</span>          <span class="comment"># 標籤(會依每篇文章 Front-matter 裡的分類建立標籤目錄-無層級)</span></span><br><span class="line"><span class="string">link</span>          <span class="comment"># 對外連結(通常是推薦部落格或網站的連結)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="新建頁面"><a href="#新建頁面" class="headerlink" title="新建頁面"></a>新建頁面</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page 頁面名稱</span><br></pre></td></tr></table></figure>
+<ul>
+<li>頁面通常不需要開啟留言功能，所以在新建時要記得將 Front-matter 的 <code>comments</code> 值改為 false。</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2021-12-14 18:33:37</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2021-12-14 18:34:46</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>新建頁面會新建一個 <code>index</code> 檔案，放在”頁面名稱”資料夾裡。</li>
+</ul>
+<h2 id="文章發布"><a href="#文章發布" class="headerlink" title="文章發布"></a>文章發布</h2><p>同之前的部署指令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -730,6 +730,41 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo NexT 主題更新</title>
+    <url>/posts/dbd33422/</url>
+    <content><![CDATA[<blockquote>
+<p>本篇撰寫時 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-<strong>8.8.2</strong> 升級到 <strong>8.9.0</strong></p>
+</blockquote>
+<span id="more"></span>
+<p>NexT 官方團隊在收集一定數量 Bugfix &#x2F; Feature Request 的情況下，原則上會每月更新一次，可以先參考官方公布的版本更新內容再決定要不要更新。  </p>
+<p>不過，更新通常是為了優化(<code>custom_file_path</code> 真的讓主題更新方便很多)、排除障礙或提高安全性，理論上可以有更好的使用體驗，所以如果有更新提醒我應該還是會盡快處理。  </p>
+<p>另外，隨著技術的進步，舊有的方式可能會被淘汰(像是以前的 <code>.swig</code> 已被 <code>.njk</code> 替代)，為了避免跨大版本更新造成需要大幅度調整的麻煩，建議更新頻率不要太低。  </p>
+<h2 id="近年-NexT-主題大改革"><a href="#近年-NexT-主題大改革" class="headerlink" title="近年 NexT 主題大改革"></a>近年 NexT 主題大改革</h2><p>如果查詢網路上較久以前的教學文章，會發現很多東西都跟新版本搭不起來了。以我自己建置部落格的過程和踩過的坑，感覺最大的變化如下:  </p>
+<p><strong>1. Custom Files 用法(v7.3.0 啟用)</strong><br>以前要把 NexT 主題改得更有個人風格(ex.改背景、在文章底部加文字、增減頁腳文字…等)，都需要改動 <code>layout</code> 資料夾裡相對應的檔案原始碼。一旦進行版本更新，原本作好的設定被直接覆蓋，造成很多困擾。  </p>
+<p>自啟用 Custom Files 用法後，所有的程式碼修改一律放在 <code>root\source\_data</code> 資料夾裡，只要到 <code>root\_config.next.yml</code> 設定讀取路徑就可以直接套用。因為設定檔不是放在主題資料夾內，就算版本更新也不造成影響。   </p>
+<p><strong>2. Nunjucks 引擎(v7.4.2 啟用)</strong><br>網路上較久以前的教學文章，都會說要修改 <code>.swig</code> 檔，但我找半天都找不到，後來看官方文件才發現，因為 swig 缺乏维護，NexT 自 v7.4.2 開始，改用 Nunjucks 代替 swig 作为模版引擎，檔案類型變成 <code>.njk</code> ，網路上的教學文章已不適用。</p>
+<h2 id="npm-安裝-官方推薦"><a href="#npm-安裝-官方推薦" class="headerlink" title="npm 安裝(官方推薦)"></a>npm 安裝(官方推薦)</h2><p><strong>主題資料夾位置: <code>root\node_modules\hexo-theme-next</code></strong><br>打開 <code>root\node_modules</code> 資料夾會發現，之前用 npm 安裝的各種插件都在這裡面。原則上這個資料夾的東西都不會手動修改，只用 npm 指令處理，後續用 npm 更新或解除安裝基本都是改動這裡。  </p>
+<p>NexT 主題更新只要進到 Blog 的根目錄擇一執行以下指令即可。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next           <span class="comment"># 默認最新版本</span></span><br><span class="line">npm install hexo-theme-next@latest    <span class="comment"># 安裝最新版本</span></span><br><span class="line">npm install hexo-theme-next@8.9.0     <span class="comment"># 安裝指定版本</span></span><br></pre></td></tr></table></figure>
+
+<p>更新完成後，參考更新說明。如果有想用的新功能，直接在 <code>root\_config.next.yml</code> 修改設定即可。</p>
+<blockquote>
+<p>如果沒有這個檔案，請參考<a href="/posts/ebe0f18a/">Hexo NexT 主題變更 &amp; 設定 </a> 章節 4.1 說明。</p>
+</blockquote>
+<h2 id="git-安裝-太久沒更新推薦"><a href="#git-安裝-太久沒更新推薦" class="headerlink" title="git 安裝(太久沒更新推薦)"></a>git 安裝(太久沒更新推薦)</h2><p><strong>主題資料夾位置: <code>root\themes\主題名稱資料夾</code></strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
+<p>我剛開始使用 NexT 主題時是使用這種方式(<del>因為搞不懂 npm 指令到底在背後執行什麼</del>)。看了各種網路教學作個人化設定，改動了不少 NexT 主題原始碼，然後因為跟 git 不熟，不小心整個覆蓋掉，整個重來得很崩潰(跑題了)。後來使用 npm 安裝各種插件習慣，且啟用 <code>custom_file_path</code> 後，覺得 npm 方式比較方便。  </p>
+<p><strong>git 安裝推薦使用對象:</strong><br><strong>1. 有改動 NexT 主題原始碼，不想直接覆蓋的人。</strong><br>使用 <code>git pull</code> 等方式更新合併，主題必須加入版本控制。鑒於目前我跟 Git 還是很不熟，這裡就不多作說明。<br><strong>2. 太久沒更新，直接覆蓋可能會出現很多問題，需要大量調整的人。</strong><br>使用這種方法的人，可以在資料夾後加版本編號作新舊版區隔，等調整完成後，在 <code>root\_config.yml</code> 設定要套用哪個版本就可以了。  </p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>驗證三角形</title>
     <url>/posts/dca3ad45/</url>
     <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期一作業<br>學期一終於結束了，完成了課程決定挑戰選修的期末考來驗收學習成效， JavaScript 題目一如既往地燒腦有挑戰性，從前老愛跟數讀死槓的我超開心呀!! 寫出來爆有成就感啊!!</p>
@@ -793,41 +828,6 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo NexT 主題更新</title>
-    <url>/posts/dbd33422/</url>
-    <content><![CDATA[<blockquote>
-<p>本篇撰寫時 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-<strong>8.8.2</strong> 升級到 <strong>8.9.0</strong></p>
-</blockquote>
-<span id="more"></span>
-<p>NexT 官方團隊在收集一定數量 Bugfix &#x2F; Feature Request 的情況下，原則上會每月更新一次，可以先參考官方公布的版本更新內容再決定要不要更新。  </p>
-<p>不過，更新通常是為了優化(<code>custom_file_path</code> 真的讓主題更新方便很多)、排除障礙或提高安全性，理論上可以有更好的使用體驗，所以如果有更新提醒我應該還是會盡快處理。  </p>
-<p>另外，隨著技術的進步，舊有的方式可能會被淘汰(像是以前的 <code>.swig</code> 已被 <code>.njk</code> 替代)，為了避免跨大版本更新造成需要大幅度調整的麻煩，建議更新頻率不要太低。  </p>
-<h2 id="近年-NexT-主題大改革"><a href="#近年-NexT-主題大改革" class="headerlink" title="近年 NexT 主題大改革"></a>近年 NexT 主題大改革</h2><p>如果查詢網路上較久以前的教學文章，會發現很多東西都跟新版本搭不起來了。以我自己建置部落格的過程和踩過的坑，感覺最大的變化如下:  </p>
-<p><strong>1. Custom Files 用法(v7.3.0 啟用)</strong><br>以前要把 NexT 主題改得更有個人風格(ex.改背景、在文章底部加文字、增減頁腳文字…等)，都需要改動 <code>layout</code> 資料夾裡相對應的檔案原始碼。一旦進行版本更新，原本作好的設定被直接覆蓋，造成很多困擾。  </p>
-<p>自啟用 Custom Files 用法後，所有的程式碼修改一律放在 <code>root\source\_data</code> 資料夾裡，只要到 <code>root\_config.next.yml</code> 設定讀取路徑就可以直接套用。因為設定檔不是放在主題資料夾內，就算版本更新也不造成影響。   </p>
-<p><strong>2. Nunjucks 引擎(v7.4.2 啟用)</strong><br>網路上較久以前的教學文章，都會說要修改 <code>.swig</code> 檔，但我找半天都找不到，後來看官方文件才發現，因為 swig 缺乏维護，NexT 自 v7.4.2 開始，改用 Nunjucks 代替 swig 作为模版引擎，檔案類型變成 <code>.njk</code> ，網路上的教學文章已不適用。</p>
-<h2 id="npm-安裝-官方推薦"><a href="#npm-安裝-官方推薦" class="headerlink" title="npm 安裝(官方推薦)"></a>npm 安裝(官方推薦)</h2><p><strong>主題資料夾位置: <code>root\node_modules\hexo-theme-next</code></strong><br>打開 <code>root\node_modules</code> 資料夾會發現，之前用 npm 安裝的各種插件都在這裡面。原則上這個資料夾的東西都不會手動修改，只用 npm 指令處理，後續用 npm 更新或解除安裝基本都是改動這裡。  </p>
-<p>NexT 主題更新只要進到 Blog 的根目錄擇一執行以下指令即可。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next           <span class="comment"># 默認最新版本</span></span><br><span class="line">npm install hexo-theme-next@latest    <span class="comment"># 安裝最新版本</span></span><br><span class="line">npm install hexo-theme-next@8.9.0     <span class="comment"># 安裝指定版本</span></span><br></pre></td></tr></table></figure>
-
-<p>更新完成後，參考更新說明。如果有想用的新功能，直接在 <code>root\_config.next.yml</code> 修改設定即可。</p>
-<blockquote>
-<p>如果沒有這個檔案，請參考<a href="/posts/ebe0f18a/">Hexo NexT 主題變更 &amp; 設定 </a> 章節 4.1 說明。</p>
-</blockquote>
-<h2 id="git-安裝-太久沒更新推薦"><a href="#git-安裝-太久沒更新推薦" class="headerlink" title="git 安裝(太久沒更新推薦)"></a>git 安裝(太久沒更新推薦)</h2><p><strong>主題資料夾位置: <code>root\themes\主題名稱資料夾</code></strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
-<p>我剛開始使用 NexT 主題時是使用這種方式(<del>因為搞不懂 npm 指令到底在背後執行什麼</del>)。看了各種網路教學作個人化設定，改動了不少 NexT 主題原始碼，然後因為跟 git 不熟，不小心整個覆蓋掉，整個重來得很崩潰(跑題了)。後來使用 npm 安裝各種插件習慣，且啟用 <code>custom_file_path</code> 後，覺得 npm 方式比較方便。  </p>
-<p><strong>git 安裝推薦使用對象:</strong><br><strong>1. 有改動 NexT 主題原始碼，不想直接覆蓋的人。</strong><br>使用 <code>git pull</code> 等方式更新合併，主題必須加入版本控制。鑒於目前我跟 Git 還是很不熟，這裡就不多作說明。<br><strong>2. 太久沒更新，直接覆蓋可能會出現很多問題，需要大量調整的人。</strong><br>使用這種方法的人，可以在資料夾後加版本編號作新舊版區隔，等調整完成後，在 <code>root\_config.yml</code> 設定要套用哪個版本就可以了。  </p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
@@ -958,6 +958,27 @@
       </tags>
   </entry>
   <entry>
+    <title>Alpha Camp 學期 2-1 結業心得</title>
+    <url>/posts/73279419/</url>
+    <content><![CDATA[<p><em><strong>學習的過程充滿挑戰，成功闖過之後就想做更多的挑戰!</strong></em><br>這大概就是我在這階段完課後，最明顯的感受。  </p>
+<span id="more"></span>
+
+<p>有轉職意願後，我報名了學期一課程，想確認是否真的對程式語言有興趣。在將近一個月的課程接觸下，燃起了久違的學習熱情，隨後決定繼續向學期二邁進，將學期一碰到的 HTML&#x2F;CSS&#x2F;JavaScript 更精進。  </p>
+<p>相較於學期一類似「興趣班」的節奏，學期 2-1 第一週開始接觸了陣列、物件及函式，不管是單週課程量或難度對我來說都有明顯變高的感覺，作業也變得更加「靈活」。學習過程需要花更多的時間理解、作業要花更多的時間思考，本來以為難度提高會帶來挫折感，進而降低學習熱情，結果相反，我最直觀的感受是「我能做到的事變多了」。課程作業藉著把摸彩活動分成小步驟完成，最後組合再一起，這種「把大任務變小」的方式，我覺得有效降低了學習期間的挫折感。  </p>
+<p>再後來的 DOM 和事件驅動，就更多的提高我對 JavaScript 的學習興趣，藉由 DOM 就可以用 JavaScript 來操作寫好的 HTML，學到了讓使用者跟網頁互動的方法，。每一個章節作業做完的同時，開始會主動思考「可以加上什麼功能?」，有的成功、有的失敗，不知不覺坐在電腦前的時間越來越長😄  </p>
+<p>說到這裡可能有人發現了…… CSS 呢?<br>是的，我對 CSS 一直還沒燃起足夠的熱情，花著同樣的時間進行學習，但 CSS 就是很難記住，寫起來很不順手。這種期況一直持續到學到 DOM 和事件驅動才有改善。在加上新功能後，我新加的東西在網頁上動起來<del>覺得自己有點厲害</del>但長得醜醜的，這時候才開始想各種辦法改善它，積極地回去複習排版…等語法。  </p>
+<p>因為 JavaScript 想新加功能，所以積極複習、查資料、使用還沒學到的東西。因為覺得畫面醜醜的，所以重新面對興致不高的 CSS 。難怪人家都說，想進步最快的辦法就是去做各種 side project 。原本的期末作業「RGB 色碼轉 HEX」，看是要輸入 RGB 色碼或用 slider 調色只要二選一，最後輸出 HEX 結果即可。為了想讓三者同步，查了 <code>addEventListener</code> 的各種 event ，寫了整整一天，寫出來的當下很有成就感! <a href="https://ritachien.github.io/Convert-Between-RGB-HEX/">(動手試試看)</a>  </p>
+<p><img src="https://github.com/ritachien/Convert-Between-RGB-HEX/blob/main/demo.gif?raw=true"></p>
+<p>學習過程記錄大致就這樣了。<br>學期 2-1 找到了提高我學習動力的方法—-<strong>實作、實作、再實作</strong>。準備在春節期間開始挑戰 JS30，然後開始學期 2-2 的預讀。最後的最後，許個新年新希望: 我不要再當米蟲了阿~~~~~~ 今年一定要轉職成功阿~~~~~</p>
+]]></content>
+      <categories>
+        <category>學習紀錄 - AlphaCamp</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>簡易 RPG 戰鬥：攻擊與補血</title>
     <url>/posts/23e46325/</url>
     <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期 2-1<br>題目的主要目的是 Javascript function 的練習。設計 function 的運作方式，利用 <code>if</code> + <code>return</code> 來控制需要提早跳出函式的情況，及使用 <code>this</code> 取到物件自身。  </p>
@@ -1021,27 +1042,6 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
-        <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Alpha Camp 學期 2-1 結業心得</title>
-    <url>/posts/73279419/</url>
-    <content><![CDATA[<p><em><strong>學習的過程充滿挑戰，成功闖過之後就想做更多的挑戰!</strong></em><br>這大概就是我在這階段完課後，最明顯的感受。  </p>
-<span id="more"></span>
-
-<p>有轉職意願後，我報名了學期一課程，想確認是否真的對程式語言有興趣。在將近一個月的課程接觸下，燃起了久違的學習熱情，隨後決定繼續向學期二邁進，將學期一碰到的 HTML&#x2F;CSS&#x2F;JavaScript 更精進。  </p>
-<p>相較於學期一類似「興趣班」的節奏，學期 2-1 第一週開始接觸了陣列、物件及函式，不管是單週課程量或難度對我來說都有明顯變高的感覺，作業也變得更加「靈活」。學習過程需要花更多的時間理解、作業要花更多的時間思考，本來以為難度提高會帶來挫折感，進而降低學習熱情，結果相反，我最直觀的感受是「我能做到的事變多了」。課程作業藉著把摸彩活動分成小步驟完成，最後組合再一起，這種「把大任務變小」的方式，我覺得有效降低了學習期間的挫折感。  </p>
-<p>再後來的 DOM 和事件驅動，就更多的提高我對 JavaScript 的學習興趣，藉由 DOM 就可以用 JavaScript 來操作寫好的 HTML，學到了讓使用者跟網頁互動的方法，。每一個章節作業做完的同時，開始會主動思考「可以加上什麼功能?」，有的成功、有的失敗，不知不覺坐在電腦前的時間越來越長😄  </p>
-<p>說到這裡可能有人發現了…… CSS 呢?<br>是的，我對 CSS 一直還沒燃起足夠的熱情，花著同樣的時間進行學習，但 CSS 就是很難記住，寫起來很不順手。這種期況一直持續到學到 DOM 和事件驅動才有改善。在加上新功能後，我新加的東西在網頁上動起來<del>覺得自己有點厲害</del>但長得醜醜的，這時候才開始想各種辦法改善它，積極地回去複習排版…等語法。  </p>
-<p>因為 JavaScript 想新加功能，所以積極複習、查資料、使用還沒學到的東西。因為覺得畫面醜醜的，所以重新面對興致不高的 CSS 。難怪人家都說，想進步最快的辦法就是去做各種 side project 。原本的期末作業「RGB 色碼轉 HEX」，看是要輸入 RGB 色碼或用 slider 調色只要二選一，最後輸出 HEX 結果即可。為了想讓三者同步，查了 <code>addEventListener</code> 的各種 event ，寫了整整一天，寫出來的當下很有成就感! <a href="https://ritachien.github.io/Convert-Between-RGB-HEX/">(動手試試看)</a>  </p>
-<p><img src="https://github.com/ritachien/Convert-Between-RGB-HEX/blob/main/demo.gif?raw=true"></p>
-<p>學習過程記錄大致就這樣了。<br>學期 2-1 找到了提高我學習動力的方法—-<strong>實作、實作、再實作</strong>。準備在春節期間開始挑戰 JS30，然後開始學期 2-2 的預讀。最後的最後，許個新年新希望: 我不要再當米蟲了阿~~~~~~ 今年一定要轉職成功阿~~~~~</p>
-]]></content>
-      <categories>
-        <category>學習紀錄 - AlphaCamp</category>
-      </categories>
-      <tags>
         <tag>AlphaCamp</tag>
       </tags>
   </entry>
@@ -1413,7 +1413,7 @@
       </tags>
   </entry>
   <entry>
-    <title>CS50x 2022 Week1 筆記</title>
+    <title>CS50x 2022 Week0 筆記</title>
     <url>/posts/b357a5fe/</url>
     <content><![CDATA[<p>開始挑戰 CS50x(Introduction to Computer Science)了! </p>
 <blockquote>
