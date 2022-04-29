@@ -21,24 +21,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Rita 的學習筆記">
-<meta property="og:url" content="https://ritachien.github.io/page/3/">
+    <meta name="description" content="開始挑戰 CS50x(Introduction to Computer Science)了!   What ultimately matters in this course is not so much where you end up relative to your classmates but where you end up relative to yourself when you b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS50x 2022 Week1 筆記">
+<meta property="og:url" content="https://ritachien.github.io/posts/b357a5fe/">
 <meta property="og:site_name" content="Rita 的學習筆記">
+<meta property="og:description" content="開始挑戰 CS50x(Introduction to Computer Science)了!   What ultimately matters in this course is not so much where you end up relative to your classmates but where you end up relative to yourself when you b">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-24-29_pseudocode.webp">
+<meta property="article:published_time" content="2022-04-29T07:08:00.000Z">
+<meta property="article:modified_time" content="2022-04-29T07:08:00.000Z">
 <meta property="article:author" content="Rita Chien">
-<meta property="article:tag" content="Blog, 程式語言, 學習紀錄">
+<meta property="article:tag" content="CS50x 2022">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ritachien.github.io/Blog-image/posts/2022-24-29_pseudocode.webp">
 
 
-<link rel="canonical" href="https://ritachien.github.io/page/3/">
+<link rel="canonical" href="https://ritachien.github.io/posts/b357a5fe/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"page/3/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/b357a5fe/","path":"posts/b357a5fe/","title":"CS50x 2022 Week1 筆記"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Rita 的學習筆記</title>
+<title>CS50x 2022 Week1 筆記 | Rita 的學習筆記</title>
   
 
 
@@ -82,7 +88,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Rita 的學習筆記</h1>
+      <p class="site-title">Rita 的學習筆記</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">一步一腳印，留下成長的足跡</p>
@@ -142,7 +148,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -155,6 +161,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AA%B2%E7%A8%8B%E5%85%A7%E5%AE%B9"><span class="nav-number">2.</span> <span class="nav-text">課程內容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%80%B2%E4%BD%8D-Binary"><span class="nav-number">2.1.</span> <span class="nav-text">二進位(Binary)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASCII-x2F-Unicode"><span class="nav-number">2.2.</span> <span class="nav-text">ASCII&#x2F;Unicode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RBG%E3%80%81%E5%9C%96%E7%89%87%E3%80%81%E5%BD%B1%E7%89%87"><span class="nav-number">2.3.</span> <span class="nav-text">RBG、圖片、影片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%90%9C%E5%B0%8B%E6%B3%95%E5%8F%8A%E7%A8%8B%E5%BC%8F%E9%82%8F%E8%BC%AF-%E9%9B%BB%E8%A9%B1%E7%B0%BF%E6%83%85%E5%A2%83%E9%A1%8C"><span class="nav-number">2.4.</span> <span class="nav-text">二分搜尋法及程式邏輯(電話簿情境題)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scratch"><span class="nav-number">2.5.</span> <span class="nav-text">Scratch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%B5%90"><span class="nav-number">3.</span> <span class="nav-text">小結</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -218,17 +225,18 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/4b9ba027/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/b357a5fe/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
@@ -241,13 +249,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Rita 的學習筆記">
+      <meta itemprop="name" content="CS50x 2022 Week1 筆記 | Rita 的學習筆記">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/4b9ba027/" class="post-title-link" itemprop="url">用 Hexo + Github Pages 建立部落格</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          CS50x 2022 Week1 筆記
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -257,7 +265,7 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2021-12-21 00:00:00" itemprop="dateCreated datePublished" datetime="2021-12-21T00:00:00+08:00">2021-12-21</time>
+      <time title="創建時間：2022-04-29 15:08:00" itemprop="dateCreated datePublished" datetime="2022-04-29T15:08:00+08:00">2022-04-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -265,101 +273,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>2.8k</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>3 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在建置部落格前猶豫了很久，最終還是決定用 Hexo + Github Pages 當作平台。歷時兩天，終於解決各種莫名其妙的問題，讓它變成心目中的樣子!</p>
-          <!--noindex-->
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/491e0585/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
-      <meta itemprop="name" content="Rita Chien">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rita 的學習筆記">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Rita 的學習筆記">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/491e0585/" class="post-title-link" itemprop="url">Alpha Camp 學期一結業心得</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2021-12-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-12-14T00:00:00+08:00">2021-12-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84-AlphaCamp/" itemprop="url" rel="index"><span itemprop="name">學習紀錄 - AlphaCamp</span></a>
+          <a href="/categories/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84-CS50x/" itemprop="url" rel="index"><span itemprop="name">學習紀錄 - CS50x</span></a>
         </span>
     </span>
 
@@ -387,20 +301,86 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>Alpha Camp的三週學習進度終於結束了，中間除了充斥著被成就感激起的學習熱情，也飽含怎麼都寫不出來的挫敗感。趁著現在給自己留下一篇熱騰騰的記錄，好好回顧這段學習歷程!  </p>
-          <!--noindex-->
-          <!--/noindex-->
-        
-      
+        <p>開始挑戰 CS50x(Introduction to Computer Science)了! </p>
+<blockquote>
+<p>What ultimately matters in this course is not so much where you end up relative to your classmates but where you end up relative to yourself when you began.<br>—- CS50x</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>第一次接觸到 Harvard 有名的 CS50x 課程是在 Youtube 上看到這部影片:  </p>
+<div class=youtube-video>
+  <div class="video-container"><iframe src="https://www.youtube.com/embed/XWe4iohhmIw" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+</div>
+
+<p>台上四位同學拿到一模一樣的道具、聽到一模一樣的指令，但是卻做出不一樣的動作。講師利用這種情境來告訴聽眾：我們給予的指令要「精準」，不然容易出現意料之外的結果。這種情境式的教學方式讓我覺得很有趣，運用一些簡單的例子來協助理解 Computer Science。  </p>
+<h2 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h2><ul>
+<li>簡單介紹二進位、ASCII、RGB、二分搜尋法…等。  </li>
+<li>程式語言常用的函式、條件判斷、變數、迴圈…等。  </li>
+<li>利用圖像式的 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://scratch.mit.edu/">Scratch</a> 來講解程式如何運作。</li>
+</ul>
+<h3 id="二進位-Binary"><a href="#二進位-Binary" class="headerlink" title="二進位(Binary)"></a>二進位(Binary)</h3><p><strong>電腦只看得懂 <code>0</code> 跟 <code>1</code></strong> ，而二進位制是一種用 0 和 1 代表不同數字的進位方式。二進位中每個 bit 可以表示 1 和 0，而當我們有更多的 bits 時我們可以代表更大的數字，例如二進位的 11 是十進位的 3，111 是十進位的 7。  </p>
+<h3 id="ASCII-x2F-Unicode"><a href="#ASCII-x2F-Unicode" class="headerlink" title="ASCII&#x2F;Unicode"></a>ASCII&#x2F;Unicode</h3><p>既然二進位表達的是「數字」，那其他的文字、符號呢？<br>ASCII 和 Unicode 都是字符對照表，兩者的差別就不贅述了。都是用數字來表示字母，例如：大寫的 A 是用十進位的 65 表示，也是二進位的 01000001。  </p>
+<h3 id="RBG、圖片、影片"><a href="#RBG、圖片、影片" class="headerlink" title="RBG、圖片、影片"></a>RBG、圖片、影片</h3><p>RGB 是把顏色用不同「值」的紅(Red)、綠(Green)、藍(Blue)組合而成。而很多不同的顏色可以組成圖片、很多圖片可以連成影片。  </p>
+<h3 id="二分搜尋法及程式邏輯-電話簿情境題"><a href="#二分搜尋法及程式邏輯-電話簿情境題" class="headerlink" title="二分搜尋法及程式邏輯(電話簿情境題)"></a>二分搜尋法及程式邏輯(電話簿情境題)</h3><p><strong>問題：要怎麼從厚厚的電話簿中找到指定人物的電話呢？</strong>  </p>
+<ol>
+<li>一頁一頁翻 ➜ 可以正確找到，但是好沒效率…  </li>
+<li>兩頁兩頁跳著翻 ➜ 查詢效率是兩倍，但是萬一在單數頁怎麼辦？  </li>
+<li>二分搜尋法 ➜ 從中間翻閱，依照姓名排序捨棄一半資料(不斷重複)</li>
+</ol>
+<p>完善搜尋方式的過程，並把過程用虛擬碼(pseudocode)寫出來幫助思考整個流程運作，最後用虛擬碼解釋函式、條件判斷、變數、迴圈…等是什麼?  </p>
+<p><img src="/../Blog-image/posts/2022-24-29_pseudocode.webp" alt="pseudocode"><br>(圖片來自 CS50 課程內容  )</p>
+<h3 id="Scratch"><a href="#Scratch" class="headerlink" title="Scratch"></a>Scratch</h3><p>用拼圖方式一步步組裝，做出一個可以運行的程式。  </p>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>寫程式其實就是一個解題的過程，首先要確保可以得出正確的答案，再來才是優化解題的過程。  </p>
+<p>在電話簿情境題中，如果僅僅是為了提升效率而兩頁兩頁做排查，也許會因為搜尋對象在單數頁而錯過。那即使可以在較短時間排查更多的資料也沒用，因為這種排查邏輯並不完善。  </p>
+<p>從開始學習程式到現在已經大約半年了，由於 CS50 是全英文課程，如果沒有一點點的程式基礎，聽起來真的會比較辛苦。半年前第一次聽的我和現在的重新撿回課程的我比起來，終於能比較順暢的聽懂了!接下來就是好好地堅持下去，認真的走完這個課程。  </p>
+
     </div>
 
     
     
     
 
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+    <footer class="post-footer"><!-- 在文章底部添加感謝閱讀 -->
+<div>
+  
+    <div style="text-align:center; color:#ccc; font-size:14px; letter-spacing:5px">
+      ------------  本文結束，感謝您的閱讀&nbsp;<i class="fa fa-paw"></i>&nbsp;如有錯漏，歡迎留言討論  -------------
+    </div>
+  
+</div>
+
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Rita Chien
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://ritachien.github.io/posts/b357a5fe/" title="CS50x 2022 Week1 筆記">https://ritachien.github.io/posts/b357a5fe/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/CS50x-2022/" rel="tag"><i class="fa fa-tag"></i> CS50x 2022</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/924950b4/" rel="prev" title="Alpha Camp 學期 2-3 結業心得">
+                  <i class="fa fa-chevron-left"></i> Alpha Camp 學期 2-3 結業心得
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -408,104 +388,9 @@
 
 
 
-    
 
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/572b724a/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
-      <meta itemprop="name" content="Rita Chien">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rita 的學習筆記">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Rita 的學習筆記">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/572b724a/" class="post-title-link" itemprop="url">開始寫部落格啦!</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2021-12-13 00:00:00" itemprop="dateCreated datePublished" datetime="2021-12-13T00:00:00+08:00">2021-12-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%80%8B%E4%BA%BA%E9%9A%A8%E7%AD%86/" itemprop="url" rel="index"><span itemprop="name">個人隨筆</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>432</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>看了很多轉職分享、技術部落格、Youtube影片…等，有一個對程式新手共通的建議就是:「寫部落格」。<br>寫部落格的好處有什麼呢?  </p>
-          <!--noindex-->
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
-
+    <div class="comments utterances-container"></div>
 </div>
   </main>
 

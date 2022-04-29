@@ -40,140 +40,10 @@
 <p>終於擺脫了那種工作上原地踏步的無力感，喜歡目前每天都在學習、每時每刻都在進步的自己!</p>
 ]]></content>
       <categories>
-        <category>學習紀錄</category>
+        <category>學習紀錄 - AlphaCamp</category>
       </categories>
       <tags>
         <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用 Hexo + Github Pages 建立部落格</title>
-    <url>/posts/4b9ba027/</url>
-    <content><![CDATA[<p>在建置部落格前猶豫了很久，最終還是決定用 Hexo + Github Pages 當作平台。歷時兩天，終於解決各種莫名其妙的問題，讓它變成心目中的樣子!</p>
-<span id="more"></span>
-
-
-<h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="為什麼選擇-Github-Pages"><a href="#為什麼選擇-Github-Pages" class="headerlink" title="為什麼選擇 Github Pages ?"></a>為什麼選擇 Github Pages ?</h3><p><strong>1. 免費</strong><br>  Github Pages 是 Github 提供的免費靜態網頁空間，提供一組 Github帳號 <code>.github.io</code> 子網域。雖然有容量跟流量上的限制，但以一個剛起步的部落格來說，現階段不會有超出的問題。既然有免費的平台那就用吧!  </p>
-<p><strong>2. 能夠使用 Git 部署並進行版本控制</strong><br>  看了各個學習寫程式分享，得知「如何使用 Git 進行版本控制」是很重要的。雖然現階段身為程式小白的我沒有太多的概念，也完全沒有接觸過，但在查詢 Hexo 資訊時得知，Hexo 可以藉由 Git 部署到 Github 上。希望能在日常使用中學習並熟悉 Git 。  </p>
-<p><strong>3. Github 會記錄每日 commit 次數</strong><br>  Github 的個人首頁會呈現一整年的 commit 紀錄畫面。每天一格，每 commit 一次，當天的格子就會從灰色漸漸往深綠色變化。希望利用自己的收集強迫症，為了盡可能填滿格子，督促自己多多更新部落格。  </p>
-<h3 id="Github-Pages-有什麼限制"><a href="#Github-Pages-有什麼限制" class="headerlink" title="Github Pages 有什麼限制?"></a>Github Pages 有什麼限制?</h3><ol>
-<li>只能存放靜態網頁。</li>
-<li>1GB 空間容量。</li>
-<li>100GB 月流量。</li>
-<li>1 小時內只能提交 10 次更新版本。<blockquote>
-<p>參考資料: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages">Github 說明文件</a></p>
-</blockquote>
-</li>
-</ol>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="為什麼選擇-Hexo"><a href="#為什麼選擇-Hexo" class="headerlink" title="為什麼選擇 Hexo ?"></a>為什麼選擇 Hexo ?</h3><p><strong>1. Hexo 支援強大:</strong><br>  Hexo 是台灣人做的(<a href="https://zespia.tw/blog/2012/10/11/hexo-debut/">起源在這裡</a>)，官方中文支援蠻完整的。另外，可能也是因為中文支援較完整，有很多中文圈的前輩做了很多主題可以套用，當遇到相關問題時，Google 到的解決方案也很多。  </p>
-<p><strong>2. 使用 Node.js(JavaScript) 開發:</strong><br>  在正式開始前，找了幾個熱門靜態檔案產生器比較，最後在 Hexo 跟 Hugo 之間做選擇。雖然 Hugo 比較快，Github上的星星數也比較多，但基於 Hugo 是用 Go 語言寫的，初學的我還是應該先專心一門語言較好，因此捨棄 Hugo 選擇使用 JavaScript 的 Hexo。既然我現在在學JavaScript，現階段可以研究一下它的寫法，之後說不定哪天我可以自己把它改得更符合自己需求。目前在做一些個人化設定時也發現，因為可以看得懂一點點結構，修改時很有幫助。  </p>
-<p><strong>3. 支援 Markdown :</strong><br>Markdown 用來撰寫文章很方便，因為語法簡單，可以更專心在文字內容的編輯上，不用過分關注排版問題。在加上之前跟鳥友一起在HackMD建了個鳥寶寶成長紀錄(<a href="https://hackmd.io/p5O2bt2QQrC1HH46cVfs0A">有興趣可以看看</a>)，對 Markdown 也算比較熟悉了。</p>
-<p><strong>4. 個人化設定自由度高 :</strong><br>主題非常多元，版面也可依自己需求做CSS修改。(剛學到的 <code>padding</code> 、 <code>letter-spacing</code> 、 <code>border-radius</code> 等也都依自己喜歡的樣子用上了!) 另外，也可以找到很多其他插件資源，讓自己的部落格更有個人特色。<br>  <br/></p>
-<h2 id="開始建置部落格"><a href="#開始建置部落格" class="headerlink" title="開始建置部落格"></a>開始建置部落格</h2><blockquote>
-<p>本文撰寫時在 Windows 10 環境下安裝。  </p>
-</blockquote>
-<h3 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h3><p><strong>1. 安裝 Node.js</strong>  </p>
-<ul>
-<li>建置過程中需要用 NPM 安裝套件，所以要先下載 Node.js (<a href="https://nodejs.org/en/">官網下載</a>)。</li>
-</ul>
-<p><strong>2. 安裝 Git</strong>  </p>
-<ul>
-<li><p>之後會使用 Git 作版本控制並將 Hexo 部署或備份到 Github 上，所以要先安裝 Git (<a href="https://git-scm.com/downloads">官網下載</a>)。  </p>
-</li>
-<li><p>開始初次設定 Git : 設定使用者名稱及電子郵件， Git 的提交會使用這些資訊。  </p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引號內填入使用者名稱</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line"><span class="comment"># 引號內填入使用者email</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>完成後可用 <code>git config --global --list</code> 檢查是否有誤，或是到 <code>C:\Users\yourUserName\.gitconfig</code> 確認並修正。</p>
-</li>
-</ul>
-<p><strong>3. 新建Github Repository</strong>  </p>
-<ul>
-<li>開啟 Github 並點選 New Repository</li>
-<li>Repository 名稱為 <code>用戶名.github.io</code><br>  <img src="/../../Blog-image/posts/2021-12-21_001.webp" alt="20211221-001">    <br/></li>
-</ul>
-<h3 id="本地端安裝"><a href="#本地端安裝" class="headerlink" title="本地端安裝"></a>本地端安裝</h3><p><strong>1. 安裝 Hexo</strong>  </p>
-<ul>
-<li>使用 <code>npm install -g hexo-cli</code> 安裝 Hexo 。  </li>
-<li>安裝成功後，輸入 <code>hexo version</code> 指令可查看安裝版本。</li>
-</ul>
-<p><strong>2. Blog 存放資料夾初始化</strong></p>
-<ul>
-<li>開啟命令提示元(CMD) &gt; 前往想存放 Blog 檔案的本地端資料夾。 (ex. 我要在 D 槽新建 Blog 資料夾存放，所以先輸入 <code>D:</code> 讓當前位置移到 D 槽)  </li>
-<li>初始化資料夾(必須是空資料夾，以下方法二選一)  <ul>
-<li>方法一(當前位置 D 槽) –在 D 槽新建 Blog 資料夾並初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init Blog</span><br></pre></td></tr></table></figure></li>
-<li>方法二(已自行新建資料夾，當前位置 D:\Blog) –將 Blog 資料夾初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>安裝相關套件  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>3. 部署設定</strong></p>
-<ul>
-<li>安裝部署用套件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
-<li>修改部署設定 (檔案 <code>根目錄\_config.yml</code> 最下方 # Deployment)  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/用戶名/用戶名.github.io.git</span>  <span class="comment"># Repository 網址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">分支名稱(可用預設</span> <span class="string">main</span> <span class="string">，或自訂如</span> <span class="string">gh-pages)</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">&quot;填入commit訊息&quot;</span>  <span class="comment"># 本行不用可刪</span></span><br></pre></td></tr></table></figure>
-<br/></li>
-</ul>
-<h3 id="部署到Github-常用指令"><a href="#部署到Github-常用指令" class="headerlink" title="部署到Github (常用指令)"></a>部署到Github (常用指令)</h3><p><strong>1. 本地端預覽</strong><br>使用時機: 當在本地端做完修改後，如果希望看到及時修改結果。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server                <span class="comment"># 開啟本地端預覽(標準用法)</span></span><br><span class="line">hexo s                     <span class="comment"># 開啟本地端預覽(簡短用法)</span></span><br><span class="line">http://localhost:4000      <span class="comment"># 貼入網址列即可預覽</span></span><br><span class="line">Ctrl + C                   <span class="comment"># 結束本地端預覽</span></span><br></pre></td></tr></table></figure>
-<p><strong>2. 產生靜態檔案</strong><br>使用時機: 編寫完成後，產生要部署的靜態檔案(會產生 <code>根目錄\public</code> 資料夾放入要部署的檔案)。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate             <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo g                    <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
-<p><strong>3. 部署</strong><br>使用時機: 編寫完成後，部署到 Github ( <code>根目錄\public</code> 裡的檔案會被上傳到設定好的 Repository)。部署完成就可以在 <code>github.io</code> 看到自己的 Blog 了!  </p>
-<blockquote>
-<p><font color=#FF6600>Github有時候部署後要等10~20分鐘畫面才會更新</font></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy                  <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo d                       <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br><span class="line">https://帳戶名.github.io/     <span class="comment"># 個人部落格網址</span></span><br></pre></td></tr></table></figure>
-<p><strong>4. 清除快取 &amp; 靜態檔案</strong><br>使用時機: 為了避免出錯，建議在每次 deploy 前，都先清除先前的資料再重新產生靜態檔案(清除快取檔案 <code>db.json</code> 和已產生的靜態檔案 <code>根目錄\public</code>)。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean     <span class="comment"># 清除快取 &amp; 靜態檔案(標準用法)</span></span><br><span class="line">hexo cl        <span class="comment"># 清除快取 &amp; 靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-        <tag>Hexo</tag>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 基本設定</title>
-    <url>/posts/a970120e/</url>
-    <content><![CDATA[<p>基本上經過上一篇的操作，在 <code>hexo s</code> 後應該已經可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 看到預設的 Hello World 畫面了，但要讓 Blog 正式啟動前，我們還要先做一些個人化設定。  </p>
-<span id="more"></span>
-
-<blockquote>
-<p>本文撰寫時的版本如下(可用 <code>hexo version</code> 確認)，不同版本的預設配置檔可能會有差異:<br>hexo: 6.0.0<br>hexo-cli: 4.3.0  </p>
-</blockquote>
-<ul>
-<li>基本配置文件位置在 <code>root\_config.yml</code>，<font color=#FF6600>冒號後面都必需保留半型空格一格</font>。  </li>
-<li>僅列出通常會修改或我已經修改的部分，其他請參考<a href="https://hexo.io/zh-tw/docs/configuration">官方網站</a>說明。</li>
-</ul>
-<h2 id="網站設定"><a href="#網站設定" class="headerlink" title="網站設定"></a>網站設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span>           <span class="comment"># 網站標題</span></span><br><span class="line"><span class="attr">subtitle:</span>             <span class="comment"># 網站副標題</span></span><br><span class="line"><span class="attr">description:</span>          <span class="comment"># 網站描述</span></span><br><span class="line"><span class="attr">keywords:</span>             <span class="comment"># 網站關鍵字(支援多個關鍵詞，用半型逗號隔開)</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span>      <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span>          <span class="comment"># 網站語言 (台灣:zh-tw)</span></span><br><span class="line"><span class="attr">timezone:</span>             <span class="comment"># 時區(可留空以使用您電腦的時區)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="網址設定"><a href="#網址設定" class="headerlink" title="網址設定"></a>網址設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here.</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://UserName.github.io/</span>           <span class="comment"># UserName更改為自己的帳戶名</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>      <span class="comment"># 文章網址的格式(預設使用 年月日/文章名稱)/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                       <span class="comment"># permalink 中各區段的預設值</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>permalink 會依照設定值，在每次 generate 時重新產生網址，設定參數可參考<a href="https://hexo.io/zh-tw/docs/permalinks">官方文件</a>。我在命名檔名時，習慣使用日期 + 英文檔名(日期方便排序，不含空格的英文檔名較不會產生亂碼網址)，所以 permalink: 僅用 <code>:title</code> 參數 (最後的 <code>/</code> 要記得保留)。</li>
-<li><strong><font color=red>2021&#x2F;12&#x2F;27 更新: <a href="/posts/d8dab675/">使用 Hexo-abbrlink 產生永久連結</a></font></strong></li>
-</ul>
-<h2 id="目錄設定"><a href="#目錄設定" class="headerlink" title="目錄設定"></a>目錄設定</h2><p>原則上都保留不變，除非有自訂路徑的需求。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span>            <span class="comment"># 原始檔案資料夾，存放編輯的所有內容</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span>            <span class="comment"># 存放靜態檔案的資料夾(hexo g 後產生)</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span>                 <span class="comment"># 標籤資料夾</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span>         <span class="comment"># 彙整資料夾(deploy後產生)</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span>      <span class="comment"># 分類資料夾</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>tags</code> 和 <code>categories</code> 資料夾預設是不存在的，有需要要另外新增資料夾。</li>
-</ul>
-<h2 id="擴充套件設定"><a href="#擴充套件設定" class="headerlink" title="擴充套件設定"></a>擴充套件設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/       # 提供各種套件，可以依自己需求安裝</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/         # 提供各種主題，可以依自己需求安裝</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span>                           <span class="comment"># 填寫主題名稱</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>本部落格選用 Next 主題(要把 landscape 改為 Next)，後續會另開一篇變更主題說明文。</li>
-</ul>
-<h2 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Hexo 可同時部署到不同地方，相關設定參考<a href="https://hexo.io/zh-tw/docs/one-command-deployment">官方部署說明</a>。  </li>
-<li>部署到 Github 方式已在用前篇 Hexo + Github Pages 建立部落格 中說明，這邊不另外贅述。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -453,103 +323,133 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo NexT 主題變更 &amp; 設定</title>
-    <url>/posts/ebe0f18a/</url>
-    <content><![CDATA[<p>基本設定都做好了，文章也成功發佈了，接下來該找個美美的主題幫部落格換個新衣服。我最後找了看起來簡約大方的 NexT 主題，持續都有在作版本更新，開源資源也很多，看到各種大神把基本款改成高級訂製款，除了框架根本看不出原樣，覺得超厲害!  </p>
+    <title>用 Hexo + Github Pages 建立部落格</title>
+    <url>/posts/4b9ba027/</url>
+    <content><![CDATA[<p>在建置部落格前猶豫了很久，最終還是決定用 Hexo + Github Pages 當作平台。歷時兩天，終於解決各種莫名其妙的問題，讓它變成心目中的樣子!</p>
 <span id="more"></span>
-<p>這篇只是把當初的建置過程記錄下來，萬一忘記或發生什麼問題，至少還知道原本是怎麼作出來的。如果有從頭開始的人，參考這篇照著做應該可以略過不少我踩過的坑。  </p>
-<p>項目有點多(原則上是照著 NexT 的 <code>_config.yml</code> 檔順序寫的)，如果只是想找特定功能設定的，可以直接從左側目錄欄或 <code>Ctrl+F</code> 跳到需要的位置就好。如果在這篇裡沒有找到，那就要等我陸續整理出來再更新新文章了(前提是我有用到的功能才有辦法!)  </p>
-<h2 id="NexT-主題選擇"><a href="#NexT-主題選擇" class="headerlink" title="NexT 主題選擇"></a>NexT 主題選擇</h2><p>現在網路上可以找到兩種版本的 NexT 主題，分別是 <a href="https://github.com/next-theme/hexo-theme-next">next-theme</a> 和 <a href="https://github.com/theme-next/hexo-theme-next">theme-next</a> 提供的。爬了討論串後發現，因為 theme-next 團隊的 owner 始终拒绝向其它團隊成員提供足夠的權限，且 owner 本人自 2019 年 10 月起已長期不在線，導致其他團隊成員無法管理倉庫，所以其中一個主要貢獻者只好搬家，並用 next-theme 繼續提供更新版本。</p>
-<ul>
-<li><a href="https://theme-next.js.org/">next-theme 官方網站</a></li>
-</ul>
-<blockquote>
-<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
-</blockquote>
-<h2 id="主題安裝"><a href="#主題安裝" class="headerlink" title="主題安裝"></a>主題安裝</h2><h3 id="npm-安裝-推薦"><a href="#npm-安裝-推薦" class="headerlink" title="npm 安裝(推薦)"></a>npm 安裝(推薦)</h3><p><strong>主題資料夾位置: <code>root\node_modules\hexo-theme-next</code></strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line">npm install hexo-theme-next    <span class="comment"># 默認最新版本</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="git-安裝"><a href="#git-安裝" class="headerlink" title="git 安裝"></a>git 安裝</h3><p><strong>主題資料夾位置: <code>root\themes\next</code></strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 進入根目錄</span></span><br><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line"></span><br><span class="line"><span class="comment"># 從網址複製檔案到 themes 裡的 next 資料夾裡(沒有的話會自動新建)</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
-<p><img src="/../../Blog-image/posts/2021-12-26_001.webp" alt="複製倉庫網址20211226-001">  </p>
-<h2 id="主題套用"><a href="#主題套用" class="headerlink" title="主題套用"></a>主題套用</h2><p>修改 <code>root\_config.yml</code> 裡的主題設定。  </p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span>     <span class="comment"># 預設值為 landscape</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="個人化調整"><a href="#個人化調整" class="headerlink" title="個人化調整"></a>個人化調整</h2><h3 id="config-next-yml-設定"><a href="#config-next-yml-設定" class="headerlink" title="_config.next.yml 設定"></a>_config.next.yml 設定</h3><p>根據 next-theme 官方說明(<a href="https://github.com/next-theme/hexo-theme-next/issues/4">【必讀】更新說明及常見問題</a>)建議:<br>為了避免更新出現衝突，使用 Hexo 官方支持的 <code>root\_config.next.yml</code> 方式做主題個人化設定。</p>
-<ol>
-<li>確保使用 Hexo 5.0 以上的版本。</li>
-<li>複製 <code>主題資料夾\_config.yml</code> 檔案重新命名並移到根目錄 <code>root\_config.next.yml</code> 。<br/></li>
-</ol>
-<h3 id="樣式選擇"><a href="#樣式選擇" class="headerlink" title="樣式選擇"></a>樣式選擇</h3><p>四選一，把想要的樣式註解取消，可以存檔後用 <code>hexo s</code> 看看差別再決定。我的 Blog 是用 Gemini 。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="網站圖示變更"><a href="#網站圖示變更" class="headerlink" title="網站圖示變更"></a>網站圖示變更</h3><p>圖片路徑: <code>主題資料夾\source\images</code> ，變更檔名即可。  </p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16-next.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32-next.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/logo.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /manifest.json</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="版權聲明"><a href="#版權聲明" class="headerlink" title="版權聲明"></a>版權聲明</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Creative Commons 4.0 International License.</span></span><br><span class="line"><span class="comment"># See: https://creativecommons.org/about/cclicenses/</span></span><br><span class="line"><span class="attr">creative_commons:</span></span><br><span class="line">  <span class="comment"># Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero</span></span><br><span class="line">  <span class="attr">license:</span> <span class="string">by-nc-sa</span></span><br><span class="line">  <span class="comment"># Available values: big | small</span></span><br><span class="line">  <span class="attr">size:</span> <span class="string">small</span>          <span class="comment"># 圖示大小</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">false</span>       <span class="comment"># 在 sidebar 顯示</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">true</span>           <span class="comment"># 在文章最下方顯示</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="menu-選單設定"><a href="#menu-選單設定" class="headerlink" title="menu 選單設定"></a>menu 選單設定</h3><p>把想要的樣式註解取消。<br>NexT 有支援 font awesome ，所以可以找喜歡的 icon 直接做替換。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">menu</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span>                        <span class="comment"># 首頁</span></span><br><span class="line">  <span class="comment">#about: /about/ || fa fa-user                # 關於</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span>                   <span class="comment"># 標籤</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span>         <span class="comment"># 分類</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span>        <span class="comment"># 歸檔</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar      # 時間表</span></span><br><span class="line">  <span class="attr">sitemap:</span> <span class="string">/sitemap.xml</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-sitemap</span>       <span class="comment"># 網站地圖(SEO)</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat        # 公益404</span></span><br><span class="line"></span><br><span class="line"><span class="attr">menu_settings:</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">true</span>             <span class="comment"># 顯示 menu 圖示</span></span><br><span class="line">  <span class="attr">badges:</span> <span class="literal">false</span>           <span class="comment"># 顯示項目內數量</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="側欄設定"><a href="#側欄設定" class="headerlink" title="側欄設定"></a>側欄設定</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">sidebar:</span></span><br><span class="line">  <span class="comment"># Sidebar Position.</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">left</span>       <span class="comment"># 設定左邊或右邊顯示</span></span><br><span class="line">  <span class="comment">#position: right</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="頭像設定"><a href="#頭像設定" class="headerlink" title="頭像設定"></a>頭像設定</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">avatar:</span>                             <span class="comment"># sidebar 內頭像設定</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/avatar.jpg</span>           <span class="comment"># 預設路徑: `主題資料夾\source\images` (可改貼圖片連結)</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span>                     <span class="comment"># true (圓形)/ false(方形)</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">false</span>                    <span class="comment"># 滑鼠點擊旋轉動畫</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="社群設定"><a href="#社群設定" class="headerlink" title="社群設定"></a>社群設定</h3><ol>
-<li>把想要顯示的項目註解取消。  </li>
-<li>NexT 有支援 font awesome ，所以可以找喜歡的 icon 直接做替換。  </li>
-<li>連結記得改成自己的連結網址。  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/yourname</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-github</span></span><br><span class="line">  <span class="attr">E-Mail:</span> <span class="string">mailto:yourname@gmail.com</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-envelope</span></span><br><span class="line">  <span class="comment">#Weibo: https://weibo.com/yourname || fab fa-weibo</span></span><br><span class="line">  <span class="comment"># 以下省略......</span></span><br><span class="line"></span><br><span class="line"><span class="attr">social_icons:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>              <span class="comment"># 社群連結圖示</span></span><br><span class="line">  <span class="attr">icons_only:</span> <span class="literal">true</span>          <span class="comment"># 只顯示圖示不顯示名稱</span></span><br><span class="line">  <span class="attr">transition:</span> <span class="literal">false</span>         <span class="comment"># 滑動到社群鏈結時的有轉場效果</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="側欄目錄設定-閱讀文章時"><a href="#側欄目錄設定-閱讀文章時" class="headerlink" title="側欄目錄設定(閱讀文章時)"></a>側欄目錄設定(閱讀文章時)</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">toc:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>         <span class="comment"># 在側欄自動生成並顯示文章目錄(依標題層級)</span></span><br><span class="line">  <span class="attr">number:</span> <span class="literal">true</span>         <span class="comment"># 幫文章目錄自動編號</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">false</span>          <span class="comment"># 標題超出欄寬整行換行</span></span><br><span class="line">  <span class="attr">expand_all:</span> <span class="literal">True</span>     <span class="comment"># 展開所有目錄層級 (false 僅展開當前位置目錄)</span></span><br><span class="line">  <span class="attr">max_depth:</span> <span class="number">6</span>         <span class="comment"># 最大目錄層級數</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="頁腳設定"><a href="#頁腳設定" class="headerlink" title="頁腳設定"></a>頁腳設定</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">footer:</span></span><br><span class="line">  <span class="attr">since:</span> <span class="number">2021</span>              <span class="comment"># 指定網站開始年，若沒指定則顯示當下年度</span></span><br><span class="line">  <span class="attr">icon:</span>                    <span class="comment"># 年度和版權資訊中間的 icon</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">fa</span> <span class="string">fa-heart</span>      <span class="comment"># Font Awesome 的 icon 代號</span></span><br><span class="line">    <span class="attr">animated:</span> <span class="literal">false</span>        <span class="comment"># 開啟圖示動畫</span></span><br><span class="line">    <span class="attr">color:</span> <span class="string">&quot;#ff0000&quot;</span>       <span class="comment"># 用16進位色碼改變 icon 顏色</span></span><br><span class="line">  <span class="attr">copyright:</span>               <span class="comment"># 若沒指定則套用 Hexo `_config.yml` 的作者名</span></span><br><span class="line">  <span class="attr">powered:</span> <span class="literal">False</span>           <span class="comment"># 顯示 Powered by Hexo &amp; NexT</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="摘要及-Read-More-功能"><a href="#摘要及-Read-More-功能" class="headerlink" title="摘要及 Read More 功能"></a>摘要及 Read More 功能</h3><p>首頁預設顯示文章全文，如果希望每篇文章像瀏覽卡片一樣僅提供部分摘要，點擊文章標題再打開全文，官方提供兩種方式( <code>&lt;!-- more --&gt;</code> 或 <code>excerpt_description</code>)，這裡僅說明官方推薦的方式:  </p>
-<ul>
-<li>在文章中使用 <code>&lt;!-- more --&gt;</code> 手動進行截斷，首頁預覽只會顯示到 <code>&lt;!-- more --&gt;</code> 前的文字。<br><img src="/../../Blog-image/posts/2021-12-26_002.webp" alt="read more20211226-002">  </li>
-<li>完成以上設定後，首頁只看得到摘要，點擊文章標題進入內文。如果希望新增”閱讀全文”按鈕，則修改 <code>root\_config.next.yml</code> 設定值  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">read_more_btn:</span> <span class="literal">true</span>             <span class="comment"># 開啟&quot;閱讀全文&quot;按鈕</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>點擊”文章標題”和點擊”閱讀全文”的差異:<br>文章標題: 從頁首標題開始顯示文章頁面。<br>點擊閱讀全文: 跳至 <code>&lt;!-- more --&gt;</code> 後段落顯示文章頁面。</p>
+<h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="為什麼選擇-Github-Pages"><a href="#為什麼選擇-Github-Pages" class="headerlink" title="為什麼選擇 Github Pages ?"></a>為什麼選擇 Github Pages ?</h3><p><strong>1. 免費</strong><br>  Github Pages 是 Github 提供的免費靜態網頁空間，提供一組 Github帳號 <code>.github.io</code> 子網域。雖然有容量跟流量上的限制，但以一個剛起步的部落格來說，現階段不會有超出的問題。既然有免費的平台那就用吧!  </p>
+<p><strong>2. 能夠使用 Git 部署並進行版本控制</strong><br>  看了各個學習寫程式分享，得知「如何使用 Git 進行版本控制」是很重要的。雖然現階段身為程式小白的我沒有太多的概念，也完全沒有接觸過，但在查詢 Hexo 資訊時得知，Hexo 可以藉由 Git 部署到 Github 上。希望能在日常使用中學習並熟悉 Git 。  </p>
+<p><strong>3. Github 會記錄每日 commit 次數</strong><br>  Github 的個人首頁會呈現一整年的 commit 紀錄畫面。每天一格，每 commit 一次，當天的格子就會從灰色漸漸往深綠色變化。希望利用自己的收集強迫症，為了盡可能填滿格子，督促自己多多更新部落格。  </p>
+<h3 id="Github-Pages-有什麼限制"><a href="#Github-Pages-有什麼限制" class="headerlink" title="Github Pages 有什麼限制?"></a>Github Pages 有什麼限制?</h3><ol>
+<li>只能存放靜態網頁。</li>
+<li>1GB 空間容量。</li>
+<li>100GB 月流量。</li>
+<li>1 小時內只能提交 10 次更新版本。<blockquote>
+<p>參考資料: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages">Github 說明文件</a></p>
 </blockquote>
 </li>
+</ol>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="為什麼選擇-Hexo"><a href="#為什麼選擇-Hexo" class="headerlink" title="為什麼選擇 Hexo ?"></a>為什麼選擇 Hexo ?</h3><p><strong>1. Hexo 支援強大:</strong><br>  Hexo 是台灣人做的(<a href="https://zespia.tw/blog/2012/10/11/hexo-debut/">起源在這裡</a>)，官方中文支援蠻完整的。另外，可能也是因為中文支援較完整，有很多中文圈的前輩做了很多主題可以套用，當遇到相關問題時，Google 到的解決方案也很多。  </p>
+<p><strong>2. 使用 Node.js(JavaScript) 開發:</strong><br>  在正式開始前，找了幾個熱門靜態檔案產生器比較，最後在 Hexo 跟 Hugo 之間做選擇。雖然 Hugo 比較快，Github上的星星數也比較多，但基於 Hugo 是用 Go 語言寫的，初學的我還是應該先專心一門語言較好，因此捨棄 Hugo 選擇使用 JavaScript 的 Hexo。既然我現在在學JavaScript，現階段可以研究一下它的寫法，之後說不定哪天我可以自己把它改得更符合自己需求。目前在做一些個人化設定時也發現，因為可以看得懂一點點結構，修改時很有幫助。  </p>
+<p><strong>3. 支援 Markdown :</strong><br>Markdown 用來撰寫文章很方便，因為語法簡單，可以更專心在文字內容的編輯上，不用過分關注排版問題。在加上之前跟鳥友一起在HackMD建了個鳥寶寶成長紀錄(<a href="https://hackmd.io/p5O2bt2QQrC1HH46cVfs0A">有興趣可以看看</a>)，對 Markdown 也算比較熟悉了。</p>
+<p><strong>4. 個人化設定自由度高 :</strong><br>主題非常多元，版面也可依自己需求做CSS修改。(剛學到的 <code>padding</code> 、 <code>letter-spacing</code> 、 <code>border-radius</code> 等也都依自己喜歡的樣子用上了!) 另外，也可以找到很多其他插件資源，讓自己的部落格更有個人特色。<br>  <br/></p>
+<h2 id="開始建置部落格"><a href="#開始建置部落格" class="headerlink" title="開始建置部落格"></a>開始建置部落格</h2><blockquote>
+<p>本文撰寫時在 Windows 10 環境下安裝。  </p>
+</blockquote>
+<h3 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h3><p><strong>1. 安裝 Node.js</strong>  </p>
+<ul>
+<li>建置過程中需要用 NPM 安裝套件，所以要先下載 Node.js (<a href="https://nodejs.org/en/">官網下載</a>)。</li>
 </ul>
-<h3 id="文章的-Front-matter-在首頁的顯示設定"><a href="#文章的-Front-matter-在首頁的顯示設定" class="headerlink" title="文章的 Front-matter 在首頁的顯示設定"></a>文章的 Front-matter 在首頁的顯示設定</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_meta:</span></span><br><span class="line">  <span class="attr">item_text:</span> <span class="literal">false</span>        <span class="comment"># 顯示項目文字</span></span><br><span class="line">  <span class="attr">created_at:</span> <span class="literal">true</span>        <span class="comment"># 顯示發佈日期</span></span><br><span class="line">  <span class="attr">updated_at:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span>          <span class="comment"># 開啟顯示更新日期功能</span></span><br><span class="line">    <span class="attr">another_day:</span> <span class="literal">true</span>     <span class="comment"># 僅在發佈日和更新日不同時顯示更新日期</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="literal">true</span>        <span class="comment"># 顯示文章分類</span></span><br></pre></td></tr></table></figure>
-<h3 id="添加文章字數與所需閱讀時間"><a href="#添加文章字數與所需閱讀時間" class="headerlink" title="添加文章字數與所需閱讀時間"></a>添加文章字數與所需閱讀時間</h3><p>試過 <code>hexo-symbols-count-time</code> 和 <code>hexo-wordcount</code> 兩樣插件，但是有幾篇文章不明原因沒辦法計算字數。原本打算放棄這個功能了，幸好在 next-theme 的 Repository 裡找到他們提供的插件 <a href="https://github.com/next-theme/hexo-word-counter">hexo-word-counter</a> ，測試過後確定沒有問題。  </p>
-<p>安裝套件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-word-counter</span><br><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-<p>修改 <code>root\_config.yml</code> 設定值</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span>                 <span class="comment"># 文章字數統計顯示</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span>                    <span class="comment"># 文章閱讀時間顯示</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span>           <span class="comment"># 網頁底部網站總字數統計顯示</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span>              <span class="comment"># 網頁底部網站總閱讀時間顯示</span></span><br><span class="line">  <span class="attr">exclude_codeblock:</span> <span class="literal">false</span>      <span class="comment"># 字數統計是否排除程式碼</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">4</span>                        <span class="comment"># 平均文字長度，中文為 2, 英文為 5, 預設為 4</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">275</span>                      <span class="comment"># 一分鐘閱讀字數</span></span><br><span class="line">  <span class="attr">suffix:</span> <span class="string">&quot;mins.&quot;</span></span><br></pre></td></tr></table></figure>
-<p>修改 <code>root\_config.next.yml</code> 設定值</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">false</span>         <span class="comment"># true 在發布日期下一行/ false 和發布日期同一行</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">false</span>        <span class="comment"># 網頁底部顯示項目文字</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="文章底部標籤圖示設定"><a href="#文章底部標籤圖示設定" class="headerlink" title="文章底部標籤圖示設定"></a>文章底部標籤圖示設定</h3><p>預設文章底部顯示的標籤前綴會用 <code>#</code> ，若要改用圖示 <i class="fa fa-tags"></i> 取代:  </p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tag_icon:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="文章底部上一篇-x2F-下一篇連結"><a href="#文章底部上一篇-x2F-下一篇連結" class="headerlink" title="文章底部上一篇&#x2F;下一篇連結"></a>文章底部上一篇&#x2F;下一篇連結</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Available values: left(上一篇在左邊) | right(上一篇在右邊) | false(關閉功能)</span></span><br><span class="line"><span class="attr">post_navigation:</span> <span class="string">left</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="回到頂部功能"><a href="#回到頂部功能" class="headerlink" title="回到頂部功能"></a>回到頂部功能</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">back2top:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>            <span class="comment"># 功能開啟</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">true</span>           <span class="comment"># true 在側欄底部顯示 / false 在頁面右下角顯示</span></span><br><span class="line">  <span class="attr">scrollpercent:</span> <span class="literal">true</span>     <span class="comment"># 顯示閱讀進度百分比</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="閱讀進度條"><a href="#閱讀進度條" class="headerlink" title="閱讀進度條"></a>閱讀進度條</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">reading_progress:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span>              <span class="comment"># 開啟功能</span></span><br><span class="line">  <span class="attr">start_at:</span> <span class="string">left</span>             <span class="comment"># left 由左往右 / right 由右往左</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">top</span>              <span class="comment"># 進度條在瀏覽器頁面的位置: top / bottom</span></span><br><span class="line">  <span class="attr">reversed:</span> <span class="literal">false</span>            <span class="comment"># true 顯示剩餘進度 / false 顯示已閱讀進度</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&quot;#37c6c0&quot;</span>           <span class="comment"># 進度條顏色</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">3px</span>                <span class="comment"># 進度條粗細</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Github-右上角標"><a href="#Github-右上角標" class="headerlink" title="Github 右上角標"></a>Github 右上角標</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">github_banner:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>                                <span class="comment"># 開啟功能</span></span><br><span class="line">  <span class="attr">permalink:</span> <span class="string">https://github.com/UserName</span>      <span class="comment"># Github 網址</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">Follow</span> <span class="string">me</span> <span class="string">on</span> <span class="string">GitHub</span>                  <span class="comment"># 滑鼠顯示文字</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="站內搜索功能"><a href="#站內搜索功能" class="headerlink" title="站內搜索功能"></a>站內搜索功能</h3><p>安裝套件  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
-<p>修改 <code>root\_config.next.yml</code> 設定值  </p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-<p>新增 <code>root\_config.yml</code> 設定值  </p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># https://github.com/next-theme/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">all</span>         <span class="comment"># 搜尋範圍。可選 post (Default) / page / all</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span>      <span class="comment"># true 全文搜索 / false 在標題及 meta info 裡搜索</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br></pre></td></tr></table></figure>
-<br/>
-
-
-<p>NexT 主題的基本設定就到這裡啦~ 可以自定義設定的地方太多了，這一篇筆記寫了三天才結束!! 還有一些功能還沒寫到，像是評論功能、閱讀字數&#x2F;時間、閱讀人數…等，預計要另外再開幾篇才能寫完。<br>雖然初期建置摸索真的花了很多時間，但是看到功能一個一個增加，實在是很有成就感啊!!</p>
+<p><strong>2. 安裝 Git</strong>  </p>
+<ul>
+<li><p>之後會使用 Git 作版本控制並將 Hexo 部署或備份到 Github 上，所以要先安裝 Git (<a href="https://git-scm.com/downloads">官網下載</a>)。  </p>
+</li>
+<li><p>開始初次設定 Git : 設定使用者名稱及電子郵件， Git 的提交會使用這些資訊。  </p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引號內填入使用者名稱</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line"><span class="comment"># 引號內填入使用者email</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完成後可用 <code>git config --global --list</code> 檢查是否有誤，或是到 <code>C:\Users\yourUserName\.gitconfig</code> 確認並修正。</p>
+</li>
+</ul>
+<p><strong>3. 新建Github Repository</strong>  </p>
+<ul>
+<li>開啟 Github 並點選 New Repository</li>
+<li>Repository 名稱為 <code>用戶名.github.io</code><br>  <img src="/../../Blog-image/posts/2021-12-21_001.webp" alt="20211221-001">    <br/></li>
+</ul>
+<h3 id="本地端安裝"><a href="#本地端安裝" class="headerlink" title="本地端安裝"></a>本地端安裝</h3><p><strong>1. 安裝 Hexo</strong>  </p>
+<ul>
+<li>使用 <code>npm install -g hexo-cli</code> 安裝 Hexo 。  </li>
+<li>安裝成功後，輸入 <code>hexo version</code> 指令可查看安裝版本。</li>
+</ul>
+<p><strong>2. Blog 存放資料夾初始化</strong></p>
+<ul>
+<li>開啟命令提示元(CMD) &gt; 前往想存放 Blog 檔案的本地端資料夾。 (ex. 我要在 D 槽新建 Blog 資料夾存放，所以先輸入 <code>D:</code> 讓當前位置移到 D 槽)  </li>
+<li>初始化資料夾(必須是空資料夾，以下方法二選一)  <ul>
+<li>方法一(當前位置 D 槽) –在 D 槽新建 Blog 資料夾並初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init Blog</span><br></pre></td></tr></table></figure></li>
+<li>方法二(已自行新建資料夾，當前位置 D:\Blog) –將 Blog 資料夾初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>安裝相關套件  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>3. 部署設定</strong></p>
+<ul>
+<li>安裝部署用套件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li>修改部署設定 (檔案 <code>根目錄\_config.yml</code> 最下方 # Deployment)  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/用戶名/用戶名.github.io.git</span>  <span class="comment"># Repository 網址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">分支名稱(可用預設</span> <span class="string">main</span> <span class="string">，或自訂如</span> <span class="string">gh-pages)</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">&quot;填入commit訊息&quot;</span>  <span class="comment"># 本行不用可刪</span></span><br></pre></td></tr></table></figure>
+<br/></li>
+</ul>
+<h3 id="部署到Github-常用指令"><a href="#部署到Github-常用指令" class="headerlink" title="部署到Github (常用指令)"></a>部署到Github (常用指令)</h3><p><strong>1. 本地端預覽</strong><br>使用時機: 當在本地端做完修改後，如果希望看到及時修改結果。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server                <span class="comment"># 開啟本地端預覽(標準用法)</span></span><br><span class="line">hexo s                     <span class="comment"># 開啟本地端預覽(簡短用法)</span></span><br><span class="line">http://localhost:4000      <span class="comment"># 貼入網址列即可預覽</span></span><br><span class="line">Ctrl + C                   <span class="comment"># 結束本地端預覽</span></span><br></pre></td></tr></table></figure>
+<p><strong>2. 產生靜態檔案</strong><br>使用時機: 編寫完成後，產生要部署的靜態檔案(會產生 <code>根目錄\public</code> 資料夾放入要部署的檔案)。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate             <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo g                    <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
+<p><strong>3. 部署</strong><br>使用時機: 編寫完成後，部署到 Github ( <code>根目錄\public</code> 裡的檔案會被上傳到設定好的 Repository)。部署完成就可以在 <code>github.io</code> 看到自己的 Blog 了!  </p>
+<blockquote>
+<p><font color=#FF6600>Github有時候部署後要等10~20分鐘畫面才會更新</font></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy                  <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo d                       <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br><span class="line">https://帳戶名.github.io/     <span class="comment"># 個人部落格網址</span></span><br></pre></td></tr></table></figure>
+<p><strong>4. 清除快取 &amp; 靜態檔案</strong><br>使用時機: 為了避免出錯，建議在每次 deploy 前，都先清除先前的資料再重新產生靜態檔案(清除快取檔案 <code>db.json</code> 和已產生的靜態檔案 <code>根目錄\public</code>)。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean     <span class="comment"># 清除快取 &amp; 靜態檔案(標準用法)</span></span><br><span class="line">hexo cl        <span class="comment"># 清除快取 &amp; 靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
       <tags>
+        <tag>Blog</tag>
         <tag>Hexo</tag>
-        <tag>NexT</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 基本設定</title>
+    <url>/posts/a970120e/</url>
+    <content><![CDATA[<p>基本上經過上一篇的操作，在 <code>hexo s</code> 後應該已經可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 看到預設的 Hello World 畫面了，但要讓 Blog 正式啟動前，我們還要先做一些個人化設定。  </p>
+<span id="more"></span>
+
+<blockquote>
+<p>本文撰寫時的版本如下(可用 <code>hexo version</code> 確認)，不同版本的預設配置檔可能會有差異:<br>hexo: 6.0.0<br>hexo-cli: 4.3.0  </p>
+</blockquote>
+<ul>
+<li>基本配置文件位置在 <code>root\_config.yml</code>，<font color=#FF6600>冒號後面都必需保留半型空格一格</font>。  </li>
+<li>僅列出通常會修改或我已經修改的部分，其他請參考<a href="https://hexo.io/zh-tw/docs/configuration">官方網站</a>說明。</li>
+</ul>
+<h2 id="網站設定"><a href="#網站設定" class="headerlink" title="網站設定"></a>網站設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span>           <span class="comment"># 網站標題</span></span><br><span class="line"><span class="attr">subtitle:</span>             <span class="comment"># 網站副標題</span></span><br><span class="line"><span class="attr">description:</span>          <span class="comment"># 網站描述</span></span><br><span class="line"><span class="attr">keywords:</span>             <span class="comment"># 網站關鍵字(支援多個關鍵詞，用半型逗號隔開)</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span>      <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span>          <span class="comment"># 網站語言 (台灣:zh-tw)</span></span><br><span class="line"><span class="attr">timezone:</span>             <span class="comment"># 時區(可留空以使用您電腦的時區)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="網址設定"><a href="#網址設定" class="headerlink" title="網址設定"></a>網址設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here.</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://UserName.github.io/</span>           <span class="comment"># UserName更改為自己的帳戶名</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>      <span class="comment"># 文章網址的格式(預設使用 年月日/文章名稱)/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                       <span class="comment"># permalink 中各區段的預設值</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>permalink 會依照設定值，在每次 generate 時重新產生網址，設定參數可參考<a href="https://hexo.io/zh-tw/docs/permalinks">官方文件</a>。我在命名檔名時，習慣使用日期 + 英文檔名(日期方便排序，不含空格的英文檔名較不會產生亂碼網址)，所以 permalink: 僅用 <code>:title</code> 參數 (最後的 <code>/</code> 要記得保留)。</li>
+<li><strong><font color=red>2021&#x2F;12&#x2F;27 更新: <a href="/posts/d8dab675/">使用 Hexo-abbrlink 產生永久連結</a></font></strong></li>
+</ul>
+<h2 id="目錄設定"><a href="#目錄設定" class="headerlink" title="目錄設定"></a>目錄設定</h2><p>原則上都保留不變，除非有自訂路徑的需求。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span>            <span class="comment"># 原始檔案資料夾，存放編輯的所有內容</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span>            <span class="comment"># 存放靜態檔案的資料夾(hexo g 後產生)</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span>                 <span class="comment"># 標籤資料夾</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span>         <span class="comment"># 彙整資料夾(deploy後產生)</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span>      <span class="comment"># 分類資料夾</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>tags</code> 和 <code>categories</code> 資料夾預設是不存在的，有需要要另外新增資料夾。</li>
+</ul>
+<h2 id="擴充套件設定"><a href="#擴充套件設定" class="headerlink" title="擴充套件設定"></a>擴充套件設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/       # 提供各種套件，可以依自己需求安裝</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/         # 提供各種主題，可以依自己需求安裝</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span>                           <span class="comment"># 填寫主題名稱</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>本部落格選用 Next 主題(要把 landscape 改為 Next)，後續會另開一篇變更主題說明文。</li>
+</ul>
+<h2 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Hexo 可同時部署到不同地方，相關設定參考<a href="https://hexo.io/zh-tw/docs/one-command-deployment">官方部署說明</a>。  </li>
+<li>部署到 Github 方式已在用前篇 Hexo + Github Pages 建立部落格 中說明，這邊不另外贅述。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -626,47 +526,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用 Hexo-abbrlink 產生永久連結</title>
-    <url>/posts/d8dab675/</url>
-    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因為是在建置部落格的同時整理並撰寫 Hexo 筆記，內容的更動導致常常需要修改多篇文章的檔名，permalink 自動產生網址的設定也連帶造成了我一些困擾，所以想用 Hexo-abbrlink 來一勞永逸。  </p>
-<span id="more"></span>
-<p>我原本 permalink 的設定是直接從檔名產生網址。網路上的教學建議檔案用日期 + 英文標題命名，所以修改的同時也讓同一篇文章的網址不斷改動。  </p>
-<blockquote>
-<p>備註: 建議檔案用日期 + 英文標題命名原因  </p>
-<ol>
-<li>日期方便作檔案排序。  </li>
-<li>中文網址在台灣及大陸外的地區必須以編碼方式來呈現， URL 被轉碼後會變得很長(長得像亂碼)，這對 SEO 來說也較為不利。</li>
-</ol>
-</blockquote>
-<h2 id="使用-Hexo-abbrlink-的好處"><a href="#使用-Hexo-abbrlink-的好處" class="headerlink" title="使用 Hexo-abbrlink 的好處"></a>使用 Hexo-abbrlink 的好處</h2><p><strong>1. 網址固定，不再因修改檔名或日期變動</strong><br>Hexo-abbrlink 會依照文章標題產生永久連結，並保存在 Front-matter (檔案最上方以 — 分隔的區域)，之後即使更改檔名也不會再變動。<br><img src="/../../Blog-image/posts/2021-12-27_001.webp" alt="abbrlink存入Front-matter20211227-001"></p>
-<blockquote>
-<p>舊文章(已經部署)會在下一次 <code>hexo g</code> 時產生 abbrlink 。<br>新文章(還沒部署)會在 <code>hexo s</code> 時就產生 abbrlink 。  </p>
-</blockquote>
-<p><strong>2. 檔名可依自己方便取了</strong><br><del>再也不用想英文標題了!!</del>  </p>
-<p><strong>3. 降低因網址變動產生的404問題</strong><br>據說404錯誤會影響網站在SEO上的排名，讓其他人較不容易搜尋到自己的頁面。  </p>
-<h2 id="安裝-hexo-abbrlink"><a href="#安裝-hexo-abbrlink" class="headerlink" title="安裝 hexo-abbrlink"></a>安裝 hexo-abbrlink</h2><blockquote>
-<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
-</blockquote>
-<p><strong>1. 安裝套件</strong>  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<p><strong>2. 修改 <code>root\_config.yml</code> 文件</strong>  </p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>  <span class="comment"># support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>    <span class="comment"># support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>也可以自己修改 permalink 參數(把 post 刪掉或增減其他參數)</li>
-<li><code>alg</code> 是雜湊編碼產生方式， <code>rep</code> 是雜湊編碼表示方式(預設十進位)，兩種參數的搭配結果如下:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex    https://XXXX.com/posts/66c8/</span><br><span class="line">crc16 &amp; dec    https://XXXX.com/posts/65535/</span><br><span class="line">crc32 &amp; hex    https://XXXX.com/posts/8ddf18fb/</span><br><span class="line">crc32 &amp; dec    https://XXXX.com/posts/1690090958/</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
-<li><a href="https://github.com/rozbo/hexo-abbrlink">rozbo&#x2F;hexo-abbrlink README.md 文件</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo NexT 文末感謝閱讀提示</title>
     <url>/posts/670011ce/</url>
     <content><![CDATA[<p>又犯了”看到別人的部落格有，我也想試試看的”毛病 😅 找了很多網路教學，發現基本都會修改到 NexT 的原始檔案，這對後面的版本更新很不利，所以決定自己改改看!  </p>
@@ -723,10 +582,10 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>NexT</tag>
         <tag>Nunjucks</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
+        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
@@ -831,108 +690,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo 插件更新</title>
-    <url>/posts/d81b71f/</url>
-    <content><![CDATA[<p>會寫這篇文章主要是因為收到了 hexo-server 插件的更新通知。隨著部落格功能的擴充，我安裝的 Hexo 插件越來越多，每個插件都會做各自的版本更新(還不同時間點)。一個一個分別更新好麻煩，然後懶人如我找到了個 npm 包可以直接幫我確認最新版本，再全部一起更新，多棒啊~~  </p>
-<span id="more"></span>
-
-<blockquote>
-<p>本篇撰寫時 Hexo 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Hexo-server 版本: <strong>^2.0.0</strong> 升級到 <strong>^3.0.0</strong>  </p>
-</blockquote>
-<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>package.json 檔案， 定義專案所需要的各種模組，以及專案的配置資訊。<code>npm install</code> 命令根據這個配置檔案，自動下載所需的模組。打開 Hexo 專案根目錄的 package.json 檔案，就可以看到自己已經做了那些配置。  </p>
-<p>關於 package.json 的詳細介紹，可參考 <a href="https://iter01.com/467432.html">草履蟲的思考 發表在 IT 人的文章</a>。裡面對 npm 及 package.json 有比較詳細的介紹，這裡就不贅述。</p>
-<h2 id="用-npm-check-updates-更新插件"><a href="#用-npm-check-updates-更新插件" class="headerlink" title="用 npm-check-updates 更新插件"></a>用 npm-check-updates 更新插件</h2><p>在網路教學看到推薦用 <code>npm-check</code> 和 <code>npm-upgrade</code> 更新，但我實際安裝後都會報錯誤。後來我找到另外 npm 包，也是我這次更新 hexo-server 用的方式。  </p>
-<blockquote>
-<p><a href="https://github.com/raineorshine/npm-check-updates">npm-check-updates 官網</a><br><strong>npm-check-updates</strong> upgrades your package.json dependencies to the latest versions, ignoring specified versions.<br>看看這描述，多方便阿~</p>
-</blockquote>
-<p><strong>1. 使用方法非常簡單，只要先安裝 npm-check-updates</strong> </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g npm-check-updates    <span class="comment"># 安裝 npm-check-updates</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>2. 執行版本檢查&#x2F;更新指令</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ncu           <span class="comment"># 檢查是否需要更新(npm-check-updates 第一個字母縮寫，很好記!)</span></span><br><span class="line">ncu -u        <span class="comment"># 更新 package.json 資訊(upgrade縮寫)</span></span><br><span class="line">npm install   <span class="comment"># 安裝新版本</span></span><br></pre></td></tr></table></figure>
-<p>他會輸出一個版本檢查的畫面，並在最後一行指示下一步怎麼做。以我自己的畫面為例:  </p>
-<ul>
-<li>執行 <code>ncu</code> 會提供現有版本和最新版本的比較，並在最後一行用藍字提醒下一步要 更新 package.json。  </li>
-<li>執行 <code>ncu -u</code> 更新 package.json 資訊，並在最後一行用藍字提醒下一步要安裝新版本。  </li>
-<li>執行 <code>npm install</code> 後 再用 <code>ncu</code> 檢查一次，發現全部都是最新版本了。</li>
-</ul>
-<p><img src="/../../Blog-image/posts/2022-01-06_001.webp" alt="npm-check-updates20220106-001"></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>簡易 RPG 戰鬥：攻擊與補血</title>
-    <url>/posts/23e46325/</url>
-    <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期 2-1<br>題目的主要目的是 Javascript function 的練習。設計 function 的運作方式，利用 <code>if</code> + <code>return</code> 來控制需要提早跳出函式的情況，及使用 <code>this</code> 取到物件自身。  </p>
-<span id="more"></span>
-<p>題目原本僅要求專注在 <strong>攻擊(attack)</strong> 和 <strong>治療(cure)</strong> function 的撰寫，其餘流程已由原題目提供。但基於再次練習的目的，且題目其餘部分也是由學過的 while 迴圈組成，所以這次練習會從頭把整個流程寫出來。  </p>
-<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
-<li>function 函式  </li>
-<li>while 迴圈  </li>
-<li>if statement</li>
-</ol>
-<h2 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h2><ol>
-<li>預設戰士 <code>hp</code> 為 100、 <code>mp</code> 為 30；魔法師 <code>hp</code> 為 30、 <code>mp</code> 為 100。</li>
-<li>由魔法師先攻，若有任一方死掉，則遊戲結束，不能再有補血或攻擊動作；反之，若兩個角色都活著，則遊戲可一直正常執行，直到一方死掉。  </li>
-<li>攻擊者會呼叫 <code>attack()</code> 攻擊敵方，產生 1~100 點之間隨機點數的傷害。  </li>
-<li>若被攻擊方沒有死，則會呼叫 <code>cure()</code> 為自己補血，補血規格為：每次補血固定為 15 點 <code>hp</code> 、每補充 1 點 <code>hp</code> 需要 2 點 <code>mp</code>。補血結束後攻守交換。  </li>
-<li><code>cure()</code> 會傳入一個參數為 <code>hp</code> ，指的是想要補充的 <code>hp</code> 。  </li>
-<li>補血可以補超過原有的 <code>hp</code>，沒有 <code>hp</code> 最大值上限，只要有 <code>mp</code> 都可以補血。  <blockquote>
-<p>原題目是由戰士先攻，但為了方便觀察輸出結果，改由魔法師先攻。</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h2><h3 id="拆解流程"><a href="#拆解流程" class="headerlink" title="拆解流程"></a>拆解流程</h3><ol>
-<li>創建角色(含 <code>name</code> 、 <code>hp</code> 、 <code>mp</code> 、<code>attack()</code> 及 <code>cure()</code> )  </li>
-<li>戰鬥流程  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 戰士及魔法師都活著</span><br><span class="line">  則魔法師先攻、戰士師補血(補血是否執行由函式決定)</span><br><span class="line">  <span class="keyword">if</span> 戰士還活著</span><br><span class="line">    則戰士攻擊、魔法師補血(補血是否執行由函式決定)</span><br><span class="line">任一方死掉，則遊戲結束。</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="解題開始"><a href="#解題開始" class="headerlink" title="解題開始"></a>解題開始</h3><h4 id="function-設計"><a href="#function-設計" class="headerlink" title="function 設計"></a>function 設計</h4><ol>
-<li><p>攻擊動作 attack()  </p>
-<ul>
-<li>產生攻擊點數、輸出攻擊資訊  </li>
-<li>結果1(打死): 輸出”對手死亡”  </li>
-<li>結果2(沒打死): 輸出”對手活著”，且對手啟動cure()  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">attack</span> (enemy) &#123;</span><br><span class="line">  hpLose = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> hit <span class="subst">$&#123;enemy.name&#125;</span>, <span class="subst">$&#123;enemy.name&#125;</span> lose <span class="subst">$&#123;hpLose&#125;</span> HP.`</span>)</span><br><span class="line">  enemy.<span class="property">hp</span> -= hpLose</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (enemy.<span class="property">hp</span> &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is dead.\n`</span>)</span><br><span class="line">    <span class="keyword">return</span> enemy.<span class="property">hp</span> = <span class="number">0</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is still alive. (HP = <span class="subst">$&#123;enemy.hp&#125;</span>)`</span>)</span><br><span class="line">    enemy.<span class="title function_">cure</span>(<span class="number">15</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>治療動作 cure()  </p>
-<ul>
-<li>結果1(mp夠): 啟動治療並輸出治療結果  </li>
-<li>結果2(mp不夠): 不治療繼續  </li>
-<li>攻守互換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">cure</span> (hp) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">mp</span> &gt;= (hp * <span class="number">2</span>)) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">hp</span> += hp</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">mp</span> -= hp * <span class="number">2</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> recovered. (HP = <span class="subst">$&#123;<span class="variable language_">this</span>.hp&#125;</span>；MP = <span class="subst">$&#123;<span class="variable language_">this</span>.mp&#125;</span>)`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`MP isn&#x27;t enough! <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> cannot use cure.`</span>)</span><br><span class="line">  &#125;  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`\n-------------- Change Side ---------------`</span>)    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>角色建立 player()  </p>
-<ul>
-<li>需含名稱、HP、MP、攻擊動作、治療動作  </li>
-<li>練習不同的 function 使用方式(把 function 放進 function 裡)  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">player</span> (name, hp, mp) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">hp</span>: hp,</span><br><span class="line">    <span class="attr">mp</span>: mp,</span><br><span class="line">    <span class="attr">cure</span>: <span class="keyword">function</span> (<span class="params">hp</span>) &#123;......&#125;,</span><br><span class="line">    <span class="attr">attack</span>: <span class="keyword">function</span> (<span class="params">enemy</span>) &#123;......&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h4 id="解題流程"><a href="#解題流程" class="headerlink" title="解題流程"></a>解題流程</h4><ol>
-<li>創建並輸出角色資料  </li>
-<li>戰鬥開始(迴圈內容)  <ul>
-<li>如果兩人都活著，則戰鬥開始，魔術師先攻，回合結束  </li>
-<li>如果上回合戰士還活著，則攻守交換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// create players</span></span><br><span class="line"><span class="keyword">const</span> warrior = <span class="title function_">player</span>(<span class="string">&#x27;Warrior&#x27;</span>, <span class="number">100</span>, <span class="number">30</span>)</span><br><span class="line"><span class="keyword">const</span> magician = <span class="title function_">player</span>(<span class="string">&#x27;Magician&#x27;</span>, <span class="number">30</span> ,<span class="number">100</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(warrior)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(magician)</span><br><span class="line"></span><br><span class="line"><span class="comment">// start fight</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;-------------- Start Fight ---------------&#x27;</span>)</span><br><span class="line"><span class="keyword">while</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span> &amp;&amp; magician.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  magician.<span class="title function_">attack</span>(warrior)</span><br><span class="line">  <span class="keyword">if</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;    </span><br><span class="line">    warrior.<span class="title function_">attack</span>(magician)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;--------------- Game Over ----------------&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>在重寫的過程中又發現了一些自己不熟的地方……寫物件的時候，居然把 key 跟 value 中間的 <code>:</code> 寫成 <code>=</code> 了!  </p>
-<p>這題練習對我其實滿有效的，包含 <code>this</code> 跟 <code>return</code> 的使用時機，還有在函式裡呼叫函式的寫法(這部分讓我把 while 迴圈大改，在被攻擊的對象還活著的時候直接呼叫治療函式)。以自己覺得順暢的方式改完後，發現還是可以順利跑出相同結果，表示 function 目前的課程應該有一定程度的熟悉了!</p>
-]]></content>
-      <categories>
-        <category>JavaScript 解題</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>星座計算機</title>
     <url>/posts/2fe737b2/</url>
     <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期 2-1 工作坊<br>在學習 function 的過程中，對於如何設計和應用只有模糊的概念。星座計算機是個規模較小的應用題，可以在不長的流程中清楚看出 fuction 的運作時機和傳回值的流向。透過 function 的使用，可以讓主程式碼盡可能地保持較乾淨的狀態。  </p>
@@ -1025,24 +782,44 @@
       </tags>
   </entry>
   <entry>
-    <title>Alpha Camp 學期 2-1 結業心得</title>
-    <url>/posts/73279419/</url>
-    <content><![CDATA[<p><em><strong>學習的過程充滿挑戰，成功闖過之後就想做更多的挑戰!</strong></em><br>這大概就是我在這階段完課後，最明顯的感受。  </p>
+    <title>使用 Hexo-abbrlink 產生永久連結</title>
+    <url>/posts/d8dab675/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因為是在建置部落格的同時整理並撰寫 Hexo 筆記，內容的更動導致常常需要修改多篇文章的檔名，permalink 自動產生網址的設定也連帶造成了我一些困擾，所以想用 Hexo-abbrlink 來一勞永逸。  </p>
 <span id="more"></span>
-
-<p>有轉職意願後，我報名了學期一課程，想確認是否真的對程式語言有興趣。在將近一個月的課程接觸下，燃起了久違的學習熱情，隨後決定繼續向學期二邁進，將學期一碰到的 HTML&#x2F;CSS&#x2F;JavaScript 更精進。  </p>
-<p>相較於學期一類似「興趣班」的節奏，學期 2-1 第一週開始接觸了陣列、物件及函式，不管是單週課程量或難度對我來說都有明顯變高的感覺，作業也變得更加「靈活」。學習過程需要花更多的時間理解、作業要花更多的時間思考，本來以為難度提高會帶來挫折感，進而降低學習熱情，結果相反，我最直觀的感受是「我能做到的事變多了」。課程作業藉著把摸彩活動分成小步驟完成，最後組合再一起，這種「把大任務變小」的方式，我覺得有效降低了學習期間的挫折感。  </p>
-<p>再後來的 DOM 和事件驅動，就更多的提高我對 JavaScript 的學習興趣，藉由 DOM 就可以用 JavaScript 來操作寫好的 HTML，學到了讓使用者跟網頁互動的方法，。每一個章節作業做完的同時，開始會主動思考「可以加上什麼功能?」，有的成功、有的失敗，不知不覺坐在電腦前的時間越來越長😄  </p>
-<p>說到這裡可能有人發現了…… CSS 呢?<br>是的，我對 CSS 一直還沒燃起足夠的熱情，花著同樣的時間進行學習，但 CSS 就是很難記住，寫起來很不順手。這種期況一直持續到學到 DOM 和事件驅動才有改善。在加上新功能後，我新加的東西在網頁上動起來<del>覺得自己有點厲害</del>但長得醜醜的，這時候才開始想各種辦法改善它，積極地回去複習排版…等語法。  </p>
-<p>因為 JavaScript 想新加功能，所以積極複習、查資料、使用還沒學到的東西。因為覺得畫面醜醜的，所以重新面對興致不高的 CSS 。難怪人家都說，想進步最快的辦法就是去做各種 side project 。原本的期末作業「RGB 色碼轉 HEX」，看是要輸入 RGB 色碼或用 slider 調色只要二選一，最後輸出 HEX 結果即可。為了想讓三者同步，查了 <code>addEventListener</code> 的各種 event ，寫了整整一天，寫出來的當下很有成就感! <a href="https://ritachien.github.io/Convert-Between-RGB-HEX/">(動手試試看)</a>  </p>
-<p><img src="https://github.com/ritachien/Convert-Between-RGB-HEX/blob/main/demo.gif?raw=true"></p>
-<p>學習過程記錄大致就這樣了。<br>學期 2-1 找到了提高我學習動力的方法—-<strong>實作、實作、再實作</strong>。準備在春節期間開始挑戰 JS30，然後開始學期 2-2 的預讀。最後的最後，許個新年新希望: 我不要再當米蟲了阿~~~~~~ 今年一定要轉職成功阿~~~~~</p>
+<p>我原本 permalink 的設定是直接從檔名產生網址。網路上的教學建議檔案用日期 + 英文標題命名，所以修改的同時也讓同一篇文章的網址不斷改動。  </p>
+<blockquote>
+<p>備註: 建議檔案用日期 + 英文標題命名原因  </p>
+<ol>
+<li>日期方便作檔案排序。  </li>
+<li>中文網址在台灣及大陸外的地區必須以編碼方式來呈現， URL 被轉碼後會變得很長(長得像亂碼)，這對 SEO 來說也較為不利。</li>
+</ol>
+</blockquote>
+<h2 id="使用-Hexo-abbrlink-的好處"><a href="#使用-Hexo-abbrlink-的好處" class="headerlink" title="使用 Hexo-abbrlink 的好處"></a>使用 Hexo-abbrlink 的好處</h2><p><strong>1. 網址固定，不再因修改檔名或日期變動</strong><br>Hexo-abbrlink 會依照文章標題產生永久連結，並保存在 Front-matter (檔案最上方以 — 分隔的區域)，之後即使更改檔名也不會再變動。<br><img src="/../../Blog-image/posts/2021-12-27_001.webp" alt="abbrlink存入Front-matter20211227-001"></p>
+<blockquote>
+<p>舊文章(已經部署)會在下一次 <code>hexo g</code> 時產生 abbrlink 。<br>新文章(還沒部署)會在 <code>hexo s</code> 時就產生 abbrlink 。  </p>
+</blockquote>
+<p><strong>2. 檔名可依自己方便取了</strong><br><del>再也不用想英文標題了!!</del>  </p>
+<p><strong>3. 降低因網址變動產生的404問題</strong><br>據說404錯誤會影響網站在SEO上的排名，讓其他人較不容易搜尋到自己的頁面。  </p>
+<h2 id="安裝-hexo-abbrlink"><a href="#安裝-hexo-abbrlink" class="headerlink" title="安裝 hexo-abbrlink"></a>安裝 hexo-abbrlink</h2><blockquote>
+<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
+</blockquote>
+<p><strong>1. 安裝套件</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<p><strong>2. 修改 <code>root\_config.yml</code> 文件</strong>  </p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>  <span class="comment"># support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>    <span class="comment"># support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>也可以自己修改 permalink 參數(把 post 刪掉或增減其他參數)</li>
+<li><code>alg</code> 是雜湊編碼產生方式， <code>rep</code> 是雜湊編碼表示方式(預設十進位)，兩種參數的搭配結果如下:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex    https://XXXX.com/posts/66c8/</span><br><span class="line">crc16 &amp; dec    https://XXXX.com/posts/65535/</span><br><span class="line">crc32 &amp; hex    https://XXXX.com/posts/8ddf18fb/</span><br><span class="line">crc32 &amp; dec    https://XXXX.com/posts/1690090958/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://github.com/rozbo/hexo-abbrlink">rozbo&#x2F;hexo-abbrlink README.md 文件</a></li>
+</ul>
 ]]></content>
       <categories>
-        <category>學習紀錄</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>AlphaCamp</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1263,6 +1040,352 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo NexT 主題變更 &amp; 設定</title>
+    <url>/posts/ebe0f18a/</url>
+    <content><![CDATA[<p>基本設定都做好了，文章也成功發佈了，接下來該找個美美的主題幫部落格換個新衣服。我最後找了看起來簡約大方的 NexT 主題，持續都有在作版本更新，開源資源也很多，看到各種大神把基本款改成高級訂製款，除了框架根本看不出原樣，覺得超厲害!  </p>
+<span id="more"></span>
+<p>這篇只是把當初的建置過程記錄下來，萬一忘記或發生什麼問題，至少還知道原本是怎麼作出來的。如果有從頭開始的人，參考這篇照著做應該可以略過不少我踩過的坑。  </p>
+<p>項目有點多(原則上是照著 NexT 的 <code>_config.yml</code> 檔順序寫的)，如果只是想找特定功能設定的，可以直接從左側目錄欄或 <code>Ctrl+F</code> 跳到需要的位置就好。如果在這篇裡沒有找到，那就要等我陸續整理出來再更新新文章了(前提是我有用到的功能才有辦法!)  </p>
+<h2 id="NexT-主題選擇"><a href="#NexT-主題選擇" class="headerlink" title="NexT 主題選擇"></a>NexT 主題選擇</h2><p>現在網路上可以找到兩種版本的 NexT 主題，分別是 <a href="https://github.com/next-theme/hexo-theme-next">next-theme</a> 和 <a href="https://github.com/theme-next/hexo-theme-next">theme-next</a> 提供的。爬了討論串後發現，因為 theme-next 團隊的 owner 始终拒绝向其它團隊成員提供足夠的權限，且 owner 本人自 2019 年 10 月起已長期不在線，導致其他團隊成員無法管理倉庫，所以其中一個主要貢獻者只好搬家，並用 next-theme 繼續提供更新版本。</p>
+<ul>
+<li><a href="https://theme-next.js.org/">next-theme 官方網站</a></li>
+</ul>
+<blockquote>
+<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
+</blockquote>
+<h2 id="主題安裝"><a href="#主題安裝" class="headerlink" title="主題安裝"></a>主題安裝</h2><h3 id="npm-安裝-推薦"><a href="#npm-安裝-推薦" class="headerlink" title="npm 安裝(推薦)"></a>npm 安裝(推薦)</h3><p><strong>主題資料夾位置: <code>root\node_modules\hexo-theme-next</code></strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line">npm install hexo-theme-next    <span class="comment"># 默認最新版本</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="git-安裝"><a href="#git-安裝" class="headerlink" title="git 安裝"></a>git 安裝</h3><p><strong>主題資料夾位置: <code>root\themes\next</code></strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 進入根目錄</span></span><br><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line"></span><br><span class="line"><span class="comment"># 從網址複製檔案到 themes 裡的 next 資料夾裡(沒有的話會自動新建)</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
+<p><img src="/../../Blog-image/posts/2021-12-26_001.webp" alt="複製倉庫網址20211226-001">  </p>
+<h2 id="主題套用"><a href="#主題套用" class="headerlink" title="主題套用"></a>主題套用</h2><p>修改 <code>root\_config.yml</code> 裡的主題設定。  </p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span>     <span class="comment"># 預設值為 landscape</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="個人化調整"><a href="#個人化調整" class="headerlink" title="個人化調整"></a>個人化調整</h2><h3 id="config-next-yml-設定"><a href="#config-next-yml-設定" class="headerlink" title="_config.next.yml 設定"></a>_config.next.yml 設定</h3><p>根據 next-theme 官方說明(<a href="https://github.com/next-theme/hexo-theme-next/issues/4">【必讀】更新說明及常見問題</a>)建議:<br>為了避免更新出現衝突，使用 Hexo 官方支持的 <code>root\_config.next.yml</code> 方式做主題個人化設定。</p>
+<ol>
+<li>確保使用 Hexo 5.0 以上的版本。</li>
+<li>複製 <code>主題資料夾\_config.yml</code> 檔案重新命名並移到根目錄 <code>root\_config.next.yml</code> 。<br/></li>
+</ol>
+<h3 id="樣式選擇"><a href="#樣式選擇" class="headerlink" title="樣式選擇"></a>樣式選擇</h3><p>四選一，把想要的樣式註解取消，可以存檔後用 <code>hexo s</code> 看看差別再決定。我的 Blog 是用 Gemini 。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="網站圖示變更"><a href="#網站圖示變更" class="headerlink" title="網站圖示變更"></a>網站圖示變更</h3><p>圖片路徑: <code>主題資料夾\source\images</code> ，變更檔名即可。  </p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16-next.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32-next.png</span></span><br><span class="line">  <span class="attr">apple_touch_icon:</span> <span class="string">/images/apple-touch-icon-next.png</span></span><br><span class="line">  <span class="attr">safari_pinned_tab:</span> <span class="string">/images/logo.svg</span></span><br><span class="line">  <span class="comment">#android_manifest: /manifest.json</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="版權聲明"><a href="#版權聲明" class="headerlink" title="版權聲明"></a>版權聲明</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Creative Commons 4.0 International License.</span></span><br><span class="line"><span class="comment"># See: https://creativecommons.org/about/cclicenses/</span></span><br><span class="line"><span class="attr">creative_commons:</span></span><br><span class="line">  <span class="comment"># Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero</span></span><br><span class="line">  <span class="attr">license:</span> <span class="string">by-nc-sa</span></span><br><span class="line">  <span class="comment"># Available values: big | small</span></span><br><span class="line">  <span class="attr">size:</span> <span class="string">small</span>          <span class="comment"># 圖示大小</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">false</span>       <span class="comment"># 在 sidebar 顯示</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">true</span>           <span class="comment"># 在文章最下方顯示</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="menu-選單設定"><a href="#menu-選單設定" class="headerlink" title="menu 選單設定"></a>menu 選單設定</h3><p>把想要的樣式註解取消。<br>NexT 有支援 font awesome ，所以可以找喜歡的 icon 直接做替換。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">menu</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span>                        <span class="comment"># 首頁</span></span><br><span class="line">  <span class="comment">#about: /about/ || fa fa-user                # 關於</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span>                   <span class="comment"># 標籤</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span>         <span class="comment"># 分類</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span>        <span class="comment"># 歸檔</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar      # 時間表</span></span><br><span class="line">  <span class="attr">sitemap:</span> <span class="string">/sitemap.xml</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-sitemap</span>       <span class="comment"># 網站地圖(SEO)</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat        # 公益404</span></span><br><span class="line"></span><br><span class="line"><span class="attr">menu_settings:</span></span><br><span class="line">  <span class="attr">icons:</span> <span class="literal">true</span>             <span class="comment"># 顯示 menu 圖示</span></span><br><span class="line">  <span class="attr">badges:</span> <span class="literal">false</span>           <span class="comment"># 顯示項目內數量</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="側欄設定"><a href="#側欄設定" class="headerlink" title="側欄設定"></a>側欄設定</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">sidebar:</span></span><br><span class="line">  <span class="comment"># Sidebar Position.</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">left</span>       <span class="comment"># 設定左邊或右邊顯示</span></span><br><span class="line">  <span class="comment">#position: right</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="頭像設定"><a href="#頭像設定" class="headerlink" title="頭像設定"></a>頭像設定</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">avatar:</span>                             <span class="comment"># sidebar 內頭像設定</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/avatar.jpg</span>           <span class="comment"># 預設路徑: `主題資料夾\source\images` (可改貼圖片連結)</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span>                     <span class="comment"># true (圓形)/ false(方形)</span></span><br><span class="line">  <span class="attr">rotated:</span> <span class="literal">false</span>                    <span class="comment"># 滑鼠點擊旋轉動畫</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="社群設定"><a href="#社群設定" class="headerlink" title="社群設定"></a>社群設定</h3><ol>
+<li>把想要顯示的項目註解取消。  </li>
+<li>NexT 有支援 font awesome ，所以可以找喜歡的 icon 直接做替換。  </li>
+<li>連結記得改成自己的連結網址。  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/yourname</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-github</span></span><br><span class="line">  <span class="attr">E-Mail:</span> <span class="string">mailto:yourname@gmail.com</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-envelope</span></span><br><span class="line">  <span class="comment">#Weibo: https://weibo.com/yourname || fab fa-weibo</span></span><br><span class="line">  <span class="comment"># 以下省略......</span></span><br><span class="line"></span><br><span class="line"><span class="attr">social_icons:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>              <span class="comment"># 社群連結圖示</span></span><br><span class="line">  <span class="attr">icons_only:</span> <span class="literal">true</span>          <span class="comment"># 只顯示圖示不顯示名稱</span></span><br><span class="line">  <span class="attr">transition:</span> <span class="literal">false</span>         <span class="comment"># 滑動到社群鏈結時的有轉場效果</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="側欄目錄設定-閱讀文章時"><a href="#側欄目錄設定-閱讀文章時" class="headerlink" title="側欄目錄設定(閱讀文章時)"></a>側欄目錄設定(閱讀文章時)</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">toc:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>         <span class="comment"># 在側欄自動生成並顯示文章目錄(依標題層級)</span></span><br><span class="line">  <span class="attr">number:</span> <span class="literal">true</span>         <span class="comment"># 幫文章目錄自動編號</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">false</span>          <span class="comment"># 標題超出欄寬整行換行</span></span><br><span class="line">  <span class="attr">expand_all:</span> <span class="literal">True</span>     <span class="comment"># 展開所有目錄層級 (false 僅展開當前位置目錄)</span></span><br><span class="line">  <span class="attr">max_depth:</span> <span class="number">6</span>         <span class="comment"># 最大目錄層級數</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="頁腳設定"><a href="#頁腳設定" class="headerlink" title="頁腳設定"></a>頁腳設定</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">footer:</span></span><br><span class="line">  <span class="attr">since:</span> <span class="number">2021</span>              <span class="comment"># 指定網站開始年，若沒指定則顯示當下年度</span></span><br><span class="line">  <span class="attr">icon:</span>                    <span class="comment"># 年度和版權資訊中間的 icon</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">fa</span> <span class="string">fa-heart</span>      <span class="comment"># Font Awesome 的 icon 代號</span></span><br><span class="line">    <span class="attr">animated:</span> <span class="literal">false</span>        <span class="comment"># 開啟圖示動畫</span></span><br><span class="line">    <span class="attr">color:</span> <span class="string">&quot;#ff0000&quot;</span>       <span class="comment"># 用16進位色碼改變 icon 顏色</span></span><br><span class="line">  <span class="attr">copyright:</span>               <span class="comment"># 若沒指定則套用 Hexo `_config.yml` 的作者名</span></span><br><span class="line">  <span class="attr">powered:</span> <span class="literal">False</span>           <span class="comment"># 顯示 Powered by Hexo &amp; NexT</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="摘要及-Read-More-功能"><a href="#摘要及-Read-More-功能" class="headerlink" title="摘要及 Read More 功能"></a>摘要及 Read More 功能</h3><p>首頁預設顯示文章全文，如果希望每篇文章像瀏覽卡片一樣僅提供部分摘要，點擊文章標題再打開全文，官方提供兩種方式( <code>&lt;!-- more --&gt;</code> 或 <code>excerpt_description</code>)，這裡僅說明官方推薦的方式:  </p>
+<ul>
+<li>在文章中使用 <code>&lt;!-- more --&gt;</code> 手動進行截斷，首頁預覽只會顯示到 <code>&lt;!-- more --&gt;</code> 前的文字。<br><img src="/../../Blog-image/posts/2021-12-26_002.webp" alt="read more20211226-002">  </li>
+<li>完成以上設定後，首頁只看得到摘要，點擊文章標題進入內文。如果希望新增”閱讀全文”按鈕，則修改 <code>root\_config.next.yml</code> 設定值  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">read_more_btn:</span> <span class="literal">true</span>             <span class="comment"># 開啟&quot;閱讀全文&quot;按鈕</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>點擊”文章標題”和點擊”閱讀全文”的差異:<br>文章標題: 從頁首標題開始顯示文章頁面。<br>點擊閱讀全文: 跳至 <code>&lt;!-- more --&gt;</code> 後段落顯示文章頁面。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="文章的-Front-matter-在首頁的顯示設定"><a href="#文章的-Front-matter-在首頁的顯示設定" class="headerlink" title="文章的 Front-matter 在首頁的顯示設定"></a>文章的 Front-matter 在首頁的顯示設定</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_meta:</span></span><br><span class="line">  <span class="attr">item_text:</span> <span class="literal">false</span>        <span class="comment"># 顯示項目文字</span></span><br><span class="line">  <span class="attr">created_at:</span> <span class="literal">true</span>        <span class="comment"># 顯示發佈日期</span></span><br><span class="line">  <span class="attr">updated_at:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span>          <span class="comment"># 開啟顯示更新日期功能</span></span><br><span class="line">    <span class="attr">another_day:</span> <span class="literal">true</span>     <span class="comment"># 僅在發佈日和更新日不同時顯示更新日期</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="literal">true</span>        <span class="comment"># 顯示文章分類</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加文章字數與所需閱讀時間"><a href="#添加文章字數與所需閱讀時間" class="headerlink" title="添加文章字數與所需閱讀時間"></a>添加文章字數與所需閱讀時間</h3><p>試過 <code>hexo-symbols-count-time</code> 和 <code>hexo-wordcount</code> 兩樣插件，但是有幾篇文章不明原因沒辦法計算字數。原本打算放棄這個功能了，幸好在 next-theme 的 Repository 裡找到他們提供的插件 <a href="https://github.com/next-theme/hexo-word-counter">hexo-word-counter</a> ，測試過後確定沒有問題。  </p>
+<p>安裝套件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-word-counter</span><br><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<p>修改 <code>root\_config.yml</code> 設定值</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span>                 <span class="comment"># 文章字數統計顯示</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span>                    <span class="comment"># 文章閱讀時間顯示</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span>           <span class="comment"># 網頁底部網站總字數統計顯示</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span>              <span class="comment"># 網頁底部網站總閱讀時間顯示</span></span><br><span class="line">  <span class="attr">exclude_codeblock:</span> <span class="literal">false</span>      <span class="comment"># 字數統計是否排除程式碼</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">4</span>                        <span class="comment"># 平均文字長度，中文為 2, 英文為 5, 預設為 4</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">275</span>                      <span class="comment"># 一分鐘閱讀字數</span></span><br><span class="line">  <span class="attr">suffix:</span> <span class="string">&quot;mins.&quot;</span></span><br></pre></td></tr></table></figure>
+<p>修改 <code>root\_config.next.yml</code> 設定值</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">false</span>         <span class="comment"># true 在發布日期下一行/ false 和發布日期同一行</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">false</span>        <span class="comment"># 網頁底部顯示項目文字</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文章底部標籤圖示設定"><a href="#文章底部標籤圖示設定" class="headerlink" title="文章底部標籤圖示設定"></a>文章底部標籤圖示設定</h3><p>預設文章底部顯示的標籤前綴會用 <code>#</code> ，若要改用圖示 <i class="fa fa-tags"></i> 取代:  </p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">tag_icon:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文章底部上一篇-x2F-下一篇連結"><a href="#文章底部上一篇-x2F-下一篇連結" class="headerlink" title="文章底部上一篇&#x2F;下一篇連結"></a>文章底部上一篇&#x2F;下一篇連結</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Available values: left(上一篇在左邊) | right(上一篇在右邊) | false(關閉功能)</span></span><br><span class="line"><span class="attr">post_navigation:</span> <span class="string">left</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="回到頂部功能"><a href="#回到頂部功能" class="headerlink" title="回到頂部功能"></a>回到頂部功能</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">back2top:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>            <span class="comment"># 功能開啟</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">true</span>           <span class="comment"># true 在側欄底部顯示 / false 在頁面右下角顯示</span></span><br><span class="line">  <span class="attr">scrollpercent:</span> <span class="literal">true</span>     <span class="comment"># 顯示閱讀進度百分比</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="閱讀進度條"><a href="#閱讀進度條" class="headerlink" title="閱讀進度條"></a>閱讀進度條</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">reading_progress:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span>              <span class="comment"># 開啟功能</span></span><br><span class="line">  <span class="attr">start_at:</span> <span class="string">left</span>             <span class="comment"># left 由左往右 / right 由右往左</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">top</span>              <span class="comment"># 進度條在瀏覽器頁面的位置: top / bottom</span></span><br><span class="line">  <span class="attr">reversed:</span> <span class="literal">false</span>            <span class="comment"># true 顯示剩餘進度 / false 顯示已閱讀進度</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&quot;#37c6c0&quot;</span>           <span class="comment"># 進度條顏色</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">3px</span>                <span class="comment"># 進度條粗細</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Github-右上角標"><a href="#Github-右上角標" class="headerlink" title="Github 右上角標"></a>Github 右上角標</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">github_banner:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>                                <span class="comment"># 開啟功能</span></span><br><span class="line">  <span class="attr">permalink:</span> <span class="string">https://github.com/UserName</span>      <span class="comment"># Github 網址</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">Follow</span> <span class="string">me</span> <span class="string">on</span> <span class="string">GitHub</span>                  <span class="comment"># 滑鼠顯示文字</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="站內搜索功能"><a href="#站內搜索功能" class="headerlink" title="站內搜索功能"></a>站內搜索功能</h3><p>安裝套件  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+<p>修改 <code>root\_config.next.yml</code> 設定值  </p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p>新增 <code>root\_config.yml</code> 設定值  </p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># https://github.com/next-theme/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">all</span>         <span class="comment"># 搜尋範圍。可選 post (Default) / page / all</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span>      <span class="comment"># true 全文搜索 / false 在標題及 meta info 裡搜索</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br></pre></td></tr></table></figure>
+<br/>
+
+
+<p>NexT 主題的基本設定就到這裡啦~ 可以自定義設定的地方太多了，這一篇筆記寫了三天才結束!! 還有一些功能還沒寫到，像是評論功能、閱讀字數&#x2F;時間、閱讀人數…等，預計要另外再開幾篇才能寫完。<br>雖然初期建置摸索真的花了很多時間，但是看到功能一個一個增加，實在是很有成就感啊!!</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 插件更新</title>
+    <url>/posts/d81b71f/</url>
+    <content><![CDATA[<p>會寫這篇文章主要是因為收到了 hexo-server 插件的更新通知。隨著部落格功能的擴充，我安裝的 Hexo 插件越來越多，每個插件都會做各自的版本更新(還不同時間點)。一個一個分別更新好麻煩，然後懶人如我找到了個 npm 包可以直接幫我確認最新版本，再全部一起更新，多棒啊~~  </p>
+<span id="more"></span>
+
+<blockquote>
+<p>本篇撰寫時 Hexo 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Hexo-server 版本: <strong>^2.0.0</strong> 升級到 <strong>^3.0.0</strong>  </p>
+</blockquote>
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>package.json 檔案， 定義專案所需要的各種模組，以及專案的配置資訊。<code>npm install</code> 命令根據這個配置檔案，自動下載所需的模組。打開 Hexo 專案根目錄的 package.json 檔案，就可以看到自己已經做了那些配置。  </p>
+<p>關於 package.json 的詳細介紹，可參考 <a href="https://iter01.com/467432.html">草履蟲的思考 發表在 IT 人的文章</a>。裡面對 npm 及 package.json 有比較詳細的介紹，這裡就不贅述。</p>
+<h2 id="用-npm-check-updates-更新插件"><a href="#用-npm-check-updates-更新插件" class="headerlink" title="用 npm-check-updates 更新插件"></a>用 npm-check-updates 更新插件</h2><p>在網路教學看到推薦用 <code>npm-check</code> 和 <code>npm-upgrade</code> 更新，但我實際安裝後都會報錯誤。後來我找到另外 npm 包，也是我這次更新 hexo-server 用的方式。  </p>
+<blockquote>
+<p><a href="https://github.com/raineorshine/npm-check-updates">npm-check-updates 官網</a><br><strong>npm-check-updates</strong> upgrades your package.json dependencies to the latest versions, ignoring specified versions.<br>看看這描述，多方便阿~</p>
+</blockquote>
+<p><strong>1. 使用方法非常簡單，只要先安裝 npm-check-updates</strong> </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g npm-check-updates    <span class="comment"># 安裝 npm-check-updates</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 執行版本檢查&#x2F;更新指令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ncu           <span class="comment"># 檢查是否需要更新(npm-check-updates 第一個字母縮寫，很好記!)</span></span><br><span class="line">ncu -u        <span class="comment"># 更新 package.json 資訊(upgrade縮寫)</span></span><br><span class="line">npm install   <span class="comment"># 安裝新版本</span></span><br></pre></td></tr></table></figure>
+<p>他會輸出一個版本檢查的畫面，並在最後一行指示下一步怎麼做。以我自己的畫面為例:  </p>
+<ul>
+<li>執行 <code>ncu</code> 會提供現有版本和最新版本的比較，並在最後一行用藍字提醒下一步要 更新 package.json。  </li>
+<li>執行 <code>ncu -u</code> 更新 package.json 資訊，並在最後一行用藍字提醒下一步要安裝新版本。  </li>
+<li>執行 <code>npm install</code> 後 再用 <code>ncu</code> 檢查一次，發現全部都是最新版本了。</li>
+</ul>
+<p><img src="/../../Blog-image/posts/2022-01-06_001.webp" alt="npm-check-updates20220106-001"></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Alpha Camp 學期 2-2 結業心得</title>
+    <url>/posts/f46b1c2/</url>
+    <content><![CDATA[<blockquote>
+<p>在寫 code 之前先分拆邏輯與流程、用函式封裝程式碼、用心命名變數，這些基本動作原來是這麼地重要。  </p>
+</blockquote>
+<span id="more"></span>
+<h3 id="OBJECTIVE"><a href="#OBJECTIVE" class="headerlink" title="OBJECTIVE"></a>OBJECTIVE</h3><p>經過學期2–2的學習，除了一邊複習之前學過的東西外，也對於程式流程的優化有更進一步的了解。尤其是使用 MVC 架構，讓整個程式不管是邏輯、流程或者是管理維護上都有了很大的提升。因為越學越有興趣的關係，和之前的幾個學期相比，現在的我對於主動優化作業有了很大的熱情。另外就是對於學期開頭的介紹有了更深刻的體會與認同!在寫 code 之前先分拆邏輯與流程、用函式封裝程式碼、用心命名變數，這些基本動作原來是這麼地重要。  </p>
+<h3 id="REFLECTIVE"><a href="#REFLECTIVE" class="headerlink" title="REFLECTIVE"></a>REFLECTIVE</h3><p>大量的實作學習讓我從「跟著助教做」轉為「思考另一種做法的利弊是什麼」。因為多了各種思考過程，我開始了大量的資料閱讀和撰寫嘗試。在嘗試的過程中發現不同的寫法各有利弊，結果的選擇很大程度上取決於使用者體驗(目前就是我自己啦😆)  </p>
+<p>就是因為想加的功能越變越多，導致我需要不斷往前修改之前考慮的不夠完善的地方，這個時候就想到:如果在最一開始，我對於那些撰寫基礎能更重視和用心，後面這些時間也許都可以節省下來。  </p>
+<h3 id="INTERPRETIVE"><a href="#INTERPRETIVE" class="headerlink" title="INTERPRETIVE"></a>INTERPRETIVE</h3><p>這個學期下來也讓我對於「複習」這件事有了態度上的轉變。從原本的「之前不夠熟悉、必須找時間再多多複習」變成「主動在作業中融入以前學過的東西」。每個學期、甚至每個教案的著重點本來就不一樣，「複習」這件事就要找到適合自己的方法，不能依賴虛無飄渺的「找個時間來複習」。  </p>
+<p>觀摩同學作業時，發現在一個作業中同時融入了很多以前學過的東西( media queries 、 flex、position…等)，可以看出他在開始編寫程式碼前，已經對設計成品有具體的想法，可能也針對不同螢幕大小畫出了多張 wireframe ，考慮了很多面向的東西。 他的練習實踐方式讓我發現我可以在完成當下目標同時複習以前學過的東西，學習的輸入可以從各自為政變成融會貫通 。  </p>
+<h3 id="DECISIONAL"><a href="#DECISIONAL" class="headerlink" title="DECISIONAL"></a>DECISIONAL</h3><p>接下來進行課程時，希望自己能保持主動優化的動力。也許不是每一次嘗試都能得到好的結果，但在嘗試的過程中需要查資料、方法的選擇、功能的取捨，利用這個過程慢慢積累自己的知識庫，期望未來能不愧對付出的時間和努力!  </p>
+]]></content>
+      <categories>
+        <category>學習紀錄 - AlphaCamp</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Alpha Camp 學期 2-3 結業心得</title>
+    <url>/posts/924950b4/</url>
+    <content><![CDATA[<p>隨著時間的推移，在學習上總是會碰到各種不同的狀況，而這些狀況也提供我不同的學習感受。這篇著重於紀錄自己遇到、找出並排除問題的過程。  </p>
+<blockquote>
+<p>要解決問題，必須先正確的找出問題發生原因。  </p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="緣起：為短網址產生器加上重複檢查機制"><a href="#緣起：為短網址產生器加上重複檢查機制" class="headerlink" title="緣起：為短網址產生器加上重複檢查機制"></a>緣起：為短網址產生器加上重複檢查機制</h2><p>一如上學期結束時對自己許的願，這學期在寫作業的同時會盡可能地做些優化挑戰，然後不可避免的進入無窮卡關迴圈……  </p>
+<p>近期卡了最久的就是短網址產生器了!! 作業的要求其實很簡單，只要可以產生英文字母或數字的隨機亂碼來當短網址即可。但是! 我突然想到:「萬一真的產生了相同的亂碼怎麼辦?」。依照我當下的執行邏輯，產生亂碼之後就馬上把它和原始網址加入互相對照的 index ，在沒有檢查的情況下，兩組原始網址導向同一個短網址也不是不可能發生。  </p>
+<p>於是，我決定了優化方向：「在亂數產生器 return 結果之前加上檢查機制」，只要發現相同亂碼就重新執行一次亂碼產生流程。然後……在這個優化過程被卡了整整 2 天 🤣  </p>
+<h2 id="嘗試失敗1：同步與非同步"><a href="#嘗試失敗1：同步與非同步" class="headerlink" title="嘗試失敗1：同步與非同步"></a>嘗試失敗1：同步與非同步</h2><blockquote>
+<p>先來備註一下：這次用來存放 UrlIndex 資料的是 MongoDB。  </p>
+</blockquote>
+<p>原本的寫法如下(只放有問題部分):  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 產生亂碼短網址 &lt;file:root/utils/shortGenerator.js&gt;</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generator</span> (length) &#123;</span><br><span class="line">  <span class="comment">// 1. generate random code</span></span><br><span class="line">  <span class="comment">// 2. Check if random url already exist</span></span><br><span class="line">  <span class="comment">// =&gt; if exist, run &quot;generator (length)&quot;</span></span><br><span class="line">  <span class="comment">// =&gt; if not yet exist, return result</span></span><br><span class="line">  <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">shortenUrl</span>: result &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> data ? <span class="title function_">generator</span>(length) : result</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把短網址存入對照 index &lt;file:root/app.js&gt;</span></span><br><span class="line"><span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="attr">shortenUrl</span>: <span class="title function_">generator</span>(<span class="number">5</span>),</span><br><span class="line">  <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>在我的預想中， <code>generator()</code> 負責產生獨一無二的短網址，而 <code>UrlIndex.create()</code> 把取得的短網址拿去建立 index 。但是，看似沒問題的邏輯跳錯誤了! 好在目前遇到的大部分錯誤訊息都能正確敘述出問題的原因，它告訴我 shortenUrl 的值 <code>undefined</code> 。於是我去查查賦值 <code>undefined</code> 的原因，發現在我寫的流程裡最有可能的原因是：「若變數沒有提供初始值，則預設為 <code>undefined</code> 」。但不對啊~我不是有告訴 <code>UrlIndex.create()</code> shortenUrl 的值從 <code>generator()</code> 取得嗎? 為什麼會 <code>undefined</code> 呢?  </p>
+<p>前幾天因緣際會接觸到「非同步」相關知識的我想起了前輩對非同步的評語：  </p>
+<blockquote>
+<p>實戰常常遇到問題，一研究發現，怎麼又是你！  </p>
+</blockquote>
+<p>檢查了一下目前進度，確實啊~ <code>UrlIndex.create()</code> 和 <code>UrlIndex.findOne()</code> 都是非同步語法，如果沒有處理好，根本無法控制完成的先後順序。於是，再度開始了 google 旅程，發現目前對於非同步執行順序最常使用兩種方式:  </p>
+<ul>
+<li>async&#x2F;await  </li>
+<li>Promise.then()</li>
+</ul>
+<p>因為對 <code>async/await</code> 值的傳遞方式還不太熟悉，因此決定先用 <code>Promise.then()</code> 的方式。 <code>.then</code> 的前面必須是個 Promise 物件，但我目前 return 的是亂碼「值」。幸好查到的資料告訴我， mongoose 5.0 開始就內建 Promise 語法，所以我可以把整個 <code>UrlIndex.findOne()</code> 包成 Promise 物件。最後，我把整個檢驗是否重複的過程直接 return ，順利解決了執行順序問題。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 產生亂碼短網址</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generator</span> (length) &#123;</span><br><span class="line">  <span class="comment">// (前略)</span></span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">shortenUrl</span>: result &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> data ? <span class="title function_">generator</span>(length) : result</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ShortGenerator</span>(randomLength)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> urlData ? urlData : <span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">      <span class="attr">shortenUrl</span>: url,</span><br><span class="line">      <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="嘗試失敗2：mongoose-語法-return-值"><a href="#嘗試失敗2：mongoose-語法-return-值" class="headerlink" title="嘗試失敗2：mongoose 語法 return 值"></a>嘗試失敗2：mongoose 語法 return 值</h2><p>接著，我想把產生的短網址結果呈現給使用者:  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span> &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="title class_">ShortGenerator</span>(randomLength)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> urlData ? urlData : <span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">            <span class="attr">shortenUrl</span>: url,</span><br><span class="line">            <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">          &#125;)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;))  <span class="comment">// 執行到這行出問題!!</span></span><br><span class="line">        .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>這時候又跳錯誤了! 根據錯誤訊息查詢，發現是 handlebars 因為安全性問題，只接受乾淨的物件資料，通常可以用 <code>.lean()</code> 解決。把 <code>urlData</code> 印出來，看看到底取到什麼值? 嗯?? <code>_id</code> 裡面那個 new 是什麼? 看起來確定是回傳值的問題。<br><img src="/../Blog-image/posts/2022-04-24_returnValueOfMongoose.webp" alt="error_returnValueOfMongoose">  </p>
+<p>於是我加上了 <code>.lean()</code> ，但它又報錯了!  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">  urlData = urlData.<span class="title function_">lean</span>()</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><img src="/../Blog-image/posts/2022-04-24_mongoose.lean.webp" alt="error_mongoose.lean">  </p>
+<p>測試後發現：如果是已建立 index 的網址就沒問題；反之，如果是新建的就會報錯。那就表示兩者拿到的資料不一樣。仔細查閱了 mongoose 官方文件， <code>UrlIndex.findOne()</code> 回傳 Query、 <code>UrlIndex.create()</code> 回傳 Promise 物件……好吧! 接下來的問題就是如何取 <code>UrlIndex.create()</code> 的「值」?  </p>
+<p>在各種變換關鍵字後，終於在  stack overflow 找到救世主，可以用 <code>toObject()</code> 進行資料轉換。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">  urlData = urlData.<span class="title function_">toObject</span>()</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<br>
+大功告成! 一切終於都如我預期的運作了!!  
+
+<p>成品程式碼: <a href="https://github.com/ritachien/URL_Shortener">在這裡</a>。  </p>
+<h2 id="心得分享"><a href="#心得分享" class="headerlink" title="心得分享"></a>心得分享</h2><p>寫出來真的很有成就感啊!! 除了這個作業優化外，其實前面的作業也有經過類似的優化煎熬過程。總結起來解決問題的方法分幾個部分:  </p>
+<ul>
+<li>預防 – 仔細閱讀使用工具的官方文件、了解它的使用方法，正確的使用工具可以排除很多可能發生的問題。  </li>
+<li>找出問題 – 知道問題發生原因才是解決的最快方法。就像前面分享的問題二，看起來是 handlebars 接受的資料類型問題，實際上是 mongoose 回傳值的原因。  </li>
+<li>查找資料 – 在找出正確問題的前提下，盡可能下對關鍵字可以找到更接近需求的內容。</li>
+</ul>
+<p>不過沒有一次找到目標資料也沒關係，多多閱讀的過程中也能吸收各種知識，也許會在未來的某一天成為解決其他問題的關鍵!  </p>
+]]></content>
+      <categories>
+        <category>學習紀錄 - AlphaCamp</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CS50x 2022 Week1 筆記</title>
+    <url>/posts/b357a5fe/</url>
+    <content><![CDATA[<p>開始挑戰 CS50x(Introduction to Computer Science)了! </p>
+<blockquote>
+<p>What ultimately matters in this course is not so much where you end up relative to your classmates but where you end up relative to yourself when you began.<br>—- CS50x</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>第一次接觸到 Harvard 有名的 CS50x 課程是在 Youtube 上看到這部影片:  </p>
+<div class=youtube-video>
+  <div class="video-container"><iframe src="https://www.youtube.com/embed/XWe4iohhmIw" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
+</div>
+
+<p>台上四位同學拿到一模一樣的道具、聽到一模一樣的指令，但是卻做出不一樣的動作。講師利用這種情境來告訴聽眾：我們給予的指令要「精準」，不然容易出現意料之外的結果。這種情境式的教學方式讓我覺得很有趣，運用一些簡單的例子來協助理解 Computer Science。  </p>
+<h2 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h2><ul>
+<li>簡單介紹二進位、ASCII、RGB、二分搜尋法…等。  </li>
+<li>程式語言常用的函式、條件判斷、變數、迴圈…等。  </li>
+<li>利用圖像式的 <a href="https://scratch.mit.edu/">Scratch</a> 來講解程式如何運作。</li>
+</ul>
+<h3 id="二進位-Binary"><a href="#二進位-Binary" class="headerlink" title="二進位(Binary)"></a>二進位(Binary)</h3><p><strong>電腦只看得懂 <code>0</code> 跟 <code>1</code></strong> ，而二進位制是一種用 0 和 1 代表不同數字的進位方式。二進位中每個 bit 可以表示 1 和 0，而當我們有更多的 bits 時我們可以代表更大的數字，例如二進位的 11 是十進位的 3，111 是十進位的 7。  </p>
+<h3 id="ASCII-x2F-Unicode"><a href="#ASCII-x2F-Unicode" class="headerlink" title="ASCII&#x2F;Unicode"></a>ASCII&#x2F;Unicode</h3><p>既然二進位表達的是「數字」，那其他的文字、符號呢？<br>ASCII 和 Unicode 都是字符對照表，兩者的差別就不贅述了。都是用數字來表示字母，例如：大寫的 A 是用十進位的 65 表示，也是二進位的 01000001。  </p>
+<h3 id="RBG、圖片、影片"><a href="#RBG、圖片、影片" class="headerlink" title="RBG、圖片、影片"></a>RBG、圖片、影片</h3><p>RGB 是把顏色用不同「值」的紅(Red)、綠(Green)、藍(Blue)組合而成。而很多不同的顏色可以組成圖片、很多圖片可以連成影片。  </p>
+<h3 id="二分搜尋法及程式邏輯-電話簿情境題"><a href="#二分搜尋法及程式邏輯-電話簿情境題" class="headerlink" title="二分搜尋法及程式邏輯(電話簿情境題)"></a>二分搜尋法及程式邏輯(電話簿情境題)</h3><p><strong>問題：要怎麼從厚厚的電話簿中找到指定人物的電話呢？</strong>  </p>
+<ol>
+<li>一頁一頁翻 ➜ 可以正確找到，但是好沒效率…  </li>
+<li>兩頁兩頁跳著翻 ➜ 查詢效率是兩倍，但是萬一在單數頁怎麼辦？  </li>
+<li>二分搜尋法 ➜ 從中間翻閱，依照姓名排序捨棄一半資料(不斷重複)</li>
+</ol>
+<p>完善搜尋方式的過程，並把過程用虛擬碼(pseudocode)寫出來幫助思考整個流程運作，最後用虛擬碼解釋函式、條件判斷、變數、迴圈…等是什麼?  </p>
+<p><img src="/../Blog-image/posts/2022-24-29_pseudocode.webp" alt="pseudocode"><br>(圖片來自 CS50 課程內容  )</p>
+<h3 id="Scratch"><a href="#Scratch" class="headerlink" title="Scratch"></a>Scratch</h3><p>用拼圖方式一步步組裝，做出一個可以運行的程式。  </p>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>寫程式其實就是一個解題的過程，首先要確保可以得出正確的答案，再來才是優化解題的過程。  </p>
+<p>在電話簿情境題中，如果僅僅是為了提升效率而兩頁兩頁做排查，也許會因為搜尋對象在單數頁而錯過。那即使可以在較短時間排查更多的資料也沒用，因為這種排查邏輯並不完善。  </p>
+<p>從開始學習程式到現在已經大約半年了，由於 CS50 是全英文課程，如果沒有一點點的程式基礎，聽起來真的會比較辛苦。半年前第一次聽的我和現在的重新撿回課程的我比起來，終於能比較順暢的聽懂了!接下來就是好好地堅持下去，認真的走完這個課程。  </p>
+]]></content>
+      <categories>
+        <category>學習紀錄 - CS50x</category>
+      </categories>
+      <tags>
+        <tag>CS50x 2022</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>簡易 RPG 戰鬥：攻擊與補血</title>
+    <url>/posts/23e46325/</url>
+    <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期 2-1<br>題目的主要目的是 Javascript function 的練習。設計 function 的運作方式，利用 <code>if</code> + <code>return</code> 來控制需要提早跳出函式的情況，及使用 <code>this</code> 取到物件自身。  </p>
+<span id="more"></span>
+<p>題目原本僅要求專注在 <strong>攻擊(attack)</strong> 和 <strong>治療(cure)</strong> function 的撰寫，其餘流程已由原題目提供。但基於再次練習的目的，且題目其餘部分也是由學過的 while 迴圈組成，所以這次練習會從頭把整個流程寫出來。  </p>
+<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
+<li>function 函式  </li>
+<li>while 迴圈  </li>
+<li>if statement</li>
+</ol>
+<h2 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h2><ol>
+<li>預設戰士 <code>hp</code> 為 100、 <code>mp</code> 為 30；魔法師 <code>hp</code> 為 30、 <code>mp</code> 為 100。</li>
+<li>由魔法師先攻，若有任一方死掉，則遊戲結束，不能再有補血或攻擊動作；反之，若兩個角色都活著，則遊戲可一直正常執行，直到一方死掉。  </li>
+<li>攻擊者會呼叫 <code>attack()</code> 攻擊敵方，產生 1~100 點之間隨機點數的傷害。  </li>
+<li>若被攻擊方沒有死，則會呼叫 <code>cure()</code> 為自己補血，補血規格為：每次補血固定為 15 點 <code>hp</code> 、每補充 1 點 <code>hp</code> 需要 2 點 <code>mp</code>。補血結束後攻守交換。  </li>
+<li><code>cure()</code> 會傳入一個參數為 <code>hp</code> ，指的是想要補充的 <code>hp</code> 。  </li>
+<li>補血可以補超過原有的 <code>hp</code>，沒有 <code>hp</code> 最大值上限，只要有 <code>mp</code> 都可以補血。  <blockquote>
+<p>原題目是由戰士先攻，但為了方便觀察輸出結果，改由魔法師先攻。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h2><h3 id="拆解流程"><a href="#拆解流程" class="headerlink" title="拆解流程"></a>拆解流程</h3><ol>
+<li>創建角色(含 <code>name</code> 、 <code>hp</code> 、 <code>mp</code> 、<code>attack()</code> 及 <code>cure()</code> )  </li>
+<li>戰鬥流程  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 戰士及魔法師都活著</span><br><span class="line">  則魔法師先攻、戰士師補血(補血是否執行由函式決定)</span><br><span class="line">  <span class="keyword">if</span> 戰士還活著</span><br><span class="line">    則戰士攻擊、魔法師補血(補血是否執行由函式決定)</span><br><span class="line">任一方死掉，則遊戲結束。</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="解題開始"><a href="#解題開始" class="headerlink" title="解題開始"></a>解題開始</h3><h4 id="function-設計"><a href="#function-設計" class="headerlink" title="function 設計"></a>function 設計</h4><ol>
+<li><p>攻擊動作 attack()  </p>
+<ul>
+<li>產生攻擊點數、輸出攻擊資訊  </li>
+<li>結果1(打死): 輸出”對手死亡”  </li>
+<li>結果2(沒打死): 輸出”對手活著”，且對手啟動cure()  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">attack</span> (enemy) &#123;</span><br><span class="line">  hpLose = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> hit <span class="subst">$&#123;enemy.name&#125;</span>, <span class="subst">$&#123;enemy.name&#125;</span> lose <span class="subst">$&#123;hpLose&#125;</span> HP.`</span>)</span><br><span class="line">  enemy.<span class="property">hp</span> -= hpLose</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (enemy.<span class="property">hp</span> &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is dead.\n`</span>)</span><br><span class="line">    <span class="keyword">return</span> enemy.<span class="property">hp</span> = <span class="number">0</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is still alive. (HP = <span class="subst">$&#123;enemy.hp&#125;</span>)`</span>)</span><br><span class="line">    enemy.<span class="title function_">cure</span>(<span class="number">15</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>治療動作 cure()  </p>
+<ul>
+<li>結果1(mp夠): 啟動治療並輸出治療結果  </li>
+<li>結果2(mp不夠): 不治療繼續  </li>
+<li>攻守互換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">cure</span> (hp) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">mp</span> &gt;= (hp * <span class="number">2</span>)) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">hp</span> += hp</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">mp</span> -= hp * <span class="number">2</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> recovered. (HP = <span class="subst">$&#123;<span class="variable language_">this</span>.hp&#125;</span>；MP = <span class="subst">$&#123;<span class="variable language_">this</span>.mp&#125;</span>)`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`MP isn&#x27;t enough! <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> cannot use cure.`</span>)</span><br><span class="line">  &#125;  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`\n-------------- Change Side ---------------`</span>)    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>角色建立 player()  </p>
+<ul>
+<li>需含名稱、HP、MP、攻擊動作、治療動作  </li>
+<li>練習不同的 function 使用方式(把 function 放進 function 裡)  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">player</span> (name, hp, mp) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">hp</span>: hp,</span><br><span class="line">    <span class="attr">mp</span>: mp,</span><br><span class="line">    <span class="attr">cure</span>: <span class="keyword">function</span> (<span class="params">hp</span>) &#123;......&#125;,</span><br><span class="line">    <span class="attr">attack</span>: <span class="keyword">function</span> (<span class="params">enemy</span>) &#123;......&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h4 id="解題流程"><a href="#解題流程" class="headerlink" title="解題流程"></a>解題流程</h4><ol>
+<li>創建並輸出角色資料  </li>
+<li>戰鬥開始(迴圈內容)  <ul>
+<li>如果兩人都活著，則戰鬥開始，魔術師先攻，回合結束  </li>
+<li>如果上回合戰士還活著，則攻守交換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// create players</span></span><br><span class="line"><span class="keyword">const</span> warrior = <span class="title function_">player</span>(<span class="string">&#x27;Warrior&#x27;</span>, <span class="number">100</span>, <span class="number">30</span>)</span><br><span class="line"><span class="keyword">const</span> magician = <span class="title function_">player</span>(<span class="string">&#x27;Magician&#x27;</span>, <span class="number">30</span> ,<span class="number">100</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(warrior)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(magician)</span><br><span class="line"></span><br><span class="line"><span class="comment">// start fight</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;-------------- Start Fight ---------------&#x27;</span>)</span><br><span class="line"><span class="keyword">while</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span> &amp;&amp; magician.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  magician.<span class="title function_">attack</span>(warrior)</span><br><span class="line">  <span class="keyword">if</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;    </span><br><span class="line">    warrior.<span class="title function_">attack</span>(magician)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;--------------- Game Over ----------------&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>在重寫的過程中又發現了一些自己不熟的地方……寫物件的時候，居然把 key 跟 value 中間的 <code>:</code> 寫成 <code>=</code> 了!  </p>
+<p>這題練習對我其實滿有效的，包含 <code>this</code> 跟 <code>return</code> 的使用時機，還有在函式裡呼叫函式的寫法(這部分讓我把 while 迴圈大改，在被攻擊的對象還活著的時候直接呼叫治療函式)。以自己覺得順暢的方式改完後，發現還是可以順利跑出相同結果，表示 function 目前的課程應該有一定程度的熟悉了!</p>
+]]></content>
+      <categories>
+        <category>JavaScript 解題</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Alpha Camp 學期 2-1 結業心得</title>
+    <url>/posts/73279419/</url>
+    <content><![CDATA[<p><em><strong>學習的過程充滿挑戰，成功闖過之後就想做更多的挑戰!</strong></em><br>這大概就是我在這階段完課後，最明顯的感受。  </p>
+<span id="more"></span>
+
+<p>有轉職意願後，我報名了學期一課程，想確認是否真的對程式語言有興趣。在將近一個月的課程接觸下，燃起了久違的學習熱情，隨後決定繼續向學期二邁進，將學期一碰到的 HTML&#x2F;CSS&#x2F;JavaScript 更精進。  </p>
+<p>相較於學期一類似「興趣班」的節奏，學期 2-1 第一週開始接觸了陣列、物件及函式，不管是單週課程量或難度對我來說都有明顯變高的感覺，作業也變得更加「靈活」。學習過程需要花更多的時間理解、作業要花更多的時間思考，本來以為難度提高會帶來挫折感，進而降低學習熱情，結果相反，我最直觀的感受是「我能做到的事變多了」。課程作業藉著把摸彩活動分成小步驟完成，最後組合再一起，這種「把大任務變小」的方式，我覺得有效降低了學習期間的挫折感。  </p>
+<p>再後來的 DOM 和事件驅動，就更多的提高我對 JavaScript 的學習興趣，藉由 DOM 就可以用 JavaScript 來操作寫好的 HTML，學到了讓使用者跟網頁互動的方法，。每一個章節作業做完的同時，開始會主動思考「可以加上什麼功能?」，有的成功、有的失敗，不知不覺坐在電腦前的時間越來越長😄  </p>
+<p>說到這裡可能有人發現了…… CSS 呢?<br>是的，我對 CSS 一直還沒燃起足夠的熱情，花著同樣的時間進行學習，但 CSS 就是很難記住，寫起來很不順手。這種期況一直持續到學到 DOM 和事件驅動才有改善。在加上新功能後，我新加的東西在網頁上動起來<del>覺得自己有點厲害</del>但長得醜醜的，這時候才開始想各種辦法改善它，積極地回去複習排版…等語法。  </p>
+<p>因為 JavaScript 想新加功能，所以積極複習、查資料、使用還沒學到的東西。因為覺得畫面醜醜的，所以重新面對興致不高的 CSS 。難怪人家都說，想進步最快的辦法就是去做各種 side project 。原本的期末作業「RGB 色碼轉 HEX」，看是要輸入 RGB 色碼或用 slider 調色只要二選一，最後輸出 HEX 結果即可。為了想讓三者同步，查了 <code>addEventListener</code> 的各種 event ，寫了整整一天，寫出來的當下很有成就感! <a href="https://ritachien.github.io/Convert-Between-RGB-HEX/">(動手試試看)</a>  </p>
+<p><img src="https://github.com/ritachien/Convert-Between-RGB-HEX/blob/main/demo.gif?raw=true"></p>
+<p>學習過程記錄大致就這樣了。<br>學期 2-1 找到了提高我學習動力的方法—-<strong>實作、實作、再實作</strong>。準備在春節期間開始挑戰 JS30，然後開始學期 2-2 的預讀。最後的最後，許個新年新希望: 我不要再當米蟲了阿~~~~~~ 今年一定要轉職成功阿~~~~~</p>
+]]></content>
+      <categories>
+        <category>學習紀錄 - AlphaCamp</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>data-* HTML 自定義屬性及 dataset</title>
     <url>/posts/b8b00b13/</url>
     <content><![CDATA[<p>在 <a href="/posts/470f6710/">JS30 Day1</a> 第一次看到 data-* 屬性，學習 DOM 之後發現真是太好用了阿!</p>
@@ -1329,87 +1452,6 @@
         <tag>JavaScript</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Alpha Camp 學期 2-2 結業心得</title>
-    <url>/posts/f46b1c2/</url>
-    <content><![CDATA[<blockquote>
-<p>在寫 code 之前先分拆邏輯與流程、用函式封裝程式碼、用心命名變數，這些基本動作原來是這麼地重要。  </p>
-</blockquote>
-<span id="more"></span>
-<h3 id="OBJECTIVE"><a href="#OBJECTIVE" class="headerlink" title="OBJECTIVE"></a>OBJECTIVE</h3><p>經過學期2–2的學習，除了一邊複習之前學過的東西外，也對於程式流程的優化有更進一步的了解。尤其是使用 MVC 架構，讓整個程式不管是邏輯、流程或者是管理維護上都有了很大的提升。因為越學越有興趣的關係，和之前的幾個學期相比，現在的我對於主動優化作業有了很大的熱情。另外就是對於學期開頭的介紹有了更深刻的體會與認同!在寫 code 之前先分拆邏輯與流程、用函式封裝程式碼、用心命名變數，這些基本動作原來是這麼地重要。  </p>
-<h3 id="REFLECTIVE"><a href="#REFLECTIVE" class="headerlink" title="REFLECTIVE"></a>REFLECTIVE</h3><p>大量的實作學習讓我從「跟著助教做」轉為「思考另一種做法的利弊是什麼」。因為多了各種思考過程，我開始了大量的資料閱讀和撰寫嘗試。在嘗試的過程中發現不同的寫法各有利弊，結果的選擇很大程度上取決於使用者體驗(目前就是我自己啦😆)  </p>
-<p>就是因為想加的功能越變越多，導致我需要不斷往前修改之前考慮的不夠完善的地方，這個時候就想到:如果在最一開始，我對於那些撰寫基礎能更重視和用心，後面這些時間也許都可以節省下來。  </p>
-<h3 id="INTERPRETIVE"><a href="#INTERPRETIVE" class="headerlink" title="INTERPRETIVE"></a>INTERPRETIVE</h3><p>這個學期下來也讓我對於「複習」這件事有了態度上的轉變。從原本的「之前不夠熟悉、必須找時間再多多複習」變成「主動在作業中融入以前學過的東西」。每個學期、甚至每個教案的著重點本來就不一樣，「複習」這件事就要找到適合自己的方法，不能依賴虛無飄渺的「找個時間來複習」。  </p>
-<p>觀摩同學作業時，發現在一個作業中同時融入了很多以前學過的東西( media queries 、 flex、position…等)，可以看出他在開始編寫程式碼前，已經對設計成品有具體的想法，可能也針對不同螢幕大小畫出了多張 wireframe ，考慮了很多面向的東西。 他的練習實踐方式讓我發現我可以在完成當下目標同時複習以前學過的東西，學習的輸入可以從各自為政變成融會貫通 。  </p>
-<h3 id="DECISIONAL"><a href="#DECISIONAL" class="headerlink" title="DECISIONAL"></a>DECISIONAL</h3><p>接下來進行課程時，希望自己能保持主動優化的動力。也許不是每一次嘗試都能得到好的結果，但在嘗試的過程中需要查資料、方法的選擇、功能的取捨，利用這個過程慢慢積累自己的知識庫，期望未來能不愧對付出的時間和努力!  </p>
-]]></content>
-      <categories>
-        <category>學習紀錄</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Alpha Camp 學期 2-3 結業心得</title>
-    <url>/posts/924950b4/</url>
-    <content><![CDATA[<p>隨著時間的推移，在學習上總是會碰到各種不同的狀況，而這些狀況也提供我不同的學習感受。這篇著重於紀錄自己遇到、找出並排除問題的過程。  </p>
-<blockquote>
-<p>要解決問題，必須先正確的找出問題發生原因。  </p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="緣起：為短網址產生器加上重複檢查機制"><a href="#緣起：為短網址產生器加上重複檢查機制" class="headerlink" title="緣起：為短網址產生器加上重複檢查機制"></a>緣起：為短網址產生器加上重複檢查機制</h2><p>一如上學期結束時對自己許的願，這學期在寫作業的同時會盡可能地做些優化挑戰，然後不可避免的進入無窮卡關迴圈……  </p>
-<p>近期卡了最久的就是短網址產生器了!! 作業的要求其實很簡單，只要可以產生英文字母或數字的隨機亂碼來當短網址即可。但是! 我突然想到:「萬一真的產生了相同的亂碼怎麼辦?」。依照我當下的執行邏輯，產生亂碼之後就馬上把它和原始網址加入互相對照的 index ，在沒有檢查的情況下，兩組原始網址導向同一個短網址也不是不可能發生。  </p>
-<p>於是，我決定了優化方向：「在亂數產生器 return 結果之前加上檢查機制」，只要發現相同亂碼就重新執行一次亂碼產生流程。然後……在這個優化過程被卡了整整 2 天 🤣  </p>
-<h2 id="嘗試失敗1：同步與非同步"><a href="#嘗試失敗1：同步與非同步" class="headerlink" title="嘗試失敗1：同步與非同步"></a>嘗試失敗1：同步與非同步</h2><blockquote>
-<p>先來備註一下：這次用來存放 UrlIndex 資料的是 MongoDB。  </p>
-</blockquote>
-<p>原本的寫法如下(只放有問題部分):  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 產生亂碼短網址 &lt;file:root/utils/shortGenerator.js&gt;</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generator</span> (length) &#123;</span><br><span class="line">  <span class="comment">// 1. generate random code</span></span><br><span class="line">  <span class="comment">// 2. Check if random url already exist</span></span><br><span class="line">  <span class="comment">// =&gt; if exist, run &quot;generator (length)&quot;</span></span><br><span class="line">  <span class="comment">// =&gt; if not yet exist, return result</span></span><br><span class="line">  <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">shortenUrl</span>: result &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> data ? <span class="title function_">generator</span>(length) : result</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把短網址存入對照 index &lt;file:root/app.js&gt;</span></span><br><span class="line"><span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="attr">shortenUrl</span>: <span class="title function_">generator</span>(<span class="number">5</span>),</span><br><span class="line">  <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>在我的預想中， <code>generator()</code> 負責產生獨一無二的短網址，而 <code>UrlIndex.create()</code> 把取得的短網址拿去建立 index 。但是，看似沒問題的邏輯跳錯誤了! 好在目前遇到的大部分錯誤訊息都能正確敘述出問題的原因，它告訴我 shortenUrl 的值 <code>undefined</code> 。於是我去查查賦值 <code>undefined</code> 的原因，發現在我寫的流程裡最有可能的原因是：「若變數沒有提供初始值，則預設為 <code>undefined</code> 」。但不對啊~我不是有告訴 <code>UrlIndex.create()</code> shortenUrl 的值從 <code>generator()</code> 取得嗎? 為什麼會 <code>undefined</code> 呢?  </p>
-<p>前幾天因緣際會接觸到「非同步」相關知識的我想起了前輩對非同步的評語：  </p>
-<blockquote>
-<p>實戰常常遇到問題，一研究發現，怎麼又是你！  </p>
-</blockquote>
-<p>檢查了一下目前進度，確實啊~ <code>UrlIndex.create()</code> 和 <code>UrlIndex.findOne()</code> 都是非同步語法，如果沒有處理好，根本無法控制完成的先後順序。於是，再度開始了 google 旅程，發現目前對於非同步執行順序最常使用兩種方式:  </p>
-<ul>
-<li>async&#x2F;await  </li>
-<li>Promise.then()</li>
-</ul>
-<p>因為對 <code>async/await</code> 值的傳遞方式還不太熟悉，因此決定先用 <code>Promise.then()</code> 的方式。 <code>.then</code> 的前面必須是個 Promise 物件，但我目前 return 的是亂碼「值」。幸好查到的資料告訴我， mongoose 5.0 開始就內建 Promise 語法，所以我可以把整個 <code>UrlIndex.findOne()</code> 包成 Promise 物件。最後，我把整個檢驗是否重複的過程直接 return ，順利解決了執行順序問題。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 產生亂碼短網址</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generator</span> (length) &#123;</span><br><span class="line">  <span class="comment">// (前略)</span></span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">shortenUrl</span>: result &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> data ? <span class="title function_">generator</span>(length) : result</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ShortGenerator</span>(randomLength)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> urlData ? urlData : <span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">      <span class="attr">shortenUrl</span>: url,</span><br><span class="line">      <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="嘗試失敗2：mongoose-語法-return-值"><a href="#嘗試失敗2：mongoose-語法-return-值" class="headerlink" title="嘗試失敗2：mongoose 語法 return 值"></a>嘗試失敗2：mongoose 語法 return 值</h2><p>接著，我想把產生的短網址結果呈現給使用者:  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span> &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="title class_">ShortGenerator</span>(randomLength)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> urlData ? urlData : <span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">            <span class="attr">shortenUrl</span>: url,</span><br><span class="line">            <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">          &#125;)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;))  <span class="comment">// 執行到這行出問題!!</span></span><br><span class="line">        .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>這時候又跳錯誤了! 根據錯誤訊息查詢，發現是 handlebars 因為安全性問題，只接受乾淨的物件資料，通常可以用 <code>.lean()</code> 解決。把 <code>urlData</code> 印出來，看看到底取到什麼值? 嗯?? <code>_id</code> 裡面那個 new 是什麼? 看起來確定是回傳值的問題。<br><img src="/../Blog-image/posts/2022-04-24_returnValueOfMongoose.webp" alt="error_returnValueOfMongoose">  </p>
-<p>於是我加上了 <code>.lean()</code> ，但它又報錯了!  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">  urlData = urlData.<span class="title function_">lean</span>()</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p><img src="/../Blog-image/posts/2022-04-24_mongoose.lean.webp" alt="error_mongoose.lean">  </p>
-<p>測試後發現：如果是已建立 index 的網址就沒問題；反之，如果是新建的就會報錯。那就表示兩者拿到的資料不一樣。仔細查閱了 mongoose 官方文件， <code>UrlIndex.findOne()</code> 回傳 Query、 <code>UrlIndex.create()</code> 回傳 Promise 物件……好吧! 接下來的問題就是如何取 <code>UrlIndex.create()</code> 的「值」?  </p>
-<p>在各種變換關鍵字後，終於在  stack overflow 找到救世主，可以用 <code>toObject()</code> 進行資料轉換。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">  urlData = urlData.<span class="title function_">toObject</span>()</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<br>
-大功告成! 一切終於都如我預期的運作了!!  
-
-<p>成品程式碼: <a href="https://github.com/ritachien/URL_Shortener">在這裡</a>。  </p>
-<h2 id="心得分享"><a href="#心得分享" class="headerlink" title="心得分享"></a>心得分享</h2><p>寫出來真的很有成就感啊!! 除了這個作業優化外，其實前面的作業也有經過類似的優化煎熬過程。總結起來解決問題的方法分幾個部分:  </p>
-<ul>
-<li>預防 – 仔細閱讀使用工具的官方文件、了解它的使用方法，正確的使用工具可以排除很多可能發生的問題。  </li>
-<li>找出問題 – 知道問題發生原因才是解決的最快方法。就像前面分享的問題二，看起來是 handlebars 接受的資料類型問題，實際上是 mongoose 回傳值的原因。  </li>
-<li>查找資料 – 在找出正確問題的前提下，盡可能下對關鍵字可以找到更接近需求的內容。</li>
-</ul>
-<p>不過沒有一次找到目標資料也沒關係，多多閱讀的過程中也能吸收各種知識，也許會在未來的某一天成為解決其他問題的關鍵!  </p>
-]]></content>
-      <categories>
-        <category>學習紀錄</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>

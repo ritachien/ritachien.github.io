@@ -2968,3 +2968,6 @@ body {
   border-bottom: none;
   text-decoration: none;
 }
+.youtube-video {
+  max-width: 70vw;
+}
