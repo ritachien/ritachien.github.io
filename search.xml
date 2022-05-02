@@ -47,93 +47,6 @@
       </tags>
   </entry>
   <entry>
-    <title>用 Hexo + Github Pages 建立部落格</title>
-    <url>/posts/4b9ba027/</url>
-    <content><![CDATA[<p>在建置部落格前猶豫了很久，最終還是決定用 Hexo + Github Pages 當作平台。歷時兩天，終於解決各種莫名其妙的問題，讓它變成心目中的樣子!</p>
-<span id="more"></span>
-
-
-<h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="為什麼選擇-Github-Pages"><a href="#為什麼選擇-Github-Pages" class="headerlink" title="為什麼選擇 Github Pages ?"></a>為什麼選擇 Github Pages ?</h3><p><strong>1. 免費</strong><br>  Github Pages 是 Github 提供的免費靜態網頁空間，提供一組 Github帳號 <code>.github.io</code> 子網域。雖然有容量跟流量上的限制，但以一個剛起步的部落格來說，現階段不會有超出的問題。既然有免費的平台那就用吧!  </p>
-<p><strong>2. 能夠使用 Git 部署並進行版本控制</strong><br>  看了各個學習寫程式分享，得知「如何使用 Git 進行版本控制」是很重要的。雖然現階段身為程式小白的我沒有太多的概念，也完全沒有接觸過，但在查詢 Hexo 資訊時得知，Hexo 可以藉由 Git 部署到 Github 上。希望能在日常使用中學習並熟悉 Git 。  </p>
-<p><strong>3. Github 會記錄每日 commit 次數</strong><br>  Github 的個人首頁會呈現一整年的 commit 紀錄畫面。每天一格，每 commit 一次，當天的格子就會從灰色漸漸往深綠色變化。希望利用自己的收集強迫症，為了盡可能填滿格子，督促自己多多更新部落格。  </p>
-<h3 id="Github-Pages-有什麼限制"><a href="#Github-Pages-有什麼限制" class="headerlink" title="Github Pages 有什麼限制?"></a>Github Pages 有什麼限制?</h3><ol>
-<li>只能存放靜態網頁。</li>
-<li>1GB 空間容量。</li>
-<li>100GB 月流量。</li>
-<li>1 小時內只能提交 10 次更新版本。<blockquote>
-<p>參考資料: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages">Github 說明文件</a></p>
-</blockquote>
-</li>
-</ol>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="為什麼選擇-Hexo"><a href="#為什麼選擇-Hexo" class="headerlink" title="為什麼選擇 Hexo ?"></a>為什麼選擇 Hexo ?</h3><p><strong>1. Hexo 支援強大:</strong><br>  Hexo 是台灣人做的(<a href="https://zespia.tw/blog/2012/10/11/hexo-debut/">起源在這裡</a>)，官方中文支援蠻完整的。另外，可能也是因為中文支援較完整，有很多中文圈的前輩做了很多主題可以套用，當遇到相關問題時，Google 到的解決方案也很多。  </p>
-<p><strong>2. 使用 Node.js(JavaScript) 開發:</strong><br>  在正式開始前，找了幾個熱門靜態檔案產生器比較，最後在 Hexo 跟 Hugo 之間做選擇。雖然 Hugo 比較快，Github上的星星數也比較多，但基於 Hugo 是用 Go 語言寫的，初學的我還是應該先專心一門語言較好，因此捨棄 Hugo 選擇使用 JavaScript 的 Hexo。既然我現在在學JavaScript，現階段可以研究一下它的寫法，之後說不定哪天我可以自己把它改得更符合自己需求。目前在做一些個人化設定時也發現，因為可以看得懂一點點結構，修改時很有幫助。  </p>
-<p><strong>3. 支援 Markdown :</strong><br>Markdown 用來撰寫文章很方便，因為語法簡單，可以更專心在文字內容的編輯上，不用過分關注排版問題。在加上之前跟鳥友一起在HackMD建了個鳥寶寶成長紀錄(<a href="https://hackmd.io/p5O2bt2QQrC1HH46cVfs0A">有興趣可以看看</a>)，對 Markdown 也算比較熟悉了。</p>
-<p><strong>4. 個人化設定自由度高 :</strong><br>主題非常多元，版面也可依自己需求做CSS修改。(剛學到的 <code>padding</code> 、 <code>letter-spacing</code> 、 <code>border-radius</code> 等也都依自己喜歡的樣子用上了!) 另外，也可以找到很多其他插件資源，讓自己的部落格更有個人特色。<br>  <br/></p>
-<h2 id="開始建置部落格"><a href="#開始建置部落格" class="headerlink" title="開始建置部落格"></a>開始建置部落格</h2><blockquote>
-<p>本文撰寫時在 Windows 10 環境下安裝。  </p>
-</blockquote>
-<h3 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h3><p><strong>1. 安裝 Node.js</strong>  </p>
-<ul>
-<li>建置過程中需要用 NPM 安裝套件，所以要先下載 Node.js (<a href="https://nodejs.org/en/">官網下載</a>)。</li>
-</ul>
-<p><strong>2. 安裝 Git</strong>  </p>
-<ul>
-<li><p>之後會使用 Git 作版本控制並將 Hexo 部署或備份到 Github 上，所以要先安裝 Git (<a href="https://git-scm.com/downloads">官網下載</a>)。  </p>
-</li>
-<li><p>開始初次設定 Git : 設定使用者名稱及電子郵件， Git 的提交會使用這些資訊。  </p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引號內填入使用者名稱</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line"><span class="comment"># 引號內填入使用者email</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>完成後可用 <code>git config --global --list</code> 檢查是否有誤，或是到 <code>C:\Users\yourUserName\.gitconfig</code> 確認並修正。</p>
-</li>
-</ul>
-<p><strong>3. 新建Github Repository</strong>  </p>
-<ul>
-<li>開啟 Github 並點選 New Repository</li>
-<li>Repository 名稱為 <code>用戶名.github.io</code><br>  <img src="/../../Blog-image/posts/2021-12-21_001.webp" alt="20211221-001">    <br/></li>
-</ul>
-<h3 id="本地端安裝"><a href="#本地端安裝" class="headerlink" title="本地端安裝"></a>本地端安裝</h3><p><strong>1. 安裝 Hexo</strong>  </p>
-<ul>
-<li>使用 <code>npm install -g hexo-cli</code> 安裝 Hexo 。  </li>
-<li>安裝成功後，輸入 <code>hexo version</code> 指令可查看安裝版本。</li>
-</ul>
-<p><strong>2. Blog 存放資料夾初始化</strong></p>
-<ul>
-<li>開啟命令提示元(CMD) &gt; 前往想存放 Blog 檔案的本地端資料夾。 (ex. 我要在 D 槽新建 Blog 資料夾存放，所以先輸入 <code>D:</code> 讓當前位置移到 D 槽)  </li>
-<li>初始化資料夾(必須是空資料夾，以下方法二選一)  <ul>
-<li>方法一(當前位置 D 槽) –在 D 槽新建 Blog 資料夾並初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init Blog</span><br></pre></td></tr></table></figure></li>
-<li>方法二(已自行新建資料夾，當前位置 D:\Blog) –將 Blog 資料夾初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>安裝相關套件  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>3. 部署設定</strong></p>
-<ul>
-<li>安裝部署用套件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
-<li>修改部署設定 (檔案 <code>根目錄\_config.yml</code> 最下方 # Deployment)  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/用戶名/用戶名.github.io.git</span>  <span class="comment"># Repository 網址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">分支名稱(可用預設</span> <span class="string">main</span> <span class="string">，或自訂如</span> <span class="string">gh-pages)</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">&quot;填入commit訊息&quot;</span>  <span class="comment"># 本行不用可刪</span></span><br></pre></td></tr></table></figure>
-<br/></li>
-</ul>
-<h3 id="部署到Github-常用指令"><a href="#部署到Github-常用指令" class="headerlink" title="部署到Github (常用指令)"></a>部署到Github (常用指令)</h3><p><strong>1. 本地端預覽</strong><br>使用時機: 當在本地端做完修改後，如果希望看到及時修改結果。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server                <span class="comment"># 開啟本地端預覽(標準用法)</span></span><br><span class="line">hexo s                     <span class="comment"># 開啟本地端預覽(簡短用法)</span></span><br><span class="line">http://localhost:4000      <span class="comment"># 貼入網址列即可預覽</span></span><br><span class="line">Ctrl + C                   <span class="comment"># 結束本地端預覽</span></span><br></pre></td></tr></table></figure>
-<p><strong>2. 產生靜態檔案</strong><br>使用時機: 編寫完成後，產生要部署的靜態檔案(會產生 <code>根目錄\public</code> 資料夾放入要部署的檔案)。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate             <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo g                    <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
-<p><strong>3. 部署</strong><br>使用時機: 編寫完成後，部署到 Github ( <code>根目錄\public</code> 裡的檔案會被上傳到設定好的 Repository)。部署完成就可以在 <code>github.io</code> 看到自己的 Blog 了!  </p>
-<blockquote>
-<p><font color=#FF6600>Github有時候部署後要等10~20分鐘畫面才會更新</font></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy                  <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo d                       <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br><span class="line">https://帳戶名.github.io/     <span class="comment"># 個人部落格網址</span></span><br></pre></td></tr></table></figure>
-<p><strong>4. 清除快取 &amp; 靜態檔案</strong><br>使用時機: 為了避免出錯，建議在每次 deploy 前，都先清除先前的資料再重新產生靜態檔案(清除快取檔案 <code>db.json</code> 和已產生的靜態檔案 <code>根目錄\public</code>)。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean     <span class="comment"># 清除快取 &amp; 靜態檔案(標準用法)</span></span><br><span class="line">hexo cl        <span class="comment"># 清除快取 &amp; 靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-        <tag>Hexo</tag>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript 運算子</title>
     <url>/posts/d403fec1/</url>
     <content><![CDATA[<p>在使用運算子 (Operators) 時，隨著練習題逐漸提高的複雜度，開始發現一些與自己認知不同的地方。這些不明顯的小錯誤，常常是導致程式跑不出來或出現預期外結果的原因。所以在之前筆記的基礎上，把犯過的錯誤一起整理進來，降低下次再犯的可能性。</p>
@@ -363,6 +276,93 @@
       </tags>
   </entry>
   <entry>
+    <title>用 Hexo + Github Pages 建立部落格</title>
+    <url>/posts/4b9ba027/</url>
+    <content><![CDATA[<p>在建置部落格前猶豫了很久，最終還是決定用 Hexo + Github Pages 當作平台。歷時兩天，終於解決各種莫名其妙的問題，讓它變成心目中的樣子!</p>
+<span id="more"></span>
+
+
+<h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="為什麼選擇-Github-Pages"><a href="#為什麼選擇-Github-Pages" class="headerlink" title="為什麼選擇 Github Pages ?"></a>為什麼選擇 Github Pages ?</h3><p><strong>1. 免費</strong><br>  Github Pages 是 Github 提供的免費靜態網頁空間，提供一組 Github帳號 <code>.github.io</code> 子網域。雖然有容量跟流量上的限制，但以一個剛起步的部落格來說，現階段不會有超出的問題。既然有免費的平台那就用吧!  </p>
+<p><strong>2. 能夠使用 Git 部署並進行版本控制</strong><br>  看了各個學習寫程式分享，得知「如何使用 Git 進行版本控制」是很重要的。雖然現階段身為程式小白的我沒有太多的概念，也完全沒有接觸過，但在查詢 Hexo 資訊時得知，Hexo 可以藉由 Git 部署到 Github 上。希望能在日常使用中學習並熟悉 Git 。  </p>
+<p><strong>3. Github 會記錄每日 commit 次數</strong><br>  Github 的個人首頁會呈現一整年的 commit 紀錄畫面。每天一格，每 commit 一次，當天的格子就會從灰色漸漸往深綠色變化。希望利用自己的收集強迫症，為了盡可能填滿格子，督促自己多多更新部落格。  </p>
+<h3 id="Github-Pages-有什麼限制"><a href="#Github-Pages-有什麼限制" class="headerlink" title="Github Pages 有什麼限制?"></a>Github Pages 有什麼限制?</h3><ol>
+<li>只能存放靜態網頁。</li>
+<li>1GB 空間容量。</li>
+<li>100GB 月流量。</li>
+<li>1 小時內只能提交 10 次更新版本。<blockquote>
+<p>參考資料: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages">Github 說明文件</a></p>
+</blockquote>
+</li>
+</ol>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="為什麼選擇-Hexo"><a href="#為什麼選擇-Hexo" class="headerlink" title="為什麼選擇 Hexo ?"></a>為什麼選擇 Hexo ?</h3><p><strong>1. Hexo 支援強大:</strong><br>  Hexo 是台灣人做的(<a href="https://zespia.tw/blog/2012/10/11/hexo-debut/">起源在這裡</a>)，官方中文支援蠻完整的。另外，可能也是因為中文支援較完整，有很多中文圈的前輩做了很多主題可以套用，當遇到相關問題時，Google 到的解決方案也很多。  </p>
+<p><strong>2. 使用 Node.js(JavaScript) 開發:</strong><br>  在正式開始前，找了幾個熱門靜態檔案產生器比較，最後在 Hexo 跟 Hugo 之間做選擇。雖然 Hugo 比較快，Github上的星星數也比較多，但基於 Hugo 是用 Go 語言寫的，初學的我還是應該先專心一門語言較好，因此捨棄 Hugo 選擇使用 JavaScript 的 Hexo。既然我現在在學JavaScript，現階段可以研究一下它的寫法，之後說不定哪天我可以自己把它改得更符合自己需求。目前在做一些個人化設定時也發現，因為可以看得懂一點點結構，修改時很有幫助。  </p>
+<p><strong>3. 支援 Markdown :</strong><br>Markdown 用來撰寫文章很方便，因為語法簡單，可以更專心在文字內容的編輯上，不用過分關注排版問題。在加上之前跟鳥友一起在HackMD建了個鳥寶寶成長紀錄(<a href="https://hackmd.io/p5O2bt2QQrC1HH46cVfs0A">有興趣可以看看</a>)，對 Markdown 也算比較熟悉了。</p>
+<p><strong>4. 個人化設定自由度高 :</strong><br>主題非常多元，版面也可依自己需求做CSS修改。(剛學到的 <code>padding</code> 、 <code>letter-spacing</code> 、 <code>border-radius</code> 等也都依自己喜歡的樣子用上了!) 另外，也可以找到很多其他插件資源，讓自己的部落格更有個人特色。<br>  <br/></p>
+<h2 id="開始建置部落格"><a href="#開始建置部落格" class="headerlink" title="開始建置部落格"></a>開始建置部落格</h2><blockquote>
+<p>本文撰寫時在 Windows 10 環境下安裝。  </p>
+</blockquote>
+<h3 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h3><p><strong>1. 安裝 Node.js</strong>  </p>
+<ul>
+<li>建置過程中需要用 NPM 安裝套件，所以要先下載 Node.js (<a href="https://nodejs.org/en/">官網下載</a>)。</li>
+</ul>
+<p><strong>2. 安裝 Git</strong>  </p>
+<ul>
+<li><p>之後會使用 Git 作版本控制並將 Hexo 部署或備份到 Github 上，所以要先安裝 Git (<a href="https://git-scm.com/downloads">官網下載</a>)。  </p>
+</li>
+<li><p>開始初次設定 Git : 設定使用者名稱及電子郵件， Git 的提交會使用這些資訊。  </p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引號內填入使用者名稱</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line"><span class="comment"># 引號內填入使用者email</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完成後可用 <code>git config --global --list</code> 檢查是否有誤，或是到 <code>C:\Users\yourUserName\.gitconfig</code> 確認並修正。</p>
+</li>
+</ul>
+<p><strong>3. 新建Github Repository</strong>  </p>
+<ul>
+<li>開啟 Github 並點選 New Repository</li>
+<li>Repository 名稱為 <code>用戶名.github.io</code><br>  <img src="/../../Blog-image/posts/2021-12-21_001.webp" alt="20211221-001">    <br/></li>
+</ul>
+<h3 id="本地端安裝"><a href="#本地端安裝" class="headerlink" title="本地端安裝"></a>本地端安裝</h3><p><strong>1. 安裝 Hexo</strong>  </p>
+<ul>
+<li>使用 <code>npm install -g hexo-cli</code> 安裝 Hexo 。  </li>
+<li>安裝成功後，輸入 <code>hexo version</code> 指令可查看安裝版本。</li>
+</ul>
+<p><strong>2. Blog 存放資料夾初始化</strong></p>
+<ul>
+<li>開啟命令提示元(CMD) &gt; 前往想存放 Blog 檔案的本地端資料夾。 (ex. 我要在 D 槽新建 Blog 資料夾存放，所以先輸入 <code>D:</code> 讓當前位置移到 D 槽)  </li>
+<li>初始化資料夾(必須是空資料夾，以下方法二選一)  <ul>
+<li>方法一(當前位置 D 槽) –在 D 槽新建 Blog 資料夾並初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init Blog</span><br></pre></td></tr></table></figure></li>
+<li>方法二(已自行新建資料夾，當前位置 D:\Blog) –將 Blog 資料夾初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>安裝相關套件  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>3. 部署設定</strong></p>
+<ul>
+<li>安裝部署用套件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li>修改部署設定 (檔案 <code>根目錄\_config.yml</code> 最下方 # Deployment)  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/用戶名/用戶名.github.io.git</span>  <span class="comment"># Repository 網址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">分支名稱(可用預設</span> <span class="string">main</span> <span class="string">，或自訂如</span> <span class="string">gh-pages)</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">&quot;填入commit訊息&quot;</span>  <span class="comment"># 本行不用可刪</span></span><br></pre></td></tr></table></figure>
+<br/></li>
+</ul>
+<h3 id="部署到Github-常用指令"><a href="#部署到Github-常用指令" class="headerlink" title="部署到Github (常用指令)"></a>部署到Github (常用指令)</h3><p><strong>1. 本地端預覽</strong><br>使用時機: 當在本地端做完修改後，如果希望看到及時修改結果。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server                <span class="comment"># 開啟本地端預覽(標準用法)</span></span><br><span class="line">hexo s                     <span class="comment"># 開啟本地端預覽(簡短用法)</span></span><br><span class="line">http://localhost:4000      <span class="comment"># 貼入網址列即可預覽</span></span><br><span class="line">Ctrl + C                   <span class="comment"># 結束本地端預覽</span></span><br></pre></td></tr></table></figure>
+<p><strong>2. 產生靜態檔案</strong><br>使用時機: 編寫完成後，產生要部署的靜態檔案(會產生 <code>根目錄\public</code> 資料夾放入要部署的檔案)。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate             <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo g                    <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
+<p><strong>3. 部署</strong><br>使用時機: 編寫完成後，部署到 Github ( <code>根目錄\public</code> 裡的檔案會被上傳到設定好的 Repository)。部署完成就可以在 <code>github.io</code> 看到自己的 Blog 了!  </p>
+<blockquote>
+<p><font color=#FF6600>Github有時候部署後要等10~20分鐘畫面才會更新</font></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy                  <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo d                       <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br><span class="line">https://帳戶名.github.io/     <span class="comment"># 個人部落格網址</span></span><br></pre></td></tr></table></figure>
+<p><strong>4. 清除快取 &amp; 靜態檔案</strong><br>使用時機: 為了避免出錯，建議在每次 deploy 前，都先清除先前的資料再重新產生靜態檔案(清除快取檔案 <code>db.json</code> 和已產生的靜態檔案 <code>根目錄\public</code>)。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean     <span class="comment"># 清除快取 &amp; 靜態檔案(標準用法)</span></span><br><span class="line">hexo cl        <span class="comment"># 清除快取 &amp; 靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>Hexo</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo 基本設定</title>
     <url>/posts/a970120e/</url>
     <content><![CDATA[<p>基本上經過上一篇的操作，在 <code>hexo s</code> 後應該已經可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 看到預設的 Hello World 畫面了，但要讓 Blog 正式啟動前，我們還要先做一些個人化設定。  </p>
@@ -479,54 +479,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo 編輯文章</title>
-    <url>/posts/978c1db/</url>
-    <content><![CDATA[<p>基本設定都完成後就可以來寫部落格了! 在正式開始前，如果能對 Hexo 的資料夾架構及 Front-matter 有點基本的認識，會對後續的操作很有幫助。</p>
-<span id="more"></span>
-
-<h2 id="Hexo-資料夾架構"><a href="#Hexo-資料夾架構" class="headerlink" title="Hexo 資料夾架構"></a>Hexo 資料夾架構</h2><p>之前在 <code>hexo init</code> 之後，根目錄資料夾會多了一些預設檔案，接下來會對其中比較重要的做簡單說明。  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── .deploy_git             # 內含已部署到 Github Repository 的所有檔案</span><br><span class="line">├── public                  # hexo g 生成靜態網站檔</span><br><span class="line">├── scaffolds               # 樣板資料夾(hexo new 會從這裡抓樣板，也可以自己新建樣板)</span><br><span class="line">|   ├── draft.md            # 草稿樣板</span><br><span class="line">|   ├── page.md             # 頁面樣板</span><br><span class="line">|   └── post.md             # 文章樣板(預設)</span><br><span class="line">├── source                  # 存放原始檔案的地方</span><br><span class="line">|   ├── _data               # 存放自定義設定原始碼的地方</span><br><span class="line">|   ├── _drafts             # 草稿資料夾</span><br><span class="line">|   └── _posts              # 文章資料夾</span><br><span class="line">├── themes                  # 各種主題資料夾</span><br><span class="line">|   └── landscape           # 預設主題</span><br><span class="line">|       └── _config.yml     # 主題樣式設定檔</span><br><span class="line">├── .gitignore              # 設定不想被加入版本控制或是上傳到 GitHub 的資料夾或檔案</span><br><span class="line">└── _config.yml             # Hexo 基本設定</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>_drafts</code> 草稿資料夾預設會被 generate 、server 和 deploy 指令略過(<code>_post</code> 以外以”_”開頭的資料夾都是)。如果想在 localhost 先預覽的話，可以在 <code>root\_config.yml</code> 裡把 <code>render_drafts: false(預設)</code> 改為 true。</li>
-</ul>
-<h2 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h2><p>Front-matter 是檔案最上方以 — 分隔的區域，用於指定個別檔案的變數。可以每篇文章個別設定，也可以預先在樣板中建立套用內容。常用的變數如下:</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">title</span>        <span class="comment"># 標題(預設為檔案名稱)</span></span><br><span class="line"><span class="string">date</span>         <span class="comment"># 建立日期(預設為檔案建立日期)</span></span><br><span class="line"><span class="string">updated</span>      <span class="comment"># 更新日期(預設為檔案更新日期)</span></span><br><span class="line"><span class="string">comments</span>     <span class="comment"># 留言功能(預設 true :開啟)</span></span><br><span class="line"><span class="string">tags</span>         <span class="comment"># 標籤</span></span><br><span class="line"><span class="string">categories</span>   <span class="comment"># 分類</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>當因為重新部署或其他原因，導致在沒有修改文章情況下顯示文章更新，可以手動修改 <code>updated</code> 值，讓他跟建立日期相同即可。  </li>
-<li>多個標籤&#x2F;多個分類寫法不同，可參考<a href="https://hexo.io/zh-tw/docs/front-matter#%E5%88%86%E9%A1%9E%E5%92%8C%E6%A8%99%E7%B1%A4">官方說明</a>。</li>
-</ul>
-<h2 id="草稿編輯"><a href="#草稿編輯" class="headerlink" title="草稿編輯"></a>草稿編輯</h2><h3 id="新增草稿"><a href="#新增草稿" class="headerlink" title="新增草稿"></a>新增草稿</h3><p>草稿會建立在 <code>root\source\_drafts</code> 資料夾內。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new draft 文章名稱</span><br></pre></td></tr></table></figure>
-<h3 id="草稿轉文章"><a href="#草稿轉文章" class="headerlink" title="草稿轉文章"></a>草稿轉文章</h3><p>指令會把檔案從 <code>_drafts</code> 移至 <code>_posts</code> 資料夾內，也可以自己手動移動。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish draft 文章名稱</span><br></pre></td></tr></table></figure>
-
-<h2 id="文章編輯"><a href="#文章編輯" class="headerlink" title="文章編輯"></a>文章編輯</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>會建立在 <code>root\source\_posts</code> 資料夾內。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new 文章名稱         <span class="comment"># 預設抓取 post 樣板</span></span><br></pre></td></tr></table></figure>
-<h3 id="刪除貼文"><a href="#刪除貼文" class="headerlink" title="刪除貼文"></a>刪除貼文</h3><p>直接從 <code>root\source</code> 資料夾刪除本地檔案，清除靜態檔再重新上傳即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<h2 id="頁面編輯"><a href="#頁面編輯" class="headerlink" title="頁面編輯"></a>頁面編輯</h2><p>頁面和文章不同，是指每個主題 menu 項目的頁面。如果有開啟 menu 項目卻沒有預設頁面的情況下，會被導向 404 畫面。常用的幾個頁面如下:</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">about</span>         <span class="comment"># 關於我(通常會寫網站介紹或作者介紹)</span></span><br><span class="line"><span class="string">archives</span>      <span class="comment"># 歸檔(依發布日期把所有文章排序)</span></span><br><span class="line"><span class="string">categories</span>    <span class="comment"># 分類(會依每篇文章 Front-matter 裡的分類建立分類目錄-有層級)</span></span><br><span class="line"><span class="string">tags</span>          <span class="comment"># 標籤(會依每篇文章 Front-matter 裡的分類建立標籤目錄-無層級)</span></span><br><span class="line"><span class="string">link</span>          <span class="comment"># 對外連結(通常是推薦部落格或網站的連結)</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="新建頁面"><a href="#新建頁面" class="headerlink" title="新建頁面"></a>新建頁面</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page 頁面名稱</span><br></pre></td></tr></table></figure>
-<ul>
-<li>頁面通常不需要開啟留言功能，所以在新建時要記得將 Front-matter 的 <code>comments</code> 值改為 false。</li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2021-12-14 18:33:37</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2021-12-14 18:34:46</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>新建頁面會新建一個 <code>index</code> 檔案，放在”頁面名稱”資料夾裡。</li>
-</ul>
-<h2 id="文章發布"><a href="#文章發布" class="headerlink" title="文章發布"></a>文章發布</h2><p>同之前的部署指令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo NexT 主題變更 &amp; 設定</title>
     <url>/posts/ebe0f18a/</url>
     <content><![CDATA[<p>基本設定都做好了，文章也成功發佈了，接下來該找個美美的主題幫部落格換個新衣服。我最後找了看起來簡約大方的 NexT 主題，持續都有在作版本更新，開源資源也很多，看到各種大神把基本款改成高級訂製款，除了框架根本看不出原樣，覺得超厲害!  </p>
@@ -627,39 +579,46 @@
       </tags>
   </entry>
   <entry>
-    <title>使用 Hexo-abbrlink 產生永久連結</title>
-    <url>/posts/d8dab675/</url>
-    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因為是在建置部落格的同時整理並撰寫 Hexo 筆記，內容的更動導致常常需要修改多篇文章的檔名，permalink 自動產生網址的設定也連帶造成了我一些困擾，所以想用 Hexo-abbrlink 來一勞永逸。  </p>
+    <title>Hexo 編輯文章</title>
+    <url>/posts/978c1db/</url>
+    <content><![CDATA[<p>基本設定都完成後就可以來寫部落格了! 在正式開始前，如果能對 Hexo 的資料夾架構及 Front-matter 有點基本的認識，會對後續的操作很有幫助。</p>
 <span id="more"></span>
-<p>我原本 permalink 的設定是直接從檔名產生網址。網路上的教學建議檔案用日期 + 英文標題命名，所以修改的同時也讓同一篇文章的網址不斷改動。  </p>
-<blockquote>
-<p>備註: 建議檔案用日期 + 英文標題命名原因  </p>
-<ol>
-<li>日期方便作檔案排序。  </li>
-<li>中文網址在台灣及大陸外的地區必須以編碼方式來呈現， URL 被轉碼後會變得很長(長得像亂碼)，這對 SEO 來說也較為不利。</li>
-</ol>
-</blockquote>
-<h2 id="使用-Hexo-abbrlink-的好處"><a href="#使用-Hexo-abbrlink-的好處" class="headerlink" title="使用 Hexo-abbrlink 的好處"></a>使用 Hexo-abbrlink 的好處</h2><p><strong>1. 網址固定，不再因修改檔名或日期變動</strong><br>Hexo-abbrlink 會依照文章標題產生永久連結，並保存在 Front-matter (檔案最上方以 — 分隔的區域)，之後即使更改檔名也不會再變動。<br><img src="/../../Blog-image/posts/2021-12-27_001.webp" alt="abbrlink存入Front-matter20211227-001"></p>
-<blockquote>
-<p>舊文章(已經部署)會在下一次 <code>hexo g</code> 時產生 abbrlink 。<br>新文章(還沒部署)會在 <code>hexo s</code> 時就產生 abbrlink 。  </p>
-</blockquote>
-<p><strong>2. 檔名可依自己方便取了</strong><br><del>再也不用想英文標題了!!</del>  </p>
-<p><strong>3. 降低因網址變動產生的404問題</strong><br>據說404錯誤會影響網站在SEO上的排名，讓其他人較不容易搜尋到自己的頁面。  </p>
-<h2 id="安裝-hexo-abbrlink"><a href="#安裝-hexo-abbrlink" class="headerlink" title="安裝 hexo-abbrlink"></a>安裝 hexo-abbrlink</h2><blockquote>
-<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
-</blockquote>
-<p><strong>1. 安裝套件</strong>  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<p><strong>2. 修改 <code>root\_config.yml</code> 文件</strong>  </p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>  <span class="comment"># support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>    <span class="comment"># support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Hexo-資料夾架構"><a href="#Hexo-資料夾架構" class="headerlink" title="Hexo 資料夾架構"></a>Hexo 資料夾架構</h2><p>之前在 <code>hexo init</code> 之後，根目錄資料夾會多了一些預設檔案，接下來會對其中比較重要的做簡單說明。  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── .deploy_git             # 內含已部署到 Github Repository 的所有檔案</span><br><span class="line">├── public                  # hexo g 生成靜態網站檔</span><br><span class="line">├── scaffolds               # 樣板資料夾(hexo new 會從這裡抓樣板，也可以自己新建樣板)</span><br><span class="line">|   ├── draft.md            # 草稿樣板</span><br><span class="line">|   ├── page.md             # 頁面樣板</span><br><span class="line">|   └── post.md             # 文章樣板(預設)</span><br><span class="line">├── source                  # 存放原始檔案的地方</span><br><span class="line">|   ├── _data               # 存放自定義設定原始碼的地方</span><br><span class="line">|   ├── _drafts             # 草稿資料夾</span><br><span class="line">|   └── _posts              # 文章資料夾</span><br><span class="line">├── themes                  # 各種主題資料夾</span><br><span class="line">|   └── landscape           # 預設主題</span><br><span class="line">|       └── _config.yml     # 主題樣式設定檔</span><br><span class="line">├── .gitignore              # 設定不想被加入版本控制或是上傳到 GitHub 的資料夾或檔案</span><br><span class="line">└── _config.yml             # Hexo 基本設定</span><br></pre></td></tr></table></figure>
 <ul>
-<li>也可以自己修改 permalink 參數(把 post 刪掉或增減其他參數)</li>
-<li><code>alg</code> 是雜湊編碼產生方式， <code>rep</code> 是雜湊編碼表示方式(預設十進位)，兩種參數的搭配結果如下:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex    https://XXXX.com/posts/66c8/</span><br><span class="line">crc16 &amp; dec    https://XXXX.com/posts/65535/</span><br><span class="line">crc32 &amp; hex    https://XXXX.com/posts/8ddf18fb/</span><br><span class="line">crc32 &amp; dec    https://XXXX.com/posts/1690090958/</span><br></pre></td></tr></table></figure></li>
+<li><code>_drafts</code> 草稿資料夾預設會被 generate 、server 和 deploy 指令略過(<code>_post</code> 以外以”_”開頭的資料夾都是)。如果想在 localhost 先預覽的話，可以在 <code>root\_config.yml</code> 裡把 <code>render_drafts: false(預設)</code> 改為 true。</li>
 </ul>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
-<li><a href="https://github.com/rozbo/hexo-abbrlink">rozbo&#x2F;hexo-abbrlink README.md 文件</a></li>
+<h2 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h2><p>Front-matter 是檔案最上方以 — 分隔的區域，用於指定個別檔案的變數。可以每篇文章個別設定，也可以預先在樣板中建立套用內容。常用的變數如下:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">title</span>        <span class="comment"># 標題(預設為檔案名稱)</span></span><br><span class="line"><span class="string">date</span>         <span class="comment"># 建立日期(預設為檔案建立日期)</span></span><br><span class="line"><span class="string">updated</span>      <span class="comment"># 更新日期(預設為檔案更新日期)</span></span><br><span class="line"><span class="string">comments</span>     <span class="comment"># 留言功能(預設 true :開啟)</span></span><br><span class="line"><span class="string">tags</span>         <span class="comment"># 標籤</span></span><br><span class="line"><span class="string">categories</span>   <span class="comment"># 分類</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>當因為重新部署或其他原因，導致在沒有修改文章情況下顯示文章更新，可以手動修改 <code>updated</code> 值，讓他跟建立日期相同即可。  </li>
+<li>多個標籤&#x2F;多個分類寫法不同，可參考<a href="https://hexo.io/zh-tw/docs/front-matter#%E5%88%86%E9%A1%9E%E5%92%8C%E6%A8%99%E7%B1%A4">官方說明</a>。</li>
 </ul>
-]]></content>
+<h2 id="草稿編輯"><a href="#草稿編輯" class="headerlink" title="草稿編輯"></a>草稿編輯</h2><h3 id="新增草稿"><a href="#新增草稿" class="headerlink" title="新增草稿"></a>新增草稿</h3><p>草稿會建立在 <code>root\source\_drafts</code> 資料夾內。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new draft 文章名稱</span><br></pre></td></tr></table></figure>
+<h3 id="草稿轉文章"><a href="#草稿轉文章" class="headerlink" title="草稿轉文章"></a>草稿轉文章</h3><p>指令會把檔案從 <code>_drafts</code> 移至 <code>_posts</code> 資料夾內，也可以自己手動移動。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish draft 文章名稱</span><br></pre></td></tr></table></figure>
+
+<h2 id="文章編輯"><a href="#文章編輯" class="headerlink" title="文章編輯"></a>文章編輯</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>會建立在 <code>root\source\_posts</code> 資料夾內。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new 文章名稱         <span class="comment"># 預設抓取 post 樣板</span></span><br></pre></td></tr></table></figure>
+<h3 id="刪除貼文"><a href="#刪除貼文" class="headerlink" title="刪除貼文"></a>刪除貼文</h3><p>直接從 <code>root\source</code> 資料夾刪除本地檔案，清除靜態檔再重新上傳即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="頁面編輯"><a href="#頁面編輯" class="headerlink" title="頁面編輯"></a>頁面編輯</h2><p>頁面和文章不同，是指每個主題 menu 項目的頁面。如果有開啟 menu 項目卻沒有預設頁面的情況下，會被導向 404 畫面。常用的幾個頁面如下:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">about</span>         <span class="comment"># 關於我(通常會寫網站介紹或作者介紹)</span></span><br><span class="line"><span class="string">archives</span>      <span class="comment"># 歸檔(依發布日期把所有文章排序)</span></span><br><span class="line"><span class="string">categories</span>    <span class="comment"># 分類(會依每篇文章 Front-matter 裡的分類建立分類目錄-有層級)</span></span><br><span class="line"><span class="string">tags</span>          <span class="comment"># 標籤(會依每篇文章 Front-matter 裡的分類建立標籤目錄-無層級)</span></span><br><span class="line"><span class="string">link</span>          <span class="comment"># 對外連結(通常是推薦部落格或網站的連結)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="新建頁面"><a href="#新建頁面" class="headerlink" title="新建頁面"></a>新建頁面</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page 頁面名稱</span><br></pre></td></tr></table></figure>
+<ul>
+<li>頁面通常不需要開啟留言功能，所以在新建時要記得將 Front-matter 的 <code>comments</code> 值改為 false。</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2021-12-14 18:33:37</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2021-12-14 18:34:46</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>新建頁面會新建一個 <code>index</code> 檔案，放在”頁面名稱”資料夾裡。</li>
+</ul>
+<h2 id="文章發布"><a href="#文章發布" class="headerlink" title="文章發布"></a>文章發布</h2><p>同之前的部署指令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
@@ -731,6 +690,82 @@
       </tags>
   </entry>
   <entry>
+    <title>使用 Hexo-abbrlink 產生永久連結</title>
+    <url>/posts/d8dab675/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因為是在建置部落格的同時整理並撰寫 Hexo 筆記，內容的更動導致常常需要修改多篇文章的檔名，permalink 自動產生網址的設定也連帶造成了我一些困擾，所以想用 Hexo-abbrlink 來一勞永逸。  </p>
+<span id="more"></span>
+<p>我原本 permalink 的設定是直接從檔名產生網址。網路上的教學建議檔案用日期 + 英文標題命名，所以修改的同時也讓同一篇文章的網址不斷改動。  </p>
+<blockquote>
+<p>備註: 建議檔案用日期 + 英文標題命名原因  </p>
+<ol>
+<li>日期方便作檔案排序。  </li>
+<li>中文網址在台灣及大陸外的地區必須以編碼方式來呈現， URL 被轉碼後會變得很長(長得像亂碼)，這對 SEO 來說也較為不利。</li>
+</ol>
+</blockquote>
+<h2 id="使用-Hexo-abbrlink-的好處"><a href="#使用-Hexo-abbrlink-的好處" class="headerlink" title="使用 Hexo-abbrlink 的好處"></a>使用 Hexo-abbrlink 的好處</h2><p><strong>1. 網址固定，不再因修改檔名或日期變動</strong><br>Hexo-abbrlink 會依照文章標題產生永久連結，並保存在 Front-matter (檔案最上方以 — 分隔的區域)，之後即使更改檔名也不會再變動。<br><img src="/../../Blog-image/posts/2021-12-27_001.webp" alt="abbrlink存入Front-matter20211227-001"></p>
+<blockquote>
+<p>舊文章(已經部署)會在下一次 <code>hexo g</code> 時產生 abbrlink 。<br>新文章(還沒部署)會在 <code>hexo s</code> 時就產生 abbrlink 。  </p>
+</blockquote>
+<p><strong>2. 檔名可依自己方便取了</strong><br><del>再也不用想英文標題了!!</del>  </p>
+<p><strong>3. 降低因網址變動產生的404問題</strong><br>據說404錯誤會影響網站在SEO上的排名，讓其他人較不容易搜尋到自己的頁面。  </p>
+<h2 id="安裝-hexo-abbrlink"><a href="#安裝-hexo-abbrlink" class="headerlink" title="安裝 hexo-abbrlink"></a>安裝 hexo-abbrlink</h2><blockquote>
+<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
+</blockquote>
+<p><strong>1. 安裝套件</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<p><strong>2. 修改 <code>root\_config.yml</code> 文件</strong>  </p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>  <span class="comment"># support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>    <span class="comment"># support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>也可以自己修改 permalink 參數(把 post 刪掉或增減其他參數)</li>
+<li><code>alg</code> 是雜湊編碼產生方式， <code>rep</code> 是雜湊編碼表示方式(預設十進位)，兩種參數的搭配結果如下:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex    https://XXXX.com/posts/66c8/</span><br><span class="line">crc16 &amp; dec    https://XXXX.com/posts/65535/</span><br><span class="line">crc32 &amp; hex    https://XXXX.com/posts/8ddf18fb/</span><br><span class="line">crc32 &amp; dec    https://XXXX.com/posts/1690090958/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://github.com/rozbo/hexo-abbrlink">rozbo&#x2F;hexo-abbrlink README.md 文件</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo NexT 主題更新</title>
+    <url>/posts/dbd33422/</url>
+    <content><![CDATA[<blockquote>
+<p>本篇撰寫時 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-<strong>8.8.2</strong> 升級到 <strong>8.9.0</strong></p>
+</blockquote>
+<span id="more"></span>
+<p>NexT 官方團隊在收集一定數量 Bugfix &#x2F; Feature Request 的情況下，原則上會每月更新一次，可以先參考官方公布的版本更新內容再決定要不要更新。  </p>
+<p>不過，更新通常是為了優化(<code>custom_file_path</code> 真的讓主題更新方便很多)、排除障礙或提高安全性，理論上可以有更好的使用體驗，所以如果有更新提醒我應該還是會盡快處理。  </p>
+<p>另外，隨著技術的進步，舊有的方式可能會被淘汰(像是以前的 <code>.swig</code> 已被 <code>.njk</code> 替代)，為了避免跨大版本更新造成需要大幅度調整的麻煩，建議更新頻率不要太低。  </p>
+<h2 id="近年-NexT-主題大改革"><a href="#近年-NexT-主題大改革" class="headerlink" title="近年 NexT 主題大改革"></a>近年 NexT 主題大改革</h2><p>如果查詢網路上較久以前的教學文章，會發現很多東西都跟新版本搭不起來了。以我自己建置部落格的過程和踩過的坑，感覺最大的變化如下:  </p>
+<p><strong>1. Custom Files 用法(v7.3.0 啟用)</strong><br>以前要把 NexT 主題改得更有個人風格(ex.改背景、在文章底部加文字、增減頁腳文字…等)，都需要改動 <code>layout</code> 資料夾裡相對應的檔案原始碼。一旦進行版本更新，原本作好的設定被直接覆蓋，造成很多困擾。  </p>
+<p>自啟用 Custom Files 用法後，所有的程式碼修改一律放在 <code>root\source\_data</code> 資料夾裡，只要到 <code>root\_config.next.yml</code> 設定讀取路徑就可以直接套用。因為設定檔不是放在主題資料夾內，就算版本更新也不造成影響。   </p>
+<p><strong>2. Nunjucks 引擎(v7.4.2 啟用)</strong><br>網路上較久以前的教學文章，都會說要修改 <code>.swig</code> 檔，但我找半天都找不到，後來看官方文件才發現，因為 swig 缺乏维護，NexT 自 v7.4.2 開始，改用 Nunjucks 代替 swig 作为模版引擎，檔案類型變成 <code>.njk</code> ，網路上的教學文章已不適用。</p>
+<h2 id="npm-安裝-官方推薦"><a href="#npm-安裝-官方推薦" class="headerlink" title="npm 安裝(官方推薦)"></a>npm 安裝(官方推薦)</h2><p><strong>主題資料夾位置: <code>root\node_modules\hexo-theme-next</code></strong><br>打開 <code>root\node_modules</code> 資料夾會發現，之前用 npm 安裝的各種插件都在這裡面。原則上這個資料夾的東西都不會手動修改，只用 npm 指令處理，後續用 npm 更新或解除安裝基本都是改動這裡。  </p>
+<p>NexT 主題更新只要進到 Blog 的根目錄擇一執行以下指令即可。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next           <span class="comment"># 默認最新版本</span></span><br><span class="line">npm install hexo-theme-next@latest    <span class="comment"># 安裝最新版本</span></span><br><span class="line">npm install hexo-theme-next@8.9.0     <span class="comment"># 安裝指定版本</span></span><br></pre></td></tr></table></figure>
+
+<p>更新完成後，參考更新說明。如果有想用的新功能，直接在 <code>root\_config.next.yml</code> 修改設定即可。</p>
+<blockquote>
+<p>如果沒有這個檔案，請參考<a href="/posts/ebe0f18a/">Hexo NexT 主題變更 &amp; 設定 </a> 章節 4.1 說明。</p>
+</blockquote>
+<h2 id="git-安裝-太久沒更新推薦"><a href="#git-安裝-太久沒更新推薦" class="headerlink" title="git 安裝(太久沒更新推薦)"></a>git 安裝(太久沒更新推薦)</h2><p><strong>主題資料夾位置: <code>root\themes\主題名稱資料夾</code></strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
+<p>我剛開始使用 NexT 主題時是使用這種方式(<del>因為搞不懂 npm 指令到底在背後執行什麼</del>)。看了各種網路教學作個人化設定，改動了不少 NexT 主題原始碼，然後因為跟 git 不熟，不小心整個覆蓋掉，整個重來得很崩潰(跑題了)。後來使用 npm 安裝各種插件習慣，且啟用 <code>custom_file_path</code> 後，覺得 npm 方式比較方便。  </p>
+<p><strong>git 安裝推薦使用對象:</strong><br><strong>1. 有改動 NexT 主題原始碼，不想直接覆蓋的人。</strong><br>使用 <code>git pull</code> 等方式更新合併，主題必須加入版本控制。鑒於目前我跟 Git 還是很不熟，這裡就不多作說明。<br><strong>2. 太久沒更新，直接覆蓋可能會出現很多問題，需要大量調整的人。</strong><br>使用這種方法的人，可以在資料夾後加版本編號作新舊版區隔，等調整完成後，在 <code>root\_config.yml</code> 設定要套用哪個版本就可以了。  </p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>驗證三角形</title>
     <url>/posts/dca3ad45/</url>
     <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期一作業<br>學期一終於結束了，完成了課程決定挑戰選修的期末考來驗收學習成效， JavaScript 題目一如既往地燒腦有挑戰性，從前老愛跟數讀死槓的我超開心呀!! 寫出來爆有成就感啊!!</p>
@@ -794,41 +829,6 @@
       <tags>
         <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo NexT 主題更新</title>
-    <url>/posts/dbd33422/</url>
-    <content><![CDATA[<blockquote>
-<p>本篇撰寫時 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-<strong>8.8.2</strong> 升級到 <strong>8.9.0</strong></p>
-</blockquote>
-<span id="more"></span>
-<p>NexT 官方團隊在收集一定數量 Bugfix &#x2F; Feature Request 的情況下，原則上會每月更新一次，可以先參考官方公布的版本更新內容再決定要不要更新。  </p>
-<p>不過，更新通常是為了優化(<code>custom_file_path</code> 真的讓主題更新方便很多)、排除障礙或提高安全性，理論上可以有更好的使用體驗，所以如果有更新提醒我應該還是會盡快處理。  </p>
-<p>另外，隨著技術的進步，舊有的方式可能會被淘汰(像是以前的 <code>.swig</code> 已被 <code>.njk</code> 替代)，為了避免跨大版本更新造成需要大幅度調整的麻煩，建議更新頻率不要太低。  </p>
-<h2 id="近年-NexT-主題大改革"><a href="#近年-NexT-主題大改革" class="headerlink" title="近年 NexT 主題大改革"></a>近年 NexT 主題大改革</h2><p>如果查詢網路上較久以前的教學文章，會發現很多東西都跟新版本搭不起來了。以我自己建置部落格的過程和踩過的坑，感覺最大的變化如下:  </p>
-<p><strong>1. Custom Files 用法(v7.3.0 啟用)</strong><br>以前要把 NexT 主題改得更有個人風格(ex.改背景、在文章底部加文字、增減頁腳文字…等)，都需要改動 <code>layout</code> 資料夾裡相對應的檔案原始碼。一旦進行版本更新，原本作好的設定被直接覆蓋，造成很多困擾。  </p>
-<p>自啟用 Custom Files 用法後，所有的程式碼修改一律放在 <code>root\source\_data</code> 資料夾裡，只要到 <code>root\_config.next.yml</code> 設定讀取路徑就可以直接套用。因為設定檔不是放在主題資料夾內，就算版本更新也不造成影響。   </p>
-<p><strong>2. Nunjucks 引擎(v7.4.2 啟用)</strong><br>網路上較久以前的教學文章，都會說要修改 <code>.swig</code> 檔，但我找半天都找不到，後來看官方文件才發現，因為 swig 缺乏维護，NexT 自 v7.4.2 開始，改用 Nunjucks 代替 swig 作为模版引擎，檔案類型變成 <code>.njk</code> ，網路上的教學文章已不適用。</p>
-<h2 id="npm-安裝-官方推薦"><a href="#npm-安裝-官方推薦" class="headerlink" title="npm 安裝(官方推薦)"></a>npm 安裝(官方推薦)</h2><p><strong>主題資料夾位置: <code>root\node_modules\hexo-theme-next</code></strong><br>打開 <code>root\node_modules</code> 資料夾會發現，之前用 npm 安裝的各種插件都在這裡面。原則上這個資料夾的東西都不會手動修改，只用 npm 指令處理，後續用 npm 更新或解除安裝基本都是改動這裡。  </p>
-<p>NexT 主題更新只要進到 Blog 的根目錄擇一執行以下指令即可。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next           <span class="comment"># 默認最新版本</span></span><br><span class="line">npm install hexo-theme-next@latest    <span class="comment"># 安裝最新版本</span></span><br><span class="line">npm install hexo-theme-next@8.9.0     <span class="comment"># 安裝指定版本</span></span><br></pre></td></tr></table></figure>
-
-<p>更新完成後，參考更新說明。如果有想用的新功能，直接在 <code>root\_config.next.yml</code> 修改設定即可。</p>
-<blockquote>
-<p>如果沒有這個檔案，請參考<a href="/posts/ebe0f18a/">Hexo NexT 主題變更 &amp; 設定 </a> 章節 4.1 說明。</p>
-</blockquote>
-<h2 id="git-安裝-太久沒更新推薦"><a href="#git-安裝-太久沒更新推薦" class="headerlink" title="git 安裝(太久沒更新推薦)"></a>git 安裝(太久沒更新推薦)</h2><p><strong>主題資料夾位置: <code>root\themes\主題名稱資料夾</code></strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
-<p>我剛開始使用 NexT 主題時是使用這種方式(<del>因為搞不懂 npm 指令到底在背後執行什麼</del>)。看了各種網路教學作個人化設定，改動了不少 NexT 主題原始碼，然後因為跟 git 不熟，不小心整個覆蓋掉，整個重來得很崩潰(跑題了)。後來使用 npm 安裝各種插件習慣，且啟用 <code>custom_file_path</code> 後，覺得 npm 方式比較方便。  </p>
-<p><strong>git 安裝推薦使用對象:</strong><br><strong>1. 有改動 NexT 主題原始碼，不想直接覆蓋的人。</strong><br>使用 <code>git pull</code> 等方式更新合併，主題必須加入版本控制。鑒於目前我跟 Git 還是很不熟，這裡就不多作說明。<br><strong>2. 太久沒更新，直接覆蓋可能會出現很多問題，需要大量調整的人。</strong><br>使用這種方法的人，可以在資料夾後加版本編號作新舊版區隔，等調整完成後，在 <code>root\_config.yml</code> 設定要套用哪個版本就可以了。  </p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
@@ -1414,9 +1414,9 @@
       </tags>
   </entry>
   <entry>
-    <title>CS50 x 2022 Week0 筆記</title>
+    <title>CS50x 2022 Week0 筆記</title>
     <url>/posts/b357a5fe/</url>
-    <content><![CDATA[<p>開始挑戰 CS50(Introduction to Computer Science)了! </p>
+    <content><![CDATA[<p>開始挑戰 CS50x(Introduction to Computer Science)了! </p>
 <blockquote>
 <p>What ultimately matters in this course is not so much where you end up relative to your classmates but where you end up relative to yourself when you began.<br>—- CS50x</p>
 </blockquote>
@@ -1446,13 +1446,49 @@
 <h3 id="Scratch"><a href="#Scratch" class="headerlink" title="Scratch"></a>Scratch</h3><p>用拼圖方式一步步組裝，做出一個可以運行的程式。  </p>
 <h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>寫程式其實就是一個解題的過程，首先要確保可以得出正確的答案，再來才是優化解題的過程。  </p>
 <p>在電話簿情境題中，如果僅僅是為了提升效率而兩頁兩頁做排查，也許會因為搜尋對象在單數頁而錯過。那即使可以在較短時間排查更多的資料也沒用，因為這種排查邏輯並不完善。  </p>
-<p>從開始學習程式到現在已經大約半年了，由於 CS50 是全英文課程，如果沒有一點點的程式基礎，聽起來真的會比較辛苦。半年前第一次聽的我和現在的重新撿回課程的我比起來，終於能比較順暢的聽懂了!接下來就是好好地堅持下去，認真的走完這個課程。  </p>
+<p>從開始學習程式到現在已經大約半年了，由於 CS50x 是全英文課程，如果沒有一點點的程式基礎，聽起來真的會比較辛苦。半年前第一次聽的我和現在的重新撿回課程的我比起來，終於能比較順暢的聽懂了!接下來就是好好地堅持下去，認真的走完這個課程。  </p>
 ]]></content>
       <categories>
         <category>學習紀錄 - CS50</category>
       </categories>
       <tags>
-        <tag>CS50(2022)</tag>
+        <tag>CS50x(2022)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CS50W Lecture1： HTML &amp; CSS</title>
+    <url>/posts/be2c6d84/</url>
+    <content><![CDATA[<p>課程名稱：CS50(Web Programming with Python and JavaScript)</p>
+<span id="more"></span>
+
+<h2 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h2><ul>
+<li>HTML：HTML 結構、Common HTML Tags …簡介。  </li>
+<li>CSS：Common CSS Properties、Specificity、CSS Selectors。  </li>
+<li>Responsive Design：viewport、Media Queries、Flexbox、Grids。  </li>
+<li>Bootstrap  </li>
+<li>Sass：variables and nesting</li>
+</ul>
+<h2 id="問題討論：-style-method-的選擇"><a href="#問題討論：-style-method-的選擇" class="headerlink" title="問題討論： style method 的選擇"></a>問題討論： style method 的選擇</h2><p><strong>Method1 - Use inline style：</strong>  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&quot;color: green&quot;</span>&gt;</span>CSS from inline style<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>Method2 - Use style tag：</strong>  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">h1</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">color</span>: green;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>CSS from style tag<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>Method3 - Use link to CSS file：</strong>  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>CSS from link to CSS file<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<p>上面三種方式的結果都一樣，各有優缺點。  </p>
+<ul>
+<li><strong>inline style</strong> 在順位上是三者中最高的，不會被其他的 CSS 設定覆蓋或影響。缺點是每個 HTML 元素要分別設置，在效率上或實用性上較不方便。  </li>
+<li><strong>style tag</strong> 把 CSS 設定從各個 HTML 標籤中分離出來，在配合 CSS 選擇器的情況下，可以一次對多個 HTML 元素進行樣式設定，效率較高。畢竟學習寫程式的過程中，很常看到的一句話就是：「盡可能減少重複的程式碼」。另外一點就是，使用這種方式會把文件的「內容」和「樣式」區分開來管理，除了文件內容的結構會比較清晰易懂，也較容易達到「關注點分離」的效用。  </li>
+<li>相對於 style tag 雖然把樣式跟內容分開，但兩者還是在同一個 HTML 文件裡； <strong>link to CSS file</strong> 的方式就直接將樣式設定放進單獨的 CSS 檔案做管理，「關注點分離」也更明確。另外就是，隨著我們做的 web app 規模變大，為了網頁畫面的一致性，我們可能會在多個網頁套用相同的 CSS 樣式。直接將樣式設定獨立成一個檔案並用 link 的方式引用，可以讓多個 HTML 文件引用同一個 CSS 樣式檔案。</li>
+</ul>
+<h2 id="小結：關注點分離"><a href="#小結：關注點分離" class="headerlink" title="小結：關注點分離"></a>小結：關注點分離</h2><p>關注點分離是在寫程式時要特別注意的地方，其目的就是讓程式碼的每個部分「分工明確」。這麼做的好處是，當程式碼執行結果發現任何不符合預期的地方，我們可以很容易地找出出問題的段落並進行修正，並且「只」需要修正該部分就好，程式碼的其他地方都不會受到影響。這在維護上會較方便、測試部分功能時也只需要針對特定一小段落即可，整體流程更有效率也不容易出錯。  </p>
+]]></content>
+      <categories>
+        <category>學習紀錄 - CS50</category>
+      </categories>
+      <tags>
+        <tag>CS50W</tag>
       </tags>
   </entry>
   <entry>
@@ -1491,13 +1527,13 @@ count();
 ]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
+    <title>tags</title>
+    <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
+    <title>categories</title>
+    <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
