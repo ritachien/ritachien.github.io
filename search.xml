@@ -16,37 +16,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Alpha Camp 學期一結業心得</title>
-    <url>/posts/491e0585/</url>
-    <content><![CDATA[<p>Alpha Camp的三週學習進度終於結束了，中間除了充斥著被成就感激起的學習熱情，也飽含怎麼都寫不出來的挫敗感。趁著現在給自己留下一篇熱騰騰的記錄，好好回顧這段學習歷程!  </p>
-<span id="more"></span>
-<br/>
-
-<h2 id="為什麼會報名Alpha-Camp"><a href="#為什麼會報名Alpha-Camp" class="headerlink" title="為什麼會報名Alpha Camp?"></a>為什麼會報名Alpha Camp?</h2><p>在傳產當了幾年的會計，雖然喜歡這種嚴謹又規整的工作，但是又不甘於這種毫無變化的生活。工作中充斥著各種財務報表的編撰和解讀，與人的交流變得少之又少……又由於公司軟體不給力，很多報表都是Excel刻出來的，為了減少人工輸入造成的錯誤，那段時間研究了函數、VBA，力求做到自動極大化。在查資料過程中發現，把一些固定的語法拼在一起，讓他自動提供結果給我，其實這些東西跟寫程式很像，這也成了我接觸程式語言的契機。  </p>
-<p>同時，我也和幾位不同產業的同學&#x2F;前輩聊了聊，發現只要繼續做會計，未來的工作模式也不會有太大的改變。我問了自己:「我能忍受未來20年都過這樣的生活嗎?」 然後我就有了轉職的想法XD  </p>
-<p>在嘗試自學後發現，因為完全沒概念，很難為自己規劃一個明確的方向。做了幾天的功課後，毅然決然的刷了卡，趁著沒有太大的經濟負擔時，試著走一條不一樣的路，希望給自己一個不一樣的未來。</p>
-<h2 id="三週課程感受"><a href="#三週課程感受" class="headerlink" title="三週課程感受"></a>三週課程感受</h2><p>說實話，比我預期的還要好! 其中對我最有幫助的應該是課程制度的設計，有效的把我在自學時發生的問題都解決了! 其中最有感覺的是以下幾點:</p>
-<ol>
-<li><p>進度制<br>  非常有效的解決了拖延症的問題。每週有固定進度，但又可以依照自己的時間安排每天學習時間。給了少許進度壓力的同時，又保持了一定的自由度。另外，因為有一批跟自己一樣進度的同學在，討論、互相激勵也很有幫助!</p>
-</li>
-<li><p>實作練習<br>  學了之後馬上思考要怎麼用，可以檢視自己是不是真的理解了課堂說明。這也是我最喜歡的一部分! 在糾結又糾結之後順利完成，那種成就感真的會讓我很有學習的衝勁!</p>
-</li>
-<li><p>作業觀摩&#x2F;助教回覆<br>  當自己的作業是「成功了」，但同學的作業是「有效率的成功了」，或是助教有任何的點評，看到這些時我都會特別高興，因為又找到了另一種解決問題的方法。跟著別人的思路走一遍，將它內化成自己能理解的知識，這也是對我來說明顯有幫助的學習方式。</p>
-</li>
-</ol>
-<p>跟著AC進度學習的同時，因為有了大方向，所以可以比較清楚的知道還有哪些欠缺的東西可以補足。學習期間<a href="https://www.w3schools.com/">W3school</a>、<a href="https://www.freecodecamp.org/">FreeCodeCamp</a>、<a href="https://developer.mozilla.org/zh-TW/">MDN</a>也作為補充資料給了我很多幫助。藉由閱讀不同的說明方式不斷作複習，不但加強記憶，偶爾看到一些新用法也很有趣。  </p>
-<h2 id="後續規劃"><a href="#後續規劃" class="headerlink" title="後續規劃"></a>後續規劃</h2><p>整體來說，這三週的學習是很愉快的，我也決定繼續進入下學期課程。  </p>
-<p>在下學期開課前，除了先進行課程預習外，希望能把這三週以來的筆記整理一下也放進部落格裡。相信隨著部落格的成長，除了可以檢視自己的曾經犯過的錯誤，也能更直觀的知道自己曾經學過什麼? 有沒有進步? 另外，目前進行到一半的 Ubuntu 及 Command Line 學習也很有趣!  </p>
-<p>終於擺脫了那種工作上原地踏步的無力感，喜歡目前每天都在學習、每時每刻都在進步的自己!</p>
-]]></content>
-      <categories>
-        <category>學習紀錄 - AlphaCamp</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript 運算子</title>
     <url>/posts/d403fec1/</url>
     <content><![CDATA[<p>在使用運算子 (Operators) 時，隨著練習題逐漸提高的複雜度，開始發現一些與自己認知不同的地方。這些不明顯的小錯誤，常常是導致程式跑不出來或出現預期外結果的原因。所以在之前筆記的基礎上，把犯過的錯誤一起整理進來，降低下次再犯的可能性。</p>
@@ -363,6 +332,37 @@
       </tags>
   </entry>
   <entry>
+    <title>Alpha Camp 學期一結業心得</title>
+    <url>/posts/491e0585/</url>
+    <content><![CDATA[<p>Alpha Camp的三週學習進度終於結束了，中間除了充斥著被成就感激起的學習熱情，也飽含怎麼都寫不出來的挫敗感。趁著現在給自己留下一篇熱騰騰的記錄，好好回顧這段學習歷程!  </p>
+<span id="more"></span>
+<br/>
+
+<h2 id="為什麼會報名Alpha-Camp"><a href="#為什麼會報名Alpha-Camp" class="headerlink" title="為什麼會報名Alpha Camp?"></a>為什麼會報名Alpha Camp?</h2><p>在傳產當了幾年的會計，雖然喜歡這種嚴謹又規整的工作，但是又不甘於這種毫無變化的生活。工作中充斥著各種財務報表的編撰和解讀，與人的交流變得少之又少……又由於公司軟體不給力，很多報表都是Excel刻出來的，為了減少人工輸入造成的錯誤，那段時間研究了函數、VBA，力求做到自動極大化。在查資料過程中發現，把一些固定的語法拼在一起，讓他自動提供結果給我，其實這些東西跟寫程式很像，這也成了我接觸程式語言的契機。  </p>
+<p>同時，我也和幾位不同產業的同學&#x2F;前輩聊了聊，發現只要繼續做會計，未來的工作模式也不會有太大的改變。我問了自己:「我能忍受未來20年都過這樣的生活嗎?」 然後我就有了轉職的想法XD  </p>
+<p>在嘗試自學後發現，因為完全沒概念，很難為自己規劃一個明確的方向。做了幾天的功課後，毅然決然的刷了卡，趁著沒有太大的經濟負擔時，試著走一條不一樣的路，希望給自己一個不一樣的未來。</p>
+<h2 id="三週課程感受"><a href="#三週課程感受" class="headerlink" title="三週課程感受"></a>三週課程感受</h2><p>說實話，比我預期的還要好! 其中對我最有幫助的應該是課程制度的設計，有效的把我在自學時發生的問題都解決了! 其中最有感覺的是以下幾點:</p>
+<ol>
+<li><p>進度制<br>  非常有效的解決了拖延症的問題。每週有固定進度，但又可以依照自己的時間安排每天學習時間。給了少許進度壓力的同時，又保持了一定的自由度。另外，因為有一批跟自己一樣進度的同學在，討論、互相激勵也很有幫助!</p>
+</li>
+<li><p>實作練習<br>  學了之後馬上思考要怎麼用，可以檢視自己是不是真的理解了課堂說明。這也是我最喜歡的一部分! 在糾結又糾結之後順利完成，那種成就感真的會讓我很有學習的衝勁!</p>
+</li>
+<li><p>作業觀摩&#x2F;助教回覆<br>  當自己的作業是「成功了」，但同學的作業是「有效率的成功了」，或是助教有任何的點評，看到這些時我都會特別高興，因為又找到了另一種解決問題的方法。跟著別人的思路走一遍，將它內化成自己能理解的知識，這也是對我來說明顯有幫助的學習方式。</p>
+</li>
+</ol>
+<p>跟著AC進度學習的同時，因為有了大方向，所以可以比較清楚的知道還有哪些欠缺的東西可以補足。學習期間<a href="https://www.w3schools.com/">W3school</a>、<a href="https://www.freecodecamp.org/">FreeCodeCamp</a>、<a href="https://developer.mozilla.org/zh-TW/">MDN</a>也作為補充資料給了我很多幫助。藉由閱讀不同的說明方式不斷作複習，不但加強記憶，偶爾看到一些新用法也很有趣。  </p>
+<h2 id="後續規劃"><a href="#後續規劃" class="headerlink" title="後續規劃"></a>後續規劃</h2><p>整體來說，這三週的學習是很愉快的，我也決定繼續進入下學期課程。  </p>
+<p>在下學期開課前，除了先進行課程預習外，希望能把這三週以來的筆記整理一下也放進部落格裡。相信隨著部落格的成長，除了可以檢視自己的曾經犯過的錯誤，也能更直觀的知道自己曾經學過什麼? 有沒有進步? 另外，目前進行到一半的 Ubuntu 及 Command Line 學習也很有趣!  </p>
+<p>終於擺脫了那種工作上原地踏步的無力感，喜歡目前每天都在學習、每時每刻都在進步的自己!</p>
+]]></content>
+      <categories>
+        <category>學習紀錄 - AlphaCamp</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo 基本設定</title>
     <url>/posts/a970120e/</url>
     <content><![CDATA[<p>基本上經過上一篇的操作，在 <code>hexo s</code> 後應該已經可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 看到預設的 Hello World 畫面了，但要讓 Blog 正式啟動前，我們還要先做一些個人化設定。  </p>
@@ -474,8 +474,97 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
-        <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 編輯文章</title>
+    <url>/posts/978c1db/</url>
+    <content><![CDATA[<p>基本設定都完成後就可以來寫部落格了! 在正式開始前，如果能對 Hexo 的資料夾架構及 Front-matter 有點基本的認識，會對後續的操作很有幫助。</p>
+<span id="more"></span>
+
+<h2 id="Hexo-資料夾架構"><a href="#Hexo-資料夾架構" class="headerlink" title="Hexo 資料夾架構"></a>Hexo 資料夾架構</h2><p>之前在 <code>hexo init</code> 之後，根目錄資料夾會多了一些預設檔案，接下來會對其中比較重要的做簡單說明。  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── .deploy_git             # 內含已部署到 Github Repository 的所有檔案</span><br><span class="line">├── public                  # hexo g 生成靜態網站檔</span><br><span class="line">├── scaffolds               # 樣板資料夾(hexo new 會從這裡抓樣板，也可以自己新建樣板)</span><br><span class="line">|   ├── draft.md            # 草稿樣板</span><br><span class="line">|   ├── page.md             # 頁面樣板</span><br><span class="line">|   └── post.md             # 文章樣板(預設)</span><br><span class="line">├── source                  # 存放原始檔案的地方</span><br><span class="line">|   ├── _data               # 存放自定義設定原始碼的地方</span><br><span class="line">|   ├── _drafts             # 草稿資料夾</span><br><span class="line">|   └── _posts              # 文章資料夾</span><br><span class="line">├── themes                  # 各種主題資料夾</span><br><span class="line">|   └── landscape           # 預設主題</span><br><span class="line">|       └── _config.yml     # 主題樣式設定檔</span><br><span class="line">├── .gitignore              # 設定不想被加入版本控制或是上傳到 GitHub 的資料夾或檔案</span><br><span class="line">└── _config.yml             # Hexo 基本設定</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>_drafts</code> 草稿資料夾預設會被 generate 、server 和 deploy 指令略過(<code>_post</code> 以外以”_”開頭的資料夾都是)。如果想在 localhost 先預覽的話，可以在 <code>root\_config.yml</code> 裡把 <code>render_drafts: false(預設)</code> 改為 true。</li>
+</ul>
+<h2 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h2><p>Front-matter 是檔案最上方以 — 分隔的區域，用於指定個別檔案的變數。可以每篇文章個別設定，也可以預先在樣板中建立套用內容。常用的變數如下:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">title</span>        <span class="comment"># 標題(預設為檔案名稱)</span></span><br><span class="line"><span class="string">date</span>         <span class="comment"># 建立日期(預設為檔案建立日期)</span></span><br><span class="line"><span class="string">updated</span>      <span class="comment"># 更新日期(預設為檔案更新日期)</span></span><br><span class="line"><span class="string">comments</span>     <span class="comment"># 留言功能(預設 true :開啟)</span></span><br><span class="line"><span class="string">tags</span>         <span class="comment"># 標籤</span></span><br><span class="line"><span class="string">categories</span>   <span class="comment"># 分類</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>當因為重新部署或其他原因，導致在沒有修改文章情況下顯示文章更新，可以手動修改 <code>updated</code> 值，讓他跟建立日期相同即可。  </li>
+<li>多個標籤&#x2F;多個分類寫法不同，可參考<a href="https://hexo.io/zh-tw/docs/front-matter#%E5%88%86%E9%A1%9E%E5%92%8C%E6%A8%99%E7%B1%A4">官方說明</a>。</li>
+</ul>
+<h2 id="草稿編輯"><a href="#草稿編輯" class="headerlink" title="草稿編輯"></a>草稿編輯</h2><h3 id="新增草稿"><a href="#新增草稿" class="headerlink" title="新增草稿"></a>新增草稿</h3><p>草稿會建立在 <code>root\source\_drafts</code> 資料夾內。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new draft 文章名稱</span><br></pre></td></tr></table></figure>
+<h3 id="草稿轉文章"><a href="#草稿轉文章" class="headerlink" title="草稿轉文章"></a>草稿轉文章</h3><p>指令會把檔案從 <code>_drafts</code> 移至 <code>_posts</code> 資料夾內，也可以自己手動移動。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish draft 文章名稱</span><br></pre></td></tr></table></figure>
+
+<h2 id="文章編輯"><a href="#文章編輯" class="headerlink" title="文章編輯"></a>文章編輯</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>會建立在 <code>root\source\_posts</code> 資料夾內。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new 文章名稱         <span class="comment"># 預設抓取 post 樣板</span></span><br></pre></td></tr></table></figure>
+<h3 id="刪除貼文"><a href="#刪除貼文" class="headerlink" title="刪除貼文"></a>刪除貼文</h3><p>直接從 <code>root\source</code> 資料夾刪除本地檔案，清除靜態檔再重新上傳即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="頁面編輯"><a href="#頁面編輯" class="headerlink" title="頁面編輯"></a>頁面編輯</h2><p>頁面和文章不同，是指每個主題 menu 項目的頁面。如果有開啟 menu 項目卻沒有預設頁面的情況下，會被導向 404 畫面。常用的幾個頁面如下:</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">about</span>         <span class="comment"># 關於我(通常會寫網站介紹或作者介紹)</span></span><br><span class="line"><span class="string">archives</span>      <span class="comment"># 歸檔(依發布日期把所有文章排序)</span></span><br><span class="line"><span class="string">categories</span>    <span class="comment"># 分類(會依每篇文章 Front-matter 裡的分類建立分類目錄-有層級)</span></span><br><span class="line"><span class="string">tags</span>          <span class="comment"># 標籤(會依每篇文章 Front-matter 裡的分類建立標籤目錄-無層級)</span></span><br><span class="line"><span class="string">link</span>          <span class="comment"># 對外連結(通常是推薦部落格或網站的連結)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="新建頁面"><a href="#新建頁面" class="headerlink" title="新建頁面"></a>新建頁面</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page 頁面名稱</span><br></pre></td></tr></table></figure>
+<ul>
+<li>頁面通常不需要開啟留言功能，所以在新建時要記得將 Front-matter 的 <code>comments</code> 值改為 false。</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2021-12-14 18:33:37</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2021-12-14 18:34:46</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>新建頁面會新建一個 <code>index</code> 檔案，放在”頁面名稱”資料夾裡。</li>
+</ul>
+<h2 id="文章發布"><a href="#文章發布" class="headerlink" title="文章發布"></a>文章發布</h2><p>同之前的部署指令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 Hexo-abbrlink 產生永久連結</title>
+    <url>/posts/d8dab675/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因為是在建置部落格的同時整理並撰寫 Hexo 筆記，內容的更動導致常常需要修改多篇文章的檔名，permalink 自動產生網址的設定也連帶造成了我一些困擾，所以想用 Hexo-abbrlink 來一勞永逸。  </p>
+<span id="more"></span>
+<p>我原本 permalink 的設定是直接從檔名產生網址。網路上的教學建議檔案用日期 + 英文標題命名，所以修改的同時也讓同一篇文章的網址不斷改動。  </p>
+<blockquote>
+<p>備註: 建議檔案用日期 + 英文標題命名原因  </p>
+<ol>
+<li>日期方便作檔案排序。  </li>
+<li>中文網址在台灣及大陸外的地區必須以編碼方式來呈現， URL 被轉碼後會變得很長(長得像亂碼)，這對 SEO 來說也較為不利。</li>
+</ol>
+</blockquote>
+<h2 id="使用-Hexo-abbrlink-的好處"><a href="#使用-Hexo-abbrlink-的好處" class="headerlink" title="使用 Hexo-abbrlink 的好處"></a>使用 Hexo-abbrlink 的好處</h2><p><strong>1. 網址固定，不再因修改檔名或日期變動</strong><br>Hexo-abbrlink 會依照文章標題產生永久連結，並保存在 Front-matter (檔案最上方以 — 分隔的區域)，之後即使更改檔名也不會再變動。<br><img src="/../../Blog-image/posts/2021-12-27_001.webp" alt="abbrlink存入Front-matter20211227-001"></p>
+<blockquote>
+<p>舊文章(已經部署)會在下一次 <code>hexo g</code> 時產生 abbrlink 。<br>新文章(還沒部署)會在 <code>hexo s</code> 時就產生 abbrlink 。  </p>
+</blockquote>
+<p><strong>2. 檔名可依自己方便取了</strong><br><del>再也不用想英文標題了!!</del>  </p>
+<p><strong>3. 降低因網址變動產生的404問題</strong><br>據說404錯誤會影響網站在SEO上的排名，讓其他人較不容易搜尋到自己的頁面。  </p>
+<h2 id="安裝-hexo-abbrlink"><a href="#安裝-hexo-abbrlink" class="headerlink" title="安裝 hexo-abbrlink"></a>安裝 hexo-abbrlink</h2><blockquote>
+<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
+</blockquote>
+<p><strong>1. 安裝套件</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<p><strong>2. 修改 <code>root\_config.yml</code> 文件</strong>  </p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>  <span class="comment"># support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>    <span class="comment"># support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>也可以自己修改 permalink 參數(把 post 刪掉或增減其他參數)</li>
+<li><code>alg</code> 是雜湊編碼產生方式， <code>rep</code> 是雜湊編碼表示方式(預設十進位)，兩種參數的搭配結果如下:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex    https://XXXX.com/posts/66c8/</span><br><span class="line">crc16 &amp; dec    https://XXXX.com/posts/65535/</span><br><span class="line">crc32 &amp; hex    https://XXXX.com/posts/8ddf18fb/</span><br><span class="line">crc32 &amp; dec    https://XXXX.com/posts/1690090958/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://github.com/rozbo/hexo-abbrlink">rozbo&#x2F;hexo-abbrlink README.md 文件</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -579,54 +668,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo 編輯文章</title>
-    <url>/posts/978c1db/</url>
-    <content><![CDATA[<p>基本設定都完成後就可以來寫部落格了! 在正式開始前，如果能對 Hexo 的資料夾架構及 Front-matter 有點基本的認識，會對後續的操作很有幫助。</p>
-<span id="more"></span>
-
-<h2 id="Hexo-資料夾架構"><a href="#Hexo-資料夾架構" class="headerlink" title="Hexo 資料夾架構"></a>Hexo 資料夾架構</h2><p>之前在 <code>hexo init</code> 之後，根目錄資料夾會多了一些預設檔案，接下來會對其中比較重要的做簡單說明。  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── .deploy_git             # 內含已部署到 Github Repository 的所有檔案</span><br><span class="line">├── public                  # hexo g 生成靜態網站檔</span><br><span class="line">├── scaffolds               # 樣板資料夾(hexo new 會從這裡抓樣板，也可以自己新建樣板)</span><br><span class="line">|   ├── draft.md            # 草稿樣板</span><br><span class="line">|   ├── page.md             # 頁面樣板</span><br><span class="line">|   └── post.md             # 文章樣板(預設)</span><br><span class="line">├── source                  # 存放原始檔案的地方</span><br><span class="line">|   ├── _data               # 存放自定義設定原始碼的地方</span><br><span class="line">|   ├── _drafts             # 草稿資料夾</span><br><span class="line">|   └── _posts              # 文章資料夾</span><br><span class="line">├── themes                  # 各種主題資料夾</span><br><span class="line">|   └── landscape           # 預設主題</span><br><span class="line">|       └── _config.yml     # 主題樣式設定檔</span><br><span class="line">├── .gitignore              # 設定不想被加入版本控制或是上傳到 GitHub 的資料夾或檔案</span><br><span class="line">└── _config.yml             # Hexo 基本設定</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>_drafts</code> 草稿資料夾預設會被 generate 、server 和 deploy 指令略過(<code>_post</code> 以外以”_”開頭的資料夾都是)。如果想在 localhost 先預覽的話，可以在 <code>root\_config.yml</code> 裡把 <code>render_drafts: false(預設)</code> 改為 true。</li>
-</ul>
-<h2 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h2><p>Front-matter 是檔案最上方以 — 分隔的區域，用於指定個別檔案的變數。可以每篇文章個別設定，也可以預先在樣板中建立套用內容。常用的變數如下:</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">title</span>        <span class="comment"># 標題(預設為檔案名稱)</span></span><br><span class="line"><span class="string">date</span>         <span class="comment"># 建立日期(預設為檔案建立日期)</span></span><br><span class="line"><span class="string">updated</span>      <span class="comment"># 更新日期(預設為檔案更新日期)</span></span><br><span class="line"><span class="string">comments</span>     <span class="comment"># 留言功能(預設 true :開啟)</span></span><br><span class="line"><span class="string">tags</span>         <span class="comment"># 標籤</span></span><br><span class="line"><span class="string">categories</span>   <span class="comment"># 分類</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>當因為重新部署或其他原因，導致在沒有修改文章情況下顯示文章更新，可以手動修改 <code>updated</code> 值，讓他跟建立日期相同即可。  </li>
-<li>多個標籤&#x2F;多個分類寫法不同，可參考<a href="https://hexo.io/zh-tw/docs/front-matter#%E5%88%86%E9%A1%9E%E5%92%8C%E6%A8%99%E7%B1%A4">官方說明</a>。</li>
-</ul>
-<h2 id="草稿編輯"><a href="#草稿編輯" class="headerlink" title="草稿編輯"></a>草稿編輯</h2><h3 id="新增草稿"><a href="#新增草稿" class="headerlink" title="新增草稿"></a>新增草稿</h3><p>草稿會建立在 <code>root\source\_drafts</code> 資料夾內。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new draft 文章名稱</span><br></pre></td></tr></table></figure>
-<h3 id="草稿轉文章"><a href="#草稿轉文章" class="headerlink" title="草稿轉文章"></a>草稿轉文章</h3><p>指令會把檔案從 <code>_drafts</code> 移至 <code>_posts</code> 資料夾內，也可以自己手動移動。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo publish draft 文章名稱</span><br></pre></td></tr></table></figure>
-
-<h2 id="文章編輯"><a href="#文章編輯" class="headerlink" title="文章編輯"></a>文章編輯</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>會建立在 <code>root\source\_posts</code> 資料夾內。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new 文章名稱         <span class="comment"># 預設抓取 post 樣板</span></span><br></pre></td></tr></table></figure>
-<h3 id="刪除貼文"><a href="#刪除貼文" class="headerlink" title="刪除貼文"></a>刪除貼文</h3><p>直接從 <code>root\source</code> 資料夾刪除本地檔案，清除靜態檔再重新上傳即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<h2 id="頁面編輯"><a href="#頁面編輯" class="headerlink" title="頁面編輯"></a>頁面編輯</h2><p>頁面和文章不同，是指每個主題 menu 項目的頁面。如果有開啟 menu 項目卻沒有預設頁面的情況下，會被導向 404 畫面。常用的幾個頁面如下:</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">about</span>         <span class="comment"># 關於我(通常會寫網站介紹或作者介紹)</span></span><br><span class="line"><span class="string">archives</span>      <span class="comment"># 歸檔(依發布日期把所有文章排序)</span></span><br><span class="line"><span class="string">categories</span>    <span class="comment"># 分類(會依每篇文章 Front-matter 裡的分類建立分類目錄-有層級)</span></span><br><span class="line"><span class="string">tags</span>          <span class="comment"># 標籤(會依每篇文章 Front-matter 裡的分類建立標籤目錄-無層級)</span></span><br><span class="line"><span class="string">link</span>          <span class="comment"># 對外連結(通常是推薦部落格或網站的連結)</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="新建頁面"><a href="#新建頁面" class="headerlink" title="新建頁面"></a>新建頁面</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page 頁面名稱</span><br></pre></td></tr></table></figure>
-<ul>
-<li>頁面通常不需要開啟留言功能，所以在新建時要記得將 Front-matter 的 <code>comments</code> 值改為 false。</li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2021-12-14 18:33:37</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2021-12-14 18:34:46</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>新建頁面會新建一個 <code>index</code> 檔案，放在”頁面名稱”資料夾裡。</li>
-</ul>
-<h2 id="文章發布"><a href="#文章發布" class="headerlink" title="文章發布"></a>文章發布</h2><p>同之前的部署指令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo NexT 文末感謝閱讀提示</title>
     <url>/posts/670011ce/</url>
     <content><![CDATA[<p>又犯了”看到別人的部落格有，我也想試試看的”毛病 😅 找了很多網路教學，發現基本都會修改到 NexT 的原始檔案，這對後面的版本更新很不利，所以決定自己改改看!  </p>
@@ -687,82 +728,6 @@
         <tag>Nunjucks</tag>
         <tag>HTML</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用 Hexo-abbrlink 產生永久連結</title>
-    <url>/posts/d8dab675/</url>
-    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因為是在建置部落格的同時整理並撰寫 Hexo 筆記，內容的更動導致常常需要修改多篇文章的檔名，permalink 自動產生網址的設定也連帶造成了我一些困擾，所以想用 Hexo-abbrlink 來一勞永逸。  </p>
-<span id="more"></span>
-<p>我原本 permalink 的設定是直接從檔名產生網址。網路上的教學建議檔案用日期 + 英文標題命名，所以修改的同時也讓同一篇文章的網址不斷改動。  </p>
-<blockquote>
-<p>備註: 建議檔案用日期 + 英文標題命名原因  </p>
-<ol>
-<li>日期方便作檔案排序。  </li>
-<li>中文網址在台灣及大陸外的地區必須以編碼方式來呈現， URL 被轉碼後會變得很長(長得像亂碼)，這對 SEO 來說也較為不利。</li>
-</ol>
-</blockquote>
-<h2 id="使用-Hexo-abbrlink-的好處"><a href="#使用-Hexo-abbrlink-的好處" class="headerlink" title="使用 Hexo-abbrlink 的好處"></a>使用 Hexo-abbrlink 的好處</h2><p><strong>1. 網址固定，不再因修改檔名或日期變動</strong><br>Hexo-abbrlink 會依照文章標題產生永久連結，並保存在 Front-matter (檔案最上方以 — 分隔的區域)，之後即使更改檔名也不會再變動。<br><img src="/../../Blog-image/posts/2021-12-27_001.webp" alt="abbrlink存入Front-matter20211227-001"></p>
-<blockquote>
-<p>舊文章(已經部署)會在下一次 <code>hexo g</code> 時產生 abbrlink 。<br>新文章(還沒部署)會在 <code>hexo s</code> 時就產生 abbrlink 。  </p>
-</blockquote>
-<p><strong>2. 檔名可依自己方便取了</strong><br><del>再也不用想英文標題了!!</del>  </p>
-<p><strong>3. 降低因網址變動產生的404問題</strong><br>據說404錯誤會影響網站在SEO上的排名，讓其他人較不容易搜尋到自己的頁面。  </p>
-<h2 id="安裝-hexo-abbrlink"><a href="#安裝-hexo-abbrlink" class="headerlink" title="安裝 hexo-abbrlink"></a>安裝 hexo-abbrlink</h2><blockquote>
-<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
-</blockquote>
-<p><strong>1. 安裝套件</strong>  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<p><strong>2. 修改 <code>root\_config.yml</code> 文件</strong>  </p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>  <span class="comment"># support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>    <span class="comment"># support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>也可以自己修改 permalink 參數(把 post 刪掉或增減其他參數)</li>
-<li><code>alg</code> 是雜湊編碼產生方式， <code>rep</code> 是雜湊編碼表示方式(預設十進位)，兩種參數的搭配結果如下:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex    https://XXXX.com/posts/66c8/</span><br><span class="line">crc16 &amp; dec    https://XXXX.com/posts/65535/</span><br><span class="line">crc32 &amp; hex    https://XXXX.com/posts/8ddf18fb/</span><br><span class="line">crc32 &amp; dec    https://XXXX.com/posts/1690090958/</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
-<li><a href="https://github.com/rozbo/hexo-abbrlink">rozbo&#x2F;hexo-abbrlink README.md 文件</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo NexT 主題更新</title>
-    <url>/posts/dbd33422/</url>
-    <content><![CDATA[<blockquote>
-<p>本篇撰寫時 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-<strong>8.8.2</strong> 升級到 <strong>8.9.0</strong></p>
-</blockquote>
-<span id="more"></span>
-<p>NexT 官方團隊在收集一定數量 Bugfix &#x2F; Feature Request 的情況下，原則上會每月更新一次，可以先參考官方公布的版本更新內容再決定要不要更新。  </p>
-<p>不過，更新通常是為了優化(<code>custom_file_path</code> 真的讓主題更新方便很多)、排除障礙或提高安全性，理論上可以有更好的使用體驗，所以如果有更新提醒我應該還是會盡快處理。  </p>
-<p>另外，隨著技術的進步，舊有的方式可能會被淘汰(像是以前的 <code>.swig</code> 已被 <code>.njk</code> 替代)，為了避免跨大版本更新造成需要大幅度調整的麻煩，建議更新頻率不要太低。  </p>
-<h2 id="近年-NexT-主題大改革"><a href="#近年-NexT-主題大改革" class="headerlink" title="近年 NexT 主題大改革"></a>近年 NexT 主題大改革</h2><p>如果查詢網路上較久以前的教學文章，會發現很多東西都跟新版本搭不起來了。以我自己建置部落格的過程和踩過的坑，感覺最大的變化如下:  </p>
-<p><strong>1. Custom Files 用法(v7.3.0 啟用)</strong><br>以前要把 NexT 主題改得更有個人風格(ex.改背景、在文章底部加文字、增減頁腳文字…等)，都需要改動 <code>layout</code> 資料夾裡相對應的檔案原始碼。一旦進行版本更新，原本作好的設定被直接覆蓋，造成很多困擾。  </p>
-<p>自啟用 Custom Files 用法後，所有的程式碼修改一律放在 <code>root\source\_data</code> 資料夾裡，只要到 <code>root\_config.next.yml</code> 設定讀取路徑就可以直接套用。因為設定檔不是放在主題資料夾內，就算版本更新也不造成影響。   </p>
-<p><strong>2. Nunjucks 引擎(v7.4.2 啟用)</strong><br>網路上較久以前的教學文章，都會說要修改 <code>.swig</code> 檔，但我找半天都找不到，後來看官方文件才發現，因為 swig 缺乏维護，NexT 自 v7.4.2 開始，改用 Nunjucks 代替 swig 作为模版引擎，檔案類型變成 <code>.njk</code> ，網路上的教學文章已不適用。</p>
-<h2 id="npm-安裝-官方推薦"><a href="#npm-安裝-官方推薦" class="headerlink" title="npm 安裝(官方推薦)"></a>npm 安裝(官方推薦)</h2><p><strong>主題資料夾位置: <code>root\node_modules\hexo-theme-next</code></strong><br>打開 <code>root\node_modules</code> 資料夾會發現，之前用 npm 安裝的各種插件都在這裡面。原則上這個資料夾的東西都不會手動修改，只用 npm 指令處理，後續用 npm 更新或解除安裝基本都是改動這裡。  </p>
-<p>NexT 主題更新只要進到 Blog 的根目錄擇一執行以下指令即可。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next           <span class="comment"># 默認最新版本</span></span><br><span class="line">npm install hexo-theme-next@latest    <span class="comment"># 安裝最新版本</span></span><br><span class="line">npm install hexo-theme-next@8.9.0     <span class="comment"># 安裝指定版本</span></span><br></pre></td></tr></table></figure>
-
-<p>更新完成後，參考更新說明。如果有想用的新功能，直接在 <code>root\_config.next.yml</code> 修改設定即可。</p>
-<blockquote>
-<p>如果沒有這個檔案，請參考<a href="/posts/ebe0f18a/">Hexo NexT 主題變更 &amp; 設定 </a> 章節 4.1 說明。</p>
-</blockquote>
-<h2 id="git-安裝-太久沒更新推薦"><a href="#git-安裝-太久沒更新推薦" class="headerlink" title="git 安裝(太久沒更新推薦)"></a>git 安裝(太久沒更新推薦)</h2><p><strong>主題資料夾位置: <code>root\themes\主題名稱資料夾</code></strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
-<p>我剛開始使用 NexT 主題時是使用這種方式(<del>因為搞不懂 npm 指令到底在背後執行什麼</del>)。看了各種網路教學作個人化設定，改動了不少 NexT 主題原始碼，然後因為跟 git 不熟，不小心整個覆蓋掉，整個重來得很崩潰(跑題了)。後來使用 npm 安裝各種插件習慣，且啟用 <code>custom_file_path</code> 後，覺得 npm 方式比較方便。  </p>
-<p><strong>git 安裝推薦使用對象:</strong><br><strong>1. 有改動 NexT 主題原始碼，不想直接覆蓋的人。</strong><br>使用 <code>git pull</code> 等方式更新合併，主題必須加入版本控制。鑒於目前我跟 Git 還是很不熟，這裡就不多作說明。<br><strong>2. 太久沒更新，直接覆蓋可能會出現很多問題，需要大量調整的人。</strong><br>使用這種方法的人，可以在資料夾後加版本編號作新舊版區隔，等調整完成後，在 <code>root\_config.yml</code> 設定要套用哪個版本就可以了。  </p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
@@ -827,8 +792,43 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
-        <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo NexT 主題更新</title>
+    <url>/posts/dbd33422/</url>
+    <content><![CDATA[<blockquote>
+<p>本篇撰寫時 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-<strong>8.8.2</strong> 升級到 <strong>8.9.0</strong></p>
+</blockquote>
+<span id="more"></span>
+<p>NexT 官方團隊在收集一定數量 Bugfix &#x2F; Feature Request 的情況下，原則上會每月更新一次，可以先參考官方公布的版本更新內容再決定要不要更新。  </p>
+<p>不過，更新通常是為了優化(<code>custom_file_path</code> 真的讓主題更新方便很多)、排除障礙或提高安全性，理論上可以有更好的使用體驗，所以如果有更新提醒我應該還是會盡快處理。  </p>
+<p>另外，隨著技術的進步，舊有的方式可能會被淘汰(像是以前的 <code>.swig</code> 已被 <code>.njk</code> 替代)，為了避免跨大版本更新造成需要大幅度調整的麻煩，建議更新頻率不要太低。  </p>
+<h2 id="近年-NexT-主題大改革"><a href="#近年-NexT-主題大改革" class="headerlink" title="近年 NexT 主題大改革"></a>近年 NexT 主題大改革</h2><p>如果查詢網路上較久以前的教學文章，會發現很多東西都跟新版本搭不起來了。以我自己建置部落格的過程和踩過的坑，感覺最大的變化如下:  </p>
+<p><strong>1. Custom Files 用法(v7.3.0 啟用)</strong><br>以前要把 NexT 主題改得更有個人風格(ex.改背景、在文章底部加文字、增減頁腳文字…等)，都需要改動 <code>layout</code> 資料夾裡相對應的檔案原始碼。一旦進行版本更新，原本作好的設定被直接覆蓋，造成很多困擾。  </p>
+<p>自啟用 Custom Files 用法後，所有的程式碼修改一律放在 <code>root\source\_data</code> 資料夾裡，只要到 <code>root\_config.next.yml</code> 設定讀取路徑就可以直接套用。因為設定檔不是放在主題資料夾內，就算版本更新也不造成影響。   </p>
+<p><strong>2. Nunjucks 引擎(v7.4.2 啟用)</strong><br>網路上較久以前的教學文章，都會說要修改 <code>.swig</code> 檔，但我找半天都找不到，後來看官方文件才發現，因為 swig 缺乏维護，NexT 自 v7.4.2 開始，改用 Nunjucks 代替 swig 作为模版引擎，檔案類型變成 <code>.njk</code> ，網路上的教學文章已不適用。</p>
+<h2 id="npm-安裝-官方推薦"><a href="#npm-安裝-官方推薦" class="headerlink" title="npm 安裝(官方推薦)"></a>npm 安裝(官方推薦)</h2><p><strong>主題資料夾位置: <code>root\node_modules\hexo-theme-next</code></strong><br>打開 <code>root\node_modules</code> 資料夾會發現，之前用 npm 安裝的各種插件都在這裡面。原則上這個資料夾的東西都不會手動修改，只用 npm 指令處理，後續用 npm 更新或解除安裝基本都是改動這裡。  </p>
+<p>NexT 主題更新只要進到 Blog 的根目錄擇一執行以下指令即可。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-next           <span class="comment"># 默認最新版本</span></span><br><span class="line">npm install hexo-theme-next@latest    <span class="comment"># 安裝最新版本</span></span><br><span class="line">npm install hexo-theme-next@8.9.0     <span class="comment"># 安裝指定版本</span></span><br></pre></td></tr></table></figure>
+
+<p>更新完成後，參考更新說明。如果有想用的新功能，直接在 <code>root\_config.next.yml</code> 修改設定即可。</p>
+<blockquote>
+<p>如果沒有這個檔案，請參考<a href="/posts/ebe0f18a/">Hexo NexT 主題變更 &amp; 設定 </a> 章節 4.1 說明。</p>
+</blockquote>
+<h2 id="git-安裝-太久沒更新推薦"><a href="#git-安裝-太久沒更新推薦" class="headerlink" title="git 安裝(太久沒更新推薦)"></a>git 安裝(太久沒更新推薦)</h2><p><strong>主題資料夾位置: <code>root\themes\主題名稱資料夾</code></strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 根目錄</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/next-theme/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
+<p>我剛開始使用 NexT 主題時是使用這種方式(<del>因為搞不懂 npm 指令到底在背後執行什麼</del>)。看了各種網路教學作個人化設定，改動了不少 NexT 主題原始碼，然後因為跟 git 不熟，不小心整個覆蓋掉，整個重來得很崩潰(跑題了)。後來使用 npm 安裝各種插件習慣，且啟用 <code>custom_file_path</code> 後，覺得 npm 方式比較方便。  </p>
+<p><strong>git 安裝推薦使用對象:</strong><br><strong>1. 有改動 NexT 主題原始碼，不想直接覆蓋的人。</strong><br>使用 <code>git pull</code> 等方式更新合併，主題必須加入版本控制。鑒於目前我跟 Git 還是很不熟，這裡就不多作說明。<br><strong>2. 太久沒更新，直接覆蓋可能會出現很多問題，需要大量調整的人。</strong><br>使用這種方法的人，可以在資料夾後加版本編號作新舊版區隔，等調整完成後，在 <code>root\_config.yml</code> 設定要套用哪個版本就可以了。  </p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
@@ -954,8 +954,8 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
-        <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
+        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -1021,8 +1021,8 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
-        <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
+        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -1044,63 +1044,6 @@
       </categories>
       <tags>
         <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【JS30 挑戰】 Day1 - JavaScript Drum Kit</title>
-    <url>/posts/470f6710/</url>
-    <content><![CDATA[<p>這個專案對 JavaScript 只要有 function 跟 DOM 基礎就沒問題。另外需要有一點 HTML&#x2F;CSS 的概念才有辦法順利使用 <code>querySelector</code> 。</p>
-<span id="more"></span>
-<blockquote>
-<p><a href="https://javascript30.com/">JavaScript30</a> 是一個由 <strong>Wes Bos</strong> 提出的免費教學計畫。藉由每天完成一個小專案，練習基礎 JavaScript 。整個計畫為期30天。除了會提供教學影片外，也會先做好前期準備(例如: HTML&#x2F;CSS 等相關建置)，練習時只需專注於撰寫 JavaScript 部分的程式碼即可。</p>
-</blockquote>
-<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ol>
-<li>當按下鍵盤按鍵時，撥放特定音效。  </li>
-<li>當按下鍵盤按鍵時，讓畫面上的按鍵圖示呈現變化，並在變化結束後恢復原狀。</li>
-</ol>
-<h2 id="練習內容"><a href="#練習內容" class="headerlink" title="練習內容"></a>練習內容</h2><ul>
-<li>DOM querySelector  </li>
-<li>.addEventLinstener()  </li>
-<li>function  </li>
-<li>.forEach()</li>
-</ul>
-<h2 id="開始前的準備"><a href="#開始前的準備" class="headerlink" title="開始前的準備"></a>開始前的準備</h2><blockquote>
-<p>雖然這部分已由教學計畫提供，但有些東西對我來說還是新知識，所以還是做個筆記，萬一以後自己想做類似功能也不用再另外找資料。</p>
-</blockquote>
-<p><strong>1. 幫網頁加上音效:</strong><br>僅需要在 HTML 檔案中加入 <strong>&lt;audio&gt;標籤</strong>，並做好相關屬性設定。  </p>
-<p><strong>2. 設定好鍵盤按鍵:</strong><br>因為我們要在按下鍵盤按鍵時，讓網頁做出指定回應，所以要先建立相關標籤屬性，讓電腦辨識不同的按鍵，以便為按鍵設定不同回應。可以看到教學計畫提供的 HTML 檔案已經為聲音跟按鍵都設好 <code>data-key</code> 這個屬性(attribute)並給予一個數值。鍵盤上的每個按鍵在按下時會有一個對應的 <code>keycode</code> ，只要知道 <code>keycode</code> 就可以對指定按鍵進行動作設定。  </p>
-<p>如果不知道 <code>keycode</code> 可以到 <a href="keycode.info">keycode.info</a> 查詢。或是隨便開啟一個網頁，打開開發人員工具，在 console 區寫下下列程式碼後，回到網頁內容範圍(滑鼠點一下)在按下鍵盤按鍵，console 就會印出 <code>keycode</code> 了。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(e.<span class="property">keyCode</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><strong>3. 做好 CSS 設定:</strong><br>專案目標是讓螢幕上的按鍵圖示在按下時產生變化，並在變化結束後恢復原狀。所以要設定好兩種 CSS 樣式:  </p>
-<ul>
-<li>原本的按鍵樣式: 在 <code>&#123;&#125;</code> 裡加上 <code>transition: all .07s;</code> ，決定 <code>要改變的屬性(property)</code> 、 <code>變化要花費的時間</code> 。  </li>
-<li>變化後的按鍵樣式: 在 <code>&#123;&#125;</code> 裡加上 <code>transform: scale(縮放倍數);</code></li>
-</ul>
-<h2 id="練習開始"><a href="#練習開始" class="headerlink" title="練習開始"></a>練習開始</h2><p><strong>1. 定好 Event Linstener 的範圍和要執行的動作。</strong>  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, playAudio)</span><br><span class="line"><span class="comment">// window 為 document 再往上一層的物件，指監聽整個瀏覽器分頁。</span></span><br><span class="line"><span class="comment">// &#x27;keydown&#x27; 指鍵盤按鍵被按下時。</span></span><br><span class="line"><span class="comment">// playAudio 指執行名稱叫 playAudio 的fuction。</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>2. 設定 playAudio() 要做的事。(撥放音效及畫面改變)</strong>  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">playAudio</span>(<span class="params">e</span>) &#123;</span><br><span class="line"><span class="comment">// e 指 .addEventListener() 在 &#x27;keydown&#x27; 發生時自動產生的 event 物件。</span></span><br><span class="line">  <span class="keyword">const</span> audio = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`audio[data-key=&quot;<span class="subst">$&#123;e.keyCode&#125;</span>&quot;]`</span>)</span><br><span class="line">  <span class="comment">// 把 audio 變數指向 keyCode 相符的 &lt;audio&gt; 標籤。</span></span><br><span class="line">  <span class="keyword">const</span> key = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`.key[data-key=&quot;<span class="subst">$&#123;e.keyCode&#125;</span>&quot;]`</span>)</span><br><span class="line">  <span class="comment">// 把 key 變數指向 keyCode 相符的 &lt;div&gt; 標籤。</span></span><br><span class="line">  <span class="keyword">if</span> (!audio) <span class="keyword">return</span></span><br><span class="line">  <span class="comment">// 如果找不到相符標籤，則中斷 function。</span></span><br><span class="line">  audio.<span class="property">currentTime</span> = <span class="number">0</span></span><br><span class="line">  <span class="comment">// 如果找到相符標籤，按下按鍵時，音樂撥放進度回到第 0 秒。如果沒設定，在音訊完整前，按鍵不會重新撥放。</span></span><br><span class="line">  <span class="comment">// 因為 function 要求按鍵時撥放音訊，還沒放完 = 已經/正在放</span></span><br><span class="line">  audio.<span class="title function_">play</span>()</span><br><span class="line">  <span class="comment">// 撥放 keyCode 指向的 &lt;audio&gt; 標籤。</span></span><br><span class="line">  key.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;playing&#x27;</span>)</span><br><span class="line">  <span class="comment">// 指定的 &lt;div&gt; 標籤 class 屬性加上 &#x27;playing&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>3. 先來看看目前為止發生了什麼事?</strong><br>指定的 &lt;div&gt; 標籤 class 屬性加上 ‘playing’ 後，當 CSS ‘.key’ 中的 <code>transition</code> 完成。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> keys = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;.key&quot;</span>)</span><br><span class="line"><span class="comment">// 找出所有 class 含 &quot;.key&quot; 的 &lt;div&gt; 標籤，總共9個。</span></span><br><span class="line">keys.<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> key.<span class="title function_">addEventListener</span>(<span class="string">&#x27;transitionend&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(e)</span><br><span class="line">&#125;))</span><br><span class="line"><span class="comment">// 檢查找出的所有 &lt;div&gt; 標籤，在 &#x27;transitionend&#x27; 時，輸出 Event 內容。</span></span><br></pre></td></tr></table></figure>
-<p><img src="/../../Blog-image/posts/2022-01-29_TransitionEvent.webp" alt="TransitionEvent-image"><br>可以看到，在我們按了一下按鍵”A”後，總共出現了6個 <code>transitionend</code> ，只有 <code>propertyName</code> 不同。那是因為我們的 CSS 設定。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.key</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: all .<span class="number">07s</span> ease;</span><br><span class="line">  <span class="comment">/* 所有 property 都要執行 transition */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.playing</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">  <span class="comment">/* propertyName: &#x27;transform&#x27; */</span></span><br><span class="line">  <span class="attribute">border-color</span>: <span class="number">#ffc600</span>;</span><br><span class="line">  <span class="comment">/* border 分上下左右，所以有4個 &#x27;transitionend&#x27; */</span></span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1rem</span> <span class="number">#ffc600</span>;</span><br><span class="line">  <span class="comment">/* propertyName: &#x27;box-shadow&#x27; */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>4. 畫面在變化結束後恢復原狀。</strong>  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> keys = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;.key&quot;</span>)</span><br><span class="line"><span class="comment">// 共找出9個 class 含 &quot;.key&quot; 的 &lt;div&gt; 標籤。</span></span><br><span class="line">keys.<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> key.<span class="title function_">addEventListener</span>(<span class="string">&#x27;transitionend&#x27;</span>, removeTransition))</span><br><span class="line"><span class="comment">// &#x27;transitionend&#x27; 時，執行名為 removeTransition 的function。</span></span><br></pre></td></tr></table></figure>
-<p>這時，我總共找出9個 class 含 “.key” 的 &lt;div&gt; 標籤，但是想要刪除 class ‘.playing’ 的只有我們按的那一個。所以我們找出 這個 &lt;div&gt; 標籤所有 CSS 樣式裡最具代表性的 <code>transform</code> (不用寫一長串 property ，最具代表性的就好)，來繼續執行。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">removeTransition</span>(<span class="params">e</span>) &#123;</span><br><span class="line"><span class="comment">// 查找 TransitionEvent 裡動作(type)為 &#x27;transitionend&#x27; 的項目。</span></span><br><span class="line">  <span class="keyword">if</span> (e.<span class="property">propertyName</span> !== <span class="string">&#x27;transform&#x27;</span>) <span class="keyword">return</span></span><br><span class="line">  <span class="comment">// 如果 TransitionEvent 的 propertyName 不等於 &#x27;transform&#x27; ，則停止 function。</span></span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;playing&#x27;</span>)</span><br><span class="line">  <span class="comment">// 如果符合，則將 class 裡的 &#x27;.playing&#x27; 刪除。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<br>
-<br>
-到這裡就全部完成了! 
-]]></content>
-      <categories>
-        <category>JavaScript30 挑戰</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>JS30</tag>
       </tags>
   </entry>
   <entry>
@@ -1200,6 +1143,63 @@
       </categories>
       <tags>
         <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【JS30 挑戰】 Day1 - JavaScript Drum Kit</title>
+    <url>/posts/470f6710/</url>
+    <content><![CDATA[<p>這個專案對 JavaScript 只要有 function 跟 DOM 基礎就沒問題。另外需要有一點 HTML&#x2F;CSS 的概念才有辦法順利使用 <code>querySelector</code> 。</p>
+<span id="more"></span>
+<blockquote>
+<p><a href="https://javascript30.com/">JavaScript30</a> 是一個由 <strong>Wes Bos</strong> 提出的免費教學計畫。藉由每天完成一個小專案，練習基礎 JavaScript 。整個計畫為期30天。除了會提供教學影片外，也會先做好前期準備(例如: HTML&#x2F;CSS 等相關建置)，練習時只需專注於撰寫 JavaScript 部分的程式碼即可。</p>
+</blockquote>
+<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ol>
+<li>當按下鍵盤按鍵時，撥放特定音效。  </li>
+<li>當按下鍵盤按鍵時，讓畫面上的按鍵圖示呈現變化，並在變化結束後恢復原狀。</li>
+</ol>
+<h2 id="練習內容"><a href="#練習內容" class="headerlink" title="練習內容"></a>練習內容</h2><ul>
+<li>DOM querySelector  </li>
+<li>.addEventLinstener()  </li>
+<li>function  </li>
+<li>.forEach()</li>
+</ul>
+<h2 id="開始前的準備"><a href="#開始前的準備" class="headerlink" title="開始前的準備"></a>開始前的準備</h2><blockquote>
+<p>雖然這部分已由教學計畫提供，但有些東西對我來說還是新知識，所以還是做個筆記，萬一以後自己想做類似功能也不用再另外找資料。</p>
+</blockquote>
+<p><strong>1. 幫網頁加上音效:</strong><br>僅需要在 HTML 檔案中加入 <strong>&lt;audio&gt;標籤</strong>，並做好相關屬性設定。  </p>
+<p><strong>2. 設定好鍵盤按鍵:</strong><br>因為我們要在按下鍵盤按鍵時，讓網頁做出指定回應，所以要先建立相關標籤屬性，讓電腦辨識不同的按鍵，以便為按鍵設定不同回應。可以看到教學計畫提供的 HTML 檔案已經為聲音跟按鍵都設好 <code>data-key</code> 這個屬性(attribute)並給予一個數值。鍵盤上的每個按鍵在按下時會有一個對應的 <code>keycode</code> ，只要知道 <code>keycode</code> 就可以對指定按鍵進行動作設定。  </p>
+<p>如果不知道 <code>keycode</code> 可以到 <a href="keycode.info">keycode.info</a> 查詢。或是隨便開啟一個網頁，打開開發人員工具，在 console 區寫下下列程式碼後，回到網頁內容範圍(滑鼠點一下)在按下鍵盤按鍵，console 就會印出 <code>keycode</code> 了。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(e.<span class="property">keyCode</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. 做好 CSS 設定:</strong><br>專案目標是讓螢幕上的按鍵圖示在按下時產生變化，並在變化結束後恢復原狀。所以要設定好兩種 CSS 樣式:  </p>
+<ul>
+<li>原本的按鍵樣式: 在 <code>&#123;&#125;</code> 裡加上 <code>transition: all .07s;</code> ，決定 <code>要改變的屬性(property)</code> 、 <code>變化要花費的時間</code> 。  </li>
+<li>變化後的按鍵樣式: 在 <code>&#123;&#125;</code> 裡加上 <code>transform: scale(縮放倍數);</code></li>
+</ul>
+<h2 id="練習開始"><a href="#練習開始" class="headerlink" title="練習開始"></a>練習開始</h2><p><strong>1. 定好 Event Linstener 的範圍和要執行的動作。</strong>  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, playAudio)</span><br><span class="line"><span class="comment">// window 為 document 再往上一層的物件，指監聽整個瀏覽器分頁。</span></span><br><span class="line"><span class="comment">// &#x27;keydown&#x27; 指鍵盤按鍵被按下時。</span></span><br><span class="line"><span class="comment">// playAudio 指執行名稱叫 playAudio 的fuction。</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 設定 playAudio() 要做的事。(撥放音效及畫面改變)</strong>  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">playAudio</span>(<span class="params">e</span>) &#123;</span><br><span class="line"><span class="comment">// e 指 .addEventListener() 在 &#x27;keydown&#x27; 發生時自動產生的 event 物件。</span></span><br><span class="line">  <span class="keyword">const</span> audio = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`audio[data-key=&quot;<span class="subst">$&#123;e.keyCode&#125;</span>&quot;]`</span>)</span><br><span class="line">  <span class="comment">// 把 audio 變數指向 keyCode 相符的 &lt;audio&gt; 標籤。</span></span><br><span class="line">  <span class="keyword">const</span> key = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`.key[data-key=&quot;<span class="subst">$&#123;e.keyCode&#125;</span>&quot;]`</span>)</span><br><span class="line">  <span class="comment">// 把 key 變數指向 keyCode 相符的 &lt;div&gt; 標籤。</span></span><br><span class="line">  <span class="keyword">if</span> (!audio) <span class="keyword">return</span></span><br><span class="line">  <span class="comment">// 如果找不到相符標籤，則中斷 function。</span></span><br><span class="line">  audio.<span class="property">currentTime</span> = <span class="number">0</span></span><br><span class="line">  <span class="comment">// 如果找到相符標籤，按下按鍵時，音樂撥放進度回到第 0 秒。如果沒設定，在音訊完整前，按鍵不會重新撥放。</span></span><br><span class="line">  <span class="comment">// 因為 function 要求按鍵時撥放音訊，還沒放完 = 已經/正在放</span></span><br><span class="line">  audio.<span class="title function_">play</span>()</span><br><span class="line">  <span class="comment">// 撥放 keyCode 指向的 &lt;audio&gt; 標籤。</span></span><br><span class="line">  key.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;playing&#x27;</span>)</span><br><span class="line">  <span class="comment">// 指定的 &lt;div&gt; 標籤 class 屬性加上 &#x27;playing&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3. 先來看看目前為止發生了什麼事?</strong><br>指定的 &lt;div&gt; 標籤 class 屬性加上 ‘playing’ 後，當 CSS ‘.key’ 中的 <code>transition</code> 完成。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> keys = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;.key&quot;</span>)</span><br><span class="line"><span class="comment">// 找出所有 class 含 &quot;.key&quot; 的 &lt;div&gt; 標籤，總共9個。</span></span><br><span class="line">keys.<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> key.<span class="title function_">addEventListener</span>(<span class="string">&#x27;transitionend&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(e)</span><br><span class="line">&#125;))</span><br><span class="line"><span class="comment">// 檢查找出的所有 &lt;div&gt; 標籤，在 &#x27;transitionend&#x27; 時，輸出 Event 內容。</span></span><br></pre></td></tr></table></figure>
+<p><img src="/../../Blog-image/posts/2022-01-29_TransitionEvent.webp" alt="TransitionEvent-image"><br>可以看到，在我們按了一下按鍵”A”後，總共出現了6個 <code>transitionend</code> ，只有 <code>propertyName</code> 不同。那是因為我們的 CSS 設定。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.key</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: all .<span class="number">07s</span> ease;</span><br><span class="line">  <span class="comment">/* 所有 property 都要執行 transition */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.playing</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">  <span class="comment">/* propertyName: &#x27;transform&#x27; */</span></span><br><span class="line">  <span class="attribute">border-color</span>: <span class="number">#ffc600</span>;</span><br><span class="line">  <span class="comment">/* border 分上下左右，所以有4個 &#x27;transitionend&#x27; */</span></span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1rem</span> <span class="number">#ffc600</span>;</span><br><span class="line">  <span class="comment">/* propertyName: &#x27;box-shadow&#x27; */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>4. 畫面在變化結束後恢復原狀。</strong>  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> keys = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;.key&quot;</span>)</span><br><span class="line"><span class="comment">// 共找出9個 class 含 &quot;.key&quot; 的 &lt;div&gt; 標籤。</span></span><br><span class="line">keys.<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> key.<span class="title function_">addEventListener</span>(<span class="string">&#x27;transitionend&#x27;</span>, removeTransition))</span><br><span class="line"><span class="comment">// &#x27;transitionend&#x27; 時，執行名為 removeTransition 的function。</span></span><br></pre></td></tr></table></figure>
+<p>這時，我總共找出9個 class 含 “.key” 的 &lt;div&gt; 標籤，但是想要刪除 class ‘.playing’ 的只有我們按的那一個。所以我們找出 這個 &lt;div&gt; 標籤所有 CSS 樣式裡最具代表性的 <code>transform</code> (不用寫一長串 property ，最具代表性的就好)，來繼續執行。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">removeTransition</span>(<span class="params">e</span>) &#123;</span><br><span class="line"><span class="comment">// 查找 TransitionEvent 裡動作(type)為 &#x27;transitionend&#x27; 的項目。</span></span><br><span class="line">  <span class="keyword">if</span> (e.<span class="property">propertyName</span> !== <span class="string">&#x27;transform&#x27;</span>) <span class="keyword">return</span></span><br><span class="line">  <span class="comment">// 如果 TransitionEvent 的 propertyName 不等於 &#x27;transform&#x27; ，則停止 function。</span></span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;playing&#x27;</span>)</span><br><span class="line">  <span class="comment">// 如果符合，則將 class 裡的 &#x27;.playing&#x27; 刪除。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
+<br>
+到這裡就全部完成了! 
+]]></content>
+      <categories>
+        <category>JavaScript30 挑戰</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>JS30</tag>
       </tags>
   </entry>
   <entry>
@@ -1414,7 +1414,7 @@
       </tags>
   </entry>
   <entry>
-    <title>CS50x 2022 Week0 筆記</title>
+    <title>【CS50x(2022)】 Week0 - Scratch</title>
     <url>/posts/b357a5fe/</url>
     <content><![CDATA[<p>開始挑戰 CS50x(Introduction to Computer Science)了! </p>
 <blockquote>
@@ -1428,9 +1428,15 @@
 
 <p>台上四位同學拿到一模一樣的道具、聽到一模一樣的指令，但是卻做出不一樣的動作。講師利用這種情境來告訴聽眾：我們給予的指令要「精準」，不然容易出現意料之外的結果。這種情境式的教學方式讓我覺得很有趣，運用一些簡單的例子來協助理解 Computer Science。  </p>
 <h2 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h2><ul>
-<li>簡單介紹二進位、ASCII、RGB、二分搜尋法…等。  </li>
-<li>程式語言常用的函式、條件判斷、變數、迴圈…等。  </li>
-<li>利用圖像式的 <a href="https://scratch.mit.edu/">Scratch</a> 來講解程式如何運作。</li>
+<li>What is computer science?  </li>
+<li>Representing numbers  </li>
+<li>Text  </li>
+<li>Images, video, sounds  </li>
+<li>Algorithms  </li>
+<li>Pseudocode  </li>
+<li>Scratch basics  </li>
+<li>Abstraction  </li>
+<li>Conditionals and more</li>
 </ul>
 <h3 id="二進位-Binary"><a href="#二進位-Binary" class="headerlink" title="二進位(Binary)"></a>二進位(Binary)</h3><p><strong>電腦只看得懂 <code>0</code> 跟 <code>1</code></strong> ，而二進位制是一種用 0 和 1 代表不同數字的進位方式。二進位中每個 bit 可以表示 1 和 0，而當我們有更多的 bits 時我們可以代表更大的數字，例如二進位的 11 是十進位的 3，111 是十進位的 7。  </p>
 <h3 id="ASCII-x2F-Unicode"><a href="#ASCII-x2F-Unicode" class="headerlink" title="ASCII&#x2F;Unicode"></a>ASCII&#x2F;Unicode</h3><p>既然二進位表達的是「數字」，那其他的文字、符號呢？<br>ASCII 和 Unicode 都是字符對照表，兩者的差別就不贅述了。都是用數字來表示字母，例如：大寫的 A 是用十進位的 65 表示，也是二進位的 01000001。  </p>
@@ -1447,6 +1453,9 @@
 <h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>寫程式其實就是一個解題的過程，首先要確保可以得出正確的答案，再來才是優化解題的過程。  </p>
 <p>在電話簿情境題中，如果僅僅是為了提升效率而兩頁兩頁做排查，也許會因為搜尋對象在單數頁而錯過。那即使可以在較短時間排查更多的資料也沒用，因為這種排查邏輯並不完善。  </p>
 <p>從開始學習程式到現在已經大約半年了，由於 CS50x 是全英文課程，如果沒有一點點的程式基礎，聽起來真的會比較辛苦。半年前第一次聽的我和現在的重新撿回課程的我比起來，終於能比較順暢的聽懂了!接下來就是好好地堅持下去，認真的走完這個課程。  </p>
+<blockquote>
+<p>相關文章: <a href="https://ritachien.github.io/tags/CS50x-2022/">CS50x(2022)</a>  </p>
+</blockquote>
 ]]></content>
       <categories>
         <category>學習紀錄 - CS50</category>
@@ -1456,7 +1465,7 @@
       </tags>
   </entry>
   <entry>
-    <title>CS50W Lecture1： HTML &amp; CSS</title>
+    <title>【CS50W】Lecture0：HTML &amp; CSS</title>
     <url>/posts/be2c6d84/</url>
     <content><![CDATA[<p>課程名稱：CS50(Web Programming with Python and JavaScript)</p>
 <span id="more"></span>
@@ -1488,7 +1497,73 @@
         <category>學習紀錄 - CS50</category>
       </categories>
       <tags>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
         <tag>CS50W</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【CS50x(2022)】 Week1 - C</title>
+    <url>/posts/100ec410/</url>
+    <content><![CDATA[<p>第一次接觸 C，發現不同程式語言的寫作邏輯其實還是差不多的，差別在於較古老的語言在「便利性」上比較沒有那麼人性化。  </p>
+<span id="more"></span>
+<h2 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h2><ul>
+<li>C  </li>
+<li>IDEs, compilers, interfaces  </li>
+<li>Functions, arguments, return values, variables  </li>
+<li>main, header files, commands  </li>
+<li>Types, format codes, operators  </li>
+<li>Variables, syntactic sugar  </li>
+<li>Calculations  </li>
+<li>Conditionals, Boolean expressions  </li>
+<li>Loops, functions  </li>
+<li>Mario  </li>
+<li>Imprecision, overflow</li>
+</ul>
+<h2 id="用-C-學習程式寫作基礎"><a href="#用-C-學習程式寫作基礎" class="headerlink" title="用 C 學習程式寫作基礎"></a>用 C 學習程式寫作基礎</h2><p>本週開始接觸到新的語言 C。<br>上週用圖像化的 Scratch 來講解程式運作原理，這週承襲上週範例使用同樣的運作流程，只是改用 C 把它寫出來。  </p>
+<p>C 是一個相對古老的語言，所以他在寫作方式上並不像較新的語言那樣簡潔。比如:</p>
+<ol>
+<li>請使用者輸入名字</li>
+<li>在螢幕上印出 <code>Hello, 名字</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//  用 JavaScript 寫</span></span><br><span class="line">name = <span class="title function_">prompt</span>(<span class="string">&quot;Enter your name: &quot;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>`</span>)</span><br></pre></td></tr></table></figure>
+<p>JavaScript 只用一個變數儲存使用者的輸入值，然後輸出時套用即可。  </p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 用 C 寫</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cs50.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> name = get_string(<span class="string">&quot;Enter your name: &quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello, %s\n&quot;</span>, name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用 C 寫就比較辛苦了，因為 C 必須要把每件事都寫得很清楚:  </p>
+<ul>
+<li>因為需要在螢幕上輸出內容，所以需要 <code>#include &lt;stdio.h&gt;</code>。  </li>
+<li>要用到向使用者拿輸入內容的函式 <code>get_string</code>，所以需要 <code>#include &lt;cs50.h&gt;</code>。(這還是 CS50 的員工寫出來的 library ，不然可能更麻煩 😅)  </li>
+<li>主要的執行內容需用 <code>int main(void)&#123;&#125;</code> 包覆。  </li>
+<li>每個變數要在最一開始就定義好它的 data type。  </li>
+<li>用 <code>%</code> 引用變數值，並要清楚定義這個值的 data type。</li>
+</ul>
+<p>因為先學了 JavaScript 才接觸到 C，所以寫作的過程相當不習慣、覺得很麻煩。但是在練習中不斷的除錯、除錯、再除錯，漸漸地發現這樣嚴謹的寫法練習很重要！因為在寫作過程中，必須每時每刻都很清楚自己正在用什麼、需要用什麼，一旦漏掉某個部分，可能就會炸出一堆錯誤訊息。  </p>
+<h2 id="作業練習-Problem-Set-1"><a href="#作業練習-Problem-Set-1" class="headerlink" title="作業練習 (Problem Set 1)"></a>作業練習 (Problem Set 1)</h2><p>CS50x 課程提供了一個完整的線上 codespace，依照教學做完初次設定，之後就可以打開即寫了，成果測試和作業提交也相當方便。  </p>
+<p>第一次接觸 C 語言就一口氣來了5個作業練習(其實應該算3個，其中2題是難易二選一就好，但我龜毛，想達成100%成就！)  </p>
+<ul>
+<li><strong>Hello.c</strong><br>就是上面提到的範例。練習輸入、輸出、 header files、comments  </li>
+<li><strong>Mario-less.c</strong><br>do while 迴圈、nesting for loop  </li>
+<li><strong>Mario-more.c</strong><br>do while.c 迴圈、nesting for loop，比上一題再複雜一點。</li>
+<li><strong>Cash.c</strong><br>do while 迴圈、function。C 的 function 很特別，要在最開頭決定 return type(或 void)，引入的參數 type 也要定好。</li>
+<li><strong>Credit.c</strong><br>do while 迴圈、if&#x2F;else、while loop，是上一題的進階。</li>
+</ul>
+<p>寫了差不多整整一天，雖然不是用最有效率的做法答題，但主要就是想用這週課堂學到的方式解題。練習量大的成果就是能「體會」上課內容到底在說什麼東西，但寫完之後覺得還需要重新把課程補充資料看過一遍做個複習。</p>
+<h2 id="提升-Coding-品質"><a href="#提升-Coding-品質" class="headerlink" title="提升 Coding 品質"></a>提升 Coding 品質</h2><p>除了 C 的教學外，講師也有一再探討怎麼樣才是好的 code design。Coding 分三個階段:  </p>
+<ul>
+<li><strong>correctness：</strong> 要能正確的解決問題。  </li>
+<li><strong>design：</strong> 包含變數的設計、減少重複的程式碼、提高程式碼再使用率、維護便利性…等。  </li>
+<li><strong>style：</strong> 整體規格要有一致性、並提高閱讀便利性，盡可能整齊、簡潔明瞭。</li>
+</ul>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>上了兩週的進度了，覺得課程的講解方式還算容易吸收，練習量也多。作業是需要在懂得前提下認真思考才能寫出來，對訓練思考邏輯很有幫助！  </p>
+<blockquote>
+<p>相關文章: <a href="https://ritachien.github.io/tags/CS50x-2022/">CS50x(2022)</a>  </p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>學習紀錄 - CS50</category>
+      </categories>
+      <tags>
+        <tag>CS50x(2022)</tag>
       </tags>
   </entry>
   <entry>

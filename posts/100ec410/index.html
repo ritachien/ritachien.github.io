@@ -21,30 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="開始挑戰 CS50x(Introduction to Computer Science)了!   What ultimately matters in this course is not so much where you end up relative to your classmates but where you end up relative to yourself when you b">
+    <meta name="description" content="第一次接觸 C，發現不同程式語言的寫作邏輯其實還是差不多的，差別在於較古老的語言在「便利性」上比較沒有那麼人性化。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【CS50x(2022)】 Week0 - Scratch">
-<meta property="og:url" content="https://ritachien.github.io/posts/b357a5fe/">
+<meta property="og:title" content="【CS50x(2022)】 Week1 - C">
+<meta property="og:url" content="https://ritachien.github.io/posts/100ec410/">
 <meta property="og:site_name" content="Rita 的學習筆記">
-<meta property="og:description" content="開始挑戰 CS50x(Introduction to Computer Science)了!   What ultimately matters in this course is not so much where you end up relative to your classmates but where you end up relative to yourself when you b">
+<meta property="og:description" content="第一次接觸 C，發現不同程式語言的寫作邏輯其實還是差不多的，差別在於較古老的語言在「便利性」上比較沒有那麼人性化。">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-24-29_pseudocode.webp">
-<meta property="article:published_time" content="2022-04-29T07:08:00.000Z">
-<meta property="article:modified_time" content="2022-04-29T07:08:00.000Z">
+<meta property="article:published_time" content="2022-05-04T10:39:52.000Z">
+<meta property="article:modified_time" content="2022-05-04T11:09:39.771Z">
 <meta property="article:author" content="Rita Chien">
 <meta property="article:tag" content="CS50x(2022)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ritachien.github.io/Blog-image/posts/2022-24-29_pseudocode.webp">
 
 
-<link rel="canonical" href="https://ritachien.github.io/posts/b357a5fe/">
+<link rel="canonical" href="https://ritachien.github.io/posts/100ec410/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/b357a5fe/","path":"posts/b357a5fe/","title":"【CS50x(2022)】 Week0 - Scratch"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/100ec410/","path":"posts/100ec410/","title":"【CS50x(2022)】 Week1 - C"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>【CS50x(2022)】 Week0 - Scratch | Rita 的學習筆記</title>
+<title>【CS50x(2022)】 Week1 - C | Rita 的學習筆記</title>
   
 
 
@@ -155,7 +153,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AA%B2%E7%A8%8B%E5%85%A7%E5%AE%B9"><span class="nav-number">2.</span> <span class="nav-text">課程內容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%80%B2%E4%BD%8D-Binary"><span class="nav-number">2.1.</span> <span class="nav-text">二進位(Binary)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ASCII-x2F-Unicode"><span class="nav-number">2.2.</span> <span class="nav-text">ASCII&#x2F;Unicode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RBG%E3%80%81%E5%9C%96%E7%89%87%E3%80%81%E5%BD%B1%E7%89%87"><span class="nav-number">2.3.</span> <span class="nav-text">RBG、圖片、影片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%90%9C%E5%B0%8B%E6%B3%95%E5%8F%8A%E7%A8%8B%E5%BC%8F%E9%82%8F%E8%BC%AF-%E9%9B%BB%E8%A9%B1%E7%B0%BF%E6%83%85%E5%A2%83%E9%A1%8C"><span class="nav-number">2.4.</span> <span class="nav-text">二分搜尋法及程式邏輯(電話簿情境題)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scratch"><span class="nav-number">2.5.</span> <span class="nav-text">Scratch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%B5%90"><span class="nav-number">3.</span> <span class="nav-text">小結</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AA%B2%E7%A8%8B%E5%85%A7%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">課程內容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8-C-%E5%AD%B8%E7%BF%92%E7%A8%8B%E5%BC%8F%E5%AF%AB%E4%BD%9C%E5%9F%BA%E7%A4%8E"><span class="nav-number">2.</span> <span class="nav-text">用 C 學習程式寫作基礎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9C%E6%A5%AD%E7%B7%B4%E7%BF%92-Problem-Set-1"><span class="nav-number">3.</span> <span class="nav-text">作業練習 (Problem Set 1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E5%8D%87-Coding-%E5%93%81%E8%B3%AA"><span class="nav-number">4.</span> <span class="nav-text">提升 Coding 品質</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%B5%90"><span class="nav-number">5.</span> <span class="nav-text">小結</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -230,7 +228,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/b357a5fe/">
+    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/100ec410/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
@@ -243,12 +241,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="【CS50x(2022)】 Week0 - Scratch | Rita 的學習筆記">
+      <meta itemprop="name" content="【CS50x(2022)】 Week1 - C | Rita 的學習筆記">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【CS50x(2022)】 Week0 - Scratch
+          【CS50x(2022)】 Week1 - C
         </h1>
 
         <div class="post-meta-container">
@@ -258,8 +256,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2022-04-29 15:08:00" itemprop="dateCreated datePublished" datetime="2022-04-29T15:08:00+08:00">2022-04-29</time>
+      <time title="創建時間：2022-05-04 18:39:52 / 修改時間：19:09:39" itemprop="dateCreated datePublished" datetime="2022-05-04T18:39:52+08:00">2022-05-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -277,14 +276,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.3k</span>
+      <span>1.8k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
+      <span>2 分鐘</span>
     </span>
 </div>
 
@@ -295,43 +294,56 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>開始挑戰 CS50x(Introduction to Computer Science)了! </p>
-<blockquote>
-<p>What ultimately matters in this course is not so much where you end up relative to your classmates but where you end up relative to yourself when you began.<br>—- CS50x</p>
-</blockquote>
+        <p>第一次接觸 C，發現不同程式語言的寫作邏輯其實還是差不多的，差別在於較古老的語言在「便利性」上比較沒有那麼人性化。  </p>
 <span id="more"></span>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>第一次接觸到 Harvard 有名的 CS50 課程是在 Youtube 上看到這部影片:  </p>
-<div class="youtube-video">
-  <div class="video-container"><iframe src="https://www.youtube.com/embed/XWe4iohhmIw" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
-</div>
-
-<p>台上四位同學拿到一模一樣的道具、聽到一模一樣的指令，但是卻做出不一樣的動作。講師利用這種情境來告訴聽眾：我們給予的指令要「精準」，不然容易出現意料之外的結果。這種情境式的教學方式讓我覺得很有趣，運用一些簡單的例子來協助理解 Computer Science。  </p>
 <h2 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h2><ul>
-<li>What is computer science?  </li>
-<li>Representing numbers  </li>
-<li>Text  </li>
-<li>Images, video, sounds  </li>
-<li>Algorithms  </li>
-<li>Pseudocode  </li>
-<li>Scratch basics  </li>
-<li>Abstraction  </li>
-<li>Conditionals and more</li>
+<li>C  </li>
+<li>IDEs, compilers, interfaces  </li>
+<li>Functions, arguments, return values, variables  </li>
+<li>main, header files, commands  </li>
+<li>Types, format codes, operators  </li>
+<li>Variables, syntactic sugar  </li>
+<li>Calculations  </li>
+<li>Conditionals, Boolean expressions  </li>
+<li>Loops, functions  </li>
+<li>Mario  </li>
+<li>Imprecision, overflow</li>
 </ul>
-<h3 id="二進位-Binary"><a href="#二進位-Binary" class="headerlink" title="二進位(Binary)"></a>二進位(Binary)</h3><p><strong>電腦只看得懂 <code>0</code> 跟 <code>1</code></strong> ，而二進位制是一種用 0 和 1 代表不同數字的進位方式。二進位中每個 bit 可以表示 1 和 0，而當我們有更多的 bits 時我們可以代表更大的數字，例如二進位的 11 是十進位的 3，111 是十進位的 7。  </p>
-<h3 id="ASCII-x2F-Unicode"><a href="#ASCII-x2F-Unicode" class="headerlink" title="ASCII&#x2F;Unicode"></a>ASCII&#x2F;Unicode</h3><p>既然二進位表達的是「數字」，那其他的文字、符號呢？<br>ASCII 和 Unicode 都是字符對照表，兩者的差別就不贅述了。都是用數字來表示字母，例如：大寫的 A 是用十進位的 65 表示，也是二進位的 01000001。  </p>
-<h3 id="RBG、圖片、影片"><a href="#RBG、圖片、影片" class="headerlink" title="RBG、圖片、影片"></a>RBG、圖片、影片</h3><p>RGB 是把顏色用不同「值」的紅(Red)、綠(Green)、藍(Blue)組合而成。而很多不同的顏色可以組成圖片、很多圖片可以連成影片。  </p>
-<h3 id="二分搜尋法及程式邏輯-電話簿情境題"><a href="#二分搜尋法及程式邏輯-電話簿情境題" class="headerlink" title="二分搜尋法及程式邏輯(電話簿情境題)"></a>二分搜尋法及程式邏輯(電話簿情境題)</h3><p><strong>問題：要怎麼從厚厚的電話簿中找到指定人物的電話呢？</strong>  </p>
+<h2 id="用-C-學習程式寫作基礎"><a href="#用-C-學習程式寫作基礎" class="headerlink" title="用 C 學習程式寫作基礎"></a>用 C 學習程式寫作基礎</h2><p>本週開始接觸到新的語言 C。<br>上週用圖像化的 Scratch 來講解程式運作原理，這週承襲上週範例使用同樣的運作流程，只是改用 C 把它寫出來。  </p>
+<p>C 是一個相對古老的語言，所以他在寫作方式上並不像較新的語言那樣簡潔。比如:</p>
 <ol>
-<li>一頁一頁翻 ➜ 可以正確找到，但是好沒效率…  </li>
-<li>兩頁兩頁跳著翻 ➜ 查詢效率是兩倍，但是萬一在單數頁怎麼辦？  </li>
-<li>二分搜尋法 ➜ 從中間翻閱，依照姓名排序捨棄一半資料(不斷重複)</li>
+<li>請使用者輸入名字</li>
+<li>在螢幕上印出 <code>Hello, 名字</code></li>
 </ol>
-<p>完善搜尋方式的過程，並把過程用虛擬碼(pseudocode)寫出來幫助思考整個流程運作，最後用虛擬碼解釋函式、條件判斷、變數、迴圈…等是什麼?  </p>
-<p><img src="/../Blog-image/posts/2022-24-29_pseudocode.webp" alt="pseudocode"><br>(圖片來自 CS50 課程內容  )</p>
-<h3 id="Scratch"><a href="#Scratch" class="headerlink" title="Scratch"></a>Scratch</h3><p>用拼圖方式一步步組裝，做出一個可以運行的程式。  </p>
-<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>寫程式其實就是一個解題的過程，首先要確保可以得出正確的答案，再來才是優化解題的過程。  </p>
-<p>在電話簿情境題中，如果僅僅是為了提升效率而兩頁兩頁做排查，也許會因為搜尋對象在單數頁而錯過。那即使可以在較短時間排查更多的資料也沒用，因為這種排查邏輯並不完善。  </p>
-<p>從開始學習程式到現在已經大約半年了，由於 CS50x 是全英文課程，如果沒有一點點的程式基礎，聽起來真的會比較辛苦。半年前第一次聽的我和現在的重新撿回課程的我比起來，終於能比較順暢的聽懂了!接下來就是好好地堅持下去，認真的走完這個課程。  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  用 JavaScript 寫</span></span><br><span class="line">name = <span class="title function_">prompt</span>(<span class="string">&quot;Enter your name: &quot;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>`</span>)</span><br></pre></td></tr></table></figure>
+<p>JavaScript 只用一個變數儲存使用者的輸入值，然後輸出時套用即可。  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用 C 寫</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cs50.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> name = get_string(<span class="string">&quot;Enter your name: &quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello, %s\n&quot;</span>, name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用 C 寫就比較辛苦了，因為 C 必須要把每件事都寫得很清楚:  </p>
+<ul>
+<li>因為需要在螢幕上輸出內容，所以需要 <code>#include &lt;stdio.h&gt;</code>。  </li>
+<li>要用到向使用者拿輸入內容的函式 <code>get_string</code>，所以需要 <code>#include &lt;cs50.h&gt;</code>。(這還是 CS50 的員工寫出來的 library ，不然可能更麻煩 😅)  </li>
+<li>主要的執行內容需用 <code>int main(void)&#123;&#125;</code> 包覆。  </li>
+<li>每個變數要在最一開始就定義好它的 data type。  </li>
+<li>用 <code>%</code> 引用變數值，並要清楚定義這個值的 data type。</li>
+</ul>
+<p>因為先學了 JavaScript 才接觸到 C，所以寫作的過程相當不習慣、覺得很麻煩。但是在練習中不斷的除錯、除錯、再除錯，漸漸地發現這樣嚴謹的寫法練習很重要！因為在寫作過程中，必須每時每刻都很清楚自己正在用什麼、需要用什麼，一旦漏掉某個部分，可能就會炸出一堆錯誤訊息。  </p>
+<h2 id="作業練習-Problem-Set-1"><a href="#作業練習-Problem-Set-1" class="headerlink" title="作業練習 (Problem Set 1)"></a>作業練習 (Problem Set 1)</h2><p>CS50x 課程提供了一個完整的線上 codespace，依照教學做完初次設定，之後就可以打開即寫了，成果測試和作業提交也相當方便。  </p>
+<p>第一次接觸 C 語言就一口氣來了5個作業練習(其實應該算3個，其中2題是難易二選一就好，但我龜毛，想達成100%成就！)  </p>
+<ul>
+<li><strong>Hello.c</strong><br>就是上面提到的範例。練習輸入、輸出、 header files、comments  </li>
+<li><strong>Mario-less.c</strong><br>do while 迴圈、nesting for loop  </li>
+<li><strong>Mario-more.c</strong><br>do while.c 迴圈、nesting for loop，比上一題再複雜一點。</li>
+<li><strong>Cash.c</strong><br>do while 迴圈、function。C 的 function 很特別，要在最開頭決定 return type(或 void)，引入的參數 type 也要定好。</li>
+<li><strong>Credit.c</strong><br>do while 迴圈、if&#x2F;else、while loop，是上一題的進階。</li>
+</ul>
+<p>寫了差不多整整一天，雖然不是用最有效率的做法答題，但主要就是想用這週課堂學到的方式解題。練習量大的成果就是能「體會」上課內容到底在說什麼東西，但寫完之後覺得還需要重新把課程補充資料看過一遍做個複習。</p>
+<h2 id="提升-Coding-品質"><a href="#提升-Coding-品質" class="headerlink" title="提升 Coding 品質"></a>提升 Coding 品質</h2><p>除了 C 的教學外，講師也有一再探討怎麼樣才是好的 code design。Coding 分三個階段:  </p>
+<ul>
+<li><strong>correctness：</strong> 要能正確的解決問題。  </li>
+<li><strong>design：</strong> 包含變數的設計、減少重複的程式碼、提高程式碼再使用率、維護便利性…等。  </li>
+<li><strong>style：</strong> 整體規格要有一致性、並提高閱讀便利性，盡可能整齊、簡潔明瞭。</li>
+</ul>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>上了兩週的進度了，覺得課程的講解方式還算容易吸收，練習量也多。作業是需要在懂得前提下認真思考才能寫出來，對訓練思考邏輯很有幫助！  </p>
 <blockquote>
 <p>相關文章: <a href="https://ritachien.github.io/tags/CS50x-2022/">CS50x(2022)</a>  </p>
 </blockquote>
@@ -361,7 +373,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://ritachien.github.io/posts/b357a5fe/" title="【CS50x(2022)】 Week0 - Scratch">https://ritachien.github.io/posts/b357a5fe/</a>
+      <a href="https://ritachien.github.io/posts/100ec410/" title="【CS50x(2022)】 Week1 - C">https://ritachien.github.io/posts/100ec410/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -377,14 +389,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/924950b4/" rel="prev" title="Alpha Camp 學期 2-3 結業心得">
-                  <i class="fa fa-chevron-left"></i> Alpha Camp 學期 2-3 結業心得
+                <a href="/posts/be2c6d84/" rel="prev" title="【CS50W】Lecture0：HTML & CSS">
+                  <i class="fa fa-chevron-left"></i> 【CS50W】Lecture0：HTML & CSS
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/be2c6d84/" rel="next" title="【CS50W】Lecture0：HTML & CSS">
-                  【CS50W】Lecture0：HTML & CSS <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
