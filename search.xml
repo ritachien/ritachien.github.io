@@ -47,93 +47,6 @@
       </tags>
   </entry>
   <entry>
-    <title>用 Hexo + Github Pages 建立部落格</title>
-    <url>/posts/4b9ba027/</url>
-    <content><![CDATA[<p>在建置部落格前猶豫了很久，最終還是決定用 Hexo + Github Pages 當作平台。歷時兩天，終於解決各種莫名其妙的問題，讓它變成心目中的樣子!</p>
-<span id="more"></span>
-
-
-<h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="為什麼選擇-Github-Pages"><a href="#為什麼選擇-Github-Pages" class="headerlink" title="為什麼選擇 Github Pages ?"></a>為什麼選擇 Github Pages ?</h3><p><strong>1. 免費</strong><br>  Github Pages 是 Github 提供的免費靜態網頁空間，提供一組 Github帳號 <code>.github.io</code> 子網域。雖然有容量跟流量上的限制，但以一個剛起步的部落格來說，現階段不會有超出的問題。既然有免費的平台那就用吧!  </p>
-<p><strong>2. 能夠使用 Git 部署並進行版本控制</strong><br>  看了各個學習寫程式分享，得知「如何使用 Git 進行版本控制」是很重要的。雖然現階段身為程式小白的我沒有太多的概念，也完全沒有接觸過，但在查詢 Hexo 資訊時得知，Hexo 可以藉由 Git 部署到 Github 上。希望能在日常使用中學習並熟悉 Git 。  </p>
-<p><strong>3. Github 會記錄每日 commit 次數</strong><br>  Github 的個人首頁會呈現一整年的 commit 紀錄畫面。每天一格，每 commit 一次，當天的格子就會從灰色漸漸往深綠色變化。希望利用自己的收集強迫症，為了盡可能填滿格子，督促自己多多更新部落格。  </p>
-<h3 id="Github-Pages-有什麼限制"><a href="#Github-Pages-有什麼限制" class="headerlink" title="Github Pages 有什麼限制?"></a>Github Pages 有什麼限制?</h3><ol>
-<li>只能存放靜態網頁。</li>
-<li>1GB 空間容量。</li>
-<li>100GB 月流量。</li>
-<li>1 小時內只能提交 10 次更新版本。<blockquote>
-<p>參考資料: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages">Github 說明文件</a></p>
-</blockquote>
-</li>
-</ol>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="為什麼選擇-Hexo"><a href="#為什麼選擇-Hexo" class="headerlink" title="為什麼選擇 Hexo ?"></a>為什麼選擇 Hexo ?</h3><p><strong>1. Hexo 支援強大:</strong><br>  Hexo 是台灣人做的(<a href="https://zespia.tw/blog/2012/10/11/hexo-debut/">起源在這裡</a>)，官方中文支援蠻完整的。另外，可能也是因為中文支援較完整，有很多中文圈的前輩做了很多主題可以套用，當遇到相關問題時，Google 到的解決方案也很多。  </p>
-<p><strong>2. 使用 Node.js(JavaScript) 開發:</strong><br>  在正式開始前，找了幾個熱門靜態檔案產生器比較，最後在 Hexo 跟 Hugo 之間做選擇。雖然 Hugo 比較快，Github上的星星數也比較多，但基於 Hugo 是用 Go 語言寫的，初學的我還是應該先專心一門語言較好，因此捨棄 Hugo 選擇使用 JavaScript 的 Hexo。既然我現在在學JavaScript，現階段可以研究一下它的寫法，之後說不定哪天我可以自己把它改得更符合自己需求。目前在做一些個人化設定時也發現，因為可以看得懂一點點結構，修改時很有幫助。  </p>
-<p><strong>3. 支援 Markdown :</strong><br>Markdown 用來撰寫文章很方便，因為語法簡單，可以更專心在文字內容的編輯上，不用過分關注排版問題。在加上之前跟鳥友一起在HackMD建了個鳥寶寶成長紀錄(<a href="https://hackmd.io/p5O2bt2QQrC1HH46cVfs0A">有興趣可以看看</a>)，對 Markdown 也算比較熟悉了。</p>
-<p><strong>4. 個人化設定自由度高 :</strong><br>主題非常多元，版面也可依自己需求做CSS修改。(剛學到的 <code>padding</code> 、 <code>letter-spacing</code> 、 <code>border-radius</code> 等也都依自己喜歡的樣子用上了!) 另外，也可以找到很多其他插件資源，讓自己的部落格更有個人特色。<br>  <br/></p>
-<h2 id="開始建置部落格"><a href="#開始建置部落格" class="headerlink" title="開始建置部落格"></a>開始建置部落格</h2><blockquote>
-<p>本文撰寫時在 Windows 10 環境下安裝。  </p>
-</blockquote>
-<h3 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h3><p><strong>1. 安裝 Node.js</strong>  </p>
-<ul>
-<li>建置過程中需要用 NPM 安裝套件，所以要先下載 Node.js (<a href="https://nodejs.org/en/">官網下載</a>)。</li>
-</ul>
-<p><strong>2. 安裝 Git</strong>  </p>
-<ul>
-<li><p>之後會使用 Git 作版本控制並將 Hexo 部署或備份到 Github 上，所以要先安裝 Git (<a href="https://git-scm.com/downloads">官網下載</a>)。  </p>
-</li>
-<li><p>開始初次設定 Git : 設定使用者名稱及電子郵件， Git 的提交會使用這些資訊。  </p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引號內填入使用者名稱</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line"><span class="comment"># 引號內填入使用者email</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>完成後可用 <code>git config --global --list</code> 檢查是否有誤，或是到 <code>C:\Users\yourUserName\.gitconfig</code> 確認並修正。</p>
-</li>
-</ul>
-<p><strong>3. 新建Github Repository</strong>  </p>
-<ul>
-<li>開啟 Github 並點選 New Repository</li>
-<li>Repository 名稱為 <code>用戶名.github.io</code><br>  <img src="/../../Blog-image/posts/2021-12-21_001.webp" alt="20211221-001">    <br/></li>
-</ul>
-<h3 id="本地端安裝"><a href="#本地端安裝" class="headerlink" title="本地端安裝"></a>本地端安裝</h3><p><strong>1. 安裝 Hexo</strong>  </p>
-<ul>
-<li>使用 <code>npm install -g hexo-cli</code> 安裝 Hexo 。  </li>
-<li>安裝成功後，輸入 <code>hexo version</code> 指令可查看安裝版本。</li>
-</ul>
-<p><strong>2. Blog 存放資料夾初始化</strong></p>
-<ul>
-<li>開啟命令提示元(CMD) &gt; 前往想存放 Blog 檔案的本地端資料夾。 (ex. 我要在 D 槽新建 Blog 資料夾存放，所以先輸入 <code>D:</code> 讓當前位置移到 D 槽)  </li>
-<li>初始化資料夾(必須是空資料夾，以下方法二選一)  <ul>
-<li>方法一(當前位置 D 槽) –在 D 槽新建 Blog 資料夾並初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init Blog</span><br></pre></td></tr></table></figure></li>
-<li>方法二(已自行新建資料夾，當前位置 D:\Blog) –將 Blog 資料夾初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>安裝相關套件  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>3. 部署設定</strong></p>
-<ul>
-<li>安裝部署用套件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
-<li>修改部署設定 (檔案 <code>根目錄\_config.yml</code> 最下方 # Deployment)  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/用戶名/用戶名.github.io.git</span>  <span class="comment"># Repository 網址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">分支名稱(可用預設</span> <span class="string">main</span> <span class="string">，或自訂如</span> <span class="string">gh-pages)</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">&quot;填入commit訊息&quot;</span>  <span class="comment"># 本行不用可刪</span></span><br></pre></td></tr></table></figure>
-<br/></li>
-</ul>
-<h3 id="部署到Github-常用指令"><a href="#部署到Github-常用指令" class="headerlink" title="部署到Github (常用指令)"></a>部署到Github (常用指令)</h3><p><strong>1. 本地端預覽</strong><br>使用時機: 當在本地端做完修改後，如果希望看到及時修改結果。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server                <span class="comment"># 開啟本地端預覽(標準用法)</span></span><br><span class="line">hexo s                     <span class="comment"># 開啟本地端預覽(簡短用法)</span></span><br><span class="line">http://localhost:4000      <span class="comment"># 貼入網址列即可預覽</span></span><br><span class="line">Ctrl + C                   <span class="comment"># 結束本地端預覽</span></span><br></pre></td></tr></table></figure>
-<p><strong>2. 產生靜態檔案</strong><br>使用時機: 編寫完成後，產生要部署的靜態檔案(會產生 <code>根目錄\public</code> 資料夾放入要部署的檔案)。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate             <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo g                    <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
-<p><strong>3. 部署</strong><br>使用時機: 編寫完成後，部署到 Github ( <code>根目錄\public</code> 裡的檔案會被上傳到設定好的 Repository)。部署完成就可以在 <code>github.io</code> 看到自己的 Blog 了!  </p>
-<blockquote>
-<p><font color=#FF6600>Github有時候部署後要等10~20分鐘畫面才會更新</font></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy                  <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo d                       <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br><span class="line">https://帳戶名.github.io/     <span class="comment"># 個人部落格網址</span></span><br></pre></td></tr></table></figure>
-<p><strong>4. 清除快取 &amp; 靜態檔案</strong><br>使用時機: 為了避免出錯，建議在每次 deploy 前，都先清除先前的資料再重新產生靜態檔案(清除快取檔案 <code>db.json</code> 和已產生的靜態檔案 <code>根目錄\public</code>)。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean     <span class="comment"># 清除快取 &amp; 靜態檔案(標準用法)</span></span><br><span class="line">hexo cl        <span class="comment"># 清除快取 &amp; 靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Blog</tag>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript 運算子</title>
     <url>/posts/d403fec1/</url>
     <content><![CDATA[<p>在使用運算子 (Operators) 時，隨著練習題逐漸提高的複雜度，開始發現一些與自己認知不同的地方。這些不明顯的小錯誤，常常是導致程式跑不出來或出現預期外結果的原因。所以在之前筆記的基礎上，把犯過的錯誤一起整理進來，降低下次再犯的可能性。</p>
@@ -363,6 +276,136 @@
       </tags>
   </entry>
   <entry>
+    <title>用 Hexo + Github Pages 建立部落格</title>
+    <url>/posts/4b9ba027/</url>
+    <content><![CDATA[<p>在建置部落格前猶豫了很久，最終還是決定用 Hexo + Github Pages 當作平台。歷時兩天，終於解決各種莫名其妙的問題，讓它變成心目中的樣子!</p>
+<span id="more"></span>
+
+
+<h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="為什麼選擇-Github-Pages"><a href="#為什麼選擇-Github-Pages" class="headerlink" title="為什麼選擇 Github Pages ?"></a>為什麼選擇 Github Pages ?</h3><p><strong>1. 免費</strong><br>  Github Pages 是 Github 提供的免費靜態網頁空間，提供一組 Github帳號 <code>.github.io</code> 子網域。雖然有容量跟流量上的限制，但以一個剛起步的部落格來說，現階段不會有超出的問題。既然有免費的平台那就用吧!  </p>
+<p><strong>2. 能夠使用 Git 部署並進行版本控制</strong><br>  看了各個學習寫程式分享，得知「如何使用 Git 進行版本控制」是很重要的。雖然現階段身為程式小白的我沒有太多的概念，也完全沒有接觸過，但在查詢 Hexo 資訊時得知，Hexo 可以藉由 Git 部署到 Github 上。希望能在日常使用中學習並熟悉 Git 。  </p>
+<p><strong>3. Github 會記錄每日 commit 次數</strong><br>  Github 的個人首頁會呈現一整年的 commit 紀錄畫面。每天一格，每 commit 一次，當天的格子就會從灰色漸漸往深綠色變化。希望利用自己的收集強迫症，為了盡可能填滿格子，督促自己多多更新部落格。  </p>
+<h3 id="Github-Pages-有什麼限制"><a href="#Github-Pages-有什麼限制" class="headerlink" title="Github Pages 有什麼限制?"></a>Github Pages 有什麼限制?</h3><ol>
+<li>只能存放靜態網頁。</li>
+<li>1GB 空間容量。</li>
+<li>100GB 月流量。</li>
+<li>1 小時內只能提交 10 次更新版本。<blockquote>
+<p>參考資料: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages">Github 說明文件</a></p>
+</blockquote>
+</li>
+</ol>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="為什麼選擇-Hexo"><a href="#為什麼選擇-Hexo" class="headerlink" title="為什麼選擇 Hexo ?"></a>為什麼選擇 Hexo ?</h3><p><strong>1. Hexo 支援強大:</strong><br>  Hexo 是台灣人做的(<a href="https://zespia.tw/blog/2012/10/11/hexo-debut/">起源在這裡</a>)，官方中文支援蠻完整的。另外，可能也是因為中文支援較完整，有很多中文圈的前輩做了很多主題可以套用，當遇到相關問題時，Google 到的解決方案也很多。  </p>
+<p><strong>2. 使用 Node.js(JavaScript) 開發:</strong><br>  在正式開始前，找了幾個熱門靜態檔案產生器比較，最後在 Hexo 跟 Hugo 之間做選擇。雖然 Hugo 比較快，Github上的星星數也比較多，但基於 Hugo 是用 Go 語言寫的，初學的我還是應該先專心一門語言較好，因此捨棄 Hugo 選擇使用 JavaScript 的 Hexo。既然我現在在學JavaScript，現階段可以研究一下它的寫法，之後說不定哪天我可以自己把它改得更符合自己需求。目前在做一些個人化設定時也發現，因為可以看得懂一點點結構，修改時很有幫助。  </p>
+<p><strong>3. 支援 Markdown :</strong><br>Markdown 用來撰寫文章很方便，因為語法簡單，可以更專心在文字內容的編輯上，不用過分關注排版問題。在加上之前跟鳥友一起在HackMD建了個鳥寶寶成長紀錄(<a href="https://hackmd.io/p5O2bt2QQrC1HH46cVfs0A">有興趣可以看看</a>)，對 Markdown 也算比較熟悉了。</p>
+<p><strong>4. 個人化設定自由度高 :</strong><br>主題非常多元，版面也可依自己需求做CSS修改。(剛學到的 <code>padding</code> 、 <code>letter-spacing</code> 、 <code>border-radius</code> 等也都依自己喜歡的樣子用上了!) 另外，也可以找到很多其他插件資源，讓自己的部落格更有個人特色。<br>  <br/></p>
+<h2 id="開始建置部落格"><a href="#開始建置部落格" class="headerlink" title="開始建置部落格"></a>開始建置部落格</h2><blockquote>
+<p>本文撰寫時在 Windows 10 環境下安裝。  </p>
+</blockquote>
+<h3 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h3><p><strong>1. 安裝 Node.js</strong>  </p>
+<ul>
+<li>建置過程中需要用 NPM 安裝套件，所以要先下載 Node.js (<a href="https://nodejs.org/en/">官網下載</a>)。</li>
+</ul>
+<p><strong>2. 安裝 Git</strong>  </p>
+<ul>
+<li><p>之後會使用 Git 作版本控制並將 Hexo 部署或備份到 Github 上，所以要先安裝 Git (<a href="https://git-scm.com/downloads">官網下載</a>)。  </p>
+</li>
+<li><p>開始初次設定 Git : 設定使用者名稱及電子郵件， Git 的提交會使用這些資訊。  </p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 引號內填入使用者名稱</span></span><br><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line"><span class="comment"># 引號內填入使用者email</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完成後可用 <code>git config --global --list</code> 檢查是否有誤，或是到 <code>C:\Users\yourUserName\.gitconfig</code> 確認並修正。</p>
+</li>
+</ul>
+<p><strong>3. 新建Github Repository</strong>  </p>
+<ul>
+<li>開啟 Github 並點選 New Repository</li>
+<li>Repository 名稱為 <code>用戶名.github.io</code><br>  <img src="/../../Blog-image/posts/2021-12-21_001.webp" alt="20211221-001">    <br/></li>
+</ul>
+<h3 id="本地端安裝"><a href="#本地端安裝" class="headerlink" title="本地端安裝"></a>本地端安裝</h3><p><strong>1. 安裝 Hexo</strong>  </p>
+<ul>
+<li>使用 <code>npm install -g hexo-cli</code> 安裝 Hexo 。  </li>
+<li>安裝成功後，輸入 <code>hexo version</code> 指令可查看安裝版本。</li>
+</ul>
+<p><strong>2. Blog 存放資料夾初始化</strong></p>
+<ul>
+<li>開啟命令提示元(CMD) &gt; 前往想存放 Blog 檔案的本地端資料夾。 (ex. 我要在 D 槽新建 Blog 資料夾存放，所以先輸入 <code>D:</code> 讓當前位置移到 D 槽)  </li>
+<li>初始化資料夾(必須是空資料夾，以下方法二選一)  <ul>
+<li>方法一(當前位置 D 槽) –在 D 槽新建 Blog 資料夾並初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init Blog</span><br></pre></td></tr></table></figure></li>
+<li>方法二(已自行新建資料夾，當前位置 D:\Blog) –將 Blog 資料夾初始化  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>安裝相關套件  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>3. 部署設定</strong></p>
+<ul>
+<li>安裝部署用套件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li>修改部署設定 (檔案 <code>根目錄\_config.yml</code> 最下方 # Deployment)  <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/用戶名/用戶名.github.io.git</span>  <span class="comment"># Repository 網址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">分支名稱(可用預設</span> <span class="string">main</span> <span class="string">，或自訂如</span> <span class="string">gh-pages)</span></span><br><span class="line">  <span class="attr">message:</span> <span class="string">&quot;填入commit訊息&quot;</span>  <span class="comment"># 本行不用可刪</span></span><br></pre></td></tr></table></figure>
+<br/></li>
+</ul>
+<h3 id="部署到Github-常用指令"><a href="#部署到Github-常用指令" class="headerlink" title="部署到Github (常用指令)"></a>部署到Github (常用指令)</h3><p><strong>1. 本地端預覽</strong><br>使用時機: 當在本地端做完修改後，如果希望看到及時修改結果。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server                <span class="comment"># 開啟本地端預覽(標準用法)</span></span><br><span class="line">hexo s                     <span class="comment"># 開啟本地端預覽(簡短用法)</span></span><br><span class="line">http://localhost:4000      <span class="comment"># 貼入網址列即可預覽</span></span><br><span class="line">Ctrl + C                   <span class="comment"># 結束本地端預覽</span></span><br></pre></td></tr></table></figure>
+<p><strong>2. 產生靜態檔案</strong><br>使用時機: 編寫完成後，產生要部署的靜態檔案(會產生 <code>根目錄\public</code> 資料夾放入要部署的檔案)。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate             <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo g                    <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
+<p><strong>3. 部署</strong><br>使用時機: 編寫完成後，部署到 Github ( <code>根目錄\public</code> 裡的檔案會被上傳到設定好的 Repository)。部署完成就可以在 <code>github.io</code> 看到自己的 Blog 了!  </p>
+<blockquote>
+<p><font color=#FF6600>Github有時候部署後要等10~20分鐘畫面才會更新</font></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy                  <span class="comment"># 產生靜態檔案(標準用法)</span></span><br><span class="line">hexo d                       <span class="comment"># 產生靜態檔案(簡短用法)</span></span><br><span class="line">https://帳戶名.github.io/     <span class="comment"># 個人部落格網址</span></span><br></pre></td></tr></table></figure>
+<p><strong>4. 清除快取 &amp; 靜態檔案</strong><br>使用時機: 為了避免出錯，建議在每次 deploy 前，都先清除先前的資料再重新產生靜態檔案(清除快取檔案 <code>db.json</code> 和已產生的靜態檔案 <code>根目錄\public</code>)。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean     <span class="comment"># 清除快取 &amp; 靜態檔案(標準用法)</span></span><br><span class="line">hexo cl        <span class="comment"># 清除快取 &amp; 靜態檔案(簡短用法)</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Blog</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 基本設定</title>
+    <url>/posts/a970120e/</url>
+    <content><![CDATA[<p>基本上經過上一篇的操作，在 <code>hexo s</code> 後應該已經可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 看到預設的 Hello World 畫面了，但要讓 Blog 正式啟動前，我們還要先做一些個人化設定。  </p>
+<span id="more"></span>
+
+<blockquote>
+<p>本文撰寫時的版本如下(可用 <code>hexo version</code> 確認)，不同版本的預設配置檔可能會有差異:<br>hexo: 6.0.0<br>hexo-cli: 4.3.0  </p>
+</blockquote>
+<ul>
+<li>基本配置文件位置在 <code>root\_config.yml</code>，<font color=#FF6600>冒號後面都必需保留半型空格一格</font>。  </li>
+<li>僅列出通常會修改或我已經修改的部分，其他請參考<a href="https://hexo.io/zh-tw/docs/configuration">官方網站</a>說明。</li>
+</ul>
+<h2 id="網站設定"><a href="#網站設定" class="headerlink" title="網站設定"></a>網站設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span>           <span class="comment"># 網站標題</span></span><br><span class="line"><span class="attr">subtitle:</span>             <span class="comment"># 網站副標題</span></span><br><span class="line"><span class="attr">description:</span>          <span class="comment"># 網站描述</span></span><br><span class="line"><span class="attr">keywords:</span>             <span class="comment"># 網站關鍵字(支援多個關鍵詞，用半型逗號隔開)</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span>      <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span>          <span class="comment"># 網站語言 (台灣:zh-tw)</span></span><br><span class="line"><span class="attr">timezone:</span>             <span class="comment"># 時區(可留空以使用您電腦的時區)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="網址設定"><a href="#網址設定" class="headerlink" title="網址設定"></a>網址設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here.</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://UserName.github.io/</span>           <span class="comment"># UserName更改為自己的帳戶名</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>      <span class="comment"># 文章網址的格式(預設使用 年月日/文章名稱)/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                       <span class="comment"># permalink 中各區段的預設值</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>permalink 會依照設定值，在每次 generate 時重新產生網址，設定參數可參考<a href="https://hexo.io/zh-tw/docs/permalinks">官方文件</a>。我在命名檔名時，習慣使用日期 + 英文檔名(日期方便排序，不含空格的英文檔名較不會產生亂碼網址)，所以 permalink: 僅用 <code>:title</code> 參數 (最後的 <code>/</code> 要記得保留)。</li>
+<li><strong><font color=red>2021&#x2F;12&#x2F;27 更新: <a href="/posts/d8dab675/">使用 Hexo-abbrlink 產生永久連結</a></font></strong></li>
+</ul>
+<h2 id="目錄設定"><a href="#目錄設定" class="headerlink" title="目錄設定"></a>目錄設定</h2><p>原則上都保留不變，除非有自訂路徑的需求。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span>            <span class="comment"># 原始檔案資料夾，存放編輯的所有內容</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span>            <span class="comment"># 存放靜態檔案的資料夾(hexo g 後產生)</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span>                 <span class="comment"># 標籤資料夾</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span>         <span class="comment"># 彙整資料夾(deploy後產生)</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span>      <span class="comment"># 分類資料夾</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>tags</code> 和 <code>categories</code> 資料夾預設是不存在的，有需要要另外新增資料夾。</li>
+</ul>
+<h2 id="擴充套件設定"><a href="#擴充套件設定" class="headerlink" title="擴充套件設定"></a>擴充套件設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/       # 提供各種套件，可以依自己需求安裝</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/         # 提供各種主題，可以依自己需求安裝</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span>                           <span class="comment"># 填寫主題名稱</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>本部落格選用 Next 主題(要把 landscape 改為 Next)，後續會另開一篇變更主題說明文。</li>
+</ul>
+<h2 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Hexo 可同時部署到不同地方，相關設定參考<a href="https://hexo.io/zh-tw/docs/one-command-deployment">官方部署說明</a>。  </li>
+<li>部署到 Github 方式已在用前篇 Hexo + Github Pages 建立部落格 中說明，這邊不另外贅述。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo 編輯文章</title>
     <url>/posts/978c1db/</url>
     <content><![CDATA[<p>基本設定都完成後就可以來寫部落格了! 在正式開始前，如果能對 Hexo 的資料夾架構及 Front-matter 有點基本的認識，會對後續的操作很有幫助。</p>
@@ -408,49 +451,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 基本設定</title>
-    <url>/posts/a970120e/</url>
-    <content><![CDATA[<p>基本上經過上一篇的操作，在 <code>hexo s</code> 後應該已經可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 看到預設的 Hello World 畫面了，但要讓 Blog 正式啟動前，我們還要先做一些個人化設定。  </p>
-<span id="more"></span>
-
-<blockquote>
-<p>本文撰寫時的版本如下(可用 <code>hexo version</code> 確認)，不同版本的預設配置檔可能會有差異:<br>hexo: 6.0.0<br>hexo-cli: 4.3.0  </p>
-</blockquote>
-<ul>
-<li>基本配置文件位置在 <code>root\_config.yml</code>，<font color=#FF6600>冒號後面都必需保留半型空格一格</font>。  </li>
-<li>僅列出通常會修改或我已經修改的部分，其他請參考<a href="https://hexo.io/zh-tw/docs/configuration">官方網站</a>說明。</li>
-</ul>
-<h2 id="網站設定"><a href="#網站設定" class="headerlink" title="網站設定"></a>網站設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span>           <span class="comment"># 網站標題</span></span><br><span class="line"><span class="attr">subtitle:</span>             <span class="comment"># 網站副標題</span></span><br><span class="line"><span class="attr">description:</span>          <span class="comment"># 網站描述</span></span><br><span class="line"><span class="attr">keywords:</span>             <span class="comment"># 網站關鍵字(支援多個關鍵詞，用半型逗號隔開)</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span>      <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span>          <span class="comment"># 網站語言 (台灣:zh-tw)</span></span><br><span class="line"><span class="attr">timezone:</span>             <span class="comment"># 時區(可留空以使用您電腦的時區)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="網址設定"><a href="#網址設定" class="headerlink" title="網址設定"></a>網址設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here.</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://UserName.github.io/</span>           <span class="comment"># UserName更改為自己的帳戶名</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>      <span class="comment"># 文章網址的格式(預設使用 年月日/文章名稱)/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                       <span class="comment"># permalink 中各區段的預設值</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>permalink 會依照設定值，在每次 generate 時重新產生網址，設定參數可參考<a href="https://hexo.io/zh-tw/docs/permalinks">官方文件</a>。我在命名檔名時，習慣使用日期 + 英文檔名(日期方便排序，不含空格的英文檔名較不會產生亂碼網址)，所以 permalink: 僅用 <code>:title</code> 參數 (最後的 <code>/</code> 要記得保留)。</li>
-<li><strong><font color=red>2021&#x2F;12&#x2F;27 更新: <a href="/posts/d8dab675/">使用 Hexo-abbrlink 產生永久連結</a></font></strong></li>
-</ul>
-<h2 id="目錄設定"><a href="#目錄設定" class="headerlink" title="目錄設定"></a>目錄設定</h2><p>原則上都保留不變，除非有自訂路徑的需求。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span>            <span class="comment"># 原始檔案資料夾，存放編輯的所有內容</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span>            <span class="comment"># 存放靜態檔案的資料夾(hexo g 後產生)</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span>                 <span class="comment"># 標籤資料夾</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span>         <span class="comment"># 彙整資料夾(deploy後產生)</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span>      <span class="comment"># 分類資料夾</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>tags</code> 和 <code>categories</code> 資料夾預設是不存在的，有需要要另外新增資料夾。</li>
-</ul>
-<h2 id="擴充套件設定"><a href="#擴充套件設定" class="headerlink" title="擴充套件設定"></a>擴充套件設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/       # 提供各種套件，可以依自己需求安裝</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/         # 提供各種主題，可以依自己需求安裝</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span>                           <span class="comment"># 填寫主題名稱</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>本部落格選用 Next 主題(要把 landscape 改為 Next)，後續會另開一篇變更主題說明文。</li>
-</ul>
-<h2 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Hexo 可同時部署到不同地方，相關設定參考<a href="https://hexo.io/zh-tw/docs/one-command-deployment">官方部署說明</a>。  </li>
-<li>部署到 Github 方式已在用前篇 Hexo + Github Pages 建立部落格 中說明，這邊不另外贅述。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -832,6 +832,41 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo 插件更新</title>
+    <url>/posts/d81b71f/</url>
+    <content><![CDATA[<p>會寫這篇文章主要是因為收到了 hexo-server 插件的更新通知。隨著部落格功能的擴充，我安裝的 Hexo 插件越來越多，每個插件都會做各自的版本更新(還不同時間點)。一個一個分別更新好麻煩，然後懶人如我找到了個 npm 包可以直接幫我確認最新版本，再全部一起更新，多棒啊~~  </p>
+<span id="more"></span>
+
+<blockquote>
+<p>本篇撰寫時 Hexo 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Hexo-server 版本: <strong>^2.0.0</strong> 升級到 <strong>^3.0.0</strong>  </p>
+</blockquote>
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>package.json 檔案， 定義專案所需要的各種模組，以及專案的配置資訊。<code>npm install</code> 命令根據這個配置檔案，自動下載所需的模組。打開 Hexo 專案根目錄的 package.json 檔案，就可以看到自己已經做了那些配置。  </p>
+<p>關於 package.json 的詳細介紹，可參考 <a href="https://iter01.com/467432.html">草履蟲的思考 發表在 IT 人的文章</a>。裡面對 npm 及 package.json 有比較詳細的介紹，這裡就不贅述。</p>
+<h2 id="用-npm-check-updates-更新插件"><a href="#用-npm-check-updates-更新插件" class="headerlink" title="用 npm-check-updates 更新插件"></a>用 npm-check-updates 更新插件</h2><p>在網路教學看到推薦用 <code>npm-check</code> 和 <code>npm-upgrade</code> 更新，但我實際安裝後都會報錯誤。後來我找到另外 npm 包，也是我這次更新 hexo-server 用的方式。  </p>
+<blockquote>
+<p><a href="https://github.com/raineorshine/npm-check-updates">npm-check-updates 官網</a><br><strong>npm-check-updates</strong> upgrades your package.json dependencies to the latest versions, ignoring specified versions.<br>看看這描述，多方便阿~</p>
+</blockquote>
+<p><strong>1. 使用方法非常簡單，只要先安裝 npm-check-updates</strong> </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g npm-check-updates    <span class="comment"># 安裝 npm-check-updates</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 執行版本檢查&#x2F;更新指令</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ncu           <span class="comment"># 檢查是否需要更新(npm-check-updates 第一個字母縮寫，很好記!)</span></span><br><span class="line">ncu -u        <span class="comment"># 更新 package.json 資訊(upgrade縮寫)</span></span><br><span class="line">npm install   <span class="comment"># 安裝新版本</span></span><br></pre></td></tr></table></figure>
+<p>他會輸出一個版本檢查的畫面，並在最後一行指示下一步怎麼做。以我自己的畫面為例:  </p>
+<ul>
+<li>執行 <code>ncu</code> 會提供現有版本和最新版本的比較，並在最後一行用藍字提醒下一步要 更新 package.json。  </li>
+<li>執行 <code>ncu -u</code> 更新 package.json 資訊，並在最後一行用藍字提醒下一步要安裝新版本。  </li>
+<li>執行 <code>npm install</code> 後 再用 <code>ncu</code> 檢查一次，發現全部都是最新版本了。</li>
+</ul>
+<p><img src="/../../Blog-image/posts/2022-01-06_001.webp" alt="npm-check-updates20220106-001"></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>星座計算機</title>
     <url>/posts/2fe737b2/</url>
     <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期 2-1 工作坊<br>在學習 function 的過程中，對於如何設計和應用只有模糊的概念。星座計算機是個規模較小的應用題，可以在不長的流程中清楚看出 fuction 的運作時機和傳回值的流向。透過 function 的使用，可以讓主程式碼盡可能地保持較乾淨的狀態。  </p>
@@ -921,41 +956,6 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 插件更新</title>
-    <url>/posts/d81b71f/</url>
-    <content><![CDATA[<p>會寫這篇文章主要是因為收到了 hexo-server 插件的更新通知。隨著部落格功能的擴充，我安裝的 Hexo 插件越來越多，每個插件都會做各自的版本更新(還不同時間點)。一個一個分別更新好麻煩，然後懶人如我找到了個 npm 包可以直接幫我確認最新版本，再全部一起更新，多棒啊~~  </p>
-<span id="more"></span>
-
-<blockquote>
-<p>本篇撰寫時 Hexo 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Hexo-server 版本: <strong>^2.0.0</strong> 升級到 <strong>^3.0.0</strong>  </p>
-</blockquote>
-<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>package.json 檔案， 定義專案所需要的各種模組，以及專案的配置資訊。<code>npm install</code> 命令根據這個配置檔案，自動下載所需的模組。打開 Hexo 專案根目錄的 package.json 檔案，就可以看到自己已經做了那些配置。  </p>
-<p>關於 package.json 的詳細介紹，可參考 <a href="https://iter01.com/467432.html">草履蟲的思考 發表在 IT 人的文章</a>。裡面對 npm 及 package.json 有比較詳細的介紹，這裡就不贅述。</p>
-<h2 id="用-npm-check-updates-更新插件"><a href="#用-npm-check-updates-更新插件" class="headerlink" title="用 npm-check-updates 更新插件"></a>用 npm-check-updates 更新插件</h2><p>在網路教學看到推薦用 <code>npm-check</code> 和 <code>npm-upgrade</code> 更新，但我實際安裝後都會報錯誤。後來我找到另外 npm 包，也是我這次更新 hexo-server 用的方式。  </p>
-<blockquote>
-<p><a href="https://github.com/raineorshine/npm-check-updates">npm-check-updates 官網</a><br><strong>npm-check-updates</strong> upgrades your package.json dependencies to the latest versions, ignoring specified versions.<br>看看這描述，多方便阿~</p>
-</blockquote>
-<p><strong>1. 使用方法非常簡單，只要先安裝 npm-check-updates</strong> </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g npm-check-updates    <span class="comment"># 安裝 npm-check-updates</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>2. 執行版本檢查&#x2F;更新指令</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ncu           <span class="comment"># 檢查是否需要更新(npm-check-updates 第一個字母縮寫，很好記!)</span></span><br><span class="line">ncu -u        <span class="comment"># 更新 package.json 資訊(upgrade縮寫)</span></span><br><span class="line">npm install   <span class="comment"># 安裝新版本</span></span><br></pre></td></tr></table></figure>
-<p>他會輸出一個版本檢查的畫面，並在最後一行指示下一步怎麼做。以我自己的畫面為例:  </p>
-<ul>
-<li>執行 <code>ncu</code> 會提供現有版本和最新版本的比較，並在最後一行用藍字提醒下一步要 更新 package.json。  </li>
-<li>執行 <code>ncu -u</code> 更新 package.json 資訊，並在最後一行用藍字提醒下一步要安裝新版本。  </li>
-<li>執行 <code>npm install</code> 後 再用 <code>ncu</code> 檢查一次，發現全部都是最新版本了。</li>
-</ul>
-<p><img src="/../../Blog-image/posts/2022-01-06_001.webp" alt="npm-check-updates20220106-001"></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1333,6 +1333,27 @@
       </tags>
   </entry>
   <entry>
+    <title>Alpha Camp 學期 2-2 結業心得</title>
+    <url>/posts/f46b1c2/</url>
+    <content><![CDATA[<blockquote>
+<p>在寫 code 之前先分拆邏輯與流程、用函式封裝程式碼、用心命名變數，這些基本動作原來是這麼地重要。  </p>
+</blockquote>
+<span id="more"></span>
+<h3 id="OBJECTIVE"><a href="#OBJECTIVE" class="headerlink" title="OBJECTIVE"></a>OBJECTIVE</h3><p>經過學期2–2的學習，除了一邊複習之前學過的東西外，也對於程式流程的優化有更進一步的了解。尤其是使用 MVC 架構，讓整個程式不管是邏輯、流程或者是管理維護上都有了很大的提升。因為越學越有興趣的關係，和之前的幾個學期相比，現在的我對於主動優化作業有了很大的熱情。另外就是對於學期開頭的介紹有了更深刻的體會與認同!在寫 code 之前先分拆邏輯與流程、用函式封裝程式碼、用心命名變數，這些基本動作原來是這麼地重要。  </p>
+<h3 id="REFLECTIVE"><a href="#REFLECTIVE" class="headerlink" title="REFLECTIVE"></a>REFLECTIVE</h3><p>大量的實作學習讓我從「跟著助教做」轉為「思考另一種做法的利弊是什麼」。因為多了各種思考過程，我開始了大量的資料閱讀和撰寫嘗試。在嘗試的過程中發現不同的寫法各有利弊，結果的選擇很大程度上取決於使用者體驗(目前就是我自己啦😆)  </p>
+<p>就是因為想加的功能越變越多，導致我需要不斷往前修改之前考慮的不夠完善的地方，這個時候就想到:如果在最一開始，我對於那些撰寫基礎能更重視和用心，後面這些時間也許都可以節省下來。  </p>
+<h3 id="INTERPRETIVE"><a href="#INTERPRETIVE" class="headerlink" title="INTERPRETIVE"></a>INTERPRETIVE</h3><p>這個學期下來也讓我對於「複習」這件事有了態度上的轉變。從原本的「之前不夠熟悉、必須找時間再多多複習」變成「主動在作業中融入以前學過的東西」。每個學期、甚至每個教案的著重點本來就不一樣，「複習」這件事就要找到適合自己的方法，不能依賴虛無飄渺的「找個時間來複習」。  </p>
+<p>觀摩同學作業時，發現在一個作業中同時融入了很多以前學過的東西( media queries 、 flex、position…等)，可以看出他在開始編寫程式碼前，已經對設計成品有具體的想法，可能也針對不同螢幕大小畫出了多張 wireframe ，考慮了很多面向的東西。 他的練習實踐方式讓我發現我可以在完成當下目標同時複習以前學過的東西，學習的輸入可以從各自為政變成融會貫通 。  </p>
+<h3 id="DECISIONAL"><a href="#DECISIONAL" class="headerlink" title="DECISIONAL"></a>DECISIONAL</h3><p>接下來進行課程時，希望自己能保持主動優化的動力。也許不是每一次嘗試都能得到好的結果，但在嘗試的過程中需要查資料、方法的選擇、功能的取捨，利用這個過程慢慢積累自己的知識庫，期望未來能不愧對付出的時間和努力!  </p>
+]]></content>
+      <categories>
+        <category>學習紀錄 - AlphaCamp</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Alpha Camp 學期 2-3 結業心得</title>
     <url>/posts/924950b4/</url>
     <content><![CDATA[<p>隨著時間的推移，在學習上總是會碰到各種不同的狀況，而這些狀況也提供我不同的學習感受。這篇著重於紀錄自己遇到、找出並排除問題的過程。  </p>
@@ -1384,27 +1405,6 @@
 <li>查找資料 – 在找出正確問題的前提下，盡可能下對關鍵字可以找到更接近需求的內容。</li>
 </ul>
 <p>不過沒有一次找到目標資料也沒關係，多多閱讀的過程中也能吸收各種知識，也許會在未來的某一天成為解決其他問題的關鍵!  </p>
-]]></content>
-      <categories>
-        <category>學習紀錄 - AlphaCamp</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Alpha Camp 學期 2-2 結業心得</title>
-    <url>/posts/f46b1c2/</url>
-    <content><![CDATA[<blockquote>
-<p>在寫 code 之前先分拆邏輯與流程、用函式封裝程式碼、用心命名變數，這些基本動作原來是這麼地重要。  </p>
-</blockquote>
-<span id="more"></span>
-<h3 id="OBJECTIVE"><a href="#OBJECTIVE" class="headerlink" title="OBJECTIVE"></a>OBJECTIVE</h3><p>經過學期2–2的學習，除了一邊複習之前學過的東西外，也對於程式流程的優化有更進一步的了解。尤其是使用 MVC 架構，讓整個程式不管是邏輯、流程或者是管理維護上都有了很大的提升。因為越學越有興趣的關係，和之前的幾個學期相比，現在的我對於主動優化作業有了很大的熱情。另外就是對於學期開頭的介紹有了更深刻的體會與認同!在寫 code 之前先分拆邏輯與流程、用函式封裝程式碼、用心命名變數，這些基本動作原來是這麼地重要。  </p>
-<h3 id="REFLECTIVE"><a href="#REFLECTIVE" class="headerlink" title="REFLECTIVE"></a>REFLECTIVE</h3><p>大量的實作學習讓我從「跟著助教做」轉為「思考另一種做法的利弊是什麼」。因為多了各種思考過程，我開始了大量的資料閱讀和撰寫嘗試。在嘗試的過程中發現不同的寫法各有利弊，結果的選擇很大程度上取決於使用者體驗(目前就是我自己啦😆)  </p>
-<p>就是因為想加的功能越變越多，導致我需要不斷往前修改之前考慮的不夠完善的地方，這個時候就想到:如果在最一開始，我對於那些撰寫基礎能更重視和用心，後面這些時間也許都可以節省下來。  </p>
-<h3 id="INTERPRETIVE"><a href="#INTERPRETIVE" class="headerlink" title="INTERPRETIVE"></a>INTERPRETIVE</h3><p>這個學期下來也讓我對於「複習」這件事有了態度上的轉變。從原本的「之前不夠熟悉、必須找時間再多多複習」變成「主動在作業中融入以前學過的東西」。每個學期、甚至每個教案的著重點本來就不一樣，「複習」這件事就要找到適合自己的方法，不能依賴虛無飄渺的「找個時間來複習」。  </p>
-<p>觀摩同學作業時，發現在一個作業中同時融入了很多以前學過的東西( media queries 、 flex、position…等)，可以看出他在開始編寫程式碼前，已經對設計成品有具體的想法，可能也針對不同螢幕大小畫出了多張 wireframe ，考慮了很多面向的東西。 他的練習實踐方式讓我發現我可以在完成當下目標同時複習以前學過的東西，學習的輸入可以從各自為政變成融會貫通 。  </p>
-<h3 id="DECISIONAL"><a href="#DECISIONAL" class="headerlink" title="DECISIONAL"></a>DECISIONAL</h3><p>接下來進行課程時，希望自己能保持主動優化的動力。也許不是每一次嘗試都能得到好的結果，但在嘗試的過程中需要查資料、方法的選擇、功能的取捨，利用這個過程慢慢積累自己的知識庫，期望未來能不愧對付出的時間和努力!  </p>
 ]]></content>
       <categories>
         <category>學習紀錄 - AlphaCamp</category>
