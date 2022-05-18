@@ -30,7 +30,7 @@
 <meta property="og:description" content="這是目前在 CS50x 課程中遇到的最難的題目了，如果不把思考邏輯好好整理一遍，下次再回顧應該還是要花很多時間理解一遍。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-05-17T02:41:38.000Z">
-<meta property="article:modified_time" content="2022-05-18T09:06:47.713Z">
+<meta property="article:modified_time" content="2022-05-18T10:06:40.830Z">
 <meta property="article:author" content="Rita Chien">
 <meta property="article:tag" content="CS50x(2022)">
 <meta name="twitter:card" content="summary">
@@ -156,7 +156,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E8%AA%AA%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">題目說明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%B5%90%E6%A7%8B%E5%8F%8A%E9%82%8F%E8%BC%AF"><span class="nav-number">3.</span> <span class="nav-text">程式結構及邏輯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vote"><span class="nav-number">4.</span> <span class="nav-text">vote</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#record-preferences"><span class="nav-number">5.</span> <span class="nav-text">record_preferences</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#preferences-row-col-%E4%BA%8C%E7%B6%AD%E8%A1%A8%E6%A0%BC"><span class="nav-number">5.1.</span> <span class="nav-text">preferences[row][col] 二維表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%B8%E7%A5%A8%E6%84%8F%E5%90%91%E8%A7%A3%E8%AE%80"><span class="nav-number">5.2.</span> <span class="nav-text">選票意向解讀</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#add-pairs"><span class="nav-number">6.</span> <span class="nav-text">add_pairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort-pairs-Bubble-sort"><span class="nav-number">7.</span> <span class="nav-text">sort_pairs (Bubble sort)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lock-pairs"><span class="nav-number">8.</span> <span class="nav-text">lock_pairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#print-winner"><span class="nav-number">9.</span> <span class="nav-text">print_winner</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E8%AA%AA%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">題目說明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%B5%90%E6%A7%8B%E5%8F%8A%E9%82%8F%E8%BC%AF"><span class="nav-number">3.</span> <span class="nav-text">程式結構及邏輯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vote"><span class="nav-number">4.</span> <span class="nav-text">vote</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#record-preferences"><span class="nav-number">5.</span> <span class="nav-text">record_preferences</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#preferences-row-col-%E4%BA%8C%E7%B6%AD%E8%A1%A8%E6%A0%BC"><span class="nav-number">5.1.</span> <span class="nav-text">preferences[row][col] 二維表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%B8%E7%A5%A8%E6%84%8F%E5%90%91%E8%A7%A3%E8%AE%80"><span class="nav-number">5.2.</span> <span class="nav-text">選票意向解讀</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#add-pairs"><span class="nav-number">6.</span> <span class="nav-text">add_pairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort-pairs-Bubble-sort"><span class="nav-number">7.</span> <span class="nav-text">sort_pairs (Bubble sort)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lock-pairs"><span class="nav-number">8.</span> <span class="nav-text">lock_pairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#print-winner"><span class="nav-number">9.</span> <span class="nav-text">print_winner</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%B5%90"><span class="nav-number">10.</span> <span class="nav-text">小結</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -267,7 +267,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-05-18 17:06:47" itemprop="dateModified" datetime="2022-05-18T17:06:47+08:00">2022-05-18</time>
+      <time title="修改時間：2022-05-18 18:06:40" itemprop="dateModified" datetime="2022-05-18T18:06:40+08:00">2022-05-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -633,9 +633,9 @@
 </tr>
 </tbody></table>
 </div>
-## 小結  
-這個題目是目前課程作業中最難的一個，光題目的理解就花了很多時間也閱讀很了多資料(遞迴之類的...)，但挑戰不同排序法還是很有趣。在寫這篇題解的過程中也嘗試了不同寫法，發現導致沒有 100% pass 的例外狀況(平手)。整體來說，這是個很考驗邏輯思考的作業!  
 
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>完成版的 code 在<a target="_blank" rel="noopener external nofollow noreferrer" href="https://gist.github.com/ritachien/513c3f9ba938d559b4e4c106a8cb91cf">這裡</a>。  </p>
+<p>這個題目是目前課程作業中最難的一個，光題目的理解就花了很多時間也閱讀很了多資料(遞迴之類的…)，但挑戰不同排序法還是很有趣。在寫這篇題解的過程中也嘗試了不同寫法，發現導致沒有 100% pass 的例外狀況(平手)。整體來說，這是個很考驗邏輯思考的作業!  </p>
 <blockquote>
 <p>相關文章: <a href="https://ritachien.github.io/tags/CS50x-2022/">CS50x(2022)</a>  </p>
 </blockquote>
