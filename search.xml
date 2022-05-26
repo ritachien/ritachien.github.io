@@ -276,6 +276,49 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo 基本設定</title>
+    <url>/posts/a970120e/</url>
+    <content><![CDATA[<p>基本上經過上一篇的操作，在 <code>hexo s</code> 後應該已經可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 看到預設的 Hello World 畫面了，但要讓 Blog 正式啟動前，我們還要先做一些個人化設定。  </p>
+<span id="more"></span>
+
+<blockquote>
+<p>本文撰寫時的版本如下(可用 <code>hexo version</code> 確認)，不同版本的預設配置檔可能會有差異:<br>hexo: 6.0.0<br>hexo-cli: 4.3.0  </p>
+</blockquote>
+<ul>
+<li>基本配置文件位置在 <code>root\_config.yml</code>，<font color=#FF6600>冒號後面都必需保留半型空格一格</font>。  </li>
+<li>僅列出通常會修改或我已經修改的部分，其他請參考<a href="https://hexo.io/zh-tw/docs/configuration">官方網站</a>說明。</li>
+</ul>
+<h2 id="網站設定"><a href="#網站設定" class="headerlink" title="網站設定"></a>網站設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span>           <span class="comment"># 網站標題</span></span><br><span class="line"><span class="attr">subtitle:</span>             <span class="comment"># 網站副標題</span></span><br><span class="line"><span class="attr">description:</span>          <span class="comment"># 網站描述</span></span><br><span class="line"><span class="attr">keywords:</span>             <span class="comment"># 網站關鍵字(支援多個關鍵詞，用半型逗號隔開)</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span>      <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span>          <span class="comment"># 網站語言 (台灣:zh-tw)</span></span><br><span class="line"><span class="attr">timezone:</span>             <span class="comment"># 時區(可留空以使用您電腦的時區)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="網址設定"><a href="#網址設定" class="headerlink" title="網址設定"></a>網址設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here.</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://UserName.github.io/</span>           <span class="comment"># UserName更改為自己的帳戶名</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>      <span class="comment"># 文章網址的格式(預設使用 年月日/文章名稱)/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                       <span class="comment"># permalink 中各區段的預設值</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>permalink 會依照設定值，在每次 generate 時重新產生網址，設定參數可參考<a href="https://hexo.io/zh-tw/docs/permalinks">官方文件</a>。我在命名檔名時，習慣使用日期 + 英文檔名(日期方便排序，不含空格的英文檔名較不會產生亂碼網址)，所以 permalink: 僅用 <code>:title</code> 參數 (最後的 <code>/</code> 要記得保留)。</li>
+<li><strong><font color=red>2021&#x2F;12&#x2F;27 更新: <a href="/posts/d8dab675/">使用 Hexo-abbrlink 產生永久連結</a></font></strong></li>
+</ul>
+<h2 id="目錄設定"><a href="#目錄設定" class="headerlink" title="目錄設定"></a>目錄設定</h2><p>原則上都保留不變，除非有自訂路徑的需求。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span>            <span class="comment"># 原始檔案資料夾，存放編輯的所有內容</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span>            <span class="comment"># 存放靜態檔案的資料夾(hexo g 後產生)</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span>                 <span class="comment"># 標籤資料夾</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span>         <span class="comment"># 彙整資料夾(deploy後產生)</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span>      <span class="comment"># 分類資料夾</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>tags</code> 和 <code>categories</code> 資料夾預設是不存在的，有需要要另外新增資料夾。</li>
+</ul>
+<h2 id="擴充套件設定"><a href="#擴充套件設定" class="headerlink" title="擴充套件設定"></a>擴充套件設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/       # 提供各種套件，可以依自己需求安裝</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/         # 提供各種主題，可以依自己需求安裝</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span>                           <span class="comment"># 填寫主題名稱</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>本部落格選用 Next 主題(要把 landscape 改為 Next)，後續會另開一篇變更主題說明文。</li>
+</ul>
+<h2 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Hexo 可同時部署到不同地方，相關設定參考<a href="https://hexo.io/zh-tw/docs/one-command-deployment">官方部署說明</a>。  </li>
+<li>部署到 Github 方式已在用前篇 Hexo + Github Pages 建立部落格 中說明，這邊不另外贅述。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用 Hexo + Github Pages 建立部落格</title>
     <url>/posts/4b9ba027/</url>
     <content><![CDATA[<p>在建置部落格前猶豫了很久，最終還是決定用 Hexo + Github Pages 當作平台。歷時兩天，終於解決各種莫名其妙的問題，讓它變成心目中的樣子!</p>
@@ -357,8 +400,8 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Blog</tag>
         <tag>Hexo</tag>
+        <tag>Blog</tag>
         <tag>Github</tag>
       </tags>
   </entry>
@@ -407,49 +450,6 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 基本設定</title>
-    <url>/posts/a970120e/</url>
-    <content><![CDATA[<p>基本上經過上一篇的操作，在 <code>hexo s</code> 後應該已經可以在 <a href="http://localhost:4000/">http://localhost:4000</a> 看到預設的 Hello World 畫面了，但要讓 Blog 正式啟動前，我們還要先做一些個人化設定。  </p>
-<span id="more"></span>
-
-<blockquote>
-<p>本文撰寫時的版本如下(可用 <code>hexo version</code> 確認)，不同版本的預設配置檔可能會有差異:<br>hexo: 6.0.0<br>hexo-cli: 4.3.0  </p>
-</blockquote>
-<ul>
-<li>基本配置文件位置在 <code>root\_config.yml</code>，<font color=#FF6600>冒號後面都必需保留半型空格一格</font>。  </li>
-<li>僅列出通常會修改或我已經修改的部分，其他請參考<a href="https://hexo.io/zh-tw/docs/configuration">官方網站</a>說明。</li>
-</ul>
-<h2 id="網站設定"><a href="#網站設定" class="headerlink" title="網站設定"></a>網站設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span>           <span class="comment"># 網站標題</span></span><br><span class="line"><span class="attr">subtitle:</span>             <span class="comment"># 網站副標題</span></span><br><span class="line"><span class="attr">description:</span>          <span class="comment"># 網站描述</span></span><br><span class="line"><span class="attr">keywords:</span>             <span class="comment"># 網站關鍵字(支援多個關鍵詞，用半型逗號隔開)</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span>      <span class="comment"># 作者</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span>          <span class="comment"># 網站語言 (台灣:zh-tw)</span></span><br><span class="line"><span class="attr">timezone:</span>             <span class="comment"># 時區(可留空以使用您電腦的時區)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="網址設定"><a href="#網址設定" class="headerlink" title="網址設定"></a>網址設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here.</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://UserName.github.io/</span>           <span class="comment"># UserName更改為自己的帳戶名</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>      <span class="comment"># 文章網址的格式(預設使用 年月日/文章名稱)/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                       <span class="comment"># permalink 中各區段的預設值</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>permalink 會依照設定值，在每次 generate 時重新產生網址，設定參數可參考<a href="https://hexo.io/zh-tw/docs/permalinks">官方文件</a>。我在命名檔名時，習慣使用日期 + 英文檔名(日期方便排序，不含空格的英文檔名較不會產生亂碼網址)，所以 permalink: 僅用 <code>:title</code> 參數 (最後的 <code>/</code> 要記得保留)。</li>
-<li><strong><font color=red>2021&#x2F;12&#x2F;27 更新: <a href="/posts/d8dab675/">使用 Hexo-abbrlink 產生永久連結</a></font></strong></li>
-</ul>
-<h2 id="目錄設定"><a href="#目錄設定" class="headerlink" title="目錄設定"></a>目錄設定</h2><p>原則上都保留不變，除非有自訂路徑的需求。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span>            <span class="comment"># 原始檔案資料夾，存放編輯的所有內容</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span>            <span class="comment"># 存放靜態檔案的資料夾(hexo g 後產生)</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span>                 <span class="comment"># 標籤資料夾</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span>         <span class="comment"># 彙整資料夾(deploy後產生)</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span>      <span class="comment"># 分類資料夾</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>tags</code> 和 <code>categories</code> 資料夾預設是不存在的，有需要要另外新增資料夾。</li>
-</ul>
-<h2 id="擴充套件設定"><a href="#擴充套件設定" class="headerlink" title="擴充套件設定"></a>擴充套件設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/       # 提供各種套件，可以依自己需求安裝</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/         # 提供各種主題，可以依自己需求安裝</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span>                           <span class="comment"># 填寫主題名稱</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>本部落格選用 Next 主題(要把 landscape 改為 Next)，後續會另開一篇變更主題說明文。</li>
-</ul>
-<h2 id="部署設定"><a href="#部署設定" class="headerlink" title="部署設定"></a>部署設定</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Hexo 可同時部署到不同地方，相關設定參考<a href="https://hexo.io/zh-tw/docs/one-command-deployment">官方部署說明</a>。  </li>
-<li>部署到 Github 方式已在用前篇 Hexo + Github Pages 建立部落格 中說明，這邊不另外贅述。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
         <tag>Hexo</tag>
       </tags>
   </entry>
@@ -522,8 +522,8 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
-        <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
+        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -723,11 +723,11 @@
         <category>Hexo</category>
       </categories>
       <tags>
+        <tag>HTML</tag>
         <tag>Hexo</tag>
         <tag>NexT</tag>
-        <tag>Nunjucks</tag>
-        <tag>HTML</tag>
         <tag>CSS</tag>
+        <tag>Nunjucks</tag>
       </tags>
   </entry>
   <entry>
@@ -792,8 +792,8 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
-        <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
+        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -864,94 +864,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Alpha Camp 學期 2-1 結業心得</title>
-    <url>/posts/73279419/</url>
-    <content><![CDATA[<p><em><strong>學習的過程充滿挑戰，成功闖過之後就想做更多的挑戰!</strong></em><br>這大概就是我在這階段完課後，最明顯的感受。  </p>
-<span id="more"></span>
-
-<p>有轉職意願後，我報名了學期一課程，想確認是否真的對程式語言有興趣。在將近一個月的課程接觸下，燃起了久違的學習熱情，隨後決定繼續向學期二邁進，將學期一碰到的 HTML&#x2F;CSS&#x2F;JavaScript 更精進。  </p>
-<p>相較於學期一類似「興趣班」的節奏，學期 2-1 第一週開始接觸了陣列、物件及函式，不管是單週課程量或難度對我來說都有明顯變高的感覺，作業也變得更加「靈活」。學習過程需要花更多的時間理解、作業要花更多的時間思考，本來以為難度提高會帶來挫折感，進而降低學習熱情，結果相反，我最直觀的感受是「我能做到的事變多了」。課程作業藉著把摸彩活動分成小步驟完成，最後組合再一起，這種「把大任務變小」的方式，我覺得有效降低了學習期間的挫折感。  </p>
-<p>再後來的 DOM 和事件驅動，就更多的提高我對 JavaScript 的學習興趣，藉由 DOM 就可以用 JavaScript 來操作寫好的 HTML，學到了讓使用者跟網頁互動的方法，。每一個章節作業做完的同時，開始會主動思考「可以加上什麼功能?」，有的成功、有的失敗，不知不覺坐在電腦前的時間越來越長😄  </p>
-<p>說到這裡可能有人發現了…… CSS 呢?<br>是的，我對 CSS 一直還沒燃起足夠的熱情，花著同樣的時間進行學習，但 CSS 就是很難記住，寫起來很不順手。這種期況一直持續到學到 DOM 和事件驅動才有改善。在加上新功能後，我新加的東西在網頁上動起來<del>覺得自己有點厲害</del>但長得醜醜的，這時候才開始想各種辦法改善它，積極地回去複習排版…等語法。  </p>
-<p>因為 JavaScript 想新加功能，所以積極複習、查資料、使用還沒學到的東西。因為覺得畫面醜醜的，所以重新面對興致不高的 CSS 。難怪人家都說，想進步最快的辦法就是去做各種 side project 。原本的期末作業「RGB 色碼轉 HEX」，看是要輸入 RGB 色碼或用 slider 調色只要二選一，最後輸出 HEX 結果即可。為了想讓三者同步，查了 <code>addEventListener</code> 的各種 event ，寫了整整一天，寫出來的當下很有成就感! <a href="https://ritachien.github.io/Convert-Between-RGB-HEX/">(動手試試看)</a>  </p>
-<p><img src="https://github.com/ritachien/Convert-Between-RGB-HEX/blob/main/demo.gif?raw=true"></p>
-<p>學習過程記錄大致就這樣了。<br>學期 2-1 找到了提高我學習動力的方法—-<strong>實作、實作、再實作</strong>。準備在春節期間開始挑戰 JS30，然後開始學期 2-2 的預讀。最後的最後，許個新年新希望: 我不要再當米蟲了阿~~~~~~ 今年一定要轉職成功阿~~~~~</p>
-]]></content>
-      <categories>
-        <category>學習紀錄 - AlphaCamp</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>簡易 RPG 戰鬥：攻擊與補血</title>
-    <url>/posts/23e46325/</url>
-    <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期 2-1<br>題目的主要目的是 Javascript function 的練習。設計 function 的運作方式，利用 <code>if</code> + <code>return</code> 來控制需要提早跳出函式的情況，及使用 <code>this</code> 取到物件自身。  </p>
-<span id="more"></span>
-<p>題目原本僅要求專注在 <strong>攻擊(attack)</strong> 和 <strong>治療(cure)</strong> function 的撰寫，其餘流程已由原題目提供。但基於再次練習的目的，且題目其餘部分也是由學過的 while 迴圈組成，所以這次練習會從頭把整個流程寫出來。  </p>
-<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
-<li>function 函式  </li>
-<li>while 迴圈  </li>
-<li>if statement</li>
-</ol>
-<h2 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h2><ol>
-<li>預設戰士 <code>hp</code> 為 100、 <code>mp</code> 為 30；魔法師 <code>hp</code> 為 30、 <code>mp</code> 為 100。</li>
-<li>由魔法師先攻，若有任一方死掉，則遊戲結束，不能再有補血或攻擊動作；反之，若兩個角色都活著，則遊戲可一直正常執行，直到一方死掉。  </li>
-<li>攻擊者會呼叫 <code>attack()</code> 攻擊敵方，產生 1~100 點之間隨機點數的傷害。  </li>
-<li>若被攻擊方沒有死，則會呼叫 <code>cure()</code> 為自己補血，補血規格為：每次補血固定為 15 點 <code>hp</code> 、每補充 1 點 <code>hp</code> 需要 2 點 <code>mp</code>。補血結束後攻守交換。  </li>
-<li><code>cure()</code> 會傳入一個參數為 <code>hp</code> ，指的是想要補充的 <code>hp</code> 。  </li>
-<li>補血可以補超過原有的 <code>hp</code>，沒有 <code>hp</code> 最大值上限，只要有 <code>mp</code> 都可以補血。  <blockquote>
-<p>原題目是由戰士先攻，但為了方便觀察輸出結果，改由魔法師先攻。</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h2><h3 id="拆解流程"><a href="#拆解流程" class="headerlink" title="拆解流程"></a>拆解流程</h3><ol>
-<li>創建角色(含 <code>name</code> 、 <code>hp</code> 、 <code>mp</code> 、<code>attack()</code> 及 <code>cure()</code> )  </li>
-<li>戰鬥流程  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 戰士及魔法師都活著</span><br><span class="line">  則魔法師先攻、戰士師補血(補血是否執行由函式決定)</span><br><span class="line">  <span class="keyword">if</span> 戰士還活著</span><br><span class="line">    則戰士攻擊、魔法師補血(補血是否執行由函式決定)</span><br><span class="line">任一方死掉，則遊戲結束。</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="解題開始"><a href="#解題開始" class="headerlink" title="解題開始"></a>解題開始</h3><h4 id="function-設計"><a href="#function-設計" class="headerlink" title="function 設計"></a>function 設計</h4><ol>
-<li><p>攻擊動作 attack()  </p>
-<ul>
-<li>產生攻擊點數、輸出攻擊資訊  </li>
-<li>結果1(打死): 輸出”對手死亡”  </li>
-<li>結果2(沒打死): 輸出”對手活著”，且對手啟動cure()  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">attack</span> (enemy) &#123;</span><br><span class="line">  hpLose = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> hit <span class="subst">$&#123;enemy.name&#125;</span>, <span class="subst">$&#123;enemy.name&#125;</span> lose <span class="subst">$&#123;hpLose&#125;</span> HP.`</span>)</span><br><span class="line">  enemy.<span class="property">hp</span> -= hpLose</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (enemy.<span class="property">hp</span> &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is dead.\n`</span>)</span><br><span class="line">    <span class="keyword">return</span> enemy.<span class="property">hp</span> = <span class="number">0</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is still alive. (HP = <span class="subst">$&#123;enemy.hp&#125;</span>)`</span>)</span><br><span class="line">    enemy.<span class="title function_">cure</span>(<span class="number">15</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>治療動作 cure()  </p>
-<ul>
-<li>結果1(mp夠): 啟動治療並輸出治療結果  </li>
-<li>結果2(mp不夠): 不治療繼續  </li>
-<li>攻守互換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">cure</span> (hp) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">mp</span> &gt;= (hp * <span class="number">2</span>)) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">hp</span> += hp</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">mp</span> -= hp * <span class="number">2</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> recovered. (HP = <span class="subst">$&#123;<span class="variable language_">this</span>.hp&#125;</span>；MP = <span class="subst">$&#123;<span class="variable language_">this</span>.mp&#125;</span>)`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`MP isn&#x27;t enough! <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> cannot use cure.`</span>)</span><br><span class="line">  &#125;  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`\n-------------- Change Side ---------------`</span>)    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>角色建立 player()  </p>
-<ul>
-<li>需含名稱、HP、MP、攻擊動作、治療動作  </li>
-<li>練習不同的 function 使用方式(把 function 放進 function 裡)  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">player</span> (name, hp, mp) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">hp</span>: hp,</span><br><span class="line">    <span class="attr">mp</span>: mp,</span><br><span class="line">    <span class="attr">cure</span>: <span class="keyword">function</span> (<span class="params">hp</span>) &#123;......&#125;,</span><br><span class="line">    <span class="attr">attack</span>: <span class="keyword">function</span> (<span class="params">enemy</span>) &#123;......&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h4 id="解題流程"><a href="#解題流程" class="headerlink" title="解題流程"></a>解題流程</h4><ol>
-<li>創建並輸出角色資料  </li>
-<li>戰鬥開始(迴圈內容)  <ul>
-<li>如果兩人都活著，則戰鬥開始，魔術師先攻，回合結束  </li>
-<li>如果上回合戰士還活著，則攻守交換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// create players</span></span><br><span class="line"><span class="keyword">const</span> warrior = <span class="title function_">player</span>(<span class="string">&#x27;Warrior&#x27;</span>, <span class="number">100</span>, <span class="number">30</span>)</span><br><span class="line"><span class="keyword">const</span> magician = <span class="title function_">player</span>(<span class="string">&#x27;Magician&#x27;</span>, <span class="number">30</span> ,<span class="number">100</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(warrior)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(magician)</span><br><span class="line"></span><br><span class="line"><span class="comment">// start fight</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;-------------- Start Fight ---------------&#x27;</span>)</span><br><span class="line"><span class="keyword">while</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span> &amp;&amp; magician.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  magician.<span class="title function_">attack</span>(warrior)</span><br><span class="line">  <span class="keyword">if</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;    </span><br><span class="line">    warrior.<span class="title function_">attack</span>(magician)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;--------------- Game Over ----------------&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>在重寫的過程中又發現了一些自己不熟的地方……寫物件的時候，居然把 key 跟 value 中間的 <code>:</code> 寫成 <code>=</code> 了!  </p>
-<p>這題練習對我其實滿有效的，包含 <code>this</code> 跟 <code>return</code> 的使用時機，還有在函式裡呼叫函式的寫法(這部分讓我把 while 迴圈大改，在被攻擊的對象還活著的時候直接呼叫治療函式)。以自己覺得順暢的方式改完後，發現還是可以順利跑出相同結果，表示 function 目前的課程應該有一定程度的熟悉了!</p>
-]]></content>
-      <categories>
-        <category>JavaScript 解題</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -1042,8 +954,96 @@
         <category>JavaScript 解題</category>
       </categories>
       <tags>
-        <tag>AlphaCamp</tag>
         <tag>JavaScript</tag>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>簡易 RPG 戰鬥：攻擊與補血</title>
+    <url>/posts/23e46325/</url>
+    <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期 2-1<br>題目的主要目的是 Javascript function 的練習。設計 function 的運作方式，利用 <code>if</code> + <code>return</code> 來控制需要提早跳出函式的情況，及使用 <code>this</code> 取到物件自身。  </p>
+<span id="more"></span>
+<p>題目原本僅要求專注在 <strong>攻擊(attack)</strong> 和 <strong>治療(cure)</strong> function 的撰寫，其餘流程已由原題目提供。但基於再次練習的目的，且題目其餘部分也是由學過的 while 迴圈組成，所以這次練習會從頭把整個流程寫出來。  </p>
+<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
+<li>function 函式  </li>
+<li>while 迴圈  </li>
+<li>if statement</li>
+</ol>
+<h2 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h2><ol>
+<li>預設戰士 <code>hp</code> 為 100、 <code>mp</code> 為 30；魔法師 <code>hp</code> 為 30、 <code>mp</code> 為 100。</li>
+<li>由魔法師先攻，若有任一方死掉，則遊戲結束，不能再有補血或攻擊動作；反之，若兩個角色都活著，則遊戲可一直正常執行，直到一方死掉。  </li>
+<li>攻擊者會呼叫 <code>attack()</code> 攻擊敵方，產生 1~100 點之間隨機點數的傷害。  </li>
+<li>若被攻擊方沒有死，則會呼叫 <code>cure()</code> 為自己補血，補血規格為：每次補血固定為 15 點 <code>hp</code> 、每補充 1 點 <code>hp</code> 需要 2 點 <code>mp</code>。補血結束後攻守交換。  </li>
+<li><code>cure()</code> 會傳入一個參數為 <code>hp</code> ，指的是想要補充的 <code>hp</code> 。  </li>
+<li>補血可以補超過原有的 <code>hp</code>，沒有 <code>hp</code> 最大值上限，只要有 <code>mp</code> 都可以補血。  <blockquote>
+<p>原題目是由戰士先攻，但為了方便觀察輸出結果，改由魔法師先攻。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h2><h3 id="拆解流程"><a href="#拆解流程" class="headerlink" title="拆解流程"></a>拆解流程</h3><ol>
+<li>創建角色(含 <code>name</code> 、 <code>hp</code> 、 <code>mp</code> 、<code>attack()</code> 及 <code>cure()</code> )  </li>
+<li>戰鬥流程  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 戰士及魔法師都活著</span><br><span class="line">  則魔法師先攻、戰士師補血(補血是否執行由函式決定)</span><br><span class="line">  <span class="keyword">if</span> 戰士還活著</span><br><span class="line">    則戰士攻擊、魔法師補血(補血是否執行由函式決定)</span><br><span class="line">任一方死掉，則遊戲結束。</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="解題開始"><a href="#解題開始" class="headerlink" title="解題開始"></a>解題開始</h3><h4 id="function-設計"><a href="#function-設計" class="headerlink" title="function 設計"></a>function 設計</h4><ol>
+<li><p>攻擊動作 attack()  </p>
+<ul>
+<li>產生攻擊點數、輸出攻擊資訊  </li>
+<li>結果1(打死): 輸出”對手死亡”  </li>
+<li>結果2(沒打死): 輸出”對手活著”，且對手啟動cure()  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">attack</span> (enemy) &#123;</span><br><span class="line">  hpLose = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> hit <span class="subst">$&#123;enemy.name&#125;</span>, <span class="subst">$&#123;enemy.name&#125;</span> lose <span class="subst">$&#123;hpLose&#125;</span> HP.`</span>)</span><br><span class="line">  enemy.<span class="property">hp</span> -= hpLose</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (enemy.<span class="property">hp</span> &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is dead.\n`</span>)</span><br><span class="line">    <span class="keyword">return</span> enemy.<span class="property">hp</span> = <span class="number">0</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is still alive. (HP = <span class="subst">$&#123;enemy.hp&#125;</span>)`</span>)</span><br><span class="line">    enemy.<span class="title function_">cure</span>(<span class="number">15</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>治療動作 cure()  </p>
+<ul>
+<li>結果1(mp夠): 啟動治療並輸出治療結果  </li>
+<li>結果2(mp不夠): 不治療繼續  </li>
+<li>攻守互換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">cure</span> (hp) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">mp</span> &gt;= (hp * <span class="number">2</span>)) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">hp</span> += hp</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">mp</span> -= hp * <span class="number">2</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> recovered. (HP = <span class="subst">$&#123;<span class="variable language_">this</span>.hp&#125;</span>；MP = <span class="subst">$&#123;<span class="variable language_">this</span>.mp&#125;</span>)`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`MP isn&#x27;t enough! <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> cannot use cure.`</span>)</span><br><span class="line">  &#125;  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`\n-------------- Change Side ---------------`</span>)    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>角色建立 player()  </p>
+<ul>
+<li>需含名稱、HP、MP、攻擊動作、治療動作  </li>
+<li>練習不同的 function 使用方式(把 function 放進 function 裡)  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">player</span> (name, hp, mp) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">hp</span>: hp,</span><br><span class="line">    <span class="attr">mp</span>: mp,</span><br><span class="line">    <span class="attr">cure</span>: <span class="keyword">function</span> (<span class="params">hp</span>) &#123;......&#125;,</span><br><span class="line">    <span class="attr">attack</span>: <span class="keyword">function</span> (<span class="params">enemy</span>) &#123;......&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h4 id="解題流程"><a href="#解題流程" class="headerlink" title="解題流程"></a>解題流程</h4><ol>
+<li>創建並輸出角色資料  </li>
+<li>戰鬥開始(迴圈內容)  <ul>
+<li>如果兩人都活著，則戰鬥開始，魔術師先攻，回合結束  </li>
+<li>如果上回合戰士還活著，則攻守交換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// create players</span></span><br><span class="line"><span class="keyword">const</span> warrior = <span class="title function_">player</span>(<span class="string">&#x27;Warrior&#x27;</span>, <span class="number">100</span>, <span class="number">30</span>)</span><br><span class="line"><span class="keyword">const</span> magician = <span class="title function_">player</span>(<span class="string">&#x27;Magician&#x27;</span>, <span class="number">30</span> ,<span class="number">100</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(warrior)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(magician)</span><br><span class="line"></span><br><span class="line"><span class="comment">// start fight</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;-------------- Start Fight ---------------&#x27;</span>)</span><br><span class="line"><span class="keyword">while</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span> &amp;&amp; magician.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  magician.<span class="title function_">attack</span>(warrior)</span><br><span class="line">  <span class="keyword">if</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;    </span><br><span class="line">    warrior.<span class="title function_">attack</span>(magician)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;--------------- Game Over ----------------&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>在重寫的過程中又發現了一些自己不熟的地方……寫物件的時候，居然把 key 跟 value 中間的 <code>:</code> 寫成 <code>=</code> 了!  </p>
+<p>這題練習對我其實滿有效的，包含 <code>this</code> 跟 <code>return</code> 的使用時機，還有在函式裡呼叫函式的寫法(這部分讓我把 while 迴圈大改，在被攻擊的對象還活著的時候直接呼叫治療函式)。以自己覺得順暢的方式改完後，發現還是可以順利跑出相同結果，表示 function 目前的課程應該有一定程度的熟悉了!</p>
+]]></content>
+      <categories>
+        <category>JavaScript 解題</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Alpha Camp 學期 2-1 結業心得</title>
+    <url>/posts/73279419/</url>
+    <content><![CDATA[<p><em><strong>學習的過程充滿挑戰，成功闖過之後就想做更多的挑戰!</strong></em><br>這大概就是我在這階段完課後，最明顯的感受。  </p>
+<span id="more"></span>
+
+<p>有轉職意願後，我報名了學期一課程，想確認是否真的對程式語言有興趣。在將近一個月的課程接觸下，燃起了久違的學習熱情，隨後決定繼續向學期二邁進，將學期一碰到的 HTML&#x2F;CSS&#x2F;JavaScript 更精進。  </p>
+<p>相較於學期一類似「興趣班」的節奏，學期 2-1 第一週開始接觸了陣列、物件及函式，不管是單週課程量或難度對我來說都有明顯變高的感覺，作業也變得更加「靈活」。學習過程需要花更多的時間理解、作業要花更多的時間思考，本來以為難度提高會帶來挫折感，進而降低學習熱情，結果相反，我最直觀的感受是「我能做到的事變多了」。課程作業藉著把摸彩活動分成小步驟完成，最後組合再一起，這種「把大任務變小」的方式，我覺得有效降低了學習期間的挫折感。  </p>
+<p>再後來的 DOM 和事件驅動，就更多的提高我對 JavaScript 的學習興趣，藉由 DOM 就可以用 JavaScript 來操作寫好的 HTML，學到了讓使用者跟網頁互動的方法，。每一個章節作業做完的同時，開始會主動思考「可以加上什麼功能?」，有的成功、有的失敗，不知不覺坐在電腦前的時間越來越長😄  </p>
+<p>說到這裡可能有人發現了…… CSS 呢?<br>是的，我對 CSS 一直還沒燃起足夠的熱情，花著同樣的時間進行學習，但 CSS 就是很難記住，寫起來很不順手。這種期況一直持續到學到 DOM 和事件驅動才有改善。在加上新功能後，我新加的東西在網頁上動起來<del>覺得自己有點厲害</del>但長得醜醜的，這時候才開始想各種辦法改善它，積極地回去複習排版…等語法。  </p>
+<p>因為 JavaScript 想新加功能，所以積極複習、查資料、使用還沒學到的東西。因為覺得畫面醜醜的，所以重新面對興致不高的 CSS 。難怪人家都說，想進步最快的辦法就是去做各種 side project 。原本的期末作業「RGB 色碼轉 HEX」，看是要輸入 RGB 色碼或用 slider 調色只要二選一，最後輸出 HEX 結果即可。為了想讓三者同步，查了 <code>addEventListener</code> 的各種 event ，寫了整整一天，寫出來的當下很有成就感! <a href="https://ritachien.github.io/Convert-Between-RGB-HEX/">(動手試試看)</a>  </p>
+<p><img src="https://github.com/ritachien/Convert-Between-RGB-HEX/blob/main/demo.gif?raw=true"></p>
+<p>學習過程記錄大致就這樣了。<br>學期 2-1 找到了提高我學習動力的方法—-<strong>實作、實作、再實作</strong>。準備在春節期間開始挑戰 JS30，然後開始學期 2-2 的預讀。最後的最後，許個新年新希望: 我不要再當米蟲了阿~~~~~~ 今年一定要轉職成功阿~~~~~</p>
+]]></content>
+      <categories>
+        <category>學習紀錄 - AlphaCamp</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -1094,6 +1094,67 @@
 <br>
 <br>
 到這裡就全部完成了! 
+]]></content>
+      <categories>
+        <category>JavaScript30 挑戰</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>JS30</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【JS30 挑戰】 Day2 - JS and CSS Clock</title>
+    <url>/posts/74544bca/</url>
+    <content><![CDATA[<p>這個專案練習了 CSS 轉場效果( <code>transition</code> &amp; <code>transform</code> )，並利用 JavaScript function 來帶動 <code>transform</code> 的變化。</p>
+<span id="more"></span>
+<blockquote>
+<p><a href="https://javascript30.com/">JavaScript30</a> 是一個由 <strong>Wes Bos</strong> 提出的免費教學計畫。藉由每天完成一個小專案，練習基礎 JavaScript 。整個計畫為期30天。除了會提供教學影片外，也會先做好前期準備(例如: HTML&#x2F;CSS 等相關建置)，練習時只需專注於撰寫 JavaScript 部分的程式碼即可。</p>
+</blockquote>
+<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ol>
+<li>取得當地時間當下的時&#x2F;分&#x2F;秒資訊。  </li>
+<li>利用取得的時間資訊，套入 CSS 設定來讓時鐘的指針移動。</li>
+</ol>
+<h2 id="練習內容"><a href="#練習內容" class="headerlink" title="練習內容"></a>練習內容</h2><ul>
+<li><strong>JavaScript</strong><br>DOM querySelector 、 function 、Date() 、setInterval()</li>
+<li><strong>CSS</strong><br>transform 、 transform-origin 、transition</li>
+</ul>
+<h2 id="開始前的準備"><a href="#開始前的準備" class="headerlink" title="開始前的準備"></a>開始前的準備</h2><blockquote>
+<p>這部分已由教學計畫提供。</p>
+</blockquote>
+<p><strong>做好 HTML&#x2F;CSS 設定:</strong><br>做出時鐘長相並為指針做好相關設置。<br>為了練習 <code>transform-origin</code> ，指針預設往9點鐘方向。但我為了方便，已自行調整成12點鐘方向。</p>
+<h2 id="練習開始"><a href="#練習開始" class="headerlink" title="練習開始"></a>練習開始</h2><p><strong>1. 調整指針起點至12點鐘方向</strong>  </p>
+<ul>
+<li>原本教學是用 <code>transform: rotate(90deg)</code> 處理，但為了方便，我直接調整 CSS。  </li>
+<li><code>transform-origin</code> 跟著調整成 bottom。  </li>
+<li><code>transition</code> 讓所有對象都執行變化，每次用0.05秒完成變化。</li>
+<li>各別設定指針外觀，以便觀察後續變化。<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.hand</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: bottom;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.05s</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hour-hand</span> &#123;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">15%</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">6px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">35%</span>;</span><br><span class="line">  <span class="attribute">background</span>: tomato;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.min-hand</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.second-hand</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<br>
+
+<p><strong>2. 用 setInterval() 設定 function 執行週期。</strong>  </p>
+<ul>
+<li>以每1000毫秒執行一次 setTime() function(秒針跳動頻率)。<br>註: 1秒 &#x3D; 1000毫秒<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setInterval</span>(setTime, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+<br></li>
+</ul>
+<p><strong>3. 取得時間資訊</strong></p>
+<ul>
+<li>分別找出 3 支指針。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> hourHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hour-hand&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> minuteHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.min-hand&#x27;</span>)  </span><br><span class="line"><span class="keyword">const</span> secondHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.second-hand&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>建立一個 setTime() function ，並把要執行的動作放入函式。  </li>
+<li>取得當下時間，並分別取出時&#x2F;分&#x2F;秒。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setTime</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> hours = now.<span class="title function_">getHours</span>()</span><br><span class="line">  <span class="keyword">const</span> mins = now.<span class="title function_">getMinutes</span>()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.<span class="title function_">getSeconds</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>依照時間比例算出旋轉角度，並帶入 CSS 的 <code>rotate()</code> 設置。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setTime</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 取得時間</span></span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.<span class="title function_">getSeconds</span>();</span><br><span class="line">  <span class="keyword">const</span> mins = now.<span class="title function_">getMinutes</span>();</span><br><span class="line">  <span class="keyword">const</span> hour = now.<span class="title function_">getHours</span>();</span><br><span class="line">  <span class="comment">// 計算角度</span></span><br><span class="line">  <span class="keyword">const</span> secondsDegree = (seconds / <span class="number">60</span>) * <span class="number">360</span>;</span><br><span class="line">  <span class="keyword">const</span> minsDegree = ((mins / <span class="number">60</span>) * <span class="number">360</span>) + ((seconds / <span class="number">60</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="keyword">const</span> hourDegree = ((hour / <span class="number">12</span>) * <span class="number">360</span>) + ((mins / <span class="number">12</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="comment">// 角度代入 CSS</span></span><br><span class="line">  secondHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;secondsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  minuteHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;minsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  hourHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;hourDegree&#125;</span>deg)`</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+到這裡就是一個會動的正確時鐘了。  <br></li>
+</ul>
+<p><strong>4. 旋轉優化</strong></p>
+<ul>
+<li>觀察秒針活動軌跡發現，當它要從 59 秒跳回 0 秒時會逆時針旋轉。因為對電腦來說 59 –&gt; 0 是”後退”不是”前進”。最簡單的方法就是，當指針要回到 0 秒時，花費 0 秒直接變化，肉眼就看不出回退過程了。  </li>
+<li>設置一個檢查：如果任一指針角度為0，<code>transition</code> 改為 ‘all 0s’。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 設置一個分辨角度的 function</span></span><br><span class="line"><span class="keyword">if</span> (secondsDegree === <span class="number">0</span></span><br><span class="line">  || minsDegree === <span class="number">0</span></span><br><span class="line">  || hourDegree === <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hand&#x27;</span>).<span class="property">style</span>.<span class="property">transition</span> = <span class="string">&#x27;all 0s&#x27;</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hand&#x27;</span>).<span class="property">style</span>.<span class="property">transition</span> = <span class="string">&#x27;all 5ms&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>因為 JavaScript 有<strong>由上而下</strong>的執行順序，所以要把這段插到 “角度代入 CSS” 之前。</li>
+</ul>
+<br>
+<br>
+
+<p>到這裡就全部完成了!<br>學習到方便的時間取得辦法後，我就要把部落格 footer 從網路上照抄的程式碼改掉了。學到的東西能確實應用真的會很有動力!</p>
 ]]></content>
       <categories>
         <category>JavaScript30 挑戰</category>
@@ -1203,88 +1264,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【JS30 挑戰】 Day2 - JS and CSS Clock</title>
-    <url>/posts/74544bca/</url>
-    <content><![CDATA[<p>這個專案練習了 CSS 轉場效果( <code>transition</code> &amp; <code>transform</code> )，並利用 JavaScript function 來帶動 <code>transform</code> 的變化。</p>
-<span id="more"></span>
-<blockquote>
-<p><a href="https://javascript30.com/">JavaScript30</a> 是一個由 <strong>Wes Bos</strong> 提出的免費教學計畫。藉由每天完成一個小專案，練習基礎 JavaScript 。整個計畫為期30天。除了會提供教學影片外，也會先做好前期準備(例如: HTML&#x2F;CSS 等相關建置)，練習時只需專注於撰寫 JavaScript 部分的程式碼即可。</p>
-</blockquote>
-<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ol>
-<li>取得當地時間當下的時&#x2F;分&#x2F;秒資訊。  </li>
-<li>利用取得的時間資訊，套入 CSS 設定來讓時鐘的指針移動。</li>
-</ol>
-<h2 id="練習內容"><a href="#練習內容" class="headerlink" title="練習內容"></a>練習內容</h2><ul>
-<li><strong>JavaScript</strong><br>DOM querySelector 、 function 、Date() 、setInterval()</li>
-<li><strong>CSS</strong><br>transform 、 transform-origin 、transition</li>
-</ul>
-<h2 id="開始前的準備"><a href="#開始前的準備" class="headerlink" title="開始前的準備"></a>開始前的準備</h2><blockquote>
-<p>這部分已由教學計畫提供。</p>
-</blockquote>
-<p><strong>做好 HTML&#x2F;CSS 設定:</strong><br>做出時鐘長相並為指針做好相關設置。<br>為了練習 <code>transform-origin</code> ，指針預設往9點鐘方向。但我為了方便，已自行調整成12點鐘方向。</p>
-<h2 id="練習開始"><a href="#練習開始" class="headerlink" title="練習開始"></a>練習開始</h2><p><strong>1. 調整指針起點至12點鐘方向</strong>  </p>
-<ul>
-<li>原本教學是用 <code>transform: rotate(90deg)</code> 處理，但為了方便，我直接調整 CSS。  </li>
-<li><code>transform-origin</code> 跟著調整成 bottom。  </li>
-<li><code>transition</code> 讓所有對象都執行變化，每次用0.05秒完成變化。</li>
-<li>各別設定指針外觀，以便觀察後續變化。<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.hand</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: bottom;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.05s</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hour-hand</span> &#123;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">15%</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">6px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">35%</span>;</span><br><span class="line">  <span class="attribute">background</span>: tomato;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.min-hand</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.second-hand</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<br>
-
-<p><strong>2. 用 setInterval() 設定 function 執行週期。</strong>  </p>
-<ul>
-<li>以每1000毫秒執行一次 setTime() function(秒針跳動頻率)。<br>註: 1秒 &#x3D; 1000毫秒<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">setInterval</span>(setTime, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
-<br></li>
-</ul>
-<p><strong>3. 取得時間資訊</strong></p>
-<ul>
-<li>分別找出 3 支指針。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> hourHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hour-hand&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> minuteHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.min-hand&#x27;</span>)  </span><br><span class="line"><span class="keyword">const</span> secondHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.second-hand&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
-<li>建立一個 setTime() function ，並把要執行的動作放入函式。  </li>
-<li>取得當下時間，並分別取出時&#x2F;分&#x2F;秒。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setTime</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> hours = now.<span class="title function_">getHours</span>()</span><br><span class="line">  <span class="keyword">const</span> mins = now.<span class="title function_">getMinutes</span>()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.<span class="title function_">getSeconds</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>依照時間比例算出旋轉角度，並帶入 CSS 的 <code>rotate()</code> 設置。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setTime</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 取得時間</span></span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.<span class="title function_">getSeconds</span>();</span><br><span class="line">  <span class="keyword">const</span> mins = now.<span class="title function_">getMinutes</span>();</span><br><span class="line">  <span class="keyword">const</span> hour = now.<span class="title function_">getHours</span>();</span><br><span class="line">  <span class="comment">// 計算角度</span></span><br><span class="line">  <span class="keyword">const</span> secondsDegree = (seconds / <span class="number">60</span>) * <span class="number">360</span>;</span><br><span class="line">  <span class="keyword">const</span> minsDegree = ((mins / <span class="number">60</span>) * <span class="number">360</span>) + ((seconds / <span class="number">60</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="keyword">const</span> hourDegree = ((hour / <span class="number">12</span>) * <span class="number">360</span>) + ((mins / <span class="number">12</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="comment">// 角度代入 CSS</span></span><br><span class="line">  secondHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;secondsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  minuteHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;minsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  hourHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;hourDegree&#125;</span>deg)`</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-到這裡就是一個會動的正確時鐘了。  <br></li>
-</ul>
-<p><strong>4. 旋轉優化</strong></p>
-<ul>
-<li>觀察秒針活動軌跡發現，當它要從 59 秒跳回 0 秒時會逆時針旋轉。因為對電腦來說 59 –&gt; 0 是”後退”不是”前進”。最簡單的方法就是，當指針要回到 0 秒時，花費 0 秒直接變化，肉眼就看不出回退過程了。  </li>
-<li>設置一個檢查：如果任一指針角度為0，<code>transition</code> 改為 ‘all 0s’。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 設置一個分辨角度的 function</span></span><br><span class="line"><span class="keyword">if</span> (secondsDegree === <span class="number">0</span></span><br><span class="line">  || minsDegree === <span class="number">0</span></span><br><span class="line">  || hourDegree === <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hand&#x27;</span>).<span class="property">style</span>.<span class="property">transition</span> = <span class="string">&#x27;all 0s&#x27;</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hand&#x27;</span>).<span class="property">style</span>.<span class="property">transition</span> = <span class="string">&#x27;all 5ms&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>因為 JavaScript 有<strong>由上而下</strong>的執行順序，所以要把這段插到 “角度代入 CSS” 之前。</li>
-</ul>
-<br>
-<br>
-
-<p>到這裡就全部完成了!<br>學習到方便的時間取得辦法後，我就要把部落格 footer 從網路上照抄的程式碼改掉了。學到的東西能確實應用真的會很有動力!</p>
-]]></content>
-      <categories>
-        <category>JavaScript30 挑戰</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>JS30</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Alpha Camp 學期 2-2 結業心得</title>
-    <url>/posts/f46b1c2/</url>
-    <content><![CDATA[<blockquote>
-<p>在寫 code 之前先分拆邏輯與流程、用函式封裝程式碼、用心命名變數，這些基本動作原來是這麼地重要。  </p>
-</blockquote>
-<span id="more"></span>
-<h3 id="OBJECTIVE"><a href="#OBJECTIVE" class="headerlink" title="OBJECTIVE"></a>OBJECTIVE</h3><p>經過學期2–2的學習，除了一邊複習之前學過的東西外，也對於程式流程的優化有更進一步的了解。尤其是使用 MVC 架構，讓整個程式不管是邏輯、流程或者是管理維護上都有了很大的提升。因為越學越有興趣的關係，和之前的幾個學期相比，現在的我對於主動優化作業有了很大的熱情。另外就是對於學期開頭的介紹有了更深刻的體會與認同!在寫 code 之前先分拆邏輯與流程、用函式封裝程式碼、用心命名變數，這些基本動作原來是這麼地重要。  </p>
-<h3 id="REFLECTIVE"><a href="#REFLECTIVE" class="headerlink" title="REFLECTIVE"></a>REFLECTIVE</h3><p>大量的實作學習讓我從「跟著助教做」轉為「思考另一種做法的利弊是什麼」。因為多了各種思考過程，我開始了大量的資料閱讀和撰寫嘗試。在嘗試的過程中發現不同的寫法各有利弊，結果的選擇很大程度上取決於使用者體驗(目前就是我自己啦😆)  </p>
-<p>就是因為想加的功能越變越多，導致我需要不斷往前修改之前考慮的不夠完善的地方，這個時候就想到:如果在最一開始，我對於那些撰寫基礎能更重視和用心，後面這些時間也許都可以節省下來。  </p>
-<h3 id="INTERPRETIVE"><a href="#INTERPRETIVE" class="headerlink" title="INTERPRETIVE"></a>INTERPRETIVE</h3><p>這個學期下來也讓我對於「複習」這件事有了態度上的轉變。從原本的「之前不夠熟悉、必須找時間再多多複習」變成「主動在作業中融入以前學過的東西」。每個學期、甚至每個教案的著重點本來就不一樣，「複習」這件事就要找到適合自己的方法，不能依賴虛無飄渺的「找個時間來複習」。  </p>
-<p>觀摩同學作業時，發現在一個作業中同時融入了很多以前學過的東西( media queries 、 flex、position…等)，可以看出他在開始編寫程式碼前，已經對設計成品有具體的想法，可能也針對不同螢幕大小畫出了多張 wireframe ，考慮了很多面向的東西。 他的練習實踐方式讓我發現我可以在完成當下目標同時複習以前學過的東西，學習的輸入可以從各自為政變成融會貫通 。  </p>
-<h3 id="DECISIONAL"><a href="#DECISIONAL" class="headerlink" title="DECISIONAL"></a>DECISIONAL</h3><p>接下來進行課程時，希望自己能保持主動優化的動力。也許不是每一次嘗試都能得到好的結果，但在嘗試的過程中需要查資料、方法的選擇、功能的取捨，利用這個過程慢慢積累自己的知識庫，期望未來能不愧對付出的時間和努力!  </p>
-]]></content>
-      <categories>
-        <category>學習紀錄 - AlphaCamp</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>data-* HTML 自定義屬性及 dataset</title>
     <url>/posts/b8b00b13/</url>
     <content><![CDATA[<p>在 <a href="/posts/470f6710/">JS30 Day1</a> 第一次看到 data-* 屬性，學習 DOM 之後發現真是太好用了阿!</p>
@@ -1344,13 +1323,34 @@
 
 ]]></content>
       <categories>
-        <category>JavaScript 筆記</category>
         <category>HTML 筆記</category>
+        <category>JavaScript 筆記</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
         <tag>HTML</tag>
+        <tag>JavaScript</tag>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Alpha Camp 學期 2-2 結業心得</title>
+    <url>/posts/f46b1c2/</url>
+    <content><![CDATA[<blockquote>
+<p>在寫 code 之前先分拆邏輯與流程、用函式封裝程式碼、用心命名變數，這些基本動作原來是這麼地重要。  </p>
+</blockquote>
+<span id="more"></span>
+<h3 id="OBJECTIVE"><a href="#OBJECTIVE" class="headerlink" title="OBJECTIVE"></a>OBJECTIVE</h3><p>經過學期2–2的學習，除了一邊複習之前學過的東西外，也對於程式流程的優化有更進一步的了解。尤其是使用 MVC 架構，讓整個程式不管是邏輯、流程或者是管理維護上都有了很大的提升。因為越學越有興趣的關係，和之前的幾個學期相比，現在的我對於主動優化作業有了很大的熱情。另外就是對於學期開頭的介紹有了更深刻的體會與認同!在寫 code 之前先分拆邏輯與流程、用函式封裝程式碼、用心命名變數，這些基本動作原來是這麼地重要。  </p>
+<h3 id="REFLECTIVE"><a href="#REFLECTIVE" class="headerlink" title="REFLECTIVE"></a>REFLECTIVE</h3><p>大量的實作學習讓我從「跟著助教做」轉為「思考另一種做法的利弊是什麼」。因為多了各種思考過程，我開始了大量的資料閱讀和撰寫嘗試。在嘗試的過程中發現不同的寫法各有利弊，結果的選擇很大程度上取決於使用者體驗(目前就是我自己啦😆)  </p>
+<p>就是因為想加的功能越變越多，導致我需要不斷往前修改之前考慮的不夠完善的地方，這個時候就想到:如果在最一開始，我對於那些撰寫基礎能更重視和用心，後面這些時間也許都可以節省下來。  </p>
+<h3 id="INTERPRETIVE"><a href="#INTERPRETIVE" class="headerlink" title="INTERPRETIVE"></a>INTERPRETIVE</h3><p>這個學期下來也讓我對於「複習」這件事有了態度上的轉變。從原本的「之前不夠熟悉、必須找時間再多多複習」變成「主動在作業中融入以前學過的東西」。每個學期、甚至每個教案的著重點本來就不一樣，「複習」這件事就要找到適合自己的方法，不能依賴虛無飄渺的「找個時間來複習」。  </p>
+<p>觀摩同學作業時，發現在一個作業中同時融入了很多以前學過的東西( media queries 、 flex、position…等)，可以看出他在開始編寫程式碼前，已經對設計成品有具體的想法，可能也針對不同螢幕大小畫出了多張 wireframe ，考慮了很多面向的東西。 他的練習實踐方式讓我發現我可以在完成當下目標同時複習以前學過的東西，學習的輸入可以從各自為政變成融會貫通 。  </p>
+<h3 id="DECISIONAL"><a href="#DECISIONAL" class="headerlink" title="DECISIONAL"></a>DECISIONAL</h3><p>接下來進行課程時，希望自己能保持主動優化的動力。也許不是每一次嘗試都能得到好的結果，但在嘗試的過程中需要查資料、方法的選擇、功能的取捨，利用這個過程慢慢積累自己的知識庫，期望未來能不愧對付出的時間和努力!  </p>
+]]></content>
+      <categories>
+        <category>學習紀錄 - AlphaCamp</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -1448,7 +1448,7 @@
 <li>二分搜尋法 ➜ 從中間翻閱，依照姓名排序捨棄一半資料(不斷重複)</li>
 </ol>
 <p>完善搜尋方式的過程，並把過程用虛擬碼(pseudocode)寫出來幫助思考整個流程運作，最後用虛擬碼解釋函式、條件判斷、變數、迴圈…等是什麼?  </p>
-<p><img src="/../Blog-image/posts/2022-24-29_pseudocode.webp" alt="pseudocode"><br>(圖片來自 CS50 課程內容  )</p>
+<p><img src="/../Blog-image/posts/2022-04-29_pseudocode.webp" alt="pseudocode"><br>(圖片來自 CS50 課程內容  )</p>
 <h3 id="Scratch"><a href="#Scratch" class="headerlink" title="Scratch"></a>Scratch</h3><p>用拼圖方式一步步組裝，做出一個可以運行的程式。  </p>
 <h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>寫程式其實就是一個解題的過程，首先要確保可以得出正確的答案，再來才是優化解題的過程。  </p>
 <p>在電話簿情境題中，如果僅僅是為了提升效率而兩頁兩頁做排查，也許會因為搜尋對象在單數頁而錯過。那即使可以在較短時間排查更多的資料也沒用，因為這種排查邏輯並不完善。  </p>
@@ -1462,44 +1462,6 @@
       </categories>
       <tags>
         <tag>CS50x(2022)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【CS50W】Lecture0：HTML &amp; CSS</title>
-    <url>/posts/be2c6d84/</url>
-    <content><![CDATA[<p>課程名稱：CS50(Web Programming with Python and JavaScript)</p>
-<span id="more"></span>
-
-<h2 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h2><ul>
-<li>HTML：HTML 結構、Common HTML Tags …簡介。  </li>
-<li>CSS：Common CSS Properties、Specificity、CSS Selectors。  </li>
-<li>Responsive Design：viewport、Media Queries、Flexbox、Grids。  </li>
-<li>Bootstrap  </li>
-<li>Sass：variables and nesting</li>
-</ul>
-<h2 id="問題討論：-style-method-的選擇"><a href="#問題討論：-style-method-的選擇" class="headerlink" title="問題討論： style method 的選擇"></a>問題討論： style method 的選擇</h2><p><strong>Method1 - Use inline style：</strong>  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&quot;color: green&quot;</span>&gt;</span>CSS from inline style<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>Method2 - Use style tag：</strong>  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">h1</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">color</span>: green;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>CSS from style tag<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>Method3 - Use link to CSS file：</strong>  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>CSS from link to CSS file<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<br>
-
-<p>上面三種方式的結果都一樣，各有優缺點。  </p>
-<ul>
-<li><strong>inline style</strong> 在順位上是三者中最高的，不會被其他的 CSS 設定覆蓋或影響。缺點是每個 HTML 元素要分別設置，在效率上或實用性上較不方便。  </li>
-<li><strong>style tag</strong> 把 CSS 設定從各個 HTML 標籤中分離出來，在配合 CSS 選擇器的情況下，可以一次對多個 HTML 元素進行樣式設定，效率較高。畢竟學習寫程式的過程中，很常看到的一句話就是：「盡可能減少重複的程式碼」。另外一點就是，使用這種方式會把文件的「內容」和「樣式」區分開來管理，除了文件內容的結構會比較清晰易懂，也較容易達到「關注點分離」的效用。  </li>
-<li>相對於 style tag 雖然把樣式跟內容分開，但兩者還是在同一個 HTML 文件裡； <strong>link to CSS file</strong> 的方式就直接將樣式設定放進單獨的 CSS 檔案做管理，「關注點分離」也更明確。另外就是，隨著我們做的 web app 規模變大，為了網頁畫面的一致性，我們可能會在多個網頁套用相同的 CSS 樣式。直接將樣式設定獨立成一個檔案並用 link 的方式引用，可以讓多個 HTML 文件引用同一個 CSS 樣式檔案。</li>
-</ul>
-<h2 id="小結：關注點分離"><a href="#小結：關注點分離" class="headerlink" title="小結：關注點分離"></a>小結：關注點分離</h2><p>關注點分離是在寫程式時要特別注意的地方，其目的就是讓程式碼的每個部分「分工明確」。這麼做的好處是，當程式碼執行結果發現任何不符合預期的地方，我們可以很容易地找出出問題的段落並進行修正，並且「只」需要修正該部分就好，程式碼的其他地方都不會受到影響。這在維護上會較方便、測試部分功能時也只需要針對特定一小段落即可，整體流程更有效率也不容易出錯。  </p>
-]]></content>
-      <categories>
-        <category>學習紀錄 - CS50</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
-        <tag>CSS</tag>
-        <tag>CS50W</tag>
       </tags>
   </entry>
   <entry>
@@ -1564,6 +1526,393 @@
       </categories>
       <tags>
         <tag>CS50x(2022)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【CS50W】Lecture0：HTML &amp; CSS</title>
+    <url>/posts/be2c6d84/</url>
+    <content><![CDATA[<p>課程名稱：CS50(Web Programming with Python and JavaScript)</p>
+<span id="more"></span>
+
+<h2 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h2><ul>
+<li>HTML：HTML 結構、Common HTML Tags …簡介。  </li>
+<li>CSS：Common CSS Properties、Specificity、CSS Selectors。  </li>
+<li>Responsive Design：viewport、Media Queries、Flexbox、Grids。  </li>
+<li>Bootstrap  </li>
+<li>Sass：variables and nesting</li>
+</ul>
+<h2 id="問題討論：-style-method-的選擇"><a href="#問題討論：-style-method-的選擇" class="headerlink" title="問題討論： style method 的選擇"></a>問題討論： style method 的選擇</h2><p><strong>Method1 - Use inline style：</strong>  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&quot;color: green&quot;</span>&gt;</span>CSS from inline style<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>Method2 - Use style tag：</strong>  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">h1</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">color</span>: green;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>CSS from style tag<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>Method3 - Use link to CSS file：</strong>  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>CSS from link to CSS file<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<br>
+
+<p>上面三種方式的結果都一樣，各有優缺點。  </p>
+<ul>
+<li><strong>inline style</strong> 在順位上是三者中最高的，不會被其他的 CSS 設定覆蓋或影響。缺點是每個 HTML 元素要分別設置，在效率上或實用性上較不方便。  </li>
+<li><strong>style tag</strong> 把 CSS 設定從各個 HTML 標籤中分離出來，在配合 CSS 選擇器的情況下，可以一次對多個 HTML 元素進行樣式設定，效率較高。畢竟學習寫程式的過程中，很常看到的一句話就是：「盡可能減少重複的程式碼」。另外一點就是，使用這種方式會把文件的「內容」和「樣式」區分開來管理，除了文件內容的結構會比較清晰易懂，也較容易達到「關注點分離」的效用。  </li>
+<li>相對於 style tag 雖然把樣式跟內容分開，但兩者還是在同一個 HTML 文件裡； <strong>link to CSS file</strong> 的方式就直接將樣式設定放進單獨的 CSS 檔案做管理，「關注點分離」也更明確。另外就是，隨著我們做的 web app 規模變大，為了網頁畫面的一致性，我們可能會在多個網頁套用相同的 CSS 樣式。直接將樣式設定獨立成一個檔案並用 link 的方式引用，可以讓多個 HTML 文件引用同一個 CSS 樣式檔案。</li>
+</ul>
+<h2 id="小結：關注點分離"><a href="#小結：關注點分離" class="headerlink" title="小結：關注點分離"></a>小結：關注點分離</h2><p>關注點分離是在寫程式時要特別注意的地方，其目的就是讓程式碼的每個部分「分工明確」。這麼做的好處是，當程式碼執行結果發現任何不符合預期的地方，我們可以很容易地找出出問題的段落並進行修正，並且「只」需要修正該部分就好，程式碼的其他地方都不會受到影響。這在維護上會較方便、測試部分功能時也只需要針對特定一小段落即可，整體流程更有效率也不容易出錯。  </p>
+]]></content>
+      <categories>
+        <category>學習紀錄 - CS50</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+        <tag>CS50W</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【CS50x(2022)】ProblemSet3 - Tideman 題解(Bubble sort)</title>
+    <url>/posts/ab8ef72d/</url>
+    <content><![CDATA[<p>這是目前在 CS50x 課程中遇到的最難的題目了，如果不把思考邏輯好好整理一遍，下次再回顧應該還是要花很多時間理解一遍。  </p>
+<span id="more"></span>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>這一篇是使用 bubble sort 方式解題，如果想使用其他排序法，可直接使用以下連結，除了排序法之外的內文都是一樣的。  </p>
+<blockquote>
+<p><a href="../d7ed27d2">Tideman 題解(Selection sort)</a>。</p>
+</blockquote>
+<h2 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h2><p>題目出自 Harvard CS50x 課程第三週作業練習，可先看看<a href="https://cs50.harvard.edu/x/2022/psets/3/tideman/">題目說明</a>再往下看。  </p>
+<p>在一般的選舉活動中，通常是採取<strong>相對多數決</strong>或是<strong>絕對多數決</strong>，也就是候選人只要得到一定數目選票即可獲得勝利。然而 <a href="https://en.wikipedia.org/wiki/Ranked_pairs"><strong>Tideman method</strong></a> 是採用完全不同的邏輯。Tideman method 或稱 Ranked pairs 是指在每一張選票上寫上對所有候選人的意向排序，把所有選票上的候選人兩兩互相比較得出一個符合多數人的排序結果，而排名第一的人就是最後的獲勝者。  </p>
+<p>目前這樣簡單的介紹可能還有點抽象，接下來或做個詳細的說明。  </p>
+<h2 id="程式結構及邏輯"><a href="#程式結構及邏輯" class="headerlink" title="程式結構及邏輯"></a>程式結構及邏輯</h2><p>先來看看題目提供的邏輯架構：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cs50.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定義候選人數目為 9 </span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX 9</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 一個 9x9 的表格，每一格紀錄選票排序上，候選人[i] &gt; 候選人[j]的選票有幾張。</span></span><br><span class="line"><span class="type">int</span> preferences[MAX][MAX];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 一個 9x9 的表格，每一格紀錄 boolean 值，說明候選人[i]和候選人[j]之間的箭頭關係是否被鎖定。</span></span><br><span class="line"><span class="type">bool</span> locked[MAX][MAX];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定義新的資料型別 &quot;pair&quot;，這個型別會記錄 winner 和 loser 在 array 裡的 index(integer)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="type">int</span> winner;</span><br><span class="line">  <span class="type">int</span> loser;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">pair</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Array of candidates</span></span><br><span class="line"><span class="built_in">string</span> candidates[MAX];             <span class="comment">// 一個紀錄所有候選人的 array</span></span><br><span class="line"><span class="built_in">pair</span> pairs[MAX * (MAX - <span class="number">1</span>) / <span class="number">2</span>];    <span class="comment">// 一個紀錄所有 pair 的 array</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> pair_count;</span><br><span class="line"><span class="type">int</span> candidate_count;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Function prototypes</span></span><br><span class="line"><span class="comment">// 作業需要完成的 6 個 function</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">vote</span><span class="params">(<span class="type">int</span> rank, <span class="built_in">string</span> name, <span class="type">int</span> ranks[])</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">record_preferences</span><span class="params">(<span class="type">int</span> ranks[])</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">add_pairs</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">sort_pairs</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">lock_pairs</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">print_winner</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="built_in">string</span> argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 確認 terminal 提供的參數是否正確</span></span><br><span class="line">    <span class="keyword">if</span> (argc &lt; <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Usage: tideman [candidate ...]\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 把 terminal 提供的候選人名字寫進 candidates 列表裡</span></span><br><span class="line">    candidate_count = argc - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (candidate_count &gt; MAX)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Maximum number of candidates is %i\n&quot;</span>, MAX);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        candidates[i] = argv[i + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化 locked 表格，讓每一格都是 false </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            locked[i][j] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    pair_count = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> voter_count = get_int(<span class="string">&quot;Number of voters: &quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 取得每一張選票內容</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; voter_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 定義選票排序 array: ranks[i] 是投票者排序第 i 名的候選人 index</span></span><br><span class="line">        <span class="type">int</span> ranks[candidate_count];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 取得每一個排序的候選人 index</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> name = get_string(<span class="string">&quot;Rank %i: &quot;</span>, j + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (!vote(j, name, ranks))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;Invalid vote.\n&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 將選票結果更新到 preferences 表格</span></span><br><span class="line">        record_preferences(ranks);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    add_pairs();</span><br><span class="line">    sort_pairs();</span><br><span class="line">    lock_pairs();</span><br><span class="line">    print_winner();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>題目要求完成 6 個 function 來執行投票&#x2F;開票作業，接下來會針對每個 function 做詳細說明。  </p>
+<h2 id="vote"><a href="#vote" class="headerlink" title="vote"></a>vote</h2><p>投票者每在選票上填入一個名字就會執行一次，將填入的名字放進紀錄選票的陣列 <code>ranks[]</code> 中。這個函式共引入了 3 個參數：  </p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">vote</span><span class="params">(<span class="type">int</span> rank, <span class="built_in">string</span> name, <span class="type">int</span> ranks[])</span></span><br><span class="line"><span class="type">int</span> rank        <span class="comment">// 目前填入的名字在選票排序的第幾位</span></span><br><span class="line"><span class="built_in">string</span> name     <span class="comment">// 填入的名稱</span></span><br><span class="line"><span class="type">int</span> ranks[]     <span class="comment">// 記錄這張選票所有排序的 array</span></span><br></pre></td></tr></table></figure>
+
+<p>首先，為了排除廢票狀況，要先檢查填入的名字是否存在候選人清單中，如果存在則填入 ranks[] 清單並回傳 <code>true</code>；反之則回傳 <code>false</code>。這邊用到一個 library： <a href="https://manual.cs50.io/3/strcmp">strcmp()</a> 來比對字串是否相同，所以要記得在檔案最上方加入 <code>#include &lt;string.h&gt;</code> 。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Update ranks given a new vote</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">vote</span><span class="params">(<span class="type">int</span> rank, <span class="built_in">string</span> name, <span class="type">int</span> ranks[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Check if vote to person in candidates list</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">strcmp</span>(name, candidates[i]) == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ranks[rank] = i;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="record-preferences"><a href="#record-preferences" class="headerlink" title="record_preferences"></a>record_preferences</h2><p>每填完一張選票，就將這張選票每兩位候選人間的意願關係填入 <code>preferences</code> 表格中。這邊就要先解釋<a href="#%E7%A8%8B%E5%BC%8F%E7%B5%90%E6%A7%8B%E5%8F%8A%E9%82%8F%E8%BC%AF">原始題目line8</a> 的變數 <code>int preferences[MAX][MAX]</code> 了。<code>int</code> 代表這個陣列填入的資料型別是<strong>整數</strong>，後面的 <code>[MAX]</code> 則是代表表格的<strong>列數</strong>和<strong>欄數</strong>，而 MAX 的值在 line5 設定為 9。</p>
+<h3 id="preferences-row-col-二維表格"><a href="#preferences-row-col-二維表格" class="headerlink" title="preferences[row][col] 二維表格"></a>preferences[row][col] 二維表格</h3><p><code>preferences[row][col]</code> 是一個二維陣列，假設 <code>[row]</code> 和 <code>[col]</code> 都是 3 ，表格畫起來如下圖：  </p>
+<div style="max-width: fit-content">
+
+<table>
+<thead>
+<tr>
+<th>candidates[index]</th>
+<th align="center">Alice [0]</th>
+<th align="center">Bob [1]</th>
+<th align="center">Charlie [2]</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Alice [0]</td>
+<td align="center">0</td>
+<td align="center">Alice &gt; Bob 的選票張數</td>
+<td align="center">Alice &gt; Charlie 的選票張數</td>
+</tr>
+<tr>
+<td>Bob [1]</td>
+<td align="center">Bob &gt; Alice 的選票張數</td>
+<td align="center">0</td>
+<td align="center">Bob &gt; Charlie 的選票張數</td>
+</tr>
+<tr>
+<td>Charlie [2]</td>
+<td align="center">Charlie &gt; Alice 的選票張數</td>
+<td align="center">Charlie &gt; Bob 的選票張數</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+</div>
+
+<h3 id="選票意向解讀"><a href="#選票意向解讀" class="headerlink" title="選票意向解讀"></a>選票意向解讀</h3><table>
+<thead>
+<tr>
+<th>選票</th>
+<th>說明(比對上圖)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. Alice<br>2. Charlie<br>3. Bob</td>
+<td>1. Alice 贏過 Bob 和 Charlie，所以 preferences[0][1] 和 preferences[0][2] 各加 1<br>2. Charlie 贏過 Bob，所以 preferences[2][1] 加 1。<br>3. Bob 沒贏過任何人，不對表格做任何改變。</td>
+</tr>
+</tbody></table>
+<hr>
+<p>來看看函式的 prototype：  </p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">record_preferences</span><span class="params">(<span class="type">int</span> ranks[])</span></span><br><span class="line"><span class="type">void</span>         <span class="comment">// 沒有回傳值</span></span><br><span class="line"><span class="type">int</span> ranks[]  <span class="comment">// 使用 candidates[] 的 index 來紀錄選票中候選人排序的陣列</span></span><br></pre></td></tr></table></figure>
+<p>如同上面舉的例子，當完成一張選票 <code>ranks[]</code> 時，依序迭代每個順位的候選人，將他們的比較結果填入 <code> preferences</code> 表格中。<code>i</code> 代表選票的第 i 順位，<code>j</code> 則代表 i 以外的其他候選人。  </p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Update preferences given one voter&#x27;s ranks</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">record_preferences</span><span class="params">(<span class="type">int</span> ranks[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Person of each rank on ballot</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// Plus number of voters who prefer i over j</span></span><br><span class="line">            preferences[ranks[i]][ranks[j]] += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="add-pairs"><a href="#add-pairs" class="headerlink" title="add_pairs"></a>add_pairs</h2><p>在投完所有票及更新 <code>preferences</code> 表格後，從表格中挑出所有獲勝的組合。假設投完票後的意向表格如下：  </p>
+<div style="max-width: fit-content">
+
+<table>
+<thead>
+<tr>
+<th>candidates[index]</th>
+<th align="center">Alice [0]</th>
+<th align="center">Bob [1]</th>
+<th align="center">Charlie [2]</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Alice [0]</td>
+<td align="center">0</td>
+<td align="center">3</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td>Bob [1]</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td>Charlie [2]</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+</div>
+
+<p>交叉比對確認兩候選人間的勝敗後，將候選人 <code>index</code> 記錄進 line23 <code>pairs</code> 陣列裡。前面有定義過 (line14-19)， <code>pair</code> 這個型別的陣列裡面會記錄 winner 跟 loser 的 index(要注意先後順序)。<a href="#%E7%A8%8B%E5%BC%8F%E7%B5%90%E6%A7%8B%E5%8F%8A%E9%82%8F%E8%BC%AF"><em>原始題目(行號)</em></a>  </p>
+<p>依照上表範例：  </p>
+<ul>
+<li>Alice 對 Bob 的票數 preferences[0][1] &gt; preferences[1][0]，所以將 <code>&#123;0, 1&#125;</code> 放入 <code>pairs</code> 陣列。  </li>
+<li>Alice 對 Charlie 的票數 preferences[0][2] &lt; preferences[2][0]，所以將 <code>&#123;2, 0&#125;</code> 放入 <code>pairs</code> 陣列。  </li>
+<li>Bob 對 Charlie 的票數 preferences[1][2] &#x3D;&#x3D; preferences[2][1]，沒有勝者，所以不加入 <code>pairs</code>。</li>
+</ul>
+<hr>
+<p>綜上所述， <code>add_pairs</code> 函式只要迭代整個表格找出勝者加入 <code>pairs</code> 即可。特別注意的是，因為我們只要找出勝者，所以不對 <code>if (preferences[i][j] == preferences[j][i])</code> 的情況做任何處理。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Record pairs of candidates where one is preferred over the other</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">add_pairs</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// If one way arrow (i over j)</span></span><br><span class="line">            <span class="keyword">if</span> (preferences[i][j] &gt; preferences[j][i])</span><br><span class="line">            &#123;</span><br><span class="line">                pairs[pair_count].winner = i;</span><br><span class="line">                pairs[pair_count].loser = j;</span><br><span class="line">                pair_count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="sort-pairs-Selection-sort"><a href="#sort-pairs-Selection-sort" class="headerlink" title="sort_pairs (Selection sort)"></a>sort_pairs (Selection sort)</h2><p>Selection sort 的原理是在遍歷剩餘需排序的資料，找到最大(或最小)的一項，然後和需排序資料中的第一個位置交換，最後達到生蜜或降冪的排列。</p>
+<hr>
+<p>題目要求將 <code>pairs</code> 陣列由大到小排列。比大小需要<strong>數值</strong>，但 <code>pairs</code> 陣列紀錄的只是勝者和敗者，我們可以拿獲勝的<strong>力度</strong>來為每對候選人作排序。  </p>
+<p>獲勝的<strong>力度</strong>指的是「<strong>覺得A候選人勝過B候選人的票數</strong>」。舉前面 <a href="#add_pairs">add_pairs範例表格</a>來說， Alice 勝過 Bob 的力度是 3。</p>
+<p>接著，就如同 selection sort 說明一樣，找出 <code>pairs</code> 陣列中最大的 <code>pair strength</code> (preferences[winner][loser])，並和剩餘資料的第一項交換位置，最後完成降冪排列。  </p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">sort_pairs</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Selection sort</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; pair_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Initialize compare bases to pairs[i]</span></span><br><span class="line">        <span class="type">int</span> top_strength = preferences[pairs[i].winner][pairs[i].loser];</span><br><span class="line">        <span class="type">int</span> top_index = i;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Iterate the rest pairs to find top_strength one</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; pair_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (preferences[pairs[j].winner][pairs[j].loser] &gt; top_strength)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// Update compare bases</span></span><br><span class="line">                top_strength = preferences[pairs[j].winner][pairs[j].loser];</span><br><span class="line">                top_index = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Swap pairs[i] if find another one with higher strength</span></span><br><span class="line">        <span class="keyword">if</span> (top_index != i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">pair</span> temp = pairs[i];</span><br><span class="line">            pairs[i] = pairs[top_index];</span><br><span class="line">            pairs[top_index] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="lock-pairs"><a href="#lock-pairs" class="headerlink" title="lock_pairs"></a>lock_pairs</h2><p>這個步驟的目的是為了在所有的 pairs 之間做取捨。如果直接採用所有的 pair，選舉結果可能會出現:<br>A &gt; B 、 B &gt; C 、 C &gt; A 這種找不到最終勝利者的情形。而 lock_pairs 是將 pair_strength 由大到小分別做檢查，如果沒有變成死循環的 pair 就採用(lock)，變成死循環的 pair 就棄用。<br><br></p>
+<blockquote>
+<p>備註：此部分說明參考【<a href="https://gist.github.com/nicknapoli82/6c5a1706489e70342e9a0a635ae738c9">nicknapoli82&#x2F;cs50_Tideman_cycle-explanation.md</a>】  </p>
+</blockquote>
+<p>舉例來說，現在有的候選人和 sorted pairs 資料如下:  </p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Candidates[<span class="number">4</span>] = [a, b, c, d]</span><br><span class="line">Sorted Pairs = [&#123;d, a&#125;, &#123;a, b&#125;, &#123;b, c&#125;, &#123;c, a&#125;, &#123;d, b&#125;, &#123;d, c&#125;]</span><br></pre></td></tr></table></figure>
+<p>之後將 sorted pairs 依序拿出來做檢查，如果不是死循環則生成排序鏈。<br><code>sorted pairs[0]</code> : d &gt; a ，lock ，排序鏈 <code>d &gt; a</code> 。<br><code>sorted pairs[1]</code> : a &gt; b ，lock ，排序鏈 <code>d &gt; a &gt; b</code> 。<br><code>sorted pairs[2]</code> : b &gt; c ，lock ，排序鏈 <code>d &gt; a &gt; b &gt; c</code> 。<br><code>sorted pairs[3]</code> : c &gt; a ，形成死循環，棄用此 pair，排序鏈維持 <code>d &gt; a &gt; b &gt; c</code> 。<br><code>sorted pairs[4]</code> : d &gt; b ，lock ，排序鏈維持 <code>d &gt; a &gt; b &gt; c</code> 。<br><code>sorted pairs[5]</code> : d &gt; c ，lock ，排序鏈維持 <code>d &gt; a &gt; b &gt; c</code> 。  </p>
+<p>此時，詳細排序鏈應該長這樣：  </p>
+<div style="max-width: 150px">
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center">a</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center">↗</td>
+<td align="center">↓</td>
+</tr>
+<tr>
+<td align="center">d</td>
+<td align="center">→</td>
+<td align="center">b</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">↘</td>
+<td align="center">↓</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">c</td>
+</tr>
+</tbody></table>
+</div>
+
+<p>最後寫出的 locked[4][4] 表格如下，有單向箭頭的為 true：  </p>
+<div style="max-width: fit-content">
+
+<table>
+<thead>
+<tr>
+<th>candidate[index]</th>
+<th>a [0]</th>
+<th>b [1]</th>
+<th>c [2]</th>
+<th>d [3]</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a [0]</td>
+<td>false</td>
+<td>true</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>b [1]</td>
+<td>false</td>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>c [2]</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>d [3]</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td>false</td>
+</tr>
+</tbody></table>
+</div>
+
+<hr>
+<p>依照上面的說明，<code>lock_pairs</code> function 的邏輯為：檢查是否有死循環，沒有則為 true。(前面已將整張表格預設為 false，所以如果 <code>locked[winner][loser] = false</code> ，不做任何處理。)  </p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Lock pairs into the candidate graph in order, without creating cycles</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">lock_pairs</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; pair_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> winner = pairs[i].winner;</span><br><span class="line">        <span class="type">int</span> loser = pairs[i].loser;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!cycle_occurred(winner, loser))</span><br><span class="line">        &#123;</span><br><span class="line">            locked[winner][loser] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
+
+<p>接下來則是規畫檢查死循環的步驟，新建一個 function <code>cycle_occurred</code>。  </p>
+<p>因為我們是依照 pair_strength 的順序來鎖定的，所以檢查的方式就是把 winner 和 loser 反過來查表，看看會不會和目前已經鎖定的 pairs 形成死循環，如果 <code>locked[loser][winner] == true</code> 就表示造成死循環。  </p>
+<p>另外，前面有提到排序鏈長這樣 <code>d &gt; a &gt; b &gt; c</code> ，但其實它包含了 <code>d &gt; a</code> 、 <code>d &gt; b</code>、 <code>d &gt; c</code> 這三個路線，如下圖:  </p>
+<div style="max-width: 150px">
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center">a</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center">↗</td>
+<td align="center">↓</td>
+</tr>
+<tr>
+<td align="center">d</td>
+<td align="center">→</td>
+<td align="center">b</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">↘</td>
+<td align="center">↓</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">c</td>
+</tr>
+</tbody></table>
+</div>
+
+<p>如果我要確定 <code>d &gt; c</code> 會不會造成死循環，同時也必須要對其他路線做確認，所以使用 for loop 來迭代每個候選人。  </p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Check if cycle occurred</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">cycle_occurred</span><span class="params">(<span class="type">int</span> winner, <span class="type">int</span> loser)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (locked[loser][winner] == <span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (locked[loser][i] &amp;&amp; cycle_occurred(winner, i))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="print-winner"><a href="#print-winner" class="headerlink" title="print_winner"></a>print_winner</h2><p>在完成 <code>lock_pairs</code> 經過步驟後，會完成下面這張表格。要找出最後贏家的辦法，就是確認一個候選人「沒有輸給任何人」，也就是候選人的 loser column 全部為 false，如下表<font color=green><strong>綠字</strong></font>表示：  </p>
+<div style="max-width: fit-content">
+
+<table>
+<thead>
+<tr>
+<th>candidate[index]</th>
+<th>a [0]</th>
+<th>b [1]</th>
+<th>c [2]</th>
+<th>d [3]</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a [0]</td>
+<td>false</td>
+<td>true</td>
+<td>true</td>
+<td><font color=green><strong>false</strong></font></td>
+</tr>
+<tr>
+<td>b [1]</td>
+<td>false</td>
+<td>false</td>
+<td>true</td>
+<td><font color=green><strong>false</strong></font></td>
+</tr>
+<tr>
+<td>c [2]</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td><font color=green><strong>false</strong></font></td>
+</tr>
+<tr>
+<td>d [3]</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td><font color=green><strong>false</strong></font></td>
+</tr>
+</tbody></table>
+</div>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Print the winner of the election</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">print_winner</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> false_count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// Check if candidates[j] has arrow to cadidates[i]</span></span><br><span class="line">            <span class="keyword">if</span> (locked[j][i] == <span class="literal">false</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                false_count++;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// if no arrow to candidates[i], find winner</span></span><br><span class="line">                <span class="keyword">if</span> (false_count == candidate_count)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, candidates[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>而為什麼不用「贏過除了自己的任何人呢」(也就是 candidate[i] row 除了自己全部為 true)？<br>因為我們在一開始就將表格預設為 false ，而<strong>平手</strong>情況也是 false 。向下圖這種情況，會有兩個贏家，而 <code>a &gt; d</code> 或 <code>d &gt; a</code> 都會是 false。</p>
+<div style="max-width: 150px">
+
+<table>
+<thead>
+<tr>
+<th align="center">a</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">||</td>
+<td align="center">↘</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">d</td>
+<td align="center">→</td>
+<td align="center">b</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">↘</td>
+<td align="center">↓</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">c</td>
+</tr>
+</tbody></table>
+</div>
+
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>完成版的 code 在<a href="https://gist.github.com/ritachien/e7de2ceccc4b99b665cfe3bbe5336877">這裡</a>。  </p>
+<blockquote>
+</blockquote>
+<p>這個題目是目前課程作業中最難的一個，光題目的理解就花了很多時間也閱讀很了多資料(遞迴之類的…)，但挑戰不同排序法還是很有趣。在寫這篇題解的過程中也嘗試了不同寫法，發現導致沒有 100% pass 的例外狀況(平手)。整體來說，這是個很考驗邏輯思考的作業!  </p>
+<blockquote>
+<p>相關文章: <a href="https://ritachien.github.io/tags/CS50x-2022/">CS50x(2022)</a>  </p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>學習紀錄 - CS50</category>
+      </categories>
+      <tags>
+        <tag>CS50x(2022)</tag>
+        <tag>Algorithms</tag>
       </tags>
   </entry>
   <entry>
@@ -1978,354 +2327,108 @@
       </categories>
       <tags>
         <tag>CS50x(2022)</tag>
+        <tag>Algorithms</tag>
       </tags>
   </entry>
   <entry>
-    <title>【CS50x(2022)】ProblemSet3 - Tideman 題解(Bubble sort)</title>
-    <url>/posts/ab8ef72d/</url>
-    <content><![CDATA[<p>這是目前在 CS50x 課程中遇到的最難的題目了，如果不把思考邏輯好好整理一遍，下次再回顧應該還是要花很多時間理解一遍。  </p>
+    <title>【CS50x(2022)】Complexity and Big O Notation</title>
+    <url>/posts/6466fe30/</url>
+    <content><![CDATA[<p>在上 CS50x 第三週的演算法時，總覺得對「時間複雜度」的理解不夠清楚，因此另外找了課程做補充。  </p>
 <span id="more"></span>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>這一篇是使用 bubble sort 方式解題，如果想使用其他排序法，可直接使用以下連結，除了排序法之外的內文都是一樣的。  </p>
+
 <blockquote>
-<p><a href="../d7ed27d2">Tideman 題解(Selection sort)</a>。</p>
+<p>課程連結： <a href="https://www.udemy.com/course/algorithm-data-structure/">資料結構與演算法(JavaScript)</a>  </p>
 </blockquote>
-<h2 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h2><p>題目出自 Harvard CS50x 課程第三週作業練習，可先看看<a href="https://cs50.harvard.edu/x/2022/psets/3/tideman/">題目說明</a>再往下看。  </p>
-<p>在一般的選舉活動中，通常是採取<strong>相對多數決</strong>或是<strong>絕對多數決</strong>，也就是候選人只要得到一定數目選票即可獲得勝利。然而 <a href="https://en.wikipedia.org/wiki/Ranked_pairs"><strong>Tideman method</strong></a> 是採用完全不同的邏輯。Tideman method 或稱 Ranked pairs 是指在每一張選票上寫上對所有候選人的意向排序，把所有選票上的候選人兩兩互相比較得出一個符合多數人的排序結果，而排名第一的人就是最後的獲勝者。  </p>
-<p>目前這樣簡單的介紹可能還有點抽象，接下來或做個詳細的說明。  </p>
-<h2 id="程式結構及邏輯"><a href="#程式結構及邏輯" class="headerlink" title="程式結構及邏輯"></a>程式結構及邏輯</h2><p>先來看看題目提供的邏輯架構：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cs50.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定義候選人數目為 9 </span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX 9</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 一個 9x9 的表格，每一格紀錄選票排序上，候選人[i] &gt; 候選人[j]的選票有幾張。</span></span><br><span class="line"><span class="type">int</span> preferences[MAX][MAX];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 一個 9x9 的表格，每一格紀錄 boolean 值，說明候選人[i]和候選人[j]之間的箭頭關係是否被鎖定。</span></span><br><span class="line"><span class="type">bool</span> locked[MAX][MAX];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定義新的資料型別 &quot;pair&quot;，這個型別會記錄 winner 和 loser 在 array 裡的 index(integer)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span> winner;</span><br><span class="line">    <span class="type">int</span> loser;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">pair</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Array of candidates</span></span><br><span class="line"><span class="built_in">string</span> candidates[MAX];             <span class="comment">// 一個紀錄所有候選人的 array</span></span><br><span class="line"><span class="built_in">pair</span> pairs[MAX * (MAX - <span class="number">1</span>) / <span class="number">2</span>];    <span class="comment">// 一個紀錄所有 pair 的 array</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> pair_count;</span><br><span class="line"><span class="type">int</span> candidate_count;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Function prototypes</span></span><br><span class="line"><span class="comment">// 作業需要完成的 6 個 function</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">vote</span><span class="params">(<span class="type">int</span> rank, <span class="built_in">string</span> name, <span class="type">int</span> ranks[])</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">record_preferences</span><span class="params">(<span class="type">int</span> ranks[])</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">add_pairs</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">sort_pairs</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">lock_pairs</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">print_winner</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="built_in">string</span> argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 確認 terminal 提供的參數是否正確</span></span><br><span class="line">    <span class="keyword">if</span> (argc &lt; <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Usage: tideman [candidate ...]\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 把 terminal 提供的候選人名字寫進 candidates 列表裡</span></span><br><span class="line">    candidate_count = argc - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (candidate_count &gt; MAX)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Maximum number of candidates is %i\n&quot;</span>, MAX);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        candidates[i] = argv[i + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化 locked 表格，讓每一格都是 false </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            locked[i][j] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    pair_count = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> voter_count = get_int(<span class="string">&quot;Number of voters: &quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 取得每一張選票內容</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; voter_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 定義選票排序 array: ranks[i] 是投票者排序第 i 名的候選人 index</span></span><br><span class="line">        <span class="type">int</span> ranks[candidate_count];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 取得每一個排序的候選人 index</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> name = get_string(<span class="string">&quot;Rank %i: &quot;</span>, j + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (!vote(j, name, ranks))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;Invalid vote.\n&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 將選票結果更新到 preferences 表格</span></span><br><span class="line">        record_preferences(ranks);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    add_pairs();</span><br><span class="line">    sort_pairs();</span><br><span class="line">    lock_pairs();</span><br><span class="line">    print_winner();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>題目要求完成 6 個 function 來執行投票&#x2F;開票作業，接下來會針對每個 function 做詳細說明。  </p>
-<h2 id="vote"><a href="#vote" class="headerlink" title="vote"></a>vote</h2><p>投票者每在選票上填入一個名字就會執行一次，將填入的名字放進紀錄選票的陣列 <code>ranks[]</code> 中。這個函式共引入了 3 個參數：  </p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">vote</span><span class="params">(<span class="type">int</span> rank, <span class="built_in">string</span> name, <span class="type">int</span> ranks[])</span></span><br><span class="line"><span class="type">int</span> rank        <span class="comment">// 目前填入的名字在選票排序的第幾位</span></span><br><span class="line"><span class="built_in">string</span> name     <span class="comment">// 填入的名稱</span></span><br><span class="line"><span class="type">int</span> ranks[]     <span class="comment">// 記錄這張選票所有排序的 array</span></span><br></pre></td></tr></table></figure>
-
-<p>首先，為了排除廢票狀況，要先檢查填入的名字是否存在候選人清單中，如果存在則填入 ranks[] 清單並回傳 <code>true</code>；反之則回傳 <code>false</code>。這邊用到一個 library： <a href="https://manual.cs50.io/3/strcmp">strcmp()</a> 來比對字串是否相同，所以要記得在檔案最上方加入 <code>#include &lt;string.h&gt;</code> 。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Update ranks given a new vote</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">vote</span><span class="params">(<span class="type">int</span> rank, <span class="built_in">string</span> name, <span class="type">int</span> ranks[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Check if vote to person in candidates list</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">strcmp</span>(name, candidates[i]) == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ranks[rank] = i;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="record-preferences"><a href="#record-preferences" class="headerlink" title="record_preferences"></a>record_preferences</h2><p>每填完一張選票，就將這張選票每兩位候選人間的意願關係填入 <code>preferences</code> 表格中。這邊就要先解釋<a href="#%E7%A8%8B%E5%BC%8F%E7%B5%90%E6%A7%8B%E5%8F%8A%E9%82%8F%E8%BC%AF">原始題目line8</a> 的變數 <code>int preferences[MAX][MAX]</code> 了。<code>int</code> 代表這個陣列填入的資料型別是<strong>整數</strong>，後面的 <code>[MAX]</code> 則是代表表格的<strong>列數</strong>和<strong>欄數</strong>，而 MAX 的值在 line5 設定為 9。</p>
-<h3 id="preferences-row-col-二維表格"><a href="#preferences-row-col-二維表格" class="headerlink" title="preferences[row][col] 二維表格"></a>preferences[row][col] 二維表格</h3><p><code>preferences[row][col]</code> 是一個二維陣列，假設 <code>[row]</code> 和 <code>[col]</code> 都是 3 ，表格畫起來如下圖：  </p>
-<div style="max-width: fit-content">
-
-<table>
-<thead>
-<tr>
-<th>candidates[index]</th>
-<th align="center">Alice [0]</th>
-<th align="center">Bob [1]</th>
-<th align="center">Charlie [2]</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Alice [0]</td>
-<td align="center">0</td>
-<td align="center">Alice &gt; Bob 的選票張數</td>
-<td align="center">Alice &gt; Charlie 的選票張數</td>
-</tr>
-<tr>
-<td>Bob [1]</td>
-<td align="center">Bob &gt; Alice 的選票張數</td>
-<td align="center">0</td>
-<td align="center">Bob &gt; Charlie 的選票張數</td>
-</tr>
-<tr>
-<td>Charlie [2]</td>
-<td align="center">Charlie &gt; Alice 的選票張數</td>
-<td align="center">Charlie &gt; Bob 的選票張數</td>
-<td align="center">0</td>
-</tr>
-</tbody></table>
-</div>
-
-<h3 id="選票意向解讀"><a href="#選票意向解讀" class="headerlink" title="選票意向解讀"></a>選票意向解讀</h3><table>
-<thead>
-<tr>
-<th>選票</th>
-<th>說明(比對上圖)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1. Alice<br>2. Charlie<br>3. Bob</td>
-<td>1. Alice 贏過 Bob 和 Charlie，所以 preferences[0][1] 和 preferences[0][2] 各加 1<br>2. Charlie 贏過 Bob，所以 preferences[2][1] 加 1。<br>3. Bob 沒贏過任何人，不對表格做任何改變。</td>
-</tr>
-</tbody></table>
-<hr>
-<p>來看看函式的 prototype：  </p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">record_preferences</span><span class="params">(<span class="type">int</span> ranks[])</span></span><br><span class="line"><span class="type">void</span>         <span class="comment">// 沒有回傳值</span></span><br><span class="line"><span class="type">int</span> ranks[]  <span class="comment">// 使用 candidates[] 的 index 來紀錄選票中候選人排序的陣列</span></span><br></pre></td></tr></table></figure>
-<p>如同上面舉的例子，當完成一張選票 <code>ranks[]</code> 時，依序迭代每個順位的候選人，將他們的比較結果填入 <code> preferences</code> 表格中。<code>i</code> 代表選票的第 i 順位，<code>j</code> 則代表 i 以外的其他候選人。  </p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Update preferences given one voter&#x27;s ranks</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">record_preferences</span><span class="params">(<span class="type">int</span> ranks[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Person of each rank on ballot</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// Plus number of voters who prefer i over j</span></span><br><span class="line">            preferences[ranks[i]][ranks[j]] += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="add-pairs"><a href="#add-pairs" class="headerlink" title="add_pairs"></a>add_pairs</h2><p>在投完所有票及更新 <code>preferences</code> 表格後，從表格中挑出所有獲勝的組合。假設投完票後的意向表格如下：  </p>
-<div style="max-width: fit-content">
-
-<table>
-<thead>
-<tr>
-<th>candidates[index]</th>
-<th align="center">Alice [0]</th>
-<th align="center">Bob [1]</th>
-<th align="center">Charlie [2]</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Alice [0]</td>
-<td align="center">0</td>
-<td align="center">3</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td>Bob [1]</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td>Charlie [2]</td>
-<td align="center">3</td>
-<td align="center">2</td>
-<td align="center">0</td>
-</tr>
-</tbody></table>
-</div>
-
-<p>交叉比對確認兩候選人間的勝敗後，將候選人 <code>index</code> 記錄進 line23 <code>pairs</code> 陣列裡。前面有定義過 (line14-19)， <code>pair</code> 這個型別的陣列裡面會記錄 winner 跟 loser 的 index(要注意先後順序)。<a href="#%E7%A8%8B%E5%BC%8F%E7%B5%90%E6%A7%8B%E5%8F%8A%E9%82%8F%E8%BC%AF"><em>原始題目(行號)</em></a>  </p>
-<p>依照上表範例：  </p>
-<ul>
-<li>Alice 對 Bob 的票數 preferences[0][1] &gt; preferences[1][0]，所以將 <code>&#123;0, 1&#125;</code> 放入 <code>pairs</code> 陣列。  </li>
-<li>Alice 對 Charlie 的票數 preferences[0][2] &lt; preferences[2][0]，所以將 <code>&#123;2, 0&#125;</code> 放入 <code>pairs</code> 陣列。  </li>
-<li>Bob 對 Charlie 的票數 preferences[1][2] &#x3D;&#x3D; preferences[2][1]，沒有勝者，所以不加入 <code>pairs</code>。</li>
-</ul>
-<hr>
-<p>綜上所述， <code>add_pairs</code> 函式只要迭代整個表格找出勝者加入 <code>pairs</code> 即可。特別注意的是，因為我們只要找出勝者，所以不對 <code>if (preferences[i][j] == preferences[j][i])</code> 的情況做任何處理。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Record pairs of candidates where one is preferred over the other</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">add_pairs</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// If one way arrow (i over j)</span></span><br><span class="line">            <span class="keyword">if</span> (preferences[i][j] &gt; preferences[j][i])</span><br><span class="line">            &#123;</span><br><span class="line">                pairs[pair_count].winner = i;</span><br><span class="line">                pairs[pair_count].loser = j;</span><br><span class="line">                pair_count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="sort-pairs-Selection-sort"><a href="#sort-pairs-Selection-sort" class="headerlink" title="sort_pairs (Selection sort)"></a>sort_pairs (Selection sort)</h2><p>Selection sort 的原理是在遍歷剩餘需排序的資料，找到最大(或最小)的一項，然後和需排序資料中的第一個位置交換，最後達到生蜜或降冪的排列。</p>
-<hr>
-<p>題目要求將 <code>pairs</code> 陣列由大到小排列。比大小需要<strong>數值</strong>，但 <code>pairs</code> 陣列紀錄的只是勝者和敗者，我們可以拿獲勝的<strong>力度</strong>來為每對候選人作排序。  </p>
-<p>獲勝的<strong>力度</strong>指的是「<strong>覺得A候選人勝過B候選人的票數</strong>」。舉前面 <a href="#add_pairs">add_pairs範例表格</a>來說， Alice 勝過 Bob 的力度是 3。</p>
-<p>接著，就如同 selection sort 說明一樣，找出 <code>pairs</code> 陣列中最大的 <code>pair strength</code> (preferences[winner][loser])，並和剩餘資料的第一項交換位置，最後完成降冪排列。  </p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">sort_pairs</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Selection sort</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; pair_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Initialize compare bases to pairs[i]</span></span><br><span class="line">        <span class="type">int</span> top_strength = preferences[pairs[i].winner][pairs[i].loser];</span><br><span class="line">        <span class="type">int</span> top_index = i;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Iterate the rest pairs to find top_strength one</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; pair_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (preferences[pairs[j].winner][pairs[j].loser] &gt; top_strength)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// Update compare bases</span></span><br><span class="line">                top_strength = preferences[pairs[j].winner][pairs[j].loser];</span><br><span class="line">                top_index = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Swap pairs[i] if find another one with higher strength</span></span><br><span class="line">        <span class="keyword">if</span> (top_index != i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">pair</span> temp = pairs[i];</span><br><span class="line">            pairs[i] = pairs[top_index];</span><br><span class="line">            pairs[top_index] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="lock-pairs"><a href="#lock-pairs" class="headerlink" title="lock_pairs"></a>lock_pairs</h2><p>這個步驟的目的是為了在所有的 pairs 之間做取捨。如果直接採用所有的 pair，選舉結果可能會出現:<br>A &gt; B 、 B &gt; C 、 C &gt; A 這種找不到最終勝利者的情形。而 lock_pairs 是將 pair_strength 由大到小分別做檢查，如果沒有變成死循環的 pair 就採用(lock)，變成死循環的 pair 就棄用。<br><br></p>
-<blockquote>
-<p>備註：此部分說明參考【<a href="https://gist.github.com/nicknapoli82/6c5a1706489e70342e9a0a635ae738c9">nicknapoli82&#x2F;cs50_Tideman_cycle-explanation.md</a>】  </p>
+<h2 id="演算法"><a href="#演算法" class="headerlink" title="演算法"></a>演算法</h2><h3 id="什麼是演算法？"><a href="#什麼是演算法？" class="headerlink" title="什麼是演算法？"></a>什麼是演算法？</h3><blockquote>
+<p>Algorithms means step-by-step instructions for solving problems. —— CS50x  </p>
 </blockquote>
-<p>舉例來說，現在有的候選人和 sorted pairs 資料如下:  </p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Candidates[<span class="number">4</span>] = [a, b, c, d]</span><br><span class="line">Sorted Pairs = [&#123;d, a&#125;, &#123;a, b&#125;, &#123;b, c&#125;, &#123;c, a&#125;, &#123;d, b&#125;, &#123;d, c&#125;]</span><br></pre></td></tr></table></figure>
-<p>之後將 sorted pairs 依序拿出來做檢查，如果不是死循環則生成排序鏈。<br><code>sorted pairs[0]</code> : d &gt; a ，lock ，排序鏈 <code>d &gt; a</code> 。<br><code>sorted pairs[1]</code> : a &gt; b ，lock ，排序鏈 <code>d &gt; a &gt; b</code> 。<br><code>sorted pairs[2]</code> : b &gt; c ，lock ，排序鏈 <code>d &gt; a &gt; b &gt; c</code> 。<br><code>sorted pairs[3]</code> : c &gt; a ，形成死循環，棄用此 pair，排序鏈維持 <code>d &gt; a &gt; b &gt; c</code> 。<br><code>sorted pairs[4]</code> : d &gt; b ，lock ，排序鏈維持 <code>d &gt; a &gt; b &gt; c</code> 。<br><code>sorted pairs[5]</code> : d &gt; c ，lock ，排序鏈維持 <code>d &gt; a &gt; b &gt; c</code> 。  </p>
-<p>此時，詳細排序鏈應該長這樣：  </p>
-<div style="max-width: 150px">
-
+<p>簡單來說，就是解決一個特定問題的步驟的集合。這個「問題」並不是狹義上的問題，而是一個想要達成的「目標」，而演算法就是達成這個目標所需經歷的過程。  </p>
+<p>以第一週的二分搜尋法舉例，從拿到電話簿到找到電話號碼中間經過的13個步驟，就是所謂的演算法。  </p>
 <table>
 <thead>
 <tr>
-<th align="center"></th>
-<th align="center"></th>
-<th align="center">a</th>
+<th align="center">Input</th>
+<th align="center">Algorithm</th>
+<th align="center">Output</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"></td>
-<td align="center">↗</td>
-<td align="center">↓</td>
-</tr>
-<tr>
-<td align="center">d</td>
-<td align="center">→</td>
-<td align="center">b</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">↘</td>
-<td align="center">↓</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">c</td>
+<td align="center">A phone book</td>
+<td align="center"><img src="/../Blog-image/posts/2022-04-29_pseudocode.webp" alt="pseudocode"></td>
+<td align="center">Find phone number</td>
 </tr>
 </tbody></table>
-</div>
-
-<p>最後寫出的 locked[4][4] 表格如下，有單向箭頭的為 true：  </p>
-<div style="max-width: fit-content">
-
-<table>
-<thead>
-<tr>
-<th>candidate[index]</th>
-<th>a [0]</th>
-<th>b [1]</th>
-<th>c [2]</th>
-<th>d [3]</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>a [0]</td>
-<td>false</td>
-<td>true</td>
-<td>true</td>
-<td>false</td>
-</tr>
-<tr>
-<td>b [1]</td>
-<td>false</td>
-<td>false</td>
-<td>true</td>
-<td>false</td>
-</tr>
-<tr>
-<td>c [2]</td>
-<td>false</td>
-<td>false</td>
-<td>false</td>
-<td>false</td>
-</tr>
-<tr>
-<td>d [3]</td>
-<td>true</td>
-<td>true</td>
-<td>true</td>
-<td>false</td>
-</tr>
-</tbody></table>
-</div>
-
-<hr>
-<p>依照上面的說明，<code>lock_pairs</code> function 的邏輯為：檢查是否有死循環，沒有則為 true。(前面已將整張表格預設為 false，所以如果 <code>locked[winner][loser] = false</code> ，不做任何處理。)  </p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Lock pairs into the candidate graph in order, without creating cycles</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">lock_pairs</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; pair_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> winner = pairs[i].winner;</span><br><span class="line">        <span class="type">int</span> loser = pairs[i].loser;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!cycle_occurred(winner, loser))</span><br><span class="line">        &#123;</span><br><span class="line">            locked[winner][loser] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
 <br>
 
-<p>接下來則是規畫檢查死循環的步驟，新建一個 function <code>cycle_occurred</code>。  </p>
-<p>因為我們是依照 pair_strength 的順序來鎖定的，所以檢查的方式就是把 winner 和 loser 反過來查表，看看會不會和目前已經鎖定的 pairs 形成死循環，如果 <code>locked[loser][winner] == true</code> 就表示造成死循環。  </p>
-<p>另外，前面有提到排序鏈長這樣 <code>d &gt; a &gt; b &gt; c</code> ，但其實它包含了 <code>d &gt; a</code> 、 <code>d &gt; b</code>、 <code>d &gt; c</code> 這三個路線，如下圖:  </p>
-<div style="max-width: 150px">
-
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center"></th>
-<th align="center">a</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-<td align="center">↗</td>
-<td align="center">↓</td>
-</tr>
-<tr>
-<td align="center">d</td>
-<td align="center">→</td>
-<td align="center">b</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">↘</td>
-<td align="center">↓</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">c</td>
-</tr>
-</tbody></table>
-</div>
-
-<p>如果我要確定 <code>d &gt; c</code> 會不會造成死循環，同時也必須要對其他路線做確認，所以使用 for loop 來迭代每個候選人。  </p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Check if cycle occurred</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">cycle_occurred</span><span class="params">(<span class="type">int</span> winner, <span class="type">int</span> loser)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (locked[loser][winner] == <span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (locked[loser][i] &amp;&amp; cycle_occurred(winner, i))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="print-winner"><a href="#print-winner" class="headerlink" title="print_winner"></a>print_winner</h2><p>在完成 <code>lock_pairs</code> 經過步驟後，會完成下面這張表格。要找出最後贏家的辦法，就是確認一個候選人「沒有輸給任何人」，也就是候選人的 loser column 全部為 false，如下表<font color=green><strong>綠字</strong></font>表示：  </p>
-<div style="max-width: fit-content">
-
-<table>
-<thead>
-<tr>
-<th>candidate[index]</th>
-<th>a [0]</th>
-<th>b [1]</th>
-<th>c [2]</th>
-<th>d [3]</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>a [0]</td>
-<td>false</td>
-<td>true</td>
-<td>true</td>
-<td><font color=green><strong>false</strong></font></td>
-</tr>
-<tr>
-<td>b [1]</td>
-<td>false</td>
-<td>false</td>
-<td>true</td>
-<td><font color=green><strong>false</strong></font></td>
-</tr>
-<tr>
-<td>c [2]</td>
-<td>false</td>
-<td>false</td>
-<td>false</td>
-<td><font color=green><strong>false</strong></font></td>
-</tr>
-<tr>
-<td>d [3]</td>
-<td>true</td>
-<td>true</td>
-<td>true</td>
-<td><font color=green><strong>false</strong></font></td>
-</tr>
-</tbody></table>
-</div>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Print the winner of the election</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">print_winner</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> false_count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// Check if candidates[j] has arrow to cadidates[i]</span></span><br><span class="line">            <span class="keyword">if</span> (locked[j][i] == <span class="literal">false</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                false_count++;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// if no arrow to candidates[i], find winner</span></span><br><span class="line">                <span class="keyword">if</span> (false_count == candidate_count)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, candidates[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>而為什麼不用「贏過除了自己的任何人呢」(也就是 candidate[i] row 除了自己全部為 true)？<br>因為我們在一開始就將表格預設為 false ，而<strong>平手</strong>情況也是 false 。向下圖這種情況，會有兩個贏家，而 <code>a &gt; d</code> 或 <code>d &gt; a</code> 都會是 false。</p>
-<div style="max-width: 150px">
-
-<table>
-<thead>
-<tr>
-<th align="center">a</th>
-<th align="center"></th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">||</td>
-<td align="center">↘</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">d</td>
-<td align="center">→</td>
-<td align="center">b</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">↘</td>
-<td align="center">↓</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">c</td>
-</tr>
-</tbody></table>
-</div>
-
-<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>完成版的 code 在<a href="https://gist.github.com/ritachien/e7de2ceccc4b99b665cfe3bbe5336877">這裡</a>。  </p>
-<blockquote>
+<h3 id="如何比較演算法？"><a href="#如何比較演算法？" class="headerlink" title="如何比較演算法？"></a>如何比較演算法？</h3><blockquote>
+<p><strong>Time</strong> and <strong>Space</strong> are the concerns. The less time it takes, the better it is.<br> —— 資料結構與演算法(JavaScript)課程  </p>
 </blockquote>
-<p>這個題目是目前課程作業中最難的一個，光題目的理解就花了很多時間也閱讀很了多資料(遞迴之類的…)，但挑戰不同排序法還是很有趣。在寫這篇題解的過程中也嘗試了不同寫法，發現導致沒有 100% pass 的例外狀況(平手)。整體來說，這是個很考驗邏輯思考的作業!  </p>
-<blockquote>
-<p>相關文章: <a href="https://ritachien.github.io/tags/CS50x-2022/">CS50x(2022)</a>  </p>
-</blockquote>
+<p>解決同一個問題可以有很多種不同的方法，每個方法的效率也不一樣。一個好的演算法，就是能用更有效率的方式解決問題。在電腦科學的世界裡，通常會用兩個面向來衡量演算法的效率：  </p>
+<ol>
+<li><p><strong>時間複雜度(Time Complexity)：</strong> 如果直接為執行過程計時，通常結果會受到多方因素的影響(硬體設備、輸入資料規模…等)，所以直接計時是比較沒有參考價值的。而時間複雜度指的是執行過程中所需經過的「步驟數量」，這個在稍後會有比較詳細的說明。  </p>
+</li>
+<li><p><strong>空間複雜度(Space Complexity)：</strong> 是指一支程式在執行時需要耗費多少的記憶體資源。</p>
+</li>
+</ol>
+<p>有時候我們需要在這兩者之間做取捨。就像我們平常在買電腦時一樣，如果希望電腦跑得快一點，就要多投資在硬體資源上；反之，如果想要節省硬體資源成本，可能就會花較多的時間成本。  </p>
+<h2 id="時間複雜度"><a href="#時間複雜度" class="headerlink" title="時間複雜度"></a>時間複雜度</h2><h3 id="時間複雜度的計算"><a href="#時間複雜度的計算" class="headerlink" title="時間複雜度的計算"></a>時間複雜度的計算</h3><p>前面提到，時間複雜度指的是執行過程中所需經過的「步驟數量」。一個加法、減法、乘法、除法、比較…等都分別算一個步驟，不同規模的輸入資料可能會影響執行步驟的數量。例如：  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> + <span class="number">2</span> + <span class="number">3</span>            --&gt; 經過<span class="number">2</span>個步驟</span><br><span class="line"><span class="number">1</span> + <span class="number">2</span> + <span class="number">3</span> + <span class="number">4</span> + <span class="number">5</span>    --&gt; 經過<span class="number">4</span>個步驟</span><br></pre></td></tr></table></figure>
+
+<p>範例一：等差級數的相加，如果使用 for 迴圈執行。則 <code>step == n</code>。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">addition</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">  <span class="type">int</span> step = <span class="number">0</span>;</span><br><span class="line">  <span class="type">int</span> result = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    result += i;</span><br><span class="line">    step ++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>範例二：等差級數的相加，如果使用梯形的面積公式執行，則 <code>step == 3</code>。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">addition</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">  <span class="type">int</span> result = (<span class="number">1</span> + n) * n / <span class="number">2</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>範例三：雙重迴圈執行步驟，則 <code>step == n 平方</code>。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">addition</span><span class="params">(<span class="type">int</span> n)</span> &#123;  </span><br><span class="line">  <span class="type">int</span> step = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">      step++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>從上面的例子可以看出，時間複雜度常常跟 input 資料的規模 <code>n</code> 有一定的關聯性。通常 <code>n</code> 越大，需要執行的步驟也越多。</p>
+<h3 id="時間複雜度的表示方式"><a href="#時間複雜度的表示方式" class="headerlink" title="時間複雜度的表示方式"></a>時間複雜度的表示方式</h3><p>一個演算法的時間複雜度有三種：  </p>
+<ol>
+<li><strong>Big O notation：</strong> 指「最壞」情況下需要經過的步驟數量。  </li>
+<li><strong>Big Ω notation：</strong> 指「最好」情況下需要經過的步驟數量。  </li>
+<li><strong>Big Θ notation：</strong> 表示「最好」和「最壞」相等的情況。</li>
+</ol>
+<p>三種複雜度中，最需要考量的是 Big O notation ，因為它是衡量一個演算法「最大成本」的基準。常見的時間複雜度如下表：<code>O(1)</code>、<code>O(log n)</code>、<code>O(n)</code>、<code>O(nlog n)</code>、<code>O(n^2)</code>。其中， <code>n</code> 指的是資料規模，<code>()</code> 中則表示步驟數量。  </p>
+<p>在表示步驟數量時有幾個慣例：  </p>
+<ol>
+<li>Constant doesn’t matter (例如：如果執行步驟為 <code>O(3n)</code> 會直接用 <code>O(n)</code> 表示。)  </li>
+<li>Small Terms don’t matter (例如：如果執行步驟為 <code>O(n^2+3n+1)</code> 會直接用 <code>O(n^2)</code> 表示。)  </li>
+<li>Logarithm Base doesn’t matter (例如：如果執行步驟為 <code>O(log2 n)</code> 會直接用 <code>O(log n)</code> 表示。)</li>
+</ol>
+<p>其原因為，如果資料量大到一定程度，以上 3 個條件對步驟數量的影響會大幅度縮小。用以下表格例子，在 <code>n</code> 和 <code>n + 1500</code> 的結果看來，當資料規模逐漸變大，除了影響最大的 <code>n</code> 以外，<code>1500</code> 的影響力在逐漸縮小。<br><img src="/../Blog-image/posts/2022-05-26_TimeComplexity.webp" alt="time complexity"></p>
+<h2 id="演算法的優化"><a href="#演算法的優化" class="headerlink" title="演算法的優化"></a>演算法的優化</h2><p>由前面的說明可以看出，一個演算法的設計對執行效率有很大的影響。  </p>
+<p>拿前面的等差數列相加為例：如果使用 for 迴圈執行，則 <code>step == n</code>；如果使用梯形的面積公式執行，則 <code>step == 3</code>。</p>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th align="center">Step</th>
+<th align="center">Big O notation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>for 迴圈</td>
+<td align="center">n</td>
+<td align="center">O(n)</td>
+</tr>
+<tr>
+<td>梯形公式</td>
+<td align="center">3</td>
+<td align="center">O(1)</td>
+</tr>
+</tbody></table>
+<p>隨著資料量的變大， for 迴圈需要花費的時間越來越長，而梯形公式則可以維持同樣的計算時間。因此我們可以說，在計算等差數列相加時，梯形公式是一個較好的演算法。  </p>
+<p>當我們想優化演算法時，就要盡可能地將 Big O notation 降低，以達到更好的效率。  </p>
 ]]></content>
       <categories>
         <category>學習紀錄 - CS50</category>
       </categories>
       <tags>
         <tag>CS50x(2022)</tag>
+        <tag>Algorithms</tag>
       </tags>
   </entry>
   <entry>

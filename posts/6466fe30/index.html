@@ -22,28 +22,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="基本設定都完成後就可以來寫部落格了! 在正式開始前，如果能對 Hexo 的資料夾架構及 Front-matter 有點基本的認識，會對後續的操作很有幫助。">
+    <meta name="description" content="在上 CS50x 第三週的演算法時，總覺得對「時間複雜度」的理解不夠清楚，因此另外找了課程做補充。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 編輯文章">
-<meta property="og:url" content="https://ritachien.github.io/posts/978c1db/">
+<meta property="og:title" content="【CS50x(2022)】Complexity and Big O Notation">
+<meta property="og:url" content="https://ritachien.github.io/posts/6466fe30/">
 <meta property="og:site_name" content="Rita 的學習筆記">
-<meta property="og:description" content="基本設定都完成後就可以來寫部落格了! 在正式開始前，如果能對 Hexo 的資料夾架構及 Front-matter 有點基本的認識，會對後續的操作很有幫助。">
+<meta property="og:description" content="在上 CS50x 第三週的演算法時，總覺得對「時間複雜度」的理解不夠清楚，因此另外找了課程做補充。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2021-12-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-23T16:00:00.000Z">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-04-29_pseudocode.webp">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-05-26_TimeComplexity.webp">
+<meta property="article:published_time" content="2022-05-26T07:15:50.000Z">
+<meta property="article:modified_time" content="2022-05-26T07:41:31.729Z">
 <meta property="article:author" content="Rita Chien">
-<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="CS50x(2022)">
+<meta property="article:tag" content="Algorithms">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ritachien.github.io/Blog-image/posts/2022-04-29_pseudocode.webp">
 
 
-<link rel="canonical" href="https://ritachien.github.io/posts/978c1db/">
+<link rel="canonical" href="https://ritachien.github.io/posts/6466fe30/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/978c1db/","path":"posts/978c1db/","title":"Hexo 編輯文章"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/6466fe30/","path":"posts/6466fe30/","title":"【CS50x(2022)】Complexity and Big O Notation"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hexo 編輯文章 | Rita 的學習筆記</title>
+<title>【CS50x(2022)】Complexity and Big O Notation | Rita 的學習筆記</title>
   
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-215689852-1","only_pageview":true}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
@@ -156,7 +160,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-%E8%B3%87%E6%96%99%E5%A4%BE%E6%9E%B6%E6%A7%8B"><span class="nav-number">1.</span> <span class="nav-text">Hexo 資料夾架構</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Front-matter"><span class="nav-number">2.</span> <span class="nav-text">Front-matter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8D%89%E7%A8%BF%E7%B7%A8%E8%BC%AF"><span class="nav-number">3.</span> <span class="nav-text">草稿編輯</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E8%8D%89%E7%A8%BF"><span class="nav-number">3.1.</span> <span class="nav-text">新增草稿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8D%89%E7%A8%BF%E8%BD%89%E6%96%87%E7%AB%A0"><span class="nav-number">3.2.</span> <span class="nav-text">草稿轉文章</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF"><span class="nav-number">4.</span> <span class="nav-text">文章編輯</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="nav-number">4.1.</span> <span class="nav-text">新建文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%AA%E9%99%A4%E8%B2%BC%E6%96%87"><span class="nav-number">4.2.</span> <span class="nav-text">刪除貼文</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A0%81%E9%9D%A2%E7%B7%A8%E8%BC%AF"><span class="nav-number">5.</span> <span class="nav-text">頁面編輯</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E9%A0%81%E9%9D%A2"><span class="nav-number">5.1.</span> <span class="nav-text">新建頁面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E7%99%BC%E5%B8%83"><span class="nav-number">6.</span> <span class="nav-text">文章發布</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%94%E7%AE%97%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">演算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF%E6%BC%94%E7%AE%97%E6%B3%95%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">什麼是演算法？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%AF%94%E8%BC%83%E6%BC%94%E7%AE%97%E6%B3%95%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">如何比較演算法？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%82%E9%96%93%E8%A4%87%E9%9B%9C%E5%BA%A6"><span class="nav-number">2.</span> <span class="nav-text">時間複雜度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%82%E9%96%93%E8%A4%87%E9%9B%9C%E5%BA%A6%E7%9A%84%E8%A8%88%E7%AE%97"><span class="nav-number">2.1.</span> <span class="nav-text">時間複雜度的計算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%82%E9%96%93%E8%A4%87%E9%9B%9C%E5%BA%A6%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">時間複雜度的表示方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%94%E7%AE%97%E6%B3%95%E7%9A%84%E5%84%AA%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">演算法的優化</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -231,7 +235,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/978c1db/">
+    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/6466fe30/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
@@ -244,12 +248,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Hexo 編輯文章 | Rita 的學習筆記">
+      <meta itemprop="name" content="【CS50x(2022)】Complexity and Big O Notation | Rita 的學習筆記">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hexo 編輯文章
+          【CS50x(2022)】Complexity and Big O Notation
         </h1>
 
         <div class="post-meta-container">
@@ -259,8 +263,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2021-12-24 00:00:00" itemprop="dateCreated datePublished" datetime="2021-12-24T00:00:00+08:00">2021-12-24</time>
+      <time title="創建時間：2022-05-26 15:15:50 / 修改時間：15:41:31" itemprop="dateCreated datePublished" datetime="2022-05-26T15:15:50+08:00">2022-05-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -268,7 +273,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+          <a href="/categories/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84-CS50/" itemprop="url" rel="index"><span itemprop="name">學習紀錄 - CS50</span></a>
         </span>
     </span>
 
@@ -278,7 +283,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.7k</span>
+      <span>2.1k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -296,44 +301,96 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>基本設定都完成後就可以來寫部落格了! 在正式開始前，如果能對 Hexo 的資料夾架構及 Front-matter 有點基本的認識，會對後續的操作很有幫助。</p>
+        <p>在上 CS50x 第三週的演算法時，總覺得對「時間複雜度」的理解不夠清楚，因此另外找了課程做補充。  </p>
 <span id="more"></span>
 
-<h2 id="Hexo-資料夾架構"><a href="#Hexo-資料夾架構" class="headerlink" title="Hexo 資料夾架構"></a>Hexo 資料夾架構</h2><p>之前在 <code>hexo init</code> 之後，根目錄資料夾會多了一些預設檔案，接下來會對其中比較重要的做簡單說明。  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">root</span><br><span class="line">├── .deploy_git             # 內含已部署到 Github Repository 的所有檔案</span><br><span class="line">├── public                  # hexo g 生成靜態網站檔</span><br><span class="line">├── scaffolds               # 樣板資料夾(hexo new 會從這裡抓樣板，也可以自己新建樣板)</span><br><span class="line">|   ├── draft.md            # 草稿樣板</span><br><span class="line">|   ├── page.md             # 頁面樣板</span><br><span class="line">|   └── post.md             # 文章樣板(預設)</span><br><span class="line">├── source                  # 存放原始檔案的地方</span><br><span class="line">|   ├── _data               # 存放自定義設定原始碼的地方</span><br><span class="line">|   ├── _drafts             # 草稿資料夾</span><br><span class="line">|   └── _posts              # 文章資料夾</span><br><span class="line">├── themes                  # 各種主題資料夾</span><br><span class="line">|   └── landscape           # 預設主題</span><br><span class="line">|       └── _config.yml     # 主題樣式設定檔</span><br><span class="line">├── .gitignore              # 設定不想被加入版本控制或是上傳到 GitHub 的資料夾或檔案</span><br><span class="line">└── _config.yml             # Hexo 基本設定</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>_drafts</code> 草稿資料夾預設會被 generate 、server 和 deploy 指令略過(<code>_post</code> 以外以”_”開頭的資料夾都是)。如果想在 localhost 先預覽的話，可以在 <code>root\_config.yml</code> 裡把 <code>render_drafts: false(預設)</code> 改為 true。</li>
-</ul>
-<h2 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h2><p>Front-matter 是檔案最上方以 — 分隔的區域，用於指定個別檔案的變數。可以每篇文章個別設定，也可以預先在樣板中建立套用內容。常用的變數如下:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">title</span>        <span class="comment"># 標題(預設為檔案名稱)</span></span><br><span class="line"><span class="string">date</span>         <span class="comment"># 建立日期(預設為檔案建立日期)</span></span><br><span class="line"><span class="string">updated</span>      <span class="comment"># 更新日期(預設為檔案更新日期)</span></span><br><span class="line"><span class="string">comments</span>     <span class="comment"># 留言功能(預設 true :開啟)</span></span><br><span class="line"><span class="string">tags</span>         <span class="comment"># 標籤</span></span><br><span class="line"><span class="string">categories</span>   <span class="comment"># 分類</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>當因為重新部署或其他原因，導致在沒有修改文章情況下顯示文章更新，可以手動修改 <code>updated</code> 值，讓他跟建立日期相同即可。  </li>
-<li>多個標籤&#x2F;多個分類寫法不同，可參考<a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io/zh-tw/docs/front-matter#%E5%88%86%E9%A1%9E%E5%92%8C%E6%A8%99%E7%B1%A4">官方說明</a>。</li>
-</ul>
-<h2 id="草稿編輯"><a href="#草稿編輯" class="headerlink" title="草稿編輯"></a>草稿編輯</h2><h3 id="新增草稿"><a href="#新增草稿" class="headerlink" title="新增草稿"></a>新增草稿</h3><p>草稿會建立在 <code>root\source\_drafts</code> 資料夾內。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft 文章名稱</span><br></pre></td></tr></table></figure>
-<h3 id="草稿轉文章"><a href="#草稿轉文章" class="headerlink" title="草稿轉文章"></a>草稿轉文章</h3><p>指令會把檔案從 <code>_drafts</code> 移至 <code>_posts</code> 資料夾內，也可以自己手動移動。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo publish draft 文章名稱</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>課程連結： <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.udemy.com/course/algorithm-data-structure/">資料結構與演算法(JavaScript)</a>  </p>
+</blockquote>
+<h2 id="演算法"><a href="#演算法" class="headerlink" title="演算法"></a>演算法</h2><h3 id="什麼是演算法？"><a href="#什麼是演算法？" class="headerlink" title="什麼是演算法？"></a>什麼是演算法？</h3><blockquote>
+<p>Algorithms means step-by-step instructions for solving problems. —— CS50x  </p>
+</blockquote>
+<p>簡單來說，就是解決一個特定問題的步驟的集合。這個「問題」並不是狹義上的問題，而是一個想要達成的「目標」，而演算法就是達成這個目標所需經歷的過程。  </p>
+<p>以第一週的二分搜尋法舉例，從拿到電話簿到找到電話號碼中間經過的13個步驟，就是所謂的演算法。  </p>
+<table>
+<thead>
+<tr>
+<th align="center">Input</th>
+<th align="center">Algorithm</th>
+<th align="center">Output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">A phone book</td>
+<td align="center"><img src="/../Blog-image/posts/2022-04-29_pseudocode.webp" alt="pseudocode"></td>
+<td align="center">Find phone number</td>
+</tr>
+</tbody></table>
+<br>
+<br>
 
-<h2 id="文章編輯"><a href="#文章編輯" class="headerlink" title="文章編輯"></a>文章編輯</h2><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>會建立在 <code>root\source\_posts</code> 資料夾內。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new 文章名稱         <span class="comment"># 預設抓取 post 樣板</span></span><br></pre></td></tr></table></figure>
-<h3 id="刪除貼文"><a href="#刪除貼文" class="headerlink" title="刪除貼文"></a>刪除貼文</h3><p>直接從 <code>root\source</code> 資料夾刪除本地檔案，清除靜態檔再重新上傳即可。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<h2 id="頁面編輯"><a href="#頁面編輯" class="headerlink" title="頁面編輯"></a>頁面編輯</h2><p>頁面和文章不同，是指每個主題 menu 項目的頁面。如果有開啟 menu 項目卻沒有預設頁面的情況下，會被導向 404 畫面。常用的幾個頁面如下:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">about</span>         <span class="comment"># 關於我(通常會寫網站介紹或作者介紹)</span></span><br><span class="line"><span class="string">archives</span>      <span class="comment"># 歸檔(依發布日期把所有文章排序)</span></span><br><span class="line"><span class="string">categories</span>    <span class="comment"># 分類(會依每篇文章 Front-matter 裡的分類建立分類目錄-有層級)</span></span><br><span class="line"><span class="string">tags</span>          <span class="comment"># 標籤(會依每篇文章 Front-matter 裡的分類建立標籤目錄-無層級)</span></span><br><span class="line"><span class="string">link</span>          <span class="comment"># 對外連結(通常是推薦部落格或網站的連結)</span></span><br></pre></td></tr></table></figure>
+<h3 id="如何比較演算法？"><a href="#如何比較演算法？" class="headerlink" title="如何比較演算法？"></a>如何比較演算法？</h3><blockquote>
+<p><strong>Time</strong> and <strong>Space</strong> are the concerns. The less time it takes, the better it is.<br> —— 資料結構與演算法(JavaScript)課程  </p>
+</blockquote>
+<p>解決同一個問題可以有很多種不同的方法，每個方法的效率也不一樣。一個好的演算法，就是能用更有效率的方式解決問題。在電腦科學的世界裡，通常會用兩個面向來衡量演算法的效率：  </p>
+<ol>
+<li><p><strong>時間複雜度(Time Complexity)：</strong> 如果直接為執行過程計時，通常結果會受到多方因素的影響(硬體設備、輸入資料規模…等)，所以直接計時是比較沒有參考價值的。而時間複雜度指的是執行過程中所需經過的「步驟數量」，這個在稍後會有比較詳細的說明。  </p>
+</li>
+<li><p><strong>空間複雜度(Space Complexity)：</strong> 是指一支程式在執行時需要耗費多少的記憶體資源。</p>
+</li>
+</ol>
+<p>有時候我們需要在這兩者之間做取捨。就像我們平常在買電腦時一樣，如果希望電腦跑得快一點，就要多投資在硬體資源上；反之，如果想要節省硬體資源成本，可能就會花較多的時間成本。  </p>
+<h2 id="時間複雜度"><a href="#時間複雜度" class="headerlink" title="時間複雜度"></a>時間複雜度</h2><h3 id="時間複雜度的計算"><a href="#時間複雜度的計算" class="headerlink" title="時間複雜度的計算"></a>時間複雜度的計算</h3><p>前面提到，時間複雜度指的是執行過程中所需經過的「步驟數量」。一個加法、減法、乘法、除法、比較…等都分別算一個步驟，不同規模的輸入資料可能會影響執行步驟的數量。例如：  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + <span class="number">2</span> + <span class="number">3</span>            --&gt; 經過<span class="number">2</span>個步驟</span><br><span class="line"><span class="number">1</span> + <span class="number">2</span> + <span class="number">3</span> + <span class="number">4</span> + <span class="number">5</span>    --&gt; 經過<span class="number">4</span>個步驟</span><br></pre></td></tr></table></figure>
 
-<h3 id="新建頁面"><a href="#新建頁面" class="headerlink" title="新建頁面"></a>新建頁面</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page 頁面名稱</span><br></pre></td></tr></table></figure>
-<ul>
-<li>頁面通常不需要開啟留言功能，所以在新建時要記得將 Front-matter 的 <code>comments</code> 值改為 false。</li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2021-12-14 18:33:37</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+<p>範例一：等差級數的相加，如果使用 for 迴圈執行。則 <code>step == n</code>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">addition</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">  <span class="type">int</span> step = <span class="number">0</span>;</span><br><span class="line">  <span class="type">int</span> result = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    result += i;</span><br><span class="line">    step ++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2021-12-14 18:34:46</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line"><span class="section">comments: false</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>新建頁面會新建一個 <code>index</code> 檔案，放在”頁面名稱”資料夾裡。</li>
-</ul>
-<h2 id="文章發布"><a href="#文章發布" class="headerlink" title="文章發布"></a>文章發布</h2><p>同之前的部署指令。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>範例二：等差級數的相加，如果使用梯形的面積公式執行，則 <code>step == 3</code>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">addition</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">  <span class="type">int</span> result = (<span class="number">1</span> + n) * n / <span class="number">2</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>範例三：雙重迴圈執行步驟，則 <code>step == n 平方</code>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">addition</span><span class="params">(<span class="type">int</span> n)</span> &#123;  </span><br><span class="line">  <span class="type">int</span> step = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">      step++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>從上面的例子可以看出，時間複雜度常常跟 input 資料的規模 <code>n</code> 有一定的關聯性。通常 <code>n</code> 越大，需要執行的步驟也越多。</p>
+<h3 id="時間複雜度的表示方式"><a href="#時間複雜度的表示方式" class="headerlink" title="時間複雜度的表示方式"></a>時間複雜度的表示方式</h3><p>一個演算法的時間複雜度有三種：  </p>
+<ol>
+<li><strong>Big O notation：</strong> 指「最壞」情況下需要經過的步驟數量。  </li>
+<li><strong>Big Ω notation：</strong> 指「最好」情況下需要經過的步驟數量。  </li>
+<li><strong>Big Θ notation：</strong> 表示「最好」和「最壞」相等的情況。</li>
+</ol>
+<p>三種複雜度中，最需要考量的是 Big O notation ，因為它是衡量一個演算法「最大成本」的基準。常見的時間複雜度如下表：<code>O(1)</code>、<code>O(log n)</code>、<code>O(n)</code>、<code>O(nlog n)</code>、<code>O(n^2)</code>。其中， <code>n</code> 指的是資料規模，<code>()</code> 中則表示步驟數量。  </p>
+<p>在表示步驟數量時有幾個慣例：  </p>
+<ol>
+<li>Constant doesn’t matter (例如：如果執行步驟為 <code>O(3n)</code> 會直接用 <code>O(n)</code> 表示。)  </li>
+<li>Small Terms don’t matter (例如：如果執行步驟為 <code>O(n^2+3n+1)</code> 會直接用 <code>O(n^2)</code> 表示。)  </li>
+<li>Logarithm Base doesn’t matter (例如：如果執行步驟為 <code>O(log2 n)</code> 會直接用 <code>O(log n)</code> 表示。)</li>
+</ol>
+<p>其原因為，如果資料量大到一定程度，以上 3 個條件對步驟數量的影響會大幅度縮小。用以下表格例子，在 <code>n</code> 和 <code>n + 1500</code> 的結果看來，當資料規模逐漸變大，除了影響最大的 <code>n</code> 以外，<code>1500</code> 的影響力在逐漸縮小。<br><img src="/../Blog-image/posts/2022-05-26_TimeComplexity.webp" alt="time complexity"></p>
+<h2 id="演算法的優化"><a href="#演算法的優化" class="headerlink" title="演算法的優化"></a>演算法的優化</h2><p>由前面的說明可以看出，一個演算法的設計對執行效率有很大的影響。  </p>
+<p>拿前面的等差數列相加為例：如果使用 for 迴圈執行，則 <code>step == n</code>；如果使用梯形的面積公式執行，則 <code>step == 3</code>。</p>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th align="center">Step</th>
+<th align="center">Big O notation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>for 迴圈</td>
+<td align="center">n</td>
+<td align="center">O(n)</td>
+</tr>
+<tr>
+<td>梯形公式</td>
+<td align="center">3</td>
+<td align="center">O(1)</td>
+</tr>
+</tbody></table>
+<p>隨著資料量的變大， for 迴圈需要花費的時間越來越長，而梯形公式則可以維持同樣的計算時間。因此我們可以說，在計算等差數列相加時，梯形公式是一個較好的演算法。  </p>
+<p>當我們想優化演算法時，就要盡可能地將 Big O notation 降低，以達到更好的效率。  </p>
+
     </div>
 
     
@@ -359,7 +416,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://ritachien.github.io/posts/978c1db/" title="Hexo 編輯文章">https://ritachien.github.io/posts/978c1db/</a>
+      <a href="https://ritachien.github.io/posts/6466fe30/" title="【CS50x(2022)】Complexity and Big O Notation">https://ritachien.github.io/posts/6466fe30/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -368,21 +425,19 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+              <a href="/tags/CS50x-2022/" rel="tag"><i class="fa fa-tag"></i> CS50x(2022)</a>
+              <a href="/tags/Algorithms/" rel="tag"><i class="fa fa-tag"></i> Algorithms</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/a970120e/" rel="prev" title="Hexo 基本設定">
-                  <i class="fa fa-chevron-left"></i> Hexo 基本設定
+                <a href="/posts/d7ed27d2/" rel="prev" title="【CS50x(2022)】ProblemSet3 - Tideman 題解(Selection sort)">
+                  <i class="fa fa-chevron-left"></i> 【CS50x(2022)】ProblemSet3 - Tideman 題解(Selection sort)
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/5959db4f/" rel="next" title="有效率地猜中數字">
-                  有效率地猜中數字 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -469,7 +524,7 @@ setInterval("createtime()",250);
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
