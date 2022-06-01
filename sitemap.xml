@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ritachien.github.io/posts/6adb515e/</loc>
+    
+    <lastmod>2022-06-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ritachien.github.io/posts/800dd5f5/</loc>
     
     <lastmod>2022-05-27</lastmod>
@@ -110,15 +119,6 @@
   </url>
   
   <url>
-    <loc>https://ritachien.github.io/posts/70fc7e3d/</loc>
-    
-    <lastmod>2022-01-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ritachien.github.io/posts/d81b71f/</loc>
     
     <lastmod>2022-01-30</lastmod>
@@ -138,6 +138,15 @@
   
   <url>
     <loc>https://ritachien.github.io/about/</loc>
+    
+    <lastmod>2022-01-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ritachien.github.io/posts/70fc7e3d/</loc>
     
     <lastmod>2022-01-29</lastmod>
     
@@ -173,18 +182,9 @@
   </url>
   
   <url>
-    <loc>https://ritachien.github.io/posts/d403fec1/</loc>
-    
-    <lastmod>2022-01-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ritachien.github.io/posts/2fe737b2/</loc>
     
-    <lastmod>2022-01-08</lastmod>
+    <lastmod>2022-01-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -263,6 +263,15 @@
   </url>
   
   <url>
+    <loc>https://ritachien.github.io/posts/d403fec1/</loc>
+    
+    <lastmod>2021-12-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ritachien.github.io/tags/</loc>
     
     <lastmod>2021-12-15</lastmod>
@@ -301,7 +310,7 @@
 
   <url>
     <loc>https://ritachien.github.io/</loc>
-    <lastmod>2022-05-27</lastmod>
+    <lastmod>2022-06-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
