@@ -6,7 +6,6 @@
 <meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="null//null" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="apple-touch-icon" sizes="180x180" href="/../Blog-image/config/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/../Blog-image/config/favicon-32x32.png">
@@ -20,7 +19,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="前言隨著使用 Git 一段時間了，一開始一頭霧水的操作也比較有概念了，是時候整理筆記了!當然，為了訓練自己盡快習慣命令列介面，操作過程中全部使用命令列介面(真的不習慣的人還是有圖形化介面可以用)，常用指令可以參考 Terminal 常用指令。">
 <meta property="og:type" content="article">
@@ -32,7 +31,7 @@
 <meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-02_gitLog.webp">
 <meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-02_gitStatus.webp">
 <meta property="article:published_time" content="2022-06-01T16:31:59.000Z">
-<meta property="article:modified_time" content="2022-06-02T03:17:38.491Z">
+<meta property="article:modified_time" content="2022-06-02T12:52:03.347Z">
 <meta property="article:author" content="Rita Chien">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -159,7 +158,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E5%AE%89%E8%A3%9D%E5%8F%8A%E8%A8%AD%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">Git 安裝及設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%BA%E5%B0%88%E6%A1%88%E5%BB%BA%E7%AB%8B-Git-repository"><span class="nav-number">3.</span> <span class="nav-text">為專案建立 Git repository</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-commit%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">什麼是 commit？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-status-%E8%AA%AA%E6%98%8E"><span class="nav-number">5.</span> <span class="nav-text">Git status 說明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%A8%AE-status"><span class="nav-number">5.1.</span> <span class="nav-text">三種 status</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-status-%E6%B8%85%E5%96%AE"><span class="nav-number">5.2.</span> <span class="nav-text">git status 清單</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B-commit-add-amp-commit"><span class="nav-number">6.</span> <span class="nav-text">建立 commit (add &amp; commit)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-add-%E6%8C%87%E4%BB%A4"><span class="nav-number">6.1.</span> <span class="nav-text">git add 指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-commit-m-%E6%8C%87%E4%BB%A4"><span class="nav-number">6.2.</span> <span class="nav-text">git commit -m 指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E6%8C%87%E4%BB%A4%E7%B7%B4%E7%BF%92"><span class="nav-number">7.</span> <span class="nav-text">Git 指令練習</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E5%AE%89%E8%A3%9D%E5%8F%8A%E8%A8%AD%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">Git 安裝及設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%BA%E5%B0%88%E6%A1%88%E5%BB%BA%E7%AB%8B-Git-repository"><span class="nav-number">3.</span> <span class="nav-text">為專案建立 Git repository</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-commit%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">什麼是 commit？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-status-%E8%AA%AA%E6%98%8E"><span class="nav-number">5.</span> <span class="nav-text">Git status 說明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%A8%AE-status"><span class="nav-number">5.1.</span> <span class="nav-text">三種 status</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-status-%E6%8C%87%E4%BB%A4"><span class="nav-number">5.2.</span> <span class="nav-text">git status 指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B-commit-add-amp-commit"><span class="nav-number">6.</span> <span class="nav-text">建立 commit (add &amp; commit)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-add-%E6%8C%87%E4%BB%A4"><span class="nav-number">6.1.</span> <span class="nav-text">git add 指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-commit-m-%E6%8C%87%E4%BB%A4"><span class="nav-number">6.2.</span> <span class="nav-text">git commit -m 指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%8A%E6%9B%B4%E9%A0%90%E8%A8%AD%E6%96%87%E5%AD%97%E7%B7%A8%E8%BC%AF%E5%99%A8"><span class="nav-number">6.3.</span> <span class="nav-text">變更預設文字編輯器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E6%8C%87%E4%BB%A4%E7%B7%B4%E7%BF%92"><span class="nav-number">7.</span> <span class="nav-text">Git 指令練習</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -174,7 +173,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -264,7 +263,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2022-06-02 00:31:59 / 修改時間：11:17:38" itemprop="dateCreated datePublished" datetime="2022-06-02T00:31:59+08:00">2022-06-02</time>
+      <time title="創建時間：2022-06-02 00:31:59 / 修改時間：20:52:03" itemprop="dateCreated datePublished" datetime="2022-06-02T00:31:59+08:00">2022-06-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -282,7 +281,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>4k</span>
+      <span>4.1k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -351,7 +350,7 @@
 <p>不同的檔案可能處於不同的狀態，可以用以下指令來查看專案中檔案處於哪種狀態。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
 
-<h3 id="git-status-清單"><a href="#git-status-清單" class="headerlink" title="git status 清單"></a>git status 清單</h3><p>執行 <code>git status</code> 指令後會列出尚未進行快照的檔案清單，並分成三個部分(有內容的才會顯示) ——  </p>
+<h3 id="git-status-指令"><a href="#git-status-指令" class="headerlink" title="git status 指令"></a>git status 指令</h3><p>執行 <code>git status</code> 指令後會列出尚未進行快照的檔案清單，並分成三個部分(有內容的才會顯示) ——  </p>
 <ol>
 <li>Changes to be committed：即已經用 <code>git add</code> 加入等待 commit 的檔案清單。  </li>
 <li>Changes not staged for commit：即已追蹤的檔案(以前 commit 過)，目前編輯中，還沒使用 <code>git add</code> 改變狀態的清單。  </li>
@@ -373,6 +372,7 @@
 
 <p>加入 <code>-m</code> 這個參數，可以讓我們在進行 commit 指令的同時，直接加入「單行」的 commit message ，不會另外跳出 Vim 介面來進行編輯。  </p>
 <p>這時，如果我們執行 <code>git log</code> 查看版本紀錄，就會發現多了一筆最新加入的 commit 版本了！  </p>
+<h3 id="變更預設文字編輯器"><a href="#變更預設文字編輯器" class="headerlink" title="變更預設文字編輯器"></a>變更預設文字編輯器</h3><p>如前面說明提到，使用  <code>git commit</code> 指令會跳出當初在安裝 Git 時選定的文字編輯器(預設是 Vim)。如果想變更成其他文字編輯器，可以到 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://git-scm.com/book/en/v2/Appendix-C%3A-Git-Commands-Setup-and-Config">Github 官方文件</a>找到想使用的編輯器，並在命令列介面輸入右邊提供的指令即可。  </p>
 <h2 id="Git-指令練習"><a href="#Git-指令練習" class="headerlink" title="Git 指令練習"></a>Git 指令練習</h2><blockquote>
 <p>練習題目：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.notion.so/Committing-Basics-Exercise-3dc1ef1873ce45e68cedd2265710d7d8">題目內容</a><br>題目來源：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.udemy.com/course/git-and-github-bootcamp/">The Git &amp; Github Bootcamp  ——Colt Steele</a>  </p>
 </blockquote>
@@ -464,9 +464,6 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/77235ab3/" rel="next" title="commit message">
-                  commit message <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -499,7 +496,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">84k</span>
+    <span title="總字數">85k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
@@ -553,7 +550,7 @@ setInterval("createtime()",250);
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.1/es5/tex-mml-chtml.js","integrity":"sha256-hlC2uSQYTmPsrzGZTEQEg9PZ1a/+SV6VBCTclohf2og="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
