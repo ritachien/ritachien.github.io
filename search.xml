@@ -354,8 +354,8 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>Blog</tag>
+        <tag>Hexo</tag>
         <tag>Github</tag>
       </tags>
   </entry>
@@ -398,8 +398,8 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>Blog</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -448,6 +448,79 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有效率地猜中數字</title>
+    <url>/posts/5959db4f/</url>
+    <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期一作業<br>這是第一個讓我覺得”卡卡”的題目，也是一個讓我在寫出來後深刻認知到: “<strong>想不到解決問題的方法，會寫程式也沒用</strong>“的題目。</p>
+<span id="more"></span>
+<p>藉著記錄解題的過程，把當初解決問題的方法和思考方式寫下來，達成再次深入複習的目的。</p>
+<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
+<li>Math.random() 會回傳一個偽隨機小數介於0到1之間(包含0，不包含1)  </li>
+<li>Math.floor() 會回傳小於等於所給數字的最大整數(無條件捨去)。  </li>
+<li>while 迴圈  </li>
+<li>if statement</li>
+</ol>
+<h2 id="基本題"><a href="#基本題" class="headerlink" title="基本題"></a>基本題</h2><h3 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h3><ol>
+<li>指定介於 1-100 之間的數字，存在 <code>answer</code> 變數裡  </li>
+<li>設定一個 <code>guess</code> 變數，代表挑戰者 (電腦) 猜的數字  </li>
+<li>電腦可重覆「猜數字」，比對 <code>guess</code> 和 <code>answer</code>，判斷太大或太小  </li>
+<li>若兩者相等（猜對）則結束遊戲，且結束時須計算電腦猜了幾次</li>
+</ol>
+<h3 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h3><p>使用 Math.random() 和 Math.floor() 指定一個介於 1-100 之間的數字，存在 <code>answer</code> 變數裡。</p>
+<blockquote>
+<p>原本想要直接用 Math.ceil() 無條件進位，但後來發現 Math.random() 有可能產生 “0”。所以如果直接用 Math.ceil() 可能會發生 <code>guess === 0</code> 的問題(不符合猜數範圍)。  </p>
+</blockquote>
+<p>先用 Math.random() * 100 取得一個介於0到100之間(包含0，不包含100)的隨機小數。把這個小數套進 Math.floor() 裡面進行無條件捨去再加1，就能取得一個介於1到100之間(包含1，包含100)的隨機整數了。  </p>
+<blockquote>
+<p>這裡還犯過一個非常不應該的錯誤，我把 Math 寫成 math ，然後就又跳錯誤了……</p>
+</blockquote>
+<br/>
+
+<p>到目前為止，條件一和條件二都可以達成了。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 指定介於 1-100 之間的數字，存在 `answer` 變數裡</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 設定一個 `guess` 變數，代表挑戰者 (電腦) 猜的數字</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<br/>
+
+<p>for &#x2F; while 的選擇—-因為這次的比大小是條件判斷，所以選擇 while 迴圈。<br>先把邏輯寫出來:  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 生成並印出答案</span></span><br><span class="line">宣告 anwer</span><br><span class="line"><span class="comment">// 進入迴圈的條件(重複執行的原因)</span></span><br><span class="line"><span class="keyword">while</span> (猜數 不等於 答案) ，則進入迴圈</span><br><span class="line"></span><br><span class="line"><span class="comment">// 每一回合會重複的動作(放進迴圈裡)</span></span><br><span class="line">猜一次數字，並且回合數 + <span class="number">1</span> (接著進入結果判斷)</span><br><span class="line"><span class="variable constant_">IF</span> 猜數 &gt; 答案</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:太大了</span><br><span class="line"><span class="variable constant_">ELSE</span> <span class="variable constant_">IF</span> 猜數 &lt; 答案</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:太小了</span><br><span class="line"><span class="variable constant_">ELSE</span> (猜數 = 答案)</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:恭喜答對!</span><br><span class="line">  結束迴圈</span><br></pre></td></tr></table></figure>
+<br/>
+
+<p>好像差不多了，條件三和條件四也都可以達成了。但跟著邏輯再想一遍以後又發現了問題:  </p>
+<ol>
+<li>迴圈裡回合數每次 + 1，但不知道是從多少開始加，所以要先宣告回合數 &#x3D; 0  </li>
+<li>一開始只生成答案無法達成進入迴圈條件，為了達成條件，先宣告猜數 &#x3D; 0</li>
+</ol>
+<p>以上問題都解決了，可以組合起來寫出程式碼了!  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ========= 宣告變數 ==========</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span> <span class="comment">//正確答案</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="number">0</span> <span class="comment">//挑戰者猜的數字</span></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span> <span class="comment">//回合數</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ========= 從這裡開始 ==========</span></span><br><span class="line"><span class="comment">// 先印出正確數字</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`正確答案為 <span class="subst">$&#123;answer&#125;</span>`</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 設計判斷式和迴圈解決問題</span></span><br><span class="line"><span class="keyword">while</span> (guess !== answer) &#123;</span><br><span class="line">  </span><br><span class="line">  guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span> <span class="comment">// 挑戰者猜一個本回合的數字    </span></span><br><span class="line">  count += <span class="number">1</span>                                     </span><br><span class="line"></span><br><span class="line"> <span class="comment">// 條件判斷</span></span><br><span class="line">  <span class="keyword">if</span> (guess &gt; answer) &#123; </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:太大了，再猜一次`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (guess &lt; answer) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:太小了，再猜一次`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:恭喜答對!`</span>)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;===============遊戲結束===============&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br/>
+<br/>
+
+<h2 id="進階題"><a href="#進階題" class="headerlink" title="進階題"></a>進階題</h2><h3 id="題目要求-1"><a href="#題目要求-1" class="headerlink" title="題目要求"></a>題目要求</h3><ul>
+<li>讓電腦在 10 次以內猜對</li>
+</ul>
+<h3 id="解題過程-1"><a href="#解題過程-1" class="headerlink" title="解題過程"></a>解題過程</h3><p>花了三個小時都沒想出來，最後決定上網找找靈感，幸運發現一個前輩的解題思路。認真看完一遍，發現就跟以前玩終極密碼一樣，最快的方式就是縮小範圍，砍半再砍半。如果用對半切的方式，已知 2 的 10 次方為 1024，即範圍 1~1024 內的數字用砍半方式一定可以在 10 次內猜到，符合題目要求。  </p>
+<p>知道方法後要做的事只有2件:  </p>
+<ol>
+<li>設定猜數的上限和下限  </li>
+<li>讓猜數取上限和下限的中位數</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 設定猜數的起始上限和下限(放起始宣告位置)</span></span><br><span class="line"><span class="keyword">let</span> rangeMax = <span class="number">100</span> </span><br><span class="line"><span class="keyword">let</span> rangeMin = <span class="number">1</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">// 設定迴圈裡猜數的上限和下限重新賦值的方式(放入迴圈)</span></span><br><span class="line"><span class="comment">// 猜過的數字不能包含在範圍內</span></span><br><span class="line">rangeMax = guess - <span class="number">1</span></span><br><span class="line">rangeMin = guess + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 以猜數範圍的中位數再猜一次(放入迴圈)</span></span><br><span class="line">guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>((rangeMin + rangeMax) / <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<br/>
+
+<p>該作的變數調整都完成了，接下來就是把它們塞進該放的位置。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 宣告並產生答案</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span>  </span><br><span class="line"></span><br><span class="line"><span class="comment">// ========= start coding ==========</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="number">0</span>         <span class="comment">// 宣告挑戰者猜的數字為0</span></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span>         <span class="comment">// 宣告起始回合數為0</span></span><br><span class="line"><span class="keyword">let</span> rangeMax = <span class="number">100</span>    <span class="comment">// 宣告猜測最大值為100</span></span><br><span class="line"><span class="keyword">let</span> rangeMin = <span class="number">1</span>      <span class="comment">// 宣告猜測最小值為1</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`莊家數字是 <span class="subst">$&#123;answer&#125;</span>`</span>)  <span class="comment">//印出正確答案</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (guess !== answer) &#123;</span><br><span class="line">  guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>((rangeMin + rangeMax) / <span class="number">2</span>)</span><br><span class="line">  count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (guess &gt; answer) &#123;  </span><br><span class="line">    rangeMax = guess - <span class="number">1</span>  </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，太大，再猜一次! 範圍 <span class="subst">$&#123;rangeMin&#125;</span> ~ <span class="subst">$&#123;rangeMax&#125;</span> 。`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (guess &lt; answer) &#123;</span><br><span class="line">    rangeMin = guess + <span class="number">1</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，太小，再猜一次! 範圍 <span class="subst">$&#123;rangeMin&#125;</span> ~ <span class="subst">$&#123;rangeMax&#125;</span> 。`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，恭喜答對!`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br/>
+
+<p>終於成功了!! 這也是文章開頭說的: 如果知道解決問題的方法，只要能正確地把程式碼寫出來就好；如果不知道解決問題的方法，就算程式語言再精深都沒用，因為連怎麼開始都不知道。  </p>
+<p>其他小題目還好，就不特別寫解題筆記了。預計下一篇會寫更卡一點的期末考 😅</p>
+]]></content>
+      <categories>
+        <category>JavaScript 練習</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -551,79 +624,6 @@
       </tags>
   </entry>
   <entry>
-    <title>有效率地猜中數字</title>
-    <url>/posts/5959db4f/</url>
-    <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期一作業<br>這是第一個讓我覺得”卡卡”的題目，也是一個讓我在寫出來後深刻認知到: “<strong>想不到解決問題的方法，會寫程式也沒用</strong>“的題目。</p>
-<span id="more"></span>
-<p>藉著記錄解題的過程，把當初解決問題的方法和思考方式寫下來，達成再次深入複習的目的。</p>
-<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
-<li>Math.random() 會回傳一個偽隨機小數介於0到1之間(包含0，不包含1)  </li>
-<li>Math.floor() 會回傳小於等於所給數字的最大整數(無條件捨去)。  </li>
-<li>while 迴圈  </li>
-<li>if statement</li>
-</ol>
-<h2 id="基本題"><a href="#基本題" class="headerlink" title="基本題"></a>基本題</h2><h3 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h3><ol>
-<li>指定介於 1-100 之間的數字，存在 <code>answer</code> 變數裡  </li>
-<li>設定一個 <code>guess</code> 變數，代表挑戰者 (電腦) 猜的數字  </li>
-<li>電腦可重覆「猜數字」，比對 <code>guess</code> 和 <code>answer</code>，判斷太大或太小  </li>
-<li>若兩者相等（猜對）則結束遊戲，且結束時須計算電腦猜了幾次</li>
-</ol>
-<h3 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h3><p>使用 Math.random() 和 Math.floor() 指定一個介於 1-100 之間的數字，存在 <code>answer</code> 變數裡。</p>
-<blockquote>
-<p>原本想要直接用 Math.ceil() 無條件進位，但後來發現 Math.random() 有可能產生 “0”。所以如果直接用 Math.ceil() 可能會發生 <code>guess === 0</code> 的問題(不符合猜數範圍)。  </p>
-</blockquote>
-<p>先用 Math.random() * 100 取得一個介於0到100之間(包含0，不包含100)的隨機小數。把這個小數套進 Math.floor() 裡面進行無條件捨去再加1，就能取得一個介於1到100之間(包含1，包含100)的隨機整數了。  </p>
-<blockquote>
-<p>這裡還犯過一個非常不應該的錯誤，我把 Math 寫成 math ，然後就又跳錯誤了……</p>
-</blockquote>
-<br/>
-
-<p>到目前為止，條件一和條件二都可以達成了。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 指定介於 1-100 之間的數字，存在 `answer` 變數裡</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 設定一個 `guess` 變數，代表挑戰者 (電腦) 猜的數字</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<br/>
-
-<p>for &#x2F; while 的選擇—-因為這次的比大小是條件判斷，所以選擇 while 迴圈。<br>先把邏輯寫出來:  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 生成並印出答案</span></span><br><span class="line">宣告 anwer</span><br><span class="line"><span class="comment">// 進入迴圈的條件(重複執行的原因)</span></span><br><span class="line"><span class="keyword">while</span> (猜數 不等於 答案) ，則進入迴圈</span><br><span class="line"></span><br><span class="line"><span class="comment">// 每一回合會重複的動作(放進迴圈裡)</span></span><br><span class="line">猜一次數字，並且回合數 + <span class="number">1</span> (接著進入結果判斷)</span><br><span class="line"><span class="variable constant_">IF</span> 猜數 &gt; 答案</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:太大了</span><br><span class="line"><span class="variable constant_">ELSE</span> <span class="variable constant_">IF</span> 猜數 &lt; 答案</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:太小了</span><br><span class="line"><span class="variable constant_">ELSE</span> (猜數 = 答案)</span><br><span class="line">  則 印出回合數、印出猜數、印出莊家回答:恭喜答對!</span><br><span class="line">  結束迴圈</span><br></pre></td></tr></table></figure>
-<br/>
-
-<p>好像差不多了，條件三和條件四也都可以達成了。但跟著邏輯再想一遍以後又發現了問題:  </p>
-<ol>
-<li>迴圈裡回合數每次 + 1，但不知道是從多少開始加，所以要先宣告回合數 &#x3D; 0  </li>
-<li>一開始只生成答案無法達成進入迴圈條件，為了達成條件，先宣告猜數 &#x3D; 0</li>
-</ol>
-<p>以上問題都解決了，可以組合起來寫出程式碼了!  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ========= 宣告變數 ==========</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span> <span class="comment">//正確答案</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="number">0</span> <span class="comment">//挑戰者猜的數字</span></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span> <span class="comment">//回合數</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ========= 從這裡開始 ==========</span></span><br><span class="line"><span class="comment">// 先印出正確數字</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`正確答案為 <span class="subst">$&#123;answer&#125;</span>`</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 設計判斷式和迴圈解決問題</span></span><br><span class="line"><span class="keyword">while</span> (guess !== answer) &#123;</span><br><span class="line">  </span><br><span class="line">  guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span> <span class="comment">// 挑戰者猜一個本回合的數字    </span></span><br><span class="line">  count += <span class="number">1</span>                                     </span><br><span class="line"></span><br><span class="line"> <span class="comment">// 條件判斷</span></span><br><span class="line">  <span class="keyword">if</span> (guess &gt; answer) &#123; </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:太大了，再猜一次`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (guess &lt; answer) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:太小了，再猜一次`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 回合，挑戰者猜 <span class="subst">$&#123;guess&#125;</span>，莊家回答:恭喜答對!`</span>)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;===============遊戲結束===============&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<br/>
-<br/>
-
-<h2 id="進階題"><a href="#進階題" class="headerlink" title="進階題"></a>進階題</h2><h3 id="題目要求-1"><a href="#題目要求-1" class="headerlink" title="題目要求"></a>題目要求</h3><ul>
-<li>讓電腦在 10 次以內猜對</li>
-</ul>
-<h3 id="解題過程-1"><a href="#解題過程-1" class="headerlink" title="解題過程"></a>解題過程</h3><p>花了三個小時都沒想出來，最後決定上網找找靈感，幸運發現一個前輩的解題思路。認真看完一遍，發現就跟以前玩終極密碼一樣，最快的方式就是縮小範圍，砍半再砍半。如果用對半切的方式，已知 2 的 10 次方為 1024，即範圍 1~1024 內的數字用砍半方式一定可以在 10 次內猜到，符合題目要求。  </p>
-<p>知道方法後要做的事只有2件:  </p>
-<ol>
-<li>設定猜數的上限和下限  </li>
-<li>讓猜數取上限和下限的中位數</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 設定猜數的起始上限和下限(放起始宣告位置)</span></span><br><span class="line"><span class="keyword">let</span> rangeMax = <span class="number">100</span> </span><br><span class="line"><span class="keyword">let</span> rangeMin = <span class="number">1</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">// 設定迴圈裡猜數的上限和下限重新賦值的方式(放入迴圈)</span></span><br><span class="line"><span class="comment">// 猜過的數字不能包含在範圍內</span></span><br><span class="line">rangeMax = guess - <span class="number">1</span></span><br><span class="line">rangeMin = guess + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 以猜數範圍的中位數再猜一次(放入迴圈)</span></span><br><span class="line">guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>((rangeMin + rangeMax) / <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<br/>
-
-<p>該作的變數調整都完成了，接下來就是把它們塞進該放的位置。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 宣告並產生答案</span></span><br><span class="line"><span class="keyword">const</span> answer = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span>  </span><br><span class="line"></span><br><span class="line"><span class="comment">// ========= start coding ==========</span></span><br><span class="line"><span class="keyword">let</span> guess = <span class="number">0</span>         <span class="comment">// 宣告挑戰者猜的數字為0</span></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">0</span>         <span class="comment">// 宣告起始回合數為0</span></span><br><span class="line"><span class="keyword">let</span> rangeMax = <span class="number">100</span>    <span class="comment">// 宣告猜測最大值為100</span></span><br><span class="line"><span class="keyword">let</span> rangeMin = <span class="number">1</span>      <span class="comment">// 宣告猜測最小值為1</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`莊家數字是 <span class="subst">$&#123;answer&#125;</span>`</span>)  <span class="comment">//印出正確答案</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (guess !== answer) &#123;</span><br><span class="line">  guess = <span class="title class_">Math</span>.<span class="title function_">floor</span>((rangeMin + rangeMax) / <span class="number">2</span>)</span><br><span class="line">  count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (guess &gt; answer) &#123;  </span><br><span class="line">    rangeMax = guess - <span class="number">1</span>  </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，太大，再猜一次! 範圍 <span class="subst">$&#123;rangeMin&#125;</span> ~ <span class="subst">$&#123;rangeMax&#125;</span> 。`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (guess &lt; answer) &#123;</span><br><span class="line">    rangeMin = guess + <span class="number">1</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，太小，再猜一次! 範圍 <span class="subst">$&#123;rangeMin&#125;</span> ~ <span class="subst">$&#123;rangeMax&#125;</span> 。`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`第 <span class="subst">$&#123;count&#125;</span> 局|電腦猜 <span class="subst">$&#123;guess&#125;</span> ，恭喜答對!`</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<br/>
-
-<p>終於成功了!! 這也是文章開頭說的: 如果知道解決問題的方法，只要能正確地把程式碼寫出來就好；如果不知道解決問題的方法，就算程式語言再精深都沒用，因為連怎麼開始都不知道。  </p>
-<p>其他小題目還好，就不特別寫解題筆記了。預計下一篇會寫更卡一點的期末考 😅</p>
-]]></content>
-      <categories>
-        <category>JavaScript 練習</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用 Hexo-abbrlink 產生永久連結</title>
     <url>/posts/d8dab675/</url>
     <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因為是在建置部落格的同時整理並撰寫 Hexo 筆記，內容的更動導致常常需要修改多篇文章的檔名，permalink 自動產生網址的設定也連帶造成了我一些困擾，所以想用 Hexo-abbrlink 來一勞永逸。  </p>
@@ -721,9 +721,9 @@
       </categories>
       <tags>
         <tag>HTML</tag>
+        <tag>CSS</tag>
         <tag>Hexo</tag>
         <tag>NexT</tag>
-        <tag>CSS</tag>
         <tag>Nunjucks</tag>
       </tags>
   </entry>
@@ -947,73 +947,6 @@
 <p><a href="#%E4%B8%89%E7%A8%AE%E6%96%B9%E5%BC%8F%E5%85%B1%E5%90%8C%E6%B5%81%E7%A8%8B">(回到共同流程)</a></p>
 <h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>能成功用三種方法解出來實在很有成就感! 每次看到輸出結果跑出紅字就很頭大，還好他會提醒你到底是哪裡出錯，所以做後還是成功 debug 了!  </p>
 <p>隨著作業規模變大，開始有感覺到難度。但是比起挫折感，更多的反而是 “我在確實進步” 的興奮!! 讓我在寫部落格的路上越來越有動力!</p>
-]]></content>
-      <categories>
-        <category>JavaScript 練習</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>簡易 RPG 戰鬥：攻擊與補血</title>
-    <url>/posts/23e46325/</url>
-    <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期 2-1<br>題目的主要目的是 Javascript function 的練習。設計 function 的運作方式，利用 <code>if</code> + <code>return</code> 來控制需要提早跳出函式的情況，及使用 <code>this</code> 取到物件自身。  </p>
-<span id="more"></span>
-<p>題目原本僅要求專注在 <strong>攻擊(attack)</strong> 和 <strong>治療(cure)</strong> function 的撰寫，其餘流程已由原題目提供。但基於再次練習的目的，且題目其餘部分也是由學過的 while 迴圈組成，所以這次練習會從頭把整個流程寫出來。  </p>
-<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
-<li>function 函式  </li>
-<li>while 迴圈  </li>
-<li>if statement</li>
-</ol>
-<h2 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h2><ol>
-<li>預設戰士 <code>hp</code> 為 100、 <code>mp</code> 為 30；魔法師 <code>hp</code> 為 30、 <code>mp</code> 為 100。</li>
-<li>由魔法師先攻，若有任一方死掉，則遊戲結束，不能再有補血或攻擊動作；反之，若兩個角色都活著，則遊戲可一直正常執行，直到一方死掉。  </li>
-<li>攻擊者會呼叫 <code>attack()</code> 攻擊敵方，產生 1~100 點之間隨機點數的傷害。  </li>
-<li>若被攻擊方沒有死，則會呼叫 <code>cure()</code> 為自己補血，補血規格為：每次補血固定為 15 點 <code>hp</code> 、每補充 1 點 <code>hp</code> 需要 2 點 <code>mp</code>。補血結束後攻守交換。  </li>
-<li><code>cure()</code> 會傳入一個參數為 <code>hp</code> ，指的是想要補充的 <code>hp</code> 。  </li>
-<li>補血可以補超過原有的 <code>hp</code>，沒有 <code>hp</code> 最大值上限，只要有 <code>mp</code> 都可以補血。  <blockquote>
-<p>原題目是由戰士先攻，但為了方便觀察輸出結果，改由魔法師先攻。</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h2><h3 id="拆解流程"><a href="#拆解流程" class="headerlink" title="拆解流程"></a>拆解流程</h3><ol>
-<li>創建角色(含 <code>name</code> 、 <code>hp</code> 、 <code>mp</code> 、<code>attack()</code> 及 <code>cure()</code> )  </li>
-<li>戰鬥流程  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 戰士及魔法師都活著</span><br><span class="line">  則魔法師先攻、戰士師補血(補血是否執行由函式決定)</span><br><span class="line">  <span class="keyword">if</span> 戰士還活著</span><br><span class="line">    則戰士攻擊、魔法師補血(補血是否執行由函式決定)</span><br><span class="line">任一方死掉，則遊戲結束。</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="解題開始"><a href="#解題開始" class="headerlink" title="解題開始"></a>解題開始</h3><h4 id="function-設計"><a href="#function-設計" class="headerlink" title="function 設計"></a>function 設計</h4><ol>
-<li><p>攻擊動作 attack()  </p>
-<ul>
-<li>產生攻擊點數、輸出攻擊資訊  </li>
-<li>結果1(打死): 輸出”對手死亡”  </li>
-<li>結果2(沒打死): 輸出”對手活著”，且對手啟動cure()  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">attack</span> (enemy) &#123;</span><br><span class="line">  hpLose = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> hit <span class="subst">$&#123;enemy.name&#125;</span>, <span class="subst">$&#123;enemy.name&#125;</span> lose <span class="subst">$&#123;hpLose&#125;</span> HP.`</span>)</span><br><span class="line">  enemy.<span class="property">hp</span> -= hpLose</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (enemy.<span class="property">hp</span> &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is dead.\n`</span>)</span><br><span class="line">    <span class="keyword">return</span> enemy.<span class="property">hp</span> = <span class="number">0</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is still alive. (HP = <span class="subst">$&#123;enemy.hp&#125;</span>)`</span>)</span><br><span class="line">    enemy.<span class="title function_">cure</span>(<span class="number">15</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>治療動作 cure()  </p>
-<ul>
-<li>結果1(mp夠): 啟動治療並輸出治療結果  </li>
-<li>結果2(mp不夠): 不治療繼續  </li>
-<li>攻守互換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">cure</span> (hp) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">mp</span> &gt;= (hp * <span class="number">2</span>)) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">hp</span> += hp</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">mp</span> -= hp * <span class="number">2</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> recovered. (HP = <span class="subst">$&#123;<span class="variable language_">this</span>.hp&#125;</span>；MP = <span class="subst">$&#123;<span class="variable language_">this</span>.mp&#125;</span>)`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`MP isn&#x27;t enough! <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> cannot use cure.`</span>)</span><br><span class="line">  &#125;  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`\n-------------- Change Side ---------------`</span>)    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>角色建立 player()  </p>
-<ul>
-<li>需含名稱、HP、MP、攻擊動作、治療動作  </li>
-<li>練習不同的 function 使用方式(把 function 放進 function 裡)  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">player</span> (name, hp, mp) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">hp</span>: hp,</span><br><span class="line">    <span class="attr">mp</span>: mp,</span><br><span class="line">    <span class="attr">cure</span>: <span class="keyword">function</span> (<span class="params">hp</span>) &#123;......&#125;,</span><br><span class="line">    <span class="attr">attack</span>: <span class="keyword">function</span> (<span class="params">enemy</span>) &#123;......&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h4 id="解題流程"><a href="#解題流程" class="headerlink" title="解題流程"></a>解題流程</h4><ol>
-<li>創建並輸出角色資料  </li>
-<li>戰鬥開始(迴圈內容)  <ul>
-<li>如果兩人都活著，則戰鬥開始，魔術師先攻，回合結束  </li>
-<li>如果上回合戰士還活著，則攻守交換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// create players</span></span><br><span class="line"><span class="keyword">const</span> warrior = <span class="title function_">player</span>(<span class="string">&#x27;Warrior&#x27;</span>, <span class="number">100</span>, <span class="number">30</span>)</span><br><span class="line"><span class="keyword">const</span> magician = <span class="title function_">player</span>(<span class="string">&#x27;Magician&#x27;</span>, <span class="number">30</span> ,<span class="number">100</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(warrior)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(magician)</span><br><span class="line"></span><br><span class="line"><span class="comment">// start fight</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;-------------- Start Fight ---------------&#x27;</span>)</span><br><span class="line"><span class="keyword">while</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span> &amp;&amp; magician.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  magician.<span class="title function_">attack</span>(warrior)</span><br><span class="line">  <span class="keyword">if</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;    </span><br><span class="line">    warrior.<span class="title function_">attack</span>(magician)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;--------------- Game Over ----------------&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>在重寫的過程中又發現了一些自己不熟的地方……寫物件的時候，居然把 key 跟 value 中間的 <code>:</code> 寫成 <code>=</code> 了!  </p>
-<p>這題練習對我其實滿有效的，包含 <code>this</code> 跟 <code>return</code> 的使用時機，還有在函式裡呼叫函式的寫法(這部分讓我把 while 迴圈大改，在被攻擊的對象還活著的時候直接呼叫治療函式)。以自己覺得順暢的方式改完後，發現還是可以順利跑出相同結果，表示 function 目前的課程應該有一定程度的熟悉了!</p>
 ]]></content>
       <categories>
         <category>JavaScript 練習</category>
@@ -1263,72 +1196,70 @@
       </tags>
   </entry>
   <entry>
-    <title>data-* HTML 自定義屬性及 dataset</title>
-    <url>/posts/b8b00b13/</url>
-    <content><![CDATA[<p>在 <a href="/posts/470f6710/">JS30 Day1</a> 第一次看到 data-* 屬性，學習 DOM 之後發現真是太好用了阿!</p>
+    <title>簡易 RPG 戰鬥：攻擊與補血</title>
+    <url>/posts/23e46325/</url>
+    <content><![CDATA[<p><strong>題目來源:</strong> Alpha Camp 學期 2-1<br>題目的主要目的是 Javascript function 的練習。設計 function 的運作方式，利用 <code>if</code> + <code>return</code> 來控制需要提早跳出函式的情況，及使用 <code>this</code> 取到物件自身。  </p>
 <span id="more"></span>
-<blockquote>
-<p>筆記內容為學習過程中的紀錄，內容可能未臻完善，如有錯漏，歡迎留言，謝謝!</p>
-</blockquote>
-<h2 id="data-基本介紹"><a href="#data-基本介紹" class="headerlink" title="data-* 基本介紹"></a>data-* 基本介紹</h2><p><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Global_attributes/data-*">[MDN 說明]</a>  </p>
-<p>HTML 標籤除了預設的屬性之外，其實還有個很好用的自定義屬性 <code>data-*</code> ，這個東西在開始進行 DOM 操作後，更可以明顯感受到它的方便性。通常我們在眾多 HTML 標籤中要針對特定幾個元素做操作時，會使用 id 或 class 來指定，但實際使用下來不夠彈性。例如:  </p>
-<p>現在有 52 張撲克牌，我和朋友玩了撿紅點。計分時黑牌不計分、紅牌數值相加。我可以直接用 class name “card” 來套用同樣的卡背樣式。但如果我想把所有吃到”紅色牌分數”相加時，現有的屬性沒辦法滿足我的需求。  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 用 &lt;div&gt; 做出 52 張牌 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">...(略)</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>J<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>Q<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>K<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>於是，我就可以用 <code>data-*</code> 來加上我需要的屬性內容。 用 <code>data-suit</code> 來表示花色、 <code>data-value</code> 來表示數字。這樣，我就可以一眼看出這張牌的顏色和數字了!  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 加上花色及數值屬性 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;club&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;1&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;diamond&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;2&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;heart&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;3&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">...(略)</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;heart&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;11&quot;</span>&gt;</span>J<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;spade&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;12&quot;</span>&gt;</span>Q<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;spade&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;13&quot;</span>&gt;</span>K<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>使用 <code>data-*</code> 可以新增一個”自定義屬性”，並給這個屬性一個”值”，有了這個設定之後，就可以更有針對性及彈性的對特定元素進行操作。  </p>
-<h3 id="命名規則"><a href="#命名規則" class="headerlink" title="命名規則"></a>命名規則</h3><p><strong>(很重要! 和後面提到的 dataset 應用有關!)</strong>  </p>
-<ul>
-<li>同 class 命名慣例，用 <code>-</code> 串接字詞。  </li>
-<li>名字絕對不能以 <code>xml</code> 起頭。  </li>
-<li>名字只能包含小寫字母、數字、dash（-）、點（.）、冒號（:）和下底線（_）。</li>
-</ul>
-<h3 id="補充說明"><a href="#補充說明" class="headerlink" title="補充說明"></a>補充說明</h3><p> <code>data-*</code> 所儲存的屬性值型別都是<strong>字串</strong>，如果要進行四則運算要記得先轉換型別!</p>
-<h2 id="CSS-應用"><a href="#CSS-應用" class="headerlink" title="CSS 應用"></a>CSS 應用</h2><h3 id="CSS-選擇器"><a href="#CSS-選擇器" class="headerlink" title="CSS 選擇器"></a>CSS 選擇器</h3><p>我們常以 class 及 id 來定義 CSS 樣式。其實 CSS 選擇器中有一個<strong>屬性選擇器</strong>，可以依屬性值來選擇特定元素。接續上面的撲克牌為例，把花色為愛心&#x2F;方塊的牌顯示為紅色:  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 選擇屬性為特定值的元素 */</span></span><br><span class="line"><span class="selector-attr">[data-suit=<span class="string">&quot;heart&quot;</span>]</span>,</span><br><span class="line"><span class="selector-attr">[data-suit=<span class="string">&quot;diamond&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="CSS-content-及-attr"><a href="#CSS-content-及-attr" class="headerlink" title="CSS content 及 attr()"></a>CSS content 及 attr()</h3><p><code>content</code> 可以用 CSS 直接生成靜態文字； <code>attr()</code> 則是可以讀取”屬性值”。<br>如果有3個設好 <code>data-value</code> 的撲克牌，我要讓它在 <code>&lt;div&gt;&lt;/div&gt;</code> 中間加入屬性的值:  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 原本未加 CSS 狀態 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;A&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>設置 CSS content:  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">attr</span>(data-value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>CSS 渲染過後的 HTML 會呈現:  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;A&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;2&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;3&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="DOM-與-JavaScript-應用"><a href="#DOM-與-JavaScript-應用" class="headerlink" title="DOM 與 JavaScript 應用"></a>DOM 與 JavaScript 應用</h2><h3 id="DOM-querySelector"><a href="#DOM-querySelector" class="headerlink" title="DOM querySelector"></a>DOM querySelector</h3><ul>
-<li><p>在使用 querySelector 時，可以直接指定<strong>屬性值</strong>。以”選擇所有梅花牌”為例:  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 選取所有含 data-suit=&quot;club&quot; 的節點</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectors</span>(<span class="string">&#x27;[data-suit=&quot;club&quot;]&#x27;</span>)</span><br><span class="line"><span class="comment">// 選取所有含 data-suit=&quot;club&quot; 的 &lt;div&gt; 節點</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectors</span>(<span class="string">&#x27;div[data-suit=&quot;club&quot;]&#x27;</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>也可以更彈性的運用，使用 template 代入屬性值。以 <a href="https://github.com/ritachien/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/index.html">[JS30 Day1 JavaScript Drum Kit]</a> 為例:<br>在 HTML 部分設置了4個按鍵元素(A、S、D、F)，並為每個按鍵標上編號。  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;65&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;83&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>S<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;68&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>D<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;70&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>F<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>設置監聽事件，自動讀取事件紀錄的 <code>keyCode</code> 並將數值代入 template 中。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, playAudio)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">playAudio</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> key = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`.key[data-key=&quot;<span class="subst">$&#123;event.keyCode&#125;</span>&quot;]`</span>)</span><br><span class="line">  <span class="comment">// 其他程式碼(略)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如: 按下&quot;A&quot;鍵，事件紀錄的 keyCode:65 ，這裡就會直接把65代入。上面的程式碼會變成:</span></span><br><span class="line"><span class="keyword">const</span> key = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.key[data-key=&quot;65&quot;]&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="HTMLElement-dataset"><a href="#HTMLElement-dataset" class="headerlink" title="HTMLElement.dataset"></a>HTMLElement.dataset</h3><p><a href="https://developer.mozilla.org/zh-TW/docs/orphaned/Web/API/HTMLOrForeignElement/dataset">[MDN 說明]</a>  </p>
-<h4 id="命名轉換"><a href="#命名轉換" class="headerlink" title="命名轉換"></a>命名轉換</h4><p><strong>dash-style to camelCase</strong>  </p>
-<ol>
-<li>刪去前綴字 <code>data-</code> 。  </li>
-<li>每個 <code>-</code> 後的第一個字母轉為大寫，刪去中間 <code>-</code> 後連接字串。<br>例如: <code>data-abc-def-ghi</code> 會被轉換為 <code>abcDefGhi</code>。</li>
+<p>題目原本僅要求專注在 <strong>攻擊(attack)</strong> 和 <strong>治療(cure)</strong> function 的撰寫，其餘流程已由原題目提供。但基於再次練習的目的，且題目其餘部分也是由學過的 while 迴圈組成，所以這次練習會從頭把整個流程寫出來。  </p>
+<h2 id="解題工具"><a href="#解題工具" class="headerlink" title="解題工具"></a>解題工具</h2><ol>
+<li>function 函式  </li>
+<li>while 迴圈  </li>
+<li>if statement</li>
 </ol>
-<h4 id="實際運用"><a href="#實際運用" class="headerlink" title="實際運用"></a>實際運用</h4><blockquote>
-<p>範例取自 MDN 文件<br>有個 HTML 元素如下:</p>
+<h2 id="題目要求"><a href="#題目要求" class="headerlink" title="題目要求"></a>題目要求</h2><ol>
+<li>預設戰士 <code>hp</code> 為 100、 <code>mp</code> 為 30；魔法師 <code>hp</code> 為 30、 <code>mp</code> 為 100。</li>
+<li>由魔法師先攻，若有任一方死掉，則遊戲結束，不能再有補血或攻擊動作；反之，若兩個角色都活著，則遊戲可一直正常執行，直到一方死掉。  </li>
+<li>攻擊者會呼叫 <code>attack()</code> 攻擊敵方，產生 1~100 點之間隨機點數的傷害。  </li>
+<li>若被攻擊方沒有死，則會呼叫 <code>cure()</code> 為自己補血，補血規格為：每次補血固定為 15 點 <code>hp</code> 、每補充 1 點 <code>hp</code> 需要 2 點 <code>mp</code>。補血結束後攻守交換。  </li>
+<li><code>cure()</code> 會傳入一個參數為 <code>hp</code> ，指的是想要補充的 <code>hp</code> 。  </li>
+<li>補血可以補超過原有的 <code>hp</code>，沒有 <code>hp</code> 最大值上限，只要有 <code>mp</code> 都可以補血。  <blockquote>
+<p>原題目是由戰士先攻，但為了方便觀察輸出結果，改由魔法師先攻。</p>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;1234567890&quot;</span> <span class="attr">data-user</span>=<span class="string">&quot;johndoe&quot;</span>&gt;</span></span><br><span class="line">  John Doe</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>如果我要取它的 <code>data-*</code> 屬性值，取值方式如下:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 選取要取值的對象</span></span><br><span class="line"><span class="keyword">const</span> user = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#user&#x27;</span>)</span><br><span class="line"><span class="comment">// 開始取值</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">dataset</span>.<span class="property">id</span>)  <span class="comment">// 回傳 &#x27;1234567890&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">dataset</span>.<span class="property">user</span>)  <span class="comment">// 回傳 &#x27;johndoe&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
+</li>
+</ol>
+<h2 id="解題過程"><a href="#解題過程" class="headerlink" title="解題過程"></a>解題過程</h2><h3 id="拆解流程"><a href="#拆解流程" class="headerlink" title="拆解流程"></a>拆解流程</h3><ol>
+<li>創建角色(含 <code>name</code> 、 <code>hp</code> 、 <code>mp</code> 、<code>attack()</code> 及 <code>cure()</code> )  </li>
+<li>戰鬥流程  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 戰士及魔法師都活著</span><br><span class="line">  則魔法師先攻、戰士師補血(補血是否執行由函式決定)</span><br><span class="line">  <span class="keyword">if</span> 戰士還活著</span><br><span class="line">    則戰士攻擊、魔法師補血(補血是否執行由函式決定)</span><br><span class="line">任一方死掉，則遊戲結束。</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="解題開始"><a href="#解題開始" class="headerlink" title="解題開始"></a>解題開始</h3><h4 id="function-設計"><a href="#function-設計" class="headerlink" title="function 設計"></a>function 設計</h4><ol>
+<li><p>攻擊動作 attack()  </p>
+<ul>
+<li>產生攻擊點數、輸出攻擊資訊  </li>
+<li>結果1(打死): 輸出”對手死亡”  </li>
+<li>結果2(沒打死): 輸出”對手活著”，且對手啟動cure()  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">attack</span> (enemy) &#123;</span><br><span class="line">  hpLose = <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>) + <span class="number">1</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> hit <span class="subst">$&#123;enemy.name&#125;</span>, <span class="subst">$&#123;enemy.name&#125;</span> lose <span class="subst">$&#123;hpLose&#125;</span> HP.`</span>)</span><br><span class="line">  enemy.<span class="property">hp</span> -= hpLose</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (enemy.<span class="property">hp</span> &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is dead.\n`</span>)</span><br><span class="line">    <span class="keyword">return</span> enemy.<span class="property">hp</span> = <span class="number">0</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;enemy.name&#125;</span> is still alive. (HP = <span class="subst">$&#123;enemy.hp&#125;</span>)`</span>)</span><br><span class="line">    enemy.<span class="title function_">cure</span>(<span class="number">15</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>治療動作 cure()  </p>
+<ul>
+<li>結果1(mp夠): 啟動治療並輸出治療結果  </li>
+<li>結果2(mp不夠): 不治療繼續  </li>
+<li>攻守互換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">cure</span> (hp) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">mp</span> &gt;= (hp * <span class="number">2</span>)) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">hp</span> += hp</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">mp</span> -= hp * <span class="number">2</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> recovered. (HP = <span class="subst">$&#123;<span class="variable language_">this</span>.hp&#125;</span>；MP = <span class="subst">$&#123;<span class="variable language_">this</span>.mp&#125;</span>)`</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`MP isn&#x27;t enough! <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> cannot use cure.`</span>)</span><br><span class="line">  &#125;  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`\n-------------- Change Side ---------------`</span>)    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>角色建立 player()  </p>
+<ul>
+<li>需含名稱、HP、MP、攻擊動作、治療動作  </li>
+<li>練習不同的 function 使用方式(把 function 放進 function 裡)  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">player</span> (name, hp, mp) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">hp</span>: hp,</span><br><span class="line">    <span class="attr">mp</span>: mp,</span><br><span class="line">    <span class="attr">cure</span>: <span class="keyword">function</span> (<span class="params">hp</span>) &#123;......&#125;,</span><br><span class="line">    <span class="attr">attack</span>: <span class="keyword">function</span> (<span class="params">enemy</span>) &#123;......&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h4 id="解題流程"><a href="#解題流程" class="headerlink" title="解題流程"></a>解題流程</h4><ol>
+<li>創建並輸出角色資料  </li>
+<li>戰鬥開始(迴圈內容)  <ul>
+<li>如果兩人都活著，則戰鬥開始，魔術師先攻，回合結束  </li>
+<li>如果上回合戰士還活著，則攻守交換  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// create players</span></span><br><span class="line"><span class="keyword">const</span> warrior = <span class="title function_">player</span>(<span class="string">&#x27;Warrior&#x27;</span>, <span class="number">100</span>, <span class="number">30</span>)</span><br><span class="line"><span class="keyword">const</span> magician = <span class="title function_">player</span>(<span class="string">&#x27;Magician&#x27;</span>, <span class="number">30</span> ,<span class="number">100</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(warrior)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(magician)</span><br><span class="line"></span><br><span class="line"><span class="comment">// start fight</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;-------------- Start Fight ---------------&#x27;</span>)</span><br><span class="line"><span class="keyword">while</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span> &amp;&amp; magician.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  magician.<span class="title function_">attack</span>(warrior)</span><br><span class="line">  <span class="keyword">if</span> (warrior.<span class="property">hp</span> &gt; <span class="number">0</span>) &#123;    </span><br><span class="line">    warrior.<span class="title function_">attack</span>(magician)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;--------------- Game Over ----------------&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>在重寫的過程中又發現了一些自己不熟的地方……寫物件的時候，居然把 key 跟 value 中間的 <code>:</code> 寫成 <code>=</code> 了!  </p>
+<p>這題練習對我其實滿有效的，包含 <code>this</code> 跟 <code>return</code> 的使用時機，還有在函式裡呼叫函式的寫法(這部分讓我把 while 迴圈大改，在被攻擊的對象還活著的時候直接呼叫治療函式)。以自己覺得順暢的方式改完後，發現還是可以順利跑出相同結果，表示 function 目前的課程應該有一定程度的熟悉了!</p>
 ]]></content>
       <categories>
-        <category>HTML 筆記</category>
-        <category>JavaScript 筆記</category>
+        <category>JavaScript 練習</category>
       </categories>
       <tags>
-        <tag>HTML</tag>
         <tag>JavaScript</tag>
-        <tag>CSS</tag>
+        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -1344,66 +1275,6 @@
 <h3 id="INTERPRETIVE"><a href="#INTERPRETIVE" class="headerlink" title="INTERPRETIVE"></a>INTERPRETIVE</h3><p>這個學期下來也讓我對於「複習」這件事有了態度上的轉變。從原本的「之前不夠熟悉、必須找時間再多多複習」變成「主動在作業中融入以前學過的東西」。每個學期、甚至每個教案的著重點本來就不一樣，「複習」這件事就要找到適合自己的方法，不能依賴虛無飄渺的「找個時間來複習」。  </p>
 <p>觀摩同學作業時，發現在一個作業中同時融入了很多以前學過的東西( media queries 、 flex、position…等)，可以看出他在開始編寫程式碼前，已經對設計成品有具體的想法，可能也針對不同螢幕大小畫出了多張 wireframe ，考慮了很多面向的東西。 他的練習實踐方式讓我發現我可以在完成當下目標同時複習以前學過的東西，學習的輸入可以從各自為政變成融會貫通 。  </p>
 <h3 id="DECISIONAL"><a href="#DECISIONAL" class="headerlink" title="DECISIONAL"></a>DECISIONAL</h3><p>接下來進行課程時，希望自己能保持主動優化的動力。也許不是每一次嘗試都能得到好的結果，但在嘗試的過程中需要查資料、方法的選擇、功能的取捨，利用這個過程慢慢積累自己的知識庫，期望未來能不愧對付出的時間和努力!  </p>
-]]></content>
-      <categories>
-        <category>課程心得</category>
-      </categories>
-      <tags>
-        <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Alpha Camp 學期 2-3 結業心得</title>
-    <url>/posts/924950b4/</url>
-    <content><![CDATA[<p>隨著時間的推移，在學習上總是會碰到各種不同的狀況，而這些狀況也提供我不同的學習感受。這篇著重於紀錄自己遇到、找出並排除問題的過程。  </p>
-<blockquote>
-<p>要解決問題，必須先正確的找出問題發生原因。  </p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="緣起：為短網址產生器加上重複檢查機制"><a href="#緣起：為短網址產生器加上重複檢查機制" class="headerlink" title="緣起：為短網址產生器加上重複檢查機制"></a>緣起：為短網址產生器加上重複檢查機制</h2><p>一如上學期結束時對自己許的願，這學期在寫作業的同時會盡可能地做些優化挑戰，然後不可避免的進入無窮卡關迴圈……  </p>
-<p>近期卡了最久的就是短網址產生器了!! 作業的要求其實很簡單，只要可以產生英文字母或數字的隨機亂碼來當短網址即可。但是! 我突然想到:「萬一真的產生了相同的亂碼怎麼辦?」。依照我當下的執行邏輯，產生亂碼之後就馬上把它和原始網址加入互相對照的 index ，在沒有檢查的情況下，兩組原始網址導向同一個短網址也不是不可能發生。  </p>
-<p>於是，我決定了優化方向：「在亂數產生器 return 結果之前加上檢查機制」，只要發現相同亂碼就重新執行一次亂碼產生流程。然後……在這個優化過程被卡了整整 2 天 🤣  </p>
-<h2 id="嘗試失敗1：同步與非同步"><a href="#嘗試失敗1：同步與非同步" class="headerlink" title="嘗試失敗1：同步與非同步"></a>嘗試失敗1：同步與非同步</h2><blockquote>
-<p>先來備註一下：這次用來存放 UrlIndex 資料的是 MongoDB。  </p>
-</blockquote>
-<p>原本的寫法如下(只放有問題部分):  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 產生亂碼短網址 &lt;file:root/utils/shortGenerator.js&gt;</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generator</span> (length) &#123;</span><br><span class="line">  <span class="comment">// 1. generate random code</span></span><br><span class="line">  <span class="comment">// 2. Check if random url already exist</span></span><br><span class="line">  <span class="comment">// =&gt; if exist, run &quot;generator (length)&quot;</span></span><br><span class="line">  <span class="comment">// =&gt; if not yet exist, return result</span></span><br><span class="line">  <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">shortenUrl</span>: result &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> data ? <span class="title function_">generator</span>(length) : result</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把短網址存入對照 index &lt;file:root/app.js&gt;</span></span><br><span class="line"><span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="attr">shortenUrl</span>: <span class="title function_">generator</span>(<span class="number">5</span>),</span><br><span class="line">  <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>在我的預想中， <code>generator()</code> 負責產生獨一無二的短網址，而 <code>UrlIndex.create()</code> 把取得的短網址拿去建立 index 。但是，看似沒問題的邏輯跳錯誤了! 好在目前遇到的大部分錯誤訊息都能正確敘述出問題的原因，它告訴我 shortenUrl 的值 <code>undefined</code> 。於是我去查查賦值 <code>undefined</code> 的原因，發現在我寫的流程裡最有可能的原因是：「若變數沒有提供初始值，則預設為 <code>undefined</code> 」。但不對啊~我不是有告訴 <code>UrlIndex.create()</code> shortenUrl 的值從 <code>generator()</code> 取得嗎? 為什麼會 <code>undefined</code> 呢?  </p>
-<p>前幾天因緣際會接觸到「非同步」相關知識的我想起了前輩對非同步的評語：  </p>
-<blockquote>
-<p>實戰常常遇到問題，一研究發現，怎麼又是你！  </p>
-</blockquote>
-<p>檢查了一下目前進度，確實啊~ <code>UrlIndex.create()</code> 和 <code>UrlIndex.findOne()</code> 都是非同步語法，如果沒有處理好，根本無法控制完成的先後順序。於是，再度開始了 google 旅程，發現目前對於非同步執行順序最常使用兩種方式:  </p>
-<ul>
-<li>async&#x2F;await  </li>
-<li>Promise.then()</li>
-</ul>
-<p>因為對 <code>async/await</code> 值的傳遞方式還不太熟悉，因此決定先用 <code>Promise.then()</code> 的方式。 <code>.then</code> 的前面必須是個 Promise 物件，但我目前 return 的是亂碼「值」。幸好查到的資料告訴我， mongoose 5.0 開始就內建 Promise 語法，所以我可以把整個 <code>UrlIndex.findOne()</code> 包成 Promise 物件。最後，我把整個檢驗是否重複的過程直接 return ，順利解決了執行順序問題。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 產生亂碼短網址</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generator</span> (length) &#123;</span><br><span class="line">  <span class="comment">// (前略)</span></span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">shortenUrl</span>: result &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> data ? <span class="title function_">generator</span>(length) : result</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ShortGenerator</span>(randomLength)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> urlData ? urlData : <span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">      <span class="attr">shortenUrl</span>: url,</span><br><span class="line">      <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="嘗試失敗2：mongoose-語法-return-值"><a href="#嘗試失敗2：mongoose-語法-return-值" class="headerlink" title="嘗試失敗2：mongoose 語法 return 值"></a>嘗試失敗2：mongoose 語法 return 值</h2><p>接著，我想把產生的短網址結果呈現給使用者:  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span> &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="title class_">ShortGenerator</span>(randomLength)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> urlData ? urlData : <span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">            <span class="attr">shortenUrl</span>: url,</span><br><span class="line">            <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">          &#125;)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;))  <span class="comment">// 執行到這行出問題!!</span></span><br><span class="line">        .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>這時候又跳錯誤了! 根據錯誤訊息查詢，發現是 handlebars 因為安全性問題，只接受乾淨的物件資料，通常可以用 <code>.lean()</code> 解決。把 <code>urlData</code> 印出來，看看到底取到什麼值? 嗯?? <code>_id</code> 裡面那個 new 是什麼? 看起來確定是回傳值的問題。<br><img src="/../Blog-image/posts/2022-04-24_returnValueOfMongoose.webp" alt="error_returnValueOfMongoose">  </p>
-<p>於是我加上了 <code>.lean()</code> ，但它又報錯了!  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">  urlData = urlData.<span class="title function_">lean</span>()</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p><img src="/../Blog-image/posts/2022-04-24_mongoose.lean.webp" alt="error_mongoose.lean">  </p>
-<p>測試後發現：如果是已建立 index 的網址就沒問題；反之，如果是新建的就會報錯。那就表示兩者拿到的資料不一樣。仔細查閱了 mongoose 官方文件， <code>UrlIndex.findOne()</code> 回傳 Query、 <code>UrlIndex.create()</code> 回傳 Promise 物件……好吧! 接下來的問題就是如何取 <code>UrlIndex.create()</code> 的「值」?  </p>
-<p>在各種變換關鍵字後，終於在  stack overflow 找到救世主，可以用 <code>toObject()</code> 進行資料轉換。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">  urlData = urlData.<span class="title function_">toObject</span>()</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<br>
-大功告成! 一切終於都如我預期的運作了!!  
-
-<p>成品程式碼: <a href="https://github.com/ritachien/URL_Shortener">在這裡</a>。  </p>
-<h2 id="心得分享"><a href="#心得分享" class="headerlink" title="心得分享"></a>心得分享</h2><p>寫出來真的很有成就感啊!! 除了這個作業優化外，其實前面的作業也有經過類似的優化煎熬過程。總結起來解決問題的方法分幾個部分:  </p>
-<ul>
-<li>預防 – 仔細閱讀使用工具的官方文件、了解它的使用方法，正確的使用工具可以排除很多可能發生的問題。  </li>
-<li>找出問題 – 知道問題發生原因才是解決的最快方法。就像前面分享的問題二，看起來是 handlebars 接受的資料類型問題，實際上是 mongoose 回傳值的原因。  </li>
-<li>查找資料 – 在找出正確問題的前提下，盡可能下對關鍵字可以找到更接近需求的內容。</li>
-</ul>
-<p>不過沒有一次找到目標資料也沒關係，多多閱讀的過程中也能吸收各種知識，也許會在未來的某一天成為解決其他問題的關鍵!  </p>
 ]]></content>
       <categories>
         <category>課程心得</category>
@@ -1448,70 +1319,6 @@
         <tag>HTML</tag>
         <tag>CSS</tag>
         <tag>CS50W</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【CS50x(2022)】 Week1 - C</title>
-    <url>/posts/100ec410/</url>
-    <content><![CDATA[<p>第一次接觸 C，發現不同程式語言的寫作邏輯其實還是差不多的，差別在於較古老的語言在「便利性」上比較沒有那麼人性化。  </p>
-<span id="more"></span>
-<h2 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h2><ul>
-<li>C  </li>
-<li>IDEs, compilers, interfaces  </li>
-<li>Functions, arguments, return values, variables  </li>
-<li>main, header files, commands  </li>
-<li>Types, format codes, operators  </li>
-<li>Variables, syntactic sugar  </li>
-<li>Calculations  </li>
-<li>Conditionals, Boolean expressions  </li>
-<li>Loops, functions  </li>
-<li>Mario  </li>
-<li>Imprecision, overflow</li>
-</ul>
-<h2 id="用-C-學習程式寫作基礎"><a href="#用-C-學習程式寫作基礎" class="headerlink" title="用 C 學習程式寫作基礎"></a>用 C 學習程式寫作基礎</h2><p>本週開始接觸到新的語言 C。<br>上週用圖像化的 Scratch 來講解程式運作原理，這週承襲上週範例使用同樣的運作流程，只是改用 C 把它寫出來。  </p>
-<p>C 是一個相對古老的語言，所以他在寫作方式上並不像較新的語言那樣簡潔。比如:</p>
-<ol>
-<li>請使用者輸入名字</li>
-<li>在螢幕上印出 <code>Hello, 名字</code></li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//  用 JavaScript 寫</span></span><br><span class="line">name = <span class="title function_">prompt</span>(<span class="string">&quot;Enter your name: &quot;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>`</span>)</span><br></pre></td></tr></table></figure>
-<p>JavaScript 只用一個變數儲存使用者的輸入值，然後輸出時套用即可。  </p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 用 C 寫</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cs50.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> name = get_string(<span class="string">&quot;Enter your name: &quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello, %s\n&quot;</span>, name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>用 C 寫就比較辛苦了，因為 C 必須要把每件事都寫得很清楚:  </p>
-<ul>
-<li>因為需要在螢幕上輸出內容，所以需要 <code>#include &lt;stdio.h&gt;</code>。  </li>
-<li>要用到向使用者拿輸入內容的函式 <code>get_string</code>，所以需要 <code>#include &lt;cs50.h&gt;</code>。(這還是 CS50 的員工寫出來的 library ，不然可能更麻煩 😅)  </li>
-<li>主程式內容需用 <code>int main(void)&#123;&#125;</code> 包覆。  </li>
-<li>每個變數要在宣告時就定義好它的 data type。  </li>
-<li>用 <code>%</code> 引用變數值，並要清楚定義這個值的 data type。</li>
-</ul>
-<p>因為先學了 JavaScript 才接觸到 C，所以寫作的過程相當不習慣、覺得很麻煩。但是在練習中不斷的除錯、除錯、再除錯，漸漸地發現這樣嚴謹的寫法練習很重要！因為在寫作過程中，必須每時每刻都很清楚自己正在用什麼、需要用什麼，一旦漏掉某個部分，可能就會炸出一堆錯誤訊息。  </p>
-<h2 id="作業練習-Problem-Set-1"><a href="#作業練習-Problem-Set-1" class="headerlink" title="作業練習 (Problem Set 1)"></a>作業練習 (Problem Set 1)</h2><p>CS50x 課程提供了一個完整的線上 codespace，依照教學做完初次設定，之後就可以打開即寫了，成果測試和作業提交也相當方便。  </p>
-<p>第一次接觸 C 語言就一口氣來了5個作業練習(其實應該算3個，其中2題是難易二選一就好，但我龜毛，想達成100%成就！)  </p>
-<ul>
-<li><strong>Hello.c</strong><br>就是上面提到的範例。練習輸入、輸出、 header files、comments  </li>
-<li><strong>Mario-less.c</strong><br>do while 迴圈、nesting for loop  </li>
-<li><strong>Mario-more.c</strong><br>do while.c 迴圈、nesting for loop，比上一題再複雜一點。</li>
-<li><strong>Cash.c</strong><br>do while 迴圈、function。C 的 function 很特別，要在最開頭決定 return type(或 void)，引入的參數 type 也要定好。</li>
-<li><strong>Credit.c</strong><br>do while 迴圈、if&#x2F;else、while loop，是上一題的進階。</li>
-</ul>
-<p>寫了差不多整整一天，雖然不是用最有效率的做法答題，但主要就是想用這週課堂學到的方式解題。練習量大的成果就是能「體會」上課內容到底在說什麼東西，但寫完之後覺得還需要重新把課程補充資料看過一遍做個複習。</p>
-<h2 id="提升-Coding-品質"><a href="#提升-Coding-品質" class="headerlink" title="提升 Coding 品質"></a>提升 Coding 品質</h2><p>除了 C 的教學外，講師也有一再探討怎麼樣才是好的 code design。Coding 分三個階段:  </p>
-<ul>
-<li><strong>correctness：</strong> 要能正確的解決問題。  </li>
-<li><strong>design：</strong> 包含變數的設計、減少重複的程式碼、提高程式碼再使用率、維護便利性…等。  </li>
-<li><strong>style：</strong> 整體規格要有一致性、並提高閱讀便利性，盡可能整齊、簡潔明瞭。</li>
-</ul>
-<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>上了兩週的進度了，覺得課程的講解方式還算容易吸收，練習量也多。作業是需要在懂得前提下認真思考才能寫出來，對訓練思考邏輯很有幫助！  </p>
-<blockquote>
-<p>相關文章: <a href="https://ritachien.github.io/tags/CS50x-2022/">CS50x(2022)</a>  </p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>學習紀錄 - CS50</category>
-      </categories>
-      <tags>
-        <tag>CS50x(2022)</tag>
       </tags>
   </entry>
   <entry>
@@ -1982,6 +1789,70 @@
       </tags>
   </entry>
   <entry>
+    <title>【CS50x(2022)】 Week1 - C</title>
+    <url>/posts/100ec410/</url>
+    <content><![CDATA[<p>第一次接觸 C，發現不同程式語言的寫作邏輯其實還是差不多的，差別在於較古老的語言在「便利性」上比較沒有那麼人性化。  </p>
+<span id="more"></span>
+<h2 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h2><ul>
+<li>C  </li>
+<li>IDEs, compilers, interfaces  </li>
+<li>Functions, arguments, return values, variables  </li>
+<li>main, header files, commands  </li>
+<li>Types, format codes, operators  </li>
+<li>Variables, syntactic sugar  </li>
+<li>Calculations  </li>
+<li>Conditionals, Boolean expressions  </li>
+<li>Loops, functions  </li>
+<li>Mario  </li>
+<li>Imprecision, overflow</li>
+</ul>
+<h2 id="用-C-學習程式寫作基礎"><a href="#用-C-學習程式寫作基礎" class="headerlink" title="用 C 學習程式寫作基礎"></a>用 C 學習程式寫作基礎</h2><p>本週開始接觸到新的語言 C。<br>上週用圖像化的 Scratch 來講解程式運作原理，這週承襲上週範例使用同樣的運作流程，只是改用 C 把它寫出來。  </p>
+<p>C 是一個相對古老的語言，所以他在寫作方式上並不像較新的語言那樣簡潔。比如:</p>
+<ol>
+<li>請使用者輸入名字</li>
+<li>在螢幕上印出 <code>Hello, 名字</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//  用 JavaScript 寫</span></span><br><span class="line">name = <span class="title function_">prompt</span>(<span class="string">&quot;Enter your name: &quot;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>`</span>)</span><br></pre></td></tr></table></figure>
+<p>JavaScript 只用一個變數儲存使用者的輸入值，然後輸出時套用即可。  </p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 用 C 寫</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cs50.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> name = get_string(<span class="string">&quot;Enter your name: &quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello, %s\n&quot;</span>, name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用 C 寫就比較辛苦了，因為 C 必須要把每件事都寫得很清楚:  </p>
+<ul>
+<li>因為需要在螢幕上輸出內容，所以需要 <code>#include &lt;stdio.h&gt;</code>。  </li>
+<li>要用到向使用者拿輸入內容的函式 <code>get_string</code>，所以需要 <code>#include &lt;cs50.h&gt;</code>。(這還是 CS50 的員工寫出來的 library ，不然可能更麻煩 😅)  </li>
+<li>主程式內容需用 <code>int main(void)&#123;&#125;</code> 包覆。  </li>
+<li>每個變數要在宣告時就定義好它的 data type。  </li>
+<li>用 <code>%</code> 引用變數值，並要清楚定義這個值的 data type。</li>
+</ul>
+<p>因為先學了 JavaScript 才接觸到 C，所以寫作的過程相當不習慣、覺得很麻煩。但是在練習中不斷的除錯、除錯、再除錯，漸漸地發現這樣嚴謹的寫法練習很重要！因為在寫作過程中，必須每時每刻都很清楚自己正在用什麼、需要用什麼，一旦漏掉某個部分，可能就會炸出一堆錯誤訊息。  </p>
+<h2 id="作業練習-Problem-Set-1"><a href="#作業練習-Problem-Set-1" class="headerlink" title="作業練習 (Problem Set 1)"></a>作業練習 (Problem Set 1)</h2><p>CS50x 課程提供了一個完整的線上 codespace，依照教學做完初次設定，之後就可以打開即寫了，成果測試和作業提交也相當方便。  </p>
+<p>第一次接觸 C 語言就一口氣來了5個作業練習(其實應該算3個，其中2題是難易二選一就好，但我龜毛，想達成100%成就！)  </p>
+<ul>
+<li><strong>Hello.c</strong><br>就是上面提到的範例。練習輸入、輸出、 header files、comments  </li>
+<li><strong>Mario-less.c</strong><br>do while 迴圈、nesting for loop  </li>
+<li><strong>Mario-more.c</strong><br>do while.c 迴圈、nesting for loop，比上一題再複雜一點。</li>
+<li><strong>Cash.c</strong><br>do while 迴圈、function。C 的 function 很特別，要在最開頭決定 return type(或 void)，引入的參數 type 也要定好。</li>
+<li><strong>Credit.c</strong><br>do while 迴圈、if&#x2F;else、while loop，是上一題的進階。</li>
+</ul>
+<p>寫了差不多整整一天，雖然不是用最有效率的做法答題，但主要就是想用這週課堂學到的方式解題。練習量大的成果就是能「體會」上課內容到底在說什麼東西，但寫完之後覺得還需要重新把課程補充資料看過一遍做個複習。</p>
+<h2 id="提升-Coding-品質"><a href="#提升-Coding-品質" class="headerlink" title="提升 Coding 品質"></a>提升 Coding 品質</h2><p>除了 C 的教學外，講師也有一再探討怎麼樣才是好的 code design。Coding 分三個階段:  </p>
+<ul>
+<li><strong>correctness：</strong> 要能正確的解決問題。  </li>
+<li><strong>design：</strong> 包含變數的設計、減少重複的程式碼、提高程式碼再使用率、維護便利性…等。  </li>
+<li><strong>style：</strong> 整體規格要有一致性、並提高閱讀便利性，盡可能整齊、簡潔明瞭。</li>
+</ul>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>上了兩週的進度了，覺得課程的講解方式還算容易吸收，練習量也多。作業是需要在懂得前提下認真思考才能寫出來，對訓練思考邏輯很有幫助！  </p>
+<blockquote>
+<p>相關文章: <a href="https://ritachien.github.io/tags/CS50x-2022/">CS50x(2022)</a>  </p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>學習紀錄 - CS50</category>
+      </categories>
+      <tags>
+        <tag>CS50x(2022)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【CS50x(2022)】ProblemSet3 - Tideman 題解(Selection sort)</title>
     <url>/posts/d7ed27d2/</url>
     <content><![CDATA[<p>這是目前在 CS50x 課程中遇到的最難的題目了，如果不把思考邏輯好好整理一遍，下次再回顧應該還是要花很多時間理解一遍。  </p>
@@ -2330,6 +2201,303 @@
       </tags>
   </entry>
   <entry>
+    <title>Terminal 常用指令</title>
+    <url>/posts/800dd5f5/</url>
+    <content><![CDATA[<p>在使用指令介面時，偶爾會忘記特定指令。所以建立一篇 cheat sheet 方便之後需要時查詢。  </p>
+<span id="more"></span>
+<h2 id="快速鍵"><a href="#快速鍵" class="headerlink" title="快速鍵"></a>快速鍵</h2><table>
+<thead>
+<tr>
+<th>Windows 快速鍵</th>
+<th>MacOS 快速鍵</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>tab</code></td>
+<td><code>tab</code></td>
+<td>輸入部分，可自動補齊後面內容</td>
+</tr>
+<tr>
+<td><code>↑</code> <code>↓</code></td>
+<td><code>↑</code> <code>↓</code></td>
+<td>跳出之前用過的指令，可直接 enter 執行</td>
+</tr>
+</tbody></table>
+<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><table>
+<thead>
+<tr>
+<th>Windows 指令</th>
+<th>MacOS 指令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cd ..</td>
+<td>cd ..</td>
+<td>進入上層資料夾</td>
+</tr>
+<tr>
+<td>cd <code>path</code></td>
+<td>cd <code>path</code></td>
+<td>進入指定資料夾</td>
+</tr>
+<tr>
+<td>clear</td>
+<td>clear</td>
+<td>清空終端機內容</td>
+</tr>
+<tr>
+<td>ls</td>
+<td>ls</td>
+<td>列出當前目錄裡的所有內容</td>
+</tr>
+<tr>
+<td>ls -a</td>
+<td>ls -a</td>
+<td>列出當前目錄裡的所有內容(含隱藏檔案)</td>
+</tr>
+<tr>
+<td>mkdir <code>folder name(s)</code></td>
+<td>mkdir <code>folder name(s)</code></td>
+<td>新建一個或多個資料夾</td>
+</tr>
+<tr>
+<td>open .</td>
+<td>start .</td>
+<td>打開當前目錄的圖形化介面</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>pwd</td>
+<td>列出當前位置路徑</td>
+</tr>
+<tr>
+<td>rm <code>file name(s)</code></td>
+<td>rm <code>file name(s)</code></td>
+<td>刪除一個或多個檔案</td>
+</tr>
+<tr>
+<td>rm -rf <code>folder name(s)</code></td>
+<td>rm -rf <code>folder name(s)</code></td>
+<td>刪除一個或多個資料夾(及其內容)<br/>(r &#x3D; recursive, f &#x3D; force)</td>
+</tr>
+<tr>
+<td>touch <code>file name(s)</code></td>
+<td>touch <code>file name(s)</code></td>
+<td>新建一個或多個檔案</td>
+</tr>
+</tbody></table>
+<p>備註：在命令列進行「刪除」不會將檔案&#x2F;資料夾移到資源回收筒，而是直接刪除。  </p>
+]]></content>
+      <categories>
+        <category>Cheat Sheet</category>
+      </categories>
+      <tags>
+        <tag>Cheat Sheet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git 設置及基礎使用(add &amp; commit)</title>
+    <url>/posts/6adb515e/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>隨著使用 Git 一段時間了，一開始一頭霧水的操作也比較有概念了，是時候整理筆記了!<br>當然，為了訓練自己盡快習慣命令列介面，操作過程中全部使用命令列介面(真的不習慣的人還是有圖形化介面可以用)，常用指令可以參考 <a href="../800dd5f5">Terminal 常用指令</a>。</p>
+<span id="more"></span>
+
+<h2 id="Git-安裝及設定"><a href="#Git-安裝及設定" class="headerlink" title="Git 安裝及設定"></a>Git 安裝及設定</h2><blockquote>
+<p>作業系統： windows 10</p>
+</blockquote>
+<ul>
+<li><p>到 <a href="https://git-scm.com/">Git 官方網站</a>進行下載並安裝。  </p>
+</li>
+<li><p>打開 Git bash 或任何自己慣用的命令列介面。</p>
+</li>
+<li><p>設定 <code>name</code> 和 <code>email</code>。<br>如下圖所示， Git 在建立一個版本紀錄時，會給這個紀錄 「commit 編號」、「Author name」、「Author email」、建立時間和「版本訊息(commit message)」…等訊息。在多人合作的專案中，當需要對特定版本進行討論時，知道版本建立人的資訊就非常的重要。  </p>
+<p><img src="/../Blog-image/posts/2022-06-02_gitLog.webp" alt="git Log Screenshot">  </p>
+<p>「Author name」是希望讓其他人知道的稱呼方式、「Author email」則是聯絡資訊。通常不會頻繁更換這兩個資訊，所以可以直接用全域( <code>--global</code> )設定即可。如果有傳遞 <code>--global</code> 參數，只需要設定這一次，之後都會直接套用此資訊。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 不限執行目錄</span></span><br><span class="line">git config --global user.name <span class="string">&quot;想顯示的名稱&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;想顯示的聯絡方式&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 完成後可執行以下命令來檢查設定結果</span></span><br><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+<p><strong>備註：如果特定專案想用不同的名字或電子郵件，只需要在該專案目錄內執行不加 <code>--global</code> 參數的命令進行設定即可。</strong></p>
+</li>
+</ul>
+<h2 id="為專案建立-Git-repository"><a href="#為專案建立-Git-repository" class="headerlink" title="為專案建立 Git repository"></a>為專案建立 Git repository</h2><ul>
+<li><p>當我們打算使用 Git 來追蹤專案時，只需要進入該專案的資料夾(根目錄)並執行：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<p>它會在當前目錄裡建立 <code>.git</code> 資料夾(隱形資料夾)，並在裡面紀錄專案的版本紀錄。  </p>
+</li>
+<li><p>如果想在當前目錄建立新的專案資料夾並追蹤，執行以下指令：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init &lt;folder_name&gt;</span><br></pre></td></tr></table></figure>
+<p>它會在當前目錄建立新資料夾，並在資料夾內建立 <code>.git</code> 資料夾(隱形資料夾)來追蹤專案。</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>一個 Git repository 原則上會追蹤資料夾內的每個檔案(除了 ignore 清單)，所以要注意不要在 repository 裡建立另一個 repository。  </p>
+</li>
+<li><p>如果要刪除整個專案的追蹤紀錄，只要刪除 <code>.git</code> 資料夾即可。</p>
+</li>
+</ul>
+<h2 id="什麼是-commit？"><a href="#什麼是-commit？" class="headerlink" title="什麼是 commit？"></a>什麼是 commit？</h2><p>Git commit 類似「存檔」的動作，他會紀錄檔案的「快照」。因為是快照，所以它可以將版本進行比較、回復、合併…等操作。  </p>
+<ul>
+<li>不同 commit 間的比較，就是比對兩個版本「快照」不同的地方。  </li>
+<li>「回復成之前的版本」就是讓檔案回到指定版本快照的樣子。  </li>
+<li>「合併」就是將指定的幾個版本中不同的地方都保留，並留下新的快照。</li>
+</ul>
+<h2 id="Git-status-說明"><a href="#Git-status-說明" class="headerlink" title="Git status 說明"></a>Git status 說明</h2><h3 id="三種-status"><a href="#三種-status" class="headerlink" title="三種 status"></a>三種 status</h3><p>要使用 Git 來做版本追蹤，首先要知道被追蹤專案裡的檔案處於哪種狀態？  </p>
+<p>Git repository 會將專案裡的所有檔案分成三種狀態 ——  </p>
+<ol>
+<li>Unstaged files：編輯中的檔案，還沒有打算把當下進度「拍照」。  </li>
+<li>Staged files：編輯告一段落，決定把檔案當下進度進行「快照」。  </li>
+<li>Committed：版本「快照」完成，並留下該版本的相關訊息。</li>
+</ol>
+<p>不同的檔案可能處於不同的狀態，可以用以下指令來查看專案中檔案處於哪種狀態。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<h3 id="git-status-清單"><a href="#git-status-清單" class="headerlink" title="git status 清單"></a>git status 清單</h3><p>執行 <code>git status</code> 指令後會列出尚未進行快照的檔案清單，並分成三個部分(有內容的才會顯示) ——  </p>
+<ol>
+<li>Changes to be committed：即已經用 <code>git add</code> 加入等待 commit 的檔案清單。  </li>
+<li>Changes not staged for commit：即已追蹤的檔案(以前 commit 過)，目前編輯中，還沒使用 <code>git add</code> 改變狀態的清單。  </li>
+<li>Untracked files：即尚未追蹤的檔案(沒有 commit 過)，目前編輯中，還沒使用 <code>git add</code> 改變狀態的清單。</li>
+</ol>
+<p>第 2 和第 3 個清單都屬於 <code>Unstaged files</code> ，差別只在於以前是否 commit 過。對於 git repository 而言，就是「修改檔案」和「新增檔案」的區別。  </p>
+<p><img src="/../Blog-image/posts/2022-06-02_gitStatus.webp" alt="git status"></p>
+<h2 id="建立-commit-add-amp-commit"><a href="#建立-commit-add-amp-commit" class="headerlink" title="建立 commit (add &amp; commit)"></a>建立 commit (add &amp; commit)</h2><p>接下來要介紹的兩個指令可以讓檔案在不同的 status 中移動。初學階段最常用到的兩個指令分別是 <code>git add</code> 跟 <code>git commit</code>。  </p>
+<h3 id="git-add-指令"><a href="#git-add-指令" class="headerlink" title="git add 指令"></a>git add 指令</h3><p>git add 作用：把檔案加入等待「快照」的清單中。如果再次執行 <code>git status</code> ，會發現指定檔案已經從 Unstaged files 清單移到 Staged files 清單中了。   </p>
+<p>Git 每次建立新版本時，並不限於「一個」檔案的快照，而是可以一口氣幫多個檔案進行「快照」。使用 <code>git add</code> 指令的目的就是將指定的檔案加入等候「快照」的清單中。使用 <code>git add</code> 指令時，須將檔案的副檔名一併寫上。  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 加入一個指定檔案</span></span><br><span class="line">git add test1.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加入多個指定檔案</span></span><br><span class="line">git add test1.txt test2.txt test3.txt</span><br></pre></td></tr></table></figure>
+
+<p>當我們想要將 Unstaged files 清單中的所有檔案一口氣加到 Staged files 清單時，可以執行另一個指令：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<h3 id="git-commit-m-指令"><a href="#git-commit-m-指令" class="headerlink" title="git commit -m 指令"></a>git commit -m 指令</h3><p>git commit 作用：為這次建立的新版本進行快照，並添加說明訊息。執行這個指令會將 Staged files 清單中的所有檔案進行「快照」、加入版本資訊(編號、作者資訊、說明訊息、時間…等)，完成後 Staged files 清單中會恢復空白狀態。  </p>
+<p>Git 預設的文字編輯器是 Vim ，他是一個對初學者來說相對不友善的工具(但很多 coding 大大很愛用)，如果沒有使用過這個工具，可能會連怎麼輸入或怎麼離開都不知道。當我們輸入 <code>git commit</code> 時，它會自動開啟 Vim 來讓你輸入 commit message ，為了避免初學時期碰到「進退兩難」的情況，通常會先使用 <code>git commit -m</code> 指令替代。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;想要加入的訊息放在雙引號裡&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>加入 <code>-m</code> 這個參數，可以讓我們在進行 commit 指令的同時，直接加入「單行」的 commit message ，不會另外跳出 Vim 介面來進行編輯。  </p>
+<p>這時，如果我們執行 <code>git log</code> 查看版本紀錄，就會發現多了一筆最新加入的 commit 版本了！  </p>
+<h2 id="Git-指令練習"><a href="#Git-指令練習" class="headerlink" title="Git 指令練習"></a>Git 指令練習</h2><blockquote>
+<p>練習題目：<a href="https://www.notion.so/Committing-Basics-Exercise-3dc1ef1873ce45e68cedd2265710d7d8">題目內容</a><br>題目來源：<a href="https://www.udemy.com/course/git-and-github-bootcamp/">The Git &amp; Github Bootcamp  ——Colt Steele</a>  </p>
+</blockquote>
+<p>這個練習只用到了上面介紹的指令，也是初學階段最常用到的指令。可以先點開連結試著做一次，如果遇到問題再參考下面列出的作法。  </p>
+<details class="note info no-icon"><summary><p>題目執行指令範例</p>
+</summary>
+<ol>
+<li><p>Create a new folder called <code>Shopping</code>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> Shopping</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Initialize a new git repo inside of the Shopping folder (make sure you’re not already inside of a Git repo!)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> Shopping</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Make a new file called <code>yard.txt</code>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> yard.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Make another new file called <code>groceries.txt</code>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> groceries.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Make a commit that includes both empty files.  The message should be “create yard and groceries lists”  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add yard.txt groceries.txt</span><br><span class="line">git commit -m <span class="string">&quot;create yard and groceries lists&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>In the <code>yard.txt</code> file, add the following changes:<br>  - 2 bags of potting soil<br>  - 1 bag of worm castings</p>
+</li>
+<li><p>In the groceries.txt file, add the following:<br>  - 4 tomatoes<br>  - 6 shallots<br>  - 1 fennel bulb</p>
+</li>
+<li><p>Make a new commit, including ONLY the changes from the <code>groceries.txt</code> file.  The commit message should be “add ingredients for tomato soup”  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add groceries.txt</span><br><span class="line">git commit -m <span class="string">&quot;add ingredients for tomato soup&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Make a second commit including ONLY the changes to the <code>yard.txt</code> file.  It should have the commit message “add items needed for garden box”  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add yard.txt</span><br><span class="line">git commit -m <span class="string">&quot;add items needed for garden box&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Next up, add the following line to the end of <code>groceries.txt</code><br>- couple of seed potatos</p>
+</li>
+<li><p>In the <code>yard.txt</code> file, change the first line so that it says “3 bags of potting soil” instead of “2 bags of potting soil”<br>- 3 bags of potting soil<br>- 1 bag of worm castings</p>
+</li>
+<li><p>Make a commit that includes the changes to BOTH files.  The message should read “add items needed to grow potatoes”</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;add items needed to grow potatoes&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Use a Git command to display a list of the commits. You should see 4!  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+
+</details>
+]]></content>
+      <categories>
+        <category>Git 筆記</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>commit message</title>
+    <url>/posts/77235ab3/</url>
+    <content><![CDATA[<span id="more"></span>
+]]></content>
+      <categories>
+        <category>Git 筆記</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Alpha Camp 學期 2-3 結業心得</title>
+    <url>/posts/924950b4/</url>
+    <content><![CDATA[<p>隨著時間的推移，在學習上總是會碰到各種不同的狀況，而這些狀況也提供我不同的學習感受。這篇著重於紀錄自己遇到、找出並排除問題的過程。  </p>
+<blockquote>
+<p>要解決問題，必須先正確的找出問題發生原因。  </p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="緣起：為短網址產生器加上重複檢查機制"><a href="#緣起：為短網址產生器加上重複檢查機制" class="headerlink" title="緣起：為短網址產生器加上重複檢查機制"></a>緣起：為短網址產生器加上重複檢查機制</h2><p>一如上學期結束時對自己許的願，這學期在寫作業的同時會盡可能地做些優化挑戰，然後不可避免的進入無窮卡關迴圈……  </p>
+<p>近期卡了最久的就是短網址產生器了!! 作業的要求其實很簡單，只要可以產生英文字母或數字的隨機亂碼來當短網址即可。但是! 我突然想到:「萬一真的產生了相同的亂碼怎麼辦?」。依照我當下的執行邏輯，產生亂碼之後就馬上把它和原始網址加入互相對照的 index ，在沒有檢查的情況下，兩組原始網址導向同一個短網址也不是不可能發生。  </p>
+<p>於是，我決定了優化方向：「在亂數產生器 return 結果之前加上檢查機制」，只要發現相同亂碼就重新執行一次亂碼產生流程。然後……在這個優化過程被卡了整整 2 天 🤣  </p>
+<h2 id="嘗試失敗1：同步與非同步"><a href="#嘗試失敗1：同步與非同步" class="headerlink" title="嘗試失敗1：同步與非同步"></a>嘗試失敗1：同步與非同步</h2><blockquote>
+<p>先來備註一下：這次用來存放 UrlIndex 資料的是 MongoDB。  </p>
+</blockquote>
+<p>原本的寫法如下(只放有問題部分):  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 產生亂碼短網址 &lt;file:root/utils/shortGenerator.js&gt;</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generator</span> (length) &#123;</span><br><span class="line">  <span class="comment">// 1. generate random code</span></span><br><span class="line">  <span class="comment">// 2. Check if random url already exist</span></span><br><span class="line">  <span class="comment">// =&gt; if exist, run &quot;generator (length)&quot;</span></span><br><span class="line">  <span class="comment">// =&gt; if not yet exist, return result</span></span><br><span class="line">  <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">shortenUrl</span>: result &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> data ? <span class="title function_">generator</span>(length) : result</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把短網址存入對照 index &lt;file:root/app.js&gt;</span></span><br><span class="line"><span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="attr">shortenUrl</span>: <span class="title function_">generator</span>(<span class="number">5</span>),</span><br><span class="line">  <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>在我的預想中， <code>generator()</code> 負責產生獨一無二的短網址，而 <code>UrlIndex.create()</code> 把取得的短網址拿去建立 index 。但是，看似沒問題的邏輯跳錯誤了! 好在目前遇到的大部分錯誤訊息都能正確敘述出問題的原因，它告訴我 shortenUrl 的值 <code>undefined</code> 。於是我去查查賦值 <code>undefined</code> 的原因，發現在我寫的流程裡最有可能的原因是：「若變數沒有提供初始值，則預設為 <code>undefined</code> 」。但不對啊~我不是有告訴 <code>UrlIndex.create()</code> shortenUrl 的值從 <code>generator()</code> 取得嗎? 為什麼會 <code>undefined</code> 呢?  </p>
+<p>前幾天因緣際會接觸到「非同步」相關知識的我想起了前輩對非同步的評語：  </p>
+<blockquote>
+<p>實戰常常遇到問題，一研究發現，怎麼又是你！  </p>
+</blockquote>
+<p>檢查了一下目前進度，確實啊~ <code>UrlIndex.create()</code> 和 <code>UrlIndex.findOne()</code> 都是非同步語法，如果沒有處理好，根本無法控制完成的先後順序。於是，再度開始了 google 旅程，發現目前對於非同步執行順序最常使用兩種方式:  </p>
+<ul>
+<li>async&#x2F;await  </li>
+<li>Promise.then()</li>
+</ul>
+<p>因為對 <code>async/await</code> 值的傳遞方式還不太熟悉，因此決定先用 <code>Promise.then()</code> 的方式。 <code>.then</code> 的前面必須是個 Promise 物件，但我目前 return 的是亂碼「值」。幸好查到的資料告訴我， mongoose 5.0 開始就內建 Promise 語法，所以我可以把整個 <code>UrlIndex.findOne()</code> 包成 Promise 物件。最後，我把整個檢驗是否重複的過程直接 return ，順利解決了執行順序問題。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 產生亂碼短網址</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generator</span> (length) &#123;</span><br><span class="line">  <span class="comment">// (前略)</span></span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">shortenUrl</span>: result &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> data ? <span class="title function_">generator</span>(length) : result</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ShortGenerator</span>(randomLength)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> urlData ? urlData : <span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">      <span class="attr">shortenUrl</span>: url,</span><br><span class="line">      <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="嘗試失敗2：mongoose-語法-return-值"><a href="#嘗試失敗2：mongoose-語法-return-值" class="headerlink" title="嘗試失敗2：mongoose 語法 return 值"></a>嘗試失敗2：mongoose 語法 return 值</h2><p>接著，我想把產生的短網址結果呈現給使用者:  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span> &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="title class_">ShortGenerator</span>(randomLength)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> urlData ? urlData : <span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">            <span class="attr">shortenUrl</span>: url,</span><br><span class="line">            <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">          &#125;)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;))  <span class="comment">// 執行到這行出問題!!</span></span><br><span class="line">        .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>這時候又跳錯誤了! 根據錯誤訊息查詢，發現是 handlebars 因為安全性問題，只接受乾淨的物件資料，通常可以用 <code>.lean()</code> 解決。把 <code>urlData</code> 印出來，看看到底取到什麼值? 嗯?? <code>_id</code> 裡面那個 new 是什麼? 看起來確定是回傳值的問題。<br><img src="/../Blog-image/posts/2022-04-24_returnValueOfMongoose.webp" alt="error_returnValueOfMongoose">  </p>
+<p>於是我加上了 <code>.lean()</code> ，但它又報錯了!  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">  urlData = urlData.<span class="title function_">lean</span>()</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><img src="/../Blog-image/posts/2022-04-24_mongoose.lean.webp" alt="error_mongoose.lean">  </p>
+<p>測試後發現：如果是已建立 index 的網址就沒問題；反之，如果是新建的就會報錯。那就表示兩者拿到的資料不一樣。仔細查閱了 mongoose 官方文件， <code>UrlIndex.findOne()</code> 回傳 Query、 <code>UrlIndex.create()</code> 回傳 Promise 物件……好吧! 接下來的問題就是如何取 <code>UrlIndex.create()</code> 的「值」?  </p>
+<p>在各種變換關鍵字後，終於在  stack overflow 找到救世主，可以用 <code>toObject()</code> 進行資料轉換。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">  urlData = urlData.<span class="title function_">toObject</span>()</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<br>
+大功告成! 一切終於都如我預期的運作了!!  
+
+<p>成品程式碼: <a href="https://github.com/ritachien/URL_Shortener">在這裡</a>。  </p>
+<h2 id="心得分享"><a href="#心得分享" class="headerlink" title="心得分享"></a>心得分享</h2><p>寫出來真的很有成就感啊!! 除了這個作業優化外，其實前面的作業也有經過類似的優化煎熬過程。總結起來解決問題的方法分幾個部分:  </p>
+<ul>
+<li>預防 – 仔細閱讀使用工具的官方文件、了解它的使用方法，正確的使用工具可以排除很多可能發生的問題。  </li>
+<li>找出問題 – 知道問題發生原因才是解決的最快方法。就像前面分享的問題二，看起來是 handlebars 接受的資料類型問題，實際上是 mongoose 回傳值的原因。  </li>
+<li>查找資料 – 在找出正確問題的前提下，盡可能下對關鍵字可以找到更接近需求的內容。</li>
+</ul>
+<p>不過沒有一次找到目標資料也沒關係，多多閱讀的過程中也能吸收各種知識，也許會在未來的某一天成為解決其他問題的關鍵!  </p>
+]]></content>
+      <categories>
+        <category>課程心得</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【CS50x(2022)】Complexity and Big O Notation</title>
     <url>/posts/6466fe30/</url>
     <content><![CDATA[<p>在上 CS50x 第三週的演算法時，總覺得對「時間複雜度」的理解不夠清楚，因此另外找了課程做補充。  </p>
@@ -2431,221 +2599,72 @@
       </tags>
   </entry>
   <entry>
-    <title>Git 設置及基礎使用(add &amp; commit)</title>
-    <url>/posts/6adb515e/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>隨著使用 Git 一段時間了，一開始一頭霧水的操作也比較有概念了，是時候整理筆記了!<br>當然，為了訓練自己盡快習慣命令列介面，操作過程中全部使用命令列介面(真的不習慣的人還是有圖形化介面可以用)，常用指令可以參考 <a href="../800dd5f5">Terminal 常用指令</a>。</p>
+    <title>data-* HTML 自定義屬性及 dataset</title>
+    <url>/posts/b8b00b13/</url>
+    <content><![CDATA[<p>在 <a href="/posts/470f6710/">JS30 Day1</a> 第一次看到 data-* 屬性，學習 DOM 之後發現真是太好用了阿!</p>
 <span id="more"></span>
-
-<h2 id="Git-安裝及設定"><a href="#Git-安裝及設定" class="headerlink" title="Git 安裝及設定"></a>Git 安裝及設定</h2><blockquote>
-<p>作業系統： windows 10</p>
+<blockquote>
+<p>筆記內容為學習過程中的紀錄，內容可能未臻完善，如有錯漏，歡迎留言，謝謝!</p>
 </blockquote>
+<h2 id="data-基本介紹"><a href="#data-基本介紹" class="headerlink" title="data-* 基本介紹"></a>data-* 基本介紹</h2><p><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Global_attributes/data-*">[MDN 說明]</a>  </p>
+<p>HTML 標籤除了預設的屬性之外，其實還有個很好用的自定義屬性 <code>data-*</code> ，這個東西在開始進行 DOM 操作後，更可以明顯感受到它的方便性。通常我們在眾多 HTML 標籤中要針對特定幾個元素做操作時，會使用 id 或 class 來指定，但實際使用下來不夠彈性。例如:  </p>
+<p>現在有 52 張撲克牌，我和朋友玩了撿紅點。計分時黑牌不計分、紅牌數值相加。我可以直接用 class name “card” 來套用同樣的卡背樣式。但如果我想把所有吃到”紅色牌分數”相加時，現有的屬性沒辦法滿足我的需求。  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 用 &lt;div&gt; 做出 52 張牌 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">...(略)</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>J<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>Q<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>K<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>於是，我就可以用 <code>data-*</code> 來加上我需要的屬性內容。 用 <code>data-suit</code> 來表示花色、 <code>data-value</code> 來表示數字。這樣，我就可以一眼看出這張牌的顏色和數字了!  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 加上花色及數值屬性 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;club&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;1&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;diamond&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;2&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;heart&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;3&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">...(略)</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;heart&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;11&quot;</span>&gt;</span>J<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;spade&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;12&quot;</span>&gt;</span>Q<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;spade&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;13&quot;</span>&gt;</span>K<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>data-*</code> 可以新增一個”自定義屬性”，並給這個屬性一個”值”，有了這個設定之後，就可以更有針對性及彈性的對特定元素進行操作。  </p>
+<h3 id="命名規則"><a href="#命名規則" class="headerlink" title="命名規則"></a>命名規則</h3><p><strong>(很重要! 和後面提到的 dataset 應用有關!)</strong>  </p>
 <ul>
-<li><p>到 <a href="https://git-scm.com/">Git 官方網站</a>進行下載並安裝。  </p>
-</li>
-<li><p>打開 Git bash 或任何自己慣用的命令列介面。</p>
-</li>
-<li><p>設定 <code>name</code> 和 <code>email</code>。<br>如下圖所示， Git 在建立一個版本紀錄時，會給這個紀錄 「commit 編號」、「Author name」、「Author email」、建立時間和「版本訊息(commit message)」…等訊息。在多人合作的專案中，當需要對特定版本進行討論時，知道版本建立人的資訊就非常的重要。  </p>
-<p><img src="/../Blog-image/posts/2022-06-01_gitLog.webp" alt="git Log Screenshot">  </p>
-<p>「Author name」是希望讓其他人知道的稱呼方式、「Author email」則是聯絡資訊。通常不會頻繁更換這兩個資訊，所以可以直接用全域( <code>--global</code> )設定即可。如果有傳遞 <code>--global</code> 參數，只需要設定這一次，之後都會直接套用此資訊。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 不限執行目錄</span></span><br><span class="line">git config --global user.name <span class="string">&quot;想顯示的名稱&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;想顯示的聯絡方式&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 完成後可執行以下命令來檢查設定結果</span></span><br><span class="line">git config --list</span><br></pre></td></tr></table></figure>
-<p><strong>備註：如果特定專案想用不同的名字或電子郵件，只需要在該專案目錄內執行不加 <code>--global</code> 參數的命令進行設定即可。</strong></p>
-</li>
+<li>同 class 命名慣例，用 <code>-</code> 串接字詞。  </li>
+<li>名字絕對不能以 <code>xml</code> 起頭。  </li>
+<li>名字只能包含小寫字母、數字、dash（-）、點（.）、冒號（:）和下底線（_）。</li>
 </ul>
-<h2 id="為專案建立-Git-repository"><a href="#為專案建立-Git-repository" class="headerlink" title="為專案建立 Git repository"></a>為專案建立 Git repository</h2><ul>
-<li><p>當我們打算使用 Git 來追蹤專案時，只需要進入該專案的資料夾(根目錄)並執行：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-<p>它會在當前目錄裡建立 <code>.git</code> 資料夾(隱形資料夾)，並在裡面紀錄專案的版本紀錄。  </p>
+<h3 id="補充說明"><a href="#補充說明" class="headerlink" title="補充說明"></a>補充說明</h3><p> <code>data-*</code> 所儲存的屬性值型別都是<strong>字串</strong>，如果要進行四則運算要記得先轉換型別!</p>
+<h2 id="CSS-應用"><a href="#CSS-應用" class="headerlink" title="CSS 應用"></a>CSS 應用</h2><h3 id="CSS-選擇器"><a href="#CSS-選擇器" class="headerlink" title="CSS 選擇器"></a>CSS 選擇器</h3><p>我們常以 class 及 id 來定義 CSS 樣式。其實 CSS 選擇器中有一個<strong>屬性選擇器</strong>，可以依屬性值來選擇特定元素。接續上面的撲克牌為例，把花色為愛心&#x2F;方塊的牌顯示為紅色:  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 選擇屬性為特定值的元素 */</span></span><br><span class="line"><span class="selector-attr">[data-suit=<span class="string">&quot;heart&quot;</span>]</span>,</span><br><span class="line"><span class="selector-attr">[data-suit=<span class="string">&quot;diamond&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="CSS-content-及-attr"><a href="#CSS-content-及-attr" class="headerlink" title="CSS content 及 attr()"></a>CSS content 及 attr()</h3><p><code>content</code> 可以用 CSS 直接生成靜態文字； <code>attr()</code> 則是可以讀取”屬性值”。<br>如果有3個設好 <code>data-value</code> 的撲克牌，我要讓它在 <code>&lt;div&gt;&lt;/div&gt;</code> 中間加入屬性的值:  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 原本未加 CSS 狀態 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;A&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>設置 CSS content:  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">attr</span>(data-value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>CSS 渲染過後的 HTML 會呈現:  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;A&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;2&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;3&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="DOM-與-JavaScript-應用"><a href="#DOM-與-JavaScript-應用" class="headerlink" title="DOM 與 JavaScript 應用"></a>DOM 與 JavaScript 應用</h2><h3 id="DOM-querySelector"><a href="#DOM-querySelector" class="headerlink" title="DOM querySelector"></a>DOM querySelector</h3><ul>
+<li><p>在使用 querySelector 時，可以直接指定<strong>屬性值</strong>。以”選擇所有梅花牌”為例:  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 選取所有含 data-suit=&quot;club&quot; 的節點</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectors</span>(<span class="string">&#x27;[data-suit=&quot;club&quot;]&#x27;</span>)</span><br><span class="line"><span class="comment">// 選取所有含 data-suit=&quot;club&quot; 的 &lt;div&gt; 節點</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectors</span>(<span class="string">&#x27;div[data-suit=&quot;club&quot;]&#x27;</span>)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>如果想在當前目錄建立新的專案資料夾並追蹤，執行以下指令：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init &lt;folder_name&gt;</span><br></pre></td></tr></table></figure>
-<p>它會在當前目錄建立新資料夾，並在資料夾內建立 <code>.git</code> 資料夾(隱形資料夾)來追蹤專案。</p>
-</li>
+<li><p>也可以更彈性的運用，使用 template 代入屬性值。以 <a href="https://github.com/ritachien/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/index.html">[JS30 Day1 JavaScript Drum Kit]</a> 為例:<br>在 HTML 部分設置了4個按鍵元素(A、S、D、F)，並為每個按鍵標上編號。  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;65&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;83&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>S<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;68&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>D<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;70&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>F<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>設置監聽事件，自動讀取事件紀錄的 <code>keyCode</code> 並將數值代入 template 中。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, playAudio)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">playAudio</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> key = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`.key[data-key=&quot;<span class="subst">$&#123;event.keyCode&#125;</span>&quot;]`</span>)</span><br><span class="line">  <span class="comment">// 其他程式碼(略)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如: 按下&quot;A&quot;鍵，事件紀錄的 keyCode:65 ，這裡就會直接把65代入。上面的程式碼會變成:</span></span><br><span class="line"><span class="keyword">const</span> key = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.key[data-key=&quot;65&quot;]&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
 </ul>
-<hr>
-<ul>
-<li><p>一個 Git repository 原則上會追蹤資料夾內的每個檔案(除了 ignore 清單)，所以要注意不要在 repository 裡建立另一個 repository。  </p>
-</li>
-<li><p>如果要刪除整個專案的追蹤紀錄，只要刪除 <code>.git</code> 資料夾即可。</p>
-</li>
-</ul>
-<h2 id="什麼是-commit？"><a href="#什麼是-commit？" class="headerlink" title="什麼是 commit？"></a>什麼是 commit？</h2><p>Git commit 類似「存檔」的動作，他會紀錄檔案的「快照」。因為是快照，所以它可以將版本進行比較、回復、合併…等操作。  </p>
-<ul>
-<li>不同 commit 間的比較，就是比對兩個版本「快照」不同的地方。  </li>
-<li>「回復成之前的版本」就是讓檔案回到指定版本快照的樣子。  </li>
-<li>「合併」就是將指定的幾個版本中不同的地方都保留，並留下新的快照。</li>
-</ul>
-<h2 id="Git-status-說明"><a href="#Git-status-說明" class="headerlink" title="Git status 說明"></a>Git status 說明</h2><p>要使用 Git 來做版本追蹤，首先要知道被追蹤專案裡的檔案處於哪種狀態？  </p>
-<p>Git repository 會將專案裡的所有檔案分成三種狀態 ——  </p>
+<h3 id="HTMLElement-dataset"><a href="#HTMLElement-dataset" class="headerlink" title="HTMLElement.dataset"></a>HTMLElement.dataset</h3><p><a href="https://developer.mozilla.org/zh-TW/docs/orphaned/Web/API/HTMLOrForeignElement/dataset">[MDN 說明]</a>  </p>
+<h4 id="命名轉換"><a href="#命名轉換" class="headerlink" title="命名轉換"></a>命名轉換</h4><p><strong>dash-style to camelCase</strong>  </p>
 <ol>
-<li>Unstaged files：編輯中的檔案，還沒有打算把當下進度「拍照」。  </li>
-<li>Staged files：編輯告一段落，決定把檔案當下進度進行「快照」。  </li>
-<li>Committed：版本「快照」完成，並留下該版本的相關訊息。</li>
+<li>刪去前綴字 <code>data-</code> 。  </li>
+<li>每個 <code>-</code> 後的第一個字母轉為大寫，刪去中間 <code>-</code> 後連接字串。<br>例如: <code>data-abc-def-ghi</code> 會被轉換為 <code>abcDefGhi</code>。</li>
 </ol>
-<p>不同的檔案可能處於不同的狀態，可以用以下指令來查看專案中檔案處於哪種狀態。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-<p>執行後會列出尚未進行快照的檔案，並分成 <code>Unstaged files</code> 和 <code>Staged files</code> 兩部分。  </p>
-<p><img src="/../Blog-image/posts/2022-06-01_gitStatus.webp" alt="git status"></p>
-<h2 id="建立-commit-add-amp-commit"><a href="#建立-commit-add-amp-commit" class="headerlink" title="建立 commit (add &amp; commit)"></a>建立 commit (add &amp; commit)</h2><p>接下來要介紹的兩個指令可以讓檔案在不同的 status 中移動。初學階段最常用到的兩個指令分別是 <code>git add</code> 跟 <code>git commit</code>。  </p>
-<h3 id="git-add-指令"><a href="#git-add-指令" class="headerlink" title="git add 指令"></a>git add 指令</h3><p>git add 作用：把檔案加入等待「快照」的清單中。如果再次執行 <code>git status</code> ，會發現指定檔案已經從 Unstaged files 清單移到 Staged files 清單中了。   </p>
-<p>Git 每次建立新版本時，並不限於「一個」檔案的快照，而是可以一口氣幫多個檔案進行「快照」。使用 <code>git add</code> 指令的目的就是將指定的檔案加入等候「快照」的清單中。使用 <code>git add</code> 指令時，須將檔案的副檔名一併寫上。  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 加入一個指定檔案</span></span><br><span class="line">git add test1.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加入多個指定檔案</span></span><br><span class="line">git add test1.txt test2.txt test3.txt</span><br></pre></td></tr></table></figure>
-
-<p>當我們想要將 Unstaged files 清單中的所有檔案一口氣加到 Staged files 清單時，可以執行另一個指令：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
-
-<h3 id="git-commit-m-指令"><a href="#git-commit-m-指令" class="headerlink" title="git commit -m 指令"></a>git commit -m 指令</h3><p>git commit 作用：為這次建立的新版本進行快照，並添加說明訊息。執行這個指令會將 Staged files 清單中的所有檔案進行「快照」、加入版本資訊(編號、作者資訊、說明訊息、時間…等)，完成後 Staged files 清單中會恢復空白狀態。  </p>
-<p>Git 預設的文字編輯器是 Vim ，他是一個對初學者來說相對不友善的工具(但很多 coding 大大很愛用)，如果沒有使用過這個工具，可能會連怎麼輸入或怎麼離開都不知道。當我們輸入 <code>git commit</code> 時，它會自動開啟 Vim 來讓你輸入 commit message ，為了避免初學時期碰到「進退兩難」的情況，通常會先使用 <code>git commit -m</code> 指令替代。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;想要加入的訊息放在雙引號裡&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>加入 <code>-m</code> 這個參數，可以讓我們在進行 commit 指令的同時，直接加入「單行」的 commit message ，不會另外跳出 Vim 介面來進行編輯。  </p>
-<p>這時，如果我們執行 <code>git log</code> 查看版本紀錄，就會發現多了一筆最新加入的 commit 版本了！  </p>
-<h2 id="Git-指令練習"><a href="#Git-指令練習" class="headerlink" title="Git 指令練習"></a>Git 指令練習</h2><blockquote>
-<p>練習題目：<a href="https://www.notion.so/Committing-Basics-Exercise-3dc1ef1873ce45e68cedd2265710d7d8">題目內容</a><br>題目來源：<a href="https://www.udemy.com/course/git-and-github-bootcamp/">The Git &amp; Github Bootcamp  ——Colt Steele</a>  </p>
+<h4 id="實際運用"><a href="#實際運用" class="headerlink" title="實際運用"></a>實際運用</h4><blockquote>
+<p>範例取自 MDN 文件<br>有個 HTML 元素如下:</p>
 </blockquote>
-<p>這個練習只用到了上面介紹的指令，也是初學階段最常用到的指令。可以先點開連結試著做一次，如果遇到問題再參考下面列出的作法。  </p>
-<details class="note info no-icon"><summary><p>題目執行指令範例</p>
-</summary>
-<ol>
-<li><p>Create a new folder called <code>Shopping</code>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> Shopping</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Initialize a new git repo inside of the Shopping folder (make sure you’re not already inside of a Git repo!)</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> Shopping</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Make a new file called <code>yard.txt</code>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> yard.txt</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Make another new file called <code>groceries.txt</code>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">touch</span> groceries.txt</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Make a commit that includes both empty files.  The message should be “create yard and groceries lists”  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add yard.txt groceries.txt</span><br><span class="line">git commit -m <span class="string">&quot;create yard and groceries lists&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>In the <code>yard.txt</code> file, add the following changes:<br>  - 2 bags of potting soil<br>  - 1 bag of worm castings</p>
-</li>
-<li><p>In the groceries.txt file, add the following:<br>  - 4 tomatoes<br>  - 6 shallots<br>  - 1 fennel bulb</p>
-</li>
-<li><p>Make a new commit, including ONLY the changes from the <code>groceries.txt</code> file.  The commit message should be “add ingredients for tomato soup”  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add groceries.txt</span><br><span class="line">git commit -m <span class="string">&quot;add ingredients for tomato soup&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Make a second commit including ONLY the changes to the <code>yard.txt</code> file.  It should have the commit message “add items needed for garden box”  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add yard.txt</span><br><span class="line">git commit -m <span class="string">&quot;add items needed for garden box&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Next up, add the following line to the end of <code>groceries.txt</code><br>- couple of seed potatos</p>
-</li>
-<li><p>In the <code>yard.txt</code> file, change the first line so that it says “3 bags of potting soil” instead of “2 bags of potting soil”<br>- 3 bags of potting soil<br>- 1 bag of worm castings</p>
-</li>
-<li><p>Make a commit that includes the changes to BOTH files.  The message should read “add items needed to grow potatoes”</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;add items needed to grow potatoes&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Use a Git command to display a list of the commits. You should see 4!  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure></li>
-</ol>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;1234567890&quot;</span> <span class="attr">data-user</span>=<span class="string">&quot;johndoe&quot;</span>&gt;</span></span><br><span class="line">  John Doe</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-</details>
+<p>如果我要取它的 <code>data-*</code> 屬性值，取值方式如下:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 選取要取值的對象</span></span><br><span class="line"><span class="keyword">const</span> user = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#user&#x27;</span>)</span><br><span class="line"><span class="comment">// 開始取值</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">dataset</span>.<span class="property">id</span>)  <span class="comment">// 回傳 &#x27;1234567890&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">dataset</span>.<span class="property">user</span>)  <span class="comment">// 回傳 &#x27;johndoe&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
 ]]></content>
       <categories>
-        <category>Git 筆記</category>
+        <category>HTML 筆記</category>
+        <category>JavaScript 筆記</category>
       </categories>
       <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Terminal 常用指令</title>
-    <url>/posts/800dd5f5/</url>
-    <content><![CDATA[<p>在使用指令介面時，偶爾會忘記特定指令。所以建立一篇 cheat sheet 方便之後需要時查詢。  </p>
-<span id="more"></span>
-<h2 id="快速鍵"><a href="#快速鍵" class="headerlink" title="快速鍵"></a>快速鍵</h2><table>
-<thead>
-<tr>
-<th>Windows 快速鍵</th>
-<th>MacOS 快速鍵</th>
-<th>用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>tab</code></td>
-<td><code>tab</code></td>
-<td>輸入部分，可自動補齊後面內容</td>
-</tr>
-<tr>
-<td><code>↑</code> <code>↓</code></td>
-<td><code>↑</code> <code>↓</code></td>
-<td>跳出之前用過的指令，可直接 enter 執行</td>
-</tr>
-</tbody></table>
-<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><table>
-<thead>
-<tr>
-<th>Windows 指令</th>
-<th>MacOS 指令</th>
-<th>用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>cd ..</td>
-<td>cd ..</td>
-<td>進入上層資料夾</td>
-</tr>
-<tr>
-<td>cd <code>path</code></td>
-<td>cd <code>path</code></td>
-<td>進入指定資料夾</td>
-</tr>
-<tr>
-<td>clear</td>
-<td>clear</td>
-<td>清空終端機內容</td>
-</tr>
-<tr>
-<td>ls</td>
-<td>ls</td>
-<td>列出當前目錄裡的所有內容</td>
-</tr>
-<tr>
-<td>ls -a</td>
-<td>ls -a</td>
-<td>列出當前目錄裡的所有內容(含隱藏檔案)</td>
-</tr>
-<tr>
-<td>mkdir <code>folder name(s)</code></td>
-<td>mkdir <code>folder name(s)</code></td>
-<td>新建一個或多個資料夾</td>
-</tr>
-<tr>
-<td>open .</td>
-<td>start .</td>
-<td>打開當前目錄的圖形化介面</td>
-</tr>
-<tr>
-<td>pwd</td>
-<td>pwd</td>
-<td>列出當前位置路徑</td>
-</tr>
-<tr>
-<td>rm <code>file name(s)</code></td>
-<td>rm <code>file name(s)</code></td>
-<td>刪除一個或多個檔案</td>
-</tr>
-<tr>
-<td>rm -rf <code>folder name(s)</code></td>
-<td>rm -rf <code>folder name(s)</code></td>
-<td>刪除一個或多個資料夾(及其內容)<br/>(r &#x3D; recursive, f &#x3D; force)</td>
-</tr>
-<tr>
-<td>touch <code>file name(s)</code></td>
-<td>touch <code>file name(s)</code></td>
-<td>新建一個或多個檔案</td>
-</tr>
-</tbody></table>
-<p>備註：在命令列進行「刪除」不會將檔案&#x2F;資料夾移到資源回收筒，而是直接刪除。  </p>
-]]></content>
-      <categories>
-        <category>Cheat Sheet</category>
-      </categories>
-      <tags>
-        <tag>Cheat Sheet</tag>
+        <tag>HTML</tag>
+        <tag>JavaScript</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>

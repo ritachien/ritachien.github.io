@@ -29,14 +29,14 @@
 <meta property="og:site_name" content="Rita 的學習筆記">
 <meta property="og:description" content="前言隨著使用 Git 一段時間了，一開始一頭霧水的操作也比較有概念了，是時候整理筆記了!當然，為了訓練自己盡快習慣命令列介面，操作過程中全部使用命令列介面(真的不習慣的人還是有圖形化介面可以用)，常用指令可以參考 Terminal 常用指令。">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-01_gitLog.webp">
-<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-01_gitStatus.webp">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-02_gitLog.webp">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-02_gitStatus.webp">
 <meta property="article:published_time" content="2022-06-01T16:31:59.000Z">
-<meta property="article:modified_time" content="2022-06-01T17:28:52.007Z">
+<meta property="article:modified_time" content="2022-06-02T03:17:38.491Z">
 <meta property="article:author" content="Rita Chien">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-01_gitLog.webp">
+<meta name="twitter:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-02_gitLog.webp">
 
 
 <link rel="canonical" href="https://ritachien.github.io/posts/6adb515e/">
@@ -159,7 +159,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E5%AE%89%E8%A3%9D%E5%8F%8A%E8%A8%AD%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">Git 安裝及設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%BA%E5%B0%88%E6%A1%88%E5%BB%BA%E7%AB%8B-Git-repository"><span class="nav-number">3.</span> <span class="nav-text">為專案建立 Git repository</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-commit%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">什麼是 commit？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-status-%E8%AA%AA%E6%98%8E"><span class="nav-number">5.</span> <span class="nav-text">Git status 說明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B-commit-add-amp-commit"><span class="nav-number">6.</span> <span class="nav-text">建立 commit (add &amp; commit)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-add-%E6%8C%87%E4%BB%A4"><span class="nav-number">6.1.</span> <span class="nav-text">git add 指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-commit-m-%E6%8C%87%E4%BB%A4"><span class="nav-number">6.2.</span> <span class="nav-text">git commit -m 指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E6%8C%87%E4%BB%A4%E7%B7%B4%E7%BF%92"><span class="nav-number">7.</span> <span class="nav-text">Git 指令練習</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E5%AE%89%E8%A3%9D%E5%8F%8A%E8%A8%AD%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">Git 安裝及設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%BA%E5%B0%88%E6%A1%88%E5%BB%BA%E7%AB%8B-Git-repository"><span class="nav-number">3.</span> <span class="nav-text">為專案建立 Git repository</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-commit%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">什麼是 commit？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-status-%E8%AA%AA%E6%98%8E"><span class="nav-number">5.</span> <span class="nav-text">Git status 說明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%A8%AE-status"><span class="nav-number">5.1.</span> <span class="nav-text">三種 status</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-status-%E6%B8%85%E5%96%AE"><span class="nav-number">5.2.</span> <span class="nav-text">git status 清單</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B-commit-add-amp-commit"><span class="nav-number">6.</span> <span class="nav-text">建立 commit (add &amp; commit)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-add-%E6%8C%87%E4%BB%A4"><span class="nav-number">6.1.</span> <span class="nav-text">git add 指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-commit-m-%E6%8C%87%E4%BB%A4"><span class="nav-number">6.2.</span> <span class="nav-text">git commit -m 指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E6%8C%87%E4%BB%A4%E7%B7%B4%E7%BF%92"><span class="nav-number">7.</span> <span class="nav-text">Git 指令練習</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -174,7 +174,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -264,7 +264,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2022-06-02 00:31:59 / 修改時間：01:28:52" itemprop="dateCreated datePublished" datetime="2022-06-02T00:31:59+08:00">2022-06-02</time>
+      <time title="創建時間：2022-06-02 00:31:59 / 修改時間：11:17:38" itemprop="dateCreated datePublished" datetime="2022-06-02T00:31:59+08:00">2022-06-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -282,14 +282,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>3.7k</span>
+      <span>4k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>3 分鐘</span>
+      <span>4 分鐘</span>
     </span>
 </div>
 
@@ -312,7 +312,7 @@
 <li><p>打開 Git bash 或任何自己慣用的命令列介面。</p>
 </li>
 <li><p>設定 <code>name</code> 和 <code>email</code>。<br>如下圖所示， Git 在建立一個版本紀錄時，會給這個紀錄 「commit 編號」、「Author name」、「Author email」、建立時間和「版本訊息(commit message)」…等訊息。在多人合作的專案中，當需要對特定版本進行討論時，知道版本建立人的資訊就非常的重要。  </p>
-<p><img src="/../Blog-image/posts/2022-06-01_gitLog.webp" alt="git Log Screenshot">  </p>
+<p><img src="/../Blog-image/posts/2022-06-02_gitLog.webp" alt="git Log Screenshot">  </p>
 <p>「Author name」是希望讓其他人知道的稱呼方式、「Author email」則是聯絡資訊。通常不會頻繁更換這兩個資訊，所以可以直接用全域( <code>--global</code> )設定即可。如果有傳遞 <code>--global</code> 參數，只需要設定這一次，之後都會直接套用此資訊。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 不限執行目錄</span></span><br><span class="line">git config --global user.name <span class="string">&quot;想顯示的名稱&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;想顯示的聯絡方式&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 完成後可執行以下命令來檢查設定結果</span></span><br><span class="line">git config --list</span><br></pre></td></tr></table></figure>
 <p><strong>備註：如果特定專案想用不同的名字或電子郵件，只需要在該專案目錄內執行不加 <code>--global</code> 參數的命令進行設定即可。</strong></p>
@@ -341,7 +341,7 @@
 <li>「回復成之前的版本」就是讓檔案回到指定版本快照的樣子。  </li>
 <li>「合併」就是將指定的幾個版本中不同的地方都保留，並留下新的快照。</li>
 </ul>
-<h2 id="Git-status-說明"><a href="#Git-status-說明" class="headerlink" title="Git status 說明"></a>Git status 說明</h2><p>要使用 Git 來做版本追蹤，首先要知道被追蹤專案裡的檔案處於哪種狀態？  </p>
+<h2 id="Git-status-說明"><a href="#Git-status-說明" class="headerlink" title="Git status 說明"></a>Git status 說明</h2><h3 id="三種-status"><a href="#三種-status" class="headerlink" title="三種 status"></a>三種 status</h3><p>要使用 Git 來做版本追蹤，首先要知道被追蹤專案裡的檔案處於哪種狀態？  </p>
 <p>Git repository 會將專案裡的所有檔案分成三種狀態 ——  </p>
 <ol>
 <li>Unstaged files：編輯中的檔案，還沒有打算把當下進度「拍照」。  </li>
@@ -350,8 +350,15 @@
 </ol>
 <p>不同的檔案可能處於不同的狀態，可以用以下指令來查看專案中檔案處於哪種狀態。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-<p>執行後會列出尚未進行快照的檔案，並分成 <code>Unstaged files</code> 和 <code>Staged files</code> 兩部分。  </p>
-<p><img src="/../Blog-image/posts/2022-06-01_gitStatus.webp" alt="git status"></p>
+
+<h3 id="git-status-清單"><a href="#git-status-清單" class="headerlink" title="git status 清單"></a>git status 清單</h3><p>執行 <code>git status</code> 指令後會列出尚未進行快照的檔案清單，並分成三個部分(有內容的才會顯示) ——  </p>
+<ol>
+<li>Changes to be committed：即已經用 <code>git add</code> 加入等待 commit 的檔案清單。  </li>
+<li>Changes not staged for commit：即已追蹤的檔案(以前 commit 過)，目前編輯中，還沒使用 <code>git add</code> 改變狀態的清單。  </li>
+<li>Untracked files：即尚未追蹤的檔案(沒有 commit 過)，目前編輯中，還沒使用 <code>git add</code> 改變狀態的清單。</li>
+</ol>
+<p>第 2 和第 3 個清單都屬於 <code>Unstaged files</code> ，差別只在於以前是否 commit 過。對於 git repository 而言，就是「修改檔案」和「新增檔案」的區別。  </p>
+<p><img src="/../Blog-image/posts/2022-06-02_gitStatus.webp" alt="git status"></p>
 <h2 id="建立-commit-add-amp-commit"><a href="#建立-commit-add-amp-commit" class="headerlink" title="建立 commit (add &amp; commit)"></a>建立 commit (add &amp; commit)</h2><p>接下來要介紹的兩個指令可以讓檔案在不同的 status 中移動。初學階段最常用到的兩個指令分別是 <code>git add</code> 跟 <code>git commit</code>。  </p>
 <h3 id="git-add-指令"><a href="#git-add-指令" class="headerlink" title="git add 指令"></a>git add 指令</h3><p>git add 作用：把檔案加入等待「快照」的清單中。如果再次執行 <code>git status</code> ，會發現指定檔案已經從 Unstaged files 清單移到 Staged files 清單中了。   </p>
 <p>Git 每次建立新版本時，並不限於「一個」檔案的快照，而是可以一口氣幫多個檔案進行「快照」。使用 <code>git add</code> 指令的目的就是將指定的檔案加入等候「快照」的清單中。使用 <code>git add</code> 指令時，須將檔案的副檔名一併寫上。  </p>
@@ -457,6 +464,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/posts/77235ab3/" rel="next" title="commit message">
+                  commit message <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
