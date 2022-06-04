@@ -21,28 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="第一次接觸 C，發現不同程式語言的寫作邏輯其實還是差不多的，差別在於較古老的語言在「便利性」上比較沒有那麼人性化。">
+    <meta name="description" content="近期寫專案 README 和 Blog 常常會用到 markdown ，整理一篇常用語法！可以直接點左邊目錄，跳到相對應的主題位置。    參考資料：https:&#x2F;&#x2F;markdown.tw&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【CS50x(2022)】 Week1 - C">
-<meta property="og:url" content="https://ritachien.github.io/posts/100ec410/">
+<meta property="og:title" content="常用的 markdown 語法">
+<meta property="og:url" content="https://ritachien.github.io/posts/71aa6829/">
 <meta property="og:site_name" content="Rita 的學習筆記">
-<meta property="og:description" content="第一次接觸 C，發現不同程式語言的寫作邏輯其實還是差不多的，差別在於較古老的語言在「便利性」上比較沒有那麼人性化。">
+<meta property="og:description" content="近期寫專案 README 和 Blog 常常會用到 markdown ，整理一篇常用語法！可以直接點左邊目錄，跳到相對應的主題位置。    參考資料：https:&#x2F;&#x2F;markdown.tw&#x2F;">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-05-04T10:39:52.000Z">
-<meta property="article:modified_time" content="2022-05-04T10:39:52.000Z">
+<meta property="article:published_time" content="2022-06-24T11:24:21.000Z">
+<meta property="article:modified_time" content="2022-06-24T11:24:21.000Z">
 <meta property="article:author" content="Rita Chien">
-<meta property="article:tag" content="CS50x(2022)">
+<meta property="article:tag" content="Cheat Sheet">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ritachien.github.io/posts/100ec410/">
+<link rel="canonical" href="https://ritachien.github.io/posts/71aa6829/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/100ec410/","path":"posts/100ec410/","title":"【CS50x(2022)】 Week1 - C"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/71aa6829/","path":"posts/71aa6829/","title":"常用的 markdown 語法"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>【CS50x(2022)】 Week1 - C | Rita 的學習筆記</title>
+<title>常用的 markdown 語法 | Rita 的學習筆記</title>
   
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-215689852-1","only_pageview":true}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
@@ -155,7 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AA%B2%E7%A8%8B%E5%85%A7%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">課程內容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8-C-%E5%AD%B8%E7%BF%92%E7%A8%8B%E5%BC%8F%E5%AF%AB%E4%BD%9C%E5%9F%BA%E7%A4%8E"><span class="nav-number">2.</span> <span class="nav-text">用 C 學習程式寫作基礎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9C%E6%A5%AD%E7%B7%B4%E7%BF%92-Problem-Set-1"><span class="nav-number">3.</span> <span class="nav-text">作業練習 (Problem Set 1)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E5%8D%87-Coding-%E5%93%81%E8%B3%AA"><span class="nav-number">4.</span> <span class="nav-text">提升 Coding 品質</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%B5%90"><span class="nav-number">5.</span> <span class="nav-text">小結</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%99%E9%A1%8C"><span class="nav-number">1.</span> <span class="nav-text">標題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%80%E5%A1%8A%E5%BC%95%E8%A8%80"><span class="nav-number">2.</span> <span class="nav-text">區塊引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E5%96%AE"><span class="nav-number">3.</span> <span class="nav-text">清單</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC%E5%8D%80%E5%A1%8A%E5%8F%8A%E4%B8%8A%E8%89%B2"><span class="nav-number">4.</span> <span class="nav-text">程式碼區塊及上色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%85%A5%E5%9C%96%E7%89%87"><span class="nav-number">5.</span> <span class="nav-text">引入圖片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%A3%E7%B5%90"><span class="nav-number">6.</span> <span class="nav-text">連結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E9%AB%94%E8%AE%8A%E5%8C%96"><span class="nav-number">7.</span> <span class="nav-text">字體變化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E7%A9%BA%E7%99%BD%E8%A1%8C"><span class="nav-number">8.</span> <span class="nav-text">插入空白行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%9A%94%E7%B7%9A"><span class="nav-number">9.</span> <span class="nav-text">分隔線</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -230,7 +230,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/100ec410/">
+    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/71aa6829/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
@@ -243,12 +243,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="【CS50x(2022)】 Week1 - C | Rita 的學習筆記">
+      <meta itemprop="name" content="常用的 markdown 語法 | Rita 的學習筆記">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【CS50x(2022)】 Week1 - C
+          常用的 markdown 語法
         </h1>
 
         <div class="post-meta-container">
@@ -259,7 +259,7 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2022-05-04 18:39:52" itemprop="dateCreated datePublished" datetime="2022-05-04T18:39:52+08:00">2022-05-04</time>
+      <time title="創建時間：2022-06-24 19:24:21" itemprop="dateCreated datePublished" datetime="2022-06-24T19:24:21+08:00">2022-06-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -267,7 +267,11 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84-CS50/" itemprop="url" rel="index"><span itemprop="name">學習紀錄 - CS50</span></a>
+          <a href="/categories/Cheat-Sheet/" itemprop="url" rel="index"><span itemprop="name">Cheat Sheet</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Cheat-Sheet/markdown/" itemprop="url" rel="index"><span itemprop="name">markdown</span></a>
         </span>
     </span>
 
@@ -295,59 +299,76 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>第一次接觸 C，發現不同程式語言的寫作邏輯其實還是差不多的，差別在於較古老的語言在「便利性」上比較沒有那麼人性化。  </p>
-<span id="more"></span>
-<h2 id="課程內容"><a href="#課程內容" class="headerlink" title="課程內容"></a>課程內容</h2><ul>
-<li>C  </li>
-<li>IDEs, compilers, interfaces  </li>
-<li>Functions, arguments, return values, variables  </li>
-<li>main, header files, commands  </li>
-<li>Types, format codes, operators  </li>
-<li>Variables, syntactic sugar  </li>
-<li>Calculations  </li>
-<li>Conditionals, Boolean expressions  </li>
-<li>Loops, functions  </li>
-<li>Mario  </li>
-<li>Imprecision, overflow</li>
-</ul>
-<h2 id="用-C-學習程式寫作基礎"><a href="#用-C-學習程式寫作基礎" class="headerlink" title="用 C 學習程式寫作基礎"></a>用 C 學習程式寫作基礎</h2><p>本週開始接觸到新的語言 C。<br>上週用圖像化的 Scratch 來講解程式運作原理，這週承襲上週範例使用同樣的運作流程，只是改用 C 把它寫出來。  </p>
-<p>C 是一個相對古老的語言，所以他在寫作方式上並不像較新的語言那樣簡潔。比如:</p>
-<ol>
-<li>請使用者輸入名字</li>
-<li>在螢幕上印出 <code>Hello, 名字</code></li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  用 JavaScript 寫</span></span><br><span class="line">name = <span class="title function_">prompt</span>(<span class="string">&quot;Enter your name: &quot;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>`</span>)</span><br></pre></td></tr></table></figure>
-<p>JavaScript 只用一個變數儲存使用者的輸入值，然後輸出時套用即可。  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用 C 寫</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cs50.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> name = get_string(<span class="string">&quot;Enter your name: &quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello, %s\n&quot;</span>, name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>用 C 寫就比較辛苦了，因為 C 必須要把每件事都寫得很清楚:  </p>
-<ul>
-<li>因為需要在螢幕上輸出內容，所以需要 <code>#include &lt;stdio.h&gt;</code>。  </li>
-<li>要用到向使用者拿輸入內容的函式 <code>get_string</code>，所以需要 <code>#include &lt;cs50.h&gt;</code>。(這還是 CS50 的員工寫出來的 library ，不然可能更麻煩 😅)  </li>
-<li>主程式內容需用 <code>int main(void)&#123;&#125;</code> 包覆。  </li>
-<li>每個變數要在宣告時就定義好它的 data type。  </li>
-<li>用 <code>%</code> 引用變數值，並要清楚定義這個值的 data type。</li>
-</ul>
-<p>因為先學了 JavaScript 才接觸到 C，所以寫作的過程相當不習慣、覺得很麻煩。但是在練習中不斷的除錯、除錯、再除錯，漸漸地發現這樣嚴謹的寫法練習很重要！因為在寫作過程中，必須每時每刻都很清楚自己正在用什麼、需要用什麼，一旦漏掉某個部分，可能就會炸出一堆錯誤訊息。  </p>
-<h2 id="作業練習-Problem-Set-1"><a href="#作業練習-Problem-Set-1" class="headerlink" title="作業練習 (Problem Set 1)"></a>作業練習 (Problem Set 1)</h2><p>CS50x 課程提供了一個完整的線上 codespace，依照教學做完初次設定，之後就可以打開即寫了，成果測試和作業提交也相當方便。  </p>
-<p>第一次接觸 C 語言就一口氣來了5個作業練習(其實應該算3個，其中2題是難易二選一就好，但我龜毛，想達成100%成就！)  </p>
-<ul>
-<li><strong>Hello.c</strong><br>就是上面提到的範例。練習輸入、輸出、 header files、comments  </li>
-<li><strong>Mario-less.c</strong><br>do while 迴圈、nesting for loop  </li>
-<li><strong>Mario-more.c</strong><br>do while.c 迴圈、nesting for loop，比上一題再複雜一點。</li>
-<li><strong>Cash.c</strong><br>do while 迴圈、function。C 的 function 很特別，要在最開頭決定 return type(或 void)，引入的參數 type 也要定好。</li>
-<li><strong>Credit.c</strong><br>do while 迴圈、if&#x2F;else、while loop，是上一題的進階。</li>
-</ul>
-<p>寫了差不多整整一天，雖然不是用最有效率的做法答題，但主要就是想用這週課堂學到的方式解題。練習量大的成果就是能「體會」上課內容到底在說什麼東西，但寫完之後覺得還需要重新把課程補充資料看過一遍做個複習。</p>
-<h2 id="提升-Coding-品質"><a href="#提升-Coding-品質" class="headerlink" title="提升 Coding 品質"></a>提升 Coding 品質</h2><p>除了 C 的教學外，講師也有一再探討怎麼樣才是好的 code design。Coding 分三個階段:  </p>
-<ul>
-<li><strong>correctness：</strong> 要能正確的解決問題。  </li>
-<li><strong>design：</strong> 包含變數的設計、減少重複的程式碼、提高程式碼再使用率、維護便利性…等。  </li>
-<li><strong>style：</strong> 整體規格要有一致性、並提高閱讀便利性，盡可能整齊、簡潔明瞭。</li>
-</ul>
-<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>上了兩週的進度了，覺得課程的講解方式還算容易吸收，練習量也多。作業是需要在懂得前提下認真思考才能寫出來，對訓練思考邏輯很有幫助！  </p>
+        <p>近期寫專案 README 和 Blog 常常會用到 markdown ，整理一篇常用語法！可以直接點左邊目錄，跳到相對應的主題位置。  </p>
 <blockquote>
-<p>相關文章: <a href="https://ritachien.github.io/tags/CS50x-2022/">CS50x(2022)</a>  </p>
+<p>參考資料：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://markdown.tw/">https://markdown.tw/</a></p>
 </blockquote>
+<span id="more"></span>
+<h2 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h2><p>Markdown支援 Setext 和 atx 兩種形式的標題語法。但因為 Setext 語法僅分兩級標題，使用 atx 語法會比較有撰寫彈性及方便，下面列出的是 atx 語法的標題。  </p>
+<p>標題會自動佔滿一整行。不同級別的標題使用起來會有字體大小、粗細…等樣式上的差別。  </p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 這是一級標題</span></span><br><span class="line"><span class="section">## 這是二級標題</span></span><br><span class="line"><span class="section">### 這是三級標題</span></span><br><span class="line"><span class="section">#### 這是四級標題</span></span><br><span class="line"><span class="section">##### 這是五級標題</span></span><br><span class="line"><span class="section">###### 這是六級標題</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="區塊引言"><a href="#區塊引言" class="headerlink" title="區塊引言"></a>區塊引言</h2><p>Markdown使用email形式的區塊引言， <code>&gt;</code> 會強迫斷行。  </p>
+<p>區塊引言可以有階層(如下圖所示)，只要根據層數加上不同數量的 <code>&gt;</code> 即可。引言的區塊內也可以使用其他的Markdown語法，包括標題、清單、程式碼區塊…等。  </p>
+<blockquote>
+<p>一級區塊引言</p>
+<blockquote>
+<p>二級區塊引言</p>
+<blockquote>
+<p>三級區塊引言</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 一級區塊引言</span></span><br><span class="line">&gt;&gt; 二級區塊引言</span><br><span class="line">&gt;&gt;&gt; 三級區塊引言</span><br></pre></td></tr></table></figure>
+
+<h2 id="清單"><a href="#清單" class="headerlink" title="清單"></a>清單</h2><p>清單分為「有序清單」和「無序清單」。</p>
+<ul>
+<li>在項目標記後面則一定要接著至少一個空白或tab。  </li>
+<li>如果清單項目間用空行分開， Markdown會把項目的內容在輸出時用 <code>&lt;p&gt;</code> 標籤包起來。</li>
+</ul>
+<p><strong>無序清單( unordered list )</strong> 可以使用星號(<code>*</code>)、加號(<code>+</code>)或是減號(<code>-</code>)作為標記。無論哪種寫法，呈現出來的結果都一樣。</p>
+<ul>
+<li>無序清單範例</li>
+</ul>
+<ul>
+<li>無序清單範例</li>
+</ul>
+<ul>
+<li>無序清單範例</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">*</span> 無序清單範例</span><br><span class="line"><span class="bullet">+</span> 無序清單範例</span><br><span class="line"><span class="bullet">-</span> 無序清單範例</span><br></pre></td></tr></table></figure>
+
+<p><strong>有序清單( ordered list )</strong> 則是以數字加上英文句點(<code>.</code>)作為標記，項目標記後面則一定要接著至少一個空白或tab。比較特別的是，目前在清單標記上使用的數字並不會影響輸出的HTML結果。</p>
+<ol>
+<li>有序清單一</li>
+<li>有序清單二</li>
+<li>有序清單三</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 有序清單一</span><br><span class="line"><span class="bullet">2.</span> 有序清單二</span><br><span class="line"><span class="bullet">8.</span> 有序清單三(如上範例呈現，數字並不影響結果)</span><br></pre></td></tr></table></figure>
+
+<h2 id="程式碼區塊及上色"><a href="#程式碼區塊及上色" class="headerlink" title="程式碼區塊及上色"></a>程式碼區塊及上色</h2><p>撰寫程式碼區塊時可以用兩行的三個反引號(`&#96;&#96;)包裹程式碼，如果第一行的三個反引號(`&#96;&#96;)後面有加上程式語言名稱，它會自動辨識關鍵字並上色。  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello World!&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// markdown 撰寫語法如下:</span><br><span class="line"><span class="code">```js(語言名稱)</span></span><br><span class="line"><span class="code">console.log(&#x27;Hello World!&#x27;)</span></span><br><span class="line"><span class="code">```</span>\(為了讓它能正常顯示，所以加了跳脫符號&quot;\&quot;，實際撰寫時不加)</span><br></pre></td></tr></table></figure>
+
+<h2 id="引入圖片"><a href="#引入圖片" class="headerlink" title="引入圖片"></a>引入圖片</h2><p>markdown 語法也可以貼上圖片，寫法如下方範例。圖片說明等同 HTML <code>&lt;img&gt;</code> 的 <code>alt</code> property；而括號裡面填上圖片網址或在專案裡面的相對位置都可以。  </p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">圖片說明</span>](<span class="link">圖片 URL</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="連結"><a href="#連結" class="headerlink" title="連結"></a>連結</h2><p>即 HTML 的 <code>&lt;a&gt;</code> 。有些支援「文內跳轉」的地方，也可以在括號內填入文章的錨點。  </p>
+<p>連結寫法有「參考式連結」和「行內形式連結」。</p>
+<ul>
+<li>參考式連結可以讓文件更像是瀏覽器最後產生的結果，把一些標記相關的資訊移到段落文字之外，不讓文章的閱讀感覺被打斷。有興趣研究的可以到文章開頭提供的網址查看。  </li>
+<li>平常不會一次寫太多連結時，行內形式連結寫起來較直覺，所以這邊只提供「行內形式連結」寫法。</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">連結文字</span>](<span class="link">連結 URL</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="字體變化"><a href="#字體變化" class="headerlink" title="字體變化"></a>字體變化</h2><p><strong>粗體</strong><br><strong>也是粗體</strong><br><em>斜體</em><br><em>也是斜體</em>  </p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**粗體**</span></span><br><span class="line"><span class="strong">__也是粗體__</span></span><br><span class="line"><span class="emphasis">*斜體*</span></span><br><span class="line"><span class="emphasis">_也是斜體_</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="插入空白行"><a href="#插入空白行" class="headerlink" title="插入空白行"></a>插入空白行</h2><p>有些東西屬於「行內元素」，在 markdown 語法裡的 Enter(換行)會被自動忽略。比如平常編輯兩個段落文字時，使用 Enter 就會自動換行開始新段落，但在 markdown 裡則是使用兩個半型空格(<code>  </code>)。  </p>
+<p>使用兩個半型空格(<code>  </code>)後會強制換行產生新段落。在兩個段落間多插入一行或多行空白行則會在兩段落間增加一點段落間距(margin)，但空白行的數量並不影響間距大小。如果真的想呈現多行空白行，則可使用 HTML 元素 <code>&lt;br/&gt;</code> 來達成。  </p>
+<h2 id="分隔線"><a href="#分隔線" class="headerlink" title="分隔線"></a>分隔線</h2><p>在一行中用三個或以上的星號、減號、底線來建立一個分隔線，行內不能有其他東西。<br>符號中間可以插入空格。下面每種寫法都可以建立分隔線：  </p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">*</span> <span class="emphasis">* *</span></span><br><span class="line"><span class="strong">**<span class="emphasis">*</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">*</span>**</span><span class="strong">**</span></span><br><span class="line"><span class="strong">- - -</span></span><br><span class="line"><span class="strong">---------------------------------------</span></span><br><span class="line"><span class="strong">__<span class="emphasis">_</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">_</span> <span class="emphasis">_ _</span></span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -374,7 +395,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://ritachien.github.io/posts/100ec410/" title="【CS50x(2022)】 Week1 - C">https://ritachien.github.io/posts/100ec410/</a>
+      <a href="https://ritachien.github.io/posts/71aa6829/" title="常用的 markdown 語法">https://ritachien.github.io/posts/71aa6829/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -383,21 +404,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/CS50x-2022/" rel="tag"><i class="fa fa-tag"></i> CS50x(2022)</a>
+              <a href="/tags/Cheat-Sheet/" rel="tag"><i class="fa fa-tag"></i> Cheat Sheet</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/be2c6d84/" rel="prev" title="【CS50W】Lecture0：HTML & CSS">
-                  <i class="fa fa-chevron-left"></i> 【CS50W】Lecture0：HTML & CSS
+                <a href="/posts/362cfd32/" rel="prev" title="用 git commit --amend 修改 commit 紀錄">
+                  <i class="fa fa-chevron-left"></i> 用 git commit --amend 修改 commit 紀錄
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/aabaf537/" rel="next" title="【CS50x(2022)】 Week2 - Array">
-                  【CS50x(2022)】 Week2 - Array <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
