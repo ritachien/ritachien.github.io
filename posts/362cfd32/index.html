@@ -21,24 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Rita 的學習筆記">
-<meta property="og:url" content="https://ritachien.github.io/tags/CS50W/">
+    <meta name="description" content="前言在使用 Git 時，偶爾會在 commit 過程中發生一些小失誤，不管是 typo 或是部分檔案忘記加入 staged files 清單一起 commit。這種時候，git commit --amend 就是一個很方便的指令了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用 git commit --amend 修改 commit 紀錄">
+<meta property="og:url" content="https://ritachien.github.io/posts/362cfd32/">
 <meta property="og:site_name" content="Rita 的學習筆記">
+<meta property="og:description" content="前言在使用 Git 時，偶爾會在 commit 過程中發生一些小失誤，不管是 typo 或是部分檔案忘記加入 staged files 清單一起 commit。這種時候，git commit --amend 就是一個很方便的指令了。">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-06-03T16:31:59.000Z">
+<meta property="article:modified_time" content="2022-06-03T16:31:59.000Z">
 <meta property="article:author" content="Rita Chien">
-<meta property="article:tag" content="Blog, 程式語言, 學習紀錄">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ritachien.github.io/tags/CS50W/">
+<link rel="canonical" href="https://ritachien.github.io/posts/362cfd32/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"tags/CS50W/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/362cfd32/","path":"posts/362cfd32/","title":"用 git commit --amend 修改 commit 紀錄"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>標籤: CS50W | Rita 的學習筆記</title>
+<title>用 git commit --amend 修改 commit 紀錄 | Rita 的學習筆記</title>
   
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-215689852-1","only_pageview":true}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
@@ -138,7 +142,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -151,6 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#amend-%E5%8F%83%E6%95%B8%E4%BB%8B%E7%B4%B9"><span class="nav-number">2.</span> <span class="nav-text">--amend 參數介紹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#amend-%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">--amend 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AA%E4%BF%AE%E6%94%B9-commit-message"><span class="nav-number">3.1.</span> <span class="nav-text">只修改 commit message</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%87%E6%BC%8F%E6%8E%89%E7%9A%84%E6%AA%94%E6%A1%88%E5%8A%A0%E9%80%B2%E6%9C%80%E8%BF%91%E4%B8%80%E6%AC%A1%E7%9A%84-commit-%E8%A3%A1"><span class="nav-number">3.2.</span> <span class="nav-text">將漏掉的檔案加進最近一次的 commit 裡</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -214,51 +219,155 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">CS50W
-          <small>標籤</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/362cfd32/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
+      <meta itemprop="name" content="Rita Chien">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rita 的學習筆記">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="用 git commit --amend 修改 commit 紀錄 | Rita 的學習筆記">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          用 git commit --amend 修改 commit 紀錄
         </h1>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-06-04 00:31:59" itemprop="dateCreated datePublished" datetime="2022-06-04T00:31:59+08:00">2022-06-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Git-%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">Git 筆記</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>796</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用 Git 時，偶爾會在 commit 過程中發生一些小失誤，不管是 typo 或是部分檔案忘記加入 staged files 清單一起 commit。這種時候，<code>git commit --amend</code> 就是一個很方便的指令了。</p>
+<span id="more"></span>
+
+<h2 id="amend-參數介紹"><a href="#amend-參數介紹" class="headerlink" title="--amend 參數介紹"></a>--amend 參數介紹</h2><p>根據 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---amend">Git 官方說明</a>，加上 <code>--amend</code> 參數會在「當前分支」產生一筆<strong>新的 commit</strong> 來取代最近一次的 commit 紀錄。如果沒有在使用 <code>--amend</code> 參數的同時追加使用 <code>-m</code>、<code>-F</code> 或 <code>-c</code> …等參數，預設會將當前分支最近一筆的 commit message 帶入用作修改預設值。  </p>
+<p>值得注意的是，說明提到「新的 commit」。表示 <code>--amend</code> 是用新的 commit 取代舊的，而不是直接修改原始 commit 內容，所以編號會被修改。  </p>
+<blockquote>
+<p>由於是產生一筆新的 commit ，所以最好只在尚未 push 到遠端儲存庫時使用。  </p>
+</blockquote>
+<h2 id="amend-使用"><a href="#amend-使用" class="headerlink" title="--amend 使用"></a>--amend 使用</h2><p><code>git commit --amend</code> 使用時會像 <code>git commit</code> 一樣跳出預設文字編輯器，只是跳出時已將當前分支最近一次的 commit message 帶入。  </p>
+<h3 id="只修改-commit-message"><a href="#只修改-commit-message" class="headerlink" title="只修改 commit message"></a>只修改 commit message</h3><p>當只想修改最近一次 commit 的 commit message (因為錯字或其他原因)，不想變動 commit 的其他內容(檔案、作者訊息…等)。下面的指令可以二擇一使用：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 會跳出文字編輯器(自動帶入前一個 commit message)</span></span><br><span class="line">git commit --amend</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接輸入新的 commit message</span></span><br><span class="line">git commit --amend -m <span class="string">&quot;新的 commit message&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="將漏掉的檔案加進最近一次的-commit-裡"><a href="#將漏掉的檔案加進最近一次的-commit-裡" class="headerlink" title="將漏掉的檔案加進最近一次的 commit 裡"></a>將漏掉的檔案加進最近一次的 commit 裡</h3><p>有時候進行多個檔案的編輯，在進行 <code>git add</code> 時不小心漏掉了幾個檔案沒有加到。則可以用下列方式修改：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 將檔案加入 staged files</span></span><br><span class="line">git add file1.txt file2.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改最近一次 commit</span></span><br><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-02T00:00:00+08:00"
-              content="2022-05-02">
-          05-02
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/posts/be2c6d84/" itemprop="url">
-            <span itemprop="name">【CS50W】Lecture0：HTML & CSS</span>
-          </a>
-      </div>
+    <footer class="post-footer"><!-- 在文章底部添加感謝閱讀 -->
+<div>
+  
+    <div style="text-align:center; color:#ccc; font-size:14px; letter-spacing:5px">
+      ------------  本文結束，感謝您的閱讀&nbsp;<i class="fa fa-paw"></i>&nbsp;如有錯漏，歡迎留言討論  -------------
+    </div>
+  
+</div>
 
-      
-    </header>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Rita Chien
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://ritachien.github.io/posts/362cfd32/" title="用 git commit --amend 修改 commit 紀錄">https://ritachien.github.io/posts/362cfd32/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/6adb515e/" rel="prev" title="Git 設置及基礎使用(add & commit)">
+                  <i class="fa fa-chevron-left"></i> Git 設置及基礎使用(add & commit)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
 
+
+
+
+
+    <div class="comments utterances-container"></div>
 </div>
   </main>
 
