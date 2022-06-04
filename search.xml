@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>開始寫部落格啦!</title>
+    <url>/posts/572b724a/</url>
+    <content><![CDATA[<p>看了很多轉職分享、技術部落格、Youtube影片…等，有一個對程式新手共通的建議就是:「寫部落格」。<br>寫部落格的好處有什麼呢?  </p>
+<span id="more"></span>
+<p><strong>1. 學習筆記 :</strong><br>  學習的路很長，難免會把學過的東西忘掉。所以把自己曾經遇到的問題、解決過程及方法記錄下來，可以當作之後重新複習的依據。<br><strong>2. 知識再消化 :</strong><br>  把東西背下來很簡單，但要說給別人聽就相對困難。需要先消化、重新整理，再依照別人能懂的方式表達出來，需要一個知識再咀嚼的過程。這對新學到的知識可以有更深入的理解，或是會在跟別人的交流中找到自己忽略的小問題。<br><strong>3. 和別人交流的空間 :</strong><br>  也許會找到跟我相同興趣或遇到相同問題的人，可以超脫地理限制，跟世界各地的人交流。<br><strong>4. 求職參考 :</strong><br>  畢竟我不是本科出身的，在學歷上比不過相關科系的競爭對手。在經歷尚未累積出來之前，至少可以讓人資對我有更多的了解。包含我學過的知識、遇到過的問題，最重要的是我面對問題的解決態度及方法。  </p>
+<p>既然開始了，希望能一直寫下去，也希望最終有一天，這個部落格也能成為其他人遇到問題的參考依據!</p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Alpha Camp 學期一結業心得</title>
     <url>/posts/491e0585/</url>
     <content><![CDATA[<p>Alpha Camp的三週學習進度終於結束了，中間除了充斥著被成就感激起的學習熱情，也飽含怎麼都寫不出來的挫敗感。趁著現在給自己留下一篇熱騰騰的記錄，好好回顧這段學習歷程!  </p>
@@ -29,18 +41,6 @@
       </categories>
       <tags>
         <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>開始寫部落格啦!</title>
-    <url>/posts/572b724a/</url>
-    <content><![CDATA[<p>看了很多轉職分享、技術部落格、Youtube影片…等，有一個對程式新手共通的建議就是:「寫部落格」。<br>寫部落格的好處有什麼呢?  </p>
-<span id="more"></span>
-<p><strong>1. 學習筆記 :</strong><br>  學習的路很長，難免會把學過的東西忘掉。所以把自己曾經遇到的問題、解決過程及方法記錄下來，可以當作之後重新複習的依據。<br><strong>2. 知識再消化 :</strong><br>  把東西背下來很簡單，但要說給別人聽就相對困難。需要先消化、重新整理，再依照別人能懂的方式表達出來，需要一個知識再咀嚼的過程。這對新學到的知識可以有更深入的理解，或是會在跟別人的交流中找到自己忽略的小問題。<br><strong>3. 和別人交流的空間 :</strong><br>  也許會找到跟我相同興趣或遇到相同問題的人，可以超脫地理限制，跟世界各地的人交流。<br><strong>4. 求職參考 :</strong><br>  畢竟我不是本科出身的，在學歷上比不過相關科系的競爭對手。在經歷尚未累積出來之前，至少可以讓人資對我有更多的了解。包含我學過的知識、遇到過的問題，最重要的是我面對問題的解決態度及方法。  </p>
-<p>既然開始了，希望能一直寫下去，也希望最終有一天，這個部落格也能成為其他人遇到問題的參考依據!</p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -2732,10 +2732,10 @@
 ]]></content>
       <categories>
         <category>Cheat Sheet</category>
-        <category>markdown</category>
       </categories>
       <tags>
         <tag>Cheat Sheet</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
