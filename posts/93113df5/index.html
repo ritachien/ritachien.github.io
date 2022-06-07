@@ -21,29 +21,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="這個專案練習了 CSS 轉場效果( transition &amp; transform )，並利用 JavaScript function 來帶動 transform 的變化。">
+    <meta name="description" content="前言在使用 Git 時，不管是在自己的專案開發或多人合作的專案，分支(Branch)都是個很重要的功能。它可以讓不同的事情「同步進行」，不會相互影響、也不需要互相等待。這篇主要針對建立、刪除、切換及重新命名來介紹。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【JS30 挑戰】 Day2 - JS and CSS Clock">
-<meta property="og:url" content="https://ritachien.github.io/posts/74544bca/">
+<meta property="og:title" content="Git Branch(清單、新建、刪除、重新命名、切換)">
+<meta property="og:url" content="https://ritachien.github.io/posts/93113df5/">
 <meta property="og:site_name" content="Rita 的學習筆記">
-<meta property="og:description" content="這個專案練習了 CSS 轉場效果( transition &amp; transform )，並利用 JavaScript function 來帶動 transform 的變化。">
+<meta property="og:description" content="前言在使用 Git 時，不管是在自己的專案開發或多人合作的專案，分支(Branch)都是個很重要的功能。它可以讓不同的事情「同步進行」，不會相互影響、也不需要互相等待。這篇主要針對建立、刪除、切換及重新命名來介紹。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-02-07T15:56:00.000Z">
-<meta property="article:modified_time" content="2022-02-06T16:00:00.000Z">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-06_gitBranch.webp">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-06_gitBranchVerbose.webp">
+<meta property="article:published_time" content="2022-06-07T06:12:43.000Z">
+<meta property="article:modified_time" content="2022-06-07T06:34:44.851Z">
 <meta property="article:author" content="Rita Chien">
-<meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="JS30">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-06_gitBranch.webp">
 
 
-<link rel="canonical" href="https://ritachien.github.io/posts/74544bca/">
+<link rel="canonical" href="https://ritachien.github.io/posts/93113df5/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/74544bca/","path":"posts/74544bca/","title":"【JS30 挑戰】 Day2 - JS and CSS Clock"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/93113df5/","path":"posts/93113df5/","title":"Git Branch(清單、新建、刪除、重新命名、切換)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>【JS30 挑戰】 Day2 - JS and CSS Clock | Rita 的學習筆記</title>
+<title>Git Branch(清單、新建、刪除、重新命名、切換) | Rita 的學習筆記</title>
   
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-215689852-1","only_pageview":true}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
@@ -156,7 +158,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E6%A8%99"><span class="nav-number">1.</span> <span class="nav-text">目標</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B7%B4%E7%BF%92%E5%85%A7%E5%AE%B9"><span class="nav-number">2.</span> <span class="nav-text">練習內容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B%E5%89%8D%E7%9A%84%E6%BA%96%E5%82%99"><span class="nav-number">3.</span> <span class="nav-text">開始前的準備</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B7%B4%E7%BF%92%E9%96%8B%E5%A7%8B"><span class="nav-number">4.</span> <span class="nav-text">練習開始</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF%E6%B8%85%E5%96%AE-git-branch"><span class="nav-number">2.</span> <span class="nav-text">查看分支清單(git branch)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-HEAD"><span class="nav-number">3.</span> <span class="nav-text">什麼是 HEAD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HEAD-%E4%BB%8B%E7%B4%B9"><span class="nav-number">3.1.</span> <span class="nav-text">HEAD 介紹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#detached-HEAD"><span class="nav-number">3.2.</span> <span class="nav-text">detached HEAD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF-git-branch-lt-branch-name-gt"><span class="nav-number">4.</span> <span class="nav-text">新建分支(git branch &lt;branch-name&gt;)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8F%9B%E5%88%86%E6%94%AF-git-switch-lt-branch-name-gt"><span class="nav-number">5.</span> <span class="nav-text">切換分支(git switch &lt;branch-name&gt;)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%AA%E9%99%A4%E5%88%86%E6%94%AF-git-branch-d-lt-branch-name-gt"><span class="nav-number">6.</span> <span class="nav-text">刪除分支(git branch -d &lt;branch-name&gt;)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E5%91%BD%E5%90%8D%E5%88%86%E6%94%AF-git-branch-m-lt-new-name-gt"><span class="nav-number">7.</span> <span class="nav-text">重新命名分支(git branch -m &lt;new-name&gt;)</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -234,7 +236,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/74544bca/">
+    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/93113df5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
@@ -247,12 +249,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="【JS30 挑戰】 Day2 - JS and CSS Clock | Rita 的學習筆記">
+      <meta itemprop="name" content="Git Branch(清單、新建、刪除、重新命名、切換) | Rita 的學習筆記">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【JS30 挑戰】 Day2 - JS and CSS Clock
+          Git Branch(清單、新建、刪除、重新命名、切換)
         </h1>
 
         <div class="post-meta-container">
@@ -264,7 +266,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2022-02-07 23:56:00 / 修改時間：00:00:00" itemprop="dateCreated datePublished" datetime="2022-02-07T23:56:00+08:00">2022-02-07</time>
+      <time title="創建時間：2022-06-07 14:12:43 / 修改時間：14:34:44" itemprop="dateCreated datePublished" datetime="2022-06-07T14:12:43+08:00">2022-06-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -272,7 +274,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaScript-%E7%B7%B4%E7%BF%92/" itemprop="url" rel="index"><span itemprop="name">JavaScript 練習</span></a>
+          <a href="/categories/Git-%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">Git 筆記</span></a>
         </span>
     </span>
 
@@ -282,7 +284,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>2.6k</span>
+      <span>2k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -300,55 +302,34 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>這個專案練習了 CSS 轉場效果( <code>transition</code> &amp; <code>transform</code> )，並利用 JavaScript function 來帶動 <code>transform</code> 的變化。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用 Git 時，不管是在自己的專案開發或多人合作的專案，分支(Branch)都是個很重要的功能。它可以讓不同的事情「同步進行」，不會相互影響、也不需要互相等待。這篇主要針對建立、刪除、切換及重新命名來介紹。  </p>
 <span id="more"></span>
+
+<h2 id="查看分支清單-git-branch"><a href="#查看分支清單-git-branch" class="headerlink" title="查看分支清單(git branch)"></a>查看分支清單(<code>git branch</code>)</h2><p>每個分支都會有一個指標，告訴使用者這個分支目前的進度到哪裡，這個指標會指向該分支最新的 commit。所以只要建立一個新的 commit ，這個指標就會同步向前。  </p>
+<p>當想要查看現有分支時，可以執行 <code>git branch</code> 指令。它會列出專案裡所有的<strong>有指標</strong>的分支，並在所在分支上用 <code>*</code> 標註。  </p>
+<p><img src="/../Blog-image/posts/2022-06-06_gitBranch.webp" alt="git branch">  </p>
+<br/>
+
+<p>如果想在查看所有分支的同時，列出該分支指標分別在哪個 commit 上，則可以使用 <code>git branch -v</code> 。<br><code>-v</code> 是 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://git-scm.com/docs/git-branch#Documentation/git-branch.txt--v">verbose</a> 參數，可以查看本地端分支更詳細得訊息。如果使用 <code>-vv</code> 則可以連遠端儲存庫的指標都一起列出來。  </p>
+<p><img src="/../Blog-image/posts/2022-06-06_gitBranchVerbose.webp" alt="git branch verbose">  </p>
+<p>而比較特別的是，在我們新建了一個儲存庫 (執行 <code>git init</code>) 後，Git 雖然會直接幫我們建立一個分支 <code>main</code> (也可能是 <code>master</code> ，要看當初安裝 Git 時選哪個選項)，但是因為沒有任何一個 commit 存在，<code>main</code> 分支的指標沒有指向任何東西。這時如果使用 <code>git branch</code> 指令，並不會看到任何分支。在這種情況下 commit ，Git 會自動在 <code>main</code> 分支上 commit 並將 <code>main</code> 分支的指標移到這個 commit 上。  </p>
+<h2 id="什麼是-HEAD"><a href="#什麼是-HEAD" class="headerlink" title="什麼是 HEAD"></a>什麼是 HEAD</h2><h3 id="HEAD-介紹"><a href="#HEAD-介紹" class="headerlink" title="HEAD 介紹"></a>HEAD 介紹</h3><p>HEAD 也是一種指標，它會指向使用者目前所在的 commit 位置。一般來說， HEAD 都會指向所在分支最新的 commit(也就是該分支的指標位置)。  </p>
 <blockquote>
-<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://javascript30.com/">JavaScript30</a> 是一個由 <strong>Wes Bos</strong> 提出的免費教學計畫。藉由每天完成一個小專案，練習基礎 JavaScript 。整個計畫為期30天。除了會提供教學影片外，也會先做好前期準備(例如: HTML&#x2F;CSS 等相關建置)，練習時只需專注於撰寫 JavaScript 部分的程式碼即可。</p>
+<p>如果使用 sourcetree 查看，HEAD 會是一個空心的圓圈。</p>
 </blockquote>
-<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ol>
-<li>取得當地時間當下的時&#x2F;分&#x2F;秒資訊。  </li>
-<li>利用取得的時間資訊，套入 CSS 設定來讓時鐘的指針移動。</li>
-</ol>
-<h2 id="練習內容"><a href="#練習內容" class="headerlink" title="練習內容"></a>練習內容</h2><ul>
-<li><strong>JavaScript</strong><br>DOM querySelector 、 function 、Date() 、setInterval()</li>
-<li><strong>CSS</strong><br>transform 、 transform-origin 、transition</li>
-</ul>
-<h2 id="開始前的準備"><a href="#開始前的準備" class="headerlink" title="開始前的準備"></a>開始前的準備</h2><blockquote>
-<p>這部分已由教學計畫提供。</p>
-</blockquote>
-<p><strong>做好 HTML&#x2F;CSS 設定:</strong><br>做出時鐘長相並為指針做好相關設置。<br>為了練習 <code>transform-origin</code> ，指針預設往9點鐘方向。但我為了方便，已自行調整成12點鐘方向。</p>
-<h2 id="練習開始"><a href="#練習開始" class="headerlink" title="練習開始"></a>練習開始</h2><p><strong>1. 調整指針起點至12點鐘方向</strong>  </p>
-<ul>
-<li>原本教學是用 <code>transform: rotate(90deg)</code> 處理，但為了方便，我直接調整 CSS。  </li>
-<li><code>transform-origin</code> 跟著調整成 bottom。  </li>
-<li><code>transition</code> 讓所有對象都執行變化，每次用0.05秒完成變化。</li>
-<li>各別設定指針外觀，以便觀察後續變化。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.hand</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: bottom;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);</span><br><span class="line">  <span class="attribute">transition</span>: all <span class="number">0.05s</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hour-hand</span> &#123;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">15%</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">6px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">35%</span>;</span><br><span class="line">  <span class="attribute">background</span>: tomato;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.min-hand</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.second-hand</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<br>
+<h3 id="detached-HEAD"><a href="#detached-HEAD" class="headerlink" title="detached HEAD"></a>detached HEAD</h3><p>有一種例外情況是使用 <code>git checkout &lt;commit&gt;</code> ，也就是查看特定的 commit 版本，這種情況下 HEAD 就會指向該 commit 而不是指向分支指標，也就是 HEAD 不在任何一個分支指標上(即使該 commit 是某分支的指標位置也一樣)，會出現 <code>detached HEAD</code> 訊息。  </p>
+<p>不過看到這個訊息也不用太緊張，它只是做個提醒而已，仍然可以瀏覽檔案和編輯。如果希望從這個 commit 開始做些新進度，也可以直接從這裡建立新分支。  </p>
+<h2 id="新建分支-git-branch-lt-branch-name-gt"><a href="#新建分支-git-branch-lt-branch-name-gt" class="headerlink" title="新建分支(git branch &lt;branch-name&gt;)"></a>新建分支(<code>git branch &lt;branch-name&gt;</code>)</h2><p>要建立新的分支，只要使用 <code>git branch &lt;branch-name&gt;</code> 指令即可。需要注意的是，他會從 HEAD 的指標位置「長出」新分支，但是 HEAD 位置仍然維持在原分支上，不會移動到新分支上。  </p>
+<p>所以就要提到一個特殊情況，前面有提到，剛建立一個儲存庫時並沒有 commit 存在，所以也沒有 HEAD 指標。如果我們的第一個 commit 不想用預設的 <code>main</code> 分支，而是想直接 commit 在自己新建的分支上，直接使用 <code>git branch &lt;branch-name&gt;</code> 的話， Git 會因為無法從 HEAD 產生新分支而跳出錯誤訊息。這時候可以使用 <code>git switch -c &lt;branch-name&gt;</code> 來處理。</p>
+<h2 id="切換分支-git-switch-lt-branch-name-gt"><a href="#切換分支-git-switch-lt-branch-name-gt" class="headerlink" title="切換分支(git switch &lt;branch-name&gt;)"></a>切換分支(<code>git switch &lt;branch-name&gt;</code>)</h2><p><code>git switch</code> 是比較近期出現的指令(2019年 Git 2.23 Release Notes 釋出)。原本要切換分支是使用 <code>git checkout &lt;branch-name&gt;</code> ，這個指令還是可以用，只是 <code>git checkout</code> 的功能較多，容易造成使用上的混淆，因此可以改用新指令 <code>git switch &lt;branch-name&gt;</code>。  </p>
+<p>使用 <code>git switch &lt;branch-name&gt;</code> 可以直接切換分支，將 HEAD 指標移向該分支指標。另外，使用 <code>-c</code> 參數(create) 可以直接切換到新建立的分支。  </p>
+<h2 id="刪除分支-git-branch-d-lt-branch-name-gt"><a href="#刪除分支-git-branch-d-lt-branch-name-gt" class="headerlink" title="刪除分支(git branch -d &lt;branch-name&gt;)"></a>刪除分支(<code>git branch -d &lt;branch-name&gt;</code>)</h2><p>要刪除一個分支的話，首先要確認自己目前「不在」要刪除的分支上，接著要確認該分支是否已經和它的上游分支「merge」。  </p>
+<p>刪除分支可以使用兩種參數： <code>-d</code> 和 <code>-D</code> 。 <code>-d</code> 會檢查要刪除的分支是否已經和它的上游分支合併，如果沒有則會跳出提示訊息。 <code>-D</code> 則是無論是否進行過合併分支都要直接進行刪除，因此在使用上要特別小心。  </p>
+<h2 id="重新命名分支-git-branch-m-lt-new-name-gt"><a href="#重新命名分支-git-branch-m-lt-new-name-gt" class="headerlink" title="重新命名分支(git branch -m &lt;new-name&gt;)"></a>重新命名分支(<code>git branch -m &lt;new-name&gt;</code>)</h2><p>重新命名一個分支則是要確認自己目前「在」目標分支上，然後使用 <code>-m</code> 參數加上新名字來重新命名。  </p>
+<p>如果有使用過 <code>git commit -m</code> 來進行 commit 的話，可能會對 <code>-m</code> 這個參數感到混淆，這邊特別說明一下。在 git commit 時的 <code>-m</code> 參數是「message」的意思；而 git branch 時的 <code>-m</code> 參數則是「move」的意思。</p>
+<p>在 command line 的世界裡，「move」可以用來移動檔案和重新命名。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 把 abc.txt 重新命名為 123.txt</span></span><br><span class="line"><span class="built_in">mv</span> abc.txt 123.txt</span><br></pre></td></tr></table></figure>
 
-<p><strong>2. 用 setInterval() 設定 function 執行週期。</strong>  </p>
-<ul>
-<li>以每1000毫秒執行一次 setTime() function(秒針跳動頻率)。<br>註: 1秒 &#x3D; 1000毫秒<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setInterval</span>(setTime, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
-<br></li>
-</ul>
-<p><strong>3. 取得時間資訊</strong></p>
-<ul>
-<li>分別找出 3 支指針。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> hourHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hour-hand&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> minuteHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.min-hand&#x27;</span>)  </span><br><span class="line"><span class="keyword">const</span> secondHand = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.second-hand&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
-<li>建立一個 setTime() function ，並把要執行的動作放入函式。  </li>
-<li>取得當下時間，並分別取出時&#x2F;分&#x2F;秒。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setTime</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> hours = now.<span class="title function_">getHours</span>()</span><br><span class="line">  <span class="keyword">const</span> mins = now.<span class="title function_">getMinutes</span>()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.<span class="title function_">getSeconds</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>依照時間比例算出旋轉角度，並帶入 CSS 的 <code>rotate()</code> 設置。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">setTime</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 取得時間</span></span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line">  <span class="keyword">const</span> seconds = now.<span class="title function_">getSeconds</span>();</span><br><span class="line">  <span class="keyword">const</span> mins = now.<span class="title function_">getMinutes</span>();</span><br><span class="line">  <span class="keyword">const</span> hour = now.<span class="title function_">getHours</span>();</span><br><span class="line">  <span class="comment">// 計算角度</span></span><br><span class="line">  <span class="keyword">const</span> secondsDegree = (seconds / <span class="number">60</span>) * <span class="number">360</span>;</span><br><span class="line">  <span class="keyword">const</span> minsDegree = ((mins / <span class="number">60</span>) * <span class="number">360</span>) + ((seconds / <span class="number">60</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="keyword">const</span> hourDegree = ((hour / <span class="number">12</span>) * <span class="number">360</span>) + ((mins / <span class="number">12</span> / <span class="number">60</span>) * <span class="number">360</span>);</span><br><span class="line">  <span class="comment">// 角度代入 CSS</span></span><br><span class="line">  secondHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;secondsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  minuteHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;minsDegree&#125;</span>deg)`</span>;</span><br><span class="line">  hourHand.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`rotate(<span class="subst">$&#123;hourDegree&#125;</span>deg)`</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-到這裡就是一個會動的正確時鐘了。  <br></li>
-</ul>
-<p><strong>4. 旋轉優化</strong></p>
-<ul>
-<li>觀察秒針活動軌跡發現，當它要從 59 秒跳回 0 秒時會逆時針旋轉。因為對電腦來說 59 –&gt; 0 是”後退”不是”前進”。最簡單的方法就是，當指針要回到 0 秒時，花費 0 秒直接變化，肉眼就看不出回退過程了。  </li>
-<li>設置一個檢查：如果任一指針角度為0，<code>transition</code> 改為 ‘all 0s’。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 設置一個分辨角度的 function</span></span><br><span class="line"><span class="keyword">if</span> (secondsDegree === <span class="number">0</span></span><br><span class="line">  || minsDegree === <span class="number">0</span></span><br><span class="line">  || hourDegree === <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hand&#x27;</span>).<span class="property">style</span>.<span class="property">transition</span> = <span class="string">&#x27;all 0s&#x27;</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.hand&#x27;</span>).<span class="property">style</span>.<span class="property">transition</span> = <span class="string">&#x27;all 5ms&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>因為 JavaScript 有<strong>由上而下</strong>的執行順序，所以要把這段插到 “角度代入 CSS” 之前。</li>
-</ul>
-<br>
-<br>
-
-<p>到這裡就全部完成了!<br>學習到方便的時間取得辦法後，我就要把部落格 footer 從網路上照抄的程式碼改掉了。學到的東西能確實應用真的會很有動力!</p>
 
     </div>
 
@@ -375,7 +356,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://ritachien.github.io/posts/74544bca/" title="【JS30 挑戰】 Day2 - JS and CSS Clock">https://ritachien.github.io/posts/74544bca/</a>
+      <a href="https://ritachien.github.io/posts/93113df5/" title="Git Branch(清單、新建、刪除、重新命名、切換)">https://ritachien.github.io/posts/93113df5/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -384,22 +365,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
-              <a href="/tags/JS30/" rel="tag"><i class="fa fa-tag"></i> JS30</a>
+              <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/70fc7e3d/" rel="prev" title="HTML &lt;audio&gt; 標籤">
-                  <i class="fa fa-chevron-left"></i> HTML &lt;audio&gt; 標籤
+                <a href="/posts/71aa6829/" rel="prev" title="常用的 markdown 語法">
+                  <i class="fa fa-chevron-left"></i> 常用的 markdown 語法
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/b8b00b13/" rel="next" title="data-* HTML 自定義屬性及 dataset">
-                  data-* HTML 自定義屬性及 dataset <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
