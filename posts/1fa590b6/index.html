@@ -21,24 +21,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Rita 的學習筆記">
-<meta property="og:url" content="https://ritachien.github.io/tags/Github/">
+    <meta name="description" content="前言在進行開發時，偶爾會有進行到一半必須切換分支處理別的工作的情況，這時候使用 git stash 暫存指令就會是個好選擇。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用 git stash 暫存工作進度">
+<meta property="og:url" content="https://ritachien.github.io/posts/1fa590b6/">
 <meta property="og:site_name" content="Rita 的學習筆記">
+<meta property="og:description" content="前言在進行開發時，偶爾會有進行到一半必須切換分支處理別的工作的情況，這時候使用 git stash 暫存指令就會是個好選擇。">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-09-gitStashList.webp">
+<meta property="article:published_time" content="2022-06-09T03:08:20.000Z">
+<meta property="article:modified_time" content="2022-06-09T06:44:59.408Z">
 <meta property="article:author" content="Rita Chien">
-<meta property="article:tag" content="Blog, 程式語言, 學習紀錄">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-09-gitStashList.webp">
 
 
-<link rel="canonical" href="https://ritachien.github.io/tags/Github/">
+<link rel="canonical" href="https://ritachien.github.io/posts/1fa590b6/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"tags/Github/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/1fa590b6/","path":"posts/1fa590b6/","title":"用 git stash 暫存工作進度"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>標籤: Github | Rita 的學習筆記</title>
+<title>用 git stash 暫存工作進度 | Rita 的學習筆記</title>
   
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-215689852-1","only_pageview":true}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
@@ -138,7 +144,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -151,6 +157,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9A%AB%E5%AD%98%E9%80%B2%E5%BA%A6-git-stash"><span class="nav-number">2.</span> <span class="nav-text">暫存進度(git stash)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%AF%E7%A4%BA%E6%9A%AB%E5%AD%98%E6%B8%85%E5%96%AE-git-stash-list"><span class="nav-number">3.</span> <span class="nav-text">顯示暫存清單(git stash list)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%81%A2%E5%BE%A9%E6%9A%AB%E5%AD%98%E9%80%B2%E5%BA%A6"><span class="nav-number">4.</span> <span class="nav-text">恢復暫存進度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-stash-pop"><span class="nav-number">4.1.</span> <span class="nav-text">git stash pop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-stash-apply"><span class="nav-number">4.2.</span> <span class="nav-text">git stash apply</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%AA%E9%99%A4%E6%9A%AB%E5%AD%98%E9%80%B2%E5%BA%A6"><span class="nav-number">5.</span> <span class="nav-text">刪除暫存進度</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -217,51 +224,170 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">Github
-          <small>標籤</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/1fa590b6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
+      <meta itemprop="name" content="Rita Chien">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rita 的學習筆記">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="用 git stash 暫存工作進度 | Rita 的學習筆記">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          用 git stash 暫存工作進度
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="創建時間：2022-06-09 11:08:20 / 修改時間：14:44:59" itemprop="dateCreated datePublished" datetime="2022-06-09T11:08:20+08:00">2022-06-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Git-%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">Git 筆記</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在進行開發時，偶爾會有進行到一半必須切換分支處理別的工作的情況，這時候使用 <code>git stash</code> 暫存指令就會是個好選擇。  </p>
+<span id="more"></span>
+
+<h2 id="暫存進度-git-stash"><a href="#暫存進度-git-stash" class="headerlink" title="暫存進度(git stash)"></a>暫存進度(git stash)</h2><p>在新進度尚未提交(commit)時切換分支，可能會遇到兩種情況：  </p>
+<ol>
+<li>目前進度跟著一起移動到新的分支。  </li>
+<li>因為發現潛在的衝突(conflict)， Git 不讓我切換分支。</li>
+</ol>
+<p>如果不希望這兩種情況中的任一種發生，可以使用 <code>git stash</code> 將目前「已追蹤」的檔案進度移入暫存區。  </p>
+<blockquote>
+<p>需特別注意的是：<code>git stash</code> 只會將「staged」和「unstaged」的檔案進度移入暫存區。如果有新增的「untracked file」，並需先用 <code>git add</code> 加入 staged 清單才會被一起移入暫存區。  </p>
+</blockquote>
+<p>這時候會發現進度已經回復到上一次提交的樣子了，而使用 <code>git status</code> 也只會看到「untracked file」被列出來。  </p>
+<p><code>git stash</code> 可以建立多個暫存紀錄，不管是在同個分支上建立多個暫存、或是不同分支上建立多個暫存都可以，這些暫存紀錄會用建立時間「由新到舊」保存。  </p>
+<h2 id="顯示暫存清單-git-stash-list"><a href="#顯示暫存清單-git-stash-list" class="headerlink" title="顯示暫存清單(git stash list)"></a>顯示暫存清單(git stash list)</h2><p>既然可以建立多個暫存，如果想套用其中一個暫存紀錄怎麼辦？這時候就可以用 <code>git stash list</code> 指令列出暫存紀錄清單。  </p>
+<p>如圖所示，每個暫存項目會有個項目「序號」，從 0 開始由新到舊增加序號，並一併記錄是在哪個分支的哪個提交紀錄建立的。由於「暫存」並不像提交一樣有 commit message 可以做區分，所以僅能靠以上的資訊辨別不同的暫存內容。  </p>
+<p><img src="/../Blog-image/posts/2022-06-09-gitStashList.webp" alt="git stash list">  </p>
+<h2 id="恢復暫存進度"><a href="#恢復暫存進度" class="headerlink" title="恢復暫存進度"></a>恢復暫存進度</h2><p>有了暫存進度後，如果想要回復或者說套用暫存進度，有兩種方法可以使用。分別是 <code>pop</code> 和 <code>apply</code> ，兩者的差別在於套用進度之後，暫存紀錄的消失與否。暫存進度的套用不限建立暫存的分支使用，可用於任何一個分支。如果沒有指定某個序號的紀錄，預設會套用最新一次的暫存紀錄。  </p>
+<p>偶爾在套用暫存進度時會產生衝突，這時只要像處理 merge conflict 一樣，將內容調整成希望的樣子，並用 <code>git add</code> 確認套用即可。  </p>
+<h3 id="git-stash-pop"><a href="#git-stash-pop" class="headerlink" title="git stash pop"></a>git stash pop</h3><p>使用 <code>git stash pop</code> 套用進度時，原本在暫存區的紀錄「會」從清單中消失。可以使用的指令如下：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 套用最新一筆暫存紀錄</span></span><br><span class="line">git stash pop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 套用指定暫存紀錄</span></span><br><span class="line">git stash pop stash@&#123;序號&#125;</span><br></pre></td></tr></table></figure>
+<p>執行之後再次用 <code>git stash list</code> 就會發現紀錄從清單中消失了！  </p>
+<h3 id="git-stash-apply"><a href="#git-stash-apply" class="headerlink" title="git stash apply"></a>git stash apply</h3><p>如果我們希望在多個分支套用相同的暫存內容，則可以使用 <code>git stash apply</code> ，該 指令執行後原本在暫存區的紀錄「不會」從清單中消失，可以繼續在其他地方使用。指令如下：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 套用最新一筆暫存紀錄</span></span><br><span class="line">git stash apply</span><br><span class="line"></span><br><span class="line"><span class="comment"># 套用指定暫存紀錄</span></span><br><span class="line">git stash apply stash@&#123;序號&#125;</span><br></pre></td></tr></table></figure>
+<p>執行之後再次用 <code>git stash list</code> 會發現紀錄仍然存在清單中沒變  </p>
+<h2 id="刪除暫存進度"><a href="#刪除暫存進度" class="headerlink" title="刪除暫存進度"></a>刪除暫存進度</h2><p>建立暫存後也不一定要使用，可以直接刪除暫存紀錄。指令如下：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 刪除指定暫存紀錄</span></span><br><span class="line">git stash drop stash@&#123;序號&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 刪除全部暫存紀錄</span></span><br><span class="line">git stash clear</span><br></pre></td></tr></table></figure>
+<p>執行之後再次用 <code>git stash list</code> 就會發現紀錄從清單中消失了！  </p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-12-21T00:00:00+08:00"
-              content="2021-12-21">
-          12-21
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/posts/4b9ba027/" itemprop="url">
-            <span itemprop="name">用 Hexo + Github Pages 建立部落格</span>
-          </a>
-      </div>
+    <footer class="post-footer"><!-- 在文章底部添加感謝閱讀 -->
+<div>
+  
+    <div style="text-align:center; color:#ccc; font-size:14px; letter-spacing:5px">
+      ------------  本文結束，感謝您的閱讀&nbsp;<i class="fa fa-paw"></i>&nbsp;如有錯漏，歡迎留言討論  -------------
+    </div>
+  
+</div>
 
-      
-    </header>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Rita Chien
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://ritachien.github.io/posts/1fa590b6/" title="用 git stash 暫存工作進度">https://ritachien.github.io/posts/1fa590b6/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/93113df5/" rel="prev" title="Git Branch(清單、新建、刪除、重新命名、切換)">
+                  <i class="fa fa-chevron-left"></i> Git Branch(清單、新建、刪除、重新命名、切換)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
 
+
+
+
+
+    <div class="comments utterances-container"></div>
 </div>
   </main>
 

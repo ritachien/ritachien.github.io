@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-02_gitLog.webp">
 <meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-02_gitStatus.webp">
 <meta property="article:published_time" content="2022-06-01T16:31:59.000Z">
-<meta property="article:modified_time" content="2022-06-08T03:10:26.294Z">
+<meta property="article:modified_time" content="2022-06-09T03:51:49.978Z">
 <meta property="article:author" content="Rita Chien">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -173,7 +173,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -272,7 +272,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-06-08 11:10:26" itemprop="dateModified" datetime="2022-06-08T11:10:26+08:00">2022-06-08</time>
+      <time title="修改時間：2022-06-09 11:51:49" itemprop="dateModified" datetime="2022-06-09T11:51:49+08:00">2022-06-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -350,8 +350,9 @@
 <li>「合併」就是將指定的幾個版本中不同的地方都保留，並留下新的快照。</li>
 </ul>
 <h2 id="Git-status-說明"><a href="#Git-status-說明" class="headerlink" title="Git status 說明"></a>Git status 說明</h2><h3 id="三種-status"><a href="#三種-status" class="headerlink" title="三種 status"></a>三種 status</h3><p>要使用 Git 來做版本追蹤，首先要知道被追蹤專案裡的檔案處於哪種狀態？  </p>
-<p>Git repository 會將專案裡的所有檔案分成三種狀態 ——  </p>
+<p>Git repository 會將專案裡的所有檔案分成以下幾種狀態 ——  </p>
 <ol>
+<li>Untracked files：Git 尚未追蹤的檔案。沒有提交(commit)過、也還沒用 <code>git add</code> 指令加入追蹤清單。  </li>
 <li>Unstaged files：編輯中的檔案，還沒有打算把當下進度「拍照」。  </li>
 <li>Staged files：編輯告一段落，決定把檔案當下進度進行「快照」。  </li>
 <li>Committed：版本「快照」完成，並留下該版本的相關訊息。</li>
@@ -359,15 +360,14 @@
 <p>不同的檔案可能處於不同的狀態，可以用以下指令來查看專案中檔案處於哪種狀態。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
 
-<h3 id="git-status-指令"><a href="#git-status-指令" class="headerlink" title="git status 指令"></a>git status 指令</h3><p>執行 <code>git status</code> 指令後會列出尚未進行 commit 的檔案清單，並分成三個部分(有內容的才會顯示) ——  </p>
+<h3 id="git-status-指令"><a href="#git-status-指令" class="headerlink" title="git status 指令"></a>git status 指令</h3><p>執行 <code>git status</code> 指令後會列出尚未進行提交(commit)的檔案清單，並分成三個部分(有內容的才會顯示) ——  </p>
 <ol>
-<li>Changes to be committed：即已經用 <code>git add</code> 加入等待 commit 的檔案清單。  </li>
-<li>Changes not staged for commit：即已追蹤的檔案(以前 commit 過)，目前編輯中，還沒使用 <code>git add</code> 改變狀態的清單。  </li>
-<li>Untracked files：即尚未追蹤的檔案(沒有 commit 過)，目前編輯中，還沒使用 <code>git add</code> 改變狀態的清單。</li>
+<li>Changes to be committed：即已經用 <code>git add</code> 加入等待提交的檔案清單。  </li>
+<li>Changes not staged for commit：即已追蹤的檔案(以前提交過)，目前編輯中，還沒使用 <code>git add</code> 改變狀態的清單。  </li>
+<li>Untracked files：即尚未追蹤的檔案(沒有提交過)，也還沒使用 <code>git add</code> 開始追蹤的清單。</li>
 </ol>
-<p>第 2 和第 3 個清單都屬於 <code>Unstaged files</code> ，差別只在於以前是否 commit 過。對於 git repository 而言，就是「修改檔案」和「新增檔案」的區別。  </p>
 <blockquote>
-<p>Untracked files 對 Git 版本管理來說是「不存在」的檔案，因為還沒告訴 Git 去關注檔案的異動。與已追蹤的檔案相比，執行某些指令時會被 Git 忽略。  </p>
+<p>Untracked files 對 Git 版本管理來說是「還不存在」的檔案，因為還沒告訴 Git 去關注檔案的異動。與已追蹤的檔案相比，執行某些指令時會被 Git 忽略。  </p>
 </blockquote>
 <p><img src="/../Blog-image/posts/2022-06-02_gitStatus.webp" alt="git status"></p>
 <h2 id="建立-commit-add-amp-commit"><a href="#建立-commit-add-amp-commit" class="headerlink" title="建立 commit (add &amp; commit)"></a>建立 commit (add &amp; commit)</h2><p>接下來要介紹的兩個指令可以讓檔案在不同的 status 中移動。初學階段最常用到的兩個指令分別是 <code>git add</code> 跟 <code>git commit</code>。  </p>
@@ -511,13 +511,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">90k</span>
+    <span title="總字數">91k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">1:21</span>
+    <span title="所需總閱讀時間">1:23</span>
   </span>
 </div><!-- 在網頁底部添加網站運行時間 -->
 <span id="blogTime">載入天數時分秒...</span>
