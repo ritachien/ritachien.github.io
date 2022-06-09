@@ -30,7 +30,7 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-06-09-gitStashList.webp">
 <meta property="article:published_time" content="2022-06-09T03:08:20.000Z">
-<meta property="article:modified_time" content="2022-06-09T06:44:59.408Z">
+<meta property="article:modified_time" content="2022-06-09T07:03:30.314Z">
 <meta property="article:author" content="Rita Chien">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
@@ -265,7 +265,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2022-06-09 11:08:20 / 修改時間：14:44:59" itemprop="dateCreated datePublished" datetime="2022-06-09T11:08:20+08:00">2022-06-09</time>
+      <time title="創建時間：2022-06-09 11:08:20 / 修改時間：15:03:30" itemprop="dateCreated datePublished" datetime="2022-06-09T11:08:20+08:00">2022-06-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -325,7 +325,7 @@
 <p>執行之後再次用 <code>git stash list</code> 就會發現紀錄從清單中消失了！  </p>
 <h3 id="git-stash-apply"><a href="#git-stash-apply" class="headerlink" title="git stash apply"></a>git stash apply</h3><p>如果我們希望在多個分支套用相同的暫存內容，則可以使用 <code>git stash apply</code> ，該 指令執行後原本在暫存區的紀錄「不會」從清單中消失，可以繼續在其他地方使用。指令如下：  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 套用最新一筆暫存紀錄</span></span><br><span class="line">git stash apply</span><br><span class="line"></span><br><span class="line"><span class="comment"># 套用指定暫存紀錄</span></span><br><span class="line">git stash apply stash@&#123;序號&#125;</span><br></pre></td></tr></table></figure>
-<p>執行之後再次用 <code>git stash list</code> 會發現紀錄仍然存在清單中沒變  </p>
+<p>執行之後再次用 <code>git stash list</code> 會發現紀錄仍然存在清單中沒變。  </p>
 <h2 id="刪除暫存進度"><a href="#刪除暫存進度" class="headerlink" title="刪除暫存進度"></a>刪除暫存進度</h2><p>建立暫存後也不一定要使用，可以直接刪除暫存紀錄。指令如下：  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 刪除指定暫存紀錄</span></span><br><span class="line">git stash drop stash@&#123;序號&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 刪除全部暫存紀錄</span></span><br><span class="line">git stash clear</span><br></pre></td></tr></table></figure>
 <p>執行之後再次用 <code>git stash list</code> 就會發現紀錄從清單中消失了！  </p>
