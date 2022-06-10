@@ -21,28 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="看了很多轉職分享、技術部落格、Youtube影片…等，有一個對程式新手共通的建議就是:「寫部落格」。寫部落格的好處有什麼呢?">
+    <meta name="description" content="前言在搜尋 Git 相關資料時發現， git checkout 要做的事情真的好多啊！很多發問平台上也有不少被這個指令的功能弄到很混淆的人，甚至 Git 官方也新出了兩個指令 git switch 和 git restore 來拆分 git checkout 的工作。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="開始寫部落格啦!">
-<meta property="og:url" content="https://ritachien.github.io/posts/572b724a/">
+<meta property="og:title" content="git checkout 介紹(switch、restore)">
+<meta property="og:url" content="https://ritachien.github.io/posts/ebe5fbdc/">
 <meta property="og:site_name" content="Rita 的學習筆記">
-<meta property="og:description" content="看了很多轉職分享、技術部落格、Youtube影片…等，有一個對程式新手共通的建議就是:「寫部落格」。寫部落格的好處有什麼呢?">
+<meta property="og:description" content="前言在搜尋 Git 相關資料時發現， git checkout 要做的事情真的好多啊！很多發問平台上也有不少被這個指令的功能弄到很混淆的人，甚至 Git 官方也新出了兩個指令 git switch 和 git restore 來拆分 git checkout 的工作。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2021-12-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-12T16:00:00.000Z">
+<meta property="article:published_time" content="2022-06-10T16:01:59.000Z">
+<meta property="article:modified_time" content="2022-06-10T16:02:24.803Z">
 <meta property="article:author" content="Rita Chien">
-<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ritachien.github.io/posts/572b724a/">
+<link rel="canonical" href="https://ritachien.github.io/posts/ebe5fbdc/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/572b724a/","path":"posts/572b724a/","title":"開始寫部落格啦!"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/ebe5fbdc/","path":"posts/ebe5fbdc/","title":"git checkout 介紹(switch、restore)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>開始寫部落格啦! | Rita 的學習筆記</title>
+<title>git checkout 介紹(switch、restore) | Rita 的學習筆記</title>
   
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-215689852-1","only_pageview":true}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
@@ -142,7 +142,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -155,6 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-checkout"><span class="nav-number">2.</span> <span class="nav-text">git checkout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-switch"><span class="nav-number">3.</span> <span class="nav-text">git switch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%87%E6%8F%9B%E5%88%86%E6%94%AF"><span class="nav-number">3.1.</span> <span class="nav-text">切換分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%8C%87%E5%AE%9A%E6%8F%90%E4%BA%A4%E7%89%88%E6%9C%AC"><span class="nav-number">3.2.</span> <span class="nav-text">查看指定提交版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%B8%A6%E5%88%87%E6%8F%9B%E5%88%86%E6%94%AF"><span class="nav-number">3.3.</span> <span class="nav-text">新建並切換分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-restore"><span class="nav-number">4.</span> <span class="nav-text">git restore</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AA%94%E6%A1%88%E5%85%A7%E5%AE%B9%E5%9B%9E%E5%BE%A9%E5%88%B0%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC"><span class="nav-number">4.1.</span> <span class="nav-text">檔案內容回復到指定版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AA%94%E6%A1%88%E5%BE%9E-staged-%E6%B8%85%E5%96%AE%E7%A7%BB%E9%99%A4"><span class="nav-number">4.2.</span> <span class="nav-text">檔案從 staged 清單移除</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -232,7 +233,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/572b724a/">
+    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/ebe5fbdc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
@@ -245,12 +246,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="開始寫部落格啦! | Rita 的學習筆記">
+      <meta itemprop="name" content="git checkout 介紹(switch、restore) | Rita 的學習筆記">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          開始寫部落格啦!
+          git checkout 介紹(switch、restore)
         </h1>
 
         <div class="post-meta-container">
@@ -260,8 +261,18 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2021-12-13 00:00:00" itemprop="dateCreated datePublished" datetime="2021-12-13T00:00:00+08:00">2021-12-13</time>
+      <time title="創建時間：2022-06-11 00:01:59 / 修改時間：00:02:24" itemprop="dateCreated datePublished" datetime="2022-06-11T00:01:59+08:00">2022-06-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Git-%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">Git 筆記</span></a>
+        </span>
     </span>
 
   
@@ -270,14 +281,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>432</span>
+      <span>1.8k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
+      <span>2 分鐘</span>
     </span>
 </div>
 
@@ -288,10 +299,40 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>看了很多轉職分享、技術部落格、Youtube影片…等，有一個對程式新手共通的建議就是:「寫部落格」。<br>寫部落格的好處有什麼呢?  </p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在搜尋 Git 相關資料時發現， <code>git checkout</code> 要做的事情真的好多啊！很多發問平台上也有不少被這個指令的功能弄到很混淆的人，甚至 Git 官方也新出了兩個指令 <code>git switch</code> 和 <code>git restore</code> 來拆分 <code>git checkout</code> 的工作。  </p>
 <span id="more"></span>
-<p><strong>1. 學習筆記 :</strong><br>  學習的路很長，難免會把學過的東西忘掉。所以把自己曾經遇到的問題、解決過程及方法記錄下來，可以當作之後重新複習的依據。<br><strong>2. 知識再消化 :</strong><br>  把東西背下來很簡單，但要說給別人聽就相對困難。需要先消化、重新整理，再依照別人能懂的方式表達出來，需要一個知識再咀嚼的過程。這對新學到的知識可以有更深入的理解，或是會在跟別人的交流中找到自己忽略的小問題。<br><strong>3. 和別人交流的空間 :</strong><br>  也許會找到跟我相同興趣或遇到相同問題的人，可以超脫地理限制，跟世界各地的人交流。<br><strong>4. 求職參考 :</strong><br>  畢竟我不是本科出身的，在學歷上比不過相關科系的競爭對手。在經歷尚未累積出來之前，至少可以讓人資對我有更多的了解。包含我學過的知識、遇到過的問題，最重要的是我面對問題的解決態度及方法。  </p>
-<p>既然開始了，希望能一直寫下去，也希望最終有一天，這個部落格也能成為其他人遇到問題的參考依據!</p>
+
+<h2 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h2><blockquote>
+<p>Switch branches or restore working tree files.  </p>
+</blockquote>
+<p>先看看 Git 的官方說明，很明確的說出 <code>git checkout</code> 可以切換分支和還原檔案內容。但可能是想要讓指令工作單一化，或是讓使用者在使用上較直覺及不易混淆， Git 官方於 2019 年 2.23.0 Release Notes 釋出的兩個指令 <code>git switch</code> 和 <code>git restore</code> 來拆分這兩個功能。  </p>
+<p>接下來會直接針對兩個新指令做介紹，目前使用上覺得新指令比較直覺，如果跟我一樣還在學習指令的階段，建議可以學習新指令來使用。但如果還是習慣 <code>git checkout</code> 也沒關係，這個指令仍可以繼續使用，沒有被 Git 棄用。  </p>
+<p>接下來針對 <code>git switch</code> 和 <code>git restore</code> 的說明也會一併提供 <code>git checkout</code> 的指令，只要擇一使用即可。  </p>
+<h2 id="git-switch"><a href="#git-switch" class="headerlink" title="git switch"></a>git switch</h2><p><code>git switch</code> 指令主要的工作是在分支間切換，或在 <code>commit hash</code> 間切換。  </p>
+<h3 id="切換分支"><a href="#切換分支" class="headerlink" title="切換分支"></a>切換分支</h3><p>切換分支時， Git 會把 HEAD 指標指向目標分支，此時檔案將呈現分支指標的版本。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git switch &lt;branch-name&gt;</span><br><span class="line">git checkout &lt;branch-name&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看指定提交版本"><a href="#查看指定提交版本" class="headerlink" title="查看指定提交版本"></a>查看指定提交版本</h3><p><code>git switch</code> 可以在提供指定提交版本的 <code>commit hash</code> 後，將 HEAD 指標移向該 commit 上。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 直接指定查看某的提交版本</span></span><br><span class="line">git switch -d &lt;commit-hash&gt;    <span class="comment"># (-d for --detach)</span></span><br><span class="line">git checkout &lt;commit-hash&gt;</span><br></pre></td></tr></table></figure>
+
+<p>除了直接提供 <code>commit hash</code> 的方法外，也可以指定「相對於 HEAD 指標」的版本。這種方式會將 HEAD 指標以當下位置為基準進行移動。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 移動到 HEAD 的前一個 commit</span></span><br><span class="line">git switch -d HEAD~1    <span class="comment"># (-d for --detach)</span></span><br><span class="line">git checkout HEAD~1</span><br></pre></td></tr></table></figure>
+
+<p>通常情況下 HEAD 都會指向分支，如果使用以上指令讓 HEAD 指向特定的 commit (也就是指向非分支指標)，則會發生 <strong><a target="_blank" rel="noopener external nofollow noreferrer" href="https://git-scm.com/docs/git-checkout#_detached_head">Detached HEAD</a></strong> 。 Detached HEAD 訊息只是作為提醒，<br>表示目前 HEAD 不指向任何一個分支。但仍然可以進行檔案瀏覽、編輯、提交及建立新的分支。在 Detached HEAD 的狀態下如果不新建分支就直接提交 commit，因為該提交不在任一分支上，日後可能不易查找。如果想離開 Detached HEAD 狀態，除了直接切換到指定分支外，也可以使用以下指令回到最近一次操作的分支：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git switch -</span><br></pre></td></tr></table></figure>
+
+<h3 id="新建並切換分支"><a href="#新建並切換分支" class="headerlink" title="新建並切換分支"></a>新建並切換分支</h3><p><code>git switch</code> 也可以用來新建分支。該指令會從 HEAD 指向的 commit 長出新的分支，並切換到該分支上。  </p>
+<blockquote>
+<p>需要特別注意的是，在新建分支時，使用 <code>git switch</code> 和使用 <code>git checkout</code> 所使用的參數不一樣。  </p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git switch -c &lt;branch-name&gt;      <span class="comment">#(-c for --create)</span></span><br><span class="line">git checkout -b &lt;branch-name&gt;    </span><br></pre></td></tr></table></figure>
+
+<h2 id="git-restore"><a href="#git-restore" class="headerlink" title="git restore"></a>git restore</h2><p><code>git restore</code> 的功能是讓檔案內容恢復到指定的版本。</p>
+<h3 id="檔案內容回復到指定版本"><a href="#檔案內容回復到指定版本" class="headerlink" title="檔案內容回復到指定版本"></a>檔案內容回復到指定版本</h3><p>這個操作並不會對提交歷史有任何的影響，只是讓檔案的「內容」回復到較早之前的版本，也就是「棄用」新編輯的內容。在 <code>git add</code> 之前，可以不斷地重複使用以下指令來讓內容變成之前版本的樣子。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 讓檔案回到最近一次 HEAD 指向版本的樣子</span></span><br><span class="line">git restore &lt;files&gt;</span><br><span class="line">git checkout HEAD &lt;files&gt;</span><br><span class="line">git checkout -- &lt;files&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 讓檔案回到指定 commit 版本的樣子(用 HEAD 的相對位置來指定)</span></span><br><span class="line">git restore -s HEAD~2 &lt;files&gt;    <span class="comment"># (-s for --source)</span></span><br><span class="line">git checkout HEAD~2 &lt;files&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="檔案從-staged-清單移除"><a href="#檔案從-staged-清單移除" class="headerlink" title="檔案從 staged 清單移除"></a>檔案從 staged 清單移除</h3><p>如果使用 <code>git add</code> 將檔案 staged 之後，發現這不是我要提交的樣子，希望將檔案從 staged 清單移出，那就可以使用以下指令：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git restore -S &lt;files&gt;    <span class="comment"># (-S for --staged)</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -318,7 +359,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://ritachien.github.io/posts/572b724a/" title="開始寫部落格啦!">https://ritachien.github.io/posts/572b724a/</a>
+      <a href="https://ritachien.github.io/posts/ebe5fbdc/" title="git checkout 介紹(switch、restore)">https://ritachien.github.io/posts/ebe5fbdc/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -327,18 +368,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Blog/" rel="tag"><i class="fa fa-tag"></i> Blog</a>
+              <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/posts/1fa590b6/" rel="prev" title="用 git stash 暫存工作進度">
+                  <i class="fa fa-chevron-left"></i> 用 git stash 暫存工作進度
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/491e0585/" rel="next" title="Alpha Camp 學期一結業心得">
-                  Alpha Camp 學期一結業心得 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
