@@ -524,6 +524,47 @@
       </tags>
   </entry>
   <entry>
+    <title>使用 Hexo-abbrlink 產生永久連結</title>
+    <url>/posts/d8dab675/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因為是在建置部落格的同時整理並撰寫 Hexo 筆記，內容的更動導致常常需要修改多篇文章的檔名，permalink 自動產生網址的設定也連帶造成了我一些困擾，所以想用 Hexo-abbrlink 來一勞永逸。  </p>
+<span id="more"></span>
+<p>我原本 permalink 的設定是直接從檔名產生網址。網路上的教學建議檔案用日期 + 英文標題命名，所以修改的同時也讓同一篇文章的網址不斷改動。  </p>
+<blockquote>
+<p>備註: 建議檔案用日期 + 英文標題命名原因  </p>
+<ol>
+<li>日期方便作檔案排序。  </li>
+<li>中文網址在台灣及大陸外的地區必須以編碼方式來呈現， URL 被轉碼後會變得很長(長得像亂碼)，這對 SEO 來說也較為不利。</li>
+</ol>
+</blockquote>
+<h2 id="使用-Hexo-abbrlink-的好處"><a href="#使用-Hexo-abbrlink-的好處" class="headerlink" title="使用 Hexo-abbrlink 的好處"></a>使用 Hexo-abbrlink 的好處</h2><p><strong>1. 網址固定，不再因修改檔名或日期變動</strong><br>Hexo-abbrlink 會依照文章標題產生永久連結，並保存在 Front-matter (檔案最上方以 — 分隔的區域)，之後即使更改檔名也不會再變動。<br><img src="/../../Blog-image/posts/2021-12-27_001.webp" alt="abbrlink存入Front-matter20211227-001"></p>
+<blockquote>
+<p>舊文章(已經部署)會在下一次 <code>hexo g</code> 時產生 abbrlink 。<br>新文章(還沒部署)會在 <code>hexo s</code> 時就產生 abbrlink 。  </p>
+</blockquote>
+<p><strong>2. 檔名可依自己方便取了</strong><br><del>再也不用想英文標題了!!</del>  </p>
+<p><strong>3. 降低因網址變動產生的404問題</strong><br>據說404錯誤會影響網站在SEO上的排名，讓其他人較不容易搜尋到自己的頁面。  </p>
+<h2 id="安裝-hexo-abbrlink"><a href="#安裝-hexo-abbrlink" class="headerlink" title="安裝 hexo-abbrlink"></a>安裝 hexo-abbrlink</h2><blockquote>
+<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
+</blockquote>
+<p><strong>1. 安裝套件</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<p><strong>2. 修改 <code>root\_config.yml</code> 文件</strong>  </p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>  <span class="comment"># support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>    <span class="comment"># support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>也可以自己修改 permalink 參數(把 post 刪掉或增減其他參數)</li>
+<li><code>alg</code> 是雜湊編碼產生方式， <code>rep</code> 是雜湊編碼表示方式(預設十進位)，兩種參數的搭配結果如下:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex    https://XXXX.com/posts/66c8/</span><br><span class="line">crc16 &amp; dec    https://XXXX.com/posts/65535/</span><br><span class="line">crc32 &amp; hex    https://XXXX.com/posts/8ddf18fb/</span><br><span class="line">crc32 &amp; dec    https://XXXX.com/posts/1690090958/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://github.com/rozbo/hexo-abbrlink">rozbo&#x2F;hexo-abbrlink README.md 文件</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo NexT 主題變更 &amp; 設定</title>
     <url>/posts/ebe0f18a/</url>
     <content><![CDATA[<p>基本設定都做好了，文章也成功發佈了，接下來該找個美美的主題幫部落格換個新衣服。我最後找了看起來簡約大方的 NexT 主題，持續都有在作版本更新，開源資源也很多，看到各種大神把基本款改成高級訂製款，除了框架根本看不出原樣，覺得超厲害!  </p>
@@ -621,47 +662,6 @@
       <tags>
         <tag>Hexo</tag>
         <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用 Hexo-abbrlink 產生永久連結</title>
-    <url>/posts/d8dab675/</url>
-    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因為是在建置部落格的同時整理並撰寫 Hexo 筆記，內容的更動導致常常需要修改多篇文章的檔名，permalink 自動產生網址的設定也連帶造成了我一些困擾，所以想用 Hexo-abbrlink 來一勞永逸。  </p>
-<span id="more"></span>
-<p>我原本 permalink 的設定是直接從檔名產生網址。網路上的教學建議檔案用日期 + 英文標題命名，所以修改的同時也讓同一篇文章的網址不斷改動。  </p>
-<blockquote>
-<p>備註: 建議檔案用日期 + 英文標題命名原因  </p>
-<ol>
-<li>日期方便作檔案排序。  </li>
-<li>中文網址在台灣及大陸外的地區必須以編碼方式來呈現， URL 被轉碼後會變得很長(長得像亂碼)，這對 SEO 來說也較為不利。</li>
-</ol>
-</blockquote>
-<h2 id="使用-Hexo-abbrlink-的好處"><a href="#使用-Hexo-abbrlink-的好處" class="headerlink" title="使用 Hexo-abbrlink 的好處"></a>使用 Hexo-abbrlink 的好處</h2><p><strong>1. 網址固定，不再因修改檔名或日期變動</strong><br>Hexo-abbrlink 會依照文章標題產生永久連結，並保存在 Front-matter (檔案最上方以 — 分隔的區域)，之後即使更改檔名也不會再變動。<br><img src="/../../Blog-image/posts/2021-12-27_001.webp" alt="abbrlink存入Front-matter20211227-001"></p>
-<blockquote>
-<p>舊文章(已經部署)會在下一次 <code>hexo g</code> 時產生 abbrlink 。<br>新文章(還沒部署)會在 <code>hexo s</code> 時就產生 abbrlink 。  </p>
-</blockquote>
-<p><strong>2. 檔名可依自己方便取了</strong><br><del>再也不用想英文標題了!!</del>  </p>
-<p><strong>3. 降低因網址變動產生的404問題</strong><br>據說404錯誤會影響網站在SEO上的排名，讓其他人較不容易搜尋到自己的頁面。  </p>
-<h2 id="安裝-hexo-abbrlink"><a href="#安裝-hexo-abbrlink" class="headerlink" title="安裝 hexo-abbrlink"></a>安裝 hexo-abbrlink</h2><blockquote>
-<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
-</blockquote>
-<p><strong>1. 安裝套件</strong>  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<p><strong>2. 修改 <code>root\_config.yml</code> 文件</strong>  </p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>  <span class="comment"># support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>    <span class="comment"># support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>也可以自己修改 permalink 參數(把 post 刪掉或增減其他參數)</li>
-<li><code>alg</code> 是雜湊編碼產生方式， <code>rep</code> 是雜湊編碼表示方式(預設十進位)，兩種參數的搭配結果如下:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex    https://XXXX.com/posts/66c8/</span><br><span class="line">crc16 &amp; dec    https://XXXX.com/posts/65535/</span><br><span class="line">crc32 &amp; hex    https://XXXX.com/posts/8ddf18fb/</span><br><span class="line">crc32 &amp; dec    https://XXXX.com/posts/1690090958/</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
-<li><a href="https://github.com/rozbo/hexo-abbrlink">rozbo&#x2F;hexo-abbrlink README.md 文件</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1322,12 +1322,12 @@
 
 ]]></content>
       <categories>
-        <category>JavaScript 筆記</category>
         <category>HTML 筆記</category>
+        <category>JavaScript 筆記</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
         <tag>HTML</tag>
+        <tag>JavaScript</tag>
         <tag>CSS</tag>
       </tags>
   </entry>
@@ -2945,8 +2945,8 @@
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用 Express 製作簡易記帳本的紀錄。  </p>
 <span id="more"></span>
 
-<h2 id="你為何會選擇這個專案？"><a href="#你為何會選擇這個專案？" class="headerlink" title="你為何會選擇這個專案？"></a>你為何會選擇這個專案？</h2><p>近期在學習用 Express 進行開發，陸陸續續接觸到了不同的知識，包含 CRUD 、登入&#x2F;登出功能、資料庫…等技術。如果要將這些階段性學習的知識進行融會貫通，找一個專案實作會是一個不錯的方法。藉由實踐來驗證自己是否已掌握這些技術知識，並且有能力將他們成功運用在未來開發的專案裡。簡易記帳本是個經典的實作專案，上述提到的內容也都可以一併在這個專案進行實踐。  </p>
-<h2 id="你使用了什麼技術？"><a href="#你使用了什麼技術？" class="headerlink" title="你使用了什麼技術？"></a>你使用了什麼技術？</h2><ol>
+<h2 id="為何會選擇這個專案？"><a href="#為何會選擇這個專案？" class="headerlink" title="為何會選擇這個專案？"></a>為何會選擇這個專案？</h2><p>近期在學習用 Express 進行開發，陸陸續續接觸到了不同的知識，包含 CRUD 、登入&#x2F;登出功能、資料庫…等技術。如果要將這些階段性學習的知識進行融會貫通，找一個專案實作會是一個不錯的方法。藉由實踐來驗證自己是否已掌握這些技術知識，並且有能力將他們成功運用在未來開發的專案裡。簡易記帳本是個經典的實作專案，上述提到的內容也都可以一併在這個專案進行實踐。  </p>
+<h2 id="使用了什麼技術？"><a href="#使用了什麼技術？" class="headerlink" title="使用了什麼技術？"></a>使用了什麼技術？</h2><ol>
 <li>Express 框架搭配 express-handlebars 樣板引擎搭建簡易網路應用程式。<br>使用 Express 建立後端伺服器、用 express-handlebars 為各個頁面建立樣板，之後只需要將資料隨著 HTTP request 傳入，就可以將資料快速的帶入模板中。因為樣板的重複利用，除了可以減少開發時間，也可以讓各個頁面看起來更統一、更有一致性。  </li>
 <li>使用 Mongoose 連線 Mongodb 管理、操作資料庫。<br>這個專案需要紀錄的重要資料有「使用者資訊」、「支出紀錄」，使用資料庫管理是個比較安全也比較有效率的方式。利用「資料連結」的設置，可以確保使用者只能看見屬於自己的資訊，也可以利用資料庫的 Schema 設計進行後端再次驗證，確保使用者提供的資料符合要求規格。  </li>
 <li>採用 RESTful 路由設計。<br>RESTful 路由設計是「合作開發」常見的路由設計方式，採用統一的設計規則可以讓不同開發者直接依循規則進行開發，避免各自風格不同造成的衝突問題。另外，直觀的 HTTP request method 也讓人對資源進行什麼樣的操作一目瞭然。  </li>
@@ -2954,10 +2954,10 @@
 <li>利用 bcrypt.js 對使用者密碼進行加密保護。<br>如果沒有使用雜湊來對使用者資料進行加密，使用者私密資料將會被直接儲存進資料庫裡。此時只要擁有資料庫的操作權限，就有極大可能可以直接獲取使用者私密資料(例如：密碼)。私密資料的外洩會侵害到使用者權益，因此加密保護是必要的措施。  </li>
 <li>部署到 Heroku。</li>
 </ol>
-<h2 id="哪部分你相對能掌握？哪裡花了最多時間？"><a href="#哪部分你相對能掌握？哪裡花了最多時間？" class="headerlink" title="哪部分你相對能掌握？哪裡花了最多時間？"></a>哪部分你相對能掌握？哪裡花了最多時間？</h2><p>Express server 搭建到 CRUD 功能開發及路由設計相對熟悉，之前開發過的 Todo-List 和餐廳清單都有使用到同樣技術，因此幾乎能完全掌握。  </p>
+<h2 id="哪部分相對能掌握？哪裡花了最多時間？"><a href="#哪部分相對能掌握？哪裡花了最多時間？" class="headerlink" title="哪部分相對能掌握？哪裡花了最多時間？"></a>哪部分相對能掌握？哪裡花了最多時間？</h2><p>Express server 搭建到 CRUD 功能開發及路由設計相對熟悉，之前開發過的 Todo-List 和餐廳清單都有使用到同樣技術，因此幾乎能完全掌握。  </p>
 <p>之前只有用過 <code>Promise.then()</code> 的寫法來處理非同步語法，過程中總是覺得「包得太多層」讓資料傳遞跟執行順序較難一目了然。這次專案嘗試改用 async&#x2F;await 方式來處理非同步語法，花了多一點時間熟悉。  </p>
 <h2 id="過程中碰到什麼困難？又如何克服？"><a href="#過程中碰到什麼困難？又如何克服？" class="headerlink" title="過程中碰到什麼困難？又如何克服？"></a>過程中碰到什麼困難？又如何克服？</h2><p>最大的困難其實就是「萬事起頭難」。包含專案功能的開發路徑、順序、時間管理…等，一開始其實毫無頭緒，要做的事情很多，不知道從哪裡開始比較好。後來我參考了之前專案的 commit message ，先大致把要做的事情進行排序、切分，變成一個個更小的任務。後來依照規劃按部就班，成功的將需求功能一一完成。  </p>
-<h2 id="過程中你有對哪個技術有特別深刻的學習？"><a href="#過程中你有對哪個技術有特別深刻的學習？" class="headerlink" title="過程中你有對哪個技術有特別深刻的學習？"></a>過程中你有對哪個技術有特別深刻的學習？</h2><p>其實上述並不是遇到的全部問題，這個專案也大量練習了「找出問題、解決問題」的方法。開發過程中閱讀錯誤訊息、下對關鍵字、成功 Debug 的不斷循環加深了我對於開發工具的理解。  </p>
+<h2 id="過程中有對哪個技術有特別深刻的學習？"><a href="#過程中有對哪個技術有特別深刻的學習？" class="headerlink" title="過程中有對哪個技術有特別深刻的學習？"></a>過程中有對哪個技術有特別深刻的學習？</h2><p>其實上述並不是遇到的全部問題，這個專案也大量練習了「找出問題、解決問題」的方法。開發過程中閱讀錯誤訊息、下對關鍵字、成功 Debug 的不斷循環加深了我對於開發工具的理解。  </p>
 <p>另外，比較印象深刻的是 <code>failureFlash</code> 和 <code>failureMessage</code> 的使用。在查資料的過程中看到<a href="https://medium.com/tds-note/how-failure-message-works-in-passport-js-512e453af8a3">這篇</a>的使用說明部落格。我從這篇文章學到了除了 README 以外，也可以從閱讀套件原始程式碼的方式來了解工具的使用方法，之後也成功的將原本寫的 code 更加精簡！  </p>
 ]]></content>
       <categories>
