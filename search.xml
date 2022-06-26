@@ -720,9 +720,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
+        <tag>HTML</tag>
         <tag>Hexo</tag>
         <tag>NexT</tag>
-        <tag>HTML</tag>
         <tag>CSS</tag>
         <tag>Nunjucks</tag>
       </tags>
@@ -1263,6 +1263,75 @@
       </tags>
   </entry>
   <entry>
+    <title>data-* HTML 自定義屬性及 dataset</title>
+    <url>/posts/b8b00b13/</url>
+    <content><![CDATA[<p>在 <a href="/posts/470f6710/">JS30 Day1</a> 第一次看到 data-* 屬性，學習 DOM 之後發現真是太好用了阿!</p>
+<span id="more"></span>
+<blockquote>
+<p>筆記內容為學習過程中的紀錄，內容可能未臻完善，如有錯漏，歡迎留言，謝謝!</p>
+</blockquote>
+<h2 id="data-基本介紹"><a href="#data-基本介紹" class="headerlink" title="data-* 基本介紹"></a>data-* 基本介紹</h2><p><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Global_attributes/data-*">[MDN 說明]</a>  </p>
+<p>HTML 標籤除了預設的屬性之外，其實還有個很好用的自定義屬性 <code>data-*</code> ，這個東西在開始進行 DOM 操作後，更可以明顯感受到它的方便性。通常我們在眾多 HTML 標籤中要針對特定幾個元素做操作時，會使用 id 或 class 來指定，但實際使用下來不夠彈性。例如:  </p>
+<p>現在有 52 張撲克牌，我和朋友玩了撿紅點。計分時黑牌不計分、紅牌數值相加。我可以直接用 class name “card” 來套用同樣的卡背樣式。但如果我想把所有吃到”紅色牌分數”相加時，現有的屬性沒辦法滿足我的需求。  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 用 &lt;div&gt; 做出 52 張牌 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">...(略)</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>J<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>Q<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>K<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>於是，我就可以用 <code>data-*</code> 來加上我需要的屬性內容。 用 <code>data-suit</code> 來表示花色、 <code>data-value</code> 來表示數字。這樣，我就可以一眼看出這張牌的顏色和數字了!  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 加上花色及數值屬性 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;club&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;1&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;diamond&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;2&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;heart&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;3&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">...(略)</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;heart&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;11&quot;</span>&gt;</span>J<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;spade&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;12&quot;</span>&gt;</span>Q<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;spade&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;13&quot;</span>&gt;</span>K<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>data-*</code> 可以新增一個”自定義屬性”，並給這個屬性一個”值”，有了這個設定之後，就可以更有針對性及彈性的對特定元素進行操作。  </p>
+<h3 id="命名規則"><a href="#命名規則" class="headerlink" title="命名規則"></a>命名規則</h3><p><strong>(很重要! 和後面提到的 dataset 應用有關!)</strong>  </p>
+<ul>
+<li>同 class 命名慣例，用 <code>-</code> 串接字詞。  </li>
+<li>名字絕對不能以 <code>xml</code> 起頭。  </li>
+<li>名字只能包含小寫字母、數字、dash（-）、點（.）、冒號（:）和下底線（_）。</li>
+</ul>
+<h3 id="補充說明"><a href="#補充說明" class="headerlink" title="補充說明"></a>補充說明</h3><p> <code>data-*</code> 所儲存的屬性值型別都是<strong>字串</strong>，如果要進行四則運算要記得先轉換型別!</p>
+<h2 id="CSS-應用"><a href="#CSS-應用" class="headerlink" title="CSS 應用"></a>CSS 應用</h2><h3 id="CSS-選擇器"><a href="#CSS-選擇器" class="headerlink" title="CSS 選擇器"></a>CSS 選擇器</h3><p>我們常以 class 及 id 來定義 CSS 樣式。其實 CSS 選擇器中有一個<strong>屬性選擇器</strong>，可以依屬性值來選擇特定元素。接續上面的撲克牌為例，把花色為愛心&#x2F;方塊的牌顯示為紅色:  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 選擇屬性為特定值的元素 */</span></span><br><span class="line"><span class="selector-attr">[data-suit=<span class="string">&quot;heart&quot;</span>]</span>,</span><br><span class="line"><span class="selector-attr">[data-suit=<span class="string">&quot;diamond&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="CSS-content-及-attr"><a href="#CSS-content-及-attr" class="headerlink" title="CSS content 及 attr()"></a>CSS content 及 attr()</h3><p><code>content</code> 可以用 CSS 直接生成靜態文字； <code>attr()</code> 則是可以讀取”屬性值”。<br>如果有3個設好 <code>data-value</code> 的撲克牌，我要讓它在 <code>&lt;div&gt;&lt;/div&gt;</code> 中間加入屬性的值:  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 原本未加 CSS 狀態 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;A&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>設置 CSS content:  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">attr</span>(data-value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>CSS 渲染過後的 HTML 會呈現:  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;A&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;2&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;3&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="DOM-與-JavaScript-應用"><a href="#DOM-與-JavaScript-應用" class="headerlink" title="DOM 與 JavaScript 應用"></a>DOM 與 JavaScript 應用</h2><h3 id="DOM-querySelector"><a href="#DOM-querySelector" class="headerlink" title="DOM querySelector"></a>DOM querySelector</h3><ul>
+<li><p>在使用 querySelector 時，可以直接指定<strong>屬性值</strong>。以”選擇所有梅花牌”為例:  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 選取所有含 data-suit=&quot;club&quot; 的節點</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectors</span>(<span class="string">&#x27;[data-suit=&quot;club&quot;]&#x27;</span>)</span><br><span class="line"><span class="comment">// 選取所有含 data-suit=&quot;club&quot; 的 &lt;div&gt; 節點</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectors</span>(<span class="string">&#x27;div[data-suit=&quot;club&quot;]&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>也可以更彈性的運用，使用 template 代入屬性值。以 <a href="https://github.com/ritachien/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/index.html">[JS30 Day1 JavaScript Drum Kit]</a> 為例:<br>在 HTML 部分設置了4個按鍵元素(A、S、D、F)，並為每個按鍵標上編號。  </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;65&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;83&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>S<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;68&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>D<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;70&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>F<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>設置監聽事件，自動讀取事件紀錄的 <code>keyCode</code> 並將數值代入 template 中。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, playAudio)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">playAudio</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> key = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`.key[data-key=&quot;<span class="subst">$&#123;event.keyCode&#125;</span>&quot;]`</span>)</span><br><span class="line">  <span class="comment">// 其他程式碼(略)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如: 按下&quot;A&quot;鍵，事件紀錄的 keyCode:65 ，這裡就會直接把65代入。上面的程式碼會變成:</span></span><br><span class="line"><span class="keyword">const</span> key = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.key[data-key=&quot;65&quot;]&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="HTMLElement-dataset"><a href="#HTMLElement-dataset" class="headerlink" title="HTMLElement.dataset"></a>HTMLElement.dataset</h3><p><a href="https://developer.mozilla.org/zh-TW/docs/orphaned/Web/API/HTMLOrForeignElement/dataset">[MDN 說明]</a>  </p>
+<h4 id="命名轉換"><a href="#命名轉換" class="headerlink" title="命名轉換"></a>命名轉換</h4><p><strong>dash-style to camelCase</strong>  </p>
+<ol>
+<li>刪去前綴字 <code>data-</code> 。  </li>
+<li>每個 <code>-</code> 後的第一個字母轉為大寫，刪去中間 <code>-</code> 後連接字串。<br>例如: <code>data-abc-def-ghi</code> 會被轉換為 <code>abcDefGhi</code>。</li>
+</ol>
+<h4 id="實際運用"><a href="#實際運用" class="headerlink" title="實際運用"></a>實際運用</h4><blockquote>
+<p>範例取自 MDN 文件<br>有個 HTML 元素如下:</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;1234567890&quot;</span> <span class="attr">data-user</span>=<span class="string">&quot;johndoe&quot;</span>&gt;</span></span><br><span class="line">  John Doe</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果我要取它的 <code>data-*</code> 屬性值，取值方式如下:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 選取要取值的對象</span></span><br><span class="line"><span class="keyword">const</span> user = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#user&#x27;</span>)</span><br><span class="line"><span class="comment">// 開始取值</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">dataset</span>.<span class="property">id</span>)  <span class="comment">// 回傳 &#x27;1234567890&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">dataset</span>.<span class="property">user</span>)  <span class="comment">// 回傳 &#x27;johndoe&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>JavaScript 筆記</category>
+        <category>HTML 筆記</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Alpha Camp 學期 2-2 結業心得</title>
     <url>/posts/f46b1c2/</url>
     <content><![CDATA[<blockquote>
@@ -1275,6 +1344,66 @@
 <h3 id="INTERPRETIVE"><a href="#INTERPRETIVE" class="headerlink" title="INTERPRETIVE"></a>INTERPRETIVE</h3><p>這個學期下來也讓我對於「複習」這件事有了態度上的轉變。從原本的「之前不夠熟悉、必須找時間再多多複習」變成「主動在作業中融入以前學過的東西」。每個學期、甚至每個教案的著重點本來就不一樣，「複習」這件事就要找到適合自己的方法，不能依賴虛無飄渺的「找個時間來複習」。  </p>
 <p>觀摩同學作業時，發現在一個作業中同時融入了很多以前學過的東西( media queries 、 flex、position…等)，可以看出他在開始編寫程式碼前，已經對設計成品有具體的想法，可能也針對不同螢幕大小畫出了多張 wireframe ，考慮了很多面向的東西。 他的練習實踐方式讓我發現我可以在完成當下目標同時複習以前學過的東西，學習的輸入可以從各自為政變成融會貫通 。  </p>
 <h3 id="DECISIONAL"><a href="#DECISIONAL" class="headerlink" title="DECISIONAL"></a>DECISIONAL</h3><p>接下來進行課程時，希望自己能保持主動優化的動力。也許不是每一次嘗試都能得到好的結果，但在嘗試的過程中需要查資料、方法的選擇、功能的取捨，利用這個過程慢慢積累自己的知識庫，期望未來能不愧對付出的時間和努力!  </p>
+]]></content>
+      <categories>
+        <category>課程心得</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Alpha Camp 學期 2-3 結業心得</title>
+    <url>/posts/924950b4/</url>
+    <content><![CDATA[<p>隨著時間的推移，在學習上總是會碰到各種不同的狀況，而這些狀況也提供我不同的學習感受。這篇著重於紀錄自己遇到、找出並排除問題的過程。  </p>
+<blockquote>
+<p>要解決問題，必須先正確的找出問題發生原因。  </p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="緣起：為短網址產生器加上重複檢查機制"><a href="#緣起：為短網址產生器加上重複檢查機制" class="headerlink" title="緣起：為短網址產生器加上重複檢查機制"></a>緣起：為短網址產生器加上重複檢查機制</h2><p>一如上學期結束時對自己許的願，這學期在寫作業的同時會盡可能地做些優化挑戰，然後不可避免的進入無窮卡關迴圈……  </p>
+<p>近期卡了最久的就是短網址產生器了!! 作業的要求其實很簡單，只要可以產生英文字母或數字的隨機亂碼來當短網址即可。但是! 我突然想到:「萬一真的產生了相同的亂碼怎麼辦?」。依照我當下的執行邏輯，產生亂碼之後就馬上把它和原始網址加入互相對照的 index ，在沒有檢查的情況下，兩組原始網址導向同一個短網址也不是不可能發生。  </p>
+<p>於是，我決定了優化方向：「在亂數產生器 return 結果之前加上檢查機制」，只要發現相同亂碼就重新執行一次亂碼產生流程。然後……在這個優化過程被卡了整整 2 天 🤣  </p>
+<h2 id="嘗試失敗1：同步與非同步"><a href="#嘗試失敗1：同步與非同步" class="headerlink" title="嘗試失敗1：同步與非同步"></a>嘗試失敗1：同步與非同步</h2><blockquote>
+<p>先來備註一下：這次用來存放 UrlIndex 資料的是 MongoDB。  </p>
+</blockquote>
+<p>原本的寫法如下(只放有問題部分):  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 產生亂碼短網址 &lt;file:root/utils/shortGenerator.js&gt;</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generator</span> (length) &#123;</span><br><span class="line">  <span class="comment">// 1. generate random code</span></span><br><span class="line">  <span class="comment">// 2. Check if random url already exist</span></span><br><span class="line">  <span class="comment">// =&gt; if exist, run &quot;generator (length)&quot;</span></span><br><span class="line">  <span class="comment">// =&gt; if not yet exist, return result</span></span><br><span class="line">  <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">shortenUrl</span>: result &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> data ? <span class="title function_">generator</span>(length) : result</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把短網址存入對照 index &lt;file:root/app.js&gt;</span></span><br><span class="line"><span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="attr">shortenUrl</span>: <span class="title function_">generator</span>(<span class="number">5</span>),</span><br><span class="line">  <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>在我的預想中， <code>generator()</code> 負責產生獨一無二的短網址，而 <code>UrlIndex.create()</code> 把取得的短網址拿去建立 index 。但是，看似沒問題的邏輯跳錯誤了! 好在目前遇到的大部分錯誤訊息都能正確敘述出問題的原因，它告訴我 shortenUrl 的值 <code>undefined</code> 。於是我去查查賦值 <code>undefined</code> 的原因，發現在我寫的流程裡最有可能的原因是：「若變數沒有提供初始值，則預設為 <code>undefined</code> 」。但不對啊~我不是有告訴 <code>UrlIndex.create()</code> shortenUrl 的值從 <code>generator()</code> 取得嗎? 為什麼會 <code>undefined</code> 呢?  </p>
+<p>前幾天因緣際會接觸到「非同步」相關知識的我想起了前輩對非同步的評語：  </p>
+<blockquote>
+<p>實戰常常遇到問題，一研究發現，怎麼又是你！  </p>
+</blockquote>
+<p>檢查了一下目前進度，確實啊~ <code>UrlIndex.create()</code> 和 <code>UrlIndex.findOne()</code> 都是非同步語法，如果沒有處理好，根本無法控制完成的先後順序。於是，再度開始了 google 旅程，發現目前對於非同步執行順序最常使用兩種方式:  </p>
+<ul>
+<li>async&#x2F;await  </li>
+<li>Promise.then()</li>
+</ul>
+<p>因為對 <code>async/await</code> 值的傳遞方式還不太熟悉，因此決定先用 <code>Promise.then()</code> 的方式。 <code>.then</code> 的前面必須是個 Promise 物件，但我目前 return 的是亂碼「值」。幸好查到的資料告訴我， mongoose 5.0 開始就內建 Promise 語法，所以我可以把整個 <code>UrlIndex.findOne()</code> 包成 Promise 物件。最後，我把整個檢驗是否重複的過程直接 return ，順利解決了執行順序問題。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 產生亂碼短網址</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generator</span> (length) &#123;</span><br><span class="line">  <span class="comment">// (前略)</span></span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">shortenUrl</span>: result &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> data ? <span class="title function_">generator</span>(length) : result</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ShortGenerator</span>(randomLength)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> urlData ? urlData : <span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">      <span class="attr">shortenUrl</span>: url,</span><br><span class="line">      <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="嘗試失敗2：mongoose-語法-return-值"><a href="#嘗試失敗2：mongoose-語法-return-值" class="headerlink" title="嘗試失敗2：mongoose 語法 return 值"></a>嘗試失敗2：mongoose 語法 return 值</h2><p>接著，我想把產生的短網址結果呈現給使用者:  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span> &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="title class_">ShortGenerator</span>(randomLength)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> urlData ? urlData : <span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">            <span class="attr">shortenUrl</span>: url,</span><br><span class="line">            <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">          &#125;)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;))  <span class="comment">// 執行到這行出問題!!</span></span><br><span class="line">        .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>這時候又跳錯誤了! 根據錯誤訊息查詢，發現是 handlebars 因為安全性問題，只接受乾淨的物件資料，通常可以用 <code>.lean()</code> 解決。把 <code>urlData</code> 印出來，看看到底取到什麼值? 嗯?? <code>_id</code> 裡面那個 new 是什麼? 看起來確定是回傳值的問題。<br><img src="/../Blog-image/posts/2022-04-24_returnValueOfMongoose.webp" alt="error_returnValueOfMongoose">  </p>
+<p>於是我加上了 <code>.lean()</code> ，但它又報錯了!  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">  urlData = urlData.<span class="title function_">lean</span>()</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><img src="/../Blog-image/posts/2022-04-24_mongoose.lean.webp" alt="error_mongoose.lean">  </p>
+<p>測試後發現：如果是已建立 index 的網址就沒問題；反之，如果是新建的就會報錯。那就表示兩者拿到的資料不一樣。仔細查閱了 mongoose 官方文件， <code>UrlIndex.findOne()</code> 回傳 Query、 <code>UrlIndex.create()</code> 回傳 Promise 物件……好吧! 接下來的問題就是如何取 <code>UrlIndex.create()</code> 的「值」?  </p>
+<p>在各種變換關鍵字後，終於在  stack overflow 找到救世主，可以用 <code>toObject()</code> 進行資料轉換。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">  urlData = urlData.<span class="title function_">toObject</span>()</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<br>
+大功告成! 一切終於都如我預期的運作了!!  
+
+<p>成品程式碼: <a href="https://github.com/ritachien/URL_Shortener">在這裡</a>。  </p>
+<h2 id="心得分享"><a href="#心得分享" class="headerlink" title="心得分享"></a>心得分享</h2><p>寫出來真的很有成就感啊!! 除了這個作業優化外，其實前面的作業也有經過類似的優化煎熬過程。總結起來解決問題的方法分幾個部分:  </p>
+<ul>
+<li>預防 – 仔細閱讀使用工具的官方文件、了解它的使用方法，正確的使用工具可以排除很多可能發生的問題。  </li>
+<li>找出問題 – 知道問題發生原因才是解決的最快方法。就像前面分享的問題二，看起來是 handlebars 接受的資料類型問題，實際上是 mongoose 回傳值的原因。  </li>
+<li>查找資料 – 在找出正確問題的前提下，盡可能下對關鍵字可以找到更接近需求的內容。</li>
+</ul>
+<p>不過沒有一次找到目標資料也沒關係，多多閱讀的過程中也能吸收各種知識，也許會在未來的某一天成為解決其他問題的關鍵!  </p>
 ]]></content>
       <categories>
         <category>課程心得</category>
@@ -2201,103 +2330,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Terminal 常用指令</title>
-    <url>/posts/800dd5f5/</url>
-    <content><![CDATA[<p>在使用指令介面時，偶爾會忘記特定指令。所以建立一篇 cheat sheet 方便之後需要時查詢。  </p>
-<span id="more"></span>
-<h2 id="快速鍵"><a href="#快速鍵" class="headerlink" title="快速鍵"></a>快速鍵</h2><table>
-<thead>
-<tr>
-<th>Windows 快速鍵</th>
-<th>MacOS 快速鍵</th>
-<th>用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>tab</code></td>
-<td><code>tab</code></td>
-<td>輸入部分，可自動補齊後面內容</td>
-</tr>
-<tr>
-<td><code>↑</code> <code>↓</code></td>
-<td><code>↑</code> <code>↓</code></td>
-<td>跳出之前用過的指令，可直接 enter 執行</td>
-</tr>
-</tbody></table>
-<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><table>
-<thead>
-<tr>
-<th>Windows 指令</th>
-<th>MacOS 指令</th>
-<th>用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>cd ..</td>
-<td>cd ..</td>
-<td>進入上層資料夾</td>
-</tr>
-<tr>
-<td>cd <code>path</code></td>
-<td>cd <code>path</code></td>
-<td>進入指定資料夾</td>
-</tr>
-<tr>
-<td>clear</td>
-<td>clear</td>
-<td>清空終端機內容</td>
-</tr>
-<tr>
-<td>ls</td>
-<td>ls</td>
-<td>列出當前目錄裡的所有內容</td>
-</tr>
-<tr>
-<td>ls -a</td>
-<td>ls -a</td>
-<td>列出當前目錄裡的所有內容(含隱藏檔案)</td>
-</tr>
-<tr>
-<td>mkdir <code>folder name(s)</code></td>
-<td>mkdir <code>folder name(s)</code></td>
-<td>新建一個或多個資料夾</td>
-</tr>
-<tr>
-<td>start .</td>
-<td>open .</td>
-<td>打開當前目錄的圖形化介面</td>
-</tr>
-<tr>
-<td>pwd</td>
-<td>pwd</td>
-<td>列出當前位置路徑</td>
-</tr>
-<tr>
-<td>rm <code>file name(s)</code></td>
-<td>rm <code>file name(s)</code></td>
-<td>刪除一個或多個檔案</td>
-</tr>
-<tr>
-<td>rm -rf <code>folder name(s)</code></td>
-<td>rm -rf <code>folder name(s)</code></td>
-<td>刪除一個或多個資料夾(及其內容)<br/>(r &#x3D; recursive, f &#x3D; force)</td>
-</tr>
-<tr>
-<td>touch <code>file name(s)</code></td>
-<td>touch <code>file name(s)</code></td>
-<td>新建一個或多個檔案</td>
-</tr>
-</tbody></table>
-<p>備註：在命令列進行「刪除」不會將檔案&#x2F;資料夾移到資源回收筒，而是直接刪除。  </p>
-]]></content>
-      <categories>
-        <category>Cheat Sheet</category>
-      </categories>
-      <tags>
-        <tag>Cheat Sheet</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【CS50x(2022)】Complexity and Big O Notation</title>
     <url>/posts/6466fe30/</url>
     <content><![CDATA[<p>在上 CS50x 第三週的演算法時，總覺得對「時間複雜度」的理解不夠清楚，因此另外找了課程做補充。  </p>
@@ -2399,107 +2431,100 @@
       </tags>
   </entry>
   <entry>
-    <title>常用的 markdown 語法</title>
-    <url>/posts/71aa6829/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>近期寫專案 README 和 Blog 常常會用到 markdown ，整理一篇常用語法！可以直接點左邊目錄，跳到相對應的主題位置。  </p>
-<blockquote>
-<p>參考資料：<a href="https://markdown.tw/">https://markdown.tw/</a></p>
-</blockquote>
+    <title>Terminal 常用指令</title>
+    <url>/posts/800dd5f5/</url>
+    <content><![CDATA[<p>在使用指令介面時，偶爾會忘記特定指令。所以建立一篇 cheat sheet 方便之後需要時查詢。  </p>
 <span id="more"></span>
-<h2 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h2><p>Markdown支援 Setext 和 atx 兩種形式的標題語法。但因為 Setext 語法僅分兩級標題，使用 atx 語法會比較有撰寫彈性及方便，下面列出的是 atx 語法的標題。  </p>
-<p>標題會自動佔滿一整行。不同級別的標題使用起來會有字體大小、粗細…等樣式上的差別。  </p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 這是一級標題</span></span><br><span class="line"><span class="section">## 這是二級標題</span></span><br><span class="line"><span class="section">### 這是三級標題</span></span><br><span class="line"><span class="section">#### 這是四級標題</span></span><br><span class="line"><span class="section">##### 這是五級標題</span></span><br><span class="line"><span class="section">###### 這是六級標題</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="區塊引言"><a href="#區塊引言" class="headerlink" title="區塊引言"></a>區塊引言</h2><p>Markdown使用email形式的區塊引言， <code>&gt;</code> 會強迫斷行。  </p>
-<p>區塊引言可以有階層(如下圖所示)，只要根據層數加上不同數量的 <code>&gt;</code> 即可。引言的區塊內也可以使用其他的Markdown語法，包括標題、清單、程式碼區塊…等。  </p>
-<blockquote>
-<p>一級區塊引言</p>
-<blockquote>
-<p>二級區塊引言</p>
-<blockquote>
-<p>三級區塊引言</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 一級區塊引言</span></span><br><span class="line">&gt;&gt; 二級區塊引言</span><br><span class="line">&gt;&gt;&gt; 三級區塊引言</span><br></pre></td></tr></table></figure>
-
-<h2 id="清單"><a href="#清單" class="headerlink" title="清單"></a>清單</h2><p>清單分為「有序清單」和「無序清單」。</p>
-<ul>
-<li>在項目標記後面則一定要接著至少一個空白或tab。  </li>
-<li>如果清單項目間用空行分開， Markdown會把項目的內容在輸出時用 <code>&lt;p&gt;</code> 標籤包起來。</li>
-</ul>
-<p><strong>無序清單( unordered list )</strong> 可以使用星號(<code>*</code>)、加號(<code>+</code>)或是減號(<code>-</code>)作為標記。無論哪種寫法，呈現出來的結果都一樣。</p>
-<ul>
-<li>無序清單範例</li>
-</ul>
-<ul>
-<li>無序清單範例</li>
-</ul>
-<ul>
-<li>無序清單範例</li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> 無序清單範例</span><br><span class="line"><span class="bullet">+</span> 無序清單範例</span><br><span class="line"><span class="bullet">-</span> 無序清單範例</span><br></pre></td></tr></table></figure>
-
-<p><strong>有序清單( ordered list )</strong> 則是以數字加上英文句點(<code>.</code>)作為標記，項目標記後面則一定要接著至少一個空白或tab。比較特別的是，目前在清單標記上使用的數字並不會影響輸出的HTML結果。</p>
-<ol>
-<li>有序清單一</li>
-<li>有序清單二</li>
-<li>有序清單三</li>
-</ol>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 有序清單一</span><br><span class="line"><span class="bullet">2.</span> 有序清單二</span><br><span class="line"><span class="bullet">8.</span> 有序清單三(如上範例呈現，數字並不影響結果)</span><br></pre></td></tr></table></figure>
-
-<h2 id="程式碼區塊及上色"><a href="#程式碼區塊及上色" class="headerlink" title="程式碼區塊及上色"></a>程式碼區塊及上色</h2><p>撰寫程式碼區塊時可以用兩行的三個反引號(`&#96;&#96;)包裹程式碼，如果第一行的三個反引號(`&#96;&#96;)後面有加上程式語言名稱，它會自動辨識關鍵字並上色。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello World!&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">// markdown 撰寫語法如下:</span><br><span class="line"><span class="code">```js(語言名稱)</span></span><br><span class="line"><span class="code">console.log(&#x27;Hello World!&#x27;)</span></span><br><span class="line"><span class="code">```</span>\(為了讓它能正常顯示，所以加了跳脫符號&quot;\&quot;，實際撰寫時不加)</span><br></pre></td></tr></table></figure>
-
-<h2 id="引入圖片"><a href="#引入圖片" class="headerlink" title="引入圖片"></a>引入圖片</h2><p>markdown 語法也可以貼上圖片，寫法如下方範例。圖片說明等同 HTML <code>&lt;img&gt;</code> 的 <code>alt</code> property；而括號裡面填上圖片網址或在專案裡面的相對位置都可以。  </p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">圖片說明</span>](<span class="link">圖片 URL</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="連結"><a href="#連結" class="headerlink" title="連結"></a>連結</h2><p>即 HTML 的 <code>&lt;a&gt;</code> 。有些支援「文內跳轉」的地方，也可以在括號內填入文章的錨點。  </p>
-<p>連結寫法有「參考式連結」和「行內形式連結」。</p>
-<ul>
-<li>參考式連結可以讓文件更像是瀏覽器最後產生的結果，把一些標記相關的資訊移到段落文字之外，不讓文章的閱讀感覺被打斷。有興趣研究的可以到文章開頭提供的網址查看。  </li>
-<li>平常不會一次寫太多連結時，行內形式連結寫起來較直覺，所以這邊只提供「行內形式連結」寫法。</li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">連結文字</span>](<span class="link">連結 URL</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="字體變化"><a href="#字體變化" class="headerlink" title="字體變化"></a>字體變化</h2><p><strong>粗體</strong><br><strong>也是粗體</strong><br><em>斜體</em><br><em>也是斜體</em>  </p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**粗體**</span></span><br><span class="line"><span class="strong">__也是粗體__</span></span><br><span class="line"><span class="emphasis">*斜體*</span></span><br><span class="line"><span class="emphasis">_也是斜體_</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="插入空白行"><a href="#插入空白行" class="headerlink" title="插入空白行"></a>插入空白行</h2><p>有些東西屬於「行內元素」，在 markdown 語法裡的 Enter(換行)會被自動忽略。比如平常編輯兩個段落文字時，使用 Enter 就會自動換行開始新段落，但在 markdown 裡則是使用兩個半型空格(<code>  </code>)。  </p>
-<p>使用兩個半型空格(<code>  </code>)後會強制換行產生新段落。在兩個段落間多插入一行或多行空白行則會在兩段落間增加一點段落間距(margin)，但空白行的數量並不影響間距大小。如果真的想呈現多行空白行，則可使用 HTML 元素 <code>&lt;br/&gt;</code> 來達成。  </p>
-<h2 id="分隔線"><a href="#分隔線" class="headerlink" title="分隔線"></a>分隔線</h2><p>在一行中用三個或以上的星號、減號、底線來建立一個分隔線，行內不能有其他東西。<br>符號中間可以插入空格。下面每種寫法都可以建立分隔線：  </p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> <span class="emphasis">* *</span></span><br><span class="line"><span class="strong">**<span class="emphasis">*</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">*</span>**</span><span class="strong">**</span></span><br><span class="line"><span class="strong">- - -</span></span><br><span class="line"><span class="strong">---------------------------------------</span></span><br><span class="line"><span class="strong">__<span class="emphasis">_</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">_</span> <span class="emphasis">_ _</span></span></span><br></pre></td></tr></table></figure>
-
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>markdown 也可以畫表格，但樣式較簡單無彈性。僅有基本的表格、對齊功能，而沒有「合併儲存格」的功能。  </p>
-<p>製作表格方式也很簡單，只要「畫」出來即可。用 <code>|</code> 畫出表格的左右框線；在表頭和內容中間必須插入一行 <code>|----|</code> ( <code>-</code> 數量不限)，同時可以用 <code>:</code> 來調整文字的對齊方式，使用方式如下方範例。 </p>
-<table>
+<h2 id="快速鍵"><a href="#快速鍵" class="headerlink" title="快速鍵"></a>快速鍵</h2><table>
 <thead>
 <tr>
-<th>這是表頭1</th>
-<th align="center">這是表頭2</th>
-<th align="left">這是表頭3</th>
-<th align="right">這是表頭4</th>
+<th>Windows 快速鍵</th>
+<th>MacOS 快速鍵</th>
+<th>用途</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>預設</td>
-<td align="center">置中</td>
-<td align="left">靠左</td>
-<td align="right">靠右</td>
+<td><code>tab</code></td>
+<td><code>tab</code></td>
+<td>輸入部分，可自動補齊後面內容</td>
+</tr>
+<tr>
+<td><code>↑</code> <code>↓</code></td>
+<td><code>↑</code> <code>↓</code></td>
+<td>跳出之前用過的指令，可直接 enter 執行</td>
 </tr>
 </tbody></table>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| 這是表頭1 | 這是表頭2 | 這是表頭3 | 這是表頭4 |</span><br><span class="line">| --------- | :-------: | :-------- | --------: |</span><br><span class="line">| 預設      |   置中    | 靠左      |      靠右 |</span><br></pre></td></tr></table></figure>
-
-<h2 id="補充說明"><a href="#補充說明" class="headerlink" title="補充說明"></a>補充說明</h2><p>使用 markdown 在寫作上更方便，但相對來說排版和樣式上的彈性就小很多了。如果希望有更多樣式上的變化(如：顏色…等)，就需要直接用 HTML 來書寫了！  </p>
+<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><table>
+<thead>
+<tr>
+<th>Windows 指令</th>
+<th>MacOS 指令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cd ..</td>
+<td>cd ..</td>
+<td>進入上層資料夾</td>
+</tr>
+<tr>
+<td>cd <code>path</code></td>
+<td>cd <code>path</code></td>
+<td>進入指定資料夾</td>
+</tr>
+<tr>
+<td>clear</td>
+<td>clear</td>
+<td>清空終端機內容</td>
+</tr>
+<tr>
+<td>ls</td>
+<td>ls</td>
+<td>列出當前目錄裡的所有內容</td>
+</tr>
+<tr>
+<td>ls -a</td>
+<td>ls -a</td>
+<td>列出當前目錄裡的所有內容(含隱藏檔案)</td>
+</tr>
+<tr>
+<td>mkdir <code>folder name(s)</code></td>
+<td>mkdir <code>folder name(s)</code></td>
+<td>新建一個或多個資料夾</td>
+</tr>
+<tr>
+<td>start .</td>
+<td>open .</td>
+<td>打開當前目錄的圖形化介面</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>pwd</td>
+<td>列出當前位置路徑</td>
+</tr>
+<tr>
+<td>rm <code>file name(s)</code></td>
+<td>rm <code>file name(s)</code></td>
+<td>刪除一個或多個檔案</td>
+</tr>
+<tr>
+<td>rm -rf <code>folder name(s)</code></td>
+<td>rm -rf <code>folder name(s)</code></td>
+<td>刪除一個或多個資料夾(及其內容)<br/>(r &#x3D; recursive, f &#x3D; force)</td>
+</tr>
+<tr>
+<td>touch <code>file name(s)</code></td>
+<td>touch <code>file name(s)</code></td>
+<td>新建一個或多個檔案</td>
+</tr>
+</tbody></table>
+<p>備註：在命令列進行「刪除」不會將檔案&#x2F;資料夾移到資源回收筒，而是直接刪除。  </p>
 ]]></content>
       <categories>
         <category>Cheat Sheet</category>
       </categories>
       <tags>
         <tag>Cheat Sheet</tag>
-        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -2626,6 +2651,135 @@
 </ol>
 
 </details>
+]]></content>
+      <categories>
+        <category>Git 筆記</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用的 markdown 語法</title>
+    <url>/posts/71aa6829/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>近期寫專案 README 和 Blog 常常會用到 markdown ，整理一篇常用語法！可以直接點左邊目錄，跳到相對應的主題位置。  </p>
+<blockquote>
+<p>參考資料：<a href="https://markdown.tw/">https://markdown.tw/</a></p>
+</blockquote>
+<span id="more"></span>
+<h2 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h2><p>Markdown支援 Setext 和 atx 兩種形式的標題語法。但因為 Setext 語法僅分兩級標題，使用 atx 語法會比較有撰寫彈性及方便，下面列出的是 atx 語法的標題。  </p>
+<p>標題會自動佔滿一整行。不同級別的標題使用起來會有字體大小、粗細…等樣式上的差別。  </p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 這是一級標題</span></span><br><span class="line"><span class="section">## 這是二級標題</span></span><br><span class="line"><span class="section">### 這是三級標題</span></span><br><span class="line"><span class="section">#### 這是四級標題</span></span><br><span class="line"><span class="section">##### 這是五級標題</span></span><br><span class="line"><span class="section">###### 這是六級標題</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="區塊引言"><a href="#區塊引言" class="headerlink" title="區塊引言"></a>區塊引言</h2><p>Markdown使用email形式的區塊引言， <code>&gt;</code> 會強迫斷行。  </p>
+<p>區塊引言可以有階層(如下圖所示)，只要根據層數加上不同數量的 <code>&gt;</code> 即可。引言的區塊內也可以使用其他的Markdown語法，包括標題、清單、程式碼區塊…等。  </p>
+<blockquote>
+<p>一級區塊引言</p>
+<blockquote>
+<p>二級區塊引言</p>
+<blockquote>
+<p>三級區塊引言</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 一級區塊引言</span></span><br><span class="line">&gt;&gt; 二級區塊引言</span><br><span class="line">&gt;&gt;&gt; 三級區塊引言</span><br></pre></td></tr></table></figure>
+
+<h2 id="清單"><a href="#清單" class="headerlink" title="清單"></a>清單</h2><p>清單分為「有序清單」和「無序清單」。</p>
+<ul>
+<li>在項目標記後面則一定要接著至少一個空白或tab。  </li>
+<li>如果清單項目間用空行分開， Markdown會把項目的內容在輸出時用 <code>&lt;p&gt;</code> 標籤包起來。</li>
+</ul>
+<p><strong>無序清單( unordered list )</strong> 可以使用星號(<code>*</code>)、加號(<code>+</code>)或是減號(<code>-</code>)作為標記。無論哪種寫法，呈現出來的結果都一樣。</p>
+<ul>
+<li>無序清單範例</li>
+</ul>
+<ul>
+<li>無序清單範例</li>
+</ul>
+<ul>
+<li>無序清單範例</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> 無序清單範例</span><br><span class="line"><span class="bullet">+</span> 無序清單範例</span><br><span class="line"><span class="bullet">-</span> 無序清單範例</span><br></pre></td></tr></table></figure>
+
+<p><strong>有序清單( ordered list )</strong> 則是以數字加上英文句點(<code>.</code>)作為標記，項目標記後面則一定要接著至少一個空白或tab。比較特別的是，目前在清單標記上使用的數字並不會影響輸出的HTML結果。</p>
+<ol>
+<li>有序清單一</li>
+<li>有序清單二</li>
+<li>有序清單三</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 有序清單一</span><br><span class="line"><span class="bullet">2.</span> 有序清單二</span><br><span class="line"><span class="bullet">8.</span> 有序清單三(如上範例呈現，數字並不影響結果)</span><br></pre></td></tr></table></figure>
+
+<h2 id="程式碼區塊及上色"><a href="#程式碼區塊及上色" class="headerlink" title="程式碼區塊及上色"></a>程式碼區塊及上色</h2><p>撰寫程式碼區塊時可以用兩行的三個反引號(`&#96;&#96;)包裹程式碼，如果第一行的三個反引號(`&#96;&#96;)後面有加上程式語言名稱，它會自動辨識關鍵字並上色。  </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello World!&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">// markdown 撰寫語法如下:</span><br><span class="line"><span class="code">```js(語言名稱)</span></span><br><span class="line"><span class="code">console.log(&#x27;Hello World!&#x27;)</span></span><br><span class="line"><span class="code">```</span>\(為了讓它能正常顯示，所以加了跳脫符號&quot;\&quot;，實際撰寫時不加)</span><br></pre></td></tr></table></figure>
+
+<h2 id="引入圖片"><a href="#引入圖片" class="headerlink" title="引入圖片"></a>引入圖片</h2><p>markdown 語法也可以貼上圖片，寫法如下方範例。圖片說明等同 HTML <code>&lt;img&gt;</code> 的 <code>alt</code> property；而括號裡面填上圖片網址或在專案裡面的相對位置都可以。  </p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">圖片說明</span>](<span class="link">圖片 URL</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="連結"><a href="#連結" class="headerlink" title="連結"></a>連結</h2><p>即 HTML 的 <code>&lt;a&gt;</code> 。有些支援「文內跳轉」的地方，也可以在括號內填入文章的錨點。  </p>
+<p>連結寫法有「參考式連結」和「行內形式連結」。</p>
+<ul>
+<li>參考式連結可以讓文件更像是瀏覽器最後產生的結果，把一些標記相關的資訊移到段落文字之外，不讓文章的閱讀感覺被打斷。有興趣研究的可以到文章開頭提供的網址查看。  </li>
+<li>平常不會一次寫太多連結時，行內形式連結寫起來較直覺，所以這邊只提供「行內形式連結」寫法。</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[<span class="string">連結文字</span>](<span class="link">連結 URL</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="字體變化"><a href="#字體變化" class="headerlink" title="字體變化"></a>字體變化</h2><p><strong>粗體</strong><br><strong>也是粗體</strong><br><em>斜體</em><br><em>也是斜體</em>  </p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="strong">**粗體**</span></span><br><span class="line"><span class="strong">__也是粗體__</span></span><br><span class="line"><span class="emphasis">*斜體*</span></span><br><span class="line"><span class="emphasis">_也是斜體_</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="插入空白行"><a href="#插入空白行" class="headerlink" title="插入空白行"></a>插入空白行</h2><p>有些東西屬於「行內元素」，在 markdown 語法裡的 Enter(換行)會被自動忽略。比如平常編輯兩個段落文字時，使用 Enter 就會自動換行開始新段落，但在 markdown 裡則是使用兩個半型空格(<code>  </code>)。  </p>
+<p>使用兩個半型空格(<code>  </code>)後會強制換行產生新段落。在兩個段落間多插入一行或多行空白行則會在兩段落間增加一點段落間距(margin)，但空白行的數量並不影響間距大小。如果真的想呈現多行空白行，則可使用 HTML 元素 <code>&lt;br/&gt;</code> 來達成。  </p>
+<h2 id="分隔線"><a href="#分隔線" class="headerlink" title="分隔線"></a>分隔線</h2><p>在一行中用三個或以上的星號、減號、底線來建立一個分隔線，行內不能有其他東西。<br>符號中間可以插入空格。下面每種寫法都可以建立分隔線：  </p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> <span class="emphasis">* *</span></span><br><span class="line"><span class="strong">**<span class="emphasis">*</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">*</span>**</span><span class="strong">**</span></span><br><span class="line"><span class="strong">- - -</span></span><br><span class="line"><span class="strong">---------------------------------------</span></span><br><span class="line"><span class="strong">__<span class="emphasis">_</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">_</span> <span class="emphasis">_ _</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>markdown 也可以畫表格，但樣式較簡單無彈性。僅有基本的表格、對齊功能，而沒有「合併儲存格」的功能。  </p>
+<p>製作表格方式也很簡單，只要「畫」出來即可。用 <code>|</code> 畫出表格的左右框線；在表頭和內容中間必須插入一行 <code>|----|</code> ( <code>-</code> 數量不限)，同時可以用 <code>:</code> 來調整文字的對齊方式，使用方式如下方範例。 </p>
+<table>
+<thead>
+<tr>
+<th>這是表頭1</th>
+<th align="center">這是表頭2</th>
+<th align="left">這是表頭3</th>
+<th align="right">這是表頭4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>預設</td>
+<td align="center">置中</td>
+<td align="left">靠左</td>
+<td align="right">靠右</td>
+</tr>
+</tbody></table>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| 這是表頭1 | 這是表頭2 | 這是表頭3 | 這是表頭4 |</span><br><span class="line">| --------- | :-------: | :-------- | --------: |</span><br><span class="line">| 預設      |   置中    | 靠左      |      靠右 |</span><br></pre></td></tr></table></figure>
+
+<h2 id="補充說明"><a href="#補充說明" class="headerlink" title="補充說明"></a>補充說明</h2><p>使用 markdown 在寫作上更方便，但相對來說排版和樣式上的彈性就小很多了。如果希望有更多樣式上的變化(如：顏色…等)，就需要直接用 HTML 來書寫了！  </p>
+]]></content>
+      <categories>
+        <category>Cheat Sheet</category>
+      </categories>
+      <tags>
+        <tag>Cheat Sheet</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用 git commit --amend 修改 commit 紀錄</title>
+    <url>/posts/362cfd32/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用 Git 時，偶爾會在 commit 過程中發生一些小失誤，不管是 typo 或是部分檔案忘記加入 staged files 清單一起 commit。這種時候，<code>git commit --amend</code> 就是一個很方便的指令了。</p>
+<span id="more"></span>
+
+<h2 id="amend-參數介紹"><a href="#amend-參數介紹" class="headerlink" title="--amend 參數介紹"></a>--amend 參數介紹</h2><p>根據 <a href="https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---amend">Git 官方說明</a>，加上 <code>--amend</code> 參數會在「當前分支」產生一筆<strong>新的 commit</strong> 來取代最近一次的 commit 紀錄。如果沒有在使用 <code>--amend</code> 參數的同時追加使用 <code>-m</code>、<code>-F</code> 或 <code>-c</code> …等參數，預設會將當前分支最近一筆的 commit message 帶入用作修改預設值。  </p>
+<p>值得注意的是，說明提到「新的 commit」。表示 <code>--amend</code> 是用新的 commit 取代舊的，而不是直接修改原始 commit 內容，所以編號會被修改。  </p>
+<blockquote>
+<p>由於是產生一筆新的 commit ，所以最好只在尚未 push 到遠端儲存庫時使用。  </p>
+</blockquote>
+<h2 id="amend-使用"><a href="#amend-使用" class="headerlink" title="--amend 使用"></a>--amend 使用</h2><p><code>git commit --amend</code> 使用時會像 <code>git commit</code> 一樣跳出預設文字編輯器，只是跳出時已將當前分支最近一次的 commit message 帶入。  </p>
+<h3 id="只修改-commit-message"><a href="#只修改-commit-message" class="headerlink" title="只修改 commit message"></a>只修改 commit message</h3><p>當只想修改最近一次 commit 的 commit message (因為錯字或其他原因)，不想變動 commit 的其他內容(檔案、作者訊息…等)。下面的指令可以二擇一使用：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 會跳出文字編輯器(自動帶入前一個 commit message)</span></span><br><span class="line">git commit --amend</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接輸入新的 commit message</span></span><br><span class="line">git commit --amend -m <span class="string">&quot;新的 commit message&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="將漏掉的檔案加進最近一次的-commit-裡"><a href="#將漏掉的檔案加進最近一次的-commit-裡" class="headerlink" title="將漏掉的檔案加進最近一次的 commit 裡"></a>將漏掉的檔案加進最近一次的 commit 裡</h3><p>有時候進行多個檔案的編輯，在進行 <code>git add</code> 時不小心漏掉了幾個檔案沒有加到。則可以用下列方式修改：  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 將檔案加入 staged files</span></span><br><span class="line">git add file1.txt file2.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改最近一次 commit</span></span><br><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Git 筆記</category>
@@ -2786,157 +2940,31 @@
       </tags>
   </entry>
   <entry>
-    <title>用 git commit --amend 修改 commit 紀錄</title>
-    <url>/posts/362cfd32/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用 Git 時，偶爾會在 commit 過程中發生一些小失誤，不管是 typo 或是部分檔案忘記加入 staged files 清單一起 commit。這種時候，<code>git commit --amend</code> 就是一個很方便的指令了。</p>
+    <title>【實作練習】簡易記帳本</title>
+    <url>/posts/ed3d149f/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用 Express 製作簡易記帳本的紀錄。  </p>
 <span id="more"></span>
 
-<h2 id="amend-參數介紹"><a href="#amend-參數介紹" class="headerlink" title="--amend 參數介紹"></a>--amend 參數介紹</h2><p>根據 <a href="https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---amend">Git 官方說明</a>，加上 <code>--amend</code> 參數會在「當前分支」產生一筆<strong>新的 commit</strong> 來取代最近一次的 commit 紀錄。如果沒有在使用 <code>--amend</code> 參數的同時追加使用 <code>-m</code>、<code>-F</code> 或 <code>-c</code> …等參數，預設會將當前分支最近一筆的 commit message 帶入用作修改預設值。  </p>
-<p>值得注意的是，說明提到「新的 commit」。表示 <code>--amend</code> 是用新的 commit 取代舊的，而不是直接修改原始 commit 內容，所以編號會被修改。  </p>
-<blockquote>
-<p>由於是產生一筆新的 commit ，所以最好只在尚未 push 到遠端儲存庫時使用。  </p>
-</blockquote>
-<h2 id="amend-使用"><a href="#amend-使用" class="headerlink" title="--amend 使用"></a>--amend 使用</h2><p><code>git commit --amend</code> 使用時會像 <code>git commit</code> 一樣跳出預設文字編輯器，只是跳出時已將當前分支最近一次的 commit message 帶入。  </p>
-<h3 id="只修改-commit-message"><a href="#只修改-commit-message" class="headerlink" title="只修改 commit message"></a>只修改 commit message</h3><p>當只想修改最近一次 commit 的 commit message (因為錯字或其他原因)，不想變動 commit 的其他內容(檔案、作者訊息…等)。下面的指令可以二擇一使用：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 會跳出文字編輯器(自動帶入前一個 commit message)</span></span><br><span class="line">git commit --amend</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接輸入新的 commit message</span></span><br><span class="line">git commit --amend -m <span class="string">&quot;新的 commit message&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="將漏掉的檔案加進最近一次的-commit-裡"><a href="#將漏掉的檔案加進最近一次的-commit-裡" class="headerlink" title="將漏掉的檔案加進最近一次的 commit 裡"></a>將漏掉的檔案加進最近一次的 commit 裡</h3><p>有時候進行多個檔案的編輯，在進行 <code>git add</code> 時不小心漏掉了幾個檔案沒有加到。則可以用下列方式修改：  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 將檔案加入 staged files</span></span><br><span class="line">git add file1.txt file2.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改最近一次 commit</span></span><br><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Git 筆記</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Alpha Camp 學期 2-3 結業心得</title>
-    <url>/posts/924950b4/</url>
-    <content><![CDATA[<p>隨著時間的推移，在學習上總是會碰到各種不同的狀況，而這些狀況也提供我不同的學習感受。這篇著重於紀錄自己遇到、找出並排除問題的過程。  </p>
-<blockquote>
-<p>要解決問題，必須先正確的找出問題發生原因。  </p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="緣起：為短網址產生器加上重複檢查機制"><a href="#緣起：為短網址產生器加上重複檢查機制" class="headerlink" title="緣起：為短網址產生器加上重複檢查機制"></a>緣起：為短網址產生器加上重複檢查機制</h2><p>一如上學期結束時對自己許的願，這學期在寫作業的同時會盡可能地做些優化挑戰，然後不可避免的進入無窮卡關迴圈……  </p>
-<p>近期卡了最久的就是短網址產生器了!! 作業的要求其實很簡單，只要可以產生英文字母或數字的隨機亂碼來當短網址即可。但是! 我突然想到:「萬一真的產生了相同的亂碼怎麼辦?」。依照我當下的執行邏輯，產生亂碼之後就馬上把它和原始網址加入互相對照的 index ，在沒有檢查的情況下，兩組原始網址導向同一個短網址也不是不可能發生。  </p>
-<p>於是，我決定了優化方向：「在亂數產生器 return 結果之前加上檢查機制」，只要發現相同亂碼就重新執行一次亂碼產生流程。然後……在這個優化過程被卡了整整 2 天 🤣  </p>
-<h2 id="嘗試失敗1：同步與非同步"><a href="#嘗試失敗1：同步與非同步" class="headerlink" title="嘗試失敗1：同步與非同步"></a>嘗試失敗1：同步與非同步</h2><blockquote>
-<p>先來備註一下：這次用來存放 UrlIndex 資料的是 MongoDB。  </p>
-</blockquote>
-<p>原本的寫法如下(只放有問題部分):  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 產生亂碼短網址 &lt;file:root/utils/shortGenerator.js&gt;</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generator</span> (length) &#123;</span><br><span class="line">  <span class="comment">// 1. generate random code</span></span><br><span class="line">  <span class="comment">// 2. Check if random url already exist</span></span><br><span class="line">  <span class="comment">// =&gt; if exist, run &quot;generator (length)&quot;</span></span><br><span class="line">  <span class="comment">// =&gt; if not yet exist, return result</span></span><br><span class="line">  <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">shortenUrl</span>: result &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> data ? <span class="title function_">generator</span>(length) : result</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把短網址存入對照 index &lt;file:root/app.js&gt;</span></span><br><span class="line"><span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="attr">shortenUrl</span>: <span class="title function_">generator</span>(<span class="number">5</span>),</span><br><span class="line">  <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>在我的預想中， <code>generator()</code> 負責產生獨一無二的短網址，而 <code>UrlIndex.create()</code> 把取得的短網址拿去建立 index 。但是，看似沒問題的邏輯跳錯誤了! 好在目前遇到的大部分錯誤訊息都能正確敘述出問題的原因，它告訴我 shortenUrl 的值 <code>undefined</code> 。於是我去查查賦值 <code>undefined</code> 的原因，發現在我寫的流程裡最有可能的原因是：「若變數沒有提供初始值，則預設為 <code>undefined</code> 」。但不對啊~我不是有告訴 <code>UrlIndex.create()</code> shortenUrl 的值從 <code>generator()</code> 取得嗎? 為什麼會 <code>undefined</code> 呢?  </p>
-<p>前幾天因緣際會接觸到「非同步」相關知識的我想起了前輩對非同步的評語：  </p>
-<blockquote>
-<p>實戰常常遇到問題，一研究發現，怎麼又是你！  </p>
-</blockquote>
-<p>檢查了一下目前進度，確實啊~ <code>UrlIndex.create()</code> 和 <code>UrlIndex.findOne()</code> 都是非同步語法，如果沒有處理好，根本無法控制完成的先後順序。於是，再度開始了 google 旅程，發現目前對於非同步執行順序最常使用兩種方式:  </p>
-<ul>
-<li>async&#x2F;await  </li>
-<li>Promise.then()</li>
-</ul>
-<p>因為對 <code>async/await</code> 值的傳遞方式還不太熟悉，因此決定先用 <code>Promise.then()</code> 的方式。 <code>.then</code> 的前面必須是個 Promise 物件，但我目前 return 的是亂碼「值」。幸好查到的資料告訴我， mongoose 5.0 開始就內建 Promise 語法，所以我可以把整個 <code>UrlIndex.findOne()</code> 包成 Promise 物件。最後，我把整個檢驗是否重複的過程直接 return ，順利解決了執行順序問題。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 產生亂碼短網址</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generator</span> (length) &#123;</span><br><span class="line">  <span class="comment">// (前略)</span></span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">shortenUrl</span>: result &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> data ? <span class="title function_">generator</span>(length) : result</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ShortGenerator</span>(randomLength)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> urlData ? urlData : <span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">      <span class="attr">shortenUrl</span>: url,</span><br><span class="line">      <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="嘗試失敗2：mongoose-語法-return-值"><a href="#嘗試失敗2：mongoose-語法-return-值" class="headerlink" title="嘗試失敗2：mongoose 語法 return 值"></a>嘗試失敗2：mongoose 語法 return 值</h2><p>接著，我想把產生的短網址結果呈現給使用者:  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="title class_">UrlIndex</span>.<span class="title function_">findOne</span>(&#123; <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span> &#125;)</span><br><span class="line">    .<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="title class_">ShortGenerator</span>(randomLength)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">url</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> urlData ? urlData : <span class="title class_">UrlIndex</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">            <span class="attr">shortenUrl</span>: url,</span><br><span class="line">            <span class="attr">originalUrl</span>: req.<span class="property">body</span>.<span class="property">url</span></span><br><span class="line">          &#125;)</span><br><span class="line">        .<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;))  <span class="comment">// 執行到這行出問題!!</span></span><br><span class="line">        .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>這時候又跳錯誤了! 根據錯誤訊息查詢，發現是 handlebars 因為安全性問題，只接受乾淨的物件資料，通常可以用 <code>.lean()</code> 解決。把 <code>urlData</code> 印出來，看看到底取到什麼值? 嗯?? <code>_id</code> 裡面那個 new 是什麼? 看起來確定是回傳值的問題。<br><img src="/../Blog-image/posts/2022-04-24_returnValueOfMongoose.webp" alt="error_returnValueOfMongoose">  </p>
-<p>於是我加上了 <code>.lean()</code> ，但它又報錯了!  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">  urlData = urlData.<span class="title function_">lean</span>()</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p><img src="/../Blog-image/posts/2022-04-24_mongoose.lean.webp" alt="error_mongoose.lean">  </p>
-<p>測試後發現：如果是已建立 index 的網址就沒問題；反之，如果是新建的就會報錯。那就表示兩者拿到的資料不一樣。仔細查閱了 mongoose 官方文件， <code>UrlIndex.findOne()</code> 回傳 Query、 <code>UrlIndex.create()</code> 回傳 Promise 物件……好吧! 接下來的問題就是如何取 <code>UrlIndex.create()</code> 的「值」?  </p>
-<p>在各種變換關鍵字後，終於在  stack overflow 找到救世主，可以用 <code>toObject()</code> 進行資料轉換。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="function"><span class="params">urlData</span> =&gt;</span> &#123;</span><br><span class="line">  urlData = urlData.<span class="title function_">toObject</span>()</span><br><span class="line">  res.<span class="title function_">render</span>(<span class="string">&#x27;index&#x27;</span>, &#123; urlBasic, urlData &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<br>
-大功告成! 一切終於都如我預期的運作了!!  
-
-<p>成品程式碼: <a href="https://github.com/ritachien/URL_Shortener">在這裡</a>。  </p>
-<h2 id="心得分享"><a href="#心得分享" class="headerlink" title="心得分享"></a>心得分享</h2><p>寫出來真的很有成就感啊!! 除了這個作業優化外，其實前面的作業也有經過類似的優化煎熬過程。總結起來解決問題的方法分幾個部分:  </p>
-<ul>
-<li>預防 – 仔細閱讀使用工具的官方文件、了解它的使用方法，正確的使用工具可以排除很多可能發生的問題。  </li>
-<li>找出問題 – 知道問題發生原因才是解決的最快方法。就像前面分享的問題二，看起來是 handlebars 接受的資料類型問題，實際上是 mongoose 回傳值的原因。  </li>
-<li>查找資料 – 在找出正確問題的前提下，盡可能下對關鍵字可以找到更接近需求的內容。</li>
-</ul>
-<p>不過沒有一次找到目標資料也沒關係，多多閱讀的過程中也能吸收各種知識，也許會在未來的某一天成為解決其他問題的關鍵!  </p>
+<h2 id="你為何會選擇這個專案？"><a href="#你為何會選擇這個專案？" class="headerlink" title="你為何會選擇這個專案？"></a>你為何會選擇這個專案？</h2><p>近期在學習用 Express 進行開發，陸陸續續接觸到了不同的知識，包含 CRUD 、登入&#x2F;登出功能、資料庫…等技術。如果要將這些階段性學習的知識進行融會貫通，找一個專案實作會是一個不錯的方法。藉由實踐來驗證自己是否已掌握這些技術知識，並且有能力將他們成功運用在未來開發的專案裡。簡易記帳本是個經典的實作專案，上述提到的內容也都可以一併在這個專案進行實踐。  </p>
+<h2 id="你使用了什麼技術？"><a href="#你使用了什麼技術？" class="headerlink" title="你使用了什麼技術？"></a>你使用了什麼技術？</h2><ol>
+<li>Express 框架搭配 express-handlebars 樣板引擎搭建簡易網路應用程式。<br>使用 Express 建立後端伺服器、用 express-handlebars 為各個頁面建立樣板，之後只需要將資料隨著 HTTP request 傳入，就可以將資料快速的帶入模板中。因為樣板的重複利用，除了可以減少開發時間，也可以讓各個頁面看起來更統一、更有一致性。  </li>
+<li>使用 Mongoose 連線 Mongodb 管理、操作資料庫。<br>這個專案需要紀錄的重要資料有「使用者資訊」、「支出紀錄」，使用資料庫管理是個比較安全也比較有效率的方式。利用「資料連結」的設置，可以確保使用者只能看見屬於自己的資訊，也可以利用資料庫的 Schema 設計進行後端再次驗證，確保使用者提供的資料符合要求規格。  </li>
+<li>採用 RESTful 路由設計。<br>RESTful 路由設計是「合作開發」常見的路由設計方式，採用統一的設計規則可以讓不同開發者直接依循規則進行開發，避免各自風格不同造成的衝突問題。另外，直觀的 HTTP request method 也讓人對資源進行什麼樣的操作一目瞭然。  </li>
+<li>運用 passport.js 進行身分驗證。<br>HTTP 有無狀態 (stateless) 的限制，每個 HTTP request 都被單獨對待，也就是它不會主動儲存狀態資訊。使用 passport.js 可以將使用者的登入狀態進行保存，達到對使用者操作權限的管理目的。  </li>
+<li>利用 bcrypt.js 對使用者密碼進行加密保護。<br>如果沒有使用雜湊來對使用者資料進行加密，使用者私密資料將會被直接儲存進資料庫裡。此時只要擁有資料庫的操作權限，就有極大可能可以直接獲取使用者私密資料(例如：密碼)。私密資料的外洩會侵害到使用者權益，因此加密保護是必要的措施。  </li>
+<li>部署到 Heroku。</li>
+</ol>
+<h2 id="哪部分你相對能掌握？哪裡花了最多時間？"><a href="#哪部分你相對能掌握？哪裡花了最多時間？" class="headerlink" title="哪部分你相對能掌握？哪裡花了最多時間？"></a>哪部分你相對能掌握？哪裡花了最多時間？</h2><p>Express server 搭建到 CRUD 功能開發及路由設計相對熟悉，之前開發過的 Todo-List 和餐廳清單都有使用到同樣技術，因此幾乎能完全掌握。  </p>
+<p>之前只有用過 <code>Promise.then()</code> 的寫法來處理非同步語法，過程中總是覺得「包得太多層」讓資料傳遞跟執行順序較難一目了然。這次專案嘗試改用 async&#x2F;await 方式來處理非同步語法，花了多一點時間熟悉。  </p>
+<h2 id="過程中碰到什麼困難？又如何克服？"><a href="#過程中碰到什麼困難？又如何克服？" class="headerlink" title="過程中碰到什麼困難？又如何克服？"></a>過程中碰到什麼困難？又如何克服？</h2><p>最大的困難其實就是「萬事起頭難」。包含專案功能的開發路徑、順序、時間管理…等，一開始其實毫無頭緒，要做的事情很多，不知道從哪裡開始比較好。後來我參考了之前專案的 commit message ，先大致把要做的事情進行排序、切分，變成一個個更小的任務。後來依照規劃按部就班，成功的將需求功能一一完成。  </p>
+<h2 id="過程中你有對哪個技術有特別深刻的學習？"><a href="#過程中你有對哪個技術有特別深刻的學習？" class="headerlink" title="過程中你有對哪個技術有特別深刻的學習？"></a>過程中你有對哪個技術有特別深刻的學習？</h2><p>其實上述並不是遇到的全部問題，這個專案也大量練習了「找出問題、解決問題」的方法。開發過程中閱讀錯誤訊息、下對關鍵字、成功 Debug 的不斷循環加深了我對於開發工具的理解。  </p>
+<p>另外，比較印象深刻的是 <code>failureFlash</code> 和 <code>failureMessage</code> 的使用。在查資料的過程中看到<a href="https://medium.com/tds-note/how-failure-message-works-in-passport-js-512e453af8a3">這篇</a>的使用說明部落格。我從這篇文章學到了除了 README 以外，也可以從閱讀套件原始程式碼的方式來了解工具的使用方法，之後也成功的將原本寫的 code 更加精簡！  </p>
 ]]></content>
       <categories>
         <category>課程心得</category>
       </categories>
       <tags>
         <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>data-* HTML 自定義屬性及 dataset</title>
-    <url>/posts/b8b00b13/</url>
-    <content><![CDATA[<p>在 <a href="/posts/470f6710/">JS30 Day1</a> 第一次看到 data-* 屬性，學習 DOM 之後發現真是太好用了阿!</p>
-<span id="more"></span>
-<blockquote>
-<p>筆記內容為學習過程中的紀錄，內容可能未臻完善，如有錯漏，歡迎留言，謝謝!</p>
-</blockquote>
-<h2 id="data-基本介紹"><a href="#data-基本介紹" class="headerlink" title="data-* 基本介紹"></a>data-* 基本介紹</h2><p><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Global_attributes/data-*">[MDN 說明]</a>  </p>
-<p>HTML 標籤除了預設的屬性之外，其實還有個很好用的自定義屬性 <code>data-*</code> ，這個東西在開始進行 DOM 操作後，更可以明顯感受到它的方便性。通常我們在眾多 HTML 標籤中要針對特定幾個元素做操作時，會使用 id 或 class 來指定，但實際使用下來不夠彈性。例如:  </p>
-<p>現在有 52 張撲克牌，我和朋友玩了撿紅點。計分時黑牌不計分、紅牌數值相加。我可以直接用 class name “card” 來套用同樣的卡背樣式。但如果我想把所有吃到”紅色牌分數”相加時，現有的屬性沒辦法滿足我的需求。  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 用 &lt;div&gt; 做出 52 張牌 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">...(略)</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>J<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>Q<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span>K<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>於是，我就可以用 <code>data-*</code> 來加上我需要的屬性內容。 用 <code>data-suit</code> 來表示花色、 <code>data-value</code> 來表示數字。這樣，我就可以一眼看出這張牌的顏色和數字了!  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 加上花色及數值屬性 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;club&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;1&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;diamond&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;2&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;heart&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;3&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">...(略)</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;heart&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;11&quot;</span>&gt;</span>J<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;spade&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;12&quot;</span>&gt;</span>Q<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-suit</span>=<span class="string">&quot;spade&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;13&quot;</span>&gt;</span>K<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>使用 <code>data-*</code> 可以新增一個”自定義屬性”，並給這個屬性一個”值”，有了這個設定之後，就可以更有針對性及彈性的對特定元素進行操作。  </p>
-<h3 id="命名規則"><a href="#命名規則" class="headerlink" title="命名規則"></a>命名規則</h3><p><strong>(很重要! 和後面提到的 dataset 應用有關!)</strong>  </p>
-<ul>
-<li>同 class 命名慣例，用 <code>-</code> 串接字詞。  </li>
-<li>名字絕對不能以 <code>xml</code> 起頭。  </li>
-<li>名字只能包含小寫字母、數字、dash（-）、點（.）、冒號（:）和下底線（_）。</li>
-</ul>
-<h3 id="補充說明"><a href="#補充說明" class="headerlink" title="補充說明"></a>補充說明</h3><p> <code>data-*</code> 所儲存的屬性值型別都是<strong>字串</strong>，如果要進行四則運算要記得先轉換型別!</p>
-<h2 id="CSS-應用"><a href="#CSS-應用" class="headerlink" title="CSS 應用"></a>CSS 應用</h2><h3 id="CSS-選擇器"><a href="#CSS-選擇器" class="headerlink" title="CSS 選擇器"></a>CSS 選擇器</h3><p>我們常以 class 及 id 來定義 CSS 樣式。其實 CSS 選擇器中有一個<strong>屬性選擇器</strong>，可以依屬性值來選擇特定元素。接續上面的撲克牌為例，把花色為愛心&#x2F;方塊的牌顯示為紅色:  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 選擇屬性為特定值的元素 */</span></span><br><span class="line"><span class="selector-attr">[data-suit=<span class="string">&quot;heart&quot;</span>]</span>,</span><br><span class="line"><span class="selector-attr">[data-suit=<span class="string">&quot;diamond&quot;</span>]</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="CSS-content-及-attr"><a href="#CSS-content-及-attr" class="headerlink" title="CSS content 及 attr()"></a>CSS content 及 attr()</h3><p><code>content</code> 可以用 CSS 直接生成靜態文字； <code>attr()</code> 則是可以讀取”屬性值”。<br>如果有3個設好 <code>data-value</code> 的撲克牌，我要讓它在 <code>&lt;div&gt;&lt;/div&gt;</code> 中間加入屬性的值:  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 原本未加 CSS 狀態 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;A&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>設置 CSS content:  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="built_in">attr</span>(data-value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>CSS 渲染過後的 HTML 會呈現:  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;A&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;2&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">data-value</span>=<span class="string">&quot;3&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="DOM-與-JavaScript-應用"><a href="#DOM-與-JavaScript-應用" class="headerlink" title="DOM 與 JavaScript 應用"></a>DOM 與 JavaScript 應用</h2><h3 id="DOM-querySelector"><a href="#DOM-querySelector" class="headerlink" title="DOM querySelector"></a>DOM querySelector</h3><ul>
-<li><p>在使用 querySelector 時，可以直接指定<strong>屬性值</strong>。以”選擇所有梅花牌”為例:  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 選取所有含 data-suit=&quot;club&quot; 的節點</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectors</span>(<span class="string">&#x27;[data-suit=&quot;club&quot;]&#x27;</span>)</span><br><span class="line"><span class="comment">// 選取所有含 data-suit=&quot;club&quot; 的 &lt;div&gt; 節點</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectors</span>(<span class="string">&#x27;div[data-suit=&quot;club&quot;]&#x27;</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>也可以更彈性的運用，使用 template 代入屬性值。以 <a href="https://github.com/ritachien/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/index.html">[JS30 Day1 JavaScript Drum Kit]</a> 為例:<br>在 HTML 部分設置了4個按鍵元素(A、S、D、F)，並為每個按鍵標上編號。  </p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;65&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;83&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>S<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;68&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>D<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">&quot;70&quot;</span> <span class="attr">class</span>=<span class="string">&quot;key&quot;</span>&gt;</span>F<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>設置監聽事件，自動讀取事件紀錄的 <code>keyCode</code> 並將數值代入 template 中。  </p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, playAudio)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">playAudio</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> key = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">`.key[data-key=&quot;<span class="subst">$&#123;event.keyCode&#125;</span>&quot;]`</span>)</span><br><span class="line">  <span class="comment">// 其他程式碼(略)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如: 按下&quot;A&quot;鍵，事件紀錄的 keyCode:65 ，這裡就會直接把65代入。上面的程式碼會變成:</span></span><br><span class="line"><span class="keyword">const</span> key = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.key[data-key=&quot;65&quot;]&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="HTMLElement-dataset"><a href="#HTMLElement-dataset" class="headerlink" title="HTMLElement.dataset"></a>HTMLElement.dataset</h3><p><a href="https://developer.mozilla.org/zh-TW/docs/orphaned/Web/API/HTMLOrForeignElement/dataset">[MDN 說明]</a>  </p>
-<h4 id="命名轉換"><a href="#命名轉換" class="headerlink" title="命名轉換"></a>命名轉換</h4><p><strong>dash-style to camelCase</strong>  </p>
-<ol>
-<li>刪去前綴字 <code>data-</code> 。  </li>
-<li>每個 <code>-</code> 後的第一個字母轉為大寫，刪去中間 <code>-</code> 後連接字串。<br>例如: <code>data-abc-def-ghi</code> 會被轉換為 <code>abcDefGhi</code>。</li>
-</ol>
-<h4 id="實際運用"><a href="#實際運用" class="headerlink" title="實際運用"></a>實際運用</h4><blockquote>
-<p>範例取自 MDN 文件<br>有個 HTML 元素如下:</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;1234567890&quot;</span> <span class="attr">data-user</span>=<span class="string">&quot;johndoe&quot;</span>&gt;</span></span><br><span class="line">  John Doe</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>如果我要取它的 <code>data-*</code> 屬性值，取值方式如下:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 選取要取值的對象</span></span><br><span class="line"><span class="keyword">const</span> user = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#user&#x27;</span>)</span><br><span class="line"><span class="comment">// 開始取值</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">dataset</span>.<span class="property">id</span>)  <span class="comment">// 回傳 &#x27;1234567890&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(user.<span class="property">dataset</span>.<span class="property">user</span>)  <span class="comment">// 回傳 &#x27;johndoe&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>JavaScript 筆記</category>
-        <category>HTML 筆記</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>HTML</tag>
-        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -2975,13 +3003,13 @@ count();
 ]]></content>
   </entry>
   <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
+    <title>categories</title>
+    <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
+    <title>tags</title>
+    <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>

@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ritachien.github.io/posts/ed3d149f/</loc>
+    
+    <lastmod>2022-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ritachien.github.io/posts/800dd5f5/</loc>
     
     <lastmod>2022-06-14</lastmod>
@@ -20,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://ritachien.github.io/posts/71aa6829/</loc>
+    <loc>https://ritachien.github.io/posts/6adb515e/</loc>
     
     <lastmod>2022-06-10</lastmod>
     
@@ -29,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://ritachien.github.io/posts/6adb515e/</loc>
+    <loc>https://ritachien.github.io/posts/71aa6829/</loc>
     
     <lastmod>2022-06-10</lastmod>
     
@@ -364,7 +373,7 @@
 
   <url>
     <loc>https://ritachien.github.io/</loc>
-    <lastmod>2022-06-14</lastmod>
+    <lastmod>2022-06-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

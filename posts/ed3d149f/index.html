@@ -21,24 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Rita 的學習筆記">
-<meta property="og:url" content="https://ritachien.github.io/tags/Blog/">
+    <meta name="description" content="前言使用 Express 製作簡易記帳本的紀錄。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【實作練習】簡易記帳本">
+<meta property="og:url" content="https://ritachien.github.io/posts/ed3d149f/">
 <meta property="og:site_name" content="Rita 的學習筆記">
+<meta property="og:description" content="前言使用 Express 製作簡易記帳本的紀錄。">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-06-26T11:07:07.000Z">
+<meta property="article:modified_time" content="2022-06-26T13:59:08.604Z">
 <meta property="article:author" content="Rita Chien">
-<meta property="article:tag" content="Blog, 程式語言, 學習紀錄">
+<meta property="article:tag" content="AlphaCamp">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ritachien.github.io/tags/Blog/">
+<link rel="canonical" href="https://ritachien.github.io/posts/ed3d149f/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"tags/Blog/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/ed3d149f/","path":"posts/ed3d149f/","title":"【實作練習】簡易記帳本"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>標籤: Blog | Rita 的學習筆記</title>
+<title>【實作練習】簡易記帳本 | Rita 的學習筆記</title>
   
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-215689852-1","only_pageview":true}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
@@ -138,7 +142,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -151,6 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%A0%E7%82%BA%E4%BD%95%E6%9C%83%E9%81%B8%E6%93%87%E9%80%99%E5%80%8B%E5%B0%88%E6%A1%88%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">你為何會選擇這個專案？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%A0%E4%BD%BF%E7%94%A8%E4%BA%86%E4%BB%80%E9%BA%BC%E6%8A%80%E8%A1%93%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">你使用了什麼技術？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%AA%E9%83%A8%E5%88%86%E4%BD%A0%E7%9B%B8%E5%B0%8D%E8%83%BD%E6%8E%8C%E6%8F%A1%EF%BC%9F%E5%93%AA%E8%A3%A1%E8%8A%B1%E4%BA%86%E6%9C%80%E5%A4%9A%E6%99%82%E9%96%93%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">哪部分你相對能掌握？哪裡花了最多時間？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%8E%E7%A8%8B%E4%B8%AD%E7%A2%B0%E5%88%B0%E4%BB%80%E9%BA%BC%E5%9B%B0%E9%9B%A3%EF%BC%9F%E5%8F%88%E5%A6%82%E4%BD%95%E5%85%8B%E6%9C%8D%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">過程中碰到什麼困難？又如何克服？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%8E%E7%A8%8B%E4%B8%AD%E4%BD%A0%E6%9C%89%E5%B0%8D%E5%93%AA%E5%80%8B%E6%8A%80%E8%A1%93%E6%9C%89%E7%89%B9%E5%88%A5%E6%B7%B1%E5%88%BB%E7%9A%84%E5%AD%B8%E7%BF%92%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">過程中你有對哪個技術有特別深刻的學習？</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -217,91 +222,159 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">Blog
-          <small>標籤</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/ed3d149f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
+      <meta itemprop="name" content="Rita Chien">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rita 的學習筆記">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【實作練習】簡易記帳本 | Rita 的學習筆記">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【實作練習】簡易記帳本
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="創建時間：2022-06-26 19:07:07 / 修改時間：21:59:08" itemprop="dateCreated datePublished" datetime="2022-06-26T19:07:07+08:00">2022-06-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AA%B2%E7%A8%8B%E5%BF%83%E5%BE%97/" itemprop="url" rel="index"><span itemprop="name">課程心得</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.5k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用 Express 製作簡易記帳本的紀錄。  </p>
+<span id="more"></span>
+
+<h2 id="你為何會選擇這個專案？"><a href="#你為何會選擇這個專案？" class="headerlink" title="你為何會選擇這個專案？"></a>你為何會選擇這個專案？</h2><p>近期在學習用 Express 進行開發，陸陸續續接觸到了不同的知識，包含 CRUD 、登入&#x2F;登出功能、資料庫…等技術。如果要將這些階段性學習的知識進行融會貫通，找一個專案實作會是一個不錯的方法。藉由實踐來驗證自己是否已掌握這些技術知識，並且有能力將他們成功運用在未來開發的專案裡。簡易記帳本是個經典的實作專案，上述提到的內容也都可以一併在這個專案進行實踐。  </p>
+<h2 id="你使用了什麼技術？"><a href="#你使用了什麼技術？" class="headerlink" title="你使用了什麼技術？"></a>你使用了什麼技術？</h2><ol>
+<li>Express 框架搭配 express-handlebars 樣板引擎搭建簡易網路應用程式。<br>使用 Express 建立後端伺服器、用 express-handlebars 為各個頁面建立樣板，之後只需要將資料隨著 HTTP request 傳入，就可以將資料快速的帶入模板中。因為樣板的重複利用，除了可以減少開發時間，也可以讓各個頁面看起來更統一、更有一致性。  </li>
+<li>使用 Mongoose 連線 Mongodb 管理、操作資料庫。<br>這個專案需要紀錄的重要資料有「使用者資訊」、「支出紀錄」，使用資料庫管理是個比較安全也比較有效率的方式。利用「資料連結」的設置，可以確保使用者只能看見屬於自己的資訊，也可以利用資料庫的 Schema 設計進行後端再次驗證，確保使用者提供的資料符合要求規格。  </li>
+<li>採用 RESTful 路由設計。<br>RESTful 路由設計是「合作開發」常見的路由設計方式，採用統一的設計規則可以讓不同開發者直接依循規則進行開發，避免各自風格不同造成的衝突問題。另外，直觀的 HTTP request method 也讓人對資源進行什麼樣的操作一目瞭然。  </li>
+<li>運用 passport.js 進行身分驗證。<br>HTTP 有無狀態 (stateless) 的限制，每個 HTTP request 都被單獨對待，也就是它不會主動儲存狀態資訊。使用 passport.js 可以將使用者的登入狀態進行保存，達到對使用者操作權限的管理目的。  </li>
+<li>利用 bcrypt.js 對使用者密碼進行加密保護。<br>如果沒有使用雜湊來對使用者資料進行加密，使用者私密資料將會被直接儲存進資料庫裡。此時只要擁有資料庫的操作權限，就有極大可能可以直接獲取使用者私密資料(例如：密碼)。私密資料的外洩會侵害到使用者權益，因此加密保護是必要的措施。  </li>
+<li>部署到 Heroku。</li>
+</ol>
+<h2 id="哪部分你相對能掌握？哪裡花了最多時間？"><a href="#哪部分你相對能掌握？哪裡花了最多時間？" class="headerlink" title="哪部分你相對能掌握？哪裡花了最多時間？"></a>哪部分你相對能掌握？哪裡花了最多時間？</h2><p>Express server 搭建到 CRUD 功能開發及路由設計相對熟悉，之前開發過的 Todo-List 和餐廳清單都有使用到同樣技術，因此幾乎能完全掌握。  </p>
+<p>之前只有用過 <code>Promise.then()</code> 的寫法來處理非同步語法，過程中總是覺得「包得太多層」讓資料傳遞跟執行順序較難一目了然。這次專案嘗試改用 async&#x2F;await 方式來處理非同步語法，花了多一點時間熟悉。  </p>
+<h2 id="過程中碰到什麼困難？又如何克服？"><a href="#過程中碰到什麼困難？又如何克服？" class="headerlink" title="過程中碰到什麼困難？又如何克服？"></a>過程中碰到什麼困難？又如何克服？</h2><p>最大的困難其實就是「萬事起頭難」。包含專案功能的開發路徑、順序、時間管理…等，一開始其實毫無頭緒，要做的事情很多，不知道從哪裡開始比較好。後來我參考了之前專案的 commit message ，先大致把要做的事情進行排序、切分，變成一個個更小的任務。後來依照規劃按部就班，成功的將需求功能一一完成。  </p>
+<h2 id="過程中你有對哪個技術有特別深刻的學習？"><a href="#過程中你有對哪個技術有特別深刻的學習？" class="headerlink" title="過程中你有對哪個技術有特別深刻的學習？"></a>過程中你有對哪個技術有特別深刻的學習？</h2><p>其實上述並不是遇到的全部問題，這個專案也大量練習了「找出問題、解決問題」的方法。開發過程中閱讀錯誤訊息、下對關鍵字、成功 Debug 的不斷循環加深了我對於開發工具的理解。  </p>
+<p>另外，比較印象深刻的是 <code>failureFlash</code> 和 <code>failureMessage</code> 的使用。在查資料的過程中看到<a target="_blank" rel="noopener external nofollow noreferrer" href="https://medium.com/tds-note/how-failure-message-works-in-passport-js-512e453af8a3">這篇</a>的使用說明部落格。我從這篇文章學到了除了 README 以外，也可以從閱讀套件原始程式碼的方式來了解工具的使用方法，之後也成功的將原本寫的 code 更加精簡！  </p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-12-23T00:00:00+08:00"
-              content="2021-12-23">
-          12-23
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/posts/a970120e/" itemprop="url">
-            <span itemprop="name">Hexo 基本設定</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-12-21T00:00:00+08:00"
-              content="2021-12-21">
-          12-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/posts/4b9ba027/" itemprop="url">
-            <span itemprop="name">用 Hexo + Github Pages 建立部落格</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-12-13T00:00:00+08:00"
-              content="2021-12-13">
-          12-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/posts/572b724a/" itemprop="url">
-            <span itemprop="name">開始寫部落格啦!</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
+    <footer class="post-footer"><!-- 在文章底部添加感謝閱讀 -->
+<div>
+  
+    <div style="text-align:center; color:#ccc; font-size:14px; letter-spacing:5px">
+      ------------  本文結束，感謝您的閱讀&nbsp;<i class="fa fa-paw"></i>&nbsp;如有錯漏，歡迎留言討論  -------------
     </div>
-  </div>
   
-  
-  
+</div>
 
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Rita Chien
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://ritachien.github.io/posts/ed3d149f/" title="【實作練習】簡易記帳本">https://ritachien.github.io/posts/ed3d149f/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/AlphaCamp/" rel="tag"><i class="fa fa-tag"></i> AlphaCamp</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/ebe5fbdc/" rel="prev" title="git checkout 介紹(switch、restore)">
+                  <i class="fa fa-chevron-left"></i> git checkout 介紹(switch、restore)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
 </div>
   </main>
 
