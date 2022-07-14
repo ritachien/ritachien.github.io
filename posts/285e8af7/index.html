@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/../Blog-image/config/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/../Blog-image/config/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/../Blog-image/config/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="MQEI18ZGBGydbCHVgbIo8AfV--tcXWLhmp2U4pqHCTg">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CMicrosoft+JhengHei:300,300italic,400,400italic,700,700italic%7C'Noto+Sans+TC':300,300italic,400,400italic,700,700italic%7Csans-serif:300,300italic,400,400italic,700,700italic%7Csource-code-pro:300,300italic,400,400italic,700,700italic%7Cmonospace;:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="前言在學習使用 express-handlebars 時，看到有個自訂參數 extname 可以自由調整想使用的副檔名，但各種範例都是設定成 hbs 。於是，好奇的我就開始了各種副檔名實驗……">
+<meta property="og:type" content="article">
+<meta property="og:title" content="express-handlebars 模板副檔名設定">
+<meta property="og:url" content="https://ritachien.github.io/posts/285e8af7/">
+<meta property="og:site_name" content="Rita 的學習筆記">
+<meta property="og:description" content="前言在學習使用 express-handlebars 時，看到有個自訂參數 extname 可以自由調整想使用的副檔名，但各種範例都是設定成 hbs 。於是，好奇的我就開始了各種副檔名實驗……">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-07-15_hbs-test1.webp">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-07-15_hbs-test2.webp">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-07-15_hbs-test3.webp">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-07-15_hbs-test4.webp">
+<meta property="article:published_time" content="2022-07-14T17:12:51.000Z">
+<meta property="article:modified_time" content="2022-07-14T17:56:34.090Z">
+<meta property="article:author" content="Rita Chien">
+<meta property="article:tag" content="express">
+<meta property="article:tag" content="express-handlebars">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ritachien.github.io/Blog-image/posts/2022-07-15_hbs-test1.webp">
+
+
+<link rel="canonical" href="https://ritachien.github.io/posts/285e8af7/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/285e8af7/","path":"posts/285e8af7/","title":"express-handlebars 模板副檔名設定"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>express-handlebars 模板副檔名設定 | Rita 的學習筆記</title>
+  
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-215689852-1","only_pageview":true}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+<!-- 加入 Sitemap 檔案位置到 <head> 中 -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://ritachien.github.io/sitemap.xml">
+</head>
+
+<!-- 加入 Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Rita 的學習筆記</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">一步一腳印，留下成長的足跡</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>網站地圖</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%98%E6%96%B9%E7%AF%84%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">官方範例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%8C%AF%E8%AA%A4%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">錯誤的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%A6%E9%A9%97%E8%A8%98%E9%8C%84"><span class="nav-number">4.</span> <span class="nav-text">實驗記錄</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%A6%E9%A9%97%E7%B5%90%E6%9E%9C"><span class="nav-number">5.</span> <span class="nav-text">實驗結果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-view-engine-setting-%E7%9A%84%E5%80%BC%E6%9C%83%E9%A0%90%E8%A8%AD%E6%88%90%E7%82%BA%E6%9F%A5%E6%89%BE-views-%E7%9A%84%E5%89%AF%E6%AA%94%E5%90%8D"><span class="nav-number">5.1.</span> <span class="nav-text">1. view engine setting 的值會預設成為查找 views 的副檔名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-extname-%E8%A8%AD%E5%AE%9A%E5%8F%AA%E9%87%9D%E5%B0%8D-layouts"><span class="nav-number">5.2.</span> <span class="nav-text">2. extname 設定只針對 layouts</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%B5%90"><span class="nav-number">6.</span> <span class="nav-text">小結</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Rita Chien"
+      src="/../Blog-image/config/avatar.webp">
+  <p class="site-author-name" itemprop="name">Rita Chien</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ritachien" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ritachien" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ritachien929@gmail.com" title="E-Mail → mailto:ritachien929@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="回到頂端">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+  <a href="https://github.com/ritachien" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener external nofollow noreferrer" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/285e8af7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
+      <meta itemprop="name" content="Rita Chien">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rita 的學習筆記">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="express-handlebars 模板副檔名設定 | Rita 的學習筆記">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          express-handlebars 模板副檔名設定
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2022-07-15 01:12:51 / 修改時間：01:56:34" itemprop="dateCreated datePublished" datetime="2022-07-15T01:12:51+08:00">2022-07-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Coding-%E8%A7%A3%E6%83%91%E5%AF%A6%E9%A9%97%E5%AE%A4/" itemprop="url" rel="index"><span itemprop="name">Coding 解惑實驗室</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在學習使用 <code>express-handlebars</code> 時，看到有個自訂參數 <code>extname</code> 可以自由調整想使用的副檔名，但各種範例都是設定成 <code>hbs</code> 。於是，好奇的我就開始了各種副檔名實驗……  </p>
+<span id="more"></span>
+
+<h2 id="官方範例"><a href="#官方範例" class="headerlink" title="官方範例"></a>官方範例</h2><blockquote>
+<p>實驗版本:<br>node.js @16.14.2<br>express @4.17.1<br>express-handlebars @4.0.2  </p>
+</blockquote>
+<ul>
+<li>最原始寫法。  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.js</span></span><br><span class="line">app.<span class="title function_">engine</span>(<span class="string">&#x27;handlebars&#x27;</span>,<span class="title function_">exphbs</span>())</span><br><span class="line">app.<span class="title function_">set</span>(<span class="string">&#x27;view engine&#x27;</span>, <span class="string">&#x27;handlebars&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>變更副檔名為 <code>.hbs</code> 範例。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.js</span></span><br><span class="line">app.<span class="title function_">engine</span>(<span class="string">&#x27;hbs&#x27;</span>,<span class="title function_">exphbs</span>(&#123; <span class="attr">extname</span>: <span class="string">&#x27;.hbs&#x27;</span> &#125;))</span><br><span class="line">app.<span class="title function_">set</span>(<span class="string">&#x27;view engine&#x27;</span>, <span class="string">&#x27;hbs&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="錯誤的理解"><a href="#錯誤的理解" class="headerlink" title="錯誤的理解"></a>錯誤的理解</h2><p>在剛開始學習時，我以為模板是可以自由命名的。我對那兩行的理解是:  </p>
+<ol>
+<li>建立一個模板引擎，並將它命名為 <code>handlebars 或 hbs</code>。  </li>
+<li>將 app.js 的模板引擎設成名字叫 <code>handlebars 或 hbs</code> 的模板。  </li>
+<li>如果想變更使用的副檔名，只需要在用 <code>extname</code> 參數設定即可。</li>
+</ol>
+<p>以上錯誤的理解導致開發過程中噴錯，但錯在哪裡我實在搞不清楚，於是就開始了接下來的實驗!  </p>
+<h2 id="實驗記錄"><a href="#實驗記錄" class="headerlink" title="實驗記錄"></a>實驗記錄</h2><blockquote>
+<p>以下實驗都是基於上面的錯誤理解來進行設置!</p>
+</blockquote>
+<ul>
+<li><p>狀況1: <code>extname</code> 設置為 <code>.hbs</code> 但樣板引擎名稱維持 <code>handlebars</code>。<br>結果: 檔案 <code>index.hbs</code> 無法順利讀取。<br><img src="/../Blog-image/posts/2022-07-15_hbs-test1.webp" alt="tset1">  </p>
+</li>
+<li><p>狀況2: 副檔名全部用 <code>.handlebars</code> ，只變更樣板引擎名稱為 <code>text</code>。<br>結果: 所有的 view 都讀不到。<br><img src="/../Blog-image/posts/2022-07-15_hbs-test2.webp" alt="test2">  </p>
+</li>
+<li><p>狀況3: 副檔名、樣板引擎名稱都用 123 可正常 render……<br><img src="/../Blog-image/posts/2022-07-15_hbs-test3.webp" alt="test3">  </p>
+</li>
+<li><p>狀況4: layouts 副檔名和 extname 相同， 其他 views 副檔名及模板名稱都維持 <code>.hbs</code>。<br>結果: 全部都可以正常 render……<br><img src="/../Blog-image/posts/2022-07-15_hbs-test4.webp" alt="test4"></p>
+</li>
+</ul>
+<h2 id="實驗結果"><a href="#實驗結果" class="headerlink" title="實驗結果"></a>實驗結果</h2><h3 id="1-view-engine-setting-的值會預設成為查找-views-的副檔名"><a href="#1-view-engine-setting-的值會預設成為查找-views-的副檔名" class="headerlink" title="1. view engine setting 的值會預設成為查找 views 的副檔名"></a>1. <code>view engine</code> setting 的值會預設成為查找 views 的副檔名</h3><p>在進行完前 3 項實驗後，我又仔細去閱讀了官方文件，然後找到了以下說明:  </p>
+<blockquote>
+<p>Note: Setting the app’s “view engine” setting will make that value the default file extension used for looking up views.  </p>
+</blockquote>
+<p>依照說明，這個 setting 只會影響查找 views 時的副檔名。從前 3 次實驗也可以看出，發生渲染錯誤的都是 setting 和 views 副檔名不同的情況。  </p>
+<h3 id="2-extname-設定只針對-layouts"><a href="#2-extname-設定只針對-layouts" class="headerlink" title="2. extname 設定只針對 layouts"></a>2. <code>extname</code> 設定只針對 layouts</h3><p>依照前項說明， layouts 的部分並不會受到 <code>view engine</code> setting 的影響。於是，我做了第 4 次實驗，也得到了最後的答案。  </p>
+<p>根據實驗結果可以發現， <code>extname</code> 設定確實只影響到 layouts 的副檔名設置。  </p>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>這個實驗是我在 4 月初時進行的，當時是我第一次花很多時間實驗不同寫法的結果。雖然最後發現我就是官方文件閱讀的不夠詳細，但這個過程對我很有幫助。整個實驗就像學習如何除錯一樣，用刪去法逐一排除各種可能，最後找到需要的答案；在官方文件的查找及閱讀上也有了一次特別的練習。  </p>
+<p>雖然花了不少時間，但這對我後續的學習經歷起到不小的影響。在後來的學習途中遇到疑問時，我也會先從查找文件或 google 資訊開始，最後實際執行看看結果是否如找到的資訊所述一致。在遇到學習資源過時時，也不再太過不知所措，而是可以自己找到解決的辦法!  </p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><!-- 在文章底部添加感謝閱讀 -->
+<div>
+  
+    <div style="text-align:center; color:#ccc; font-size:14px; letter-spacing:5px">
+      ------------  本文結束，感謝您的閱讀&nbsp;<i class="fa fa-paw"></i>&nbsp;如有錯漏，歡迎留言討論  -------------
+    </div>
+  
+</div>
+
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>Rita Chien
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://ritachien.github.io/posts/285e8af7/" title="express-handlebars 模板副檔名設定">https://ritachien.github.io/posts/285e8af7/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/express/" rel="tag"><i class="fa fa-tag"></i> express</a>
+              <a href="/tags/express-handlebars/" rel="tag"><i class="fa fa-tag"></i> express-handlebars</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/ed3d149f/" rel="prev" title="【實作練習】簡易記帳本">
+                  <i class="fa fa-chevron-left"></i> 【實作練習】簡易記帳本
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a href='https://ritachien.github.io/'>Rita Chien</a></span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">96k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">1:28</span>
+  </span>
+</div><!-- 在網頁底部添加網站運行時間 -->
+<span id="blogTime">載入天數時分秒...</span>
+<script>
+    let now = new Date();
+    function createtime() {
+        let grt = new Date("12/13/2021 00:00:00");  // 此處修改你的建站時間或者網站上線時間
+        now.setTime(now.getTime() + 250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if(String(hnum).length === 1 ){hnum = "0" + hnum;}
+        minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if(String(mnum).length === 1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if(String(snum).length === 1 ){snum = "0" + snum;}
+        document.getElementById("blogTime").innerHTML = "Rita 的學習筆記 已出生 "+ dnum +" 天 "+ hnum + " 小時 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"ritachien/ritachien.github.io","issue_term":"title","theme":"github-light","label":"comments","crossorigin":"anonymous"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>

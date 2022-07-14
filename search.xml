@@ -524,47 +524,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用 Hexo-abbrlink 產生永久連結</title>
-    <url>/posts/d8dab675/</url>
-    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因為是在建置部落格的同時整理並撰寫 Hexo 筆記，內容的更動導致常常需要修改多篇文章的檔名，permalink 自動產生網址的設定也連帶造成了我一些困擾，所以想用 Hexo-abbrlink 來一勞永逸。  </p>
-<span id="more"></span>
-<p>我原本 permalink 的設定是直接從檔名產生網址。網路上的教學建議檔案用日期 + 英文標題命名，所以修改的同時也讓同一篇文章的網址不斷改動。  </p>
-<blockquote>
-<p>備註: 建議檔案用日期 + 英文標題命名原因  </p>
-<ol>
-<li>日期方便作檔案排序。  </li>
-<li>中文網址在台灣及大陸外的地區必須以編碼方式來呈現， URL 被轉碼後會變得很長(長得像亂碼)，這對 SEO 來說也較為不利。</li>
-</ol>
-</blockquote>
-<h2 id="使用-Hexo-abbrlink-的好處"><a href="#使用-Hexo-abbrlink-的好處" class="headerlink" title="使用 Hexo-abbrlink 的好處"></a>使用 Hexo-abbrlink 的好處</h2><p><strong>1. 網址固定，不再因修改檔名或日期變動</strong><br>Hexo-abbrlink 會依照文章標題產生永久連結，並保存在 Front-matter (檔案最上方以 — 分隔的區域)，之後即使更改檔名也不會再變動。<br><img src="/../../Blog-image/posts/2021-12-27_001.webp" alt="abbrlink存入Front-matter20211227-001"></p>
-<blockquote>
-<p>舊文章(已經部署)會在下一次 <code>hexo g</code> 時產生 abbrlink 。<br>新文章(還沒部署)會在 <code>hexo s</code> 時就產生 abbrlink 。  </p>
-</blockquote>
-<p><strong>2. 檔名可依自己方便取了</strong><br><del>再也不用想英文標題了!!</del>  </p>
-<p><strong>3. 降低因網址變動產生的404問題</strong><br>據說404錯誤會影響網站在SEO上的排名，讓其他人較不容易搜尋到自己的頁面。  </p>
-<h2 id="安裝-hexo-abbrlink"><a href="#安裝-hexo-abbrlink" class="headerlink" title="安裝 hexo-abbrlink"></a>安裝 hexo-abbrlink</h2><blockquote>
-<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
-</blockquote>
-<p><strong>1. 安裝套件</strong>  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<p><strong>2. 修改 <code>root\_config.yml</code> 文件</strong>  </p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>  <span class="comment"># support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>    <span class="comment"># support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>也可以自己修改 permalink 參數(把 post 刪掉或增減其他參數)</li>
-<li><code>alg</code> 是雜湊編碼產生方式， <code>rep</code> 是雜湊編碼表示方式(預設十進位)，兩種參數的搭配結果如下:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex    https://XXXX.com/posts/66c8/</span><br><span class="line">crc16 &amp; dec    https://XXXX.com/posts/65535/</span><br><span class="line">crc32 &amp; hex    https://XXXX.com/posts/8ddf18fb/</span><br><span class="line">crc32 &amp; dec    https://XXXX.com/posts/1690090958/</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
-<li><a href="https://github.com/rozbo/hexo-abbrlink">rozbo&#x2F;hexo-abbrlink README.md 文件</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo NexT 主題變更 &amp; 設定</title>
     <url>/posts/ebe0f18a/</url>
     <content><![CDATA[<p>基本設定都做好了，文章也成功發佈了，接下來該找個美美的主題幫部落格換個新衣服。我最後找了看起來簡約大方的 NexT 主題，持續都有在作版本更新，開源資源也很多，看到各種大神把基本款改成高級訂製款，除了框架根本看不出原樣，覺得超厲害!  </p>
@@ -662,6 +621,47 @@
       <tags>
         <tag>Hexo</tag>
         <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 Hexo-abbrlink 產生永久連結</title>
+    <url>/posts/d8dab675/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>因為是在建置部落格的同時整理並撰寫 Hexo 筆記，內容的更動導致常常需要修改多篇文章的檔名，permalink 自動產生網址的設定也連帶造成了我一些困擾，所以想用 Hexo-abbrlink 來一勞永逸。  </p>
+<span id="more"></span>
+<p>我原本 permalink 的設定是直接從檔名產生網址。網路上的教學建議檔案用日期 + 英文標題命名，所以修改的同時也讓同一篇文章的網址不斷改動。  </p>
+<blockquote>
+<p>備註: 建議檔案用日期 + 英文標題命名原因  </p>
+<ol>
+<li>日期方便作檔案排序。  </li>
+<li>中文網址在台灣及大陸外的地區必須以編碼方式來呈現， URL 被轉碼後會變得很長(長得像亂碼)，這對 SEO 來說也較為不利。</li>
+</ol>
+</blockquote>
+<h2 id="使用-Hexo-abbrlink-的好處"><a href="#使用-Hexo-abbrlink-的好處" class="headerlink" title="使用 Hexo-abbrlink 的好處"></a>使用 Hexo-abbrlink 的好處</h2><p><strong>1. 網址固定，不再因修改檔名或日期變動</strong><br>Hexo-abbrlink 會依照文章標題產生永久連結，並保存在 Front-matter (檔案最上方以 — 分隔的區域)，之後即使更改檔名也不會再變動。<br><img src="/../../Blog-image/posts/2021-12-27_001.webp" alt="abbrlink存入Front-matter20211227-001"></p>
+<blockquote>
+<p>舊文章(已經部署)會在下一次 <code>hexo g</code> 時產生 abbrlink 。<br>新文章(還沒部署)會在 <code>hexo s</code> 時就產生 abbrlink 。  </p>
+</blockquote>
+<p><strong>2. 檔名可依自己方便取了</strong><br><del>再也不用想英文標題了!!</del>  </p>
+<p><strong>3. 降低因網址變動產生的404問題</strong><br>據說404錯誤會影響網站在SEO上的排名，讓其他人較不容易搜尋到自己的頁面。  </p>
+<h2 id="安裝-hexo-abbrlink"><a href="#安裝-hexo-abbrlink" class="headerlink" title="安裝 hexo-abbrlink"></a>安裝 hexo-abbrlink</h2><blockquote>
+<p>本篇設定的 Hexo 及 NexT 版本如下，不同版本可能會有功能或設定方式上的差異!<br>Hexo 版本: hexo: 6.0.0<br>Next 版本: hexo-theme-next-8.8.2  </p>
+</blockquote>
+<p><strong>1. 安裝套件</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<p><strong>2. 修改 <code>root\_config.yml</code> 文件</strong>  </p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>  <span class="comment"># support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>    <span class="comment"># support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>也可以自己修改 permalink 參數(把 post 刪掉或增減其他參數)</li>
+<li><code>alg</code> 是雜湊編碼產生方式， <code>rep</code> 是雜湊編碼表示方式(預設十進位)，兩種參數的搭配結果如下:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex    https://XXXX.com/posts/66c8/</span><br><span class="line">crc16 &amp; dec    https://XXXX.com/posts/65535/</span><br><span class="line">crc32 &amp; hex    https://XXXX.com/posts/8ddf18fb/</span><br><span class="line">crc32 &amp; dec    https://XXXX.com/posts/1690090958/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://github.com/rozbo/hexo-abbrlink">rozbo&#x2F;hexo-abbrlink README.md 文件</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -2789,6 +2789,34 @@
       </tags>
   </entry>
   <entry>
+    <title>用 git log 查看提交歷史紀錄</title>
+    <url>/posts/1e45a9f8/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如果在開發過程中有好好的撰寫提交訊息，就可以直接從過去的提交紀錄看出專案的開發歷史，也能看出各分支目前的開發進度到哪裡。  </p>
+<span id="more"></span>
+
+<h2 id="查看提交紀錄-git-log"><a href="#查看提交紀錄-git-log" class="headerlink" title="查看提交紀錄(git log)"></a>查看提交紀錄(git log)</h2><h3 id="列出提交歷史"><a href="#列出提交歷史" class="headerlink" title="列出提交歷史"></a>列出提交歷史</h3><p>除了輔助的圖像介面軟體，我們也可以直接用指令查看提交歷史紀錄。如果直接使用 <code>git log</code> ，則會列出 commitID 、提交人資訊、日期時間和提交訊息(如下圖)。這些紀錄是由新到舊列出來，也就是越上面的紀錄越新。  </p>
+<blockquote>
+<p>按下 <code>q</code> 鍵就可以退出 git log 畫面。  </p>
+</blockquote>
+<p><img src="/../Blog-image/posts/2022-06-08-gitLog.webp" alt="git log">  </p>
+<p>上面的範例圖片列出了兩筆提交紀錄，可以看出第一筆有比較長的提交說明。如果在提交時不使用 <code>-m</code> 參數而直接使用 <code>git commit</code> ，就可以撰寫多行的提交訊息，將這次進行的修改內容做更詳細的說明。使用 <code>git log</code> 時，這些說明會被完整的列出來。  </p>
+<h3 id="單行式紀錄-oneline-參數"><a href="#單行式紀錄-oneline-參數" class="headerlink" title="單行式紀錄(--oneline 參數)"></a>單行式紀錄(--oneline 參數)</h3><p>如果不需要查看完整的提交訊息，只是希望查看簡易的提交紀錄，可以使用 <code>--oneline</code> 參數來簡化列出的資訊。使用這個參數之後，提交紀錄會以單行的方式呈現，只會列出 commitID 和第一行的提交訊息。  </p>
+<p><img src="/../Blog-image/posts/2022-06-08-gitLog-oneline.webp" alt="git log oneline">  </p>
+<h3 id="圖像化紀錄-graph-參數"><a href="#圖像化紀錄-graph-參數" class="headerlink" title="圖像化紀錄(--graph 參數)"></a>圖像化紀錄(--graph 參數)</h3><p>較大或較多分支的專案常會用 SourceTree 之類的圖像化軟體來查看分支的動向，但其實 Git 也可以用指令達到類似的功能，那就是使用 <code>--graph</code> 參數。  </p>
+<blockquote>
+<p>請忽略很爛的 commit message……這只是一個備份用的 repo！  </p>
+</blockquote>
+<p><img src="/../Blog-image/posts/2022-06-08-gitLog-graph.webp" alt="git log graph">  </p>
+<h2 id="其他補充"><a href="#其他補充" class="headerlink" title="其他補充"></a>其他補充</h2><p>除了以上列出的兩種外，還有很多其他參數可以用來指定提交紀錄呈現的格式、範圍篩選…其他資訊，這邊就不一一列示，想要研究或嘗試的，可以直接到 <a href="https://git-scm.com/book/zh-tw/v2/Git-%E5%9F%BA%E7%A4%8E-%E6%AA%A2%E8%A6%96%E6%8F%90%E4%BA%A4%E7%9A%84%E6%AD%B7%E5%8F%B2%E8%A8%98%E9%8C%84">Git 官方說明</a>查詢。  </p>
+]]></content>
+      <categories>
+        <category>Git 筆記</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git Branch(清單、新建、刪除、重新命名、切換)</title>
     <url>/posts/93113df5/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用 Git 時，不管是在自己的專案開發或多人合作的專案，分支(Branch)都是個很重要的功能。它可以讓不同的事情「同步進行」，不會相互影響、也不需要互相等待。這篇主要針對建立、刪除、切換及重新命名來介紹。  </p>
@@ -2819,34 +2847,6 @@
 <p>在 command line 的世界裡，「move」可以用來移動檔案和重新命名。  </p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 把 abc.txt 重新命名為 123.txt</span></span><br><span class="line"><span class="built_in">mv</span> abc.txt 123.txt</span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>Git 筆記</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用 git log 查看提交歷史紀錄</title>
-    <url>/posts/1e45a9f8/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如果在開發過程中有好好的撰寫提交訊息，就可以直接從過去的提交紀錄看出專案的開發歷史，也能看出各分支目前的開發進度到哪裡。  </p>
-<span id="more"></span>
-
-<h2 id="查看提交紀錄-git-log"><a href="#查看提交紀錄-git-log" class="headerlink" title="查看提交紀錄(git log)"></a>查看提交紀錄(git log)</h2><h3 id="列出提交歷史"><a href="#列出提交歷史" class="headerlink" title="列出提交歷史"></a>列出提交歷史</h3><p>除了輔助的圖像介面軟體，我們也可以直接用指令查看提交歷史紀錄。如果直接使用 <code>git log</code> ，則會列出 commitID 、提交人資訊、日期時間和提交訊息(如下圖)。這些紀錄是由新到舊列出來，也就是越上面的紀錄越新。  </p>
-<blockquote>
-<p>按下 <code>q</code> 鍵就可以退出 git log 畫面。  </p>
-</blockquote>
-<p><img src="/../Blog-image/posts/2022-06-08-gitLog.webp" alt="git log">  </p>
-<p>上面的範例圖片列出了兩筆提交紀錄，可以看出第一筆有比較長的提交說明。如果在提交時不使用 <code>-m</code> 參數而直接使用 <code>git commit</code> ，就可以撰寫多行的提交訊息，將這次進行的修改內容做更詳細的說明。使用 <code>git log</code> 時，這些說明會被完整的列出來。  </p>
-<h3 id="單行式紀錄-oneline-參數"><a href="#單行式紀錄-oneline-參數" class="headerlink" title="單行式紀錄(--oneline 參數)"></a>單行式紀錄(--oneline 參數)</h3><p>如果不需要查看完整的提交訊息，只是希望查看簡易的提交紀錄，可以使用 <code>--oneline</code> 參數來簡化列出的資訊。使用這個參數之後，提交紀錄會以單行的方式呈現，只會列出 commitID 和第一行的提交訊息。  </p>
-<p><img src="/../Blog-image/posts/2022-06-08-gitLog-oneline.webp" alt="git log oneline">  </p>
-<h3 id="圖像化紀錄-graph-參數"><a href="#圖像化紀錄-graph-參數" class="headerlink" title="圖像化紀錄(--graph 參數)"></a>圖像化紀錄(--graph 參數)</h3><p>較大或較多分支的專案常會用 SourceTree 之類的圖像化軟體來查看分支的動向，但其實 Git 也可以用指令達到類似的功能，那就是使用 <code>--graph</code> 參數。  </p>
-<blockquote>
-<p>請忽略很爛的 commit message……這只是一個備份用的 repo！  </p>
-</blockquote>
-<p><img src="/../Blog-image/posts/2022-06-08-gitLog-graph.webp" alt="git log graph">  </p>
-<h2 id="其他補充"><a href="#其他補充" class="headerlink" title="其他補充"></a>其他補充</h2><p>除了以上列出的兩種外，還有很多其他參數可以用來指定提交紀錄呈現的格式、範圍篩選…其他資訊，這邊就不一一列示，想要研究或嘗試的，可以直接到 <a href="https://git-scm.com/book/zh-tw/v2/Git-%E5%9F%BA%E7%A4%8E-%E6%AA%A2%E8%A6%96%E6%8F%90%E4%BA%A4%E7%9A%84%E6%AD%B7%E5%8F%B2%E8%A8%98%E9%8C%84">Git 官方說明</a>查詢。  </p>
 ]]></content>
       <categories>
         <category>Git 筆記</category>
@@ -2965,6 +2965,57 @@
       </categories>
       <tags>
         <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>express-handlebars 模板副檔名設定</title>
+    <url>/posts/285e8af7/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在學習使用 <code>express-handlebars</code> 時，看到有個自訂參數 <code>extname</code> 可以自由調整想使用的副檔名，但各種範例都是設定成 <code>hbs</code> 。於是，好奇的我就開始了各種副檔名實驗……  </p>
+<span id="more"></span>
+
+<h2 id="官方範例"><a href="#官方範例" class="headerlink" title="官方範例"></a>官方範例</h2><blockquote>
+<p>實驗版本:<br>node.js @16.14.2<br>express @4.17.1<br>express-handlebars @4.0.2  </p>
+</blockquote>
+<ul>
+<li>最原始寫法。  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// app.js</span></span><br><span class="line">app.<span class="title function_">engine</span>(<span class="string">&#x27;handlebars&#x27;</span>,<span class="title function_">exphbs</span>())</span><br><span class="line">app.<span class="title function_">set</span>(<span class="string">&#x27;view engine&#x27;</span>, <span class="string">&#x27;handlebars&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>變更副檔名為 <code>.hbs</code> 範例。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// app.js</span></span><br><span class="line">app.<span class="title function_">engine</span>(<span class="string">&#x27;hbs&#x27;</span>,<span class="title function_">exphbs</span>(&#123; <span class="attr">extname</span>: <span class="string">&#x27;.hbs&#x27;</span> &#125;))</span><br><span class="line">app.<span class="title function_">set</span>(<span class="string">&#x27;view engine&#x27;</span>, <span class="string">&#x27;hbs&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="錯誤的理解"><a href="#錯誤的理解" class="headerlink" title="錯誤的理解"></a>錯誤的理解</h2><p>在剛開始學習時，我以為模板是可以自由命名的。我對那兩行的理解是:  </p>
+<ol>
+<li>建立一個模板引擎，並將它命名為 <code>handlebars 或 hbs</code>。  </li>
+<li>將 app.js 的模板引擎設成名字叫 <code>handlebars 或 hbs</code> 的模板。  </li>
+<li>如果想變更使用的副檔名，只需要在用 <code>extname</code> 參數設定即可。</li>
+</ol>
+<p>以上錯誤的理解導致開發過程中噴錯，但錯在哪裡我實在搞不清楚，於是就開始了接下來的實驗!  </p>
+<h2 id="實驗記錄"><a href="#實驗記錄" class="headerlink" title="實驗記錄"></a>實驗記錄</h2><blockquote>
+<p>以下實驗都是基於上面的錯誤理解來進行設置!</p>
+</blockquote>
+<ul>
+<li><p>狀況1: <code>extname</code> 設置為 <code>.hbs</code> 但樣板引擎名稱維持 <code>handlebars</code>。<br>結果: 檔案 <code>index.hbs</code> 無法順利讀取。<br><img src="/../Blog-image/posts/2022-07-15_hbs-test1.webp" alt="tset1">  </p>
+</li>
+<li><p>狀況2: 副檔名全部用 <code>.handlebars</code> ，只變更樣板引擎名稱為 <code>text</code>。<br>結果: 所有的 view 都讀不到。<br><img src="/../Blog-image/posts/2022-07-15_hbs-test2.webp" alt="test2">  </p>
+</li>
+<li><p>狀況3: 副檔名、樣板引擎名稱都用 123 可正常 render……<br><img src="/../Blog-image/posts/2022-07-15_hbs-test3.webp" alt="test3">  </p>
+</li>
+<li><p>狀況4: layouts 副檔名和 extname 相同， 其他 views 副檔名及模板名稱都維持 <code>.hbs</code>。<br>結果: 全部都可以正常 render……<br><img src="/../Blog-image/posts/2022-07-15_hbs-test4.webp" alt="test4"></p>
+</li>
+</ul>
+<h2 id="實驗結果"><a href="#實驗結果" class="headerlink" title="實驗結果"></a>實驗結果</h2><h3 id="1-view-engine-setting-的值會預設成為查找-views-的副檔名"><a href="#1-view-engine-setting-的值會預設成為查找-views-的副檔名" class="headerlink" title="1. view engine setting 的值會預設成為查找 views 的副檔名"></a>1. <code>view engine</code> setting 的值會預設成為查找 views 的副檔名</h3><p>在進行完前 3 項實驗後，我又仔細去閱讀了官方文件，然後找到了以下說明:  </p>
+<blockquote>
+<p>Note: Setting the app’s “view engine” setting will make that value the default file extension used for looking up views.  </p>
+</blockquote>
+<p>依照說明，這個 setting 只會影響查找 views 時的副檔名。從前 3 次實驗也可以看出，發生渲染錯誤的都是 setting 和 views 副檔名不同的情況。  </p>
+<h3 id="2-extname-設定只針對-layouts"><a href="#2-extname-設定只針對-layouts" class="headerlink" title="2. extname 設定只針對 layouts"></a>2. <code>extname</code> 設定只針對 layouts</h3><p>依照前項說明， layouts 的部分並不會受到 <code>view engine</code> setting 的影響。於是，我做了第 4 次實驗，也得到了最後的答案。  </p>
+<p>根據實驗結果可以發現， <code>extname</code> 設定確實只影響到 layouts 的副檔名設置。  </p>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>這個實驗是我在 4 月初時進行的，當時是我第一次花很多時間實驗不同寫法的結果。雖然最後發現我就是官方文件閱讀的不夠詳細，但這個過程對我很有幫助。整個實驗就像學習如何除錯一樣，用刪去法逐一排除各種可能，最後找到需要的答案；在官方文件的查找及閱讀上也有了一次特別的練習。  </p>
+<p>雖然花了不少時間，但這對我後續的學習經歷起到不小的影響。在後來的學習途中遇到疑問時，我也會先從查找文件或 google 資訊開始，最後實際執行看看結果是否如找到的資訊所述一致。在遇到學習資源過時時，也不再太過不知所措，而是可以自己找到解決的辦法!  </p>
+]]></content>
+      <categories>
+        <category>Coding 解惑實驗室</category>
+      </categories>
+      <tags>
+        <tag>express</tag>
+        <tag>express-handlebars</tag>
       </tags>
   </entry>
   <entry>
