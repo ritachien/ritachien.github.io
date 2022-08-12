@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Alpha Camp 學期 3 結業心得</title>
+      <link href="/posts/984151cd/"/>
+      <url>/posts/984151cd/</url>
+      
+        <content type="html"><![CDATA[<p>學期 3 的課程也告一段落了，我也正式從 Alpha Camp 畢業了!<br>回想起當初那個程式小白的自己，好像也才半年多前的事而已。  </p><span id="more"></span><p>相較於前面幾個學期，學期 3 可以明顯感覺到課程內容的份量重了很多。以往可以提前一週完成進度的我，開始變成每週壓死線的交作業。每個章節都需要花更多的時間進行思考、理解、搜尋相關資料和實作。隨著課程進度的推進，我開始變得越來越沒有自信心，因為知道自己不懂的東西實在是太多了!  </p><p><img src="https://i.pinimg.com/564x/61/c7/a2/61c7a26f952b8fd9094c1d6da2bf279c.jpg">  </p><blockquote><p>圖片來源: <a href="https://pin.it/2rFifQw">Pinterest</a>  </p></blockquote><p>之後就是一連串的自我懷疑:  </p><ul><li>這些東西我真的都讀懂了嗎?  </li><li>我學會的東西夠多了嗎?  </li><li>現在的我已經有能力找到軟體工程師的工作了嗎?</li></ul><p>這些疑惑時不時的在腦海中盤旋，我也開始變得焦慮、挫折。這時候真的感謝 AC 助教們的鼓勵，我開始回顧過去半年間的自己。從一行程式碼都不會寫的我，到現在已經可以做出擁有不同功能的 web app，而這中間也才花不到一年的時間。樂觀的想，至少現在的我比以前會的東西更多了、至少我能知道自己還有哪些地方需要補強，不像以前想問問題都不知道可以問什麼。  </p><p>學期三的同學們也給了我很大的幫助!互相討論各種問題、互相督促學習進度的推進、互相對寫作業出現各種 bug 的哀號😆，都讓我在這條路上走得不寂寞、走得更有動力!</p><p>回顧在 AC 學習的這段時間，學習是辛苦的，但也是快樂的。每天都可以感受到自己正在進步，這不就是我當初離職後想追求的生活嗎? 希望能找個持續學習的產業和工作，讓自己在工作的同時能繼續成長。也許我現在懂得不夠多，但只要一步一腳印，就能離理想中的自己越來越近!  </p><p>接下來要花一點時間把學期三匆匆學過的內容弄懂，然後就要邁向求職之路了! 加油!</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 課程心得 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Alpha Camp </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>express-handlebars 模板副檔名設定</title>
       <link href="/posts/285e8af7/"/>
       <url>/posts/285e8af7/</url>
@@ -459,7 +484,11 @@
       
         <tags>
             
-            <tag> AlphaCamp </tag>
+            <tag> JavaScript </tag>
+            
+            <tag> Alpha Camp </tag>
+            
+            <tag> Promise </tag>
             
         </tags>
       
