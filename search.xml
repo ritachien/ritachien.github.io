@@ -29,6 +29,33 @@
     
     
     <entry>
+      <title>【Leetcode】231. Power of two</title>
+      <link href="/posts/bbce68bd/"/>
+      <url>/posts/bbce68bd/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>來源: Leetcode<br>難度: easy<br>題目: <a href="https://leetcode.com/problems/power-of-two/">231. Power of two</a>  </p></blockquote><span id="more"></span><h2 id="解法一-遞迴"><a href="#解法一-遞迴" class="headerlink" title="解法一(遞迴)"></a>解法一(遞迴)</h2><p>檢查一個數字 n 是不是 2 的 x 次方，就是看他有沒有 1 和 2 以外的因數。所以只要把 n 不斷除以 2 ，看看最後結果是不是 1 就知道了。剛好之前在 CS50 課程有學過遞迴的概念，這題剛好可以拿來用!  </p><p>  要使用遞迴必須要設定停止條件，要不然函式會無止境的呼叫自己繼續執行下去。這邊設定的停止條件是 <code>n === 1</code>，也就是上層傳進來的參數 <code>(n / 2) === 1</code> (除了 2 之外只有 1 這個因數)。另外檢查 n 為非正整數情況須一律傳回 <code>false</code> 。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> isPowerOfTwo = <span class="hljs-keyword">function</span>(<span class="hljs-params">n</span>) &#123;<br>  <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>  <span class="hljs-keyword">if</span> (n === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-title function_">isPowerOfTwo</span>(n / <span class="hljs-number">2</span>)<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="解法二-位元運算子"><a href="#解法二-位元運算子" class="headerlink" title="解法二(位元運算子)"></a>解法二(位元運算子)</h2><blockquote><p>解題方式參考: <a href="https://leetcode.com/problems/power-of-two/discuss/1638735/Power-of-Two">tmleyncodes 分享的題解</a>  </p></blockquote><p>這題因為是檢查 2 的次方，所以還有另一種特別的解法。電腦語言是用「二進位」來書寫的，所以可以利用二進位的特性，使用位元運算子來解題。  </p><table><thead><tr><th>數字</th><th>二進位</th></tr></thead><tbody><tr><td>8</td><td>1000</td></tr><tr><td>7</td><td>0111</td></tr><tr><td><code>&amp;</code> 結果</td><td>0000</td></tr><tr><td>位元運算子 <code>&amp;</code> 會回傳兩個運算元對於每個 bit 做 AND 的結果。如下表表示， <code>&amp;</code> 會比較每一個 bit ，如果兩者都是 1 會回傳 1，如果有一方不是 1 則會回傳 0。</td><td></td></tr></tbody></table><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> isPowerOfTwo = <span class="hljs-keyword">function</span>(<span class="hljs-params">n</span>) &#123;<br>    <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    <span class="hljs-keyword">return</span> (n &amp; (n - <span class="hljs-number">1</span>)) === <span class="hljs-number">0</span><br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>express-handlebars 模板副檔名設定</title>
       <link href="/posts/285e8af7/"/>
       <url>/posts/285e8af7/</url>
@@ -540,9 +567,9 @@
       
         <tags>
             
-            <tag> HTML </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> HTML </tag>
             
             <tag> CSS </tag>
             
