@@ -1,305 +1,280 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
-
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="apple-touch-icon" sizes="180x180" href="/../Blog-image/config/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/../Blog-image/config/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/../Blog-image/config/favicon-16x16.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="google-site-verification" content="MQEI18ZGBGydbCHVgbIo8AfV--tcXWLhmp2U4pqHCTg">
-
-<link rel="stylesheet" href="/css/main.css">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CMicrosoft+JhengHei:300,300italic,400,400italic,700,700italic%7C'Noto+Sans+TC':300,300italic,400,400italic,700,700italic%7Csans-serif:300,300italic,400,400italic,700,700italic%7Csource-code-pro:300,300italic,400,400italic,700,700italic%7Cmonospace;:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"ritachien.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":true,"nav":null,"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-
+  <link rel="apple-touch-icon" sizes="76x76" href="/../Blog-image/config/apple-touch-icon.png">
+  <link rel="icon" href="/../Blog-image/config/favicon-32x32.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Rita Chien">
+  <meta name="keywords" content="Blog, 程式語言, 學習紀錄">
+  
     <meta name="description" content="這是目前在 CS50x 課程中遇到的最難的題目了，如果不把思考邏輯好好整理一遍，下次再回顧應該還是要花很多時間理解一遍。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【CS50x(2022)】ProblemSet3 - Tideman 題解(Selection sort)">
 <meta property="og:url" content="https://ritachien.github.io/posts/d7ed27d2/">
 <meta property="og:site_name" content="Rita 的學習筆記">
 <meta property="og:description" content="這是目前在 CS50x 課程中遇到的最難的題目了，如果不把思考邏輯好好整理一遍，下次再回顧應該還是要花很多時間理解一遍。">
-<meta property="og:locale" content="zh_TW">
+<meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-17T02:41:38.000Z">
 <meta property="article:modified_time" content="2022-05-17T02:41:38.000Z">
 <meta property="article:author" content="Rita Chien">
 <meta property="article:tag" content="CS50x">
 <meta property="article:tag" content="Algorithms">
-<meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="https://ritachien.github.io/posts/d7ed27d2/">
-
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://ritachien.github.io/posts/d7ed27d2/","path":"posts/d7ed27d2/","title":"【CS50x(2022)】ProblemSet3 - Tideman 題解(Selection sort)"}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>【CS50x(2022)】ProblemSet3 - Tideman 題解(Selection sort) | Rita 的學習筆記</title>
+<meta name="twitter:card" content="summary_large_image">
   
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-215689852-1","only_pageview":true}</script>
-  <script src="/js/third-party/analytics/google-analytics.js"></script>
+  
+  
+  <title>【CS50x(2022)】ProblemSet3 - Tideman 題解(Selection sort) - Rita 的學習筆記</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
 
 
 
 
-<!-- 加入 Sitemap 檔案位置到 <head> 中 -->
-<link rel="sitemap" type="application/xml" title="Sitemap" href="https://ritachien.github.io/sitemap.xml">
-</head>
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"ritachien.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":"UA-215689852-1","gtag":315625515,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
-<!-- 加入 Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
 
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="headband"></div>
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
 
-  <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
 
-  <div class="site-meta">
+<body>
+  
 
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">Rita 的學習筆記</p>
-      <i class="logo-line"></i>
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Rita 的學習筆記</strong>
     </a>
-      <p class="site-subtitle" itemprop="description">一步一腳印，留下成長的足跡</p>
-  </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" rel="external nofollow noreferrer" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" rel="external nofollow noreferrer" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>網站地圖</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
-        </a>
-      </li>
-  </ul>
 </nav>
 
+  
 
+<div id="banner" class="banner" parallax=true
+     style="background: url('/../Blog-image/config/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="【CS50x(2022)】ProblemSet3 - Tideman 題解(Selection sort)"></span>
+          
+        </div>
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="搜尋..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
         
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E8%AA%AA%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">題目說明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%B5%90%E6%A7%8B%E5%8F%8A%E9%82%8F%E8%BC%AF"><span class="nav-number">3.</span> <span class="nav-text">程式結構及邏輯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vote"><span class="nav-number">4.</span> <span class="nav-text">vote</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#record-preferences"><span class="nav-number">5.</span> <span class="nav-text">record_preferences</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#preferences-row-col-%E4%BA%8C%E7%B6%AD%E8%A1%A8%E6%A0%BC"><span class="nav-number">5.1.</span> <span class="nav-text">preferences[row][col] 二維表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%B8%E7%A5%A8%E6%84%8F%E5%90%91%E8%A7%A3%E8%AE%80"><span class="nav-number">5.2.</span> <span class="nav-text">選票意向解讀</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#add-pairs"><span class="nav-number">6.</span> <span class="nav-text">add_pairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sort-pairs-Bubble-sort"><span class="nav-number">7.</span> <span class="nav-text">sort_pairs (Bubble sort)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lock-pairs"><span class="nav-number">8.</span> <span class="nav-text">lock_pairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#print-winner"><span class="nav-number">9.</span> <span class="nav-text">print_winner</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%B5%90"><span class="nav-number">10.</span> <span class="nav-text">小結</span></a></li></ol></div>
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Rita Chien"
-      src="/../Blog-image/config/avatar.webp">
-  <p class="site-author-name" itemprop="name">Rita Chien</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">39</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">分類</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">18</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author site-overview-item animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/ritachien" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ritachien" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-05-17 10:41" pubdate>
+          May 17, 2022
+        </time>
       </span>
-      <span class="links-of-author-item">
-        <a href="mailto:ritachien929@gmail.com" title="E-Mail → mailto:ritachien929@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          8.9k words
+        
       </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          9 mins
+        
+      </span>
+    
+
+    
+    
   </div>
-  <div class="cc-license site-overview-item animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
-  </div>
 
 
-
-        </div>
+        
       </div>
-        <div class="back-to-top animated" role="button" aria-label="回到頂端">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
+
+      
     </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
-
-    
-
-  <a href="https://github.com/ritachien" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener external nofollow noreferrer" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-    <div class="main-inner post posts-expand">
-
-
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://ritachien.github.io/posts/d7ed27d2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/../Blog-image/config/avatar.webp">
-      <meta itemprop="name" content="Rita Chien">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rita 的學習筆記">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="【CS50x(2022)】ProblemSet3 - Tideman 題解(Selection sort) | Rita 的學習筆記">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          【CS50x(2022)】ProblemSet3 - Tideman 題解(Selection sort)
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2022-05-17 10:41:38" itemprop="dateCreated datePublished" datetime="2022-05-17T10:41:38+08:00">2022-05-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84-CS50/" itemprop="url" rel="index"><span itemprop="name">學習紀錄 - CS50</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>8.9k</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>8 分鐘</span>
-    </span>
+  </div>
 </div>
 
-        </div>
-      </header>
+</div>
 
+  </header>
+
+  <main>
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <p>這是目前在 CS50x 課程中遇到的最難的題目了，如果不把思考邏輯好好整理一遍，下次再回顧應該還是要花很多時間理解一遍。  </p>
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【CS50x(2022)】ProblemSet3 - Tideman 題解(Selection sort)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>這是目前在 CS50x 課程中遇到的最難的題目了，如果不把思考邏輯好好整理一遍，下次再回顧應該還是要花很多時間理解一遍。  </p>
 <span id="more"></span>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>這一篇是使用 Selection sort 方式解題，如果想使用其他排序法，可直接使用以下連結，除了排序法之外的內文都是一樣的。  </p>
 <blockquote>
@@ -309,14 +284,14 @@
 <p>在一般的選舉活動中，通常是採取<strong>相對多數決</strong>或是<strong>絕對多數決</strong>，也就是候選人只要得到一定數目選票即可獲得勝利。然而 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://en.wikipedia.org/wiki/Ranked_pairs"><strong>Tideman method</strong></a> 是採用完全不同的邏輯。Tideman method 或稱 Ranked pairs 是指在每一張選票上寫上對所有候選人的意向排序，把所有選票上的候選人兩兩互相比較得出一個符合多數人的排序結果，而排名第一的人就是最後的獲勝者。  </p>
 <p>目前這樣簡單的介紹可能還有點抽象，接下來或做個詳細的說明。  </p>
 <h2 id="程式結構及邏輯"><a href="#程式結構及邏輯" class="headerlink" title="程式結構及邏輯"></a>程式結構及邏輯</h2><p>先來看看題目提供的邏輯架構：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cs50.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定義候選人數目為 9 </span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX 9</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 一個 9x9 的表格，每一格紀錄選票排序上，候選人[i] &gt; 候選人[j]的選票有幾張。</span></span><br><span class="line"><span class="type">int</span> preferences[MAX][MAX];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 一個 9x9 的表格，每一格紀錄 boolean 值，說明候選人[i]和候選人[j]之間的箭頭關係是否被鎖定。</span></span><br><span class="line"><span class="type">bool</span> locked[MAX][MAX];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定義新的資料型別 &quot;pair&quot;，這個型別會記錄 winner 和 loser 在 array 裡的 index(integer)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">int</span> winner;</span><br><span class="line">    <span class="type">int</span> loser;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">pair</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Array of candidates</span></span><br><span class="line"><span class="built_in">string</span> candidates[MAX];             <span class="comment">// 一個紀錄所有候選人的 array</span></span><br><span class="line"><span class="built_in">pair</span> pairs[MAX * (MAX - <span class="number">1</span>) / <span class="number">2</span>];    <span class="comment">// 一個紀錄所有 pair 的 array</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> pair_count;</span><br><span class="line"><span class="type">int</span> candidate_count;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Function prototypes</span></span><br><span class="line"><span class="comment">// 作業需要完成的 6 個 function</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">vote</span><span class="params">(<span class="type">int</span> rank, <span class="built_in">string</span> name, <span class="type">int</span> ranks[])</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">record_preferences</span><span class="params">(<span class="type">int</span> ranks[])</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">add_pairs</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">sort_pairs</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">lock_pairs</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">print_winner</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="built_in">string</span> argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 確認 terminal 提供的參數是否正確</span></span><br><span class="line">    <span class="keyword">if</span> (argc &lt; <span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Usage: tideman [candidate ...]\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 把 terminal 提供的候選人名字寫進 candidates 列表裡</span></span><br><span class="line">    candidate_count = argc - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (candidate_count &gt; MAX)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Maximum number of candidates is %i\n&quot;</span>, MAX);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        candidates[i] = argv[i + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化 locked 表格，讓每一格都是 false </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            locked[i][j] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    pair_count = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> voter_count = get_int(<span class="string">&quot;Number of voters: &quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 取得每一張選票內容</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; voter_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 定義選票排序 array: ranks[i] 是投票者排序第 i 名的候選人 index</span></span><br><span class="line">        <span class="type">int</span> ranks[candidate_count];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 取得每一個排序的候選人 index</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> name = get_string(<span class="string">&quot;Rank %i: &quot;</span>, j + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (!vote(j, name, ranks))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;Invalid vote.\n&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 將選票結果更新到 preferences 表格</span></span><br><span class="line">        record_preferences(ranks);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    add_pairs();</span><br><span class="line">    sort_pairs();</span><br><span class="line">    lock_pairs();</span><br><span class="line">    print_winner();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cs50.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-comment">// 定義候選人數目為 9 </span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> MAX 9</span><br><br><span class="hljs-comment">// 一個 9x9 的表格，每一格紀錄選票排序上，候選人[i] &gt; 候選人[j]的選票有幾張。</span><br><span class="hljs-type">int</span> preferences[MAX][MAX];<br><br><span class="hljs-comment">// 一個 9x9 的表格，每一格紀錄 boolean 值，說明候選人[i]和候選人[j]之間的箭頭關係是否被鎖定。</span><br><span class="hljs-type">bool</span> locked[MAX][MAX];<br><br><span class="hljs-comment">// 定義新的資料型別 &quot;pair&quot;，這個型別會記錄 winner 和 loser 在 array 裡的 index(integer)</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span></span><br><span class="hljs-class">&#123;</span><br>    <span class="hljs-type">int</span> winner;<br>    <span class="hljs-type">int</span> loser;<br>&#125;<br><span class="hljs-built_in">pair</span>;<br><br><span class="hljs-comment">// Array of candidates</span><br><span class="hljs-built_in">string</span> candidates[MAX];             <span class="hljs-comment">// 一個紀錄所有候選人的 array</span><br><span class="hljs-built_in">pair</span> pairs[MAX * (MAX - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>];    <span class="hljs-comment">// 一個紀錄所有 pair 的 array</span><br><br><span class="hljs-type">int</span> pair_count;<br><span class="hljs-type">int</span> candidate_count;<br><br><span class="hljs-comment">// Function prototypes</span><br><span class="hljs-comment">// 作業需要完成的 6 個 function</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">vote</span><span class="hljs-params">(<span class="hljs-type">int</span> rank, <span class="hljs-built_in">string</span> name, <span class="hljs-type">int</span> ranks[])</span>;<br><span class="hljs-type">void</span> <span class="hljs-title function_">record_preferences</span><span class="hljs-params">(<span class="hljs-type">int</span> ranks[])</span>;<br><span class="hljs-type">void</span> <span class="hljs-title function_">add_pairs</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span>;<br><span class="hljs-type">void</span> <span class="hljs-title function_">sort_pairs</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span>;<br><span class="hljs-type">void</span> <span class="hljs-title function_">lock_pairs</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span>;<br><span class="hljs-type">void</span> <span class="hljs-title function_">print_winner</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span>;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-built_in">string</span> argv[])</span><br>&#123;<br>    <span class="hljs-comment">// 確認 terminal 提供的參數是否正確</span><br>    <span class="hljs-keyword">if</span> (argc &lt; <span class="hljs-number">2</span>)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Usage: tideman [candidate ...]\n&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br><br>    <span class="hljs-comment">// 把 terminal 提供的候選人名字寫進 candidates 列表裡</span><br>    candidate_count = argc - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">if</span> (candidate_count &gt; MAX)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Maximum number of candidates is %i\n&quot;</span>, MAX);<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; candidate_count; i++)<br>    &#123;<br>        candidates[i] = argv[i + <span class="hljs-number">1</span>];<br>    &#125;<br><br>    <span class="hljs-comment">// 初始化 locked 表格，讓每一格都是 false </span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; candidate_count; i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; candidate_count; j++)<br>        &#123;<br>            locked[i][j] = <span class="hljs-literal">false</span>;<br>        &#125;<br>    &#125;<br><br>    pair_count = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> voter_count = get_int(<span class="hljs-string">&quot;Number of voters: &quot;</span>);<br><br>    <span class="hljs-comment">// 取得每一張選票內容</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; voter_count; i++)<br>    &#123;<br>        <span class="hljs-comment">// 定義選票排序 array: ranks[i] 是投票者排序第 i 名的候選人 index</span><br>        <span class="hljs-type">int</span> ranks[candidate_count];<br><br>        <span class="hljs-comment">// 取得每一個排序的候選人 index</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; candidate_count; j++)<br>        &#123;<br>            <span class="hljs-built_in">string</span> name = get_string(<span class="hljs-string">&quot;Rank %i: &quot;</span>, j + <span class="hljs-number">1</span>);<br><br>            <span class="hljs-keyword">if</span> (!vote(j, name, ranks))<br>            &#123;<br>                <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Invalid vote.\n&quot;</span>);<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-comment">// 將選票結果更新到 preferences 表格</span><br>        record_preferences(ranks);<br><br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>);<br>    &#125;<br><br>    add_pairs();<br>    sort_pairs();<br>    lock_pairs();<br>    print_winner();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>題目要求完成 6 個 function 來執行投票&#x2F;開票作業，接下來會針對每個 function 做詳細說明。  </p>
 <h2 id="vote"><a href="#vote" class="headerlink" title="vote"></a>vote</h2><p>投票者每在選票上填入一個名字就會執行一次，將填入的名字放進紀錄選票的陣列 <code>ranks[]</code> 中。這個函式共引入了 3 個參數：  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">vote</span><span class="params">(<span class="type">int</span> rank, <span class="built_in">string</span> name, <span class="type">int</span> ranks[])</span></span><br><span class="line"><span class="type">int</span> rank        <span class="comment">// 目前填入的名字在選票排序的第幾位</span></span><br><span class="line"><span class="built_in">string</span> name     <span class="comment">// 填入的名稱</span></span><br><span class="line"><span class="type">int</span> ranks[]     <span class="comment">// 記錄這張選票所有排序的 array</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">bool</span> <span class="hljs-title function_">vote</span><span class="hljs-params">(<span class="hljs-type">int</span> rank, <span class="hljs-built_in">string</span> name, <span class="hljs-type">int</span> ranks[])</span><br><span class="hljs-type">int</span> rank        <span class="hljs-comment">// 目前填入的名字在選票排序的第幾位</span><br><span class="hljs-built_in">string</span> name     <span class="hljs-comment">// 填入的名稱</span><br><span class="hljs-type">int</span> ranks[]     <span class="hljs-comment">// 記錄這張選票所有排序的 array</span><br></code></pre></td></tr></table></figure>
 
 <p>首先，為了排除廢票狀況，要先檢查填入的名字是否存在候選人清單中，如果存在則填入 ranks[] 清單並回傳 <code>true</code>；反之則回傳 <code>false</code>。這邊用到一個 library： <a target="_blank" rel="noopener external nofollow noreferrer" href="https://manual.cs50.io/3/strcmp">strcmp()</a> 來比對字串是否相同，所以要記得在檔案最上方加入 <code>#include &lt;string.h&gt;</code> 。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Update ranks given a new vote</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">vote</span><span class="params">(<span class="type">int</span> rank, <span class="built_in">string</span> name, <span class="type">int</span> ranks[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Check if vote to person in candidates list</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">strcmp</span>(name, candidates[i]) == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ranks[rank] = i;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// Update ranks given a new vote</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">vote</span><span class="hljs-params">(<span class="hljs-type">int</span> rank, <span class="hljs-built_in">string</span> name, <span class="hljs-type">int</span> ranks[])</span><br>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; candidate_count; i++)<br>    &#123;<br>        <span class="hljs-comment">// Check if vote to person in candidates list</span><br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">strcmp</span>(name, candidates[i]) == <span class="hljs-number">0</span>)<br>        &#123;<br>            ranks[rank] = i;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="record-preferences"><a href="#record-preferences" class="headerlink" title="record_preferences"></a>record_preferences</h2><p>每填完一張選票，就將這張選票每兩位候選人間的意願關係填入 <code>preferences</code> 表格中。這邊就要先解釋<a href="#%E7%A8%8B%E5%BC%8F%E7%B5%90%E6%A7%8B%E5%8F%8A%E9%82%8F%E8%BC%AF">原始題目line8</a> 的變數 <code>int preferences[MAX][MAX]</code> 了。<code>int</code> 代表這個陣列填入的資料型別是<strong>整數</strong>，後面的 <code>[MAX]</code> 則是代表表格的<strong>列數</strong>和<strong>欄數</strong>，而 MAX 的值在 line5 設定為 9。</p>
 <h3 id="preferences-row-col-二維表格"><a href="#preferences-row-col-二維表格" class="headerlink" title="preferences[row][col] 二維表格"></a>preferences[row][col] 二維表格</h3><p><code>preferences[row][col]</code> 是一個二維陣列，假設 <code>[row]</code> 和 <code>[col]</code> 都是 3 ，表格畫起來如下圖：  </p>
@@ -366,9 +341,9 @@
 </tbody></table>
 <hr>
 <p>來看看函式的 prototype：  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">record_preferences</span><span class="params">(<span class="type">int</span> ranks[])</span></span><br><span class="line"><span class="type">void</span>         <span class="comment">// 沒有回傳值</span></span><br><span class="line"><span class="type">int</span> ranks[]  <span class="comment">// 使用 candidates[] 的 index 來紀錄選票中候選人排序的陣列</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">record_preferences</span><span class="hljs-params">(<span class="hljs-type">int</span> ranks[])</span><br><span class="hljs-type">void</span>         <span class="hljs-comment">// 沒有回傳值</span><br><span class="hljs-type">int</span> ranks[]  <span class="hljs-comment">// 使用 candidates[] 的 index 來紀錄選票中候選人排序的陣列</span><br></code></pre></td></tr></table></figure>
 <p>如同上面舉的例子，當完成一張選票 <code>ranks[]</code> 時，依序迭代每個順位的候選人，將他們的比較結果填入 <code> preferences</code> 表格中。<code>i</code> 代表選票的第 i 順位，<code>j</code> 則代表 i 以外的其他候選人。  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Update preferences given one voter&#x27;s ranks</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">record_preferences</span><span class="params">(<span class="type">int</span> ranks[])</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Person of each rank on ballot</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// Plus number of voters who prefer i over j</span></span><br><span class="line">            preferences[ranks[i]][ranks[j]] += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// Update preferences given one voter&#x27;s ranks</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">record_preferences</span><span class="hljs-params">(<span class="hljs-type">int</span> ranks[])</span><br>&#123;<br>    <span class="hljs-comment">// Person of each rank on ballot</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; candidate_count; i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = i + <span class="hljs-number">1</span>; j &lt; candidate_count; j++)<br>        &#123;<br>            <span class="hljs-comment">// Plus number of voters who prefer i over j</span><br>            preferences[ranks[i]][ranks[j]] += <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="add-pairs"><a href="#add-pairs" class="headerlink" title="add_pairs"></a>add_pairs</h2><p>在投完所有票及更新 <code>preferences</code> 表格後，從表格中挑出所有獲勝的組合。假設投完票後的意向表格如下：  </p>
 <div style="max-width: fit-content">
@@ -412,22 +387,22 @@
 </ul>
 <hr>
 <p>綜上所述， <code>add_pairs</code> 函式只要迭代整個表格找出勝者加入 <code>pairs</code> 即可。特別注意的是，因為我們只要找出勝者，所以不對 <code>if (preferences[i][j] == preferences[j][i])</code> 的情況做任何處理。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Record pairs of candidates where one is preferred over the other</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">add_pairs</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// If one way arrow (i over j)</span></span><br><span class="line">            <span class="keyword">if</span> (preferences[i][j] &gt; preferences[j][i])</span><br><span class="line">            &#123;</span><br><span class="line">                pairs[pair_count].winner = i;</span><br><span class="line">                pairs[pair_count].loser = j;</span><br><span class="line">                pair_count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// Record pairs of candidates where one is preferred over the other</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">add_pairs</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; candidate_count; i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; candidate_count; j++)<br>        &#123;<br>            <span class="hljs-comment">// If one way arrow (i over j)</span><br>            <span class="hljs-keyword">if</span> (preferences[i][j] &gt; preferences[j][i])<br>            &#123;<br>                pairs[pair_count].winner = i;<br>                pairs[pair_count].loser = j;<br>                pair_count++;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="sort-pairs-Bubble-sort"><a href="#sort-pairs-Bubble-sort" class="headerlink" title="sort_pairs (Bubble sort)"></a>sort_pairs (Bubble sort)</h2><p>Bubble sort 的原理是和相鄰的項目做比較，並和相鄰項目交換位置，直到完成升冪或降冪的排序。舉例說明，有一個陣列 array[5] &#x3D; {2, 4, 5, 3, 1}，如果我要把它由小到大排序：  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原始陣列</span></span><br><span class="line"><span class="built_in">array</span>[<span class="number">5</span>] = &#123;<span class="number">2</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">1</span>&#125;;</span><br><span class="line"><span class="comment">// Step1: index[0] 跟 index[1] 比較，若遇到較小的就交換位置</span></span><br><span class="line">&#123;<span class="number">2</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">1</span>&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// Step2: index[1] 跟 index[2] 比較，若遇到較小的就交換位置</span></span><br><span class="line">&#123;<span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Step3: index[2] 跟 index[3] 比較，若遇到較小的就交換位置</span></span><br><span class="line">&#123;<span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Step4: index[3] 跟 index[4] 比較，若遇到較小的就交換位置</span></span><br><span class="line">&#123;<span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 重複 step1~4 直到排序完成</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 原始陣列</span><br><span class="hljs-built_in">array</span>[<span class="hljs-number">5</span>] = &#123;<span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>&#125;;<br><span class="hljs-comment">// Step1: index[0] 跟 index[1] 比較，若遇到較小的就交換位置</span><br>&#123;<span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>&#125; <br><br><span class="hljs-comment">// Step2: index[1] 跟 index[2] 比較，若遇到較小的就交換位置</span><br>&#123;<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>&#125;<br><br><span class="hljs-comment">// Step3: index[2] 跟 index[3] 比較，若遇到較小的就交換位置</span><br>&#123;<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">1</span>&#125;<br><br><span class="hljs-comment">// Step4: index[3] 跟 index[4] 比較，若遇到較小的就交換位置</span><br>&#123;<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>&#125;<br><br><span class="hljs-comment">// 重複 step1~4 直到排序完成</span><br></code></pre></td></tr></table></figure>
 <p>會看到較大的數字會像泡泡一樣逐漸向右浮出。  </p>
 <hr>
 <p>題目要求將 <code>pairs</code> 陣列由大到小排列。比大小需要<strong>數值</strong>，但 <code>pairs</code> 陣列紀錄的只是勝者和敗者，我們可以拿獲勝的<strong>力度</strong>來為每對候選人作排序。  </p>
 <p>獲勝的<strong>力度</strong>指的是「<strong>覺得A候選人勝過B候選人的票數</strong>」。舉前面 <a href="#add_pairs">add_pairs範例表格</a>來說， Alice 勝過 Bob 的力度是 3。</p>
 <p>接著，就如同 bubble sort 說明一樣，取出 <code>pairs</code> 陣列中相鄰的 <code>pair strength</code> (preferences[winner][loser])進行比較並互相交換，最後完成降冪排列。  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">sort_pairs</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = pair_count - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; i; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> current_pair_strength = preferences[pairs[j].winner][pairs[j].loser];</span><br><span class="line">            <span class="type">int</span> next_pair_strength = preferences[pairs[j + <span class="number">1</span>].winner][pairs[j + <span class="number">1</span>].loser];</span><br><span class="line">            <span class="keyword">if</span> (current_pair_strength &lt; next_pair_strength)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">pair</span> temp = pairs[j];</span><br><span class="line">                pairs[j] = pairs[j + <span class="number">1</span>];</span><br><span class="line">                pairs[j + <span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">sort_pairs</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = pair_count - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--)<br>    &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; i; j++)<br>        &#123;<br>            <span class="hljs-type">int</span> current_pair_strength = preferences[pairs[j].winner][pairs[j].loser];<br>            <span class="hljs-type">int</span> next_pair_strength = preferences[pairs[j + <span class="hljs-number">1</span>].winner][pairs[j + <span class="hljs-number">1</span>].loser];<br>            <span class="hljs-keyword">if</span> (current_pair_strength &lt; next_pair_strength)<br>            &#123;<br>                <span class="hljs-built_in">pair</span> temp = pairs[j];<br>                pairs[j] = pairs[j + <span class="hljs-number">1</span>];<br>                pairs[j + <span class="hljs-number">1</span>] = temp;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="lock-pairs"><a href="#lock-pairs" class="headerlink" title="lock_pairs"></a>lock_pairs</h2><p>這個步驟的目的是為了在所有的 pairs 之間做取捨。如果直接採用所有的 pair，選舉結果可能會出現:<br>A &gt; B 、 B &gt; C 、 C &gt; A 這種找不到最終勝利者的情形。而 lock_pairs 是將 pair_strength 由大到小分別做檢查，如果沒有變成死循環的 pair 就採用(lock)，變成死循環的 pair 就棄用。<br><br></p>
 <blockquote>
 <p>備註：此部分說明參考【<a target="_blank" rel="noopener external nofollow noreferrer" href="https://gist.github.com/nicknapoli82/6c5a1706489e70342e9a0a635ae738c9">nicknapoli82&#x2F;cs50_Tideman_cycle-explanation.md</a>】  </p>
 </blockquote>
 <p>舉例來說，現在有的候選人和 sorted pairs 資料如下:  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Candidates[<span class="number">4</span>] = [a, b, c, d]</span><br><span class="line">Sorted Pairs = [&#123;d, a&#125;, &#123;a, b&#125;, &#123;b, c&#125;, &#123;c, a&#125;, &#123;d, b&#125;, &#123;d, c&#125;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">Candidates[<span class="hljs-number">4</span>] = [a, b, c, d]<br>Sorted Pairs = [&#123;d, a&#125;, &#123;a, b&#125;, &#123;b, c&#125;, &#123;c, a&#125;, &#123;d, b&#125;, &#123;d, c&#125;]<br></code></pre></td></tr></table></figure>
 <p>之後將 sorted pairs 依序拿出來做檢查，如果不是死循環則生成排序鏈。<br><code>sorted pairs[0]</code> : d &gt; a ，lock ，排序鏈 <code>d &gt; a</code> 。<br><code>sorted pairs[1]</code> : a &gt; b ，lock ，排序鏈 <code>d &gt; a &gt; b</code> 。<br><code>sorted pairs[2]</code> : b &gt; c ，lock ，排序鏈 <code>d &gt; a &gt; b &gt; c</code> 。<br><code>sorted pairs[3]</code> : c &gt; a ，形成死循環，棄用此 pair，排序鏈維持 <code>d &gt; a &gt; b &gt; c</code> 。<br><code>sorted pairs[4]</code> : d &gt; b ，lock ，排序鏈維持 <code>d &gt; a &gt; b &gt; c</code> 。<br><code>sorted pairs[5]</code> : d &gt; c ，lock ，排序鏈維持 <code>d &gt; a &gt; b &gt; c</code> 。  </p>
 <p>此時，詳細排序鏈應該長這樣：  </p>
 <div style="max-width: 150px">
@@ -509,7 +484,7 @@
 
 <hr>
 <p>依照上面的說明，<code>lock_pairs</code> function 的邏輯為：檢查是否有死循環，沒有則為 true。(前面已將整張表格預設為 false，所以如果 <code>locked[winner][loser] = false</code> ，不做任何處理。)  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Lock pairs into the candidate graph in order, without creating cycles</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">lock_pairs</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; pair_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> winner = pairs[i].winner;</span><br><span class="line">        <span class="type">int</span> loser = pairs[i].loser;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!cycle_occurred(winner, loser))</span><br><span class="line">        &#123;</span><br><span class="line">            locked[winner][loser] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// Lock pairs into the candidate graph in order, without creating cycles</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">lock_pairs</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; pair_count; i++)<br>    &#123;<br>        <span class="hljs-type">int</span> winner = pairs[i].winner;<br>        <span class="hljs-type">int</span> loser = pairs[i].loser;<br><br>        <span class="hljs-keyword">if</span> (!cycle_occurred(winner, loser))<br>        &#123;<br>            locked[winner][loser] = <span class="hljs-literal">true</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <br>
 
 <p>接下來則是規畫檢查死循環的步驟，新建一個 function <code>cycle_occurred</code>。  </p>
@@ -549,7 +524,7 @@
 </div>
 
 <p>如果我要確定 <code>d &gt; c</code> 會不會造成死循環，同時也必須要對其他路線做確認，所以使用 for loop 來迭代每個候選人。  </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Check if cycle occurred</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">cycle_occurred</span><span class="params">(<span class="type">int</span> winner, <span class="type">int</span> loser)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (locked[loser][winner] == <span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (locked[loser][i] &amp;&amp; cycle_occurred(winner, i))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// Check if cycle occurred</span><br><span class="hljs-type">bool</span> <span class="hljs-title function_">cycle_occurred</span><span class="hljs-params">(<span class="hljs-type">int</span> winner, <span class="hljs-type">int</span> loser)</span><br>&#123;<br>    <span class="hljs-keyword">if</span> (locked[loser][winner] == <span class="hljs-literal">true</span>)<br>    &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; candidate_count; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (locked[loser][i] &amp;&amp; cycle_occurred(winner, i))<br>        &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="print-winner"><a href="#print-winner" class="headerlink" title="print_winner"></a>print_winner</h2><p>在完成 <code>lock_pairs</code> 經過步驟後，會完成下面這張表格。要找出最後贏家的辦法，就是確認一個候選人「沒有輸給任何人」，也就是候選人的 loser column 全部為 false，如下表<font color=green><strong>綠字</strong></font>表示：  </p>
 <div style="max-width: fit-content">
 
@@ -594,7 +569,7 @@
 </tbody></table>
 </div>
 
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Print the winner of the election</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">print_winner</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; candidate_count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> false_count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; candidate_count; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// Check if candidates[j] has arrow to cadidates[i]</span></span><br><span class="line">            <span class="keyword">if</span> (locked[j][i] == <span class="literal">false</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                false_count++;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// if no arrow to candidates[i], find winner</span></span><br><span class="line">                <span class="keyword">if</span> (false_count == candidate_count)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, candidates[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// Print the winner of the election</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">print_winner</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; candidate_count; i++)<br>    &#123;<br>        <span class="hljs-type">int</span> false_count = <span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; candidate_count; j++)<br>        &#123;<br>            <span class="hljs-comment">// Check if candidates[j] has arrow to cadidates[i]</span><br>            <span class="hljs-keyword">if</span> (locked[j][i] == <span class="hljs-literal">false</span>)<br>            &#123;<br>                false_count++;<br><br>                <span class="hljs-comment">// if no arrow to candidates[i], find winner</span><br>                <span class="hljs-keyword">if</span> (false_count == candidate_count)<br>                &#123;<br>                    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, candidates[i]);<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>而為什麼不用「贏過除了自己的任何人呢」(也就是 candidate[i] row 除了自己全部為 true)？<br>因為我們在一開始就將表格預設為 false ，而<strong>平手</strong>情況也是 false 。向下圖這種情況，會有兩個贏家，而 <code>a &gt; d</code> 或 <code>d &gt; a</code> 都會是 false。</p>
 <div style="max-width: 150px">
@@ -636,148 +611,328 @@
 <p>相關文章: <a href="https://ritachien.github.io/tags/CS50x-2022/">CS50x(2022)</a>  </p>
 </blockquote>
 
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer"><!-- 在文章底部添加感謝閱讀 -->
-<div>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
   
-    <div style="text-align:center; color:#ccc; font-size:14px; letter-spacing:5px">
-      ------------  本文結束，感謝您的閱讀&nbsp;<i class="fa fa-paw"></i>&nbsp;如有錯漏，歡迎留言討論  -------------
-    </div>
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
   
-</div>
-
-
-          
-
-<div class="post-copyright">
-<ul>
-  <li class="post-copyright-author">
-      <strong>作者： </strong>Rita Chien
-  </li>
-  <li class="post-copyright-link">
-      <strong>文章連結：</strong>
-      <a href="https://ritachien.github.io/posts/d7ed27d2/" title="【CS50x(2022)】ProblemSet3 - Tideman 題解(Selection sort)">https://ritachien.github.io/posts/d7ed27d2/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
-  </li>
-</ul>
-</div>
-
-          <div class="post-tags">
-              <a href="/tags/CS50x/" rel="tag"><i class="fa fa-tag"></i> CS50x</a>
-              <a href="/tags/Algorithms/" rel="tag"><i class="fa fa-tag"></i> Algorithms</a>
-          </div>
-
+  
+    
+      <span class="category-chain">
         
+  <a href="/categories/CS50/" class="category-chain-item">CS50</a>
+  
+  
 
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/posts/ab8ef72d/" rel="prev" title="【CS50x(2022)】ProblemSet3 - Tideman 題解(Bubble sort)">
-                  <i class="fa fa-chevron-left"></i> 【CS50x(2022)】ProblemSet3 - Tideman 題解(Bubble sort)
-                </a>
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/CS50x/">#CS50x</a>
+      
+        <a href="/tags/Algorithms/">#Algorithms</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  <p class="note note-warning">
+    本 Blog 上的所有文章除特别聲明外，均採用 CC BY-SA 4.0 協議 ，轉載請註明出處！
+  </p>
+  
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/6466fe30/" title="【CS50x(2022)】Complexity and Big O Notation">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【CS50x(2022)】Complexity and Big O Notation</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/ab8ef72d/" title="【CS50x(2022)】ProblemSet3 - Tideman 題解(Bubble sort)">
+                        <span class="hidden-mobile">【CS50x(2022)】ProblemSet3 - Tideman 題解(Bubble sort)</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
             </div>
-            <div class="post-nav-item">
-                <a href="/posts/6466fe30/" rel="next" title="【CS50x(2022)】Complexity and Big O Notation">
-                  【CS50x(2022)】Complexity and Big O Notation <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
+
+            
+  <article id="comments" lazyload>
+    
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'ritachien/ritachien.github.io');
+      s.setAttribute('issue-term', 'title');
+      
+      s.setAttribute('label', 'comments');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
   </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
 </div>
 
 
 
 
 
+  
 
-    <div class="comments utterances-container"></div>
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
 </div>
+
+    
+
+    
   </main>
 
-  <footer class="footer">
+  <footer>
     <div class="footer-inner">
-
-
-<div class="copyright">
-  &copy; 2021 – 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder"><a href='https://ritachien.github.io/'>Rita Chien</a></span>
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
 </div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-    <span title="總字數">96k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="所需總閱讀時間">1:28</span>
-  </span>
-</div><!-- 在網頁底部添加網站運行時間 -->
-<span id="blogTime">載入天數時分秒...</span>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
 <script>
-    let now = new Date();
-    function createtime() {
-        let grt = new Date("12/13/2021 00:00:00");  // 此處修改你的建站時間或者網站上線時間
-        now.setTime(now.getTime() + 250);
-        days = (now - grt ) / 1000 / 60 / 60 / 24;
-        dnum = Math.floor(days);
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
-        hnum = Math.floor(hours);
-        if(String(hnum).length === 1 ){hnum = "0" + hnum;}
-        minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-        mnum = Math.floor(minutes);
-        if(String(mnum).length === 1 ){mnum = "0" + mnum;}
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-        snum = Math.round(seconds);
-        if(String(snum).length === 1 ){snum = "0" + snum;}
-        document.getElementById("blogTime").innerHTML = "Rita 的學習筆記 已出生 "+ dnum +" 天 "+ hnum + " 小時 " + mnum + " 分 " + snum + " 秒";
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
     }
-setInterval("createtime()",250);
+  });
 </script>
 
 
-    </div>
-  </footer>
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
 
-  
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
-
-  
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
-
-
-
+  <script>Fluid.plugins.codeWidget();</script>
 
 
   
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
 
 
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
-
-
-<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"ritachien/ritachien.github.io","issue_term":"title","theme":"github-light","label":"comments","crossorigin":"anonymous"}</script>
-<script src="/js/third-party/comments/utterances.js"></script>
-
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>
