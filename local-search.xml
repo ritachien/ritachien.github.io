@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>用 reduce 確認括號是否成對</title>
+    <link href="/posts/1a9f5ae6/"/>
+    <url>/posts/1a9f5ae6/</url>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在網路上搜尋 <code>Array.reduce()</code> 用法時，最常看到的就是數字加總。但既然這是 ES6 新加的陣列操作方式，總不可能就只拿來做數字運算吧! 後來找到了一個應用題，就拿來試試 reduce 解題吧!  </p><h2 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h2><p>寫出一個函式，檢查括號是否左右成對。成對則回傳 <code>true</code> ，否則回傳 <code>false</code>。相關範例如下:  </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// return true</span><br><span class="hljs-string">&#x27;()()&#x27;</span> <br><span class="hljs-string">&#x27;(())&#x27;</span><br><br><span class="hljs-comment">// return false</span><br><span class="hljs-string">&#x27;())&#x27;</span><br><span class="hljs-string">&#x27;(()&#x27;</span><br><span class="hljs-string">&#x27;)(&#x27;</span><br></code></pre></td></tr></table></figure><h2 id="解題"><a href="#解題" class="headerlink" title="解題"></a>解題</h2><ul><li><p>先把傳入字串一個一個拆開成陣列，然後用 reduce 迭代陣列中的每個項目。  </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">balanceParens</span>(<span class="hljs-params">string</span>) &#123;<br>  string.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-title function_">reduce</span>()<br>&#125;<br></code></pre></td></tr></table></figure></li><li><p>用數字表達括號的成對狀況。設定初始值為 <code>0</code>，遇到左括號 <code>+1</code>、遇到右括號 <code>-1</code>。  </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">balanceParens</span>(<span class="hljs-params">string</span>) &#123;<br>  string.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">previous, char</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (char === <span class="hljs-string">&#x27;(&#x27;</span>) &#123; previous++ &#125;<br>    <span class="hljs-keyword">if</span> (char === <span class="hljs-string">&#x27;)&#x27;</span>) &#123; previous-- &#125;<br>  &#125;, <span class="hljs-number">0</span>)<br>&#125;<br></code></pre></td></tr></table></figure></li><li><p>檢查 reduce 回傳值，如果為 <code>0</code> (左右括號數量相同)，則回傳 <code>true</code>，否則回傳 <code>false</code>。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">balanceParens</span>(<span class="hljs-params">string</span>) &#123;<br>  <span class="hljs-keyword">return</span> !string.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">previous, char</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (char === <span class="hljs-string">&#x27;(&#x27;</span>) &#123; previous++ &#125;<br>    <span class="hljs-keyword">if</span> (char === <span class="hljs-string">&#x27;)&#x27;</span>) &#123; previous-- &#125;<br><br>    <span class="hljs-keyword">return</span> previous<br>  &#125;, <span class="hljs-number">0</span>)<br>&#125;<br></code></pre></td></tr></table></figure></li><li><p>檢查成對時，左右括號不能順序相反，也就是過程中不能出現負值。  </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">balanceParens</span>(<span class="hljs-params">string</span>) &#123;<br>  <span class="hljs-keyword">return</span> !string.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">previous, char</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (char === <span class="hljs-string">&#x27;(&#x27;</span>) &#123; previous++ &#125;<br>    <span class="hljs-keyword">if</span> (char === <span class="hljs-string">&#x27;)&#x27;</span>) &#123; previous-- &#125;<br>    <br>    <span class="hljs-keyword">return</span> previous &lt; <span class="hljs-number">0</span> || previous<br>  &#125;, <span class="hljs-number">0</span>)<br>&#125;<br></code></pre></td></tr></table></figure></li></ul><p>到目前為止的流程就可以確實完成所有檢查動作了。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>JavaScript</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JavaScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Twitter 專案問題解決與工具應用</title>
     <link href="/posts/a0ad0a1b/"/>
     <url>/posts/a0ad0a1b/</url>
