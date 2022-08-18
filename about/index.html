@@ -20,24 +20,30 @@
   
     <meta name="description" content="本站介紹開始接觸到程式語言後升起了學習的興趣，這個部落格主要用來記錄自己的一些學習歷程。   靜態網頁框架：hexo網頁框架主題：fluid留言功能：utterances 作者介紹原本是個製造業小會計，因為想跳脫舒適圈、嘗試讓自己保持在一個持續學習的狀態，目前以轉職為目標進行學習。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="關於我......">
+<meta property="og:title" content="About">
 <meta property="og:url" content="https://ritachien.github.io/about/">
 <meta property="og:site_name" content="RitaChien&#39;s Blog">
 <meta property="og:description" content="本站介紹開始接觸到程式語言後升起了學習的興趣，這個部落格主要用來記錄自己的一些學習歷程。   靜態網頁框架：hexo網頁框架主題：fluid留言功能：utterances 作者介紹原本是個製造業小會計，因為想跳脫舒適圈、嘗試讓自己保持在一個持續學習的狀態，目前以轉職為目標進行學習。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-12-15T10:33:37.000Z">
-<meta property="article:modified_time" content="2022-08-17T08:10:13.890Z">
+<meta property="article:modified_time" content="2022-08-18T10:25:39.389Z">
 <meta property="article:author" content="Rita Chien">
 <meta property="article:tag" content="Blog, 程式語言, 學習紀錄">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>關於我...... - RitaChien&#39;s Blog</title>
+  <title>About - RitaChien&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -231,7 +237,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="關於我......"></span>
+            <span id="subtitle" data-typed-text="About"></span>
           
         </div>
 
@@ -253,20 +259,83 @@
         <div id="board"
           >
           
+            <div class="about-avatar">
+              <img src="/img/avatar.png" srcset="/img/loading.gif" lazyload class="img-fluid" alt="avatar">
+            </div>
+          
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-<article class="page-content">
-  <h2 id="本站介紹"><a href="#本站介紹" class="headerlink" title="本站介紹"></a>本站介紹</h2><p>開始接觸到程式語言後升起了學習的興趣，這個部落格主要用來記錄自己的一些學習歷程。  </p>
+<div class="text-center">
+  <div class="about-info">
+    <div class="about-name">Rita Chien</div>
+    <div class="about-intro">Step by step and the thing is done.</div>
+    <div class="about-icons">
+      
+        
+        
+        
+        <a href=https://github.com/ritachien class="
+           hint--bottom hint--rounded"
+           aria-label=GitHub
+           target="_blank"
+        >
+          <i class="iconfont icon-github-fill" aria-hidden="true"></i>
+          
+        </a>
+      
+        
+        
+        
+        <a href=mailto:ritachien929@gmail.com class="
+           hint--bottom hint--rounded"
+           aria-label=Email
+           target="_blank"
+        >
+          <i class="iconfont icon-mail" aria-hidden="true"></i>
+          
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+<article class="about-content page-content mt-5">
+  <div class="markdown-body">
+    <h2 id="本站介紹"><a href="#本站介紹" class="headerlink" title="本站介紹"></a>本站介紹</h2><p>開始接觸到程式語言後升起了學習的興趣，這個部落格主要用來記錄自己的一些學習歷程。  </p>
 <p>靜態網頁框架：hexo<br>網頁框架主題：fluid<br>留言功能：utterances</p>
 <h2 id="作者介紹"><a href="#作者介紹" class="headerlink" title="作者介紹"></a>作者介紹</h2><p>原本是個製造業小會計，因為想跳脫舒適圈、嘗試讓自己保持在一個持續學習的狀態，目前以轉職為目標進行學習。</p>
+
+  </div>
+
+  
+</article>
+
+
+
 
 
   
 
-</article>
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
 
 
 
@@ -368,6 +437,44 @@
 
 
 
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
 
