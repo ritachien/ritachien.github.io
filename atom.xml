@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>RitaChien&#39;s Blog</title>
+  <icon>https://ritachien.github.io/icon.png</icon>
+  <subtitle>Step by step and the thing is done.</subtitle>
+  <link href="https://ritachien.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://ritachien.github.io/"/>
+  <updated>2022-08-26T14:17:21.004Z</updated>
+  <id>https://ritachien.github.io/</id>
+  
+  <author>
+    <name>Rita Chien</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript 的函式調用(Invocation)與堆疊(Stack)</title>
+    <link href="https://ritachien.github.io/posts/5fdf6ed8/"/>
+    <id>https://ritachien.github.io/posts/5fdf6ed8/</id>
+    <published>2022-08-25T11:12:29.000Z</published>
+    <updated>2022-08-26T14:17:21.004Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;名詞解釋&quot;&gt;&lt;a href=&quot;#名詞解釋&quot; class=&quot;headerlink&quot; title=&quot;名詞解釋&quot;&gt;&lt;/a&gt;名詞解釋&lt;/h2&gt;&lt;h3 id=&quot;單執行續-Single-thearded&quot;&gt;&lt;a href=&quot;#單執行續-Single-thearded&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JacaScript" scheme="https://ritachien.github.io/categories/JacaScript/"/>
+    
+    
+    <category term="JacaScript" scheme="https://ritachien.github.io/tags/JacaScript/"/>
+    
+    <category term="Udemy" scheme="https://ritachien.github.io/tags/Udemy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript 中的 Hoisting 與 undefined</title>
+    <link href="https://ritachien.github.io/posts/83cbebe3/"/>
+    <id>https://ritachien.github.io/posts/83cbebe3/</id>
+    <published>2022-08-24T08:46:35.000Z</published>
+    <updated>2022-08-26T13:55:06.212Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;什麼是-Hoisting&quot;&gt;&lt;a href=&quot;#什麼是-Hoisting&quot; class=&quot;headerlink&quot; title=&quot;什麼是 Hoisting ?&quot;&gt;&lt;/a&gt;什麼是 Hoisting ?&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;JavaScript</summary>
+        
+      
+    
+    
+    
+    <category term="JacaScript" scheme="https://ritachien.github.io/categories/JacaScript/"/>
+    
+    
+    <category term="JacaScript" scheme="https://ritachien.github.io/tags/JacaScript/"/>
+    
+    <category term="Udemy" scheme="https://ritachien.github.io/tags/Udemy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 的執行環境(Execution Contexts)</title>
+    <link href="https://ritachien.github.io/posts/ca5ebfed/"/>
+    <id>https://ritachien.github.io/posts/ca5ebfed/</id>
+    <published>2022-08-22T03:48:55.000Z</published>
+    <updated>2022-08-26T13:03:56.829Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;什麼是執行環境-Execution-Contexts&quot;&gt;&lt;a href=&quot;#什麼是執行環境-Execution-Contexts&quot; class=&quot;headerlink&quot; title=&quot;什麼是執行環境(Execution</summary>
+        
+      
+    
+    
+    
+    <category term="JacaScript" scheme="https://ritachien.github.io/categories/JacaScript/"/>
+    
+    
+    <category term="JacaScript" scheme="https://ritachien.github.io/tags/JacaScript/"/>
+    
+    <category term="Udemy" scheme="https://ritachien.github.io/tags/Udemy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 前導觀念與名詞介紹</title>
+    <link href="https://ritachien.github.io/posts/555e8dd9/"/>
+    <id>https://ritachien.github.io/posts/555e8dd9/</id>
+    <published>2022-08-20T13:46:56.000Z</published>
+    <updated>2022-08-26T13:48:56.438Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前導觀念-Conceptual-Aside&quot;&gt;&lt;a href=&quot;#前導觀念-Conceptual-Aside&quot; class=&quot;headerlink&quot; title=&quot;前導觀念(Conceptual Aside)&quot;&gt;&lt;/a&gt;前導觀念(Conceptual</summary>
+        
+      
+    
+    
+    
+    <category term="JacaScript" scheme="https://ritachien.github.io/categories/JacaScript/"/>
+    
+    
+    <category term="JacaScript" scheme="https://ritachien.github.io/tags/JacaScript/"/>
+    
+    <category term="Udemy" scheme="https://ritachien.github.io/tags/Udemy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Twitter 專案開發回顧</title>
+    <link href="https://ritachien.github.io/posts/1001d93d/"/>
+    <id>https://ritachien.github.io/posts/1001d93d/</id>
+    <published>2022-08-16T02:53:18.000Z</published>
+    <updated>2022-08-16T15:15:04.187Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;整個 Twitter 專案開發經歷了整整兩週，這也是我的第一個協作專案，整個過程都很有趣!因為想記錄的東西太多了，就直接用流水帳的方式呈現吧!  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;開發模式: 前後分離&lt;br&gt;前端組員: YT、Ziwen&lt;br&gt;後端組員: Ruby</summary>
+        
+      
+    
+    
+    
+    <category term="Project" scheme="https://ritachien.github.io/categories/Project/"/>
+    
+    
+    <category term="Alpha Camp" scheme="https://ritachien.github.io/tags/Alpha-Camp/"/>
+    
+    <category term="Project" scheme="https://ritachien.github.io/tags/Project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用 reduce 確認括號是否成對</title>
+    <link href="https://ritachien.github.io/posts/1a9f5ae6/"/>
+    <id>https://ritachien.github.io/posts/1a9f5ae6/</id>
+    <published>2022-08-14T04:15:41.000Z</published>
+    <updated>2022-08-15T14:51:53.244Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在網路上搜尋 &lt;code&gt;Array.reduce()&lt;/code&gt; 用法時，最常看到的就是數字加總。但既然這是 ES6</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript" scheme="https://ritachien.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="JavaScript" scheme="https://ritachien.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Twitter 專案問題解決與工具應用</title>
+    <link href="https://ritachien.github.io/posts/a0ad0a1b/"/>
+    <id>https://ritachien.github.io/posts/a0ad0a1b/</id>
+    <published>2022-08-13T00:34:10.000Z</published>
+    <updated>2022-08-15T14:54:23.616Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在進行 Twitter 專案開發時，因為嘗試使用和教案不一樣的方式實作，所以在登入驗證這段稍微卡了關。  &lt;/p&gt;
+&lt;h2 id=&quot;規格說明&quot;&gt;&lt;a href=&quot;#規格說明&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Project" scheme="https://ritachien.github.io/categories/Project/"/>
+    
+    
+    <category term="Alpha Camp" scheme="https://ritachien.github.io/tags/Alpha-Camp/"/>
+    
+    <category term="Project" scheme="https://ritachien.github.io/tags/Project/"/>
+    
+    <category term="Passport.js" scheme="https://ritachien.github.io/tags/Passport-js/"/>
+    
+    <category term="JWT" scheme="https://ritachien.github.io/tags/JWT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Alpha Camp 學期 3 結業心得</title>
+    <link href="https://ritachien.github.io/posts/984151cd/"/>
+    <id>https://ritachien.github.io/posts/984151cd/</id>
+    <published>2022-08-12T05:16:41.000Z</published>
+    <updated>2022-08-12T07:08:04.586Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;學期 3 的課程也告一段落了，我也正式從 Alpha Camp 畢業了!&lt;br&gt;回想起當初那個程式小白的自己，好像也才半年多前的事而已。  &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="課程心得" scheme="https://ritachien.github.io/categories/%E8%AA%B2%E7%A8%8B%E5%BF%83%E5%BE%97/"/>
+    
+    
+    <category term="Alpha Camp" scheme="https://ritachien.github.io/tags/Alpha-Camp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Leetcode】231. Power of two</title>
+    <link href="https://ritachien.github.io/posts/bbce68bd/"/>
+    <id>https://ritachien.github.io/posts/bbce68bd/</id>
+    <published>2022-08-08T07:45:24.000Z</published>
+    <updated>2022-08-18T10:34:51.883Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;來源: Leetcode&lt;br&gt;難度: easy&lt;br&gt;題目: &lt;a href=&quot;https://leetcode.com/problems/power-of-two/&quot;&gt;231. Power of two&lt;/a&gt;  &lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="JavaScript" scheme="https://ritachien.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="JavaScript" scheme="https://ritachien.github.io/tags/JavaScript/"/>
+    
+    <category term="Leetcode" scheme="https://ritachien.github.io/tags/Leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>express-handlebars 模板副檔名設定</title>
+    <link href="https://ritachien.github.io/posts/285e8af7/"/>
+    <id>https://ritachien.github.io/posts/285e8af7/</id>
+    <published>2022-07-14T17:12:51.000Z</published>
+    <updated>2022-08-13T00:35:30.094Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在學習使用 &lt;code&gt;express-handlebars&lt;/code&gt; 時，看到有個自訂參數 &lt;code&gt;extname&lt;/code&gt; 可以自由調整想使用的副檔名，但各種範例都是設定成 &lt;code&gt;hbs&lt;/code&gt; 。於是，好奇的我就開始了各種副檔名實驗……  &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Coding 解惑實驗室" scheme="https://ritachien.github.io/categories/Coding-%E8%A7%A3%E6%83%91%E5%AF%A6%E9%A9%97%E5%AE%A4/"/>
+    
+    
+    <category term="Express.js" scheme="https://ritachien.github.io/tags/Express-js/"/>
+    
+    <category term="express-handlebars" scheme="https://ritachien.github.io/tags/express-handlebars/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【實作練習】簡易記帳本</title>
+    <link href="https://ritachien.github.io/posts/ed3d149f/"/>
+    <id>https://ritachien.github.io/posts/ed3d149f/</id>
+    <published>2022-06-26T11:07:07.000Z</published>
+    <updated>2022-08-13T00:35:18.828Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;使用 Express 製作簡易記帳本的紀錄。  &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Project" scheme="https://ritachien.github.io/categories/Project/"/>
+    
+    
+    <category term="AlphaCamp" scheme="https://ritachien.github.io/tags/AlphaCamp/"/>
+    
+    <category term="Express.js" scheme="https://ritachien.github.io/tags/Express-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git checkout 介紹(switch、restore)</title>
+    <link href="https://ritachien.github.io/posts/ebe5fbdc/"/>
+    <id>https://ritachien.github.io/posts/ebe5fbdc/</id>
+    <published>2022-06-09T16:01:59.000Z</published>
+    <updated>2022-06-09T16:01:59.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在搜尋 Git 相關資料時發現， &lt;code&gt;git checkout&lt;/code&gt; 要做的事情真的好多啊！很多發問平台上也有不少被這個指令的功能弄到很混淆的人，甚至 Git 官方也新出了兩個指令 &lt;code&gt;git switch&lt;/code&gt; 和 &lt;code&gt;git restore&lt;/code&gt; 來拆分 &lt;code&gt;git checkout&lt;/code&gt; 的工作。  &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Git" scheme="https://ritachien.github.io/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="https://ritachien.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用 git stash 暫存工作進度</title>
+    <link href="https://ritachien.github.io/posts/1fa590b6/"/>
+    <id>https://ritachien.github.io/posts/1fa590b6/</id>
+    <published>2022-06-09T03:08:20.000Z</published>
+    <updated>2022-08-12T03:23:46.310Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在進行開發時，偶爾會有進行到一半必須切換分支處理別的工作的情況，這時候使用 &lt;code&gt;git stash&lt;/code&gt; 暫存指令就會是個好選擇。  &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Git" scheme="https://ritachien.github.io/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="https://ritachien.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用 git log 查看提交歷史紀錄</title>
+    <link href="https://ritachien.github.io/posts/1e45a9f8/"/>
+    <id>https://ritachien.github.io/posts/1e45a9f8/</id>
+    <published>2022-06-08T13:41:09.000Z</published>
+    <updated>2022-06-08T13:41:09.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;如果在開發過程中有好好的撰寫提交訊息，就可以直接從過去的提交紀錄看出專案的開發歷史，也能看出各分支目前的開發進度到哪裡。  &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Git" scheme="https://ritachien.github.io/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="https://ritachien.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git Branch(清單、新建、刪除、重新命名、切換)</title>
+    <link href="https://ritachien.github.io/posts/93113df5/"/>
+    <id>https://ritachien.github.io/posts/93113df5/</id>
+    <published>2022-06-07T06:12:43.000Z</published>
+    <updated>2022-08-12T03:23:37.995Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在使用 Git 時，不管是在自己的專案開發或多人合作的專案，分支(Branch)都是個很重要的功能。它可以讓不同的事情「同步進行」，不會相互影響、也不需要互相等待。這篇主要針對建立、刪除、切換及重新命名來介紹。  &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Git" scheme="https://ritachien.github.io/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="https://ritachien.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用的 markdown 語法</title>
+    <link href="https://ritachien.github.io/posts/71aa6829/"/>
+    <id>https://ritachien.github.io/posts/71aa6829/</id>
+    <published>2022-06-04T11:24:21.000Z</published>
+    <updated>2022-06-10T15:38:09.691Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;近期寫專案 README 和 Blog 常常會用到 markdown ，整理一篇常用語法！可以直接點左邊目錄，跳到相對應的主題位置。  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;參考資料：&lt;a href=&quot;https://markdown.tw/&quot;&gt;https://markdown.tw/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Cheat Sheet" scheme="https://ritachien.github.io/categories/Cheat-Sheet/"/>
+    
+    
+    <category term="Cheat Sheet" scheme="https://ritachien.github.io/tags/Cheat-Sheet/"/>
+    
+    <category term="markdown" scheme="https://ritachien.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用 git commit --amend 修改 commit 紀錄</title>
+    <link href="https://ritachien.github.io/posts/362cfd32/"/>
+    <id>https://ritachien.github.io/posts/362cfd32/</id>
+    <published>2022-06-03T16:31:59.000Z</published>
+    <updated>2022-06-03T16:31:59.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在使用 Git 時，偶爾會在 commit 過程中發生一些小失誤，不管是 typo 或是部分檔案忘記加入 staged files 清單一起 commit。這種時候，&lt;code&gt;git commit --amend&lt;/code&gt; 就是一個很方便的指令了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Git" scheme="https://ritachien.github.io/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="https://ritachien.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git 設置及基礎使用(add &amp; commit)</title>
+    <link href="https://ritachien.github.io/posts/6adb515e/"/>
+    <id>https://ritachien.github.io/posts/6adb515e/</id>
+    <published>2022-06-01T16:31:59.000Z</published>
+    <updated>2022-08-12T03:23:24.302Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;隨著使用 Git 一段時間了，一開始一頭霧水的操作也比較有概念了，是時候整理筆記了!&lt;br&gt;當然，為了訓練自己盡快習慣命令列介面，操作過程中全部使用命令列介面(真的不習慣的人還是有圖形化介面可以用)，常用指令可以參考 &lt;a href=&quot;../800dd5f5&quot;&gt;Terminal 常用指令&lt;/a&gt;。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Git" scheme="https://ritachien.github.io/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="https://ritachien.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Terminal 常用指令</title>
+    <link href="https://ritachien.github.io/posts/800dd5f5/"/>
+    <id>https://ritachien.github.io/posts/800dd5f5/</id>
+    <published>2022-05-27T15:49:41.000Z</published>
+    <updated>2022-06-14T08:25:37.929Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在使用指令介面時，偶爾會忘記特定指令。所以建立一篇 cheat sheet 方便之後需要時查詢。  &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Cheat Sheet" scheme="https://ritachien.github.io/categories/Cheat-Sheet/"/>
+    
+    
+    <category term="Cheat Sheet" scheme="https://ritachien.github.io/tags/Cheat-Sheet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【CS50x(2022)】Complexity and Big O Notation</title>
+    <link href="https://ritachien.github.io/posts/6466fe30/"/>
+    <id>https://ritachien.github.io/posts/6466fe30/</id>
+    <published>2022-05-26T07:15:50.000Z</published>
+    <updated>2022-05-26T07:15:50.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在上 CS50x 第三週的演算法時，總覺得對「時間複雜度」的理解不夠清楚，因此另外找了課程做補充。  &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CS50" scheme="https://ritachien.github.io/categories/CS50/"/>
+    
+    
+    <category term="CS50x" scheme="https://ritachien.github.io/tags/CS50x/"/>
+    
+    <category term="Algorithms" scheme="https://ritachien.github.io/tags/Algorithms/"/>
+    
+  </entry>
+  
+</feed>
