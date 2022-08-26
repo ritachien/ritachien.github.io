@@ -4,6 +4,114 @@
   
     
     <entry>
+      <title>JavaScript 的函式調用(Invocation)與堆疊(Stack)</title>
+      <link href="/posts/5fdf6ed8/"/>
+      <url>/posts/5fdf6ed8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="名詞解釋"><a href="#名詞解釋" class="headerlink" title="名詞解釋"></a>名詞解釋</h2><h3 id="單執行續-Single-thearded"><a href="#單執行續-Single-thearded" class="headerlink" title="單執行續(Single thearded)"></a>單執行續(Single thearded)</h3><blockquote><p>One command at a time.</p></blockquote><p>JavaScript 是一個單執行續的程式語言。「單執行續」的意思是: 一次只能執行一個指令，一次只能處理一件事。  </p><h3 id="同步-Synchronous"><a href="#同步-Synchronous" class="headerlink" title="同步(Synchronous)"></a>同步(Synchronous)</h3><blockquote><p>One at a time and execute in order.</p></blockquote><p>程式碼會被逐行執行，一次只能處理一件事，在上一件事完成後才會開始執行下一個指令。  </p><h3 id="函式調用-Invocation"><a href="#函式調用-Invocation" class="headerlink" title="函式調用(Invocation)"></a>函式調用(Invocation)</h3><blockquote><p>Running a function.  </p></blockquote><p>函式(function)在被宣告的同時並不會被執行，在 JavaScript 裡我們用 <code>()</code> 來要求執行函式。而要求執行函式這個動作就叫做「調用」。  </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">a</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// some codes</span><br>&#125;<br><br><span class="hljs-title function_">a</span>()  <span class="hljs-comment">// 調用函式，要求函式執行。</span><br></code></pre></td></tr></table></figure><h2 id="什麼是堆疊-stack"><a href="#什麼是堆疊-stack" class="headerlink" title="什麼是堆疊(stack) ?"></a>什麼是堆疊(stack) ?</h2><p>JavaScript 是一種單執行續的同步程式語言，它的特性就是一次只能處理一件事。  </p><p>在 JavaScript 的世界中，stack 就像字面上的意思，是一個一個執行環境(Execution Context)的堆疊，是一個等待被執行的序列，它有著後進先出的特性。stack 就像只有一個開口的盒子，每個執行環境會被從開口放進去，每次只執行最上面的那個(單執行續)，執行完畢後再從最上面拿掉，然後才執行下一個(同步)。  </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 範例</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">a</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">b</span>()<br>  <span class="hljs-keyword">var</span> c<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">b</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">var</span> d<br>&#125;<br><br><span class="hljs-title function_">a</span>()<br><span class="hljs-keyword">var</span> d<br></code></pre></td></tr></table></figure><p>如上範例。當程式被啟動時，JavaScript 引擎會自動生成全域執行環境(Global Execution Context)丟進 stack 裡，接著開始逐行執行程式碼。  </p><p>當執行到 <code>a()</code> 時，如同<a href="../ca5ebfed">執行環境介紹</a>文章中提到: 當函式被調用的時候，會馬上建立一個新的執行環境。這個執行環境建立好後會被丟進 stack 裡執行。在執行 a 函式時，發現 a 函式調用了 b 函式。這時候 a 函式的執行環境的處理會被暫停，同時建立一個 b 函式的執行環境並丟進 stack 裡執行。如下圖所示:  </p><p><img src="/../Blog-image/posts/2022-08-25_stack.webp" alt="stack">  </p><p>可以看到目前 stack 裡總共堆了三個執行環境等待被處理。其中，最上面的是 b 函式的執行環境，也就是說，目前正在被執行的是 b 函式裡面的程式碼。當 <code>var d</code> 完成後，b 函式裡面的程式碼全部執行完畢，他就會從 stack 裡被移除。b 函式的執行環境被移除後，stack 裡最上層就會變成 a 函式的執行環境，a 函式裡的程式碼就會接著被執行。 當 a 函式裡的 <code>var c</code> 也執行完後，a 函式的執行環境就會從 stack 中移除，並接著執行全域執行環境裡的剩餘程式碼。  </p><h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul><li>Udemy -  <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> JacaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JacaScript </tag>
+            
+            <tag> Udemy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Javascript 中的 Hoisting 與 undefined</title>
+      <link href="/posts/83cbebe3/"/>
+      <url>/posts/83cbebe3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="什麼是-Hoisting"><a href="#什麼是-Hoisting" class="headerlink" title="什麼是 Hoisting ?"></a>什麼是 Hoisting ?</h2><blockquote><p>JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.  —— MDN</p></blockquote><p>JavaScript 是一個由上往下執行的程式語言。依照 MDN 文件的說明， Hoisting 是直譯器在處理我們的程式碼時，會將 function、variables 或 class 的宣告移到程式最上方處理。但其實它的運作原理不是「物理上」的移到最上方，而是在執行環境的創建階段先預留了記憶體的位置。  </p><p>在介紹 <a href="../ca5ebfed">JavaScript 執行環境</a> 的文章中有介紹執行環境的創建階段(Creation Phase)，而 Hoisting 就是在創建階段發生的事情。在程式開始被執行以前，被宣告的函式與變數就已經預留了記憶體中的位置。  </p><p>在這個預留的位置中，變數僅保留儲存值的位置；函式則是會將 <code>&#123;&#125;</code> 內的程式碼一併存入記憶體，這也是為什麼 JavaScript 的 function 不管在程式中的哪個位置宣告，都可以正常讀取不影響執行，因為它在程式正式開始執行前就已經存在記憶體中等待調用了。  </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 範例一</span><br><span class="hljs-keyword">var</span> a = <span class="hljs-string">&#x27;Hello world.&#x27;</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a)<br><span class="hljs-title function_">b</span>()<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">b</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Called b!&#x27;</span>)<br>&#125;<br><br><span class="hljs-comment">// 輸出結果</span><br><span class="hljs-string">&#x27;Hello world.&#x27;</span><br><span class="hljs-string">&#x27;Called b!&#x27;</span><br></code></pre></td></tr></table></figure><h2 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h2><p>先來看兩個範例。  </p><ul><li>範例一:  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a)<br><br><span class="hljs-comment">// 輸出結果</span><br><span class="hljs-title class_">Uncaught</span> <span class="hljs-title class_">ReferenceError</span>: a is not defined<br></code></pre></td></tr></table></figure></li><li>範例二:  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a)<br><span class="hljs-keyword">var</span> a = <span class="hljs-string">&#x27;Hello world.&#x27;</span><br><br><span class="hljs-comment">// 輸出結果</span><br><span class="hljs-literal">undefined</span><br></code></pre></td></tr></table></figure></li></ul><p>從範例一可以看到如果沒有經過「宣告」，在記憶體中這個變數還不存在，所以會得到 <code>Uncaught ReferenceError</code> ，也就是無法在記憶體中找到儲存這個變數的位置。而範例二中的變數 a 經過 Hoisting 先行保留記憶體位置，所以回傳的結果呈現 <code>undefined</code>。   </p><h3 id="undefined-是什麼"><a href="#undefined-是什麼" class="headerlink" title="undefined 是什麼?"></a>undefined 是什麼?</h3><p><code>undefined</code> 是 JavaScript 中的一種「值」。它代表的是: 記憶體中已經有預留位置來儲存變數的值，但變數「賦值」的這個動作尚未完成。  </p><h3 id="為什麼會發生-undefined"><a href="#為什麼會發生-undefined" class="headerlink" title="為什麼會發生 undefined ?"></a>為什麼會發生 undefined ?</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> a               <span class="hljs-comment">// 變數宣告</span><br>a = <span class="hljs-string">&#x27;Hello world.&#x27;</span>  <span class="hljs-comment">// 變數賦值</span><br></code></pre></td></tr></table></figure><p>一個變數的使用會經過「宣告」和「賦值」兩個步驟。在前面 Hoisting 的說明中可以看到，創建階段只是幫被宣告的變數預留記憶體的位置來儲存值。而「賦值」這件事要等到程式碼被執行到賦值那一行的時候才會完成。所以在程式碼被執行到賦值那一行之前，JavaScript 會把變數的值都預設為 <code>undefined</code>。  </p><h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul><li>Udemy -  <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> JacaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JacaScript </tag>
+            
+            <tag> Udemy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript 的執行環境(Execution Contexts)</title>
+      <link href="/posts/ca5ebfed/"/>
+      <url>/posts/ca5ebfed/</url>
+      
+        <content type="html"><![CDATA[<h2 id="什麼是執行環境-Execution-Contexts"><a href="#什麼是執行環境-Execution-Contexts" class="headerlink" title="什麼是執行環境(Execution Contexts)?"></a>什麼是執行環境(Execution Contexts)?</h2><blockquote><p>A wrapper to help manage the code that is running.  </p></blockquote><p>執行環境(Execution Contexts)決定現在要執行的是哪一段程式碼。  </p><p>Javascript 會建立兩種執行環境:  </p><ol><li>全域執行環境(Global Execution Contexts)  </li><li>函式執行環境(Function Execution Contexts)</li></ol><h3 id="全域執行環境-Global-Execution-Contexts"><a href="#全域執行環境-Global-Execution-Contexts" class="headerlink" title="全域執行環境(Global Execution Contexts)"></a>全域執行環境(Global Execution Contexts)</h3><p>當程式被啟動時，JavaScript 引擎會自動建立全域執行環境。這個全域執行環境會自動生成兩個東西:  </p><ol><li>全域物件(Global Object)。如果以瀏覽器來說，這個全域物件指的就會是 <code>window</code>。  </li><li>建立 <code>this</code>，並將這個 this 指向全域物件。</li></ol><blockquote><p>什麼是 <code>Global</code>?<br>Not inside a function. The thing that is accessible everywhere to everything in the code.  </p></blockquote><h3 id="函式執行環境-Function-Execution-Contexts"><a href="#函式執行環境-Function-Execution-Contexts" class="headerlink" title="函式執行環境(Function Execution Contexts)"></a>函式執行環境(Function Execution Contexts)</h3><p>當函式被調用的時候，會馬上建立一個新的執行環境。  </p><h2 id="執行環境怎麼運作"><a href="#執行環境怎麼運作" class="headerlink" title="執行環境怎麼運作?"></a>執行環境怎麼運作?</h2><p>執行環境的運作分為兩個階段，分別是:  </p><ul><li>創建階段(Creation Phase)  </li><li>執行階段(Execution Phase)</li></ul><h3 id="創建階段-Creation-Phase"><a href="#創建階段-Creation-Phase" class="headerlink" title="創建階段(Creation Phase)"></a>創建階段(Creation Phase)</h3><p>在創建階段，也就是在程式開始一行一行的執行之前，會先完成幾件事:</p><ul><li>建立執行環境物件與 <code>this</code>。  </li><li>建立外部環境(Outer Envirenment)。如果是全域執行環境就不會有外部環境；但如果是函式執行環境，此時的外部環境就有可能是全域執行環境或另一個函式執行環境。  </li><li>變數及函式的宣告也會在這個階段先預留記憶體位置(Hoisted)，並把被宣告的變數或函式放進執行環境物件裡面。</li></ul><h3 id="執行階段-Execution-Phase"><a href="#執行階段-Execution-Phase" class="headerlink" title="執行階段(Execution Phase)"></a>執行階段(Execution Phase)</h3><p>在創建階段完成後會進入執行階段，這個階段開始會把程式碼逐行執行。  </p><h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul><li>Udemy -  <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> JacaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JacaScript </tag>
+            
+            <tag> Udemy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript 前導觀念與名詞介紹</title>
+      <link href="/posts/555e8dd9/"/>
+      <url>/posts/555e8dd9/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前導觀念-Conceptual-Aside"><a href="#前導觀念-Conceptual-Aside" class="headerlink" title="前導觀念(Conceptual Aside)"></a>前導觀念(Conceptual Aside)</h2><p>要了解 JavaScript 的運作原理，就要先了解幾個基礎觀念、詞彙，分別是:  </p><ul><li>語法解析(Syntax Parsers)  </li><li>作用域環境(Lexical Envirenments)  </li><li>Name&#x2F;Value pair and Object</li></ul><h3 id="語法解析-Syntax-Parsers"><a href="#語法解析-Syntax-Parsers" class="headerlink" title="語法解析(Syntax Parsers)"></a>語法解析(Syntax Parsers)</h3><blockquote><p>A program that reads your code and determines what it does and if its grammar is valid.  </p></blockquote><p>JavaScript 是一種程式語言(Highlevel-language)而不是電腦語言(Machine-code)。用白話來講，程式語言是人類撰寫程式所使用的語言，電腦無法直接解讀，中間需要另一個程式來進行轉換，將我們寫的原始碼(source code)翻譯成電腦硬體看得懂的指令(computer instructions)。這個翻譯程式會逐字的解析我們寫的程式碼，並確認語法是否正確及程式碼的用途，最後把他們轉換成電腦看得懂的語言來讓硬體執行。  </p><p>通常這個翻譯器有分兩種:編譯器(Compiler)和直譯器(Interpreter)，JavaScript 屬於直譯語言，由直譯器進行轉換。直譯器會逐行轉換原始碼，並在每行轉換完後馬上執行。  </p><h3 id="作用域環境-Lexical-Envirenments"><a href="#作用域環境-Lexical-Envirenments" class="headerlink" title="作用域環境(Lexical Envirenments)"></a>作用域環境(Lexical Envirenments)</h3><blockquote><p>Where something sits physically in the code you write.  </p></blockquote><p>作用域環境(Lexical Envirenments)白話來說，就是我們把一段程式碼寫在整個程式中的哪個位置。對於部分程式語言來說，作用域環境重要的地方在於，同樣一段程式碼寫在不同位置，會在執行時影響到這段程式碼對應的記憶體位置，也能影響它和其他變數、函式或元素間的互動。  </p><p>在下面的範例中，同樣是在 app.js 檔案裡做變數 a 的宣告，但一個寫在 function 外面，一個寫在 function 裡面。這兩種位置的不同就會對變數 a 產生不同的作用和影響。對 JavaScript 來說，作用域環境的影響是重要的。  </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// app.js</span><br><span class="hljs-comment">// 狀況一</span><br><span class="hljs-keyword">var</span> a = <span class="hljs-string">&#x27;Hello world.&#x27;</span><br><br><span class="hljs-comment">// 狀況二</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">hello</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">var</span> a = <span class="hljs-string">&#x27;Hello world.&#x27;</span><br>&#125;<br></code></pre></td></tr></table></figure><h3 id="Name-x2F-Value-pair-and-Object"><a href="#Name-x2F-Value-pair-and-Object" class="headerlink" title="Name&#x2F;Value pair and Object"></a>Name&#x2F;Value pair and Object</h3><h4 id="Name-x2F-Value-pair"><a href="#Name-x2F-Value-pair" class="headerlink" title="Name&#x2F;Value pair"></a>Name&#x2F;Value pair</h4><blockquote><p>A name which maps to a unique value.  </p></blockquote><p>一個 name&#x2F;value pair 像這樣: <code>address = &#39;100 Main St.&#39;</code>。其中， <code>address</code> 就是 name；<code>&#39;100 Main St.&#39;</code> 就是 value。一個 name 可以被宣告很多次，但是在同一個<a href="../ca5ebfed">執行環境(Execution Contexts)</a>裡，一個 name 只會有一個值(value)。  </p><h4 id="物件-Object"><a href="#物件-Object" class="headerlink" title="物件(Object)"></a>物件(Object)</h4><blockquote><p>A collection of name&#x2F;value pairs.  </p></blockquote><p>前面有說到，一個 name 會配對一個 value，而這個 value 其實也可以是另外一個 name&#x2F;value pair 。在這種情況下，name&#x2F;value pair 會變成一個巢狀結構(如下範例)。而 JavaScript 中的物件(Object)其實就是一個 name&#x2F;value pair 的集合而已。  </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// A collection of name/value pairs.</span><br><span class="hljs-attr">address</span>: &#123;<br>  <span class="hljs-attr">street</span>: <span class="hljs-string">&#x27;Main&#x27;</span>,<br>  <span class="hljs-attr">number</span>: <span class="hljs-number">100</span>,<br>  <span class="hljs-attr">apartment</span>: &#123;<br>    <span class="hljs-attr">floor</span>: <span class="hljs-number">3</span>,<br>    <span class="hljs-attr">number</span>: <span class="hljs-number">301</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul><li>Udemy -  <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts</a>  </li><li>維基百科 - <a href="https://zh.wikipedia.org/wiki/%E7%B7%A8%E8%AD%AF%E8%AA%9E%E8%A8%80">編譯語言</a> v.s <a href="https://zh.wikipedia.org/wiki/%E7%9B%B4%E8%AD%AF%E8%AA%9E%E8%A8%80">直譯語言</a>  </li><li><a href="https://xxxxtim.github.io/2020/02/16/compiler/#Compiler-Language">Compiler VS Interpreter</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> JacaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JacaScript </tag>
+            
+            <tag> Udemy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Twitter 專案開發回顧</title>
       <link href="/posts/1001d93d/"/>
       <url>/posts/1001d93d/</url>
