@@ -18,25 +18,23 @@
   <meta name="author" content="Rita Chien">
   <meta name="keywords" content="Blog, 程式語言, 學習紀錄">
   
-    <meta name="description" content="名詞解釋單執行續(Single thearded) One command at a time.  JavaScript 是一個單執行續的程式語言。「單執行續」的意思是: 一次只能執行一個指令，一次只能處理一件事。   同步(Synchronous) One at a time and execute in order.  程式碼會被逐行執行，一次只能處理一件事，在上一件事完成後才會開始執行下一個">
+    <meta name="description" content="前言在執行環境介紹筆記中有提到， JavaScript 會在運行時建立執行環境(Execution Contexts)，並將函式存進記憶體、為變數預留記憶體位置。需要注意的是，包在函式 &amp;#123;&amp;#125;裡面的變數或函式，要等到函式被呼叫、建立執行函式執行環境時，才會被存進記憶體中。   範例 範例一在這個範例中一共建立了三個執行環境，分別是: 全域執行環境、a 函式執行環境、b 函式執行環">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript 的函式調用(Invocation)與堆疊(Stack)">
-<meta property="og:url" content="https://ritachien.github.io/posts/5fdf6ed8/">
+<meta property="og:title" content="JavaScript 的 Scope Chain 和 Outer Environment">
+<meta property="og:url" content="https://ritachien.github.io/posts/7afede3f/">
 <meta property="og:site_name" content="RitaChien&#39;s Blog">
-<meta property="og:description" content="名詞解釋單執行續(Single thearded) One command at a time.  JavaScript 是一個單執行續的程式語言。「單執行續」的意思是: 一次只能執行一個指令，一次只能處理一件事。   同步(Synchronous) One at a time and execute in order.  程式碼會被逐行執行，一次只能處理一件事，在上一件事完成後才會開始執行下一個">
+<meta property="og:description" content="前言在執行環境介紹筆記中有提到， JavaScript 會在運行時建立執行環境(Execution Contexts)，並將函式存進記憶體、為變數預留記憶體位置。需要注意的是，包在函式 &amp;#123;&amp;#125;裡面的變數或函式，要等到函式被呼叫、建立執行函式執行環境時，才會被存進記憶體中。   範例 範例一在這個範例中一共建立了三個執行環境，分別是: 全域執行環境、a 函式執行環境、b 函式執行環">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-08-25_stack.webp">
-<meta property="article:published_time" content="2022-08-25T11:12:29.000Z">
-<meta property="article:modified_time" content="2022-08-26T14:17:21.004Z">
+<meta property="article:published_time" content="2022-08-31T11:12:29.000Z">
+<meta property="article:modified_time" content="2022-08-31T15:58:05.540Z">
 <meta property="article:author" content="Rita Chien">
 <meta property="article:tag" content="JacaScript">
 <meta property="article:tag" content="Udemy">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://ritachien.github.io/Blog-image/posts/2022-08-25_stack.webp">
   
   
   
-  <title>JavaScript 的函式調用(Invocation)與堆疊(Stack) - RitaChien&#39;s Blog</title>
+  <title>JavaScript 的 Scope Chain 和 Outer Environment - RitaChien&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -241,7 +239,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="JavaScript 的函式調用(Invocation)與堆疊(Stack)"></span>
+            <span id="subtitle" data-typed-text="JavaScript 的 Scope Chain 和 Outer Environment"></span>
           
         </div>
 
@@ -252,8 +250,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-25 19:12" pubdate>
-          August 25, 2022
+        <time datetime="2022-08-31 19:12" pubdate>
+          August 31, 2022
         </time>
       </span>
     
@@ -264,7 +262,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k words
+          2k words
         
       </span>
     
@@ -275,7 +273,7 @@
         
         
         
-          2 mins
+          4 mins
         
       </span>
     
@@ -323,35 +321,81 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">JavaScript 的函式調用(Invocation)與堆疊(Stack)</h1>
+            <h1 style="display: none">JavaScript 的 Scope Chain 和 Outer Environment</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="名詞解釋"><a href="#名詞解釋" class="headerlink" title="名詞解釋"></a>名詞解釋</h2><h3 id="單執行續-Single-thearded"><a href="#單執行續-Single-thearded" class="headerlink" title="單執行續(Single thearded)"></a>單執行續(Single thearded)</h3><blockquote>
-<p>One command at a time.</p>
-</blockquote>
-<p>JavaScript 是一個單執行續的程式語言。「單執行續」的意思是: 一次只能執行一個指令，一次只能處理一件事。  </p>
-<h3 id="同步-Synchronous"><a href="#同步-Synchronous" class="headerlink" title="同步(Synchronous)"></a>同步(Synchronous)</h3><blockquote>
-<p>One at a time and execute in order.</p>
-</blockquote>
-<p>程式碼會被逐行執行，一次只能處理一件事，在上一件事完成後才會開始執行下一個指令。  </p>
-<h3 id="函式調用-Invocation"><a href="#函式調用-Invocation" class="headerlink" title="函式調用(Invocation)"></a>函式調用(Invocation)</h3><blockquote>
-<p>Running a function.  </p>
-</blockquote>
-<p>函式(function)在被宣告的同時並不會被執行，在 JavaScript 裡我們用 <code>()</code> 來要求執行函式。而要求執行函式這個動作就叫做「調用」。  </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">a</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// some codes</span><br>&#125;<br><br><span class="hljs-title function_">a</span>()  <span class="hljs-comment">// 調用函式，要求函式執行。</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="什麼是堆疊-stack"><a href="#什麼是堆疊-stack" class="headerlink" title="什麼是堆疊(stack) ?"></a>什麼是堆疊(stack) ?</h2><p>JavaScript 是一種單執行續的同步程式語言，它的特性就是一次只能處理一件事。  </p>
-<p>在 JavaScript 的世界中，stack 就像字面上的意思，是一個一個執行環境(Execution Context)的堆疊，是一個等待被執行的序列，它有著後進先出的特性。stack 就像只有一個開口的盒子，每個執行環境會被從開口放進去，每次只執行最上面的那個(單執行續)，執行完畢後再從最上面拿掉，然後才執行下一個(同步)。  </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 範例</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">a</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">b</span>()<br>  <span class="hljs-keyword">var</span> c<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">b</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">var</span> d<br>&#125;<br><br><span class="hljs-title function_">a</span>()<br><span class="hljs-keyword">var</span> d<br></code></pre></td></tr></table></figure>
-
-
-
-<p>如上範例。當程式被啟動時，JavaScript 引擎會自動生成全域執行環境(Global Execution Context)丟進 stack 裡，接著開始逐行執行程式碼。  </p>
-<p>當執行到 <code>a()</code> 時，如同<a href="../ca5ebfed">執行環境介紹</a>文章中提到: 當函式被調用的時候，會馬上建立一個新的執行環境。這個執行環境建立好後會被丟進 stack 裡執行。在執行 a 函式時，發現 a 函式調用了 b 函式。這時候 a 函式的執行環境的處理會被暫停，同時建立一個 b 函式的執行環境並丟進 stack 裡執行。如下圖所示:  </p>
-<p><img src="/../Blog-image/posts/2022-08-25_stack.webp" srcset="/img/loading.gif" lazyload alt="stack">  </p>
-<p>可以看到目前 stack 裡總共堆了三個執行環境等待被處理。其中，最上面的是 b 函式的執行環境，也就是說，目前正在被執行的是 b 函式裡面的程式碼。當 <code>var d</code> 完成後，b 函式裡面的程式碼全部執行完畢，他就會從 stack 裡被移除。b 函式的執行環境被移除後，stack 裡最上層就會變成 a 函式的執行環境，a 函式裡的程式碼就會接著被執行。 當 a 函式裡的 <code>var c</code> 也執行完後，a 函式的執行環境就會從 stack 中移除，並接著執行全域執行環境裡的剩餘程式碼。  </p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在<a href="../ca5ebfed">執行環境介紹筆記</a>中有提到， JavaScript 會在運行時建立執行環境(Execution Contexts)，並將函式存進記憶體、為變數預留記憶體位置。需要注意的是，<strong>包在函式 <code>&#123;&#125;</code>裡面的變數或函式，要等到函式被呼叫、建立執行函式執行環境時，才會被存進記憶體中</strong>。  </p>
+<h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><ul>
+<li><p>範例一<br>在這個範例中一共建立了三個執行環境，分別是: 全域執行環境、a 函式執行環境、b 函式執行環境。從範例中可以看出，同樣一個變數在不同的執行環境做宣告，他的值是獨立存在、不會互相影響的。  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">b</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">var</span> myVar = <span class="hljs-number">3</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(myVar)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">a</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">var</span> myVar = <span class="hljs-number">2</span><br>  <span class="hljs-title function_">b</span>()<br>&#125;<br><br><span class="hljs-keyword">var</span> myVar = <span class="hljs-number">1</span><br><span class="hljs-title function_">a</span>()<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(myVar)<br><br><span class="hljs-comment">// 輸出結果: </span><br><span class="hljs-comment">// 3</span><br><span class="hljs-comment">// 1</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>範例二<br>這個範例和上個範例幾乎相同，唯一的差別是: b 函式裡面的 <code>myVar</code> 沒有進行宣告，直接賦值。按照範例一的結果，變數的作用域應該是獨立於各個執行環境的，但我在 b 函式裡面的賦值動作卻操作到全域執行環境的 myVar?    </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">b</span>(<span class="hljs-params"></span>) &#123;<br>  myVar = <span class="hljs-number">3</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(myVar)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">a</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">var</span> myVar = <span class="hljs-number">2</span><br>  <span class="hljs-title function_">b</span>()<br>&#125;<br><br><span class="hljs-keyword">var</span> myVar = <span class="hljs-number">1</span><br><span class="hljs-title function_">a</span>()<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(myVar)<br><br><span class="hljs-comment">// 輸出結果: </span><br><span class="hljs-comment">// 3</span><br><span class="hljs-comment">// 3</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>範例三<br>這個範例和前面範例的差異也不大: b 函式裡面的沒有進行任何 <code>myVar</code> 宣告和賦值。在這種情況下，原本預期的輸出結果會出現 <code>undefined</code> ，但是這邊卻印出了全域 <code>myVar</code> 的值?  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">b</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(myVar)<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">a</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">var</span> myVar = <span class="hljs-number">2</span><br>  <span class="hljs-title function_">b</span>()<br>&#125;<br><br><span class="hljs-keyword">var</span> myVar = <span class="hljs-number">1</span><br><span class="hljs-title function_">a</span>()<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(myVar)<br><br><span class="hljs-comment">// 輸出結果: </span><br><span class="hljs-comment">// 1</span><br><span class="hljs-comment">// 1</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Outer-Environment"><a href="#Outer-Environment" class="headerlink" title="Outer Environment"></a>Outer Environment</h2><p>上面範例中狀況其實是由一個 JavaScript 的特性造成的。如果要使用一個當前執行環境(execution context)所沒有的變數時， JavaScript 會去 Outer Environment 尋找。但 Outer Environment 到底是指什麼呢?  </p>
+<p>在<a href="../ca5ebfed">執行環境介紹筆記</a>中有提到，在函式執行環境的創建階段，除了會建立環境物件(內含被宣告的變數和函式)，還有一個叫做外部環境(Outer Environment)的東西會被一併設定好。外部環境可以用函式(function)被「宣告」的執行環境來判斷(注意! 不是函式被執行所建立的執行環境)。  </p>
+<p>以範例二和範例三來看，執行環境和函式的宣告關係如下:  </p>
+<table>
+<thead>
+<tr>
+<th>Execution Contexts</th>
+<th>Declare in memory</th>
+<th>Outer Environments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Global</td>
+<td>function a 、 function b 、 myVar</td>
+<td>N&#x2F;A</td>
+</tr>
+<tr>
+<td>function a</td>
+<td>myVar</td>
+<td>Global</td>
+</tr>
+<tr>
+<td>function b</td>
+<td>N&#x2F;A</td>
+<td>Global</td>
+</tr>
+</tbody></table>
+<p>因為在範例二和範例三中，<code>function b</code> 並沒有宣告 <code>myVar</code> ，所以當 <code>function b</code>  要用到 <code>myVar</code> 這個變數時， JavaScript 會到 <code>function b</code> 的外部環境，也就是全域執行環境(Global Execution Contexts)找到 <code>myVar</code> 來使用。  </p>
+<p>如果用函式被「宣告」的執行環境來判斷外部環境不容易理解的話，也可以用 <a href="../555e8dd9/#%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%92%B0%E5%A2%83-Lexical-Envirenments">Lexical Envirenments</a> 來判斷，也就是函式被書寫的位置。如果函式寫在 Global 層級，那它的外部環境就是 Global；如果函式寫在另一個函式裡面，那它的外部環境就是一個函式。  </p>
+<ul>
+<li>範例四  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">a</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">function</span> <span class="hljs-title function_">b</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">var</span> myVar = <span class="hljs-number">3</span><br>  &#125;<br>  <span class="hljs-keyword">var</span> myVar = <span class="hljs-number">2</span><br>  <span class="hljs-title function_">b</span>()<br>&#125;<br><br><span class="hljs-keyword">var</span> myVar = <span class="hljs-number">1</span><br><span class="hljs-title function_">a</span>()<br></code></pre></td></tr></table></figure>
+如果用範例四來判斷外部環境，會呈現下面表格說明的關係:  <table>
+<thead>
+<tr>
+<th>Execution Contexts</th>
+<th>Declare in memory</th>
+<th>Outer Environments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Global</td>
+<td>function a 、 myVar</td>
+<td>N&#x2F;A</td>
+</tr>
+<tr>
+<td>function a</td>
+<td>function b 、 myVar</td>
+<td>Global</td>
+</tr>
+<tr>
+<td>function b</td>
+<td>myVar</td>
+<td>function a</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="Scope-Chain"><a href="#Scope-Chain" class="headerlink" title="Scope Chain"></a>Scope Chain</h2><p>Scope Chain 其實就是一個函式(function)向上追蹤外部環境(Outer Environments)，直到找到全域執行環境為止所有的執行環境。  </p>
+<p>以範例四來說，整條 Scope Chain 就是: function b —&gt; function a —&gt; Global 。  </p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li>Udemy -  <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts</a></li>
 </ul>
@@ -414,18 +458,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/7afede3f/" title="JavaScript 的 Scope Chain 和 Outer Environment">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JavaScript 的 Scope Chain 和 Outer Environment</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/83cbebe3/" title="Javascript 中的 Hoisting 與 undefined">
-                        <span class="hidden-mobile">Javascript 中的 Hoisting 與 undefined</span>
+                      <a href="/posts/5fdf6ed8/" title="JavaScript 的函式調用(Invocation)與堆疊(Stack)">
+                        <span class="hidden-mobile">JavaScript 的函式調用(Invocation)與堆疊(Stack)</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

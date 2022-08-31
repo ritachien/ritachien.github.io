@@ -6,7 +6,7 @@
   <link href="https://ritachien.github.io/atom.xml" rel="self"/>
   
   <link href="https://ritachien.github.io/"/>
-  <updated>2022-08-26T14:17:21.004Z</updated>
+  <updated>2022-08-31T15:58:05.540Z</updated>
   <id>https://ritachien.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript 的 Scope Chain 和 Outer Environment</title>
+    <link href="https://ritachien.github.io/posts/7afede3f/"/>
+    <id>https://ritachien.github.io/posts/7afede3f/</id>
+    <published>2022-08-31T11:12:29.000Z</published>
+    <updated>2022-08-31T15:58:05.540Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在&lt;a href=&quot;../ca5ebfed&quot;&gt;執行環境介紹筆記&lt;/a&gt;中有提到， JavaScript</summary>
+        
+      
+    
+    
+    
+    <category term="JacaScript" scheme="https://ritachien.github.io/categories/JacaScript/"/>
+    
+    
+    <category term="JacaScript" scheme="https://ritachien.github.io/tags/JacaScript/"/>
+    
+    <category term="Udemy" scheme="https://ritachien.github.io/tags/Udemy/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript 的函式調用(Invocation)與堆疊(Stack)</title>
@@ -449,27 +476,6 @@
     
     
     <category term="Cheat Sheet" scheme="https://ritachien.github.io/tags/Cheat-Sheet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【CS50x(2022)】Complexity and Big O Notation</title>
-    <link href="https://ritachien.github.io/posts/6466fe30/"/>
-    <id>https://ritachien.github.io/posts/6466fe30/</id>
-    <published>2022-05-26T07:15:50.000Z</published>
-    <updated>2022-05-26T07:15:50.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在上 CS50x 第三週的演算法時，總覺得對「時間複雜度」的理解不夠清楚，因此另外找了課程做補充。  &lt;/p&gt;</summary>
-    
-    
-    
-    <category term="CS50" scheme="https://ritachien.github.io/categories/CS50/"/>
-    
-    
-    <category term="CS50x" scheme="https://ritachien.github.io/tags/CS50x/"/>
-    
-    <category term="Algorithms" scheme="https://ritachien.github.io/tags/Algorithms/"/>
     
   </entry>
   
