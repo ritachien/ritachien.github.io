@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>【CS50x(2022)】ProblemSet4 - Recover 題解</title>
+    <link href="/posts/c4654fea/"/>
+    <url>/posts/c4654fea/</url>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>第四週主要在講解 pointer 的概念，所以這個題目主要就是進行 pointer 的應用練習。  </p><h2 id="題目說明"><a href="#題目說明" class="headerlink" title="題目說明"></a>題目說明</h2><p>相機記憶卡裡的照片被不小心誤刪了，幸好電腦世界裡的「刪除」並不是真的刪除，而是變成某種我們無法正常讀取的存在。為了把照片搶救回來，所以要寫一個程式來把照片復原。  </p><p>首先，我們已知記憶卡中的照片是以 JPEG 形式保存。JPEG 檔案有固定的格式，因為這個特性讓我們可以在零散資料中辨認出原始的 JPEG 檔案。檔案的前 3 個 bytes 固定如下:  </p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">0xff 0xd8 0xff<br></code></pre></td></tr></table></figure><p>而第 4 個 bytes 則會是下列其中一種: <code>0xe0</code>、<code>0xe1</code>、<code>0xe2</code>、<code>0xe3</code>、<code>0xe4</code>、<code>0xe5</code>、<code>0xe6</code>、<code>0xe7</code>、<code>0xe8</code>、<code>0xe9</code>、<code>0xea</code>、<code>0xeb</code>、<code>0xec</code>、<code>0xed</code>、<code>0xee</code> 或 <code>0xef</code>。簡單來說，第 4 個 bytes 的前半部分會是 <code>1110</code>。  </p><p>其次，檔案會被分割成更小單位(block)儲存，每個單位是 512 bytes。也就是我們在讀取檔案時不用每個 bytes 逐一讀取，而是能一次處理 512 bytes。而且，這些 block 是以連續方式儲存的，也就是前一個 block 的結尾會直接接續下一個 block 的開頭。  </p><p>最後，這張被誤刪的記憶卡應該可以經由程式復原 50 張照片。  </p><h2 id="規格要求"><a href="#規格要求" class="headerlink" title="規格要求"></a>規格要求</h2><ul><li>執行程式時要帶入 1 個 command-line argument(需要被復原的原始檔案名稱)。  </li><li>如果帶入的 command-line argument 不等於 1，<code>main</code> 程式需要提供錯誤訊息及 <code>return 1</code>。  </li><li>如果需要被復原的原始檔案無法開啟，<code>main</code> 程式需要 <code>return 1</code>。  </li><li>被復原的照片需要以 <code>###.jpg</code> 的三碼數字檔名儲存，從 <code>000.jpg</code> 開始。  </li><li>如果程式中有用到 <code>malloc</code>，記得避免記憶體流失(memory leak)。</li></ul><h2 id="解題開始"><a href="#解題開始" class="headerlink" title="解題開始"></a>解題開始</h2><ul><li><p>流程  </p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span> *argv[])</span><br>&#123;<br>  <span class="hljs-comment">// 確認 argc 是否等於 2</span><br>  <span class="hljs-comment">// 打開記憶卡，確認是否可以正常讀取</span><br>  <span class="hljs-comment">// 開始讀取檔案，讀取 512 B</span><br>      <span class="hljs-comment">// 如果找到 JPEG 開頭，開始寫入新檔案</span><br>  <span class="hljs-comment">// 關閉檔案並釋放記憶體</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li><li><p>確認 <code>argc</code> 是否等於二?  </p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span>  <span class="hljs-comment">// 因為會用到 printf()</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span> *argv[])</span><br>&#123;<br>  <span class="hljs-comment">// 確認 argc 是否等於 2</span><br>  <span class="hljs-keyword">if</span> (argc != <span class="hljs-number">2</span>)<br>  &#123;<br>      <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Usage: ./recover IMAGE\n&quot;</span>);<br>      <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><code>argc</code> 為 command-line 裡的 argument 總數(含執行檔案本身)。執行檔案時會在終端機輸入 <code>./recover card.raw</code>，也就是總共兩個 arguments。如果 <code>argc</code> 不等於 2 ，則印出錯誤訊息及 <code>return 1</code>。</p></li><li><p>打開記憶卡，確認是否可以正常讀啟  </p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span> *argv[])</span><br>&#123;<br>  <span class="hljs-comment">// 打開記憶卡</span><br>  FILE *input_file = fopen(argv[<span class="hljs-number">1</span>], <span class="hljs-string">&quot;r&quot;</span>);<br><br>  <span class="hljs-comment">// 如果不能正常讀取則印出錯誤訊息並 return 1</span><br>  <span class="hljs-keyword">if</span> (input_file == <span class="hljs-literal">NULL</span>)<br>  &#123;<br>      <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;FileError: Unable to open file.\n&quot;</span>);<br>      <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li><li><p>變數宣告  </p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span>  <span class="hljs-comment">// 因為會用到 malloc() 和 free()</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdint.h&gt;</span>  <span class="hljs-comment">// 因為會用到型別 uint8_t</span></span><br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> BLOCK_SIZE 512  <span class="hljs-comment">// 將 BLOCK_SIZE 定義為 512</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span> *argv[])</span><br>&#123;<br>  <span class="hljs-type">uint8_t</span> buffer[BLOCK_SIZE];  <span class="hljs-comment">// 建立一個 array 用來暫存讀取到的資料</span><br>  <span class="hljs-type">int</span> image_count = <span class="hljs-number">0</span>;  <span class="hljs-comment">// 計算照片數量</span><br>  FILE *output_file = <span class="hljs-literal">NULL</span>;<br>  <span class="hljs-type">char</span> *filename = <span class="hljs-built_in">malloc</span>(<span class="hljs-number">8</span> * <span class="hljs-keyword">sizeof</span>(<span class="hljs-type">char</span>));  <span class="hljs-comment">// 用來暫存檔名</span><br>&#125;<br></code></pre></td></tr></table></figure><p><code>uint8_t</code> 是一個定義在 <code>&lt;stdlib.h&gt;</code> 裡面的型別，代表著 8-bit(1 Byte) 的 unsigned integer。因為使用了這個型別，所以要在開頭引入 <code>&lt;stdlib.h&gt;</code>。  </p><p>檔案名稱部分指定了 <code>8 * sizeof(char)</code> 來暫存檔案名稱。檔名由 <code>###.jpg</code> 組成，總共 7 個字元，之所以使用 8 是因為最後還會加上 <code>\0</code> 來代表字串的結束。  </p></li><li><p>開始讀取檔案，每次讀取 512 B  </p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span> *argv[])</span><br>&#123;<br>  <span class="hljs-comment">// 每次讀取 512 B 並寫入 buffer</span><br>  <span class="hljs-keyword">while</span> (fread(buffer, BLOCK_SIZE, <span class="hljs-number">1</span>, input_file))<br>  &#123;<br>      <span class="hljs-comment">// 如果找到 header of JPEG</span><br>      <span class="hljs-keyword">if</span> (buffer[<span class="hljs-number">0</span>] == <span class="hljs-number">0xff</span> &amp;&amp; buffer[<span class="hljs-number">1</span>] == <span class="hljs-number">0xd8</span> &amp;&amp; buffer[<span class="hljs-number">2</span>] == <span class="hljs-number">0xff</span> &amp;&amp; (buffer[<span class="hljs-number">3</span>] &amp; <span class="hljs-number">0xf0</span>) == <span class="hljs-number">0xe0</span>)<br>      &#123;<br>          <span class="hljs-comment">// 關閉上一個檔案</span><br>          <span class="hljs-keyword">if</span> (output_file != <span class="hljs-literal">NULL</span>)<br>          &#123;<br>              fclose(output_file);<br>          &#125;<br><br>          <span class="hljs-comment">// write jpeg filename with &lt;image_count&gt;.jpg</span><br>          <span class="hljs-built_in">sprintf</span>(filename, <span class="hljs-string">&quot;%03i.jpg&quot;</span>, image_count);<br><br>          <span class="hljs-comment">// open new output_file for writing</span><br>          output_file = fopen(filename, <span class="hljs-string">&quot;w&quot;</span>);<br><br>          <span class="hljs-comment">//</span><br>          image_count++;<br>      &#125;<br><br>      <span class="hljs-keyword">if</span> (output_file != <span class="hljs-literal">NULL</span>)<br>      &#123;<br>          <span class="hljs-comment">// write into jpeg file</span><br>          fwrite(buffer, <span class="hljs-keyword">sizeof</span>(buffer), <span class="hljs-number">1</span>, output_file);<br>      &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>開始讀取檔案，每次讀取 512 Bytes。用 while 迴圈檢查前 4 個 Bytes 的值來確認是不是 JPEG header。其中在辨識第 4 個 Bytes 時使用了 <code>(buffer[3] &amp; 0xf0) == 0xe0</code>，<code>0xf0</code> 用兩個字符來代表前後 4-bit。而這邊的 <code>&amp;</code> 是位元運算子，用來比較二進位的每個 bit 是否相同。和 <code>0xf0(11110000)</code> 的比較，如果前 4-bit 是 <code>e(1110)</code>，後 4-bit 不管是什麼，最後結果一定是 <code>0xe0(11100000)</code>。用這種方法來確認第 4 個 Bytes 是否符合要求。  </p><p>每次檢查會遇到兩種情況:  </p><ul><li>是 header of JPEG。這種情況就可以準備寫入檔案了。</li><li>不是 header of JPEG。</li></ul><p>如果讀取到的 block 不是 header of JPEG 那又可以再細分成兩種狀況:</p><ul><li>是 JPEG 的一部份，則可以接著寫入目前檔案。  </li><li>是其他零散資料，則不做處理。</li></ul><p>在最一開始我們把 pointer <code>output_file</code> 指定為 <code>NULL</code>，等到找到 header of JPEG 就指派記憶體給它。所以如果 <code>output_file != NULL</code> 則表示是JPEG 的一部份；反之則是零散資料。  </p><p>找到 header of JPEG 要記得先關閉前一個檔案，並開啟新檔案來寫入資料。  </p></li><li><p>釋放記憶體  </p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-built_in">free</span>(filename);<br>fclose(output_file);<br>fclose(input_file);<br></code></pre></td></tr></table></figure></li></ul><h2 id="完整程式碼"><a href="#完整程式碼" class="headerlink" title="完整程式碼"></a>完整程式碼</h2><p><a href="https://gist.github.com/ritachien/e56a263aaaffbdf5b0d1e09a540c1abb">程式碼連結(Gist)</a>  </p><h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>pointer 對我來說是個很抽象的概念。之前主要是學習 JavaScript，雖然物件(Object)會碰到 pass by reference 這種類似概念，但和 C 語言中的 pointer 還是有點差別，目前還沒有碰過「直接操作記憶體」的狀況。這題實在卡關好久，又參考了網路上的一些解題思路，終於成功寫出來了!  </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>CS50</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>CS50x</tag>
+      
+      <tag>C</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>JavaScript 的 Scope Chain 和 Outer Environment</title>
     <link href="/posts/7afede3f/"/>
     <url>/posts/7afede3f/</url>
@@ -548,6 +575,8 @@
       
       <tag>CS50x</tag>
       
+      <tag>C</tag>
+      
       <tag>Algorithms</tag>
       
     </tags>
@@ -574,6 +603,8 @@
     <tags>
       
       <tag>CS50x</tag>
+      
+      <tag>C</tag>
       
       <tag>Algorithms</tag>
       
@@ -602,6 +633,8 @@
       
       <tag>CS50x</tag>
       
+      <tag>C</tag>
+      
       <tag>Algorithms</tag>
       
     </tags>
@@ -629,6 +662,8 @@
       
       <tag>CS50x</tag>
       
+      <tag>C</tag>
+      
     </tags>
     
   </entry>
@@ -653,6 +688,8 @@
     <tags>
       
       <tag>CS50x</tag>
+      
+      <tag>C</tag>
       
     </tags>
     

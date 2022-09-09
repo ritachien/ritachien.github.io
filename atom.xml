@@ -6,7 +6,7 @@
   <link href="https://ritachien.github.io/atom.xml" rel="self"/>
   
   <link href="https://ritachien.github.io/"/>
-  <updated>2022-08-31T16:01:13.281Z</updated>
+  <updated>2022-09-09T17:28:22.650Z</updated>
   <id>https://ritachien.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【CS50x(2022)】ProblemSet4 - Recover 題解</title>
+    <link href="https://ritachien.github.io/posts/c4654fea/"/>
+    <id>https://ritachien.github.io/posts/c4654fea/</id>
+    <published>2022-09-07T10:33:25.000Z</published>
+    <updated>2022-09-09T17:28:22.650Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;第四週主要在講解 pointer 的概念，所以這個題目主要就是進行 pointer 的應用練習。  &lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="CS50" scheme="https://ritachien.github.io/categories/CS50/"/>
+    
+    
+    <category term="CS50x" scheme="https://ritachien.github.io/tags/CS50x/"/>
+    
+    <category term="C" scheme="https://ritachien.github.io/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript 的 Scope Chain 和 Outer Environment</title>
@@ -457,25 +485,6 @@
     
     
     <category term="Git" scheme="https://ritachien.github.io/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Terminal 常用指令</title>
-    <link href="https://ritachien.github.io/posts/800dd5f5/"/>
-    <id>https://ritachien.github.io/posts/800dd5f5/</id>
-    <published>2022-05-27T15:49:41.000Z</published>
-    <updated>2022-06-14T08:25:37.929Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;在使用指令介面時，偶爾會忘記特定指令。所以建立一篇 cheat sheet 方便之後需要時查詢。  &lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Cheat Sheet" scheme="https://ritachien.github.io/categories/Cheat-Sheet/"/>
-    
-    
-    <category term="Cheat Sheet" scheme="https://ritachien.github.io/tags/Cheat-Sheet/"/>
     
   </entry>
   
