@@ -2,34 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ritachien.github.io/posts/c4654fea/</loc>
+    
+    <lastmod>2022-09-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://ritachien.github.io/posts/555e8dd9/</loc>
-    
-    <lastmod>2022-09-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ritachien.github.io/posts/ca5ebfed/</loc>
-    
-    <lastmod>2022-09-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ritachien.github.io/posts/83cbebe3/</loc>
-    
-    <lastmod>2022-09-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ritachien.github.io/posts/5fdf6ed8/</loc>
     
     <lastmod>2022-09-23</lastmod>
     
@@ -40,7 +22,7 @@
   <url>
     <loc>https://ritachien.github.io/posts/7afede3f/</loc>
     
-    <lastmod>2022-09-23</lastmod>
+    <lastmod>2022-09-17</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -56,9 +38,27 @@
   </url>
   
   <url>
-    <loc>https://ritachien.github.io/posts/c4654fea/</loc>
+    <loc>https://ritachien.github.io/posts/5fdf6ed8/</loc>
     
-    <lastmod>2022-09-09</lastmod>
+    <lastmod>2022-09-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ritachien.github.io/posts/83cbebe3/</loc>
+    
+    <lastmod>2022-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ritachien.github.io/posts/ca5ebfed/</loc>
+    
+    <lastmod>2022-08-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -481,7 +481,7 @@
 
   <url>
     <loc>https://ritachien.github.io/</loc>
-    <lastmod>2022-09-23</lastmod>
+    <lastmod>2022-12-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

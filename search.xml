@@ -62,7 +62,7 @@
       <link href="/posts/5fdf6ed8/"/>
       <url>/posts/5fdf6ed8/</url>
       
-        <content type="html"><![CDATA[<h2 id="名詞解釋"><a href="#名詞解釋" class="headerlink" title="名詞解釋"></a>名詞解釋</h2><h3 id="單執行續-Single-thearded"><a href="#單執行續-Single-thearded" class="headerlink" title="單執行續(Single thearded)"></a>單執行續(Single thearded)</h3><blockquote><p>One command at a time.</p></blockquote><p>JavaScript 是一個單執行續的程式語言。「單執行續」的意思是: 一次只能執行一個指令，一次只能處理一件事。  </p><h3 id="同步-Synchronous"><a href="#同步-Synchronous" class="headerlink" title="同步(Synchronous)"></a>同步(Synchronous)</h3><blockquote><p>One at a time and execute in order.</p></blockquote><p>程式碼會被逐行執行，一次只能處理一件事，在上一件事完成後才會開始執行下一個指令。  </p><h3 id="函式調用-Invocation"><a href="#函式調用-Invocation" class="headerlink" title="函式調用(Invocation)"></a>函式調用(Invocation)</h3><blockquote><p>Running a function.  </p></blockquote><p>函式(function)在被宣告的同時並不會被執行，在 JavaScript 裡我們用 <code>()</code> 來要求執行函式。而要求執行函式這個動作就叫做「調用」。  </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">a</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// some codes</span><br>&#125;<br><br><span class="hljs-title function_">a</span>()  <span class="hljs-comment">// 調用函式，要求函式執行。</span><br></code></pre></td></tr></table></figure><h2 id="什麼是堆疊-stack"><a href="#什麼是堆疊-stack" class="headerlink" title="什麼是堆疊(stack) ?"></a>什麼是堆疊(stack) ?</h2><p>JavaScript 是一種單執行續的同步程式語言，它的特性就是一次只能處理一件事。  </p><p>在 JavaScript 的世界中，stack 就像字面上的意思，是一個一個執行環境(Execution Context)的堆疊，是一個等待被執行的序列，它有著後進先出的特性。stack 就像只有一個開口的盒子，每個執行環境會被從開口放進去，每次只執行最上面的那個(單執行續)，執行完畢後再從最上面拿掉，然後才執行下一個(同步)。  </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 範例</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">a</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">b</span>()<br>  <span class="hljs-keyword">var</span> c<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">b</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">var</span> d<br>&#125;<br><br><span class="hljs-title function_">a</span>()<br><span class="hljs-keyword">var</span> d<br></code></pre></td></tr></table></figure><p>如上範例。當程式被啟動時，JavaScript 引擎會自動生成全域執行環境(Global Execution Context)丟進 stack 裡，接著開始逐行執行程式碼。  </p><p>當執行到 <code>a()</code> 時，如同<a href="../ca5ebfed">執行環境介紹</a>文章中提到: 當函式被調用的時候，會馬上建立一個新的執行環境。這個執行環境建立好後會被丟進 stack 裡執行。在執行 a 函式時，發現 a 函式調用了 b 函式。這時候 a 函式的執行環境的處理會被暫停，同時建立一個 b 函式的執行環境並丟進 stack 裡執行。如下圖所示:  </p><p><img src="/../Blog-image/posts/2022-08-25_stack.webp" alt="stack">  </p><p>可以看到目前 stack 裡總共堆了三個執行環境等待被處理。其中，最上面的是 b 函式的執行環境，也就是說，目前正在被執行的是 b 函式裡面的程式碼。當 <code>var d</code> 完成後，b 函式裡面的程式碼全部執行完畢，他就會從 stack 裡被移除。b 函式的執行環境被移除後，stack 裡最上層就會變成 a 函式的執行環境，a 函式裡的程式碼就會接著被執行。 當 a 函式裡的 <code>var c</code> 也執行完後，a 函式的執行環境就會從 stack 中移除，並接著執行全域執行環境裡的剩餘程式碼。  </p><h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul><li>Udemy -  <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="名詞解釋"><a href="#名詞解釋" class="headerlink" title="名詞解釋"></a>名詞解釋</h2><h3 id="單執行續-Single-thearded"><a href="#單執行續-Single-thearded" class="headerlink" title="單執行續(Single thearded)"></a>單執行續(Single thearded)</h3><blockquote><p>One command at a time.</p></blockquote><p>JavaScript 是一個單執行續的程式語言。「單執行續」的意思是: 一次只能執行一個指令，一次只能處理一件事。  </p><h3 id="同步-Synchronous"><a href="#同步-Synchronous" class="headerlink" title="同步(Synchronous)"></a>同步(Synchronous)</h3><blockquote><p>One at a time and execute in order.</p></blockquote><p>程式碼會被逐行執行，一次只能處理一件事，在上一件事完成後才會開始執行下一個指令。  </p><h3 id="函式調用-Invocation"><a href="#函式調用-Invocation" class="headerlink" title="函式調用(Invocation)"></a>函式調用(Invocation)</h3><blockquote><p>Running a function.  </p></blockquote><p>函式(function)在被宣告的同時並不會被執行，在 JavaScript 裡我們用 <code>()</code> 來要求執行函式。而要求執行函式這個動作就叫做「調用」。  </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">a</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// some codes</span><br>&#125;<br><br><span class="hljs-title function_">a</span>()  <span class="hljs-comment">// 調用函式，要求函式執行。</span><br></code></pre></td></tr></table></figure><h2 id="什麼是堆疊-stack"><a href="#什麼是堆疊-stack" class="headerlink" title="什麼是堆疊(stack) ?"></a>什麼是堆疊(stack) ?</h2><p>JavaScript 是一種單執行續的同步程式語言，它的特性就是一次只能處理一件事。  </p><p>在 JavaScript 的世界中，stack 就像字面上的意思，是一個一個執行環境(Execution Context)的堆疊，是一個等待被執行的序列，它有著後進先出的特性。stack 就像只有一個開口的盒子，每個執行環境會被從開口放進去，每次只執行最上面的那個(單執行續)，執行完畢後再從最上面拿掉，然後才執行下一個(同步)。  </p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 範例</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">a</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">b</span>()<br>  <span class="hljs-keyword">var</span> c<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">b</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">var</span> d<br>&#125;<br><br><span class="hljs-title function_">a</span>()<br><span class="hljs-keyword">var</span> d<br></code></pre></td></tr></table></figure><p>如上範例。當程式被啟動時，JavaScript 引擎會自動生成全域執行環境(Global Execution Context)丟進 stack 裡，接著開始逐行執行程式碼。  </p><p>當執行到 <code>a()</code> 時，如同<a href="../ca5ebfed">執行環境介紹</a>文章中提到: 當函式被調用的時候，會馬上建立一個新的執行環境。這個執行環境建立好後會被丟進 stack 裡執行。在執行 a 函式時，發現 a 函式調用了 b 函式。這時候 a 函式的執行環境的處理會被暫停，同時建立一個 b 函式的執行環境並丟進 stack 裡執行。如下圖所示:  </p><p><img src="/../Blog-image/posts/2022-09-10_stack.webp" alt="stack">  </p><p>可以看到目前 stack 裡總共堆了三個執行環境等待被處理。其中，最上面的是 b 函式的執行環境，也就是說，目前正在被執行的是 b 函式裡面的程式碼。當 <code>var d</code> 完成後，b 函式裡面的程式碼全部執行完畢，他就會從 stack 裡被移除。b 函式的執行環境被移除後，stack 裡最上層就會變成 a 函式的執行環境，a 函式裡的程式碼就會接著被執行。 當 a 函式裡的 <code>var c</code> 也執行完後，a 函式的執行環境就會從 stack 中移除，並接著執行全域執行環境裡的剩餘程式碼。  </p><h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul><li>Udemy -  <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts</a></li></ul>]]></content>
       
       
       <categories>
@@ -957,9 +957,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> AlphaCamp </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -984,9 +984,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> AlphaCamp </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -1063,9 +1063,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> AlphaCamp </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -1175,9 +1175,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> AlphaCamp </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       

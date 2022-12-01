@@ -25,14 +25,14 @@
 <meta property="og:site_name" content="RitaChien&#39;s Blog">
 <meta property="og:description" content="名詞解釋單執行續(Single thearded) One command at a time.  JavaScript 是一個單執行續的程式語言。「單執行續」的意思是: 一次只能執行一個指令，一次只能處理一件事。   同步(Synchronous) One at a time and execute in order.  程式碼會被逐行執行，一次只能處理一件事，在上一件事完成後才會開始執行下一個">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-08-25_stack.webp">
-<meta property="article:published_time" content="2022-08-25T11:12:29.000Z">
-<meta property="article:modified_time" content="2022-09-23T03:15:35.901Z">
+<meta property="og:image" content="https://ritachien.github.io/Blog-image/posts/2022-09-10_stack.webp">
+<meta property="article:published_time" content="2022-09-10T11:12:29.000Z">
+<meta property="article:modified_time" content="2022-09-10T11:12:29.000Z">
 <meta property="article:author" content="Rita Chien">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="Udemy">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://ritachien.github.io/Blog-image/posts/2022-08-25_stack.webp">
+<meta name="twitter:image" content="https://ritachien.github.io/Blog-image/posts/2022-09-10_stack.webp">
   
   
   
@@ -253,8 +253,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-25 19:12" pubdate>
-          August 25, 2022
+        <time datetime="2022-09-10 19:12" pubdate>
+          September 10, 2022
         </time>
       </span>
     
@@ -351,7 +351,7 @@
 
 <p>如上範例。當程式被啟動時，JavaScript 引擎會自動生成全域執行環境(Global Execution Context)丟進 stack 裡，接著開始逐行執行程式碼。  </p>
 <p>當執行到 <code>a()</code> 時，如同<a href="../ca5ebfed">執行環境介紹</a>文章中提到: 當函式被調用的時候，會馬上建立一個新的執行環境。這個執行環境建立好後會被丟進 stack 裡執行。在執行 a 函式時，發現 a 函式調用了 b 函式。這時候 a 函式的執行環境的處理會被暫停，同時建立一個 b 函式的執行環境並丟進 stack 裡執行。如下圖所示:  </p>
-<p><img src="/../Blog-image/posts/2022-08-25_stack.webp" srcset="/img/loading.gif" lazyload alt="stack">  </p>
+<p><img src="/../Blog-image/posts/2022-09-10_stack.webp" srcset="/img/loading.gif" lazyload alt="stack">  </p>
 <p>可以看到目前 stack 裡總共堆了三個執行環境等待被處理。其中，最上面的是 b 函式的執行環境，也就是說，目前正在被執行的是 b 函式裡面的程式碼。當 <code>var d</code> 完成後，b 函式裡面的程式碼全部執行完畢，他就會從 stack 裡被移除。b 函式的執行環境被移除後，stack 裡最上層就會變成 a 函式的執行環境，a 函式裡的程式碼就會接著被執行。 當 a 函式裡的 <code>var c</code> 也執行完後，a 函式的執行環境就會從 stack 中移除，並接著執行全域執行環境裡的剩餘程式碼。  </p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li>Udemy -  <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts</a></li>
