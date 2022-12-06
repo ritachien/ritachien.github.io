@@ -6,7 +6,7 @@
   <link href="https://ritachien.github.io/atom.xml" rel="self"/>
   
   <link href="https://ritachien.github.io/"/>
-  <updated>2022-09-24T10:33:25.000Z</updated>
+  <updated>2022-12-06T08:40:03.721Z</updated>
   <id>https://ritachien.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LINE BOT 開發紀錄 - 薪資級距確認篇(Binary Search)</title>
+    <link href="https://ritachien.github.io/posts/88a49764/"/>
+    <id>https://ritachien.github.io/posts/88a49764/</id>
+    <published>2022-12-06T05:47:29.000Z</published>
+    <updated>2022-12-06T08:40:03.721Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本篇使用 JavaScript 來說明。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;最近在開發的 line</summary>
+        
+      
+    
+    
+    
+    <category term="演算法" scheme="https://ritachien.github.io/categories/%E6%BC%94%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="Side Project" scheme="https://ritachien.github.io/categories/Side-Project/"/>
+    
+    
+    <category term="JavaScript" scheme="https://ritachien.github.io/tags/JavaScript/"/>
+    
+    <category term="Binary Search" scheme="https://ritachien.github.io/tags/Binary-Search/"/>
+    
+  </entry>
   
   <entry>
     <title>【CS50x(2022)】ProblemSet4 - Recover 題解</title>
@@ -459,25 +491,6 @@
     
     
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在使用 Git 時，偶爾會在 commit 過程中發生一些小失誤，不管是 typo 或是部分檔案忘記加入 staged files 清單一起 commit。這種時候，&lt;code&gt;git commit --amend&lt;/code&gt; 就是一個很方便的指令了。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Git" scheme="https://ritachien.github.io/categories/Git/"/>
-    
-    
-    <category term="Git" scheme="https://ritachien.github.io/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git 設置及基礎使用(add &amp; commit)</title>
-    <link href="https://ritachien.github.io/posts/6adb515e/"/>
-    <id>https://ritachien.github.io/posts/6adb515e/</id>
-    <published>2022-06-01T16:31:59.000Z</published>
-    <updated>2022-08-12T03:23:24.302Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;隨著使用 Git 一段時間了，一開始一頭霧水的操作也比較有概念了，是時候整理筆記了!&lt;br&gt;當然，為了訓練自己盡快習慣命令列介面，操作過程中全部使用命令列介面(真的不習慣的人還是有圖形化介面可以用)，常用指令可以參考 &lt;a href=&quot;../800dd5f5&quot;&gt;Terminal 常用指令&lt;/a&gt;。&lt;/p&gt;</summary>
     
     
     
